@@ -61,13 +61,17 @@
     color: var(--text);
     line-height: 1.45;
   }
-  header, footer { max-width: 1600px; margin: 0 auto; padding: 20px 16px; }
+  header { max-width: 1600px; margin: 0 auto; padding: 16px 16px 8px; }
+  footer { max-width: 1600px; margin: 0 auto; padding: 20px 16px; }
   main { max-width: 1600px; margin: 0 auto; padding: 0 16px 20px; }
   h1 { font-size: 1.5rem; margin: 0; }
   .title-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-bottom: 8px; }
   .gh-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.9rem; font-weight: 600; color: var(--text); text-decoration: none; border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px; background: var(--panel); }
   .gh-link:hover { color: var(--accent); border-color: var(--accent); }
-  .sub { color: var(--muted); font-size: 0.95rem; max-width: 90ch; margin: 0 0 12px; }
+  .sub { color: var(--muted); font-size: 0.95rem; max-width: 90ch; margin: 0 0 8px; }
+  .about { max-width: 90ch; font-size: 0.9rem; color: var(--muted); margin: 0 0 4px; }
+  .about summary { cursor: pointer; color: var(--accent); font-weight: 600; font-size: 0.88rem; }
+  .about p { margin: 8px 0 0; }
   .note {
     background: var(--panel);
     border: 1px solid var(--border);
@@ -82,7 +86,7 @@
   .row { display: grid; grid-template-columns: 88px 1fr; column-gap: 8px; align-items: start; margin: 0 0 10px; }
   .row-label { color: var(--muted); font-size: 0.85rem; padding-top: 6px; }
   .row-body { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; min-width: 0; }
-  .controls { margin-top: 16px; }
+  .controls { margin-top: 8px; }
   .controls input[type="text"], .controls select {
     background: var(--panel);
     color: var(--text);
@@ -112,7 +116,7 @@
   }
   table { border-collapse: collapse; width: 100%; background: var(--panel); }
   #matrix-table { table-layout: fixed; }
-  th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; font-size: 0.87rem; }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; font-size: 0.9rem; }
   thead th {
     position: sticky; top: 0; z-index: 3;
     background: var(--sticky-bg);
@@ -145,6 +149,7 @@
   .badge-planned { background: var(--planned-bg); color: var(--planned-fg); }
   .badge-no { background: var(--no-bg); color: var(--no-fg); }
   .badge-unknown { background: var(--unknown-bg); color: var(--unknown-fg); }
+  .badge-undocumented { background: transparent; color: var(--unknown-fg); border: 1px dashed var(--unknown-fg); }
   .badge-na { background: var(--na-bg); color: var(--na-fg); }
   .badge-info { background: var(--info-bg); color: var(--info-fg); }
   .group-row th {
@@ -172,10 +177,11 @@
   .chips-sep { width: 1px; height: 22px; background: var(--border); margin: 0 2px; }
   body.compact .cell-value, body.compact .feature-desc { display: none; }
   body.compact th, body.compact td { padding-top: 5px; padding-bottom: 5px; }
-  .fact-value { font-size: 0.82rem; }
-  .cell-value { display: block; margin-top: 3px; color: var(--muted); font-size: 0.78rem; }
+  .fact-value { font-size: 0.875rem; line-height: 1.5; }
+  .cell-value { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-top: 4px; color: var(--text); font-size: 0.875rem; line-height: 1.5; cursor: pointer; }
+  .cell-value.open { display: block; }
   .feature-label { font-weight: 600; }
-  .feature-desc { display: block; color: var(--muted); font-size: 0.78rem; font-weight: normal; margin-top: 2px; }
+  .feature-desc { display: block; color: var(--muted); font-size: 0.82rem; line-height: 1.45; font-weight: normal; margin-top: 3px; }
   footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 24px; }
   a { color: var(--accent); }
   #view-bytool { display: none; }
@@ -187,15 +193,12 @@
     <h1>Agent-manager comparison</h1>
     <a class="gh-link" href="https://github.com/dtiger1889-ops" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.37A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>dtiger1889-ops</a>
   </div>
-  <p class="sub">A side-by-side of AI coding-agent managers: tools that supervise a fleet of coding-agent
-    sessions (Claude Code, Codex, and similar) across usage tracking, task sourcing, session
-    organization, and remote/mobile access. Built to find where a personal, terminal-native project
-    genuinely differs from the field, not as marketing for any one tool.</p>
-  <div class="note">
-    Snapshot as of 2026-09-28. Cells come from each tool's own docs, sites, or posts at the dates shown
-    for that tool, not re-verified beyond that pass. Where a tool's own materials don't state something,
-    the cell reads "unknown" rather than a guess.
-  </div>
+  <p class="sub">Tools for running a fleet of coding agents (Claude Code, Codex and others), compared feature by feature. Snapshot 2026-09-28.</p>
+  <details class="about">
+    <summary>About this comparison</summary>
+    <p>Built to find where a personal, terminal-native project differs from the field, not as marketing for any one tool. Pantheon is the author's own project and is scored by the same rules.</p>
+    <p>Cells come from each tool's own docs, sites, source or posts at the dates shown for that tool, and were not re-verified after that pass. <b>Not documented</b> means the tool's own materials don't mention it, which is not the same as a confirmed <b>No</b>. <b>Unknown</b> means the tool wasn't researched that far.</p>
+  </details>
   <div class="legend" id="legend"></div>
 </header>
 
@@ -239,11 +242,11 @@
 </footer>
 
 <script>
-const MARK_ORDER = ["yes", "partial", "experimental", "planned", "no", "unknown", "n/a", "info"];
+const MARK_ORDER = ["yes", "partial", "experimental", "planned", "no", "undocumented", "unknown", "n/a", "info"];
 const MARK_RANK = Object.fromEntries(MARK_ORDER.map((m, i) => [m, i]));
 const MARK_LABEL = {
   yes: "Yes", partial: "Partial", experimental: "Experimental",
-  planned: "Planned", no: "No", unknown: "Unknown", "n/a": "N/A", info: "Info"
+  planned: "Planned", no: "No", undocumented: "Not documented", unknown: "Unknown", "n/a": "N/A", info: "Info"
 };
 
 let DATA = null;
@@ -275,7 +278,7 @@ function filterOptions(f) {
   const cells = DATA.tools.map(t => t.features[f.key]);
   const isFact = cells.every(c => c.mark === "info" || c.mark === "unknown");
   if (!isFact) {
-    return [["", "Any"], ["has", "Has it"], ["hasany", "Has it (incl. partial / exp.)"], ["no", "Doesn't have it"], ["unknown", "Unknown"]];
+    return [["", "Any"], ["has", "Has it"], ["hasany", "Has it (incl. partial / exp.)"], ["no", "Doesn't have it"], ["undocumented", "Not documented"], ["unknown", "Unknown"]];
   }
   const cats = [...new Set(DATA.tools.map(t => category(f.key, t.features[f.key])))];
   if (["harness_count", "languages", "download_size"].includes(f.key)) return null;   // counts and sizes: nothing useful to pick
@@ -289,6 +292,7 @@ function passes(tool, key, opt) {
   if (opt === "hasany") return HAS_ANY.has(cell.mark);
   if (opt === "no") return cell.mark === "no";
   if (opt === "unknown") return cell.mark === "unknown";
+  if (opt === "undocumented") return cell.mark === "undocumented";
   if (opt.startsWith("cat:")) return category(key, cell) === opt.slice(4);
   return true;
 }
@@ -313,6 +317,8 @@ function badge(cell) {
     const v = document.createElement("span");
     v.className = "cell-value";
     v.textContent = cell.value;
+    v.title = cell.value;
+    v.addEventListener("click", () => v.classList.toggle("open"));
     wrap.appendChild(v);
   }
   return wrap;

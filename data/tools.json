@@ -4,224 +4,224 @@
   "features": [
     {
       "key": "multi_provider_supervision",
-      "label": "Multi-provider agent supervision",
-      "description": "Can it drive more than one coding-agent CLI/tool at once.",
+      "label": "Runs more than one kind of agent",
+      "description": "Can drive more than one coding agent (Claude Code, Codex and so on) side by side.",
       "group": "Agents & supervision"
     },
     {
       "key": "harness_count",
       "label": "Coding agents supported",
-      "description": "How many different coding agents (Claude Code, Codex, Cursor and so on) it can run, per its own docs.",
+      "description": "How many different coding agents it can run, per its own docs.",
       "group": "Agents & supervision"
     },
     {
       "key": "needs_you_signal",
-      "label": "Needs-you signal quality",
-      "description": "How it tells you an agent is waiting on you, and how reliable that signal is.",
+      "label": "Alerts when you're needed",
+      "description": "How it tells you an agent is waiting on you.",
       "group": "Agents & supervision"
     },
     {
       "key": "approve_deny_prompt",
-      "label": "Approve/deny a waiting permission prompt",
-      "description": "Whether you can answer an agent's permission prompt from the manager itself.",
+      "label": "Answer permission prompts",
+      "description": "Approve or deny an agent's permission request from the manager.",
       "group": "Agents & supervision"
     },
     {
       "key": "cross_provider_delegation",
-      "label": "Cross-provider delegation visible in one place",
-      "description": "Handoffs between different providers/agents show up in one unified view.",
+      "label": "Hand-offs between agents in one view",
+      "description": "Work passed from one agent to another shows up in the same place.",
       "group": "Agents & supervision"
     },
     {
       "key": "always_on_assistant",
-      "label": "Always-on assistant session",
-      "description": "A persistent standing assistant session you can reach any time (not a task-bound worker).",
+      "label": "Always-on assistant",
+      "description": "A standing assistant session you can reach any time.",
       "group": "Agents & supervision"
     },
     {
       "key": "conversation_gui_view",
-      "label": "Conversation (GUI) view of a session",
-      "description": "A chat-style view of a session's plan/edits/results, as opposed to raw terminal text.",
+      "label": "Chat view of a session",
+      "description": "Read a session as a conversation instead of raw terminal text.",
       "group": "Sessions & views"
     },
     {
       "key": "real_terminal",
-      "label": "The real terminal of a session",
-      "description": "Whether you can drop into the session's actual terminal.",
+      "label": "Open the real terminal",
+      "description": "Drop into the session's actual terminal.",
       "group": "Sessions & views"
     },
     {
       "key": "session_organization",
-      "label": "Session organization",
-      "description": "How sessions are grouped and browsed (list, worktrees, kanban, nested groups).",
+      "label": "How sessions are organized",
+      "description": "List, worktrees, kanban or nested groups.",
       "group": "Sessions & views"
     },
     {
       "key": "prompt_scratchpad",
-      "label": "Prompt scratchpad with insert-not-send",
-      "description": "A place to draft prompts and insert them into a session without immediately sending.",
+      "label": "Prompt drafts",
+      "description": "Draft prompts and insert them without sending.",
       "group": "Sessions & views"
     },
     {
       "key": "saved_prompt_library",
-      "label": "Saved prompt library",
-      "description": "Reusable, saved prompts/actions you can fire with prior context pre-attached.",
+      "label": "Saved prompts",
+      "description": "Reusable prompts you can fire with context attached.",
       "group": "Sessions & views"
     },
     {
       "key": "builtin_editors_browser",
-      "label": "Built-in editors / browser",
-      "description": "Ships its own code/markdown editors and/or an embedded browser.",
+      "label": "Built-in editor / browser",
+      "description": "Ships its own editor or browser.",
       "group": "Sessions & views"
     },
     {
       "key": "appearance_control",
-      "label": "Appearance control incl. host-terminal font",
-      "description": "How much you can customize its look, including your actual terminal's font/settings.",
+      "label": "Look and font control",
+      "description": "How far you can change its look, including your terminal's font.",
       "group": "Sessions & views"
     },
     {
       "key": "usage_hud",
-      "label": "Subscription usage HUD (from local logs)",
-      "description": "Shows your subscription usage/limits, read from local logs rather than a fragile API endpoint.",
+      "label": "Shows your usage limits",
+      "description": "Your subscription usage and resets, read from local logs.",
       "group": "Usage & limits"
     },
     {
       "key": "burn_rate_forecast",
-      "label": "Usage HUD with burn-rate + time-to-limit forecast",
-      "description": "Predicts when you'll hit your usage limit, not just showing current usage.",
+      "label": "Predicts when you'll hit a limit",
+      "description": "Burn rate and time to the limit, not just current usage.",
       "group": "Usage & limits"
     },
     {
       "key": "limit_governor",
-      "label": "Session-limit governor (park/resume at reset)",
-      "description": "Automatically pauses work near a usage limit and resumes after the reset.",
+      "label": "Pause and resume at usage limits",
+      "description": "Pauses work near a limit and picks it back up after the reset.",
       "group": "Usage & limits"
     },
     {
       "key": "account_hotswap",
-      "label": "Account switch / hot-swap without re-login",
-      "description": "Can switch between provider accounts without logging in again each time.",
+      "label": "Switch accounts without logging in again",
+      "description": "Move between provider accounts without re-login.",
       "group": "Usage & limits"
     },
     {
       "key": "vault_task_source",
-      "label": "Personal-notes-vault task source",
-      "description": "Can read your own personal notes vault (e.g. Obsidian) as its task queue, instead of only an issue tracker.",
+      "label": "Tasks from your notes vault",
+      "description": "Reads your own notes vault (such as Obsidian) as the task list.",
       "group": "Tasks, planning & merging"
     },
     {
       "key": "issue_tracker_pipeline",
-      "label": "Issue-tracker / PR pipeline to merge",
-      "description": "Integrates with GitHub/GitLab/Linear/Jira issues and pull requests.",
+      "label": "Issues and PRs through to merge",
+      "description": "Works with GitHub, GitLab, Linear or Jira issues and pull requests.",
       "group": "Tasks, planning & merging"
     },
     {
       "key": "worktree_management",
-      "label": "Worktree management for agents",
-      "description": "Manages isolated git worktrees per agent/task on your behalf.",
+      "label": "Manages git worktrees",
+      "description": "Gives each agent or task its own git worktree.",
       "group": "Tasks, planning & merging"
     },
     {
       "key": "planner_orchestrator",
-      "label": "Planner/orchestrator that splits and runs work",
-      "description": "A higher-level agent that breaks a goal into sub-tasks and runs them.",
+      "label": "Planner that splits the work",
+      "description": "Breaks a goal into parts and runs them.",
       "group": "Tasks, planning & merging"
     },
     {
       "key": "agent_to_agent_messaging",
-      "label": "Agent-to-agent messaging across sessions",
-      "description": "Sessions or orchestrators can message each other directly.",
+      "label": "Agents message each other",
+      "description": "One session can message or query another.",
       "group": "Tasks, planning & merging"
     },
     {
       "key": "knowledge_base",
-      "label": "Knowledge base agents can query",
-      "description": "A notes/knowledge store agents can query before acting.",
+      "label": "Knowledge base for agents",
+      "description": "A notes store agents can look things up in.",
       "group": "Tasks, planning & merging"
     },
     {
       "key": "native_mobile_app",
-      "label": "Native mobile app",
-      "description": "A dedicated iOS/Android app, as opposed to reusing a terminal app.",
+      "label": "Phone app",
+      "description": "A dedicated iOS or Android app.",
       "group": "Remote & mobile"
     },
     {
       "key": "phone_no_new_app",
-      "label": "Phone access without a new app/account",
-      "description": "Can be reached from a phone using tools you already have, no new app or account.",
+      "label": "Phone access with no new app",
+      "description": "Reach it from your phone with tools you already have.",
       "group": "Remote & mobile"
     },
     {
       "key": "remote_ssh",
-      "label": "Remote hosts (SSH)",
-      "description": "Can drive or edit sessions on a remote machine over SSH.",
+      "label": "Remote machines over SSH",
+      "description": "Run or edit sessions on another machine.",
       "group": "Remote & mobile"
     },
     {
       "key": "voice_input",
       "label": "Voice input",
-      "description": "Can dictate to it by voice.",
+      "description": "Dictate to it.",
       "group": "Remote & mobile"
     },
     {
       "key": "app_shell",
       "label": "App shell",
-      "description": "What the desktop/app UI is actually built on: Electron (with version, if pinned), Tauri 2, native, terminal UI, web app, or hosted cloud service.",
+      "description": "What the app is built on: Electron, Tauri, a terminal UI, or a hosted service.",
       "group": "Under the hood"
     },
     {
       "key": "languages",
       "label": "Main languages",
-      "description": "The top 2-3 languages in the project's own repo, from GitHub's language breakdown, with rough percentages.",
+      "description": "Top languages in its repo, from GitHub's breakdown.",
       "group": "Under the hood"
     },
     {
       "key": "background_process",
       "label": "Background process",
-      "description": "Whether it runs a separate daemon/server process alongside the UI, and what it does, per its own source or docs.",
+      "description": "Whether it runs a separate server or daemon next to the app.",
       "group": "Under the hood"
     },
     {
       "key": "download_size",
       "label": "Download size",
-      "description": "The latest release's desktop installer size(s) per OS, from the release's own asset listing. Not a claim about how much it uses once running.",
+      "description": "Installer size from its latest release. Not memory use.",
       "group": "Under the hood"
     },
     {
       "key": "ram_vs_claude_desktop",
-      "label": "Memory weight vs Claude Desktop (estimate)",
-      "description": "A labeled ESTIMATE, not a measurement: Claude Desktop is itself an Electron app, so this compares app shells only. Electron ~= about the same (heavier if it also runs a background daemon or several windows/an embedded terminal — the value says which); Tauri/system-WebView = lighter; terminal UI = much lighter; hosted service = cloud, local cost is a browser tab; unknown shell = not verified. The coding agents themselves (Claude Code, Codex, etc.) cost the same memory under every tool in this table — only the manager's own shell differs.",
+      "label": "Memory vs Claude Desktop (estimate)",
+      "description": "An estimate from the app shell, not a measurement. Claude Desktop is Electron, so Electron is about the same, Tauri lighter, a terminal app much lighter. The agents themselves cost the same under every tool.",
       "group": "Under the hood"
     },
     {
       "key": "runs_in_terminal",
-      "label": "Runs inside a terminal you already have",
-      "description": "Lives inside your existing terminal app, rather than shipping its own app/window.",
+      "label": "Runs in your own terminal",
+      "description": "Lives inside the terminal you already use.",
       "group": "Under the hood"
     },
     {
       "key": "license_cost",
       "label": "License / cost",
-      "description": "Open-source license, or commercial pricing model.",
+      "description": "Open-source license or pricing.",
       "group": "Project & openness"
     },
     {
       "key": "extensibility",
-      "label": "Extensibility for others (plugins/SDK)",
-      "description": "Whether outside developers can extend it via a plugin or SDK surface.",
+      "label": "Plugins / SDK",
+      "description": "Outside developers can extend it.",
       "group": "Project & openness"
     },
     {
       "key": "teams_multiuser",
-      "label": "Teams / multi-user",
-      "description": "Built for more than one person to use together, as opposed to single-user.",
+      "label": "Teams",
+      "description": "Built for more than one person.",
       "group": "Project & openness"
     },
     {
       "key": "stability_maturity",
-      "label": "Stability / maturity (honest)",
-      "description": "How mature and stable it currently is, stated plainly.",
+      "label": "Maturity",
+      "description": "How far along and how stable it is.",
       "group": "Project & openness"
     }
   ],
@@ -363,7 +363,7 @@
         },
         "license_cost": {
           "value": "MIT, free, uses your own subscriptions",
-          "mark": "yes"
+          "mark": "info"
         },
         "app_shell": {
           "value": "Electron 43.7.5",
@@ -391,7 +391,7 @@
         },
         "stability_maturity": {
           "value": "\"Features shipped daily\"; chat, orchestration and mobile are experimental",
-          "mark": "partial"
+          "mark": "info"
         }
       }
     },
@@ -434,16 +434,16 @@
           "mark": "yes"
         },
         "usage_hud": {
-          "value": "Not claimed anywhere in the posts",
-          "mark": "no"
+          "value": "Not mentioned in its launch posts",
+          "mark": "undocumented"
         },
         "burn_rate_forecast": {
-          "value": "Not claimed",
-          "mark": "no"
+          "value": "Not mentioned in its launch posts",
+          "mark": "undocumented"
         },
         "limit_governor": {
-          "value": "Not claimed",
-          "mark": "no"
+          "value": "Not mentioned in its launch posts",
+          "mark": "undocumented"
         },
         "vault_task_source": {
           "value": "Has a notes knowledge base, not a task queue",
@@ -523,7 +523,7 @@
         },
         "license_cost": {
           "value": "MIT, free, uses your own subscriptions",
-          "mark": "yes"
+          "mark": "info"
         },
         "app_shell": {
           "value": "Tauri 2 (Rust + system WebView); repo also carries a secondary Electron shell, not the primary build",
@@ -551,7 +551,7 @@
         },
         "stability_maturity": {
           "value": "v0.2.x, launched 2026-09-28, not independently verified",
-          "mark": "unknown"
+          "mark": "info"
         }
       }
     },
@@ -683,7 +683,7 @@
         },
         "license_cost": {
           "value": "MIT, free; pre-release, published as-is; uses your own subscriptions",
-          "mark": "yes"
+          "mark": "info"
         },
         "app_shell": {
           "value": "Terminal UI: Python 3.12 + Textual, running inside your existing terminal, no separate installer",
@@ -711,7 +711,7 @@
         },
         "stability_maturity": {
           "value": "Personal, pre-release; its terminal-multiplexer server froze four times on one day (cause still open)",
-          "mark": "partial"
+          "mark": "info"
         }
       }
     },
@@ -843,7 +843,7 @@
         },
         "license_cost": {
           "value": "Apache-2.0, free",
-          "mark": "yes"
+          "mark": "info"
         },
         "app_shell": {
           "value": "Electron 44.2.0",
@@ -871,7 +871,7 @@
         },
         "stability_maturity": {
           "value": "Mature",
-          "mark": "yes"
+          "mark": "info"
         }
       }
     },
@@ -1003,7 +1003,7 @@
         },
         "license_cost": {
           "value": "Commercial with a free tier",
-          "mark": "partial"
+          "mark": "info"
         },
         "app_shell": {
           "value": "not verified: not stated on gitkraken.com/kepler or help.gitkraken.com; not extrapolated from GitKraken's separate main git client",
@@ -1031,7 +1031,7 @@
         },
         "stability_maturity": {
           "value": "Commercial product",
-          "mark": "yes"
+          "mark": "info"
         }
       }
     },
@@ -1163,7 +1163,7 @@
         },
         "license_cost": {
           "value": "Open-ish, roughly 11k stars",
-          "mark": "partial"
+          "mark": "info"
         },
         "app_shell": {
           "value": "Electron ^33.0.0 (frontend/package.json), plus a separate Go backend",
@@ -1191,7 +1191,7 @@
         },
         "stability_maturity": {
           "value": "Active development",
-          "mark": "partial"
+          "mark": "info"
         }
       }
     },
@@ -1979,7 +1979,7 @@
         },
         "license_cost": {
           "value": "MIT",
-          "mark": "yes"
+          "mark": "info"
         },
         "extensibility": {
           "value": "not verified",
@@ -2139,7 +2139,7 @@
         },
         "license_cost": {
           "value": "Elastic-2.0",
-          "mark": "yes"
+          "mark": "info"
         },
         "extensibility": {
           "value": "TypeScript SDK plus MCP server so agents can spawn agents",
@@ -2299,7 +2299,7 @@
         },
         "license_cost": {
           "value": "Proprietary",
-          "mark": "no"
+          "mark": "info"
         },
         "extensibility": {
           "value": "not verified",
@@ -2459,7 +2459,7 @@
         },
         "license_cost": {
           "value": "MIT",
-          "mark": "yes"
+          "mark": "info"
         },
         "extensibility": {
           "value": "not verified",
@@ -2619,7 +2619,7 @@
         },
         "license_cost": {
           "value": "open-source",
-          "mark": "yes"
+          "mark": "info"
         },
         "extensibility": {
           "value": "not verified",
@@ -2698,8 +2698,8 @@
           "mark": "unknown"
         },
         "usage_hud": {
-          "value": "No usage/burn-rate/token HUD on the page",
-          "mark": "no"
+          "value": "Not mentioned on its site",
+          "mark": "undocumented"
         },
         "burn_rate_forecast": {
           "value": "not verified",
@@ -2779,7 +2779,7 @@
         },
         "license_cost": {
           "value": "Closed-source, paid tiers",
-          "mark": "no"
+          "mark": "info"
         },
         "extensibility": {
           "value": "not verified",
@@ -2858,8 +2858,8 @@
           "mark": "unknown"
         },
         "usage_hud": {
-          "value": "No usage/burn-rate/token HUD on the page",
-          "mark": "no"
+          "value": "Not mentioned on its site",
+          "mark": "undocumented"
         },
         "burn_rate_forecast": {
           "value": "not verified",
@@ -2939,7 +2939,7 @@
         },
         "license_cost": {
           "value": "Commercial: hourly compute plus an optional credit wallet",
-          "mark": "no"
+          "mark": "info"
         },
         "extensibility": {
           "value": "not verified",

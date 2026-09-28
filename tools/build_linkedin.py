@@ -18,13 +18,13 @@ FEATURE_ORDER = [
 SHORT_LABEL = {
     "harness_count": "Coding agents supported",
     "app_shell": "App shell",
-    "usage_hud": "Usage HUD (local logs)",
-    "burn_rate_forecast": "Burn-rate forecast",
-    "limit_governor": "Limit governor",
-    "vault_task_source": "Vault task source",
-    "worktree_management": "Worktree mgmt",
-    "planner_orchestrator": "Planner/orchestrator",
-    "native_mobile_app": "Native mobile app",
+    "usage_hud": "Shows usage limits",
+    "burn_rate_forecast": "Predicts limit hits",
+    "limit_governor": "Pause/resume at limits",
+    "vault_task_source": "Tasks from notes vault",
+    "worktree_management": "Manages worktrees",
+    "planner_orchestrator": "Splits the work",
+    "native_mobile_app": "Phone app",
     "runs_in_terminal": "Runs in your terminal",
 }
 SHORT_AGENTS = {
@@ -51,6 +51,7 @@ MARK_STYLE = {
     "experimental": ("#ece3fb", "#5b3aa8", "Exp."),
     "planned": ("#e6ecf5", "#3a4f78", "Planned"),
     "no": ("#f8dede", "#9c2b2b", "No"),
+    "undocumented": ("#ffffff", "#6a6a6a", "Not doc."),
     "unknown": ("#ececec", "#6a6a6a", "Unk."),
     "n/a": ("#f2f2f2", "#8a8a8a", "N/A"),
 }
@@ -62,7 +63,8 @@ features.sort(key=lambda f: FEATURE_ORDER.index(f["key"]))
 
 def badge_html(cell):
     bg, fg, label = MARK_STYLE[cell["mark"]]
-    return f'<span class="b" style="background:{bg};color:{fg}">{label}</span>'
+    border = ";border:2px dashed #9a9a9a;padding:3px 8px" if cell["mark"] == "undocumented" else ""
+    return f'<span class="b" style="background:{bg};color:{fg}{border}">{label}</span>'
 
 rows_html = []
 for f in features:
@@ -97,7 +99,7 @@ html = f"""<!DOCTYPE html>
   th {{ background: #eef0f3; font-size: 22px; }}
   tbody th {{ text-align: left; font-size: 23px; font-weight: 600; white-space: nowrap; }}
   td:first-child, th:first-child {{ text-align: left; padding-left: 16px; width: 260px; }}
-  .b {{ display: inline-block; padding: 6px 14px; border-radius: 999px; font-size: 21px; font-weight: 700; }}
+  .b {{ white-space: nowrap; display: inline-block; padding: 6px 14px; border-radius: 999px; font-size: 21px; font-weight: 700; }}
   td.plain {{ font-size: 22px; color: #3a3c40; font-weight: 600; }}
   .key {{ margin-top: 24px; font-size: 19px; color: #5c5f66; line-height: 1.5; }}
   .wm {{ display: block; margin-top: 4px; font-size: 16px; font-weight: 500; color: #8a8d94; white-space: nowrap; }}
@@ -117,6 +119,7 @@ html = f"""<!DOCTYPE html>
   <span class="b" style="background:#ece3fb;color:#5b3aa8">Exp.</span>
   <span class="b" style="background:#e6ecf5;color:#3a4f78">Planned</span>
   <span class="b" style="background:#f8dede;color:#9c2b2b">No</span>
+  <span class="b" style="background:#ffffff;color:#6a6a6a;border:2px dashed #9a9a9a;padding:3px 8px">Not doc.</span>
   <span class="b" style="background:#ececec;color:#6a6a6a">Unk.</span></p>
   <p class="footer">Full sortable chart: <b style="color:#2f5fd8">dtiger1889-ops.github.io/agent-deck-comparison</b></p>
 </body></html>

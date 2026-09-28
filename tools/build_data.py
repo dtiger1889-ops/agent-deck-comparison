@@ -5,7 +5,7 @@ table + section 5 thinner entries). No web calls, no invented data."""
 import json
 import os
 
-MARKS = {"yes", "partial", "experimental", "planned", "no", "unknown", "n/a", "info"}
+MARKS = {"yes", "partial", "experimental", "planned", "no", "undocumented", "unknown", "n/a", "info"}
 
 # Groups render as full-width heading rows in the matrix view, in this fixed order.
 G_AGENTS = "Agents & supervision"
@@ -18,43 +18,43 @@ G_PROJECT = "Project & openness"
 GROUP_ORDER = [G_AGENTS, G_SESSIONS, G_USAGE, G_TASKS, G_REMOTE, G_HOOD, G_PROJECT]
 
 FEATURES = [
-    ("multi_provider_supervision", "Multi-provider agent supervision", "Can it drive more than one coding-agent CLI/tool at once.", G_AGENTS),
-    ("harness_count", "Coding agents supported", "How many different coding agents (Claude Code, Codex, Cursor and so on) it can run, per its own docs.", G_AGENTS),
-    ("needs_you_signal", "Needs-you signal quality", "How it tells you an agent is waiting on you, and how reliable that signal is.", G_AGENTS),
-    ("approve_deny_prompt", "Approve/deny a waiting permission prompt", "Whether you can answer an agent's permission prompt from the manager itself.", G_AGENTS),
-    ("cross_provider_delegation", "Cross-provider delegation visible in one place", "Handoffs between different providers/agents show up in one unified view.", G_AGENTS),
-    ("always_on_assistant", "Always-on assistant session", "A persistent standing assistant session you can reach any time (not a task-bound worker).", G_AGENTS),
-    ("conversation_gui_view", "Conversation (GUI) view of a session", "A chat-style view of a session's plan/edits/results, as opposed to raw terminal text.", G_SESSIONS),
-    ("real_terminal", "The real terminal of a session", "Whether you can drop into the session's actual terminal.", G_SESSIONS),
-    ("session_organization", "Session organization", "How sessions are grouped and browsed (list, worktrees, kanban, nested groups).", G_SESSIONS),
-    ("prompt_scratchpad", "Prompt scratchpad with insert-not-send", "A place to draft prompts and insert them into a session without immediately sending.", G_SESSIONS),
-    ("saved_prompt_library", "Saved prompt library", "Reusable, saved prompts/actions you can fire with prior context pre-attached.", G_SESSIONS),
-    ("builtin_editors_browser", "Built-in editors / browser", "Ships its own code/markdown editors and/or an embedded browser.", G_SESSIONS),
-    ("appearance_control", "Appearance control incl. host-terminal font", "How much you can customize its look, including your actual terminal's font/settings.", G_SESSIONS),
-    ("usage_hud", "Subscription usage HUD (from local logs)", "Shows your subscription usage/limits, read from local logs rather than a fragile API endpoint.", G_USAGE),
-    ("burn_rate_forecast", "Usage HUD with burn-rate + time-to-limit forecast", "Predicts when you'll hit your usage limit, not just showing current usage.", G_USAGE),
-    ("limit_governor", "Session-limit governor (park/resume at reset)", "Automatically pauses work near a usage limit and resumes after the reset.", G_USAGE),
-    ("account_hotswap", "Account switch / hot-swap without re-login", "Can switch between provider accounts without logging in again each time.", G_USAGE),
-    ("vault_task_source", "Personal-notes-vault task source", "Can read your own personal notes vault (e.g. Obsidian) as its task queue, instead of only an issue tracker.", G_TASKS),
-    ("issue_tracker_pipeline", "Issue-tracker / PR pipeline to merge", "Integrates with GitHub/GitLab/Linear/Jira issues and pull requests.", G_TASKS),
-    ("worktree_management", "Worktree management for agents", "Manages isolated git worktrees per agent/task on your behalf.", G_TASKS),
-    ("planner_orchestrator", "Planner/orchestrator that splits and runs work", "A higher-level agent that breaks a goal into sub-tasks and runs them.", G_TASKS),
-    ("agent_to_agent_messaging", "Agent-to-agent messaging across sessions", "Sessions or orchestrators can message each other directly.", G_TASKS),
-    ("knowledge_base", "Knowledge base agents can query", "A notes/knowledge store agents can query before acting.", G_TASKS),
-    ("native_mobile_app", "Native mobile app", "A dedicated iOS/Android app, as opposed to reusing a terminal app.", G_REMOTE),
-    ("phone_no_new_app", "Phone access without a new app/account", "Can be reached from a phone using tools you already have, no new app or account.", G_REMOTE),
-    ("remote_ssh", "Remote hosts (SSH)", "Can drive or edit sessions on a remote machine over SSH.", G_REMOTE),
-    ("voice_input", "Voice input", "Can dictate to it by voice.", G_REMOTE),
-    ("app_shell", "App shell", "What the desktop/app UI is actually built on: Electron (with version, if pinned), Tauri 2, native, terminal UI, web app, or hosted cloud service.", G_HOOD),
-    ("languages", "Main languages", "The top 2-3 languages in the project's own repo, from GitHub's language breakdown, with rough percentages.", G_HOOD),
-    ("background_process", "Background process", "Whether it runs a separate daemon/server process alongside the UI, and what it does, per its own source or docs.", G_HOOD),
-    ("download_size", "Download size", "The latest release's desktop installer size(s) per OS, from the release's own asset listing. Not a claim about how much it uses once running.", G_HOOD),
-    ("ram_vs_claude_desktop", "Memory weight vs Claude Desktop (estimate)", "A labeled ESTIMATE, not a measurement: Claude Desktop is itself an Electron app, so this compares app shells only. Electron ~= about the same (heavier if it also runs a background daemon or several windows/an embedded terminal — the value says which); Tauri/system-WebView = lighter; terminal UI = much lighter; hosted service = cloud, local cost is a browser tab; unknown shell = not verified. The coding agents themselves (Claude Code, Codex, etc.) cost the same memory under every tool in this table — only the manager's own shell differs.", G_HOOD),
-    ("runs_in_terminal", "Runs inside a terminal you already have", "Lives inside your existing terminal app, rather than shipping its own app/window.", G_HOOD),
-    ("license_cost", "License / cost", "Open-source license, or commercial pricing model.", G_PROJECT),
-    ("extensibility", "Extensibility for others (plugins/SDK)", "Whether outside developers can extend it via a plugin or SDK surface.", G_PROJECT),
-    ("teams_multiuser", "Teams / multi-user", "Built for more than one person to use together, as opposed to single-user.", G_PROJECT),
-    ("stability_maturity", "Stability / maturity (honest)", "How mature and stable it currently is, stated plainly.", G_PROJECT),
+    ("multi_provider_supervision", "Runs more than one kind of agent", "Can drive more than one coding agent (Claude Code, Codex and so on) side by side.", G_AGENTS),
+    ("harness_count", "Coding agents supported", "How many different coding agents it can run, per its own docs.", G_AGENTS),
+    ("needs_you_signal", "Alerts when you're needed", "How it tells you an agent is waiting on you.", G_AGENTS),
+    ("approve_deny_prompt", "Answer permission prompts", "Approve or deny an agent's permission request from the manager.", G_AGENTS),
+    ("cross_provider_delegation", "Hand-offs between agents in one view", "Work passed from one agent to another shows up in the same place.", G_AGENTS),
+    ("always_on_assistant", "Always-on assistant", "A standing assistant session you can reach any time.", G_AGENTS),
+    ("conversation_gui_view", "Chat view of a session", "Read a session as a conversation instead of raw terminal text.", G_SESSIONS),
+    ("real_terminal", "Open the real terminal", "Drop into the session's actual terminal.", G_SESSIONS),
+    ("session_organization", "How sessions are organized", "List, worktrees, kanban or nested groups.", G_SESSIONS),
+    ("prompt_scratchpad", "Prompt drafts", "Draft prompts and insert them without sending.", G_SESSIONS),
+    ("saved_prompt_library", "Saved prompts", "Reusable prompts you can fire with context attached.", G_SESSIONS),
+    ("builtin_editors_browser", "Built-in editor / browser", "Ships its own editor or browser.", G_SESSIONS),
+    ("appearance_control", "Look and font control", "How far you can change its look, including your terminal's font.", G_SESSIONS),
+    ("usage_hud", "Shows your usage limits", "Your subscription usage and resets, read from local logs.", G_USAGE),
+    ("burn_rate_forecast", "Predicts when you'll hit a limit", "Burn rate and time to the limit, not just current usage.", G_USAGE),
+    ("limit_governor", "Pause and resume at usage limits", "Pauses work near a limit and picks it back up after the reset.", G_USAGE),
+    ("account_hotswap", "Switch accounts without logging in again", "Move between provider accounts without re-login.", G_USAGE),
+    ("vault_task_source", "Tasks from your notes vault", "Reads your own notes vault (such as Obsidian) as the task list.", G_TASKS),
+    ("issue_tracker_pipeline", "Issues and PRs through to merge", "Works with GitHub, GitLab, Linear or Jira issues and pull requests.", G_TASKS),
+    ("worktree_management", "Manages git worktrees", "Gives each agent or task its own git worktree.", G_TASKS),
+    ("planner_orchestrator", "Planner that splits the work", "Breaks a goal into parts and runs them.", G_TASKS),
+    ("agent_to_agent_messaging", "Agents message each other", "One session can message or query another.", G_TASKS),
+    ("knowledge_base", "Knowledge base for agents", "A notes store agents can look things up in.", G_TASKS),
+    ("native_mobile_app", "Phone app", "A dedicated iOS or Android app.", G_REMOTE),
+    ("phone_no_new_app", "Phone access with no new app", "Reach it from your phone with tools you already have.", G_REMOTE),
+    ("remote_ssh", "Remote machines over SSH", "Run or edit sessions on another machine.", G_REMOTE),
+    ("voice_input", "Voice input", "Dictate to it.", G_REMOTE),
+    ("app_shell", "App shell", "What the app is built on: Electron, Tauri, a terminal UI, or a hosted service.", G_HOOD),
+    ("languages", "Main languages", "Top languages in its repo, from GitHub's breakdown.", G_HOOD),
+    ("background_process", "Background process", "Whether it runs a separate server or daemon next to the app.", G_HOOD),
+    ("download_size", "Download size", "Installer size from its latest release. Not memory use.", G_HOOD),
+    ("ram_vs_claude_desktop", "Memory vs Claude Desktop (estimate)", "An estimate from the app shell, not a measurement. Claude Desktop is Electron, so Electron is about the same, Tauri lighter, a terminal app much lighter. The agents themselves cost the same under every tool.", G_HOOD),
+    ("runs_in_terminal", "Runs in your own terminal", "Lives inside the terminal you already use.", G_HOOD),
+    ("license_cost", "License / cost", "Open-source license or pricing.", G_PROJECT),
+    ("extensibility", "Plugins / SDK", "Outside developers can extend it.", G_PROJECT),
+    ("teams_multiuser", "Teams", "Built for more than one person.", G_PROJECT),
+    ("stability_maturity", "Maturity", "How far along and how stable it is.", G_PROJECT),
 ]
 
 def c(mark, value):
@@ -98,14 +98,14 @@ orca = {
         "extensibility": c("partial", "CLI supports \"any agent\""),
         "teams_multiuser": c("unknown", "Not verified"),
         "voice_input": c("unknown", "Not verified"),
-        "license_cost": c("yes", "MIT, free, uses your own subscriptions"),
+        "license_cost": c("info", "MIT, free, uses your own subscriptions"),
         "app_shell": c("info", "Electron 43.7.5"),
         "languages": c("info", "TypeScript ~95%, JavaScript ~4%, Swift <1%"),
         "background_process": c("info", "Yes: a daemon-host process (docs/reference/windows-daemon-host-relocation.md)"),
         "download_size": c("info", "v1.4.216: 193 MB Windows setup.exe, 218-226 MB mac dmg, 207-209 MB Linux AppImage"),
         "ram_vs_claude_desktop": c("info", "Heavier (Electron + background daemon)"),
         "runs_in_terminal": c("no", "Embeds its own GPU terminal instead"),
-        "stability_maturity": c("partial", "\"Features shipped daily\"; chat, orchestration and mobile are experimental"),
+        "stability_maturity": c("info", "\"Features shipped daily\"; chat, orchestration and mobile are experimental"),
     },
 }
 
@@ -124,9 +124,9 @@ velaterm = {
         "conversation_gui_view": c("yes", "Default view, plus the same session's terminal view alongside it"),
         "real_terminal": c("yes", "Each session is a real PTY that keeps running in the background"),
         "session_organization": c("yes", "Projects, then nested groups to any depth, then sessions"),
-        "usage_hud": c("no", "Not claimed anywhere in the posts"),
-        "burn_rate_forecast": c("no", "Not claimed"),
-        "limit_governor": c("no", "Not claimed"),
+        "usage_hud": c("undocumented", "Not mentioned in its launch posts"),
+        "burn_rate_forecast": c("undocumented", "Not mentioned in its launch posts"),
+        "limit_governor": c("undocumented", "Not mentioned in its launch posts"),
         "vault_task_source": c("no", "Has a notes knowledge base, not a task queue"),
         "issue_tracker_pipeline": c("unknown", "Not claimed either way"),
         "worktree_management": c("yes", "Optional per launch: none, one shared worktree, or one per session"),
@@ -146,14 +146,14 @@ velaterm = {
         "extensibility": c("unknown", "Not claimed either way"),
         "teams_multiuser": c("partial", "Account device list"),
         "voice_input": c("unknown", "Not claimed either way"),
-        "license_cost": c("yes", "MIT, free, uses your own subscriptions"),
+        "license_cost": c("info", "MIT, free, uses your own subscriptions"),
         "app_shell": c("info", "Tauri 2 (Rust + system WebView); repo also carries a secondary Electron shell, not the primary build"),
         "languages": c("info", "TypeScript ~46%, Rust ~39%, Python ~8%"),
         "background_process": c("unknown", "not verified: a minimal headless `vela-server` build exists but isn't documented as running alongside the desktop app"),
         "download_size": c("info", "v0.2.5: 59 MB Windows min-setup / 148 MB full-setup, 49-51 MB mac dmg"),
         "ram_vs_claude_desktop": c("info", "Lighter"),
         "runs_in_terminal": c("no", "Own app; the Windows installer bundles Git Bash"),
-        "stability_maturity": c("unknown", "v0.2.x, launched 2026-09-28, not independently verified"),
+        "stability_maturity": c("info", "v0.2.x, launched 2026-09-28, not independently verified"),
     },
 }
 
@@ -194,14 +194,14 @@ pantheon = {
         "extensibility": c("no", "None"),
         "teams_multiuser": c("no", "Single-user by design"),
         "voice_input": c("no", "None"),
-        "license_cost": c("yes", "MIT, free; pre-release, published as-is; uses your own subscriptions"),
+        "license_cost": c("info", "MIT, free; pre-release, published as-is; uses your own subscriptions"),
         "app_shell": c("info", "Terminal UI: Python 3.12 + Textual, running inside your existing terminal, no separate installer"),
         "languages": c("info", "Python (Textual TUI)"),
         "background_process": c("info", "Yes: a separate small Python usage-collector process alongside the Textual UI process"),
         "download_size": c("info", "No installer; runs from source (git clone + Python)"),
         "ram_vs_claude_desktop": c("info", "Much lighter"),
         "runs_in_terminal": c("yes", "Only one in this table that runs entirely inside a terminal you already have"),
-        "stability_maturity": c("partial", "Personal, pre-release; its terminal-multiplexer server froze four times on one day (cause still open)"),
+        "stability_maturity": c("info", "Personal, pre-release; its terminal-multiplexer server froze four times on one day (cause still open)"),
     },
 }
 
@@ -242,14 +242,14 @@ paseo = {
         "extensibility": c("yes", "Best in this table: MCP server, CLI and TypeScript SDK for automation"),
         "teams_multiuser": c("yes", "Teams plus triggers from GitHub/Slack/Discord"),
         "voice_input": c("yes", "Yes"),
-        "license_cost": c("yes", "Apache-2.0, free"),
+        "license_cost": c("info", "Apache-2.0, free"),
         "app_shell": c("info", "Electron 44.2.0"),
         "languages": c("info", "TypeScript ~98%, JavaScript ~1%"),
         "background_process": c("info", "Yes: a Node daemon (package.json `dev:server` runs `PASEO_LISTEN=... dev-daemon.sh`)"),
         "download_size": c("info", "v0.10.0: 137 MB Windows Setup x64, 186 MB mac x64 dmg, 129 MB Linux .deb"),
         "ram_vs_claude_desktop": c("info", "Heavier (Electron + background daemon)"),
         "runs_in_terminal": c("no", "Own desktop/mobile/web app"),
-        "stability_maturity": c("yes", "Mature"),
+        "stability_maturity": c("info", "Mature"),
     },
 }
 
@@ -290,14 +290,14 @@ kepler = {
         "extensibility": c("partial", "Partial"),
         "teams_multiuser": c("yes", "Org-level analytics on agent spend"),
         "voice_input": c("no", "None"),
-        "license_cost": c("partial", "Commercial with a free tier"),
+        "license_cost": c("info", "Commercial with a free tier"),
         "app_shell": c("unknown", "not verified: not stated on gitkraken.com/kepler or help.gitkraken.com; not extrapolated from GitKraken's separate main git client"),
         "languages": c("unknown", "not verified: closed source, no public repo"),
         "background_process": c("unknown", "not verified"),
         "download_size": c("unknown", "not verified: not stated on the vendor's pages"),
         "ram_vs_claude_desktop": c("unknown", "not verified: app shell unknown"),
         "runs_in_terminal": c("no", "Own desktop app"),
-        "stability_maturity": c("yes", "Commercial product"),
+        "stability_maturity": c("info", "Commercial product"),
     },
 }
 
@@ -338,14 +338,14 @@ ao = {
         "extensibility": c("partial", "Partial"),
         "teams_multiuser": c("partial", "Partial"),
         "voice_input": c("no", "None"),
-        "license_cost": c("partial", "Open-ish, roughly 11k stars"),
+        "license_cost": c("info", "Open-ish, roughly 11k stars"),
         "app_shell": c("info", "Electron ^33.0.0 (frontend/package.json), plus a separate Go backend"),
         "languages": c("info", "Go ~59%, TypeScript ~38%"),
         "background_process": c("info", "Yes: a separate Go backend process (repo has a distinct backend/ Go module via go.work, apart from the Electron frontend/)"),
         "download_size": c("info", "v0.13.2-nightly: 136 MB Windows Setup.exe, 177-189 MB mac zip, 181 MB Linux AppImage"),
         "ram_vs_claude_desktop": c("info", "Heavier (Electron + background daemon)"),
         "runs_in_terminal": c("no", "Own desktop app"),
-        "stability_maturity": c("partial", "Active development"),
+        "stability_maturity": c("info", "Active development"),
     },
 }
 
@@ -391,53 +391,53 @@ t3code = thin(
     "T3 Code", "https://github.com/pingdotgg/t3code", "agent manager", "your machine + mobile",
     "MIT", "Site/discussion pass only, 2026-09-07. All-platform desktop plus mobile; standout feature is switching models mid-conversation.",
     {"native_mobile_app": c("yes", "Mobile app"),
-     "license_cost": c("yes", "MIT")},
+     "license_cost": c("info", "MIT")},
 )
 
 superset = thin(
     "Superset", "https://superset.sh", "agent manager", "your machine (macOS, experimental Linux)",
     "Elastic-2.0", "Site/discussion pass only, 2026-09-07. Ships a TypeScript SDK and MCP server so agents can spawn agents.",
     {"extensibility": c("yes", "TypeScript SDK plus MCP server so agents can spawn agents"),
-     "license_cost": c("yes", "Elastic-2.0")},
+     "license_cost": c("info", "Elastic-2.0")},
 )
 
 conductor = thin(
     "Conductor", "https://www.conductor.build", "agent manager", "your machine (macOS only)",
     "proprietary", "Site/discussion pass only, 2026-09-07. Checkpoint/rollback called best-in-class.",
-    {"license_cost": c("no", "Proprietary")},
+    {"license_cost": c("info", "Proprietary")},
 )
 
 jenny = thin(
     "Jenny", "https://github.com/SaltyPretz3l/jenny", "other tool we looked at", "your machine",
     "MIT", "A single-agent local-LLM chat app and IDE (llama.cpp / vLLM / any OpenAI-compatible endpoint), not a fleet manager, so it doesn't compete on most rows here. Recorded for its file-edit checkpointing, destructive-command approval, and a scratchpad/calendar the model can read and modify.",
     {"multi_provider_supervision": c("no", "Single local-model chat app, not a multi-agent fleet manager"),
-     "license_cost": c("yes", "MIT")},
+     "license_cost": c("info", "MIT")},
 )
 
 micracode = thin(
     "micracode", "https://github.com/Jamessdevops/micracode", "other tool we looked at", "your machine",
     "open-source", "An AI web-app builder (Next.js, exports components as a zip), a different category from a fleet manager; recorded for completeness only. Local-model support is planned by its author.",
     {"multi_provider_supervision": c("no", "App builder, not a fleet/agent manager"),
-     "license_cost": c("yes", "open-source")},
+     "license_cost": c("info", "open-source")},
 )
 
 teleclod = thin(
     "Teleclod", "https://teleclod.com", "agent manager", "cloud (Windows/macOS/Linux/Android/browser plus a Chrome extension)",
     "commercial (Free / EUR49 Pro / EUR99 Studio)", "Site-only pass, 2026-09-22; no independent verification found (no reviews, repo, or discussion beyond the single source comment).",
     {"multi_provider_supervision": c("yes", "Claims 14+ providers including Claude Code, Codex, OpenRouter, Ollama, Kimi"),
-     "usage_hud": c("no", "No usage/burn-rate/token HUD on the page"),
+     "usage_hud": c("undocumented", "Not mentioned on its site"),
      "vault_task_source": c("no", "It is its own task store"),
      "limit_governor": c("no", "None"),
      "session_organization": c("yes", "Task list, kanban, and a global dashboard"),
      "runs_in_terminal": c("no", "Replaces the terminal outright"),
-     "license_cost": c("no", "Closed-source, paid tiers")},
+     "license_cost": c("info", "Closed-source, paid tiers")},
 )
 
 oyren = thin(
     "Oyren", "https://oyren.ai/development", "agent manager", "cloud (remote codespaces, deliberately not your machine)",
     "commercial, hourly", "Site-verified, 2026-09-23. Remote disposable codespaces with several agent CLIs preinstalled and tmux in every codespace.",
     {"multi_provider_supervision": c("yes", "Claude Code, Codex, Cursor, opencode, Qwen Code, DeepSeek Harness, Antigravity preinstalled"),
-     "usage_hud": c("no", "No usage/burn-rate/token HUD on the page"),
+     "usage_hud": c("undocumented", "Not mentioned on its site"),
      "vault_task_source": c("no", "Its own kanban board is the tracker"),
      "limit_governor": c("partial", "A blocked card emails the human a specific question and resumes on reply, but only for one card, not a whole session against a usage window"),
      "issue_tracker_pipeline": c("yes", "Its own kanban board with an importance/urgency matrix and calendar/milestone views, read and written by agents over its own MCP server"),
@@ -447,7 +447,7 @@ oyren = thin(
      "background_process": c("n/a", "It is itself the remote machine; there is no separate local process to report"),
      "ram_vs_claude_desktop": c("info", "Runs in the cloud (local cost: a browser tab)"),
      "runs_in_terminal": c("no", "Cloud codespace, not a local terminal tool"),
-     "license_cost": c("no", "Commercial: hourly compute plus an optional credit wallet")},
+     "license_cost": c("info", "Commercial: hourly compute plus an optional credit wallet")},
 )
 
 TOOLS = [orca, velaterm, pantheon, paseo, kepler, ao,

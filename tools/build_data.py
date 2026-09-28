@@ -19,7 +19,7 @@ GROUP_ORDER = [G_AGENTS, G_SESSIONS, G_USAGE, G_TASKS, G_REMOTE, G_HOOD, G_PROJE
 
 FEATURES = [
     ("multi_provider_supervision", "Multi-provider agent supervision", "Can it drive more than one coding-agent CLI/tool at once.", G_AGENTS),
-    ("harness_count", "Harness count", "How many distinct agent CLIs/tools it can drive.", G_AGENTS),
+    ("harness_count", "Coding agents supported", "How many different coding agents (Claude Code, Codex, Cursor and so on) it can run, per its own docs.", G_AGENTS),
     ("needs_you_signal", "Needs-you signal quality", "How it tells you an agent is waiting on you, and how reliable that signal is.", G_AGENTS),
     ("approve_deny_prompt", "Approve/deny a waiting permission prompt", "Whether you can answer an agent's permission prompt from the manager itself.", G_AGENTS),
     ("cross_provider_delegation", "Cross-provider delegation visible in one place", "Handoffs between different providers/agents show up in one unified view.", G_AGENTS),
@@ -70,7 +70,7 @@ orca = {
     "is_authors_own": False,
     "features": {
         "multi_provider_supervision": c("yes", "27+ agents / \"any CLI agent\""),
-        "harness_count": c("yes", "27+ (\"any CLI agent\")"),
+        "harness_count": c("info", "27+ (\"any CLI agent\")"),
         "needs_you_signal": c("yes", "Hook-driven + unread/attention state"),
         "approve_deny_prompt": c("unknown", "Not verified"),
         "conversation_gui_view": c("experimental", "Experimental Chat UI"),
@@ -118,7 +118,7 @@ velaterm = {
     "is_authors_own": False,
     "features": {
         "multi_provider_supervision": c("yes", "8+ named agents (Claude Code, Codex, OpenCode, Copilot, Cursor, Antigravity, Cline, Pi) \"and more\""),
-        "harness_count": c("yes", "8+ (Claude, Codex, OpenCode, Copilot, Cursor, Antigravity, Cline, Pi...)"),
+        "harness_count": c("info", "8+ (Claude Code, Codex, OpenCode, Copilot, Cursor, Antigravity, Cline, Pi...)"),
         "needs_you_signal": c("yes", "Live status plus phone push (underlying mechanism not stated)"),
         "approve_deny_prompt": c("yes", "\"Answer agents\" from the phone"),
         "conversation_gui_view": c("yes", "Default view, plus the same session's terminal view alongside it"),
@@ -166,13 +166,13 @@ pantheon = {
     "is_authors_own": True,
     "features": {
         "multi_provider_supervision": c("yes", "Hooks-based"),
-        "harness_count": c("partial", "2 harnesses today, local-model support planned"),
+        "harness_count": c("info", "2 (Claude Code, Codex); local models planned"),
         "needs_you_signal": c("yes", "Exact: derived from hook events, not inferred from silence"),
         "approve_deny_prompt": c("partial", "Allow/deny/view a waiting prompt from the deck, built, not yet tested live"),
         "conversation_gui_view": c("partial", "Detail panel shows recent actions and the latest ask read from the transcript, not a full chat view"),
         "real_terminal": c("yes", "Clicking a session opens its own real tmux window"),
         "session_organization": c("yes", "Sidebar session list plus a live fleet table"),
-        "usage_hud": c("partial", "Local logs shipped; reading the same account-usage numbers claude.ai shows is built, not yet tested live"),
+        "usage_hud": c("yes", "Shipped, from local logs; reading the same account-usage numbers claude.ai shows is built, not yet tested live"),
         "burn_rate_forecast": c("partial", "Built, with ranges; not yet checked against real usage"),
         "limit_governor": c("partial", "Built: wind down near a limit, park, and resume after reset, plus limit hand-off to another provider and timed starts; not yet tested live, off by default"),
         "vault_task_source": c("yes", "Unique in this table: reads a personal notes vault directly as its live task source"),
@@ -214,7 +214,7 @@ paseo = {
     "is_authors_own": False,
     "features": {
         "multi_provider_supervision": c("yes", "Deep per-provider SDK adapters"),
-        "harness_count": c("yes", "~39 agent harnesses"),
+        "harness_count": c("info", "~39"),
         "needs_you_signal": c("yes", "SDK-level"),
         "approve_deny_prompt": c("yes", "Dedicated control-plane tool to respond to a permission request"),
         "conversation_gui_view": c("yes", "Best in this table"),
@@ -262,7 +262,7 @@ kepler = {
     "is_authors_own": False,
     "features": {
         "multi_provider_supervision": c("yes", "Agent-agnostic model choice per task"),
-        "harness_count": c("yes", "\"Any agent\""),
+        "harness_count": c("info", "\"Any agent\" (not counted)"),
         "needs_you_signal": c("yes", "Yes"),
         "approve_deny_prompt": c("unknown", "Not stated"),
         "conversation_gui_view": c("yes", "Agent Graph: live tree of every session, turn, tool call and subagent"),
@@ -310,7 +310,7 @@ ao = {
     "is_authors_own": False,
     "features": {
         "multi_provider_supervision": c("yes", "25 harnesses, per-project defaults"),
-        "harness_count": c("yes", "25"),
+        "harness_count": c("info", "25+"),
         "needs_you_signal": c("yes", "Escalates only what needs a human"),
         "approve_deny_prompt": c("yes", "Escalations to a human"),
         "conversation_gui_view": c("yes", "Yes"),

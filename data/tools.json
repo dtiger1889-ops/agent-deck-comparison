@@ -10,8 +10,8 @@
     },
     {
       "key": "harness_count",
-      "label": "Harness count",
-      "description": "How many distinct agent CLIs/tools it can drive.",
+      "label": "Coding agents supported",
+      "description": "How many different coding agents (Claude Code, Codex, Cursor and so on) it can run, per its own docs.",
       "group": "Agents & supervision"
     },
     {
@@ -251,7 +251,7 @@
         },
         "harness_count": {
           "value": "27+ (\"any CLI agent\")",
-          "mark": "yes"
+          "mark": "info"
         },
         "needs_you_signal": {
           "value": "Hook-driven + unread/attention state",
@@ -410,8 +410,8 @@
           "mark": "yes"
         },
         "harness_count": {
-          "value": "8+ (Claude, Codex, OpenCode, Copilot, Cursor, Antigravity, Cline, Pi...)",
-          "mark": "yes"
+          "value": "8+ (Claude Code, Codex, OpenCode, Copilot, Cursor, Antigravity, Cline, Pi...)",
+          "mark": "info"
         },
         "needs_you_signal": {
           "value": "Live status plus phone push (underlying mechanism not stated)",
@@ -570,8 +570,8 @@
           "mark": "yes"
         },
         "harness_count": {
-          "value": "2 harnesses today, local-model support planned",
-          "mark": "partial"
+          "value": "2 (Claude Code, Codex); local models planned",
+          "mark": "info"
         },
         "needs_you_signal": {
           "value": "Exact: derived from hook events, not inferred from silence",
@@ -594,8 +594,8 @@
           "mark": "yes"
         },
         "usage_hud": {
-          "value": "Local logs shipped; reading the same account-usage numbers claude.ai shows is built, not yet tested live",
-          "mark": "partial"
+          "value": "Shipped, from local logs; reading the same account-usage numbers claude.ai shows is built, not yet tested live",
+          "mark": "yes"
         },
         "burn_rate_forecast": {
           "value": "Built, with ranges; not yet checked against real usage",
@@ -730,8 +730,8 @@
           "mark": "yes"
         },
         "harness_count": {
-          "value": "~39 agent harnesses",
-          "mark": "yes"
+          "value": "~39",
+          "mark": "info"
         },
         "needs_you_signal": {
           "value": "SDK-level",
@@ -890,8 +890,8 @@
           "mark": "yes"
         },
         "harness_count": {
-          "value": "\"Any agent\"",
-          "mark": "yes"
+          "value": "\"Any agent\" (not counted)",
+          "mark": "info"
         },
         "needs_you_signal": {
           "value": "Yes",
@@ -1050,8 +1050,8 @@
           "mark": "yes"
         },
         "harness_count": {
-          "value": "25",
-          "mark": "yes"
+          "value": "25+",
+          "mark": "info"
         },
         "needs_you_signal": {
           "value": "Escalates only what needs a human",

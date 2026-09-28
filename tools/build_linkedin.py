@@ -16,7 +16,7 @@ FEATURE_ORDER = [
     "planner_orchestrator", "native_mobile_app", "runs_in_terminal",
 ]
 SHORT_LABEL = {
-    "harness_count": "Harness count",
+    "harness_count": "Coding agents supported",
     "app_shell": "App shell",
     "usage_hud": "Usage HUD (local logs)",
     "burn_rate_forecast": "Burn-rate forecast",
@@ -26,6 +26,14 @@ SHORT_LABEL = {
     "planner_orchestrator": "Planner/orchestrator",
     "native_mobile_app": "Native mobile app",
     "runs_in_terminal": "Runs in your terminal",
+}
+SHORT_AGENTS = {
+    "Orca": "27+",
+    "VelaTerm": "8+",
+    "Pantheon": "2",
+    "Paseo": "~39",
+    "GitKraken Kepler": "Any (claimed)",
+    "Agent Orchestrator (AO)": "25+",
 }
 DISPLAY_NAME = {"Agent Orchestrator (AO)": "AO", "GitKraken Kepler": "Kepler"}
 SHORT_SHELL = {
@@ -58,7 +66,9 @@ def badge_html(cell):
 
 rows_html = []
 for f in features:
-    if f["key"] == "app_shell":
+    if f["key"] == "harness_count":
+        cells = "".join(f'<td class="plain">{SHORT_AGENTS.get(t["name"], "not verified")}</td>' for t in tools)
+    elif f["key"] == "app_shell":
         cells = "".join(f'<td class="plain">{SHORT_SHELL.get(t["name"], "not verified")}</td>' for t in tools)
     else:
         cells = "".join(f'<td>{badge_html(t["features"][f["key"]])}</td>' for t in tools)

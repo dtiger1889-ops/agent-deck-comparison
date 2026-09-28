@@ -61,7 +61,8 @@
     color: var(--text);
     line-height: 1.45;
   }
-  header, footer, main { max-width: 1200px; margin: 0 auto; padding: 20px 16px; }
+  header, footer { max-width: 1200px; margin: 0 auto; padding: 20px 16px; }
+  main { max-width: 1600px; margin: 0 auto; padding: 0 16px 20px; }
   h1 { font-size: 1.5rem; margin: 0 0 8px; }
   .sub { color: var(--muted); font-size: 0.95rem; max-width: 70ch; }
   .note {
@@ -98,7 +99,9 @@
   }
   .view-toggle button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
   .table-scroll {
-    overflow-x: auto;
+    overflow: auto;
+    max-height: calc(100vh - 32px);
+    overscroll-behavior: contain;
     border: 1px solid var(--border);
     border-radius: 8px;
     max-width: 100%;
@@ -139,11 +142,21 @@
   .badge-unknown { background: var(--unknown-bg); color: var(--unknown-fg); }
   .badge-na { background: var(--na-bg); color: var(--na-fg); }
   .badge-info { background: var(--info-bg); color: var(--info-fg); }
-  .group-row th, .group-row td {
+  .group-row th {
     background: var(--group-bg); color: var(--group-fg);
     font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em;
-    padding: 7px 10px; position: sticky; left: 0;
+    padding: 0; cursor: pointer; user-select: none;
   }
+  .group-row th:hover { color: var(--accent); }
+  .group-label { position: sticky; left: 0; display: inline-block; padding: 8px 10px; }
+  .group-count { font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--muted); margin-left: 6px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 0 0 12px; font-size: 0.85rem; }
+  .chips .chips-label { color: var(--muted); margin-right: 2px; }
+  .chip { border: 1px solid var(--border); background: var(--panel); color: var(--text); border-radius: 999px; padding: 4px 10px; font-size: 0.82rem; cursor: pointer; }
+  .chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .chip-link { background: none; border: none; color: var(--accent); cursor: pointer; font-size: 0.82rem; padding: 4px; text-decoration: underline; }
+  body.compact .cell-value, body.compact .feature-desc { display: none; }
+  body.compact th, body.compact td { padding-top: 5px; padding-bottom: 5px; }
   .cell-value { display: block; margin-top: 3px; color: var(--muted); font-size: 0.78rem; }
   .feature-label { font-weight: 600; }
   .feature-desc { display: block; color: var(--muted); font-size: 0.78rem; font-weight: normal; margin-top: 2px; }
@@ -182,7 +195,11 @@
     </label>
     <input type="text" id="filter-search" placeholder="Filter features…">
     <label><input type="checkbox" id="filter-hide-unknown"> Hide unknown-only rows</label>
+    <label><input type="checkbox" id="filter-diff"> Only rows where tools differ</label>
+    <label><input type="checkbox" id="compact"> Compact (badges only)</label>
   </div>
+  <div class="chips" id="tool-chips"></div>
+  <div class="chips" id="section-chips"></div>
 
   <div id="view-matrix" class="table-scroll">
     <table id="matrix-table"></table>
@@ -212,6 +229,10 @@ let sortDir = 1;
 let bytoolSortKey = "name";
 let bytoolSortDir = 1;
 let currentView = "matrix";
+const DEFAULT_TOOLS = ["Orca", "VelaTerm", "Pantheon", "Paseo", "GitKraken Kepler", "Agent Orchestrator (AO)"];
+let shownTools = null;            // tool names picked in the Tools chips
+let hiddenSections = new Set();   // sections switched off in the Sections chips
+let collapsed = new Set();        // sections collapsed to their heading
 
 function badge(cell) {
   const mark = cell.mark;
@@ -232,13 +253,19 @@ function badge(cell) {
 
 function visibleTools() {
   const cat = document.getElementById("filter-category").value;
-  return DATA.tools.filter(t => cat === "all" || t.category === cat);
+  return DATA.tools.filter(t => (cat === "all" || t.category === cat) && shownTools.has(t.name));
 }
 
 function visibleFeatures(tools) {
   const q = document.getElementById("filter-search").value.trim().toLowerCase();
   const hideUnknown = document.getElementById("filter-hide-unknown").checked;
+  const diffOnly = document.getElementById("filter-diff").checked;
   return DATA.features.filter(f => {
+    if (hiddenSections.has(f.group)) return false;
+    if (diffOnly && tools.length > 1) {
+      const marks = new Set(tools.map(t => t.features[f.key].mark + "|" + (t.features[f.key].value || "")));
+      if (marks.size === 1) return false;
+    }
     if (q && !(f.label.toLowerCase().includes(q) || f.description.toLowerCase().includes(q))) return false;
     if (hideUnknown) {
       const allUnknown = tools.every(t => t.features[f.key].mark === "unknown");
@@ -283,8 +310,8 @@ function renderMatrix() {
   groupOrder.forEach(g => {
     const inGroup = features.filter(f => f.group === g);
     if (inGroup.length === 0) return;
-    rows.push({ type: "group", label: g });
-    sortWithinGroup(inGroup).forEach(f => rows.push({ type: "feature", feature: f }));
+    rows.push({ type: "group", label: g, count: inGroup.length });
+    if (!collapsed.has(g)) sortWithinGroup(inGroup).forEach(f => rows.push({ type: "feature", feature: f }));
   });
 
   const table = document.getElementById("matrix-table");
@@ -327,7 +354,19 @@ function renderMatrix() {
       tr.className = "group-row";
       const th = document.createElement("th");
       th.colSpan = 1 + tools.length;
-      th.textContent = row.label;
+      const lab = document.createElement("span");
+      lab.className = "group-label";
+      lab.textContent = (collapsed.has(row.label) ? "\u25B8 " : "\u25BE ") + row.label;
+      const cnt = document.createElement("span");
+      cnt.className = "group-count";
+      cnt.textContent = row.count + (row.count === 1 ? " row" : " rows");
+      lab.appendChild(cnt);
+      th.appendChild(lab);
+      th.title = collapsed.has(row.label) ? "Expand section" : "Collapse section";
+      th.addEventListener("click", () => {
+        if (collapsed.has(row.label)) collapsed.delete(row.label); else collapsed.add(row.label);
+        renderMatrix();
+      });
       tr.appendChild(th);
       tbody.appendChild(tr);
       return;
@@ -409,6 +448,43 @@ function renderByTool() {
   table.appendChild(tbody);
 }
 
+function chip(label, on, onClick) {
+  const b = document.createElement("button");
+  b.className = "chip" + (on ? " on" : "");
+  b.textContent = label;
+  b.setAttribute("aria-pressed", on ? "true" : "false");
+  b.addEventListener("click", onClick);
+  return b;
+}
+function chipLink(label, onClick) {
+  const b = document.createElement("button");
+  b.className = "chip-link";
+  b.textContent = label;
+  b.addEventListener("click", onClick);
+  return b;
+}
+function sectionOrder() {
+  return (DATA.group_order || []).length ? DATA.group_order : [...new Set(DATA.features.map(f => f.group))];
+}
+function renderChips() {
+  const tc = document.getElementById("tool-chips");
+  tc.innerHTML = '<span class="chips-label">Tools:</span>';
+  DATA.tools.forEach(t => tc.appendChild(chip(t.name, shownTools.has(t.name), () => {
+    if (shownTools.has(t.name)) shownTools.delete(t.name); else shownTools.add(t.name);
+    sortToolIdx = null; renderChips(); renderAll();
+  })));
+  tc.appendChild(chipLink("all", () => { shownTools = new Set(DATA.tools.map(t => t.name)); sortToolIdx = null; renderChips(); renderAll(); }));
+  tc.appendChild(chipLink("main six", () => { shownTools = new Set(DEFAULT_TOOLS); sortToolIdx = null; renderChips(); renderAll(); }));
+  const sc = document.getElementById("section-chips");
+  sc.innerHTML = '<span class="chips-label">Sections:</span>';
+  sectionOrder().forEach(g => sc.appendChild(chip(g, !hiddenSections.has(g), () => {
+    if (hiddenSections.has(g)) hiddenSections.delete(g); else hiddenSections.add(g);
+    renderChips(); renderMatrix();
+  })));
+  sc.appendChild(chipLink("all", () => { hiddenSections.clear(); collapsed.clear(); renderChips(); renderMatrix(); }));
+  sc.appendChild(chipLink("collapse all", () => { sectionOrder().forEach(g => collapsed.add(g)); renderMatrix(); }));
+}
+
 function renderAll() {
   renderMatrix();
   renderByTool();
@@ -427,12 +503,16 @@ document.getElementById("btn-bytool").addEventListener("click", () => setView("b
 document.getElementById("filter-category").addEventListener("change", renderAll);
 document.getElementById("filter-search").addEventListener("input", renderMatrix);
 document.getElementById("filter-hide-unknown").addEventListener("change", renderMatrix);
+document.getElementById("filter-diff").addEventListener("change", renderMatrix);
+document.getElementById("compact").addEventListener("change", e => document.body.classList.toggle("compact", e.target.checked));
 
 fetch("data/tools.json")
   .then(r => r.json())
   .then(data => {
     DATA = data;
+    shownTools = new Set(DEFAULT_TOOLS.filter(n => data.tools.some(t => t.name === n)));
     renderLegend();
+    renderChips();
     renderAll();
   })
   .catch(err => {

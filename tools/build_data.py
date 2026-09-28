@@ -45,6 +45,7 @@ FEATURES = [
     ("phone_no_new_app", "Phone access with no new app", "Reach it from your phone with tools you already have.", G_REMOTE),
     ("remote_ssh", "Remote machines over SSH", "Run or edit sessions on another machine.", G_REMOTE),
     ("voice_input", "Voice input", "Dictate to it.", G_REMOTE),
+    ("os", "Operating systems", "Which systems it runs on, plus phone or browser access, per its own release files or docs.", G_HOOD),
     ("app_shell", "App shell", "What the app is built on: Electron, Tauri, a terminal UI, or a hosted service.", G_HOOD),
     ("languages", "Main languages", "Top languages in its repo, from GitHub's breakdown.", G_HOOD),
     ("background_process", "Background process", "Whether it runs a separate server or daemon next to the app.", G_HOOD),
@@ -500,6 +501,27 @@ oyren = thin(
 TOOLS = [orca, velaterm, herdr, pantheon, paseo, kepler, ao,
          ccmanager, opencove, wave, vibekanban, t3code, superset, conductor,
          jenny, micracode, teleclod, oyren]
+
+# Operating systems: release assets / vendor pages as recorded in the source doc and the raw-evidence
+# file (2026-09-28). Anything not on record stays "not verified".
+OS = {
+    "Orca": c("info", "Windows, macOS, Linux; phone companion (beta)"),
+    "VelaTerm": c("info", "Windows, macOS, Linux; iOS/Android app; any browser"),
+    "herdr": c("info", "macOS, Linux, Windows (beta)"),
+    "Pantheon": c("info", "Windows only (MSYS2 + tmux); phone over SSH"),
+    "Paseo": c("info", "Windows, macOS, Linux; iOS/Android; web"),
+    "GitKraken Kepler": c("info", "Windows, macOS, Linux; mobile check-and-answer"),
+    "Agent Orchestrator (AO)": c("info", "Windows, macOS, Linux; mobile companion"),
+    "CCManager": c("info", "Linux, macOS"),
+    "T3 Code": c("info", "Windows, macOS, Linux; iOS/Android; web"),
+    "Superset": c("info", "macOS; Linux experimental"),
+    "Conductor": c("info", "macOS only"),
+    "Jenny": c("info", "Windows (macOS untested, no Linux)"),
+    "Teleclod": c("info", "Windows, macOS, Linux, Android; browser"),
+    "Oyren": c("info", "Any browser (hosted)"),
+}
+for t in TOOLS:
+    t["features"]["os"] = OS.get(t["name"], c("unknown", "not verified"))
 
 out = {
     "snapshot_date": "2026-09-28",

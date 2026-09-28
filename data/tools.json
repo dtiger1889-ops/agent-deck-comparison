@@ -165,6 +165,12 @@
       "group": "Remote & mobile"
     },
     {
+      "key": "os",
+      "label": "Operating systems",
+      "description": "Which systems it runs on, plus phone or browser access, per its own release files or docs.",
+      "group": "Under the hood"
+    },
+    {
       "key": "app_shell",
       "label": "App shell",
       "description": "What the app is built on: Electron, Tauri, a terminal UI, or a hosted service.",
@@ -392,6 +398,10 @@
         "stability_maturity": {
           "value": "\"Features shipped daily\"; chat, orchestration and mobile are experimental",
           "mark": "info"
+        },
+        "os": {
+          "value": "Windows, macOS, Linux; phone companion (beta)",
+          "mark": "info"
         }
       }
     },
@@ -551,6 +561,10 @@
         },
         "stability_maturity": {
           "value": "v0.2.x, launched 2026-09-28, not independently verified",
+          "mark": "info"
+        },
+        "os": {
+          "value": "Windows, macOS, Linux; iOS/Android app; any browser",
           "mark": "info"
         }
       }
@@ -712,6 +726,10 @@
         "stability_maturity": {
           "value": "v0.9.1, ~41k GitHub stars, fast-moving; Windows build is in beta",
           "mark": "info"
+        },
+        "os": {
+          "value": "macOS, Linux, Windows (beta)",
+          "mark": "info"
         }
       }
     },
@@ -871,6 +889,10 @@
         },
         "stability_maturity": {
           "value": "Personal, pre-release; its terminal-multiplexer server froze four times on one day (cause still open)",
+          "mark": "info"
+        },
+        "os": {
+          "value": "Windows only (MSYS2 + tmux); phone over SSH",
           "mark": "info"
         }
       }
@@ -1032,6 +1054,10 @@
         "stability_maturity": {
           "value": "Mature",
           "mark": "info"
+        },
+        "os": {
+          "value": "Windows, macOS, Linux; iOS/Android; web",
+          "mark": "info"
         }
       }
     },
@@ -1191,6 +1217,10 @@
         },
         "stability_maturity": {
           "value": "Commercial product",
+          "mark": "info"
+        },
+        "os": {
+          "value": "Windows, macOS, Linux; mobile check-and-answer",
           "mark": "info"
         }
       }
@@ -1352,6 +1382,10 @@
         "stability_maturity": {
           "value": "Active development",
           "mark": "info"
+        },
+        "os": {
+          "value": "Windows, macOS, Linux; mobile companion",
+          "mark": "info"
         }
       }
     },
@@ -1472,6 +1506,10 @@
         "voice_input": {
           "value": "not verified",
           "mark": "unknown"
+        },
+        "os": {
+          "value": "Linux, macOS",
+          "mark": "info"
         },
         "app_shell": {
           "value": "not verified",
@@ -1630,6 +1668,10 @@
           "mark": "unknown"
         },
         "voice_input": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "os": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1793,6 +1835,10 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "os": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "app_shell": {
           "value": "not verified",
           "mark": "unknown"
@@ -1950,6 +1996,10 @@
           "mark": "unknown"
         },
         "voice_input": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "os": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -2113,6 +2163,10 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "os": {
+          "value": "Windows, macOS, Linux; iOS/Android; web",
+          "mark": "info"
+        },
         "app_shell": {
           "value": "not verified",
           "mark": "unknown"
@@ -2272,6 +2326,10 @@
         "voice_input": {
           "value": "not verified",
           "mark": "unknown"
+        },
+        "os": {
+          "value": "macOS; Linux experimental",
+          "mark": "info"
         },
         "app_shell": {
           "value": "not verified",
@@ -2433,6 +2491,10 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "os": {
+          "value": "macOS only",
+          "mark": "info"
+        },
         "app_shell": {
           "value": "not verified",
           "mark": "unknown"
@@ -2593,6 +2655,10 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "os": {
+          "value": "Windows (macOS untested, no Linux)",
+          "mark": "info"
+        },
         "app_shell": {
           "value": "not verified",
           "mark": "unknown"
@@ -2750,6 +2816,10 @@
           "mark": "unknown"
         },
         "voice_input": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "os": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -2913,6 +2983,10 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "os": {
+          "value": "Windows, macOS, Linux, Android; browser",
+          "mark": "info"
+        },
         "app_shell": {
           "value": "not verified",
           "mark": "unknown"
@@ -3072,6 +3146,10 @@
         "voice_input": {
           "value": "not verified",
           "mark": "unknown"
+        },
+        "os": {
+          "value": "Any browser (hosted)",
+          "mark": "info"
         },
         "app_shell": {
           "value": "Hosted cloud service, browser-based, no local install (vendor: \"VS Code runs as web app in your browser while Zed editor is streamed\")",

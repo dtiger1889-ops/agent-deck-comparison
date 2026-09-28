@@ -281,7 +281,8 @@ function filterOptions(f) {
     return [["", "Any"], ["has", "Has it"], ["hasany", "Has it (incl. partial / exp.)"], ["no", "Doesn't have it"], ["undocumented", "Not documented"], ["unknown", "Unknown"]];
   }
   const cats = [...new Set(DATA.tools.map(t => category(f.key, t.features[f.key])))];
-  if (["harness_count", "languages", "download_size"].includes(f.key)) return null;   // counts and sizes: nothing useful to pick
+  if (["harness_count", "languages", "download_size"].includes(f.key)) return null;
+  if (f.key === "os") return [["", "Any"], ["os:Windows", "Runs on Windows"], ["os:macOS", "Runs on macOS"], ["os:Linux", "Runs on Linux"], ["os:browser", "Works in a browser"], ["unknown", "Not verified"]];   // counts and sizes: nothing useful to pick
   if (cats.length < 2 || cats.length > 8) return null;
   return [["", "Any"], ...cats.map(c => ["cat:" + c, c])];
 }
@@ -293,6 +294,7 @@ function passes(tool, key, opt) {
   if (opt === "no") return cell.mark === "no";
   if (opt === "unknown") return cell.mark === "unknown";
   if (opt === "undocumented") return cell.mark === "undocumented";
+  if (opt.startsWith("os:")) return cell.mark !== "unknown" && (cell.value || "").toLowerCase().includes(opt.slice(3).toLowerCase());
   if (opt.startsWith("cat:")) return category(key, cell) === opt.slice(4);
   return true;
 }

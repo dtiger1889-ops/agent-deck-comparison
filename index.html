@@ -159,9 +159,17 @@
   .seg button + button { border-left: 1px solid var(--border); }
   .seg button:hover { color: var(--accent); }
   .seg button.on { background: var(--sticky-bg); color: var(--text); }
+  .feat-filter { display: block; margin-top: 6px; }
+  .feat-filter select { font-size: 0.75rem; padding: 2px 4px; border: 1px solid var(--border); border-radius: 5px; background: var(--panel); color: var(--text); max-width: 100%; }
+  .feat-filter select.active { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+  .active-filters { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 0 0 10px; font-size: 0.85rem; }
+  .active-filters:empty { display: none; }
+  .af { border: 1px solid var(--accent); color: var(--accent); background: var(--panel); border-radius: 999px; padding: 3px 10px; font-size: 0.8rem; cursor: pointer; }
+  .af:hover { background: var(--accent); color: #fff; }
   .chips-sep { width: 1px; align-self: stretch; background: var(--border); margin: 2px 4px; }
   body.compact .cell-value, body.compact .feature-desc { display: none; }
   body.compact th, body.compact td { padding-top: 5px; padding-bottom: 5px; }
+  .fact-value { font-size: 0.82rem; }
   .cell-value { display: block; margin-top: 3px; color: var(--muted); font-size: 0.78rem; }
   .feature-label { font-weight: 600; }
   .feature-desc { display: block; color: var(--muted); font-size: 0.78rem; font-weight: normal; margin-top: 2px; }
@@ -205,6 +213,7 @@
   </div>
   <div class="chips" id="tool-chips"></div>
   <div class="chips" id="section-chips"></div>
+  <div class="active-filters" id="active-filters"></div>
 
   <div id="view-matrix" class="table-scroll">
     <table id="matrix-table"></table>
@@ -238,6 +247,42 @@ const DEFAULT_TOOLS = ["Orca", "VelaTerm", "Pantheon", "Paseo", "GitKraken Keple
 let shownTools = null;            // tool names picked in the Tools chips
 let hiddenSections = new Set();   // sections switched off in the Sections chips
 let collapsed = new Set();        // sections collapsed to their heading
+let featFilters = {};             // feature key -> chosen option value ("" = any)
+
+// Options for a feature row's "Show tools" filter.
+const HAS = new Set(["yes"]);
+const HAS_ANY = new Set(["yes", "partial", "experimental"]);
+function category(key, cell) {
+  // For fact rows (mark "info"), group the free-text value into a short type.
+  if (cell.mark === "unknown") return "Not verified";
+  const v = (cell.value || "").trim();
+  if (key === "app_shell") {
+    const m = v.match(/^(Electron|Tauri|Terminal UI|Hosted|Web|Native)/i);
+    return m ? (m[1].toLowerCase() === "tauri" ? "Tauri" : m[1]) : "Other";
+  }
+  return v.split(/ \(|;|:|,/)[0].trim() || "Other";
+}
+function filterOptions(f) {
+  const cells = DATA.tools.map(t => t.features[f.key]);
+  const isFact = cells.every(c => c.mark === "info" || c.mark === "unknown");
+  if (!isFact) {
+    return [["", "Any"], ["has", "Has it"], ["hasany", "Has it (incl. partial / exp.)"], ["no", "Doesn't have it"], ["unknown", "Unknown"]];
+  }
+  const cats = [...new Set(DATA.tools.map(t => category(f.key, t.features[f.key])))];
+  if (["harness_count", "languages", "download_size"].includes(f.key)) return null;   // counts and sizes: nothing useful to pick
+  if (cats.length < 2 || cats.length > 8) return null;
+  return [["", "Any"], ...cats.map(c => ["cat:" + c, c])];
+}
+function passes(tool, key, opt) {
+  const cell = tool.features[key];
+  if (!opt) return true;
+  if (opt === "has") return HAS.has(cell.mark);
+  if (opt === "hasany") return HAS_ANY.has(cell.mark);
+  if (opt === "no") return cell.mark === "no";
+  if (opt === "unknown") return cell.mark === "unknown";
+  if (opt.startsWith("cat:")) return category(key, cell) === opt.slice(4);
+  return true;
+}
 
 function badge(cell) {
   const mark = cell.mark;
@@ -246,6 +291,14 @@ function badge(cell) {
   span.className = "badge badge-" + (mark === "n/a" ? "na" : mark);
   span.textContent = label;
   const wrap = document.createElement("div");
+  if (mark === "info") {
+    // Fact rows (app shell, languages, sizes): the value is the content, no badge.
+    const v = document.createElement("span");
+    v.className = "fact-value";
+    v.textContent = cell.value || "";
+    wrap.appendChild(v);
+    return wrap;
+  }
   wrap.appendChild(span);
   if (cell.value) {
     const v = document.createElement("span");
@@ -258,7 +311,8 @@ function badge(cell) {
 
 function visibleTools() {
   const cat = document.getElementById("filter-category").value;
-  return DATA.tools.filter(t => (cat === "all" || t.category === cat) && shownTools.has(t.name));
+  return DATA.tools.filter(t => (cat === "all" || t.category === cat) && shownTools.has(t.name)
+    && Object.entries(featFilters).every(([k, o]) => passes(t, k, o)));
 }
 
 function visibleFeatures(tools) {
@@ -283,7 +337,7 @@ function visibleFeatures(tools) {
 function renderLegend() {
   const el = document.getElementById("legend");
   el.innerHTML = "";
-  MARK_ORDER.forEach(m => {
+  MARK_ORDER.filter(m => m !== "info").forEach(m => {
     const span = document.createElement("span");
     span.className = "badge badge-" + (m === "n/a" ? "na" : m);
     span.textContent = MARK_LABEL[m];
@@ -380,6 +434,26 @@ function renderMatrix() {
     const tr = document.createElement("tr");
     const tdLabel = document.createElement("td");
     tdLabel.innerHTML = `<span class="feature-label">${f.label}</span><span class="feature-desc">${f.description}</span>`;
+    const opts = filterOptions(f);
+    if (opts) {
+      const wrap = document.createElement("label");
+      wrap.className = "feat-filter";
+      const sel = document.createElement("select");
+      sel.setAttribute("aria-label", "Show tools by " + f.label);
+      opts.forEach(([val, text]) => {
+        const o = document.createElement("option");
+        o.value = val; o.textContent = (val ? "" : "Show tools: ") + text;
+        sel.appendChild(o);
+      });
+      sel.value = featFilters[f.key] || "";
+      if (sel.value) sel.classList.add("active");
+      sel.addEventListener("change", () => {
+        if (sel.value) featFilters[f.key] = sel.value; else delete featFilters[f.key];
+        sortToolIdx = null; renderAll(); renderActiveFilters();
+      });
+      wrap.appendChild(sel);
+      tdLabel.appendChild(wrap);
+    }
     tr.appendChild(tdLabel);
     tools.forEach(t => {
       const td = document.createElement("td");
@@ -498,7 +572,7 @@ function renderChips() {
   tc.appendChild(sep());
   DATA.tools.forEach(t => tc.appendChild(chip(t.name, shownTools.has(t.name), () => {
     if (shownTools.has(t.name)) shownTools.delete(t.name); else shownTools.add(t.name);
-    sortToolIdx = null; renderChips(); renderAll();
+    sortToolIdx = null; renderChips(); renderAll(); renderActiveFilters();
   })));
   const sc = document.getElementById("section-chips");
   sc.innerHTML = '<span class="chips-label">Sections:</span>';
@@ -512,6 +586,37 @@ function renderChips() {
     if (hiddenSections.has(g)) hiddenSections.delete(g); else hiddenSections.add(g);
     renderChips(); renderMatrix();
   })));
+}
+
+function renderActiveFilters() {
+  const el = document.getElementById("active-filters");
+  el.innerHTML = "";
+  const keys = Object.keys(featFilters);
+  if (!keys.length) return;
+  const lab = document.createElement("span");
+  lab.className = "chips-label";
+  lab.textContent = "Filtering by:";
+  el.appendChild(lab);
+  keys.forEach(k => {
+    const f = DATA.features.find(x => x.key === k);
+    const opt = (filterOptions(f) || []).find(o => o[0] === featFilters[k]);
+    const b = document.createElement("button");
+    b.className = "af";
+    b.textContent = f.label + ": " + (opt ? opt[1] : featFilters[k]) + "  \u2715";
+    b.title = "Remove this filter";
+    b.addEventListener("click", () => { delete featFilters[k]; sortToolIdx = null; renderAll(); renderActiveFilters(); });
+    el.appendChild(b);
+  });
+  const n = visibleTools().length;
+  const cnt = document.createElement("span");
+  cnt.className = "chips-label";
+  cnt.textContent = n + (n === 1 ? " tool matches" : " tools match") + " among the picked tools";
+  el.appendChild(cnt);
+  const clr = document.createElement("button");
+  clr.className = "af";
+  clr.textContent = "Clear all";
+  clr.addEventListener("click", () => { featFilters = {}; sortToolIdx = null; renderAll(); renderActiveFilters(); });
+  el.appendChild(clr);
 }
 
 function renderAll() {

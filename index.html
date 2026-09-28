@@ -67,21 +67,22 @@
   .title-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-bottom: 8px; }
   .gh-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.9rem; font-weight: 600; color: var(--text); text-decoration: none; border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px; background: var(--panel); }
   .gh-link:hover { color: var(--accent); border-color: var(--accent); }
-  .sub { color: var(--muted); font-size: 0.95rem; max-width: 70ch; }
+  .sub { color: var(--muted); font-size: 0.95rem; max-width: 90ch; margin: 0 0 12px; }
   .note {
     background: var(--panel);
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 10px 14px;
-    margin-top: 12px;
+    margin-top: 0;
+    max-width: 90ch;
     font-size: 0.9rem;
     color: var(--muted);
   }
   .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; font-size: 0.85rem; }
-  .controls {
-    display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
-    margin: 16px 0;
-  }
+  .row { display: grid; grid-template-columns: 88px 1fr; column-gap: 8px; align-items: start; margin: 0 0 10px; }
+  .row-label { color: var(--muted); font-size: 0.85rem; padding-top: 6px; }
+  .row-body { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; min-width: 0; }
+  .controls { margin-top: 16px; }
   .controls input[type="text"], .controls select {
     background: var(--panel);
     color: var(--text);
@@ -109,13 +110,14 @@
     border-radius: 8px;
     max-width: 100%;
   }
-  table { border-collapse: collapse; width: 100%; min-width: 640px; background: var(--panel); }
+  table { border-collapse: collapse; width: 100%; background: var(--panel); }
+  #matrix-table { table-layout: fixed; }
   th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; font-size: 0.87rem; }
   thead th {
     position: sticky; top: 0; z-index: 3;
     background: var(--sticky-bg);
     cursor: pointer;
-    white-space: nowrap;
+    white-space: normal; overflow-wrap: anywhere;
     border-bottom: 2px solid var(--border);
   }
   thead th:hover { color: var(--accent); }
@@ -125,7 +127,7 @@
   #matrix-table th:first-child, #matrix-table td:first-child {
     position: sticky; left: 0; z-index: 2;
     background: var(--sticky-bg);
-    min-width: 220px; max-width: 260px;
+    width: 240px;
     white-space: normal;
   }
   #matrix-table thead th:first-child { z-index: 4; }
@@ -153,8 +155,6 @@
   .group-row th:hover { color: var(--accent); }
   .group-label { position: sticky; left: 0; display: inline-block; padding: 8px 10px; }
   .group-count { font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--muted); margin-left: 6px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 0 0 12px; font-size: 0.85rem; }
-  .chips .chips-label { color: var(--muted); margin-right: 2px; }
   .chip { border: 1px solid var(--border); background: var(--panel); color: var(--text); border-radius: 999px; padding: 4px 10px; font-size: 0.82rem; cursor: pointer; }
   .chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
   .seg { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; margin-right: 6px; background: var(--panel); }
@@ -165,11 +165,11 @@
   .feat-filter { display: block; margin-top: 6px; }
   .feat-filter select { font-size: 0.75rem; padding: 2px 4px; border: 1px solid var(--border); border-radius: 5px; background: var(--panel); color: var(--text); max-width: 100%; }
   .feat-filter select.active { border-color: var(--accent); color: var(--accent); font-weight: 600; }
-  .active-filters { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 0 0 10px; font-size: 0.85rem; }
-  .active-filters:empty { display: none; }
+  .row.empty { display: none; }
+  .match-count { color: var(--muted); font-size: 0.85rem; }
   .af { border: 1px solid var(--accent); color: var(--accent); background: var(--panel); border-radius: 999px; padding: 3px 10px; font-size: 0.8rem; cursor: pointer; }
   .af:hover { background: var(--accent); color: #fff; }
-  .chips-sep { width: 1px; align-self: stretch; background: var(--border); margin: 2px 4px; }
+  .chips-sep { width: 1px; height: 22px; background: var(--border); margin: 0 2px; }
   body.compact .cell-value, body.compact .feature-desc { display: none; }
   body.compact th, body.compact td { padding-top: 5px; padding-bottom: 5px; }
   .fact-value { font-size: 0.82rem; }
@@ -200,7 +200,9 @@
 </header>
 
 <main>
-  <div class="controls">
+  <div class="row controls">
+   <span class="row-label">View</span>
+   <div class="row-body">
     <div class="view-toggle">
       <button id="btn-matrix" class="active">Feature matrix</button>
       <button id="btn-bytool">By tool</button>
@@ -216,10 +218,11 @@
     <label><input type="checkbox" id="filter-hide-unknown"> Hide unknown-only rows</label>
     <label><input type="checkbox" id="filter-diff"> Only rows where tools differ</label>
     <label><input type="checkbox" id="compact"> Compact (badges only)</label>
+   </div>
   </div>
-  <div class="chips" id="tool-chips"></div>
-  <div class="chips" id="section-chips"></div>
-  <div class="active-filters" id="active-filters"></div>
+  <div class="row"><span class="row-label">Tools</span><div class="row-body" id="tool-chips"></div></div>
+  <div class="row"><span class="row-label">Sections</span><div class="row-body" id="section-chips"></div></div>
+  <div class="row empty" id="active-row"><span class="row-label">Filtering by</span><div class="row-body" id="active-filters"></div></div>
 
   <div id="view-matrix" class="table-scroll">
     <table id="matrix-table"></table>
@@ -381,6 +384,7 @@ function renderMatrix() {
 
   const table = document.getElementById("matrix-table");
   table.innerHTML = "";
+  table.style.width = "max(100%, " + (240 + tools.length * 170) + "px)";
   const thead = document.createElement("thead");
   const trh = document.createElement("tr");
   const thFeat = document.createElement("th");
@@ -568,7 +572,7 @@ function sectionOrder() {
 }
 function renderChips() {
   const tc = document.getElementById("tool-chips");
-  tc.innerHTML = '<span class="chips-label">Tools:</span>';
+  tc.innerHTML = "";
   const allNames = new Set(DATA.tools.map(t => t.name));
   const six = new Set(DEFAULT_TOOLS.filter(n => allNames.has(n)));
   tc.appendChild(seg([
@@ -581,7 +585,7 @@ function renderChips() {
     sortToolIdx = null; renderChips(); renderAll(); renderActiveFilters();
   })));
   const sc = document.getElementById("section-chips");
-  sc.innerHTML = '<span class="chips-label">Sections:</span>';
+  sc.innerHTML = "";
   const secs = sectionOrder();
   sc.appendChild(seg([
     { label: "Show all", on: hiddenSections.size === 0 && collapsed.size === 0, onClick: () => { hiddenSections.clear(); collapsed.clear(); renderChips(); renderMatrix(); } },
@@ -598,11 +602,8 @@ function renderActiveFilters() {
   const el = document.getElementById("active-filters");
   el.innerHTML = "";
   const keys = Object.keys(featFilters);
+  document.getElementById("active-row").classList.toggle("empty", !keys.length);
   if (!keys.length) return;
-  const lab = document.createElement("span");
-  lab.className = "chips-label";
-  lab.textContent = "Filtering by:";
-  el.appendChild(lab);
   keys.forEach(k => {
     const f = DATA.features.find(x => x.key === k);
     const opt = (filterOptions(f) || []).find(o => o[0] === featFilters[k]);
@@ -615,7 +616,7 @@ function renderActiveFilters() {
   });
   const n = visibleTools().length;
   const cnt = document.createElement("span");
-  cnt.className = "chips-label";
+  cnt.className = "match-count";
   cnt.textContent = n + (n === 1 ? " tool matches" : " tools match") + " among the picked tools";
   el.appendChild(cnt);
   const clr = document.createElement("button");

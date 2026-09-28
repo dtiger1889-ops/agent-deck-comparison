@@ -53,7 +53,7 @@ orca = {
     "name": "Orca", "url": "https://onorca.dev", "category": "agent manager",
     "where_agents_run": "your machine + remote (SSH worktrees, headless Linux server, phone companion)",
     "license": "MIT, free", "checked_on": "2026-09-22 (installed + shipped-code read)",
-    "source_note": "Source-verified: installed desktop + phone, shipped app.asar read, own docs. Reference standard this table is read against.",
+    "source_note": "Source-verified: installed desktop + phone, shipped app.asar read, own docs.",
     "is_authors_own": False,
     "features": {
         "multi_provider_supervision": c("yes", "27+ agents / \"any CLI agent\""),

@@ -54,7 +54,7 @@ for f in features:
     rows_html.append(f'<tr><th>{SHORT_LABEL[f["key"]]}</th>{cells}</tr>')
 
 header_cells = "".join(
-    f'<th class="{"std" if t["name"]=="Orca" else ""}">{DISPLAY_NAME.get(t["name"], t["name"])}</th>'
+    f'<th>{DISPLAY_NAME.get(t["name"], t["name"])}</th>'
     for t in tools
 )
 
@@ -74,12 +74,11 @@ html = f"""<!DOCTYPE html>
   table {{ border-collapse: collapse; width: 100%; background: #fff; border: 1px solid #dcdde1; border-radius: 10px; overflow: hidden; }}
   th, td {{ padding: 22px 10px; font-size: 24px; text-align: center; border-bottom: 1px solid #dcdde1; }}
   th {{ background: #eef0f3; font-size: 22px; }}
-  thead th.std {{ background: #dbe6ff; color: #2f5fd8; }}
   tbody th {{ text-align: left; font-size: 23px; font-weight: 600; white-space: nowrap; }}
   td:first-child, th:first-child {{ text-align: left; padding-left: 16px; width: 260px; }}
   .b {{ display: inline-block; padding: 6px 14px; border-radius: 999px; font-size: 21px; font-weight: 700; }}
   .key {{ margin-top: 24px; font-size: 19px; color: #5c5f66; line-height: 1.5; }}
-  .footer {{ margin-top: 18px; font-size: 17px; color: #8a8a8a; }}
+  .footer {{ margin-top: 18px; font-size: 21px; line-height: 1.5; color: #8a8a8a; }}
 </style></head>
 <body>
   <h1>Agent-manager comparison</h1>
@@ -94,9 +93,8 @@ html = f"""<!DOCTYPE html>
   <span class="b" style="background:#ece3fb;color:#5b3aa8">Exp.</span>
   <span class="b" style="background:#e6ecf5;color:#3a4f78">Planned</span>
   <span class="b" style="background:#f8dede;color:#9c2b2b">No</span>
-  <span class="b" style="background:#ececec;color:#6a6a6a">Unk.</span> &mdash;
-  Orca column is the reference standard this table is read against.</p>
-  <p class="footer">Full sortable comparison and data source in the linked repo. Compiled by Daniel Mack (dtiger1889-ops).</p>
+  <span class="b" style="background:#ececec;color:#6a6a6a">Unk.</span></p>
+  <p class="footer">Full sortable chart: <b style="color:#2f5fd8">dtiger1889-ops.github.io/agent-deck-comparison</b><br>Compiled by Daniel Mack (dtiger1889-ops).</p>
 </body></html>
 """
 

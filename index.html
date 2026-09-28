@@ -13,7 +13,6 @@
     --border: #dcdde1;
     --sticky-bg: #eef0f3;
     --accent: #2f5fd8;
-    --standard-bg: #eaf0ff;
     --yes-bg: #dcf5e2; --yes-fg: #1d6b34;
     --partial-bg: #fdf1cf; --partial-fg: #8a6100;
     --experimental-bg: #ece3fb; --experimental-fg: #5b3aa8;
@@ -31,7 +30,6 @@
       --border: #33353b;
       --sticky-bg: #23252b;
       --accent: #86a4ff;
-      --standard-bg: #202a45;
       --yes-bg: #163a24; --yes-fg: #7fe3a0;
       --partial-bg: #453a10; --partial-fg: #f0c95f;
       --experimental-bg: #2f2249; --experimental-fg: #c6aef2;
@@ -108,8 +106,6 @@
     white-space: normal;
   }
   #matrix-table thead th:first-child { z-index: 4; }
-  #matrix-table th.standard-col, #matrix-table td.standard-col { background: var(--standard-bg); }
-  .std-tag { font-size: 0.7rem; color: var(--accent); display: block; font-weight: normal; }
   .badge {
     display: inline-block;
     padding: 2px 8px;
@@ -263,9 +259,7 @@ function renderMatrix() {
   trh.appendChild(thFeat);
   tools.forEach((t, i) => {
     const th = document.createElement("th");
-    const isStandard = t.name === "Orca";
-    if (isStandard) th.classList.add("standard-col");
-    th.innerHTML = t.name + (isStandard ? '<span class="std-tag">reference standard</span>' : "");
+    th.textContent = t.name;
     th.addEventListener("click", () => {
       if (sortToolIdx === i) { sortDir *= -1; } else { sortToolIdx = i; sortDir = 1; }
       renderMatrix();
@@ -283,7 +277,6 @@ function renderMatrix() {
     tr.appendChild(tdLabel);
     tools.forEach(t => {
       const td = document.createElement("td");
-      if (t.name === "Orca") td.classList.add("standard-col");
       td.appendChild(badge(t.features[f.key]));
       tr.appendChild(td);
     });

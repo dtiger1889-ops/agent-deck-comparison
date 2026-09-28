@@ -11,8 +11,8 @@ session organization, and remote/mobile access.
 A single static HTML page (`index.html`) that loads `data/tools.json` and renders it as:
 
 - **Feature matrix** — tools as columns, features as rows, matching the source comparison's cross
-  table. Orca is pinned as the leftmost column and marked as the reference standard the others are
-  read against. Click a tool's column header to sort feature rows by that tool's mark; click
+  table. Orca is the leftmost column. Click a tool's column header to sort feature rows by that tool's
+  mark; click
   "Feature" to reset. A category filter, a feature search box, and a toggle to hide rows where
   every visible tool is "unknown."
 - **By tool** — one row per tool (name, category, where agents run, license, checked-on date,

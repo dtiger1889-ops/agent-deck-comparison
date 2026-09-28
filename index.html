@@ -238,7 +238,9 @@
       border-radius: 0 8px 8px 0; background: linear-gradient(to right, transparent, var(--panel) 85%); z-index: 5;
     }
     .matrix-wrap.at-end::after { display: none; }
-    #view-matrix { scroll-snap-type: x mandatory; scroll-padding-left: 132px; }
+    /* proximity, not mandatory: mandatory snapping with the last snap point at the scroll end made
+       Android Chrome pull back against the swipe at the far right ("it gets stuck", 2026-09-28). */
+    #view-matrix { scroll-snap-type: x proximity; scroll-padding-left: 132px; }
     #matrix-table thead th:not(:first-child) { scroll-snap-align: start; }
     th, td { padding: 8px 9px; font-size: 0.84rem; overflow-wrap: anywhere; }
     #matrix-table th:first-child, #matrix-table td:first-child { width: 132px; box-shadow: inset -1px 0 0 var(--border); }
@@ -570,14 +572,10 @@ function renderMatrix() {
     tbody.appendChild(tr);
   });
   table.appendChild(tbody);
-  // Phones: leave room after the last column so it, too, can snap flush against the sticky
-  // first column; otherwise the final scroll stop shows a sliver of the column before it.
+  // No trailing spacer after the last column: with snapping it left the far-right stop fighting the
+  // swipe on Android. The right-edge fade and its at-end state mark the end instead.
   table.style.marginRight = "";
-  const box = document.getElementById("view-matrix");
-  const room = box.clientWidth - firstCol;
-  if (PHONE.matches && room > 0 && tools.length * toolCol > room) {
-    table.style.marginRight = Math.max(0, room - toolCol) + "px";
-  }
+  updateEdge();
 }
 
 function countYes(tool) {

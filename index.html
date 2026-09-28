@@ -20,6 +20,8 @@
     --no-bg: #f8dede; --no-fg: #9c2b2b;
     --unknown-bg: #ececec; --unknown-fg: #6a6a6a;
     --na-bg: #f2f2f2; --na-fg: #8a8a8a;
+    --info-bg: #e1ecf7; --info-fg: #2c5f8a;
+    --group-bg: #eef0f3; --group-fg: #1b1c1f;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -37,6 +39,8 @@
       --no-bg: #3a1c1c; --no-fg: #f29a9a;
       --unknown-bg: #2a2b30; --unknown-fg: #9a9ca3;
       --na-bg: #222327; --na-fg: #7a7c82;
+      --info-bg: #1c3a52; --info-fg: #8fc2ee;
+      --group-bg: #23252b; --group-fg: #e8e9ec;
     }
   }
   * { box-sizing: border-box; }
@@ -124,6 +128,12 @@
   .badge-no { background: var(--no-bg); color: var(--no-fg); }
   .badge-unknown { background: var(--unknown-bg); color: var(--unknown-fg); }
   .badge-na { background: var(--na-bg); color: var(--na-fg); }
+  .badge-info { background: var(--info-bg); color: var(--info-fg); }
+  .group-row th, .group-row td {
+    background: var(--group-bg); color: var(--group-fg);
+    font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em;
+    padding: 7px 10px; position: sticky; left: 0;
+  }
   .cell-value { display: block; margin-top: 3px; color: var(--muted); font-size: 0.78rem; }
   .feature-label { font-weight: 600; }
   .feature-desc { display: block; color: var(--muted); font-size: 0.78rem; font-weight: normal; margin-top: 2px; }
@@ -179,11 +189,11 @@
 </footer>
 
 <script>
-const MARK_ORDER = ["yes", "partial", "experimental", "planned", "no", "unknown", "n/a"];
+const MARK_ORDER = ["yes", "partial", "experimental", "planned", "no", "unknown", "n/a", "info"];
 const MARK_RANK = Object.fromEntries(MARK_ORDER.map((m, i) => [m, i]));
 const MARK_LABEL = {
   yes: "Yes", partial: "Partial", experimental: "Experimental",
-  planned: "Planned", no: "No", unknown: "Unknown", "n/a": "N/A"
+  planned: "Planned", no: "No", unknown: "Unknown", "n/a": "N/A", info: "Info"
 };
 
 let DATA = null;
@@ -242,15 +252,30 @@ function renderLegend() {
 function renderMatrix() {
   const tools = visibleTools();
   const features = visibleFeatures(tools);
-  let sorted = features;
-  if (sortToolIdx !== null && tools[sortToolIdx]) {
+
+  const groupOrder = (DATA.group_order || []).length
+    ? DATA.group_order
+    : [...new Set(features.map(f => f.group))];
+
+  function sortWithinGroup(list) {
+    if (sortToolIdx === null || !tools[sortToolIdx]) return list;
     const t = tools[sortToolIdx];
-    sorted = [...features].sort((a, b) => {
+    return [...list].sort((a, b) => {
       const ra = MARK_RANK[t.features[a.key].mark];
       const rb = MARK_RANK[t.features[b.key].mark];
       return (ra - rb) * sortDir;
     });
   }
+
+  // Build one flat list of {type: "group", label} | {type: "feature", feature} rows,
+  // grouped in fixed order, sorted within each group, dropping empty groups.
+  const rows = [];
+  groupOrder.forEach(g => {
+    const inGroup = features.filter(f => f.group === g);
+    if (inGroup.length === 0) return;
+    rows.push({ type: "group", label: g });
+    sortWithinGroup(inGroup).forEach(f => rows.push({ type: "feature", feature: f }));
+  });
 
   const table = document.getElementById("matrix-table");
   table.innerHTML = "";
@@ -286,7 +311,18 @@ function renderMatrix() {
   table.appendChild(thead);
 
   const tbody = document.createElement("tbody");
-  sorted.forEach(f => {
+  rows.forEach(row => {
+    if (row.type === "group") {
+      const tr = document.createElement("tr");
+      tr.className = "group-row";
+      const th = document.createElement("th");
+      th.colSpan = 1 + tools.length;
+      th.textContent = row.label;
+      tr.appendChild(th);
+      tbody.appendChild(tr);
+      return;
+    }
+    const f = row.feature;
     const tr = document.createElement("tr");
     const tdLabel = document.createElement("td");
     tdLabel.innerHTML = `<span class="feature-label">${f.label}</span><span class="feature-desc">${f.description}</span>`;

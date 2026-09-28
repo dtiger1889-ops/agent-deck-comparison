@@ -11,13 +11,13 @@ with open(os.path.join(here, "..", "data", "tools.json"), encoding="utf-8") as f
 
 TOOL_ORDER = ["Orca", "VelaTerm", "Pantheon", "Paseo", "GitKraken Kepler", "Agent Orchestrator (AO)"]
 FEATURE_ORDER = [
-    "harness_count", "needs_you_signal", "usage_hud", "burn_rate_forecast",
+    "harness_count", "app_shell", "usage_hud", "burn_rate_forecast",
     "limit_governor", "vault_task_source", "worktree_management",
     "planner_orchestrator", "native_mobile_app", "runs_in_terminal",
 ]
 SHORT_LABEL = {
     "harness_count": "Harness count",
-    "needs_you_signal": "Needs-you signal",
+    "app_shell": "App shell",
     "usage_hud": "Usage HUD (local logs)",
     "burn_rate_forecast": "Burn-rate forecast",
     "limit_governor": "Limit governor",
@@ -28,6 +28,14 @@ SHORT_LABEL = {
     "runs_in_terminal": "Runs in your terminal",
 }
 DISPLAY_NAME = {"Agent Orchestrator (AO)": "AO", "GitKraken Kepler": "Kepler"}
+SHORT_SHELL = {
+    "Orca": "Electron",
+    "VelaTerm": "Tauri 2",
+    "Pantheon": "Terminal UI",
+    "Paseo": "Electron",
+    "GitKraken Kepler": "not verified",
+    "Agent Orchestrator (AO)": "Electron",
+}
 
 MARK_STYLE = {
     "yes": ("#dcf5e2", "#1d6b34", "Yes"),
@@ -50,7 +58,10 @@ def badge_html(cell):
 
 rows_html = []
 for f in features:
-    cells = "".join(f'<td>{badge_html(t["features"][f["key"]])}</td>' for t in tools)
+    if f["key"] == "app_shell":
+        cells = "".join(f'<td class="plain">{SHORT_SHELL.get(t["name"], "not verified")}</td>' for t in tools)
+    else:
+        cells = "".join(f'<td>{badge_html(t["features"][f["key"]])}</td>' for t in tools)
     rows_html.append(f'<tr><th>{SHORT_LABEL[f["key"]]}</th>{cells}</tr>')
 
 header_cells = "".join(
@@ -77,6 +88,7 @@ html = f"""<!DOCTYPE html>
   tbody th {{ text-align: left; font-size: 23px; font-weight: 600; white-space: nowrap; }}
   td:first-child, th:first-child {{ text-align: left; padding-left: 16px; width: 260px; }}
   .b {{ display: inline-block; padding: 6px 14px; border-radius: 999px; font-size: 21px; font-weight: 700; }}
+  td.plain {{ font-size: 22px; color: #3a3c40; font-weight: 600; }}
   .key {{ margin-top: 24px; font-size: 19px; color: #5c5f66; line-height: 1.5; }}
   .footer {{ margin-top: 18px; font-size: 21px; line-height: 1.5; color: #8a8a8a; }}
 </style></head>

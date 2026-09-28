@@ -5,173 +5,234 @@
     {
       "key": "multi_provider_supervision",
       "label": "Multi-provider agent supervision",
-      "description": "Can it drive more than one coding-agent CLI/tool at once."
+      "description": "Can it drive more than one coding-agent CLI/tool at once.",
+      "group": "Agents & supervision"
     },
     {
       "key": "harness_count",
       "label": "Harness count",
-      "description": "How many distinct agent CLIs/tools it can drive."
+      "description": "How many distinct agent CLIs/tools it can drive.",
+      "group": "Agents & supervision"
     },
     {
       "key": "needs_you_signal",
       "label": "Needs-you signal quality",
-      "description": "How it tells you an agent is waiting on you, and how reliable that signal is."
+      "description": "How it tells you an agent is waiting on you, and how reliable that signal is.",
+      "group": "Agents & supervision"
     },
     {
       "key": "approve_deny_prompt",
       "label": "Approve/deny a waiting permission prompt",
-      "description": "Whether you can answer an agent's permission prompt from the manager itself."
-    },
-    {
-      "key": "conversation_gui_view",
-      "label": "Conversation (GUI) view of a session",
-      "description": "A chat-style view of a session's plan/edits/results, as opposed to raw terminal text."
-    },
-    {
-      "key": "real_terminal",
-      "label": "The real terminal of a session",
-      "description": "Whether you can drop into the session's actual terminal."
-    },
-    {
-      "key": "session_organization",
-      "label": "Session organization",
-      "description": "How sessions are grouped and browsed (list, worktrees, kanban, nested groups)."
-    },
-    {
-      "key": "usage_hud",
-      "label": "Subscription usage HUD (from local logs)",
-      "description": "Shows your subscription usage/limits, read from local logs rather than a fragile API endpoint."
-    },
-    {
-      "key": "burn_rate_forecast",
-      "label": "Usage HUD with burn-rate + time-to-limit forecast",
-      "description": "Predicts when you'll hit your usage limit, not just showing current usage."
-    },
-    {
-      "key": "limit_governor",
-      "label": "Session-limit governor (park/resume at reset)",
-      "description": "Automatically pauses work near a usage limit and resumes after the reset."
-    },
-    {
-      "key": "vault_task_source",
-      "label": "Personal-notes-vault task source",
-      "description": "Can read your own personal notes vault (e.g. Obsidian) as its task queue, instead of only an issue tracker."
-    },
-    {
-      "key": "issue_tracker_pipeline",
-      "label": "Issue-tracker / PR pipeline to merge",
-      "description": "Integrates with GitHub/GitLab/Linear/Jira issues and pull requests."
-    },
-    {
-      "key": "worktree_management",
-      "label": "Worktree management for agents",
-      "description": "Manages isolated git worktrees per agent/task on your behalf."
-    },
-    {
-      "key": "planner_orchestrator",
-      "label": "Planner/orchestrator that splits and runs work",
-      "description": "A higher-level agent that breaks a goal into sub-tasks and runs them."
-    },
-    {
-      "key": "agent_to_agent_messaging",
-      "label": "Agent-to-agent messaging across sessions",
-      "description": "Sessions or orchestrators can message each other directly."
+      "description": "Whether you can answer an agent's permission prompt from the manager itself.",
+      "group": "Agents & supervision"
     },
     {
       "key": "cross_provider_delegation",
       "label": "Cross-provider delegation visible in one place",
-      "description": "Handoffs between different providers/agents show up in one unified view."
+      "description": "Handoffs between different providers/agents show up in one unified view.",
+      "group": "Agents & supervision"
     },
     {
       "key": "always_on_assistant",
       "label": "Always-on assistant session",
-      "description": "A persistent standing assistant session you can reach any time (not a task-bound worker)."
+      "description": "A persistent standing assistant session you can reach any time (not a task-bound worker).",
+      "group": "Agents & supervision"
     },
     {
-      "key": "knowledge_base",
-      "label": "Knowledge base agents can query",
-      "description": "A notes/knowledge store agents can query before acting."
+      "key": "conversation_gui_view",
+      "label": "Conversation (GUI) view of a session",
+      "description": "A chat-style view of a session's plan/edits/results, as opposed to raw terminal text.",
+      "group": "Sessions & views"
     },
     {
-      "key": "builtin_editors_browser",
-      "label": "Built-in editors / browser",
-      "description": "Ships its own code/markdown editors and/or an embedded browser."
+      "key": "real_terminal",
+      "label": "The real terminal of a session",
+      "description": "Whether you can drop into the session's actual terminal.",
+      "group": "Sessions & views"
     },
     {
-      "key": "native_mobile_app",
-      "label": "Native mobile app",
-      "description": "A dedicated iOS/Android app, as opposed to reusing a terminal app."
-    },
-    {
-      "key": "phone_no_new_app",
-      "label": "Phone access without a new app/account",
-      "description": "Can be reached from a phone using tools you already have, no new app or account."
-    },
-    {
-      "key": "remote_ssh",
-      "label": "Remote hosts (SSH)",
-      "description": "Can drive or edit sessions on a remote machine over SSH."
-    },
-    {
-      "key": "app_framework_size",
-      "label": "App framework / installer size",
-      "description": "What it's built on and how large the installer is."
-    },
-    {
-      "key": "running_ram",
-      "label": "Running RAM under multi-agent load",
-      "description": "Memory actually used while driving several agents at once (not install/disk size)."
-    },
-    {
-      "key": "account_hotswap",
-      "label": "Account switch / hot-swap without re-login",
-      "description": "Can switch between provider accounts without logging in again each time."
+      "key": "session_organization",
+      "label": "Session organization",
+      "description": "How sessions are grouped and browsed (list, worktrees, kanban, nested groups).",
+      "group": "Sessions & views"
     },
     {
       "key": "prompt_scratchpad",
       "label": "Prompt scratchpad with insert-not-send",
-      "description": "A place to draft prompts and insert them into a session without immediately sending."
+      "description": "A place to draft prompts and insert them into a session without immediately sending.",
+      "group": "Sessions & views"
     },
     {
       "key": "saved_prompt_library",
       "label": "Saved prompt library",
-      "description": "Reusable, saved prompts/actions you can fire with prior context pre-attached."
+      "description": "Reusable, saved prompts/actions you can fire with prior context pre-attached.",
+      "group": "Sessions & views"
+    },
+    {
+      "key": "builtin_editors_browser",
+      "label": "Built-in editors / browser",
+      "description": "Ships its own code/markdown editors and/or an embedded browser.",
+      "group": "Sessions & views"
     },
     {
       "key": "appearance_control",
       "label": "Appearance control incl. host-terminal font",
-      "description": "How much you can customize its look, including your actual terminal's font/settings."
+      "description": "How much you can customize its look, including your actual terminal's font/settings.",
+      "group": "Sessions & views"
     },
     {
-      "key": "extensibility",
-      "label": "Extensibility for others (plugins/SDK)",
-      "description": "Whether outside developers can extend it via a plugin or SDK surface."
+      "key": "usage_hud",
+      "label": "Subscription usage HUD (from local logs)",
+      "description": "Shows your subscription usage/limits, read from local logs rather than a fragile API endpoint.",
+      "group": "Usage & limits"
     },
     {
-      "key": "teams_multiuser",
-      "label": "Teams / multi-user",
-      "description": "Built for more than one person to use together, as opposed to single-user."
+      "key": "burn_rate_forecast",
+      "label": "Usage HUD with burn-rate + time-to-limit forecast",
+      "description": "Predicts when you'll hit your usage limit, not just showing current usage.",
+      "group": "Usage & limits"
+    },
+    {
+      "key": "limit_governor",
+      "label": "Session-limit governor (park/resume at reset)",
+      "description": "Automatically pauses work near a usage limit and resumes after the reset.",
+      "group": "Usage & limits"
+    },
+    {
+      "key": "account_hotswap",
+      "label": "Account switch / hot-swap without re-login",
+      "description": "Can switch between provider accounts without logging in again each time.",
+      "group": "Usage & limits"
+    },
+    {
+      "key": "vault_task_source",
+      "label": "Personal-notes-vault task source",
+      "description": "Can read your own personal notes vault (e.g. Obsidian) as its task queue, instead of only an issue tracker.",
+      "group": "Tasks, planning & merging"
+    },
+    {
+      "key": "issue_tracker_pipeline",
+      "label": "Issue-tracker / PR pipeline to merge",
+      "description": "Integrates with GitHub/GitLab/Linear/Jira issues and pull requests.",
+      "group": "Tasks, planning & merging"
+    },
+    {
+      "key": "worktree_management",
+      "label": "Worktree management for agents",
+      "description": "Manages isolated git worktrees per agent/task on your behalf.",
+      "group": "Tasks, planning & merging"
+    },
+    {
+      "key": "planner_orchestrator",
+      "label": "Planner/orchestrator that splits and runs work",
+      "description": "A higher-level agent that breaks a goal into sub-tasks and runs them.",
+      "group": "Tasks, planning & merging"
+    },
+    {
+      "key": "agent_to_agent_messaging",
+      "label": "Agent-to-agent messaging across sessions",
+      "description": "Sessions or orchestrators can message each other directly.",
+      "group": "Tasks, planning & merging"
+    },
+    {
+      "key": "knowledge_base",
+      "label": "Knowledge base agents can query",
+      "description": "A notes/knowledge store agents can query before acting.",
+      "group": "Tasks, planning & merging"
+    },
+    {
+      "key": "native_mobile_app",
+      "label": "Native mobile app",
+      "description": "A dedicated iOS/Android app, as opposed to reusing a terminal app.",
+      "group": "Remote & mobile"
+    },
+    {
+      "key": "phone_no_new_app",
+      "label": "Phone access without a new app/account",
+      "description": "Can be reached from a phone using tools you already have, no new app or account.",
+      "group": "Remote & mobile"
+    },
+    {
+      "key": "remote_ssh",
+      "label": "Remote hosts (SSH)",
+      "description": "Can drive or edit sessions on a remote machine over SSH.",
+      "group": "Remote & mobile"
     },
     {
       "key": "voice_input",
       "label": "Voice input",
-      "description": "Can dictate to it by voice."
+      "description": "Can dictate to it by voice.",
+      "group": "Remote & mobile"
     },
     {
-      "key": "license_cost",
-      "label": "License / cost",
-      "description": "Open-source license, or commercial pricing model."
+      "key": "app_shell",
+      "label": "App shell",
+      "description": "What the desktop/app UI is actually built on: Electron (with version, if pinned), Tauri 2, native, terminal UI, web app, or hosted cloud service.",
+      "group": "Under the hood"
+    },
+    {
+      "key": "languages",
+      "label": "Main languages",
+      "description": "The top 2-3 languages in the project's own repo, from GitHub's language breakdown, with rough percentages.",
+      "group": "Under the hood"
+    },
+    {
+      "key": "background_process",
+      "label": "Background process",
+      "description": "Whether it runs a separate daemon/server process alongside the UI, and what it does, per its own source or docs.",
+      "group": "Under the hood"
+    },
+    {
+      "key": "download_size",
+      "label": "Download size",
+      "description": "The latest release's desktop installer size(s) per OS, from the release's own asset listing. Not a claim about how much it uses once running.",
+      "group": "Under the hood"
+    },
+    {
+      "key": "ram_vs_claude_desktop",
+      "label": "Memory weight vs Claude Desktop (estimate)",
+      "description": "A labeled ESTIMATE, not a measurement: Claude Desktop is itself an Electron app, so this compares app shells only. Electron ~= about the same (heavier if it also runs a background daemon or several windows/an embedded terminal — the value says which); Tauri/system-WebView = lighter; terminal UI = much lighter; hosted service = cloud, local cost is a browser tab; unknown shell = not verified. The coding agents themselves (Claude Code, Codex, etc.) cost the same memory under every tool in this table — only the manager's own shell differs.",
+      "group": "Under the hood"
     },
     {
       "key": "runs_in_terminal",
       "label": "Runs inside a terminal you already have",
-      "description": "Lives inside your existing terminal app, rather than shipping its own app/window."
+      "description": "Lives inside your existing terminal app, rather than shipping its own app/window.",
+      "group": "Under the hood"
+    },
+    {
+      "key": "license_cost",
+      "label": "License / cost",
+      "description": "Open-source license, or commercial pricing model.",
+      "group": "Project & openness"
+    },
+    {
+      "key": "extensibility",
+      "label": "Extensibility for others (plugins/SDK)",
+      "description": "Whether outside developers can extend it via a plugin or SDK surface.",
+      "group": "Project & openness"
+    },
+    {
+      "key": "teams_multiuser",
+      "label": "Teams / multi-user",
+      "description": "Built for more than one person to use together, as opposed to single-user.",
+      "group": "Project & openness"
     },
     {
       "key": "stability_maturity",
       "label": "Stability / maturity (honest)",
-      "description": "How mature and stable it currently is, stated plainly."
+      "description": "How mature and stable it currently is, stated plainly.",
+      "group": "Project & openness"
     }
+  ],
+  "group_order": [
+    "Agents & supervision",
+    "Sessions & views",
+    "Usage & limits",
+    "Tasks, planning & merging",
+    "Remote & mobile",
+    "Under the hood",
+    "Project & openness"
   ],
   "tools": [
     {
@@ -272,14 +333,6 @@
           "value": "SSH worktrees + Remote Server (beta)",
           "mark": "yes"
         },
-        "app_framework_size": {
-          "value": "Electron, 218 MB mac / 192 MB Windows",
-          "mark": "no"
-        },
-        "running_ram": {
-          "value": "~2.3 GB measured (9 processes, 5 panes open, agents running)",
-          "mark": "no"
-        },
         "account_hotswap": {
           "value": "Hot-swap between Codex accounts without re-login",
           "mark": "yes"
@@ -311,6 +364,26 @@
         "license_cost": {
           "value": "MIT, free, uses your own subscriptions",
           "mark": "yes"
+        },
+        "app_shell": {
+          "value": "Electron 43.7.5",
+          "mark": "info"
+        },
+        "languages": {
+          "value": "TypeScript ~95%, JavaScript ~4%, Swift <1%",
+          "mark": "info"
+        },
+        "background_process": {
+          "value": "Yes: a daemon-host process (docs/reference/windows-daemon-host-relocation.md)",
+          "mark": "info"
+        },
+        "download_size": {
+          "value": "v1.4.216: 193 MB Windows setup.exe, 218-226 MB mac dmg, 207-209 MB Linux AppImage",
+          "mark": "info"
+        },
+        "ram_vs_claude_desktop": {
+          "value": "Heavier (Electron + background daemon)",
+          "mark": "info"
         },
         "runs_in_terminal": {
           "value": "Embeds its own GPU terminal instead",
@@ -420,14 +493,6 @@
           "value": "SSH including editing remote files",
           "mark": "yes"
         },
-        "app_framework_size": {
-          "value": "Tauri 2 (system WebView), 49 MB mac / 59 MB Windows installer (author's numbers)",
-          "mark": "yes"
-        },
-        "running_ram": {
-          "value": "Not measured or claimed",
-          "mark": "unknown"
-        },
         "account_hotswap": {
           "value": "Not claimed either way",
           "mark": "unknown"
@@ -459,6 +524,26 @@
         "license_cost": {
           "value": "MIT, free, uses your own subscriptions",
           "mark": "yes"
+        },
+        "app_shell": {
+          "value": "Tauri 2 (Rust + system WebView); repo also carries a secondary Electron shell, not the primary build",
+          "mark": "info"
+        },
+        "languages": {
+          "value": "TypeScript ~46%, Rust ~39%, Python ~8%",
+          "mark": "info"
+        },
+        "background_process": {
+          "value": "not verified: a minimal headless `vela-server` build exists but isn't documented as running alongside the desktop app",
+          "mark": "unknown"
+        },
+        "download_size": {
+          "value": "v0.2.5: 59 MB Windows min-setup / 148 MB full-setup, 49-51 MB mac dmg",
+          "mark": "info"
+        },
+        "ram_vs_claude_desktop": {
+          "value": "Lighter",
+          "mark": "info"
         },
         "runs_in_terminal": {
           "value": "Own app; the Windows installer bundles Git Bash",
@@ -568,14 +653,6 @@
           "value": "None",
           "mark": "no"
         },
-        "app_framework_size": {
-          "value": "A terminal UI (Python/Textual) running inside your existing terminal, no separate installer",
-          "mark": "yes"
-        },
-        "running_ram": {
-          "value": "~77 MB measured resident, near-zero idle CPU",
-          "mark": "yes"
-        },
         "account_hotswap": {
           "value": "None",
           "mark": "no"
@@ -607,6 +684,26 @@
         "license_cost": {
           "value": "MIT, free; pre-release, published as-is; uses your own subscriptions",
           "mark": "yes"
+        },
+        "app_shell": {
+          "value": "Terminal UI: Python 3.12 + Textual, running inside your existing terminal, no separate installer",
+          "mark": "info"
+        },
+        "languages": {
+          "value": "Python (Textual TUI)",
+          "mark": "info"
+        },
+        "background_process": {
+          "value": "Yes: a separate small Python usage-collector process alongside the Textual UI process",
+          "mark": "info"
+        },
+        "download_size": {
+          "value": "No installer; runs from source (git clone + Python)",
+          "mark": "info"
+        },
+        "ram_vs_claude_desktop": {
+          "value": "Much lighter",
+          "mark": "info"
         },
         "runs_in_terminal": {
           "value": "Only one in this table that runs entirely inside a terminal you already have",
@@ -716,14 +813,6 @@
           "value": "Via its daemon",
           "mark": "yes"
         },
-        "app_framework_size": {
-          "value": "Electron 44 plus a Node/WebSocket daemon",
-          "mark": "no"
-        },
-        "running_ram": {
-          "value": "Not measured in this doc",
-          "mark": "unknown"
-        },
         "account_hotswap": {
           "value": "Not applicable",
           "mark": "n/a"
@@ -755,6 +844,26 @@
         "license_cost": {
           "value": "Apache-2.0, free",
           "mark": "yes"
+        },
+        "app_shell": {
+          "value": "Electron 44.2.0",
+          "mark": "info"
+        },
+        "languages": {
+          "value": "TypeScript ~98%, JavaScript ~1%",
+          "mark": "info"
+        },
+        "background_process": {
+          "value": "Yes: a Node daemon (package.json `dev:server` runs `PASEO_LISTEN=... dev-daemon.sh`)",
+          "mark": "info"
+        },
+        "download_size": {
+          "value": "v0.10.0: 137 MB Windows Setup x64, 186 MB mac x64 dmg, 129 MB Linux .deb",
+          "mark": "info"
+        },
+        "ram_vs_claude_desktop": {
+          "value": "Heavier (Electron + background daemon)",
+          "mark": "info"
         },
         "runs_in_terminal": {
           "value": "Own desktop/mobile/web app",
@@ -864,14 +973,6 @@
           "value": "SSH/WSL remote execution",
           "mark": "yes"
         },
-        "app_framework_size": {
-          "value": "Desktop app, size not stated",
-          "mark": "unknown"
-        },
-        "running_ram": {
-          "value": "Not measured in this doc",
-          "mark": "unknown"
-        },
         "account_hotswap": {
           "value": "Not applicable",
           "mark": "n/a"
@@ -903,6 +1004,26 @@
         "license_cost": {
           "value": "Commercial with a free tier",
           "mark": "partial"
+        },
+        "app_shell": {
+          "value": "not verified: not stated on gitkraken.com/kepler or help.gitkraken.com; not extrapolated from GitKraken's separate main git client",
+          "mark": "unknown"
+        },
+        "languages": {
+          "value": "not verified: closed source, no public repo",
+          "mark": "unknown"
+        },
+        "background_process": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "download_size": {
+          "value": "not verified: not stated on the vendor's pages",
+          "mark": "unknown"
+        },
+        "ram_vs_claude_desktop": {
+          "value": "not verified: app shell unknown",
+          "mark": "unknown"
         },
         "runs_in_terminal": {
           "value": "Own desktop app",
@@ -1012,14 +1133,6 @@
           "value": "Not stated",
           "mark": "unknown"
         },
-        "app_framework_size": {
-          "value": "Desktop app, size not stated",
-          "mark": "unknown"
-        },
-        "running_ram": {
-          "value": "Not measured in this doc",
-          "mark": "unknown"
-        },
         "account_hotswap": {
           "value": "Not applicable",
           "mark": "n/a"
@@ -1051,6 +1164,26 @@
         "license_cost": {
           "value": "Open-ish, roughly 11k stars",
           "mark": "partial"
+        },
+        "app_shell": {
+          "value": "Electron ^33.0.0 (frontend/package.json), plus a separate Go backend",
+          "mark": "info"
+        },
+        "languages": {
+          "value": "Go ~59%, TypeScript ~38%",
+          "mark": "info"
+        },
+        "background_process": {
+          "value": "Yes: a separate Go backend process (repo has a distinct backend/ Go module via go.work, apart from the Electron frontend/)",
+          "mark": "info"
+        },
+        "download_size": {
+          "value": "v0.13.2-nightly: 136 MB Windows Setup.exe, 177-189 MB mac zip, 181 MB Linux AppImage",
+          "mark": "info"
+        },
+        "ram_vs_claude_desktop": {
+          "value": "Heavier (Electron + background daemon)",
+          "mark": "info"
         },
         "runs_in_terminal": {
           "value": "Own desktop app",
@@ -1088,6 +1221,14 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "conversation_gui_view": {
           "value": "not verified",
           "mark": "unknown"
@@ -1100,6 +1241,22 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "usage_hud": {
           "value": "not verified",
           "mark": "unknown"
@@ -1109,6 +1266,10 @@
           "mark": "unknown"
         },
         "limit_governor": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1132,19 +1293,7 @@
           "value": "not verified",
           "mark": "unknown"
         },
-        "cross_provider_delegation": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "always_on_assistant": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
         "knowledge_base": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "builtin_editors_browser": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1160,27 +1309,35 @@
           "value": "not verified",
           "mark": "unknown"
         },
-        "app_framework_size": {
+        "voice_input": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "running_ram": {
+        "app_shell": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "account_hotswap": {
+        "languages": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "prompt_scratchpad": {
+        "background_process": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "saved_prompt_library": {
+        "download_size": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "appearance_control": {
+        "ram_vs_claude_desktop": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "runs_in_terminal": {
+          "value": "TUI session manager",
+          "mark": "yes"
+        },
+        "license_cost": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1191,18 +1348,6 @@
         "teams_multiuser": {
           "value": "not verified",
           "mark": "unknown"
-        },
-        "voice_input": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "license_cost": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "runs_in_terminal": {
-          "value": "TUI session manager",
-          "mark": "yes"
         },
         "stability_maturity": {
           "value": "not verified",
@@ -1236,6 +1381,14 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "conversation_gui_view": {
           "value": "not verified",
           "mark": "unknown"
@@ -1248,6 +1401,22 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "usage_hud": {
           "value": "not verified",
           "mark": "unknown"
@@ -1257,6 +1426,10 @@
           "mark": "unknown"
         },
         "limit_governor": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1280,19 +1453,7 @@
           "value": "not verified",
           "mark": "unknown"
         },
-        "cross_provider_delegation": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "always_on_assistant": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
         "knowledge_base": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "builtin_editors_browser": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1308,27 +1469,35 @@
           "value": "not verified",
           "mark": "unknown"
         },
-        "app_framework_size": {
+        "voice_input": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "running_ram": {
+        "app_shell": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "account_hotswap": {
+        "languages": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "prompt_scratchpad": {
+        "background_process": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "saved_prompt_library": {
+        "download_size": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "appearance_control": {
+        "ram_vs_claude_desktop": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "runs_in_terminal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "license_cost": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1337,18 +1506,6 @@
           "mark": "unknown"
         },
         "teams_multiuser": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "voice_input": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "license_cost": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "runs_in_terminal": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1384,6 +1541,14 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "conversation_gui_view": {
           "value": "not verified",
           "mark": "unknown"
@@ -1396,6 +1561,22 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "usage_hud": {
           "value": "not verified",
           "mark": "unknown"
@@ -1405,6 +1586,10 @@
           "mark": "unknown"
         },
         "limit_governor": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1428,19 +1613,7 @@
           "value": "not verified",
           "mark": "unknown"
         },
-        "cross_provider_delegation": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "always_on_assistant": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
         "knowledge_base": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "builtin_editors_browser": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1456,27 +1629,35 @@
           "value": "not verified",
           "mark": "unknown"
         },
-        "app_framework_size": {
+        "voice_input": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "running_ram": {
+        "app_shell": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "account_hotswap": {
+        "languages": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "prompt_scratchpad": {
+        "background_process": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "saved_prompt_library": {
+        "download_size": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "appearance_control": {
+        "ram_vs_claude_desktop": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "runs_in_terminal": {
+          "value": "Yes, it is a terminal",
+          "mark": "yes"
+        },
+        "license_cost": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1487,18 +1668,6 @@
         "teams_multiuser": {
           "value": "not verified",
           "mark": "unknown"
-        },
-        "voice_input": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "license_cost": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "runs_in_terminal": {
-          "value": "Yes, it is a terminal",
-          "mark": "yes"
         },
         "stability_maturity": {
           "value": "not verified",
@@ -1532,6 +1701,14 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "conversation_gui_view": {
           "value": "not verified",
           "mark": "unknown"
@@ -1544,6 +1721,22 @@
           "value": "Kanban board",
           "mark": "yes"
         },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "usage_hud": {
           "value": "not verified",
           "mark": "unknown"
@@ -1553,6 +1746,10 @@
           "mark": "unknown"
         },
         "limit_governor": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1576,19 +1773,7 @@
           "value": "not verified",
           "mark": "unknown"
         },
-        "cross_provider_delegation": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "always_on_assistant": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
         "knowledge_base": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "builtin_editors_browser": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1604,27 +1789,35 @@
           "value": "not verified",
           "mark": "unknown"
         },
-        "app_framework_size": {
+        "voice_input": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "running_ram": {
+        "app_shell": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "account_hotswap": {
+        "languages": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "prompt_scratchpad": {
+        "background_process": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "saved_prompt_library": {
+        "download_size": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "appearance_control": {
+        "ram_vs_claude_desktop": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "runs_in_terminal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "license_cost": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1633,18 +1826,6 @@
           "mark": "unknown"
         },
         "teams_multiuser": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "voice_input": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "license_cost": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "runs_in_terminal": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1680,6 +1861,14 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "conversation_gui_view": {
           "value": "not verified",
           "mark": "unknown"
@@ -1692,6 +1881,22 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "usage_hud": {
           "value": "not verified",
           "mark": "unknown"
@@ -1701,6 +1906,10 @@
           "mark": "unknown"
         },
         "limit_governor": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1724,19 +1933,7 @@
           "value": "not verified",
           "mark": "unknown"
         },
-        "cross_provider_delegation": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "always_on_assistant": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
         "knowledge_base": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "builtin_editors_browser": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1752,39 +1949,31 @@
           "value": "not verified",
           "mark": "unknown"
         },
-        "app_framework_size": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "running_ram": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "account_hotswap": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "prompt_scratchpad": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "saved_prompt_library": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "appearance_control": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "extensibility": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "teams_multiuser": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
         "voice_input": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "app_shell": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "languages": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "background_process": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "download_size": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "ram_vs_claude_desktop": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "runs_in_terminal": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1792,7 +1981,11 @@
           "value": "MIT",
           "mark": "yes"
         },
-        "runs_in_terminal": {
+        "extensibility": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "teams_multiuser": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1828,6 +2021,14 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "conversation_gui_view": {
           "value": "not verified",
           "mark": "unknown"
@@ -1840,6 +2041,22 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "usage_hud": {
           "value": "not verified",
           "mark": "unknown"
@@ -1849,6 +2066,10 @@
           "mark": "unknown"
         },
         "limit_governor": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1872,19 +2093,7 @@
           "value": "not verified",
           "mark": "unknown"
         },
-        "cross_provider_delegation": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "always_on_assistant": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
         "knowledge_base": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "builtin_editors_browser": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1900,39 +2109,31 @@
           "value": "not verified",
           "mark": "unknown"
         },
-        "app_framework_size": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "running_ram": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "account_hotswap": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "prompt_scratchpad": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "saved_prompt_library": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "appearance_control": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "extensibility": {
-          "value": "TypeScript SDK plus MCP server so agents can spawn agents",
-          "mark": "yes"
-        },
-        "teams_multiuser": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
         "voice_input": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "app_shell": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "languages": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "background_process": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "download_size": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "ram_vs_claude_desktop": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "runs_in_terminal": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1940,7 +2141,11 @@
           "value": "Elastic-2.0",
           "mark": "yes"
         },
-        "runs_in_terminal": {
+        "extensibility": {
+          "value": "TypeScript SDK plus MCP server so agents can spawn agents",
+          "mark": "yes"
+        },
+        "teams_multiuser": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -1976,6 +2181,14 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "conversation_gui_view": {
           "value": "not verified",
           "mark": "unknown"
@@ -1988,6 +2201,22 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "usage_hud": {
           "value": "not verified",
           "mark": "unknown"
@@ -1997,6 +2226,10 @@
           "mark": "unknown"
         },
         "limit_governor": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -2020,19 +2253,7 @@
           "value": "not verified",
           "mark": "unknown"
         },
-        "cross_provider_delegation": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "always_on_assistant": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
         "knowledge_base": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "builtin_editors_browser": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -2048,39 +2269,31 @@
           "value": "not verified",
           "mark": "unknown"
         },
-        "app_framework_size": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "running_ram": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "account_hotswap": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "prompt_scratchpad": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "saved_prompt_library": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "appearance_control": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "extensibility": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "teams_multiuser": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
         "voice_input": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "app_shell": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "languages": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "background_process": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "download_size": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "ram_vs_claude_desktop": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "runs_in_terminal": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -2088,7 +2301,11 @@
           "value": "Proprietary",
           "mark": "no"
         },
-        "runs_in_terminal": {
+        "extensibility": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "teams_multiuser": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -2124,6 +2341,14 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "conversation_gui_view": {
           "value": "not verified",
           "mark": "unknown"
@@ -2136,6 +2361,22 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "usage_hud": {
           "value": "not verified",
           "mark": "unknown"
@@ -2145,6 +2386,10 @@
           "mark": "unknown"
         },
         "limit_governor": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -2168,19 +2413,7 @@
           "value": "not verified",
           "mark": "unknown"
         },
-        "cross_provider_delegation": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "always_on_assistant": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
         "knowledge_base": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "builtin_editors_browser": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -2196,39 +2429,31 @@
           "value": "not verified",
           "mark": "unknown"
         },
-        "app_framework_size": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "running_ram": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "account_hotswap": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "prompt_scratchpad": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "saved_prompt_library": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "appearance_control": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "extensibility": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "teams_multiuser": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
         "voice_input": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "app_shell": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "languages": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "background_process": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "download_size": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "ram_vs_claude_desktop": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "runs_in_terminal": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -2236,7 +2461,11 @@
           "value": "MIT",
           "mark": "yes"
         },
-        "runs_in_terminal": {
+        "extensibility": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "teams_multiuser": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -2272,6 +2501,14 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "conversation_gui_view": {
           "value": "not verified",
           "mark": "unknown"
@@ -2284,6 +2521,22 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "usage_hud": {
           "value": "not verified",
           "mark": "unknown"
@@ -2293,6 +2546,10 @@
           "mark": "unknown"
         },
         "limit_governor": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -2316,19 +2573,7 @@
           "value": "not verified",
           "mark": "unknown"
         },
-        "cross_provider_delegation": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "always_on_assistant": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
         "knowledge_base": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "builtin_editors_browser": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -2344,39 +2589,31 @@
           "value": "not verified",
           "mark": "unknown"
         },
-        "app_framework_size": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "running_ram": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "account_hotswap": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "prompt_scratchpad": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "saved_prompt_library": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "appearance_control": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "extensibility": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "teams_multiuser": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
         "voice_input": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "app_shell": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "languages": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "background_process": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "download_size": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "ram_vs_claude_desktop": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "runs_in_terminal": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -2384,7 +2621,11 @@
           "value": "open-source",
           "mark": "yes"
         },
-        "runs_in_terminal": {
+        "extensibility": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "teams_multiuser": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -2420,6 +2661,14 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "conversation_gui_view": {
           "value": "not verified",
           "mark": "unknown"
@@ -2432,6 +2681,22 @@
           "value": "Task list, kanban, and a global dashboard",
           "mark": "yes"
         },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "usage_hud": {
           "value": "No usage/burn-rate/token HUD on the page",
           "mark": "no"
@@ -2443,6 +2708,10 @@
         "limit_governor": {
           "value": "None",
           "mark": "no"
+        },
+        "account_hotswap": {
+          "value": "not verified",
+          "mark": "unknown"
         },
         "vault_task_source": {
           "value": "It is its own task store",
@@ -2464,19 +2733,7 @@
           "value": "not verified",
           "mark": "unknown"
         },
-        "cross_provider_delegation": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "always_on_assistant": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
         "knowledge_base": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "builtin_editors_browser": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -2492,29 +2749,37 @@
           "value": "not verified",
           "mark": "unknown"
         },
-        "app_framework_size": {
+        "voice_input": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "running_ram": {
+        "app_shell": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "account_hotswap": {
+        "languages": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "prompt_scratchpad": {
+        "background_process": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "saved_prompt_library": {
+        "download_size": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "appearance_control": {
+        "ram_vs_claude_desktop": {
           "value": "not verified",
           "mark": "unknown"
+        },
+        "runs_in_terminal": {
+          "value": "Replaces the terminal outright",
+          "mark": "no"
+        },
+        "license_cost": {
+          "value": "Closed-source, paid tiers",
+          "mark": "no"
         },
         "extensibility": {
           "value": "not verified",
@@ -2523,18 +2788,6 @@
         "teams_multiuser": {
           "value": "not verified",
           "mark": "unknown"
-        },
-        "voice_input": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "license_cost": {
-          "value": "Closed-source, paid tiers",
-          "mark": "no"
-        },
-        "runs_in_terminal": {
-          "value": "Replaces the terminal outright",
-          "mark": "no"
         },
         "stability_maturity": {
           "value": "not verified",
@@ -2568,6 +2821,14 @@
           "value": "not verified",
           "mark": "unknown"
         },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
         "conversation_gui_view": {
           "value": "not verified",
           "mark": "unknown"
@@ -2577,6 +2838,22 @@
           "mark": "unknown"
         },
         "session_organization": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "Streamed VS Code/Zed IDE plus a Playwright-driven built-in browser",
+          "mark": "yes"
+        },
+        "appearance_control": {
           "value": "not verified",
           "mark": "unknown"
         },
@@ -2591,6 +2868,10 @@
         "limit_governor": {
           "value": "A blocked card emails the human a specific question and resumes on reply, but only for one card, not a whole session against a usage window",
           "mark": "partial"
+        },
+        "account_hotswap": {
+          "value": "not verified",
+          "mark": "unknown"
         },
         "vault_task_source": {
           "value": "Its own kanban board is the tracker",
@@ -2612,21 +2893,9 @@
           "value": "not verified",
           "mark": "unknown"
         },
-        "cross_provider_delegation": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "always_on_assistant": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
         "knowledge_base": {
           "value": "not verified",
           "mark": "unknown"
-        },
-        "builtin_editors_browser": {
-          "value": "Streamed VS Code/Zed IDE plus a Playwright-driven built-in browser",
-          "mark": "yes"
         },
         "native_mobile_app": {
           "value": "not verified",
@@ -2640,29 +2909,37 @@
           "value": "It is itself the remote machine",
           "mark": "n/a"
         },
-        "app_framework_size": {
+        "voice_input": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "running_ram": {
+        "app_shell": {
+          "value": "Hosted cloud service, browser-based, no local install (vendor: \"VS Code runs as web app in your browser while Zed editor is streamed\")",
+          "mark": "info"
+        },
+        "languages": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "account_hotswap": {
+        "background_process": {
+          "value": "It is itself the remote machine; there is no separate local process to report",
+          "mark": "n/a"
+        },
+        "download_size": {
           "value": "not verified",
           "mark": "unknown"
         },
-        "prompt_scratchpad": {
-          "value": "not verified",
-          "mark": "unknown"
+        "ram_vs_claude_desktop": {
+          "value": "Runs in the cloud (local cost: a browser tab)",
+          "mark": "info"
         },
-        "saved_prompt_library": {
-          "value": "not verified",
-          "mark": "unknown"
+        "runs_in_terminal": {
+          "value": "Cloud codespace, not a local terminal tool",
+          "mark": "no"
         },
-        "appearance_control": {
-          "value": "not verified",
-          "mark": "unknown"
+        "license_cost": {
+          "value": "Commercial: hourly compute plus an optional credit wallet",
+          "mark": "no"
         },
         "extensibility": {
           "value": "not verified",
@@ -2671,18 +2948,6 @@
         "teams_multiuser": {
           "value": "not verified",
           "mark": "unknown"
-        },
-        "voice_input": {
-          "value": "not verified",
-          "mark": "unknown"
-        },
-        "license_cost": {
-          "value": "Commercial: hourly compute plus an optional credit wallet",
-          "mark": "no"
-        },
-        "runs_in_terminal": {
-          "value": "Cloud codespace, not a local terminal tool",
-          "mark": "no"
         },
         "stability_maturity": {
           "value": "not verified",

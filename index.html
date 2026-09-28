@@ -16,6 +16,7 @@
 <meta name="twitter:image" content="https://dtiger1889-ops.github.io/agent-deck-comparison/assets/screenshot.png">
 <style>
   :root {
+    color-scheme: light dark;
     --bg: #f7f7f8;
     --panel: #ffffff;
     --text: #1b1c1f;
@@ -185,6 +186,82 @@
   footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 24px; }
   a { color: var(--accent); }
   #view-bytool { display: none; }
+  /* Own stacking context so the sticky header/first column always paint over scrolled cells. */
+  .table-scroll { isolation: isolate; }
+  .phone-only { display: none; }
+
+  /* ---------- Phones (<= 760 px). Desktop above this width is untouched. ---------- */
+  @media (max-width: 760px) {
+    header { padding: 10px 10px 4px; }
+    main { padding: 0 10px 16px; }
+    footer { padding: 16px 10px; }
+    h1 { font-size: 1.15rem; }
+    .title-row { flex-wrap: nowrap; margin-bottom: 4px; }
+    .gh-link { flex: none; font-size: 0.75rem; padding: 3px 9px; gap: 5px; }
+    .gh-link svg { width: 14px; height: 14px; }
+    .sub { font-size: 0.84rem; line-height: 1.4; margin-bottom: 4px; }
+    .about { font-size: 0.85rem; }
+    .legend { gap: 5px 6px; margin-top: 8px; }
+
+    /* Controls: no gutter; each row is one line; a small label sits inline at its start. */
+    .row { display: flex; align-items: center; gap: 8px; margin: 0 0 8px; }
+    .row-label { flex: none; padding-top: 0; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+    #view-row .row-label { display: none; }
+    .row-body { flex: 1 1 auto; gap: 6px 8px; }
+    #tool-chips, #section-chips, #active-filters {
+      flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding: 1px 0;
+      -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+      mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+    }
+    #tool-chips > *, #section-chips > *, #active-filters > * { flex: none; white-space: nowrap; }
+    .view-toggle button, #filters-btn { padding: 6px 10px; font-size: 0.85rem; }
+    #filters-btn {
+      display: inline-block; background: var(--panel); color: var(--text); border: 1px solid var(--border);
+      border-radius: 6px; cursor: pointer; margin-left: auto;
+    }
+    #filters-btn::after { content: " \25BE"; color: var(--muted); }
+    body.filters-open #filters-btn { border-color: var(--accent); color: var(--accent); }
+    body.filters-open #filters-btn::after { content: " \25B4"; }
+    body:not(.filters-open) .more { display: none !important; }
+    #phone-ff { display: flex; }
+    #phone-ff .row-body { flex-wrap: nowrap; min-width: 0; }
+    #phone-ff select { flex: 1 1 0; min-width: 0; font-size: 0.85rem; padding: 6px 6px; background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 6px; }
+    #filter-search { flex: 1 1 100%; }
+
+    /* The table box: fits the screen; vertical swipes hand off to the page at its ends. */
+    .table-scroll { background: var(--panel); max-height: calc(100vh - 16px); max-height: calc(100dvh - 16px); overscroll-behavior-x: contain; overscroll-behavior-y: auto; }
+    /* Right-edge fade: the part-visible next column fades out instead of being cut mid-word,
+       and it shows there is more to swipe to. Hidden once scrolled to the last column. */
+    .matrix-wrap { position: relative; }
+    .matrix-wrap::after {
+      content: ""; position: absolute; top: 1px; right: 1px; bottom: 1px; width: 44px; pointer-events: none;
+      border-radius: 0 8px 8px 0; background: linear-gradient(to right, transparent, var(--panel) 85%); z-index: 5;
+    }
+    .matrix-wrap.at-end::after { display: none; }
+    #view-matrix { scroll-snap-type: x mandatory; scroll-padding-left: 132px; }
+    #matrix-table thead th:not(:first-child) { scroll-snap-align: start; }
+    th, td { padding: 8px 9px; font-size: 0.84rem; overflow-wrap: anywhere; }
+    #matrix-table th:first-child, #matrix-table td:first-child { width: 132px; box-shadow: inset -1px 0 0 var(--border); }
+    .feature-label { display: block; line-height: 1.3; }
+    .feature-desc { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 0.76rem; line-height: 1.35; cursor: pointer; }
+    .feature-desc.open { display: block; }
+    .feat-filter { display: none; }
+    .cell-value, .fact-value { font-size: 0.82rem; line-height: 1.45; }
+    .sort-hint { font-size: 0.66rem; }
+    .group-label { padding: 7px 9px; }
+
+    /* By tool: one card per tool; the column headings become a row of sort buttons. */
+    #bytool-table, #bytool-table tbody, #bytool-table tr, #bytool-table td { display: block; width: auto; }
+    #bytool-table thead { display: block; position: sticky; top: 0; z-index: 3; background: var(--sticky-bg); border-bottom: 1px solid var(--border); }
+    #bytool-table thead tr { display: flex; align-items: center; gap: 6px; overflow-x: auto; padding: 8px 9px; scrollbar-width: none; }
+    #bytool-table thead tr::before { content: "Sort by"; flex: none; color: var(--muted); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; }
+    #bytool-table thead th { position: static; flex: none; white-space: nowrap; border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px; font-size: 0.78rem; background: var(--panel); }
+    #bytool-table tbody tr { padding: 10px 10px; border-bottom: 1px solid var(--border); }
+    #bytool-table td { border: 0; padding: 2px 0; }
+    #bytool-table td::before { content: attr(data-label) ": "; color: var(--muted); font-size: 0.76rem; }
+    #bytool-table td:first-child { font-size: 1rem; font-weight: 700; padding-bottom: 4px; }
+    #bytool-table td:first-child::before { content: none; }
+  }
 </style>
 </head>
 <body>
@@ -203,32 +280,39 @@
 </header>
 
 <main>
-  <div class="row controls">
+  <div class="row controls" id="view-row">
    <span class="row-label">View</span>
    <div class="row-body">
     <div class="view-toggle">
       <button id="btn-matrix" class="active">Feature matrix</button>
       <button id="btn-bytool">By tool</button>
     </div>
-    <label>Category
+    <button id="filters-btn" class="phone-only" aria-expanded="false" aria-controls="section-row phone-ff">More filters</button>
+    <label class="more">Category
       <select id="filter-category">
         <option value="all">All</option>
         <option value="agent manager">Agent managers</option>
         <option value="other tool we looked at">Other tools</option>
       </select>
     </label>
-    <input type="text" id="filter-search" placeholder="Filter features…">
-    <label><input type="checkbox" id="filter-hide-unknown"> Hide unknown-only rows</label>
-    <label><input type="checkbox" id="filter-diff"> Only rows where tools differ</label>
-    <label><input type="checkbox" id="compact"> Compact (badges only)</label>
+    <input type="text" id="filter-search" class="more" placeholder="Filter features…">
+    <label class="more"><input type="checkbox" id="filter-hide-unknown"> Hide unknown-only rows</label>
+    <label class="more"><input type="checkbox" id="filter-diff"> Only rows where tools differ</label>
+    <label class="more"><input type="checkbox" id="compact"> Compact (badges only)</label>
    </div>
   </div>
   <div class="row"><span class="row-label">Tools</span><div class="row-body" id="tool-chips"></div></div>
-  <div class="row"><span class="row-label">Sections</span><div class="row-body" id="section-chips"></div></div>
+  <div class="row more" id="section-row"><span class="row-label">Sections</span><div class="row-body" id="section-chips"></div></div>
+  <div class="row more phone-only" id="phone-ff"><span class="row-label">Show tools</span><div class="row-body">
+    <select id="ff-feature" aria-label="Feature to filter tools by"></select>
+    <select id="ff-option" aria-label="Which tools to show for that feature"></select>
+  </div></div>
   <div class="row empty" id="active-row"><span class="row-label">Filtering by</span><div class="row-body" id="active-filters"></div></div>
 
+  <div class="matrix-wrap">
   <div id="view-matrix" class="table-scroll">
     <table id="matrix-table"></table>
+  </div>
   </div>
 
   <div id="view-bytool" class="table-scroll">
@@ -260,6 +344,7 @@ let shownTools = null;            // tool names picked in the Tools chips
 let hiddenSections = new Set();   // sections switched off in the Sections chips
 let collapsed = new Set();        // sections collapsed to their heading
 let featFilters = {};             // feature key -> chosen option value ("" = any)
+const PHONE = window.matchMedia("(max-width: 760px)");   // must match the CSS breakpoint
 
 // Options for a feature row's "Show tools" filter.
 const HAS = new Set(["yes"]);
@@ -392,7 +477,9 @@ function renderMatrix() {
 
   const table = document.getElementById("matrix-table");
   table.innerHTML = "";
-  table.style.width = "max(100%, " + (240 + tools.length * 170) + "px)";
+  requestAnimationFrame(updateEdge);
+  const firstCol = PHONE.matches ? 132 : 240, toolCol = PHONE.matches ? 150 : 170;
+  table.style.width = "max(100%, " + (firstCol + tools.length * toolCol) + "px)";
   const thead = document.createElement("thead");
   const trh = document.createElement("tr");
   const thFeat = document.createElement("th");
@@ -452,6 +539,8 @@ function renderMatrix() {
     const tr = document.createElement("tr");
     const tdLabel = document.createElement("td");
     tdLabel.innerHTML = `<span class="feature-label">${f.label}</span><span class="feature-desc">${f.description}</span>`;
+    const desc = tdLabel.querySelector(".feature-desc");
+    desc.addEventListener("click", () => desc.classList.toggle("open"));   // phones clamp it to 2 lines
     const opts = filterOptions(f);
     if (opts) {
       const wrap = document.createElement("label");
@@ -481,6 +570,14 @@ function renderMatrix() {
     tbody.appendChild(tr);
   });
   table.appendChild(tbody);
+  // Phones: leave room after the last column so it, too, can snap flush against the sticky
+  // first column; otherwise the final scroll stop shows a sliver of the column before it.
+  table.style.marginRight = "";
+  const box = document.getElementById("view-matrix");
+  const room = box.clientWidth - firstCol;
+  if (PHONE.matches && room > 0 && tools.length * toolCol > room) {
+    table.style.marginRight = Math.max(0, room - toolCol) + "px";
+  }
 }
 
 function countYes(tool) {
@@ -530,6 +627,7 @@ function renderByTool() {
     const tr = document.createElement("tr");
     cols.forEach(col => {
       const td = document.createElement("td");
+      td.dataset.label = col.label;   // phones show each cell as "Label: value" in a card
       if (col.key === "name" && r.url) {
         const a = document.createElement("a");
         a.href = r.url; a.target = "_blank"; a.rel = "noopener";
@@ -637,7 +735,55 @@ function renderActiveFilters() {
 function renderAll() {
   renderMatrix();
   renderByTool();
+  renderPhoneFilter();
 }
+
+// Phones: one "Show tools" picker in the filters panel replaces the dropdown under every row.
+function renderPhoneFilter() {
+  const fs = document.getElementById("ff-feature"), os = document.getElementById("ff-option");
+  const prev = fs.value;
+  const usable = DATA.features.filter(f => filterOptions(f));
+  fs.innerHTML = "";
+  usable.forEach(f => {
+    const o = document.createElement("option");
+    o.value = f.key; o.textContent = f.label;
+    fs.appendChild(o);
+  });
+  if (prev && usable.some(f => f.key === prev)) fs.value = prev;
+  const f = usable.find(x => x.key === fs.value);
+  os.innerHTML = "";
+  if (!f) return;
+  filterOptions(f).forEach(([val, text]) => {
+    const o = document.createElement("option");
+    o.value = val; o.textContent = val ? text : "Any (no filter)";
+    os.appendChild(o);
+  });
+  os.value = featFilters[f.key] || "";
+}
+document.getElementById("ff-feature").addEventListener("change", renderPhoneFilter);
+document.getElementById("ff-option").addEventListener("change", e => {
+  const key = document.getElementById("ff-feature").value;
+  if (e.target.value) featFilters[key] = e.target.value; else delete featFilters[key];
+  sortToolIdx = null; renderAll(); renderActiveFilters();
+});
+document.getElementById("filters-btn").addEventListener("click", e => {
+  const open = document.body.classList.toggle("filters-open");
+  e.currentTarget.setAttribute("aria-expanded", open ? "true" : "false");
+  e.currentTarget.textContent = open ? "Fewer filters" : "More filters";
+});
+// Phones: drop the right-edge fade once the table is scrolled to its last column.
+function updateEdge() {
+  const m = document.getElementById("view-matrix");
+  m.parentElement.classList.toggle("at-end", m.scrollLeft + m.clientWidth >= m.scrollWidth - 2);
+}
+document.getElementById("view-matrix").addEventListener("scroll", updateEdge, { passive: true });
+// Re-lay the matrix when the screen crosses the phone breakpoint (e.g. rotating a phone).
+PHONE.addEventListener("change", () => { if (DATA) renderMatrix(); });
+let resizeTimer = null;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => { if (DATA && PHONE.matches) renderMatrix(); }, 150);
+});
 
 function setView(view) {
   currentView = view;
@@ -645,6 +791,7 @@ function setView(view) {
   document.getElementById("view-bytool").style.display = view === "bytool" ? "block" : "none";
   document.getElementById("btn-matrix").classList.toggle("active", view === "matrix");
   document.getElementById("btn-bytool").classList.toggle("active", view === "bytool");
+  if (view === "matrix" && DATA && PHONE.matches) renderMatrix();   // box had no width while hidden
 }
 
 document.getElementById("btn-matrix").addEventListener("click", () => setView("matrix"));

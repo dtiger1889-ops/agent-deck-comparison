@@ -154,7 +154,12 @@
   .chips .chips-label { color: var(--muted); margin-right: 2px; }
   .chip { border: 1px solid var(--border); background: var(--panel); color: var(--text); border-radius: 999px; padding: 4px 10px; font-size: 0.82rem; cursor: pointer; }
   .chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
-  .chip-link { background: none; border: none; color: var(--accent); cursor: pointer; font-size: 0.82rem; padding: 4px; text-decoration: underline; }
+  .seg { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; margin-right: 6px; background: var(--panel); }
+  .seg button { border: none; background: none; color: var(--muted); font-size: 0.78rem; font-weight: 600; padding: 4px 11px; cursor: pointer; }
+  .seg button + button { border-left: 1px solid var(--border); }
+  .seg button:hover { color: var(--accent); }
+  .seg button.on { background: var(--sticky-bg); color: var(--text); }
+  .chips-sep { width: 1px; align-self: stretch; background: var(--border); margin: 2px 4px; }
   body.compact .cell-value, body.compact .feature-desc { display: none; }
   body.compact th, body.compact td { padding-top: 5px; padding-bottom: 5px; }
   .cell-value { display: block; margin-top: 3px; color: var(--muted); font-size: 0.78rem; }
@@ -365,7 +370,7 @@ function renderMatrix() {
       th.title = collapsed.has(row.label) ? "Expand section" : "Collapse section";
       th.addEventListener("click", () => {
         if (collapsed.has(row.label)) collapsed.delete(row.label); else collapsed.add(row.label);
-        renderMatrix();
+        renderChips(); renderMatrix();
       });
       tr.appendChild(th);
       tbody.appendChild(tr);
@@ -456,12 +461,27 @@ function chip(label, on, onClick) {
   b.addEventListener("click", onClick);
   return b;
 }
-function chipLink(label, onClick) {
-  const b = document.createElement("button");
-  b.className = "chip-link";
-  b.textContent = label;
-  b.addEventListener("click", onClick);
-  return b;
+function seg(items) {
+  // items: [{label, on, onClick}] -> one pill-shaped button group
+  const wrap = document.createElement("span");
+  wrap.className = "seg";
+  items.forEach(it => {
+    const b = document.createElement("button");
+    b.textContent = it.label;
+    if (it.on) b.classList.add("on");
+    b.setAttribute("aria-pressed", it.on ? "true" : "false");
+    b.addEventListener("click", it.onClick);
+    wrap.appendChild(b);
+  });
+  return wrap;
+}
+function sep() {
+  const d = document.createElement("span");
+  d.className = "chips-sep";
+  return d;
+}
+function sameSet(a, b) {
+  return a.size === b.size && [...a].every(x => b.has(x));
 }
 function sectionOrder() {
   return (DATA.group_order || []).length ? DATA.group_order : [...new Set(DATA.features.map(f => f.group))];
@@ -469,20 +489,29 @@ function sectionOrder() {
 function renderChips() {
   const tc = document.getElementById("tool-chips");
   tc.innerHTML = '<span class="chips-label">Tools:</span>';
+  const allNames = new Set(DATA.tools.map(t => t.name));
+  const six = new Set(DEFAULT_TOOLS.filter(n => allNames.has(n)));
+  tc.appendChild(seg([
+    { label: "Main six", on: sameSet(shownTools, six), onClick: () => { shownTools = new Set(six); sortToolIdx = null; renderChips(); renderAll(); } },
+    { label: "All " + allNames.size, on: sameSet(shownTools, allNames), onClick: () => { shownTools = new Set(allNames); sortToolIdx = null; renderChips(); renderAll(); } },
+  ]));
+  tc.appendChild(sep());
   DATA.tools.forEach(t => tc.appendChild(chip(t.name, shownTools.has(t.name), () => {
     if (shownTools.has(t.name)) shownTools.delete(t.name); else shownTools.add(t.name);
     sortToolIdx = null; renderChips(); renderAll();
   })));
-  tc.appendChild(chipLink("all", () => { shownTools = new Set(DATA.tools.map(t => t.name)); sortToolIdx = null; renderChips(); renderAll(); }));
-  tc.appendChild(chipLink("main six", () => { shownTools = new Set(DEFAULT_TOOLS); sortToolIdx = null; renderChips(); renderAll(); }));
   const sc = document.getElementById("section-chips");
   sc.innerHTML = '<span class="chips-label">Sections:</span>';
+  const secs = sectionOrder();
+  sc.appendChild(seg([
+    { label: "Show all", on: hiddenSections.size === 0 && collapsed.size === 0, onClick: () => { hiddenSections.clear(); collapsed.clear(); renderChips(); renderMatrix(); } },
+    { label: "Collapse all", on: secs.every(g => collapsed.has(g)), onClick: () => { secs.forEach(g => collapsed.add(g)); renderChips(); renderMatrix(); } },
+  ]));
+  sc.appendChild(sep());
   sectionOrder().forEach(g => sc.appendChild(chip(g, !hiddenSections.has(g), () => {
     if (hiddenSections.has(g)) hiddenSections.delete(g); else hiddenSections.add(g);
     renderChips(); renderMatrix();
   })));
-  sc.appendChild(chipLink("all", () => { hiddenSections.clear(); collapsed.clear(); renderChips(); renderMatrix(); }));
-  sc.appendChild(chipLink("collapse all", () => { sectionOrder().forEach(g => collapsed.add(g)); renderMatrix(); }));
 }
 
 function renderAll() {

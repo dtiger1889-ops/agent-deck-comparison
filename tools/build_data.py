@@ -158,6 +158,53 @@ velaterm = {
 }
 
 # ---- Pantheon ----
+herdr = {
+    "name": "herdr", "url": "https://herdr.dev", "category": "agent manager",
+    "where_agents_run": "your machine + saved SSH machines, in one window",
+    "license": "Apache-2.0, free", "checked_on": "2026-09-28 (repo README, release assets, herdr.dev and its integrations docs)",
+    "source_note": "Checked against its own README, latest release (v0.9.1), herdr.dev and the integrations docs. Not installed or run here.",
+    "is_authors_own": False,
+    "features": {
+        "multi_provider_supervision": c("yes", "Claude Code, Codex, Cursor, opencode, Grok and more; it owns their terminals rather than wrapping them"),
+        "harness_count": c("info", "22 detected out of the box"),
+        "needs_you_signal": c("partial", "Every pane marked working, blocked or idle, read from the screen (hooks are used only to restore sessions)"),
+        "approve_deny_prompt": c("no", "Marks the pane blocked; you answer in the pane itself"),
+        "conversation_gui_view": c("no", "Terminal panes only"),
+        "real_terminal": c("yes", "Every agent runs in its own real pane"),
+        "session_organization": c("yes", "Workspaces and split panes, with one agent list across local and SSH machines"),
+        "prompt_scratchpad": c("undocumented", "Not mentioned in its docs"),
+        "saved_prompt_library": c("undocumented", "Not mentioned in its docs"),
+        "builtin_editors_browser": c("no", "Runs your tools in panes; no editor or browser of its own"),
+        "appearance_control": c("partial", "Uses the terminal you already have; its own configuration file"),
+        "usage_hud": c("undocumented", "Homepage demo shows context use and a rate-limit line; no documented usage-window view"),
+        "burn_rate_forecast": c("undocumented", "Not mentioned in its docs"),
+        "limit_governor": c("undocumented", "Not mentioned in its docs"),
+        "account_hotswap": c("undocumented", "Not mentioned in its docs"),
+        "vault_task_source": c("no", "No task source"),
+        "issue_tracker_pipeline": c("undocumented", "Not mentioned in its docs"),
+        "worktree_management": c("undocumented", "Not mentioned in its docs"),
+        "planner_orchestrator": c("partial", "No planner of its own, but agents can spawn panes and prompt each other through its CLI and socket API"),
+        "agent_to_agent_messaging": c("yes", "Agents spawn panes, prompt each other and wait until another agent is really blocked (socket API + agent skill)"),
+        "cross_provider_delegation": c("yes", "All agents in one list, local and remote"),
+        "always_on_assistant": c("no", "None"),
+        "knowledge_base": c("no", "None"),
+        "native_mobile_app": c("no", "None (a separate community macOS console, herdrm, exists)"),
+        "phone_no_new_app": c("yes", "Any SSH app reattaches to the background server"),
+        "remote_ssh": c("yes", "Saved SSH machines sit beside local ones with independent reconnects; a hosted option is announced"),
+        "voice_input": c("undocumented", "Not mentioned in its docs"),
+        "app_shell": c("info", "Terminal UI: one Rust binary, no Electron"),
+        "languages": c("info", "Rust ~93%, Python ~3%"),
+        "background_process": c("info", "Yes: a background server keeps terminals running after you close the client or lose SSH"),
+        "download_size": c("info", "v0.9.1: 9 MB Windows zip, 20-22 MB macOS, 23-25 MB Linux"),
+        "ram_vs_claude_desktop": c("info", "Much lighter"),
+        "runs_in_terminal": c("yes", "Runs in whatever terminal you already use"),
+        "license_cost": c("info", "Apache-2.0, free, uses your own subscriptions"),
+        "extensibility": c("yes", "Plugin marketplace plus a CLI and socket API"),
+        "teams_multiuser": c("undocumented", "Not mentioned in its docs"),
+        "stability_maturity": c("info", "v0.9.1, ~41k GitHub stars, fast-moving; Windows build is in beta"),
+    },
+}
+
 pantheon = {
     "name": "Pantheon", "url": "https://github.com/dtiger1889-ops/pantheon", "category": "agent manager",
     "where_agents_run": "your machine (terminal-native, tmux-hosted; phone reaches it over an existing SSH tunnel)",
@@ -200,7 +247,7 @@ pantheon = {
         "background_process": c("info", "Yes: a separate small Python usage-collector process alongside the Textual UI process"),
         "download_size": c("info", "No installer; runs from source (git clone + Python)"),
         "ram_vs_claude_desktop": c("info", "Much lighter"),
-        "runs_in_terminal": c("yes", "Only one in this table that runs entirely inside a terminal you already have"),
+        "runs_in_terminal": c("yes", "Runs inside the terminal you already have, under tmux"),
         "stability_maturity": c("info", "Personal, pre-release; its terminal-multiplexer server froze four times on one day (cause still open)"),
     },
 }
@@ -450,7 +497,7 @@ oyren = thin(
      "license_cost": c("info", "Commercial: hourly compute plus an optional credit wallet")},
 )
 
-TOOLS = [orca, velaterm, pantheon, paseo, kepler, ao,
+TOOLS = [orca, velaterm, herdr, pantheon, paseo, kepler, ao,
          ccmanager, opencove, wave, vibekanban, t3code, superset, conductor,
          jenny, micracode, teleclod, oyren]
 

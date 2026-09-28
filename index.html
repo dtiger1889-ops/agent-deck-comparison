@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Agent-manager comparison</title>
-<meta name="description" content="Sortable feature comparison of AI coding-agent managers: Orca, VelaTerm, Pantheon, Paseo, Kepler, AO and more.">
+<meta name="description" content="Sortable feature comparison of AI coding-agent managers: Orca, VelaTerm, herdr, Pantheon, Paseo, Kepler, AO and more.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Agent-manager comparison">
-<meta property="og:description" content="Sortable feature comparison of AI coding-agent managers: Orca, VelaTerm, Pantheon, Paseo, Kepler, AO and more.">
+<meta property="og:description" content="Sortable feature comparison of AI coding-agent managers: Orca, VelaTerm, herdr, Pantheon, Paseo, Kepler, AO and more.">
 <meta property="og:url" content="https://dtiger1889-ops.github.io/agent-deck-comparison/">
 <meta property="og:image" content="https://dtiger1889-ops.github.io/agent-deck-comparison/assets/screenshot.png">
 <meta property="og:image:width" content="1400">
@@ -255,7 +255,7 @@ let sortDir = 1;
 let bytoolSortKey = "name";
 let bytoolSortDir = 1;
 let currentView = "matrix";
-const DEFAULT_TOOLS = ["Orca", "VelaTerm", "Pantheon", "Paseo", "GitKraken Kepler", "Agent Orchestrator (AO)"];
+const DEFAULT_TOOLS = ["Orca", "VelaTerm", "herdr", "Pantheon", "Paseo", "GitKraken Kepler", "Agent Orchestrator (AO)"];
 let shownTools = null;            // tool names picked in the Tools chips
 let hiddenSections = new Set();   // sections switched off in the Sections chips
 let collapsed = new Set();        // sections collapsed to their heading
@@ -582,7 +582,7 @@ function renderChips() {
   const allNames = new Set(DATA.tools.map(t => t.name));
   const six = new Set(DEFAULT_TOOLS.filter(n => allNames.has(n)));
   tc.appendChild(seg([
-    { label: "Main six", on: sameSet(shownTools, six), onClick: () => { shownTools = new Set(six); sortToolIdx = null; renderChips(); renderAll(); } },
+    { label: "Main " + six.size, on: sameSet(shownTools, six), onClick: () => { shownTools = new Set(six); sortToolIdx = null; renderChips(); renderAll(); } },
     { label: "All " + allNames.size, on: sameSet(shownTools, allNames), onClick: () => { shownTools = new Set(allNames); sortToolIdx = null; renderChips(); renderAll(); } },
   ]));
   tc.appendChild(sep());

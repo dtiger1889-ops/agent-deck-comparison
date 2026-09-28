@@ -9,7 +9,7 @@ here = os.path.dirname(os.path.abspath(__file__))
 with open(os.path.join(here, "..", "data", "tools.json"), encoding="utf-8") as f:
     DATA = json.load(f)
 
-TOOL_ORDER = ["Orca", "VelaTerm", "Pantheon", "Paseo", "GitKraken Kepler", "Agent Orchestrator (AO)"]
+TOOL_ORDER = ["Orca", "VelaTerm", "herdr", "Pantheon", "Paseo", "GitKraken Kepler", "Agent Orchestrator (AO)"]
 FEATURE_ORDER = [
     "harness_count", "app_shell", "usage_hud", "burn_rate_forecast",
     "limit_governor", "vault_task_source", "worktree_management",
@@ -30,6 +30,7 @@ SHORT_LABEL = {
 SHORT_AGENTS = {
     "Orca": "27+",
     "VelaTerm": "8+",
+    "herdr": "22",
     "Pantheon": "2",
     "Paseo": "~39",
     "GitKraken Kepler": "Any (claimed)",
@@ -39,6 +40,7 @@ DISPLAY_NAME = {"Agent Orchestrator (AO)": "AO", "GitKraken Kepler": "Kepler"}
 SHORT_SHELL = {
     "Orca": "Electron",
     "VelaTerm": "Tauri 2",
+    "herdr": "Terminal UI",
     "Pantheon": "Terminal UI",
     "Paseo": "Electron",
     "GitKraken Kepler": "not verified",
@@ -63,7 +65,7 @@ features.sort(key=lambda f: FEATURE_ORDER.index(f["key"]))
 
 def badge_html(cell):
     bg, fg, label = MARK_STYLE[cell["mark"]]
-    border = ";border:2px dashed #9a9a9a;padding:3px 8px" if cell["mark"] == "undocumented" else ""
+    border = ";border:2px dashed #9a9a9a;padding:3px 7px" if cell["mark"] == "undocumented" else ""
     return f'<span class="b" style="background:{bg};color:{fg}{border}">{label}</span>'
 
 rows_html = []
@@ -89,17 +91,17 @@ html = f"""<!DOCTYPE html>
     margin: 0; width: 1080px; height: 1350px;
     font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     background: #f7f7f8; color: #1b1c1f;
-    padding: 48px 56px;
+    padding: 44px 40px;
   }}
   h1 {{ font-size: 46px; margin: 0 0 6px; }}
   .sub {{ font-size: 22px; color: #5c5f66; margin: 0 0 4px; }}
   .snap {{ font-size: 20px; color: #2f5fd8; font-weight: 600; margin: 0 0 22px; }}
   table {{ border-collapse: collapse; width: 100%; background: #fff; border: 1px solid #dcdde1; border-radius: 10px; overflow: hidden; }}
-  th, td {{ padding: 22px 10px; font-size: 24px; text-align: center; border-bottom: 1px solid #dcdde1; }}
+  th, td {{ padding: 22px 4px; font-size: 22px; text-align: center; border-bottom: 1px solid #dcdde1; }}
   th {{ background: #eef0f3; font-size: 22px; }}
-  tbody th {{ text-align: left; font-size: 23px; font-weight: 600; white-space: nowrap; }}
+  tbody th {{ text-align: left; font-size: 21px; font-weight: 600; white-space: nowrap; }}
   td:first-child, th:first-child {{ text-align: left; padding-left: 16px; width: 260px; }}
-  .b {{ white-space: nowrap; display: inline-block; padding: 6px 14px; border-radius: 999px; font-size: 21px; font-weight: 700; }}
+  .b {{ white-space: nowrap; display: inline-block; padding: 5px 11px; border-radius: 999px; font-size: 19px; font-weight: 700; }}
   td.plain {{ font-size: 22px; color: #3a3c40; font-weight: 600; }}
   .key {{ margin-top: 24px; font-size: 19px; color: #5c5f66; line-height: 1.5; }}
   .wm {{ display: block; margin-top: 4px; font-size: 16px; font-weight: 500; color: #8a8d94; white-space: nowrap; }}
@@ -108,7 +110,7 @@ html = f"""<!DOCTYPE html>
 </style></head>
 <body>
   <h1>Agent-manager comparison</h1>
-  <p class="sub">Six AI coding-agent managers, ten features that matter most</p>
+  <p class="sub">Seven AI coding-agent managers, ten features that matter most</p>
   <p class="snap">Snapshot 2026-09-28 &middot; not re-verified beyond each tool's own docs/posts</p>
   <table>
     <thead><tr><th>Feature<span class="wm"><svg class="gh" viewBox="0 0 16 16" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.37A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>dtiger1889-ops</span></th>{header_cells}</tr></thead>
@@ -119,7 +121,7 @@ html = f"""<!DOCTYPE html>
   <span class="b" style="background:#ece3fb;color:#5b3aa8">Exp.</span>
   <span class="b" style="background:#e6ecf5;color:#3a4f78">Planned</span>
   <span class="b" style="background:#f8dede;color:#9c2b2b">No</span>
-  <span class="b" style="background:#ffffff;color:#6a6a6a;border:2px dashed #9a9a9a;padding:3px 8px">Not doc.</span>
+  <span class="b" style="background:#ffffff;color:#6a6a6a;border:2px dashed #9a9a9a;padding:3px 7px">Not doc.</span>
   <span class="b" style="background:#ececec;color:#6a6a6a">Unk.</span></p>
   <p class="footer">Full sortable chart: <b style="color:#2f5fd8">dtiger1889-ops.github.io/agent-deck-comparison</b></p>
 </body></html>

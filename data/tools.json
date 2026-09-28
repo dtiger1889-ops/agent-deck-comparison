@@ -556,6 +556,166 @@
       }
     },
     {
+      "name": "herdr",
+      "url": "https://herdr.dev",
+      "category": "agent manager",
+      "where_agents_run": "your machine + saved SSH machines, in one window",
+      "license": "Apache-2.0, free",
+      "checked_on": "2026-09-28 (repo README, release assets, herdr.dev and its integrations docs)",
+      "source_note": "Checked against its own README, latest release (v0.9.1), herdr.dev and the integrations docs. Not installed or run here.",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "Claude Code, Codex, Cursor, opencode, Grok and more; it owns their terminals rather than wrapping them",
+          "mark": "yes"
+        },
+        "harness_count": {
+          "value": "22 detected out of the box",
+          "mark": "info"
+        },
+        "needs_you_signal": {
+          "value": "Every pane marked working, blocked or idle, read from the screen (hooks are used only to restore sessions)",
+          "mark": "partial"
+        },
+        "approve_deny_prompt": {
+          "value": "Marks the pane blocked; you answer in the pane itself",
+          "mark": "no"
+        },
+        "conversation_gui_view": {
+          "value": "Terminal panes only",
+          "mark": "no"
+        },
+        "real_terminal": {
+          "value": "Every agent runs in its own real pane",
+          "mark": "yes"
+        },
+        "session_organization": {
+          "value": "Workspaces and split panes, with one agent list across local and SSH machines",
+          "mark": "yes"
+        },
+        "prompt_scratchpad": {
+          "value": "Not mentioned in its docs",
+          "mark": "undocumented"
+        },
+        "saved_prompt_library": {
+          "value": "Not mentioned in its docs",
+          "mark": "undocumented"
+        },
+        "builtin_editors_browser": {
+          "value": "Runs your tools in panes; no editor or browser of its own",
+          "mark": "no"
+        },
+        "appearance_control": {
+          "value": "Uses the terminal you already have; its own configuration file",
+          "mark": "partial"
+        },
+        "usage_hud": {
+          "value": "Homepage demo shows context use and a rate-limit line; no documented usage-window view",
+          "mark": "undocumented"
+        },
+        "burn_rate_forecast": {
+          "value": "Not mentioned in its docs",
+          "mark": "undocumented"
+        },
+        "limit_governor": {
+          "value": "Not mentioned in its docs",
+          "mark": "undocumented"
+        },
+        "account_hotswap": {
+          "value": "Not mentioned in its docs",
+          "mark": "undocumented"
+        },
+        "vault_task_source": {
+          "value": "No task source",
+          "mark": "no"
+        },
+        "issue_tracker_pipeline": {
+          "value": "Not mentioned in its docs",
+          "mark": "undocumented"
+        },
+        "worktree_management": {
+          "value": "Not mentioned in its docs",
+          "mark": "undocumented"
+        },
+        "planner_orchestrator": {
+          "value": "No planner of its own, but agents can spawn panes and prompt each other through its CLI and socket API",
+          "mark": "partial"
+        },
+        "agent_to_agent_messaging": {
+          "value": "Agents spawn panes, prompt each other and wait until another agent is really blocked (socket API + agent skill)",
+          "mark": "yes"
+        },
+        "cross_provider_delegation": {
+          "value": "All agents in one list, local and remote",
+          "mark": "yes"
+        },
+        "always_on_assistant": {
+          "value": "None",
+          "mark": "no"
+        },
+        "knowledge_base": {
+          "value": "None",
+          "mark": "no"
+        },
+        "native_mobile_app": {
+          "value": "None (a separate community macOS console, herdrm, exists)",
+          "mark": "no"
+        },
+        "phone_no_new_app": {
+          "value": "Any SSH app reattaches to the background server",
+          "mark": "yes"
+        },
+        "remote_ssh": {
+          "value": "Saved SSH machines sit beside local ones with independent reconnects; a hosted option is announced",
+          "mark": "yes"
+        },
+        "voice_input": {
+          "value": "Not mentioned in its docs",
+          "mark": "undocumented"
+        },
+        "app_shell": {
+          "value": "Terminal UI: one Rust binary, no Electron",
+          "mark": "info"
+        },
+        "languages": {
+          "value": "Rust ~93%, Python ~3%",
+          "mark": "info"
+        },
+        "background_process": {
+          "value": "Yes: a background server keeps terminals running after you close the client or lose SSH",
+          "mark": "info"
+        },
+        "download_size": {
+          "value": "v0.9.1: 9 MB Windows zip, 20-22 MB macOS, 23-25 MB Linux",
+          "mark": "info"
+        },
+        "ram_vs_claude_desktop": {
+          "value": "Much lighter",
+          "mark": "info"
+        },
+        "runs_in_terminal": {
+          "value": "Runs in whatever terminal you already use",
+          "mark": "yes"
+        },
+        "license_cost": {
+          "value": "Apache-2.0, free, uses your own subscriptions",
+          "mark": "info"
+        },
+        "extensibility": {
+          "value": "Plugin marketplace plus a CLI and socket API",
+          "mark": "yes"
+        },
+        "teams_multiuser": {
+          "value": "Not mentioned in its docs",
+          "mark": "undocumented"
+        },
+        "stability_maturity": {
+          "value": "v0.9.1, ~41k GitHub stars, fast-moving; Windows build is in beta",
+          "mark": "info"
+        }
+      }
+    },
+    {
       "name": "Pantheon",
       "url": "https://github.com/dtiger1889-ops/pantheon",
       "category": "agent manager",
@@ -706,7 +866,7 @@
           "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "Only one in this table that runs entirely inside a terminal you already have",
+          "value": "Runs inside the terminal you already have, under tmux",
           "mark": "yes"
         },
         "stability_maturity": {

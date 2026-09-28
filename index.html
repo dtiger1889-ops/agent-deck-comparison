@@ -73,6 +73,16 @@
   .title-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-bottom: 8px; }
   .gh-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.9rem; font-weight: 600; color: var(--text); text-decoration: none; border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px; background: var(--panel); }
   .gh-link:hover { color: var(--accent); border-color: var(--accent); }
+  .title-actions { display: flex; align-items: center; gap: 8px; flex: none; }
+  .share { position: relative; }
+  .share-btn { cursor: pointer; font-family: inherit; }
+  .share-menu { position: absolute; right: 0; top: calc(100% + 6px); z-index: 50; min-width: 160px;
+    background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 6px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18); display: flex; flex-direction: column; }
+  .share-menu[hidden] { display: none; }
+  .share-menu a, .share-menu button { text-align: left; padding: 8px 10px; border-radius: 6px; font-size: 0.9rem;
+    color: var(--text); text-decoration: none; background: none; border: none; cursor: pointer; font-family: inherit; }
+  .share-menu a:hover, .share-menu button:hover { background: var(--sticky-bg); color: var(--accent); }
   .sub { color: var(--muted); font-size: 0.95rem; max-width: 90ch; margin: 0 0 8px; }
   .about { max-width: 90ch; font-size: 0.9rem; color: var(--muted); margin: 0 0 4px; }
   .about summary { cursor: pointer; color: var(--accent); font-weight: 600; font-size: 0.88rem; }
@@ -306,7 +316,20 @@
 <header>
   <div class="title-row">
     <h1>Agent-manager comparison</h1>
+    <div class="title-actions">
     <a class="gh-link" href="https://github.com/dtiger1889-ops" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.37A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>dtiger1889-ops</a>
+    <div class="share">
+      <button type="button" class="gh-link share-btn" id="share-btn" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 10a2 2 0 0 0-1.6.8L5.9 8.6a2 2 0 0 0 0-1.2l4.5-2.2A2 2 0 1 0 10 4c0 .2 0 .4.1.6L5.6 6.8a2 2 0 1 0 0 2.4l4.5 2.2A2 2 0 1 0 12 10Z"/></svg>Share</button>
+      <div class="share-menu" id="share-menu" role="menu" hidden>
+        <a role="menuitem" data-net="linkedin" target="_blank" rel="noopener">LinkedIn</a>
+        <a role="menuitem" data-net="reddit" target="_blank" rel="noopener">Reddit</a>
+        <a role="menuitem" data-net="x" target="_blank" rel="noopener">X</a>
+        <a role="menuitem" data-net="bluesky" target="_blank" rel="noopener">Bluesky</a>
+        <button type="button" role="menuitem" id="share-copy">Copy link</button>
+        <button type="button" role="menuitem" id="share-native" hidden>More&hellip;</button>
+      </div>
+    </div>
+    </div>
   </div>
   <p class="sub">Tools for running a fleet of coding agents (Claude Code, Codex and others), compared feature by feature. Snapshot 2026-09-28.</p>
   <details class="about">
@@ -891,6 +914,41 @@ fetch("data/tools.json")
     document.querySelector("main").innerHTML =
       '<p style="color:#9c2b2b">Could not load data/tools.json: ' + err + '</p>';
   });
+
+// Share: plain share links for each network, copy-link, and the device's own share sheet when it has one.
+(function () {
+  const url = "https://dtiger1889-ops.github.io/agent-deck-comparison/";
+  const title = "Agent-manager comparison: Orca, VelaTerm, herdr, Pantheon, Paseo, Kepler, AO and more, feature by feature";
+  const u = encodeURIComponent(url), t = encodeURIComponent(title);
+  const links = {
+    linkedin: "https://www.linkedin.com/sharing/share-offsite/?url=" + u,
+    reddit: "https://www.reddit.com/submit?url=" + u + "&title=" + t,
+    x: "https://x.com/intent/post?url=" + u + "&text=" + t,
+    bluesky: "https://bsky.app/intent/compose?text=" + encodeURIComponent(title + " " + url),
+  };
+  const btn = document.getElementById("share-btn"), menu = document.getElementById("share-menu");
+  menu.querySelectorAll("a[data-net]").forEach(a => { a.href = links[a.dataset.net]; });
+  const close = () => { menu.hidden = true; btn.setAttribute("aria-expanded", "false"); };
+  btn.addEventListener("click", e => {
+    e.stopPropagation();
+    menu.hidden = !menu.hidden;
+    btn.setAttribute("aria-expanded", menu.hidden ? "false" : "true");
+  });
+  document.addEventListener("click", e => { if (!menu.contains(e.target)) close(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", close));
+  const copy = document.getElementById("share-copy");
+  copy.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(url); copy.textContent = "Link copied"; }
+    catch (err) { window.prompt("Copy this link:", url); }
+    setTimeout(() => { copy.textContent = "Copy link"; close(); }, 1200);
+  });
+  const native = document.getElementById("share-native");
+  if (navigator.share) {
+    native.hidden = false;
+    native.addEventListener("click", () => { close(); navigator.share({ title: document.title, text: title, url }).catch(() => {}); });
+  }
+})();
 </script>
 </body>
 </html>

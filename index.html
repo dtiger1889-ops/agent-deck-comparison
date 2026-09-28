@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent-manager comparison</title>
+<style>
+  :root {
+    --bg: #f7f7f8;
+    --panel: #ffffff;
+    --text: #1b1c1f;
+    --muted: #5c5f66;
+    --border: #dcdde1;
+    --sticky-bg: #eef0f3;
+    --accent: #2f5fd8;
+    --standard-bg: #eaf0ff;
+    --yes-bg: #dcf5e2; --yes-fg: #1d6b34;
+    --partial-bg: #fdf1cf; --partial-fg: #8a6100;
+    --experimental-bg: #ece3fb; --experimental-fg: #5b3aa8;
+    --planned-bg: #e6ecf5; --planned-fg: #3a4f78;
+    --no-bg: #f8dede; --no-fg: #9c2b2b;
+    --unknown-bg: #ececec; --unknown-fg: #6a6a6a;
+    --na-bg: #f2f2f2; --na-fg: #8a8a8a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #15161a;
+      --panel: #1d1f24;
+      --text: #e8e9ec;
+      --muted: #a2a5ad;
+      --border: #33353b;
+      --sticky-bg: #23252b;
+      --accent: #86a4ff;
+      --standard-bg: #202a45;
+      --yes-bg: #163a24; --yes-fg: #7fe3a0;
+      --partial-bg: #453a10; --partial-fg: #f0c95f;
+      --experimental-bg: #2f2249; --experimental-fg: #c6aef2;
+      --planned-bg: #202b40; --planned-fg: #9cb4de;
+      --no-bg: #3a1c1c; --no-fg: #f29a9a;
+      --unknown-bg: #2a2b30; --unknown-fg: #9a9ca3;
+      --na-bg: #222327; --na-fg: #7a7c82;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.45;
+  }
+  header, footer, main { max-width: 1200px; margin: 0 auto; padding: 20px 16px; }
+  h1 { font-size: 1.5rem; margin: 0 0 8px; }
+  .sub { color: var(--muted); font-size: 0.95rem; max-width: 70ch; }
+  .note {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; font-size: 0.85rem; }
+  .controls {
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+    margin: 16px 0;
+  }
+  .controls input[type="text"], .controls select {
+    background: var(--panel);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 0.9rem;
+  }
+  .controls label { font-size: 0.9rem; display: flex; align-items: center; gap: 6px; }
+  .view-toggle button {
+    background: var(--panel);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 7px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  .view-toggle button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .table-scroll {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    max-width: 100%;
+  }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; background: var(--panel); }
+  th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; font-size: 0.87rem; }
+  thead th {
+    position: sticky; top: 0; z-index: 3;
+    background: var(--sticky-bg);
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid var(--border);
+  }
+  thead th:hover { color: var(--accent); }
+  #matrix-table th:first-child, #matrix-table td:first-child {
+    position: sticky; left: 0; z-index: 2;
+    background: var(--sticky-bg);
+    min-width: 220px; max-width: 260px;
+    white-space: normal;
+  }
+  #matrix-table thead th:first-child { z-index: 4; }
+  #matrix-table th.standard-col, #matrix-table td.standard-col { background: var(--standard-bg); }
+  .std-tag { font-size: 0.7rem; color: var(--accent); display: block; font-weight: normal; }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .badge-yes { background: var(--yes-bg); color: var(--yes-fg); }
+  .badge-partial { background: var(--partial-bg); color: var(--partial-fg); }
+  .badge-experimental { background: var(--experimental-bg); color: var(--experimental-fg); }
+  .badge-planned { background: var(--planned-bg); color: var(--planned-fg); }
+  .badge-no { background: var(--no-bg); color: var(--no-fg); }
+  .badge-unknown { background: var(--unknown-bg); color: var(--unknown-fg); }
+  .badge-na { background: var(--na-bg); color: var(--na-fg); }
+  .cell-value { display: block; margin-top: 3px; color: var(--muted); font-size: 0.78rem; }
+  .feature-label { font-weight: 600; }
+  .feature-desc { display: block; color: var(--muted); font-size: 0.78rem; font-weight: normal; margin-top: 2px; }
+  footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 24px; }
+  a { color: var(--accent); }
+  #view-bytool { display: none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Agent-manager comparison</h1>
+  <p class="sub">A side-by-side of AI coding-agent managers: tools that supervise a fleet of coding-agent
+    sessions (Claude Code, Codex, and similar) across usage tracking, task sourcing, session
+    organization, and remote/mobile access. Built to find where a personal, terminal-native project
+    genuinely differs from the field, not as marketing for any one tool.</p>
+  <div class="note">
+    Snapshot as of 2026-09-28. Cells come from each tool's own docs, sites, or posts at the dates shown
+    for that tool, not re-verified beyond that pass. Where a tool's own materials don't state something,
+    the cell reads "unknown" rather than a guess.
+  </div>
+  <div class="legend" id="legend"></div>
+</header>
+
+<main>
+  <div class="controls">
+    <div class="view-toggle">
+      <button id="btn-matrix" class="active">Feature matrix</button>
+      <button id="btn-bytool">By tool</button>
+    </div>
+    <label>Category
+      <select id="filter-category">
+        <option value="all">All</option>
+        <option value="agent manager">Agent managers</option>
+        <option value="other tool we looked at">Other tools</option>
+      </select>
+    </label>
+    <input type="text" id="filter-search" placeholder="Filter features…">
+    <label><input type="checkbox" id="filter-hide-unknown"> Hide unknown-only rows</label>
+  </div>
+
+  <div id="view-matrix" class="table-scroll">
+    <table id="matrix-table"></table>
+  </div>
+
+  <div id="view-bytool" class="table-scroll">
+    <table id="bytool-table"></table>
+  </div>
+</main>
+
+<footer>
+  Compiled by Daniel Mack (dtiger1889-ops). Pantheon is the author's own project and is scored by the
+  same rules as everything else here.
+</footer>
+
+<script>
+const MARK_ORDER = ["yes", "partial", "experimental", "planned", "no", "unknown", "n/a"];
+const MARK_RANK = Object.fromEntries(MARK_ORDER.map((m, i) => [m, i]));
+const MARK_LABEL = {
+  yes: "Yes", partial: "Partial", experimental: "Experimental",
+  planned: "Planned", no: "No", unknown: "Unknown", "n/a": "N/A"
+};
+
+let DATA = null;
+let sortToolIdx = null;   // index into visible tools, or null = default (source order)
+let sortDir = 1;
+let bytoolSortKey = "name";
+let bytoolSortDir = 1;
+let currentView = "matrix";
+
+function badge(cell) {
+  const mark = cell.mark;
+  const label = MARK_LABEL[mark] || mark;
+  const span = document.createElement("span");
+  span.className = "badge badge-" + (mark === "n/a" ? "na" : mark);
+  span.textContent = label;
+  const wrap = document.createElement("div");
+  wrap.appendChild(span);
+  if (cell.value) {
+    const v = document.createElement("span");
+    v.className = "cell-value";
+    v.textContent = cell.value;
+    wrap.appendChild(v);
+  }
+  return wrap;
+}
+
+function visibleTools() {
+  const cat = document.getElementById("filter-category").value;
+  return DATA.tools.filter(t => cat === "all" || t.category === cat);
+}
+
+function visibleFeatures(tools) {
+  const q = document.getElementById("filter-search").value.trim().toLowerCase();
+  const hideUnknown = document.getElementById("filter-hide-unknown").checked;
+  return DATA.features.filter(f => {
+    if (q && !(f.label.toLowerCase().includes(q) || f.description.toLowerCase().includes(q))) return false;
+    if (hideUnknown) {
+      const allUnknown = tools.every(t => t.features[f.key].mark === "unknown");
+      if (allUnknown) return false;
+    }
+    return true;
+  });
+}
+
+function renderLegend() {
+  const el = document.getElementById("legend");
+  el.innerHTML = "";
+  MARK_ORDER.forEach(m => {
+    const span = document.createElement("span");
+    span.className = "badge badge-" + (m === "n/a" ? "na" : m);
+    span.textContent = MARK_LABEL[m];
+    el.appendChild(span);
+  });
+}
+
+function renderMatrix() {
+  const tools = visibleTools();
+  const features = visibleFeatures(tools);
+  let sorted = features;
+  if (sortToolIdx !== null && tools[sortToolIdx]) {
+    const t = tools[sortToolIdx];
+    sorted = [...features].sort((a, b) => {
+      const ra = MARK_RANK[t.features[a.key].mark];
+      const rb = MARK_RANK[t.features[b.key].mark];
+      return (ra - rb) * sortDir;
+    });
+  }
+
+  const table = document.getElementById("matrix-table");
+  table.innerHTML = "";
+  const thead = document.createElement("thead");
+  const trh = document.createElement("tr");
+  const thFeat = document.createElement("th");
+  thFeat.textContent = "Feature" + (sortToolIdx !== null ? " (click to reset sort)" : "");
+  thFeat.addEventListener("click", () => { sortToolIdx = null; renderMatrix(); });
+  trh.appendChild(thFeat);
+  tools.forEach((t, i) => {
+    const th = document.createElement("th");
+    const isStandard = t.name === "Orca";
+    if (isStandard) th.classList.add("standard-col");
+    th.innerHTML = t.name + (isStandard ? '<span class="std-tag">reference standard</span>' : "");
+    th.addEventListener("click", () => {
+      if (sortToolIdx === i) { sortDir *= -1; } else { sortToolIdx = i; sortDir = 1; }
+      renderMatrix();
+    });
+    trh.appendChild(th);
+  });
+  thead.appendChild(trh);
+  table.appendChild(thead);
+
+  const tbody = document.createElement("tbody");
+  sorted.forEach(f => {
+    const tr = document.createElement("tr");
+    const tdLabel = document.createElement("td");
+    tdLabel.innerHTML = `<span class="feature-label">${f.label}</span><span class="feature-desc">${f.description}</span>`;
+    tr.appendChild(tdLabel);
+    tools.forEach(t => {
+      const td = document.createElement("td");
+      if (t.name === "Orca") td.classList.add("standard-col");
+      td.appendChild(badge(t.features[f.key]));
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+}
+
+function countYes(tool) {
+  return Object.values(tool.features).filter(c => c.mark === "yes").length;
+}
+
+function renderByTool() {
+  const tools = visibleTools();
+  const cols = [
+    { key: "name", label: "Tool" },
+    { key: "category", label: "Category" },
+    { key: "where_agents_run", label: "Where agents run" },
+    { key: "license", label: "License" },
+    { key: "checked_on", label: "Checked on" },
+    { key: "source_note", label: "Source note" },
+    { key: "yes_count", label: "Yes count" },
+  ];
+  const rows = tools.map(t => ({
+    name: t.name, category: t.category, where_agents_run: t.where_agents_run,
+    license: t.license, checked_on: t.checked_on, source_note: t.source_note,
+    yes_count: countYes(t), url: t.url,
+  }));
+  rows.sort((a, b) => {
+    const va = a[bytoolSortKey], vb = b[bytoolSortKey];
+    if (typeof va === "number") return (va - vb) * bytoolSortDir;
+    return String(va).localeCompare(String(vb)) * bytoolSortDir;
+  });
+
+  const table = document.getElementById("bytool-table");
+  table.innerHTML = "";
+  const thead = document.createElement("thead");
+  const trh = document.createElement("tr");
+  cols.forEach(col => {
+    const th = document.createElement("th");
+    th.textContent = col.label;
+    th.addEventListener("click", () => {
+      if (bytoolSortKey === col.key) bytoolSortDir *= -1; else { bytoolSortKey = col.key; bytoolSortDir = 1; }
+      renderByTool();
+    });
+    trh.appendChild(th);
+  });
+  thead.appendChild(trh);
+  table.appendChild(thead);
+
+  const tbody = document.createElement("tbody");
+  rows.forEach(r => {
+    const tr = document.createElement("tr");
+    cols.forEach(col => {
+      const td = document.createElement("td");
+      if (col.key === "name" && r.url) {
+        const a = document.createElement("a");
+        a.href = r.url; a.target = "_blank"; a.rel = "noopener";
+        a.textContent = r.name;
+        td.appendChild(a);
+      } else {
+        td.textContent = r[col.key];
+      }
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+}
+
+function renderAll() {
+  renderMatrix();
+  renderByTool();
+}
+
+function setView(view) {
+  currentView = view;
+  document.getElementById("view-matrix").style.display = view === "matrix" ? "block" : "none";
+  document.getElementById("view-bytool").style.display = view === "bytool" ? "block" : "none";
+  document.getElementById("btn-matrix").classList.toggle("active", view === "matrix");
+  document.getElementById("btn-bytool").classList.toggle("active", view === "bytool");
+}
+
+document.getElementById("btn-matrix").addEventListener("click", () => setView("matrix"));
+document.getElementById("btn-bytool").addEventListener("click", () => setView("bytool"));
+document.getElementById("filter-category").addEventListener("change", renderAll);
+document.getElementById("filter-search").addEventListener("input", renderMatrix);
+document.getElementById("filter-hide-unknown").addEventListener("change", renderMatrix);
+
+fetch("data/tools.json")
+  .then(r => r.json())
+  .then(data => {
+    DATA = data;
+    renderLegend();
+    renderAll();
+  })
+  .catch(err => {
+    document.querySelector("main").innerHTML =
+      '<p style="color:#9c2b2b">Could not load data/tools.json: ' + err + '</p>';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,2694 @@
+{
+  "snapshot_date": "2026-09-28",
+  "snapshot_note": "Snapshot as of 2026-09-28. Cells come from each tool's own docs/posts at the dates shown; not re-verified beyond that pass.",
+  "features": [
+    {
+      "key": "multi_provider_supervision",
+      "label": "Multi-provider agent supervision",
+      "description": "Can it drive more than one coding-agent CLI/tool at once."
+    },
+    {
+      "key": "harness_count",
+      "label": "Harness count",
+      "description": "How many distinct agent CLIs/tools it can drive."
+    },
+    {
+      "key": "needs_you_signal",
+      "label": "Needs-you signal quality",
+      "description": "How it tells you an agent is waiting on you, and how reliable that signal is."
+    },
+    {
+      "key": "approve_deny_prompt",
+      "label": "Approve/deny a waiting permission prompt",
+      "description": "Whether you can answer an agent's permission prompt from the manager itself."
+    },
+    {
+      "key": "conversation_gui_view",
+      "label": "Conversation (GUI) view of a session",
+      "description": "A chat-style view of a session's plan/edits/results, as opposed to raw terminal text."
+    },
+    {
+      "key": "real_terminal",
+      "label": "The real terminal of a session",
+      "description": "Whether you can drop into the session's actual terminal."
+    },
+    {
+      "key": "session_organization",
+      "label": "Session organization",
+      "description": "How sessions are grouped and browsed (list, worktrees, kanban, nested groups)."
+    },
+    {
+      "key": "usage_hud",
+      "label": "Subscription usage HUD (from local logs)",
+      "description": "Shows your subscription usage/limits, read from local logs rather than a fragile API endpoint."
+    },
+    {
+      "key": "burn_rate_forecast",
+      "label": "Usage HUD with burn-rate + time-to-limit forecast",
+      "description": "Predicts when you'll hit your usage limit, not just showing current usage."
+    },
+    {
+      "key": "limit_governor",
+      "label": "Session-limit governor (park/resume at reset)",
+      "description": "Automatically pauses work near a usage limit and resumes after the reset."
+    },
+    {
+      "key": "vault_task_source",
+      "label": "Personal-notes-vault task source",
+      "description": "Can read your own personal notes vault (e.g. Obsidian) as its task queue, instead of only an issue tracker."
+    },
+    {
+      "key": "issue_tracker_pipeline",
+      "label": "Issue-tracker / PR pipeline to merge",
+      "description": "Integrates with GitHub/GitLab/Linear/Jira issues and pull requests."
+    },
+    {
+      "key": "worktree_management",
+      "label": "Worktree management for agents",
+      "description": "Manages isolated git worktrees per agent/task on your behalf."
+    },
+    {
+      "key": "planner_orchestrator",
+      "label": "Planner/orchestrator that splits and runs work",
+      "description": "A higher-level agent that breaks a goal into sub-tasks and runs them."
+    },
+    {
+      "key": "agent_to_agent_messaging",
+      "label": "Agent-to-agent messaging across sessions",
+      "description": "Sessions or orchestrators can message each other directly."
+    },
+    {
+      "key": "cross_provider_delegation",
+      "label": "Cross-provider delegation visible in one place",
+      "description": "Handoffs between different providers/agents show up in one unified view."
+    },
+    {
+      "key": "always_on_assistant",
+      "label": "Always-on assistant session",
+      "description": "A persistent standing assistant session you can reach any time (not a task-bound worker)."
+    },
+    {
+      "key": "knowledge_base",
+      "label": "Knowledge base agents can query",
+      "description": "A notes/knowledge store agents can query before acting."
+    },
+    {
+      "key": "builtin_editors_browser",
+      "label": "Built-in editors / browser",
+      "description": "Ships its own code/markdown editors and/or an embedded browser."
+    },
+    {
+      "key": "native_mobile_app",
+      "label": "Native mobile app",
+      "description": "A dedicated iOS/Android app, as opposed to reusing a terminal app."
+    },
+    {
+      "key": "phone_no_new_app",
+      "label": "Phone access without a new app/account",
+      "description": "Can be reached from a phone using tools you already have, no new app or account."
+    },
+    {
+      "key": "remote_ssh",
+      "label": "Remote hosts (SSH)",
+      "description": "Can drive or edit sessions on a remote machine over SSH."
+    },
+    {
+      "key": "app_framework_size",
+      "label": "App framework / installer size",
+      "description": "What it's built on and how large the installer is."
+    },
+    {
+      "key": "running_ram",
+      "label": "Running RAM under multi-agent load",
+      "description": "Memory actually used while driving several agents at once (not install/disk size)."
+    },
+    {
+      "key": "account_hotswap",
+      "label": "Account switch / hot-swap without re-login",
+      "description": "Can switch between provider accounts without logging in again each time."
+    },
+    {
+      "key": "prompt_scratchpad",
+      "label": "Prompt scratchpad with insert-not-send",
+      "description": "A place to draft prompts and insert them into a session without immediately sending."
+    },
+    {
+      "key": "saved_prompt_library",
+      "label": "Saved prompt library",
+      "description": "Reusable, saved prompts/actions you can fire with prior context pre-attached."
+    },
+    {
+      "key": "appearance_control",
+      "label": "Appearance control incl. host-terminal font",
+      "description": "How much you can customize its look, including your actual terminal's font/settings."
+    },
+    {
+      "key": "extensibility",
+      "label": "Extensibility for others (plugins/SDK)",
+      "description": "Whether outside developers can extend it via a plugin or SDK surface."
+    },
+    {
+      "key": "teams_multiuser",
+      "label": "Teams / multi-user",
+      "description": "Built for more than one person to use together, as opposed to single-user."
+    },
+    {
+      "key": "voice_input",
+      "label": "Voice input",
+      "description": "Can dictate to it by voice."
+    },
+    {
+      "key": "license_cost",
+      "label": "License / cost",
+      "description": "Open-source license, or commercial pricing model."
+    },
+    {
+      "key": "runs_in_terminal",
+      "label": "Runs inside a terminal you already have",
+      "description": "Lives inside your existing terminal app, rather than shipping its own app/window."
+    },
+    {
+      "key": "stability_maturity",
+      "label": "Stability / maturity (honest)",
+      "description": "How mature and stable it currently is, stated plainly."
+    }
+  ],
+  "tools": [
+    {
+      "name": "Orca",
+      "url": "https://onorca.dev",
+      "category": "agent manager",
+      "where_agents_run": "your machine + remote (SSH worktrees, headless Linux server, phone companion)",
+      "license": "MIT, free",
+      "checked_on": "2026-09-22 (installed + shipped-code read)",
+      "source_note": "Source-verified: installed desktop + phone, shipped app.asar read, own docs. Reference standard this table is read against.",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "27+ agents / \"any CLI agent\"",
+          "mark": "yes"
+        },
+        "harness_count": {
+          "value": "27+ (\"any CLI agent\")",
+          "mark": "yes"
+        },
+        "needs_you_signal": {
+          "value": "Hook-driven + unread/attention state",
+          "mark": "yes"
+        },
+        "approve_deny_prompt": {
+          "value": "Not verified",
+          "mark": "unknown"
+        },
+        "conversation_gui_view": {
+          "value": "Experimental Chat UI",
+          "mark": "experimental"
+        },
+        "real_terminal": {
+          "value": "Embedded GPU terminal, infinite splits, restored scrollback",
+          "mark": "yes"
+        },
+        "session_organization": {
+          "value": "Worktree per task",
+          "mark": "yes"
+        },
+        "usage_hud": {
+          "value": "Local state + account read, 6 providers, weekly resets, 80% warning chip",
+          "mark": "yes"
+        },
+        "burn_rate_forecast": {
+          "value": "Usage % and reset windows only, no burn rate or forecast",
+          "mark": "no"
+        },
+        "limit_governor": {
+          "value": "None",
+          "mark": "no"
+        },
+        "vault_task_source": {
+          "value": "Task providers are GitHub, GitLab, Linear, Jira only",
+          "mark": "no"
+        },
+        "issue_tracker_pipeline": {
+          "value": "GitHub, GitLab, Linear, Jira",
+          "mark": "yes"
+        },
+        "worktree_management": {
+          "value": "Core: every task gets one, fan-out across N, SSH worktrees",
+          "mark": "yes"
+        },
+        "planner_orchestrator": {
+          "value": "Experimental Orchestration (CLI-driven), off by default",
+          "mark": "experimental"
+        },
+        "agent_to_agent_messaging": {
+          "value": "Via experimental Orchestration",
+          "mark": "experimental"
+        },
+        "cross_provider_delegation": {
+          "value": "Visible in one place",
+          "mark": "yes"
+        },
+        "always_on_assistant": {
+          "value": "None",
+          "mark": "no"
+        },
+        "knowledge_base": {
+          "value": "None",
+          "mark": "no"
+        },
+        "builtin_editors_browser": {
+          "value": "Browser and computer-use via its CLI",
+          "mark": "yes"
+        },
+        "native_mobile_app": {
+          "value": "Companion app, beta",
+          "mark": "experimental"
+        },
+        "phone_no_new_app": {
+          "value": "Requires its own companion app",
+          "mark": "no"
+        },
+        "remote_ssh": {
+          "value": "SSH worktrees + Remote Server (beta)",
+          "mark": "yes"
+        },
+        "app_framework_size": {
+          "value": "Electron, 218 MB mac / 192 MB Windows",
+          "mark": "no"
+        },
+        "running_ram": {
+          "value": "~2.3 GB measured (9 processes, 5 panes open, agents running)",
+          "mark": "no"
+        },
+        "account_hotswap": {
+          "value": "Hot-swap between Codex accounts without re-login",
+          "mark": "yes"
+        },
+        "prompt_scratchpad": {
+          "value": "Not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "Not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "Ships its own GPU terminal instead of using the host's",
+          "mark": "n/a"
+        },
+        "extensibility": {
+          "value": "CLI supports \"any agent\"",
+          "mark": "partial"
+        },
+        "teams_multiuser": {
+          "value": "Not verified",
+          "mark": "unknown"
+        },
+        "voice_input": {
+          "value": "Not verified",
+          "mark": "unknown"
+        },
+        "license_cost": {
+          "value": "MIT, free, uses your own subscriptions",
+          "mark": "yes"
+        },
+        "runs_in_terminal": {
+          "value": "Embeds its own GPU terminal instead",
+          "mark": "no"
+        },
+        "stability_maturity": {
+          "value": "\"Features shipped daily\"; chat, orchestration and mobile are experimental",
+          "mark": "partial"
+        }
+      }
+    },
+    {
+      "name": "VelaTerm",
+      "url": "https://velaterm.com",
+      "category": "agent manager",
+      "where_agents_run": "your machine + remote (SSH), plus browser pairing and a phone app",
+      "license": "MIT, v0.2.x, free",
+      "checked_on": "2026-09-28, author's posts only",
+      "source_note": "Not independently verified — every cell comes from two of the developer's own launch posts, not the repo or site.",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "8+ named agents (Claude Code, Codex, OpenCode, Copilot, Cursor, Antigravity, Cline, Pi) \"and more\"",
+          "mark": "yes"
+        },
+        "harness_count": {
+          "value": "8+ (Claude, Codex, OpenCode, Copilot, Cursor, Antigravity, Cline, Pi...)",
+          "mark": "yes"
+        },
+        "needs_you_signal": {
+          "value": "Live status plus phone push (underlying mechanism not stated)",
+          "mark": "yes"
+        },
+        "approve_deny_prompt": {
+          "value": "\"Answer agents\" from the phone",
+          "mark": "yes"
+        },
+        "conversation_gui_view": {
+          "value": "Default view, plus the same session's terminal view alongside it",
+          "mark": "yes"
+        },
+        "real_terminal": {
+          "value": "Each session is a real PTY that keeps running in the background",
+          "mark": "yes"
+        },
+        "session_organization": {
+          "value": "Projects, then nested groups to any depth, then sessions",
+          "mark": "yes"
+        },
+        "usage_hud": {
+          "value": "Not claimed anywhere in the posts",
+          "mark": "no"
+        },
+        "burn_rate_forecast": {
+          "value": "Not claimed",
+          "mark": "no"
+        },
+        "limit_governor": {
+          "value": "Not claimed",
+          "mark": "no"
+        },
+        "vault_task_source": {
+          "value": "Has a notes knowledge base, not a task queue",
+          "mark": "no"
+        },
+        "issue_tracker_pipeline": {
+          "value": "Not claimed either way",
+          "mark": "unknown"
+        },
+        "worktree_management": {
+          "value": "Optional per launch: none, one shared worktree, or one per session",
+          "mark": "yes"
+        },
+        "planner_orchestrator": {
+          "value": "Plan/Execute: a planner splits the task, you approve the split, executors build each part in parallel",
+          "mark": "yes"
+        },
+        "agent_to_agent_messaging": {
+          "value": "Best in this table: search another session's conversation, ask about it, or message/steer a running session, across providers",
+          "mark": "yes"
+        },
+        "cross_provider_delegation": {
+          "value": "Visible in one place",
+          "mark": "yes"
+        },
+        "always_on_assistant": {
+          "value": "None",
+          "mark": "no"
+        },
+        "knowledge_base": {
+          "value": "Save what a session learned; agents query it before acting; local code-graph queries with no model call",
+          "mark": "yes"
+        },
+        "builtin_editors_browser": {
+          "value": "Markdown editor, code editor, image viewer, browser tab, also usable remotely",
+          "mark": "yes"
+        },
+        "native_mobile_app": {
+          "value": "iOS/Android app with push notifications",
+          "mark": "yes"
+        },
+        "phone_no_new_app": {
+          "value": "Any browser via an end-to-end-encrypted pairing link, no install",
+          "mark": "yes"
+        },
+        "remote_ssh": {
+          "value": "SSH including editing remote files",
+          "mark": "yes"
+        },
+        "app_framework_size": {
+          "value": "Tauri 2 (system WebView), 49 MB mac / 59 MB Windows installer (author's numbers)",
+          "mark": "yes"
+        },
+        "running_ram": {
+          "value": "Not measured or claimed",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
+          "value": "Not claimed either way",
+          "mark": "unknown"
+        },
+        "prompt_scratchpad": {
+          "value": "Not claimed either way",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "Not claimed either way",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "Not claimed either way",
+          "mark": "unknown"
+        },
+        "extensibility": {
+          "value": "Not claimed either way",
+          "mark": "unknown"
+        },
+        "teams_multiuser": {
+          "value": "Account device list",
+          "mark": "partial"
+        },
+        "voice_input": {
+          "value": "Not claimed either way",
+          "mark": "unknown"
+        },
+        "license_cost": {
+          "value": "MIT, free, uses your own subscriptions",
+          "mark": "yes"
+        },
+        "runs_in_terminal": {
+          "value": "Own app; the Windows installer bundles Git Bash",
+          "mark": "no"
+        },
+        "stability_maturity": {
+          "value": "v0.2.x, launched 2026-09-28, not independently verified",
+          "mark": "unknown"
+        }
+      }
+    },
+    {
+      "name": "Pantheon",
+      "url": "https://github.com/dtiger1889-ops/pantheon",
+      "category": "agent manager",
+      "where_agents_run": "your machine (terminal-native, tmux-hosted; phone reaches it over an existing SSH tunnel)",
+      "license": "MIT, free, your own subscriptions",
+      "checked_on": "2026-09-28 (author's own build, cells refreshed for the 2026-09-22..27 builds)",
+      "source_note": "Author's own project (open source, pre-release, published as-is). Scored by the same rules as every other row here, including its weak spots.",
+      "is_authors_own": true,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "Hooks-based",
+          "mark": "yes"
+        },
+        "harness_count": {
+          "value": "2 harnesses today, local-model support planned",
+          "mark": "partial"
+        },
+        "needs_you_signal": {
+          "value": "Exact: derived from hook events, not inferred from silence",
+          "mark": "yes"
+        },
+        "approve_deny_prompt": {
+          "value": "Allow/deny/view a waiting prompt from the deck, built, not yet tested live",
+          "mark": "partial"
+        },
+        "conversation_gui_view": {
+          "value": "Detail panel shows recent actions and the latest ask read from the transcript, not a full chat view",
+          "mark": "partial"
+        },
+        "real_terminal": {
+          "value": "Clicking a session opens its own real tmux window",
+          "mark": "yes"
+        },
+        "session_organization": {
+          "value": "Sidebar session list plus a live fleet table",
+          "mark": "yes"
+        },
+        "usage_hud": {
+          "value": "Local logs shipped; reading the same account-usage numbers claude.ai shows is built, not yet tested live",
+          "mark": "partial"
+        },
+        "burn_rate_forecast": {
+          "value": "Built, with ranges; not yet checked against real usage",
+          "mark": "partial"
+        },
+        "limit_governor": {
+          "value": "Built: wind down near a limit, park, and resume after reset, plus limit hand-off to another provider and timed starts; not yet tested live, off by default",
+          "mark": "partial"
+        },
+        "vault_task_source": {
+          "value": "Unique in this table: reads a personal notes vault directly as its live task source",
+          "mark": "yes"
+        },
+        "issue_tracker_pipeline": {
+          "value": "Deliberately absent; the notes vault is the tracker",
+          "mark": "no"
+        },
+        "worktree_management": {
+          "value": "Agents use worktrees; the deck itself doesn't manage them",
+          "mark": "no"
+        },
+        "planner_orchestrator": {
+          "value": "Planning card built; dispatching from it is still greyed out",
+          "mark": "planned"
+        },
+        "agent_to_agent_messaging": {
+          "value": "None",
+          "mark": "no"
+        },
+        "cross_provider_delegation": {
+          "value": "Visible in the deck, with auto-fallback to console mode",
+          "mark": "yes"
+        },
+        "always_on_assistant": {
+          "value": "Pinned Assistant window built; reachable from the phone over the existing remote-control link",
+          "mark": "partial"
+        },
+        "knowledge_base": {
+          "value": "The vault is read only as tasks, not queried as a knowledge base",
+          "mark": "n/a"
+        },
+        "builtin_editors_browser": {
+          "value": "A terminal editor pane is built",
+          "mark": "partial"
+        },
+        "native_mobile_app": {
+          "value": "Reuses a terminal app over an existing SSH tunnel at a narrower column width instead",
+          "mark": "no"
+        },
+        "phone_no_new_app": {
+          "value": "Reuses an existing terminal app and SSH tunnel already on the phone",
+          "mark": "yes"
+        },
+        "remote_ssh": {
+          "value": "None",
+          "mark": "no"
+        },
+        "app_framework_size": {
+          "value": "A terminal UI (Python/Textual) running inside your existing terminal, no separate installer",
+          "mark": "yes"
+        },
+        "running_ram": {
+          "value": "~77 MB measured resident, near-zero idle CPU",
+          "mark": "yes"
+        },
+        "account_hotswap": {
+          "value": "None",
+          "mark": "no"
+        },
+        "prompt_scratchpad": {
+          "value": "Autosaved tabbed drafts, insert-without-send, slash completion",
+          "mark": "yes"
+        },
+        "saved_prompt_library": {
+          "value": "Idea logged, not built",
+          "mark": "planned"
+        },
+        "appearance_control": {
+          "value": "Unusual for this table: palette and per-token overrides write directly into the host terminal's own settings file",
+          "mark": "yes"
+        },
+        "extensibility": {
+          "value": "None",
+          "mark": "no"
+        },
+        "teams_multiuser": {
+          "value": "Single-user by design",
+          "mark": "no"
+        },
+        "voice_input": {
+          "value": "None",
+          "mark": "no"
+        },
+        "license_cost": {
+          "value": "MIT, free; pre-release, published as-is; uses your own subscriptions",
+          "mark": "yes"
+        },
+        "runs_in_terminal": {
+          "value": "Only one in this table that runs entirely inside a terminal you already have",
+          "mark": "yes"
+        },
+        "stability_maturity": {
+          "value": "Personal, pre-release; its terminal-multiplexer server froze four times on one day (cause still open)",
+          "mark": "partial"
+        }
+      }
+    },
+    {
+      "name": "Paseo",
+      "url": null,
+      "category": "agent manager",
+      "where_agents_run": "your machine + cloud (self-hosted relay or Tailscale) + mobile + web",
+      "license": "Apache-2.0, free",
+      "checked_on": "2026-09-06 (source- and hands-on-verified)",
+      "source_note": "Source-verified and installed/live-tested.",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "Deep per-provider SDK adapters",
+          "mark": "yes"
+        },
+        "harness_count": {
+          "value": "~39 agent harnesses",
+          "mark": "yes"
+        },
+        "needs_you_signal": {
+          "value": "SDK-level",
+          "mark": "yes"
+        },
+        "approve_deny_prompt": {
+          "value": "Dedicated control-plane tool to respond to a permission request",
+          "mark": "yes"
+        },
+        "conversation_gui_view": {
+          "value": "Best in this table",
+          "mark": "yes"
+        },
+        "real_terminal": {
+          "value": "Yes",
+          "mark": "yes"
+        },
+        "session_organization": {
+          "value": "Per workspace",
+          "mark": "yes"
+        },
+        "usage_hud": {
+          "value": "Risky reverse-engineered endpoint, display-only, no rate-limit mitigation seen",
+          "mark": "partial"
+        },
+        "burn_rate_forecast": {
+          "value": "None",
+          "mark": "no"
+        },
+        "limit_governor": {
+          "value": "None",
+          "mark": "no"
+        },
+        "vault_task_source": {
+          "value": "None",
+          "mark": "no"
+        },
+        "issue_tracker_pipeline": {
+          "value": "Partial",
+          "mark": "partial"
+        },
+        "worktree_management": {
+          "value": "Mature: rollback, recovery, git-contention queue",
+          "mark": "yes"
+        },
+        "planner_orchestrator": {
+          "value": "The agent itself gets control-plane tools such as creating agents and responding to permission requests",
+          "mark": "yes"
+        },
+        "agent_to_agent_messaging": {
+          "value": "Via its control-plane tools",
+          "mark": "yes"
+        },
+        "cross_provider_delegation": {
+          "value": "Visible in one place",
+          "mark": "yes"
+        },
+        "always_on_assistant": {
+          "value": "None",
+          "mark": "no"
+        },
+        "knowledge_base": {
+          "value": "None",
+          "mark": "no"
+        },
+        "builtin_editors_browser": {
+          "value": "Not stated in this doc",
+          "mark": "unknown"
+        },
+        "native_mobile_app": {
+          "value": "Best in this table: celebrated mobile experience across iOS/Android",
+          "mark": "yes"
+        },
+        "phone_no_new_app": {
+          "value": "Requires its own app",
+          "mark": "no"
+        },
+        "remote_ssh": {
+          "value": "Via its daemon",
+          "mark": "yes"
+        },
+        "app_framework_size": {
+          "value": "Electron 44 plus a Node/WebSocket daemon",
+          "mark": "no"
+        },
+        "running_ram": {
+          "value": "Not measured in this doc",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
+          "value": "Not applicable",
+          "mark": "n/a"
+        },
+        "prompt_scratchpad": {
+          "value": "None",
+          "mark": "no"
+        },
+        "saved_prompt_library": {
+          "value": "None",
+          "mark": "no"
+        },
+        "appearance_control": {
+          "value": "Not applicable",
+          "mark": "n/a"
+        },
+        "extensibility": {
+          "value": "Best in this table: MCP server, CLI and TypeScript SDK for automation",
+          "mark": "yes"
+        },
+        "teams_multiuser": {
+          "value": "Teams plus triggers from GitHub/Slack/Discord",
+          "mark": "yes"
+        },
+        "voice_input": {
+          "value": "Yes",
+          "mark": "yes"
+        },
+        "license_cost": {
+          "value": "Apache-2.0, free",
+          "mark": "yes"
+        },
+        "runs_in_terminal": {
+          "value": "Own desktop/mobile/web app",
+          "mark": "no"
+        },
+        "stability_maturity": {
+          "value": "Mature",
+          "mark": "yes"
+        }
+      }
+    },
+    {
+      "name": "GitKraken Kepler",
+      "url": null,
+      "category": "agent manager",
+      "where_agents_run": "your machine (Win/Mac/Linux) plus SSH/WSL remote execution",
+      "license": "commercial, free tier",
+      "checked_on": "2026-09-06 (site-verified)",
+      "source_note": "Site-verified, not installed.",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "Agent-agnostic model choice per task",
+          "mark": "yes"
+        },
+        "harness_count": {
+          "value": "\"Any agent\"",
+          "mark": "yes"
+        },
+        "needs_you_signal": {
+          "value": "Yes",
+          "mark": "yes"
+        },
+        "approve_deny_prompt": {
+          "value": "Not stated",
+          "mark": "unknown"
+        },
+        "conversation_gui_view": {
+          "value": "Agent Graph: live tree of every session, turn, tool call and subagent",
+          "mark": "yes"
+        },
+        "real_terminal": {
+          "value": "Not stated",
+          "mark": "unknown"
+        },
+        "session_organization": {
+          "value": "Three views of one fleet: live, kanban, dense list",
+          "mark": "yes"
+        },
+        "usage_hud": {
+          "value": "Org-level spend analytics, not a live burn view",
+          "mark": "no"
+        },
+        "burn_rate_forecast": {
+          "value": "None",
+          "mark": "no"
+        },
+        "limit_governor": {
+          "value": "None",
+          "mark": "no"
+        },
+        "vault_task_source": {
+          "value": "None",
+          "mark": "no"
+        },
+        "issue_tracker_pipeline": {
+          "value": "Best in this table: Jira, Trello, GitHub, GitLab Issues, Linear",
+          "mark": "yes"
+        },
+        "worktree_management": {
+          "value": "Parallel worktrees with per-branch diffs, plus setup hooks that run repo scripts before the agent starts",
+          "mark": "yes"
+        },
+        "planner_orchestrator": {
+          "value": "Not applicable",
+          "mark": "n/a"
+        },
+        "agent_to_agent_messaging": {
+          "value": "None",
+          "mark": "no"
+        },
+        "cross_provider_delegation": {
+          "value": "Visible in one place",
+          "mark": "yes"
+        },
+        "always_on_assistant": {
+          "value": "None",
+          "mark": "no"
+        },
+        "knowledge_base": {
+          "value": "None",
+          "mark": "no"
+        },
+        "builtin_editors_browser": {
+          "value": "Diffs plus in-app commit/PR",
+          "mark": "yes"
+        },
+        "native_mobile_app": {
+          "value": "Mobile check-and-answer, not a full session manager",
+          "mark": "partial"
+        },
+        "phone_no_new_app": {
+          "value": "Requires its own app",
+          "mark": "no"
+        },
+        "remote_ssh": {
+          "value": "SSH/WSL remote execution",
+          "mark": "yes"
+        },
+        "app_framework_size": {
+          "value": "Desktop app, size not stated",
+          "mark": "unknown"
+        },
+        "running_ram": {
+          "value": "Not measured in this doc",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
+          "value": "Not applicable",
+          "mark": "n/a"
+        },
+        "prompt_scratchpad": {
+          "value": "\"Actions\": saved one-click prompts",
+          "mark": "partial"
+        },
+        "saved_prompt_library": {
+          "value": "Best in this table: Actions come with issue, diff and repo state pre-attached",
+          "mark": "yes"
+        },
+        "appearance_control": {
+          "value": "Not applicable",
+          "mark": "n/a"
+        },
+        "extensibility": {
+          "value": "Partial",
+          "mark": "partial"
+        },
+        "teams_multiuser": {
+          "value": "Org-level analytics on agent spend",
+          "mark": "yes"
+        },
+        "voice_input": {
+          "value": "None",
+          "mark": "no"
+        },
+        "license_cost": {
+          "value": "Commercial with a free tier",
+          "mark": "partial"
+        },
+        "runs_in_terminal": {
+          "value": "Own desktop app",
+          "mark": "no"
+        },
+        "stability_maturity": {
+          "value": "Commercial product",
+          "mark": "yes"
+        }
+      }
+    },
+    {
+      "name": "Agent Orchestrator (AO)",
+      "url": null,
+      "category": "agent manager",
+      "where_agents_run": "your machine + mobile companion (LAN/Tailscale)",
+      "license": "OSS-ish, ~11k stars",
+      "checked_on": "2026-09-06 (site-verified)",
+      "source_note": "Site-verified, not installed.",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "25 harnesses, per-project defaults",
+          "mark": "yes"
+        },
+        "harness_count": {
+          "value": "25",
+          "mark": "yes"
+        },
+        "needs_you_signal": {
+          "value": "Escalates only what needs a human",
+          "mark": "yes"
+        },
+        "approve_deny_prompt": {
+          "value": "Escalations to a human",
+          "mark": "yes"
+        },
+        "conversation_gui_view": {
+          "value": "Yes",
+          "mark": "yes"
+        },
+        "real_terminal": {
+          "value": "Not stated",
+          "mark": "unknown"
+        },
+        "session_organization": {
+          "value": "Kanban board: Pending / Iterating / In Review / Ready-to-merge",
+          "mark": "yes"
+        },
+        "usage_hud": {
+          "value": "None",
+          "mark": "no"
+        },
+        "burn_rate_forecast": {
+          "value": "None",
+          "mark": "no"
+        },
+        "limit_governor": {
+          "value": "None",
+          "mark": "no"
+        },
+        "vault_task_source": {
+          "value": "None",
+          "mark": "no"
+        },
+        "issue_tracker_pipeline": {
+          "value": "CI feedback loop: failed checks and review comments route back to the owning session until approved",
+          "mark": "yes"
+        },
+        "worktree_management": {
+          "value": "Orchestrator spawns worktree workers per task",
+          "mark": "yes"
+        },
+        "planner_orchestrator": {
+          "value": "Core: a per-project main orchestrator agent that plans and spawns worktree workers; orchestrators can message each other",
+          "mark": "yes"
+        },
+        "agent_to_agent_messaging": {
+          "value": "Orchestrators message other orchestrators",
+          "mark": "yes"
+        },
+        "cross_provider_delegation": {
+          "value": "Visible in one place",
+          "mark": "yes"
+        },
+        "always_on_assistant": {
+          "value": "None",
+          "mark": "no"
+        },
+        "knowledge_base": {
+          "value": "None",
+          "mark": "no"
+        },
+        "builtin_editors_browser": {
+          "value": "Not stated",
+          "mark": "unknown"
+        },
+        "native_mobile_app": {
+          "value": "Mobile companion with working/need-you/mergeable counts",
+          "mark": "yes"
+        },
+        "phone_no_new_app": {
+          "value": "Requires its own companion app",
+          "mark": "no"
+        },
+        "remote_ssh": {
+          "value": "Not stated",
+          "mark": "unknown"
+        },
+        "app_framework_size": {
+          "value": "Desktop app, size not stated",
+          "mark": "unknown"
+        },
+        "running_ram": {
+          "value": "Not measured in this doc",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
+          "value": "Not applicable",
+          "mark": "n/a"
+        },
+        "prompt_scratchpad": {
+          "value": "None",
+          "mark": "no"
+        },
+        "saved_prompt_library": {
+          "value": "None",
+          "mark": "no"
+        },
+        "appearance_control": {
+          "value": "Not applicable",
+          "mark": "n/a"
+        },
+        "extensibility": {
+          "value": "Partial",
+          "mark": "partial"
+        },
+        "teams_multiuser": {
+          "value": "Partial",
+          "mark": "partial"
+        },
+        "voice_input": {
+          "value": "None",
+          "mark": "no"
+        },
+        "license_cost": {
+          "value": "Open-ish, roughly 11k stars",
+          "mark": "partial"
+        },
+        "runs_in_terminal": {
+          "value": "Own desktop app",
+          "mark": "no"
+        },
+        "stability_maturity": {
+          "value": "Active development",
+          "mark": "partial"
+        }
+      }
+    },
+    {
+      "name": "CCManager",
+      "url": null,
+      "category": "agent manager",
+      "where_agents_run": "your machine (Linux/macOS)",
+      "license": "unknown",
+      "checked_on": "2026-09-07 (site/discussion pass only, no full comparison run)",
+      "source_note": "Evaluated and not adopted (2026-09-01). Terminal session manager; state detection parses tool output rather than reading structured hook events.",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "harness_count": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "needs_you_signal": {
+          "value": "Output-parsed, coarser than hook-event-based detection",
+          "mark": "partial"
+        },
+        "approve_deny_prompt": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "conversation_gui_view": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "real_terminal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "session_organization": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "usage_hud": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "burn_rate_forecast": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "limit_governor": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "vault_task_source": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "issue_tracker_pipeline": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "worktree_management": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "planner_orchestrator": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "agent_to_agent_messaging": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "knowledge_base": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "native_mobile_app": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "phone_no_new_app": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "remote_ssh": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "app_framework_size": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "running_ram": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "extensibility": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "teams_multiuser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "voice_input": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "license_cost": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "runs_in_terminal": {
+          "value": "TUI session manager",
+          "mark": "yes"
+        },
+        "stability_maturity": {
+          "value": "not verified",
+          "mark": "unknown"
+        }
+      }
+    },
+    {
+      "name": "OpenCove",
+      "url": null,
+      "category": "agent manager",
+      "where_agents_run": "your machine (desktop)",
+      "license": "unknown",
+      "checked_on": "2026-09-07 (site/discussion pass only, no full comparison run)",
+      "source_note": "Alpha desktop canvas of agent sessions, used here as a visual-design reference; its state-detection mechanism is undocumented.",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "harness_count": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "needs_you_signal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "approve_deny_prompt": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "conversation_gui_view": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "real_terminal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "session_organization": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "usage_hud": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "burn_rate_forecast": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "limit_governor": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "vault_task_source": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "issue_tracker_pipeline": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "worktree_management": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "planner_orchestrator": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "agent_to_agent_messaging": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "knowledge_base": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "native_mobile_app": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "phone_no_new_app": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "remote_ssh": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "app_framework_size": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "running_ram": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "extensibility": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "teams_multiuser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "voice_input": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "license_cost": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "runs_in_terminal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "stability_maturity": {
+          "value": "not verified",
+          "mark": "unknown"
+        }
+      }
+    },
+    {
+      "name": "Wave Terminal",
+      "url": null,
+      "category": "agent manager",
+      "where_agents_run": "your machine",
+      "license": "unknown",
+      "checked_on": "2026-09-07 (site/discussion pass only, no full comparison run)",
+      "source_note": "Terminal with waiting/done badges built on the same hook events Pantheon uses; project has been quiet since 2026-04.",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "harness_count": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "needs_you_signal": {
+          "value": "Waiting/done badges from the same hook events",
+          "mark": "yes"
+        },
+        "approve_deny_prompt": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "conversation_gui_view": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "real_terminal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "session_organization": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "usage_hud": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "burn_rate_forecast": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "limit_governor": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "vault_task_source": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "issue_tracker_pipeline": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "worktree_management": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "planner_orchestrator": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "agent_to_agent_messaging": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "knowledge_base": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "native_mobile_app": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "phone_no_new_app": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "remote_ssh": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "app_framework_size": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "running_ram": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "extensibility": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "teams_multiuser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "voice_input": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "license_cost": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "runs_in_terminal": {
+          "value": "Yes, it is a terminal",
+          "mark": "yes"
+        },
+        "stability_maturity": {
+          "value": "not verified",
+          "mark": "unknown"
+        }
+      }
+    },
+    {
+      "name": "vibe-kanban",
+      "url": null,
+      "category": "agent manager",
+      "where_agents_run": "your machine",
+      "license": "unknown",
+      "checked_on": "2026-09-07 (site/discussion pass only, no full comparison run)",
+      "source_note": "Used here as a deliberate anti-example: functional but, in the compiler's words, \"boring af.\"",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "harness_count": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "needs_you_signal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "approve_deny_prompt": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "conversation_gui_view": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "real_terminal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "session_organization": {
+          "value": "Kanban board",
+          "mark": "yes"
+        },
+        "usage_hud": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "burn_rate_forecast": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "limit_governor": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "vault_task_source": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "issue_tracker_pipeline": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "worktree_management": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "planner_orchestrator": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "agent_to_agent_messaging": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "knowledge_base": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "native_mobile_app": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "phone_no_new_app": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "remote_ssh": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "app_framework_size": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "running_ram": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "extensibility": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "teams_multiuser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "voice_input": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "license_cost": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "runs_in_terminal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "stability_maturity": {
+          "value": "not verified",
+          "mark": "unknown"
+        }
+      }
+    },
+    {
+      "name": "T3 Code",
+      "url": null,
+      "category": "agent manager",
+      "where_agents_run": "your machine + mobile",
+      "license": "MIT",
+      "checked_on": "2026-09-07 (site/discussion pass only, no full comparison run)",
+      "source_note": "Site/discussion pass only, 2026-09-07. All-platform desktop plus mobile; standout feature is switching models mid-conversation.",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "harness_count": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "needs_you_signal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "approve_deny_prompt": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "conversation_gui_view": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "real_terminal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "session_organization": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "usage_hud": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "burn_rate_forecast": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "limit_governor": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "vault_task_source": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "issue_tracker_pipeline": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "worktree_management": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "planner_orchestrator": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "agent_to_agent_messaging": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "knowledge_base": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "native_mobile_app": {
+          "value": "Mobile app",
+          "mark": "yes"
+        },
+        "phone_no_new_app": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "remote_ssh": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "app_framework_size": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "running_ram": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "extensibility": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "teams_multiuser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "voice_input": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "license_cost": {
+          "value": "MIT",
+          "mark": "yes"
+        },
+        "runs_in_terminal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "stability_maturity": {
+          "value": "not verified",
+          "mark": "unknown"
+        }
+      }
+    },
+    {
+      "name": "Superset",
+      "url": null,
+      "category": "agent manager",
+      "where_agents_run": "your machine (macOS, experimental Linux)",
+      "license": "Elastic-2.0",
+      "checked_on": "2026-09-07 (site/discussion pass only, no full comparison run)",
+      "source_note": "Site/discussion pass only, 2026-09-07. Ships a TypeScript SDK and MCP server so agents can spawn agents.",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "harness_count": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "needs_you_signal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "approve_deny_prompt": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "conversation_gui_view": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "real_terminal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "session_organization": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "usage_hud": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "burn_rate_forecast": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "limit_governor": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "vault_task_source": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "issue_tracker_pipeline": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "worktree_management": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "planner_orchestrator": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "agent_to_agent_messaging": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "knowledge_base": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "native_mobile_app": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "phone_no_new_app": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "remote_ssh": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "app_framework_size": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "running_ram": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "extensibility": {
+          "value": "TypeScript SDK plus MCP server so agents can spawn agents",
+          "mark": "yes"
+        },
+        "teams_multiuser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "voice_input": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "license_cost": {
+          "value": "Elastic-2.0",
+          "mark": "yes"
+        },
+        "runs_in_terminal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "stability_maturity": {
+          "value": "not verified",
+          "mark": "unknown"
+        }
+      }
+    },
+    {
+      "name": "Conductor",
+      "url": null,
+      "category": "agent manager",
+      "where_agents_run": "your machine (macOS only)",
+      "license": "proprietary",
+      "checked_on": "2026-09-07 (site/discussion pass only, no full comparison run)",
+      "source_note": "Site/discussion pass only, 2026-09-07. Checkpoint/rollback called best-in-class.",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "harness_count": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "needs_you_signal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "approve_deny_prompt": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "conversation_gui_view": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "real_terminal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "session_organization": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "usage_hud": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "burn_rate_forecast": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "limit_governor": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "vault_task_source": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "issue_tracker_pipeline": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "worktree_management": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "planner_orchestrator": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "agent_to_agent_messaging": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "knowledge_base": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "native_mobile_app": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "phone_no_new_app": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "remote_ssh": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "app_framework_size": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "running_ram": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "extensibility": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "teams_multiuser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "voice_input": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "license_cost": {
+          "value": "Proprietary",
+          "mark": "no"
+        },
+        "runs_in_terminal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "stability_maturity": {
+          "value": "not verified",
+          "mark": "unknown"
+        }
+      }
+    },
+    {
+      "name": "Jenny",
+      "url": "https://github.com/SaltyPretz3l/jenny",
+      "category": "other tool we looked at",
+      "where_agents_run": "your machine",
+      "license": "MIT",
+      "checked_on": "2026-09-07 (site/discussion pass only, no full comparison run)",
+      "source_note": "A single-agent local-LLM chat app and IDE (llama.cpp / vLLM / any OpenAI-compatible endpoint), not a fleet manager, so it doesn't compete on most rows here. Recorded for its file-edit checkpointing, destructive-command approval, and a scratchpad/calendar the model can read and modify.",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "Single local-model chat app, not a multi-agent fleet manager",
+          "mark": "no"
+        },
+        "harness_count": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "needs_you_signal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "approve_deny_prompt": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "conversation_gui_view": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "real_terminal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "session_organization": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "usage_hud": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "burn_rate_forecast": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "limit_governor": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "vault_task_source": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "issue_tracker_pipeline": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "worktree_management": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "planner_orchestrator": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "agent_to_agent_messaging": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "knowledge_base": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "native_mobile_app": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "phone_no_new_app": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "remote_ssh": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "app_framework_size": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "running_ram": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "extensibility": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "teams_multiuser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "voice_input": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "license_cost": {
+          "value": "MIT",
+          "mark": "yes"
+        },
+        "runs_in_terminal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "stability_maturity": {
+          "value": "not verified",
+          "mark": "unknown"
+        }
+      }
+    },
+    {
+      "name": "micracode",
+      "url": "https://github.com/Jamessdevops/micracode",
+      "category": "other tool we looked at",
+      "where_agents_run": "your machine",
+      "license": "open-source",
+      "checked_on": "2026-09-07 (site/discussion pass only, no full comparison run)",
+      "source_note": "An AI web-app builder (Next.js, exports components as a zip), a different category from a fleet manager; recorded for completeness only. Local-model support is planned by its author.",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "App builder, not a fleet/agent manager",
+          "mark": "no"
+        },
+        "harness_count": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "needs_you_signal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "approve_deny_prompt": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "conversation_gui_view": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "real_terminal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "session_organization": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "usage_hud": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "burn_rate_forecast": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "limit_governor": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "vault_task_source": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "issue_tracker_pipeline": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "worktree_management": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "planner_orchestrator": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "agent_to_agent_messaging": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "knowledge_base": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "native_mobile_app": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "phone_no_new_app": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "remote_ssh": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "app_framework_size": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "running_ram": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "extensibility": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "teams_multiuser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "voice_input": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "license_cost": {
+          "value": "open-source",
+          "mark": "yes"
+        },
+        "runs_in_terminal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "stability_maturity": {
+          "value": "not verified",
+          "mark": "unknown"
+        }
+      }
+    },
+    {
+      "name": "Teleclod",
+      "url": "https://teleclod.com",
+      "category": "agent manager",
+      "where_agents_run": "cloud (Windows/macOS/Linux/Android/browser plus a Chrome extension)",
+      "license": "commercial (Free / EUR49 Pro / EUR99 Studio)",
+      "checked_on": "2026-09-07 (site/discussion pass only, no full comparison run)",
+      "source_note": "Site-only pass, 2026-09-22; no independent verification found (no reviews, repo, or discussion beyond the single source comment).",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "Claims 14+ providers including Claude Code, Codex, OpenRouter, Ollama, Kimi",
+          "mark": "yes"
+        },
+        "harness_count": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "needs_you_signal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "approve_deny_prompt": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "conversation_gui_view": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "real_terminal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "session_organization": {
+          "value": "Task list, kanban, and a global dashboard",
+          "mark": "yes"
+        },
+        "usage_hud": {
+          "value": "No usage/burn-rate/token HUD on the page",
+          "mark": "no"
+        },
+        "burn_rate_forecast": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "limit_governor": {
+          "value": "None",
+          "mark": "no"
+        },
+        "vault_task_source": {
+          "value": "It is its own task store",
+          "mark": "no"
+        },
+        "issue_tracker_pipeline": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "worktree_management": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "planner_orchestrator": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "agent_to_agent_messaging": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "knowledge_base": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "native_mobile_app": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "phone_no_new_app": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "remote_ssh": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "app_framework_size": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "running_ram": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "extensibility": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "teams_multiuser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "voice_input": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "license_cost": {
+          "value": "Closed-source, paid tiers",
+          "mark": "no"
+        },
+        "runs_in_terminal": {
+          "value": "Replaces the terminal outright",
+          "mark": "no"
+        },
+        "stability_maturity": {
+          "value": "not verified",
+          "mark": "unknown"
+        }
+      }
+    },
+    {
+      "name": "Oyren",
+      "url": "https://oyren.ai/development",
+      "category": "agent manager",
+      "where_agents_run": "cloud (remote codespaces, deliberately not your machine)",
+      "license": "commercial, hourly",
+      "checked_on": "2026-09-07 (site/discussion pass only, no full comparison run)",
+      "source_note": "Site-verified, 2026-09-23. Remote disposable codespaces with several agent CLIs preinstalled and tmux in every codespace.",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "Claude Code, Codex, Cursor, opencode, Qwen Code, DeepSeek Harness, Antigravity preinstalled",
+          "mark": "yes"
+        },
+        "harness_count": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "needs_you_signal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "approve_deny_prompt": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "conversation_gui_view": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "real_terminal": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "session_organization": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "usage_hud": {
+          "value": "No usage/burn-rate/token HUD on the page",
+          "mark": "no"
+        },
+        "burn_rate_forecast": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "limit_governor": {
+          "value": "A blocked card emails the human a specific question and resumes on reply, but only for one card, not a whole session against a usage window",
+          "mark": "partial"
+        },
+        "vault_task_source": {
+          "value": "Its own kanban board is the tracker",
+          "mark": "no"
+        },
+        "issue_tracker_pipeline": {
+          "value": "Its own kanban board with an importance/urgency matrix and calendar/milestone views, read and written by agents over its own MCP server",
+          "mark": "yes"
+        },
+        "worktree_management": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "planner_orchestrator": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "agent_to_agent_messaging": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "cross_provider_delegation": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "always_on_assistant": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "knowledge_base": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "builtin_editors_browser": {
+          "value": "Streamed VS Code/Zed IDE plus a Playwright-driven built-in browser",
+          "mark": "yes"
+        },
+        "native_mobile_app": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "phone_no_new_app": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "remote_ssh": {
+          "value": "It is itself the remote machine",
+          "mark": "n/a"
+        },
+        "app_framework_size": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "running_ram": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "account_hotswap": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "prompt_scratchpad": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "saved_prompt_library": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "appearance_control": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "extensibility": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "teams_multiuser": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "voice_input": {
+          "value": "not verified",
+          "mark": "unknown"
+        },
+        "license_cost": {
+          "value": "Commercial: hourly compute plus an optional credit wallet",
+          "mark": "no"
+        },
+        "runs_in_terminal": {
+          "value": "Cloud codespace, not a local terminal tool",
+          "mark": "no"
+        },
+        "stability_maturity": {
+          "value": "not verified",
+          "mark": "unknown"
+        }
+      }
+    }
+  ]
+}

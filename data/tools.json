@@ -197,7 +197,7 @@
     {
       "key": "ram_vs_claude_desktop",
       "label": "Memory vs Claude Desktop",
-      "description": "Measured baseline, 2026-09-28 on one Windows PC: Claude Desktop used about 3.7 GB across 24 processes, plus about 4 GB in a virtual machine that is very likely its Cowork sandbox. Orca was measured at about 2.3 GB with five projects and agents running. Other tools are estimated from what they are built on. The coding agents themselves cost the same under every tool.",
+      "description": "Size as a share of Claude Desktop, which measured about 7.5 GB on one Windows PC on 2026-09-28 (about 3.7 GB for the app across 24 processes, plus about 4 GB for the virtual machine it starts for Cowork). Scale: Tiny = under 5%, Small = 5-15%, Medium = 15-40%. Measured where the cell says so; otherwise an estimate from what the tool is built on. The coding agents themselves cost the same under every tool.",
       "group": "Under the hood"
     },
     {
@@ -388,7 +388,7 @@
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "Lighter: measured about 2.3 GB with five projects and agents running",
+          "value": "Medium: about 30% (measured 2.3 GB with five projects and agents running)",
           "mark": "info"
         },
         "runs_in_terminal": {
@@ -552,7 +552,7 @@
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "Much lighter (estimate: Tauri app)",
+          "value": "Small (estimate: Tauri app on the system WebView)",
           "mark": "info"
         },
         "runs_in_terminal": {
@@ -704,7 +704,7 @@
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "Much lighter (estimate: terminal app, one small binary)",
+          "value": "Tiny (estimate: terminal app, one small Rust binary)",
           "mark": "info"
         },
         "runs_in_terminal": {
@@ -880,7 +880,7 @@
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "Much lighter (measured about 77 MB)",
+          "value": "Tiny: about 1% (measured 77 MB)",
           "mark": "info"
         },
         "runs_in_terminal": {
@@ -1044,7 +1044,7 @@
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "Lighter (estimate: Electron app plus a background server)",
+          "value": "Medium (estimate: Electron app plus a background server)",
           "mark": "info"
         },
         "runs_in_terminal": {
@@ -1372,7 +1372,7 @@
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "Lighter (estimate: Electron app plus a Go backend)",
+          "value": "Medium (estimate: Electron app plus a Go backend)",
           "mark": "info"
         },
         "runs_in_terminal": {

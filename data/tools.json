@@ -196,8 +196,8 @@
     },
     {
       "key": "ram_vs_claude_desktop",
-      "label": "Memory vs Claude Desktop (estimate)",
-      "description": "An estimate from the app shell, not a measurement. Claude Desktop is Electron, so Electron is about the same, Tauri lighter, a terminal app much lighter. The agents themselves cost the same under every tool.",
+      "label": "Memory vs Claude Desktop",
+      "description": "Measured baseline, 2026-09-28 on one Windows PC: Claude Desktop used about 3.7 GB across 24 processes, plus about 4 GB in a virtual machine that is very likely its Cowork sandbox. Orca was measured at about 2.3 GB with five projects and agents running. Other tools are estimated from what they are built on. The coding agents themselves cost the same under every tool.",
       "group": "Under the hood"
     },
     {
@@ -388,7 +388,7 @@
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "Heavier (Electron + background daemon)",
+          "value": "Lighter: measured about 2.3 GB with five projects and agents running",
           "mark": "info"
         },
         "runs_in_terminal": {
@@ -552,7 +552,7 @@
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "Lighter",
+          "value": "Much lighter (estimate: Tauri app)",
           "mark": "info"
         },
         "runs_in_terminal": {
@@ -704,7 +704,7 @@
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "Much lighter",
+          "value": "Much lighter (estimate: terminal app, one small binary)",
           "mark": "info"
         },
         "runs_in_terminal": {
@@ -880,7 +880,7 @@
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "Much lighter",
+          "value": "Much lighter (measured about 77 MB)",
           "mark": "info"
         },
         "runs_in_terminal": {
@@ -1044,7 +1044,7 @@
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "Heavier (Electron + background daemon)",
+          "value": "Lighter (estimate: Electron app plus a background server)",
           "mark": "info"
         },
         "runs_in_terminal": {
@@ -1372,7 +1372,7 @@
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "Heavier (Electron + background daemon)",
+          "value": "Lighter (estimate: Electron app plus a Go backend)",
           "mark": "info"
         },
         "runs_in_terminal": {

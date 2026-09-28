@@ -14,6 +14,10 @@
 <meta property="og:image:height" content="900">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://dtiger1889-ops.github.io/agent-deck-comparison/assets/screenshot.png">
+<!-- Tabulator (MIT, https://tabulator.info) draws the feature matrix: scrolling, frozen first column,
+     sticky header, grouping and sorting all come from the library. Pinned version. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tabulator-tables@6.5.3/dist/css/tabulator.min.css">
+<script src="https://cdn.jsdelivr.net/npm/tabulator-tables@6.5.3/dist/js/tabulator.min.js"></script>
 <style>
   :root {
     color-scheme: light dark;
@@ -73,16 +77,6 @@
   .about { max-width: 90ch; font-size: 0.9rem; color: var(--muted); margin: 0 0 4px; }
   .about summary { cursor: pointer; color: var(--accent); font-weight: 600; font-size: 0.88rem; }
   .about p { margin: 8px 0 0; }
-  .note {
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 10px 14px;
-    margin-top: 0;
-    max-width: 90ch;
-    font-size: 0.9rem;
-    color: var(--muted);
-  }
   .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; font-size: 0.85rem; }
   .row { display: grid; grid-template-columns: 88px 1fr; column-gap: 8px; align-items: start; margin: 0 0 10px; }
   .row-label { color: var(--muted); font-size: 0.85rem; padding-top: 6px; }
@@ -107,35 +101,6 @@
     font-size: 0.9rem;
   }
   .view-toggle button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-  .table-scroll {
-    overflow: auto;
-    max-height: calc(100vh - 32px);
-    overscroll-behavior: contain;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    max-width: 100%;
-  }
-  table { border-collapse: collapse; width: 100%; background: var(--panel); }
-  #matrix-table { table-layout: fixed; }
-  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; font-size: 0.9rem; }
-  thead th {
-    position: sticky; top: 0; z-index: 3;
-    background: var(--sticky-bg);
-    cursor: pointer;
-    white-space: normal; overflow-wrap: anywhere;
-    border-bottom: 2px solid var(--border);
-  }
-  thead th:hover { color: var(--accent); }
-  thead th a { text-decoration: none; }
-  thead th a:hover { text-decoration: underline; }
-  .sort-hint { display: block; font-size: 0.7rem; font-weight: normal; color: var(--muted); }
-  #matrix-table th:first-child, #matrix-table td:first-child {
-    position: sticky; left: 0; z-index: 2;
-    background: var(--sticky-bg);
-    width: 240px;
-    white-space: normal;
-  }
-  #matrix-table thead th:first-child { z-index: 4; }
   .badge {
     display: inline-block;
     padding: 2px 8px;
@@ -153,14 +118,6 @@
   .badge-undocumented { background: transparent; color: var(--unknown-fg); border: 1px dashed var(--unknown-fg); }
   .badge-na { background: var(--na-bg); color: var(--na-fg); }
   .badge-info { background: var(--info-bg); color: var(--info-fg); }
-  .group-row th {
-    background: var(--group-bg); color: var(--group-fg);
-    font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em;
-    padding: 0; cursor: pointer; user-select: none;
-  }
-  .group-row th:hover { color: var(--accent); }
-  .group-label { position: sticky; left: 0; display: inline-block; padding: 8px 10px; }
-  .group-count { font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--muted); margin-left: 6px; }
   .chip { border: 1px solid var(--border); background: var(--panel); color: var(--text); border-radius: 999px; padding: 4px 10px; font-size: 0.82rem; cursor: pointer; }
   .chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
   .seg { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; margin-right: 6px; background: var(--panel); }
@@ -176,8 +133,7 @@
   .af { border: 1px solid var(--accent); color: var(--accent); background: var(--panel); border-radius: 999px; padding: 3px 10px; font-size: 0.8rem; cursor: pointer; }
   .af:hover { background: var(--accent); color: #fff; }
   .chips-sep { width: 1px; height: 22px; background: var(--border); margin: 0 2px; }
-  body.compact .cell-value, body.compact .feature-desc { display: none; }
-  body.compact th, body.compact td { padding-top: 5px; padding-bottom: 5px; }
+  body.compact .cell-value, body.compact .feature-desc { display: none !important; }
   .fact-value { font-size: 0.875rem; line-height: 1.5; }
   .cell-value { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-top: 4px; color: var(--text); font-size: 0.875rem; line-height: 1.5; cursor: pointer; }
   .cell-value.open { display: block; }
@@ -185,10 +141,88 @@
   .feature-desc { display: block; color: var(--muted); font-size: 0.82rem; line-height: 1.45; font-weight: normal; margin-top: 3px; }
   footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 24px; }
   a { color: var(--accent); }
-  #view-bytool { display: none; }
-  /* Own stacking context so the sticky header/first column always paint over scrolled cells. */
-  .table-scroll { isolation: isolate; }
   .phone-only { display: none; }
+
+  /* ---------- Feature matrix: Tabulator, themed with the page's own colors ---------- */
+  #matrix.tabulator {
+    background: var(--panel); color: var(--text);
+    border: 1px solid var(--border); border-radius: 8px;
+    font-size: 0.9rem; isolation: isolate;
+  }
+  #matrix .tabulator-header {
+    background: var(--sticky-bg); color: var(--text);
+    border-bottom: 2px solid var(--border); font-weight: 700;
+  }
+  #matrix .tabulator-header .tabulator-col {
+    background: var(--sticky-bg); border-right: none;
+  }
+  #matrix .tabulator-header .tabulator-col .tabulator-col-content { padding: 10px 12px; }
+  #matrix .tabulator-header .tabulator-col.tabulator-sortable.tabulator-col-sorter-element:hover {
+    background: var(--sticky-bg); color: var(--accent);
+  }
+  #matrix .tabulator-header .tabulator-col.tabulator-sortable .tabulator-col-title { padding-right: 18px; }
+  #matrix .tabulator-col-sorter { right: 6px; }
+  #matrix .tabulator-header .tabulator-col.tabulator-sortable[aria-sort=none] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow { border-bottom-color: var(--border); }
+  #matrix .tabulator-header .tabulator-col.tabulator-sortable[aria-sort=ascending] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow { border-bottom-color: var(--accent); }
+  #matrix .tabulator-header .tabulator-col.tabulator-sortable[aria-sort=descending] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow { border-top-color: var(--accent); }
+  #matrix .tabulator-header .tabulator-frozen.tabulator-frozen-left { border-right: none; }
+  #matrix .tool-head a { text-decoration: none; }
+  #matrix .tool-head a:hover { text-decoration: underline; }
+  .sort-hint { display: block; font-size: 0.7rem; font-weight: normal; color: var(--muted); }
+  #feat-head { font-weight: 700; }
+  #feat-head.sorted { cursor: pointer; }
+  #feat-head .reset { display: block; font-size: 0.7rem; font-weight: normal; color: var(--accent); }
+  #matrix .tabulator-tableholder { background: var(--panel); overscroll-behavior: contain; }
+  #matrix .tabulator-tableholder .tabulator-table { background: var(--panel); color: var(--text); }
+  #matrix .tabulator-row, #matrix .tabulator-row.tabulator-row-even {
+    background: var(--panel); border-bottom: 1px solid var(--border); min-height: 0;
+  }
+  #matrix .tabulator-row .tabulator-cell {
+    padding: 10px 12px; border-right: none; vertical-align: top;
+    white-space: normal; text-overflow: clip;
+  }
+  /* The frozen Feature column: opaque, so scrolled cells never show through it. */
+  #matrix .tabulator-row .tabulator-cell.tabulator-frozen,
+  #matrix .tabulator-header .tabulator-col.tabulator-frozen { background: var(--sticky-bg); }
+  #matrix .tabulator-row .tabulator-cell.tabulator-frozen.tabulator-frozen-left { border-right: none; }
+  /* Section headers: Tabulator's own group rows, restyled; the label stays pinned at the left edge. */
+  #matrix .tabulator-row.tabulator-group {
+    background: var(--group-bg); color: var(--group-fg);
+    border-top: none; border-bottom: 1px solid var(--border); border-right: none;
+    padding: 0; font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em;
+    user-select: none;
+  }
+  #matrix .tabulator-row.tabulator-group:hover { background: var(--group-bg); color: var(--accent); }
+  #matrix .tabulator-group .tabulator-group-toggle { display: none; }
+  #matrix .tabulator-row.tabulator-group span { margin-left: 0; color: inherit; }   /* undo Tabulator's red count */
+  #matrix .group-label { position: sticky; left: 0; display: inline-block; padding: 8px 10px; }
+  #matrix .group-label::before { content: "\25B8  "; white-space: pre; }
+  #matrix .tabulator-group-visible .group-label::before { content: "\25BE  "; }
+  #matrix .tabulator-row.tabulator-group .group-count { font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--muted); margin-left: 6px; }
+  #matrix .tabulator-placeholder-contents { color: var(--muted); font-size: 0.9rem; font-weight: 400; }
+  body.compact #matrix .tabulator-row .tabulator-cell { padding-top: 5px; padding-bottom: 5px; }
+
+  /* ---------- By tool view (hand-built table) ---------- */
+  #view-bytool { display: none; }
+  .table-scroll {
+    overflow: auto;
+    max-height: calc(100vh - 32px);
+    overscroll-behavior: contain;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    max-width: 100%;
+    isolation: isolate;
+  }
+  table { border-collapse: collapse; width: 100%; background: var(--panel); }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; font-size: 0.9rem; }
+  thead th {
+    position: sticky; top: 0; z-index: 3;
+    background: var(--sticky-bg);
+    cursor: pointer;
+    white-space: normal; overflow-wrap: anywhere;
+    border-bottom: 2px solid var(--border);
+  }
+  thead th:hover { color: var(--accent); }
 
   /* ---------- Phones (<= 760 px). Desktop above this width is untouched. ---------- */
   @media (max-width: 760px) {
@@ -228,29 +262,31 @@
     #phone-ff select { flex: 1 1 0; min-width: 0; font-size: 0.85rem; padding: 6px 6px; background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 6px; }
     #filter-search { flex: 1 1 100%; }
 
-    /* The table box: fits the screen; vertical swipes hand off to the page at its ends. */
-    .table-scroll { background: var(--panel); max-height: calc(100vh - 16px); max-height: calc(100dvh - 16px); overscroll-behavior-x: contain; overscroll-behavior-y: auto; }
+    /* The matrix: sideways swipes stay in the box, vertical swipes hand off to the page at its ends.
+       No scroll-snap: snapping made Android Chrome fight the swipe at the far right (2026-09-28). */
+    #matrix .tabulator-tableholder { overscroll-behavior-x: contain; overscroll-behavior-y: auto; }
     /* Right-edge fade: the part-visible next column fades out instead of being cut mid-word,
        and it shows there is more to swipe to. Hidden once scrolled to the last column. */
     .matrix-wrap { position: relative; }
     .matrix-wrap::after {
-      content: ""; position: absolute; top: 1px; right: 1px; bottom: 1px; width: 44px; pointer-events: none;
-      border-radius: 0 8px 8px 0; background: linear-gradient(to right, transparent, var(--panel) 85%); z-index: 5;
+      content: ""; position: absolute; top: 1px; right: 1px; bottom: 1px; width: 36px; pointer-events: none;
+      border-radius: 0 8px 8px 0; background: linear-gradient(to right, transparent, var(--panel) 90%); z-index: 5;
     }
-    .matrix-wrap.at-end::after { display: none; }
-    /* proximity, not mandatory: mandatory snapping with the last snap point at the scroll end made
-       Android Chrome pull back against the swipe at the far right ("it gets stuck", 2026-09-28). */
-    #view-matrix { scroll-snap-type: x proximity; scroll-padding-left: 132px; }
-    #matrix-table thead th:not(:first-child) { scroll-snap-align: start; }
-    th, td { padding: 8px 9px; font-size: 0.84rem; overflow-wrap: anywhere; }
-    #matrix-table th:first-child, #matrix-table td:first-child { width: 132px; box-shadow: inset -1px 0 0 var(--border); }
+    .matrix-wrap.at-end::after, .matrix-wrap.bytool::after { display: none; }
+    #matrix.tabulator { font-size: 0.84rem; }
+    #matrix .tabulator-header .tabulator-col .tabulator-col-content { padding: 8px 9px; }
+    #matrix .tabulator-row .tabulator-cell { padding: 8px 9px; overflow-wrap: anywhere; }
+    #matrix .tabulator-row .tabulator-cell.tabulator-frozen,
+    #matrix .tabulator-header .tabulator-col.tabulator-frozen { box-shadow: inset -1px 0 0 var(--border); }
     .feature-label { display: block; line-height: 1.3; }
     .feature-desc { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 0.76rem; line-height: 1.35; cursor: pointer; }
     .feature-desc.open { display: block; }
     .feat-filter { display: none; }
     .cell-value, .fact-value { font-size: 0.82rem; line-height: 1.45; }
     .sort-hint { font-size: 0.66rem; }
-    .group-label { padding: 7px 9px; }
+    #matrix .group-label { padding: 7px 9px; }
+    .table-scroll { background: var(--panel); max-height: calc(100vh - 16px); max-height: calc(100dvh - 16px); overscroll-behavior-x: contain; overscroll-behavior-y: auto; }
+    th, td { padding: 8px 9px; font-size: 0.84rem; overflow-wrap: anywhere; }
 
     /* By tool: one card per tool; the column headings become a row of sort buttons. */
     #bytool-table, #bytool-table tbody, #bytool-table tr, #bytool-table td { display: block; width: auto; }
@@ -311,10 +347,8 @@
   </div></div>
   <div class="row empty" id="active-row"><span class="row-label">Filtering by</span><div class="row-body" id="active-filters"></div></div>
 
-  <div class="matrix-wrap">
-  <div id="view-matrix" class="table-scroll">
-    <table id="matrix-table"></table>
-  </div>
+  <div class="matrix-wrap" id="matrix-wrap">
+    <div id="matrix"></div>
   </div>
 
   <div id="view-bytool" class="table-scroll">
@@ -336,8 +370,8 @@ const MARK_LABEL = {
 };
 
 let DATA = null;
-let sortToolIdx = null;   // index into visible tools, or null = default (source order)
-let sortDir = 1;
+let table = null;                 // the Tabulator instance (feature matrix)
+let VIS = [];                     // tools currently shown as columns (DATA order)
 let bytoolSortKey = "name";
 let bytoolSortDir = 1;
 let currentView = "matrix";
@@ -368,8 +402,8 @@ function filterOptions(f) {
     return [["", "Any"], ["has", "Has it"], ["hasany", "Has it (incl. partial / exp.)"], ["no", "Doesn't have it"], ["undocumented", "Not documented"], ["unknown", "Unknown"]];
   }
   const cats = [...new Set(DATA.tools.map(t => category(f.key, t.features[f.key])))];
-  if (["harness_count", "languages", "download_size"].includes(f.key)) return null;
-  if (f.key === "os") return [["", "Any"], ["os:Windows", "Runs on Windows"], ["os:macOS", "Runs on macOS"], ["os:Linux", "Runs on Linux"], ["os:browser", "Works in a browser"], ["unknown", "Not verified"]];   // counts and sizes: nothing useful to pick
+  if (["harness_count", "languages", "download_size"].includes(f.key)) return null;   // counts and sizes: nothing useful to pick
+  if (f.key === "os") return [["", "Any"], ["os:Windows", "Runs on Windows"], ["os:macOS", "Runs on macOS"], ["os:Linux", "Runs on Linux"], ["os:browser", "Works in a browser"], ["unknown", "Not verified"]];
   if (cats.length < 2 || cats.length > 8) return null;
   return [["", "Any"], ...cats.map(c => ["cat:" + c, c])];
 }
@@ -386,56 +420,25 @@ function passes(tool, key, opt) {
   return true;
 }
 
-function badge(cell) {
-  const mark = cell.mark;
-  const label = MARK_LABEL[mark] || mark;
-  const span = document.createElement("span");
-  span.className = "badge badge-" + (mark === "n/a" ? "na" : mark);
-  span.textContent = label;
-  const wrap = document.createElement("div");
-  if (mark === "info") {
-    // Fact rows (app shell, languages, sizes): the value is the content, no badge.
-    const v = document.createElement("span");
-    v.className = "fact-value";
-    v.textContent = cell.value || "";
-    wrap.appendChild(v);
-    return wrap;
-  }
-  wrap.appendChild(span);
-  if (cell.value) {
-    const v = document.createElement("span");
-    v.className = "cell-value";
-    v.textContent = cell.value;
-    v.title = cell.value;
-    v.addEventListener("click", () => v.classList.toggle("open"));
-    wrap.appendChild(v);
-  }
-  return wrap;
-}
-
 function visibleTools() {
   const cat = document.getElementById("filter-category").value;
   return DATA.tools.filter(t => (cat === "all" || t.category === cat) && shownTools.has(t.name)
     && Object.entries(featFilters).every(([k, o]) => passes(t, k, o)));
 }
 
-function visibleFeatures(tools) {
+// Does a feature row pass the row filters (section chips, search, diff-only, unknown-only)?
+function rowPasses(f) {
   const q = document.getElementById("filter-search").value.trim().toLowerCase();
   const hideUnknown = document.getElementById("filter-hide-unknown").checked;
   const diffOnly = document.getElementById("filter-diff").checked;
-  return DATA.features.filter(f => {
-    if (hiddenSections.has(f.group)) return false;
-    if (diffOnly && tools.length > 1) {
-      const marks = new Set(tools.map(t => t.features[f.key].mark + "|" + (t.features[f.key].value || "")));
-      if (marks.size === 1) return false;
-    }
-    if (q && !(f.label.toLowerCase().includes(q) || f.description.toLowerCase().includes(q))) return false;
-    if (hideUnknown) {
-      const allUnknown = tools.every(t => t.features[f.key].mark === "unknown");
-      if (allUnknown) return false;
-    }
-    return true;
-  });
+  if (hiddenSections.has(f.group)) return false;
+  if (diffOnly && VIS.length > 1) {
+    const marks = new Set(VIS.map(t => t.features[f.key].mark + "|" + (t.features[f.key].value || "")));
+    if (marks.size === 1) return false;
+  }
+  if (q && !(f.label.toLowerCase().includes(q) || f.description.toLowerCase().includes(q))) return false;
+  if (hideUnknown && VIS.every(t => t.features[f.key].mark === "unknown")) return false;
+  return true;
 }
 
 function renderLegend() {
@@ -449,133 +452,191 @@ function renderLegend() {
   });
 }
 
-function renderMatrix() {
-  const tools = visibleTools();
-  const features = visibleFeatures(tools);
+function sectionOrder() {
+  return (DATA.group_order || []).length ? DATA.group_order : [...new Set(DATA.features.map(f => f.group))];
+}
 
-  const groupOrder = (DATA.group_order || []).length
-    ? DATA.group_order
-    : [...new Set(features.map(f => f.group))];
-
-  function sortWithinGroup(list) {
-    if (sortToolIdx === null || !tools[sortToolIdx]) return list;
-    const t = tools[sortToolIdx];
-    return [...list].sort((a, b) => {
-      const ra = MARK_RANK[t.features[a.key].mark];
-      const rb = MARK_RANK[t.features[b.key].mark];
-      return (ra - rb) * sortDir;
-    });
+// ---------- Tabulator formatters ----------
+function toolCellFormatter(cell) {
+  const c = cell.getValue() || { mark: "unknown" };
+  const wrap = document.createElement("div");
+  if (c.mark === "info") {
+    // Fact rows (app shell, languages, sizes): the value is the content, no badge.
+    const v = document.createElement("span");
+    v.className = "fact-value";
+    v.textContent = c.value || "";
+    wrap.appendChild(v);
+    return wrap;
   }
+  const b = document.createElement("span");
+  b.className = "badge badge-" + (c.mark === "n/a" ? "na" : c.mark);
+  b.textContent = MARK_LABEL[c.mark] || c.mark;
+  wrap.appendChild(b);
+  if (c.value) {
+    const v = document.createElement("span");
+    v.className = "cell-value";
+    v.textContent = c.value;
+    v.title = c.value;
+    v.addEventListener("click", () => { v.classList.toggle("open"); cell.getRow().normalizeHeight(); });
+    wrap.appendChild(v);
+  }
+  return wrap;
+}
 
-  // Build one flat list of {type: "group", label} | {type: "feature", feature} rows,
-  // grouped in fixed order, sorted within each group, dropping empty groups.
-  const rows = [];
-  groupOrder.forEach(g => {
-    const inGroup = features.filter(f => f.group === g);
-    if (inGroup.length === 0) return;
-    rows.push({ type: "group", label: g, count: inGroup.length });
-    if (!collapsed.has(g)) sortWithinGroup(inGroup).forEach(f => rows.push({ type: "feature", feature: f }));
-  });
+function featureCellFormatter(cell) {
+  const f = cell.getData();
+  const wrap = document.createElement("div");
+  const lab = document.createElement("span");
+  lab.className = "feature-label";
+  lab.textContent = f.label;
+  const desc = document.createElement("span");
+  desc.className = "feature-desc";
+  desc.textContent = f.description;
+  desc.addEventListener("click", () => { desc.classList.toggle("open"); cell.getRow().normalizeHeight(); });   // phones clamp it to 2 lines
+  wrap.append(lab, desc);
+  const opts = filterOptions(f);
+  if (opts) {
+    const l = document.createElement("label");
+    l.className = "feat-filter";
+    const sel = document.createElement("select");
+    sel.setAttribute("aria-label", "Show tools by " + f.label);
+    opts.forEach(([val, text]) => {
+      const o = document.createElement("option");
+      o.value = val; o.textContent = (val ? "" : "Show tools: ") + text;
+      sel.appendChild(o);
+    });
+    sel.value = featFilters[f.key] || "";
+    if (sel.value) sel.classList.add("active");
+    sel.addEventListener("change", () => {
+      if (sel.value) featFilters[f.key] = sel.value; else delete featFilters[f.key];
+      filtersChanged();
+    });
+    l.appendChild(sel);
+    wrap.appendChild(l);
+  }
+  return wrap;
+}
 
-  const table = document.getElementById("matrix-table");
-  table.innerHTML = "";
-  requestAnimationFrame(updateEdge);
-  const firstCol = PHONE.matches ? 132 : 240, toolCol = PHONE.matches ? 150 : 170;
-  table.style.width = "max(100%, " + (firstCol + tools.length * toolCol) + "px)";
-  const thead = document.createElement("thead");
-  const trh = document.createElement("tr");
-  const thFeat = document.createElement("th");
-  thFeat.textContent = "Feature" + (sortToolIdx !== null ? " (click to reset sort)" : "");
-  thFeat.addEventListener("click", () => { sortToolIdx = null; renderMatrix(); });
-  trh.appendChild(thFeat);
-  tools.forEach((t, i) => {
-    const th = document.createElement("th");
+function toolTitleFormatter(t) {
+  return () => {
+    const d = document.createElement("div");
+    d.className = "tool-head";
     if (t.url) {
       const a = document.createElement("a");
       a.href = t.url; a.target = "_blank"; a.rel = "noopener";
       a.textContent = t.name + " ↗";
       a.title = "Open " + t.name + " in a new tab";
-      a.addEventListener("click", e => e.stopPropagation());
-      th.appendChild(a);
-      const s = document.createElement("span");
-      s.className = "sort-hint";
-      s.textContent = "sort";
-      th.appendChild(s);
+      a.addEventListener("click", e => e.stopPropagation());   // following the link must not sort
+      d.appendChild(a);
     } else {
-      th.textContent = t.name;
+      d.textContent = t.name;
     }
-    th.addEventListener("click", () => {
-      if (sortToolIdx === i) { sortDir *= -1; } else { sortToolIdx = i; sortDir = 1; }
-      renderMatrix();
-    });
-    trh.appendChild(th);
-  });
-  thead.appendChild(trh);
-  table.appendChild(thead);
+    const s = document.createElement("span");
+    s.className = "sort-hint";
+    s.textContent = "sort";
+    d.appendChild(s);
+    return d;
+  };
+}
 
-  const tbody = document.createElement("tbody");
-  rows.forEach(row => {
-    if (row.type === "group") {
-      const tr = document.createElement("tr");
-      tr.className = "group-row";
-      const th = document.createElement("th");
-      th.colSpan = 1 + tools.length;
-      const lab = document.createElement("span");
-      lab.className = "group-label";
-      lab.textContent = (collapsed.has(row.label) ? "\u25B8 " : "\u25BE ") + row.label;
-      const cnt = document.createElement("span");
-      cnt.className = "group-count";
-      cnt.textContent = row.count + (row.count === 1 ? " row" : " rows");
-      lab.appendChild(cnt);
-      th.appendChild(lab);
-      th.title = collapsed.has(row.label) ? "Expand section" : "Collapse section";
-      th.addEventListener("click", () => {
-        if (collapsed.has(row.label)) collapsed.delete(row.label); else collapsed.add(row.label);
-        renderChips(); renderMatrix();
-      });
-      tr.appendChild(th);
-      tbody.appendChild(tr);
-      return;
-    }
-    const f = row.feature;
-    const tr = document.createElement("tr");
-    const tdLabel = document.createElement("td");
-    tdLabel.innerHTML = `<span class="feature-label">${f.label}</span><span class="feature-desc">${f.description}</span>`;
-    const desc = tdLabel.querySelector(".feature-desc");
-    desc.addEventListener("click", () => desc.classList.toggle("open"));   // phones clamp it to 2 lines
-    const opts = filterOptions(f);
-    if (opts) {
-      const wrap = document.createElement("label");
-      wrap.className = "feat-filter";
-      const sel = document.createElement("select");
-      sel.setAttribute("aria-label", "Show tools by " + f.label);
-      opts.forEach(([val, text]) => {
-        const o = document.createElement("option");
-        o.value = val; o.textContent = (val ? "" : "Show tools: ") + text;
-        sel.appendChild(o);
-      });
-      sel.value = featFilters[f.key] || "";
-      if (sel.value) sel.classList.add("active");
-      sel.addEventListener("change", () => {
-        if (sel.value) featFilters[f.key] = sel.value; else delete featFilters[f.key];
-        sortToolIdx = null; renderAll(); renderActiveFilters();
-      });
-      wrap.appendChild(sel);
-      tdLabel.appendChild(wrap);
-    }
-    tr.appendChild(tdLabel);
-    tools.forEach(t => {
-      const td = document.createElement("td");
-      td.appendChild(badge(t.features[f.key]));
-      tr.appendChild(td);
-    });
-    tbody.appendChild(tr);
+function updateFeatureHead(sorted) {
+  const h = document.getElementById("feat-head");
+  if (!h) return;
+  h.classList.toggle("sorted", sorted);
+  h.innerHTML = "Feature" + (sorted ? '<span class="reset">click to reset sort</span>' : "");
+}
+
+// ---------- Build the Tabulator matrix ----------
+function buildMatrix() {
+  const keepSort = table ? table.getSorters().map(s => ({ column: s.field, dir: s.dir })) : [];
+  const keepLeft = table ? table.rowManager.element.scrollLeft : 0;
+  if (table) { table.destroy(); table = null; }
+  const phone = PHONE.matches;
+  const firstCol = phone ? 132 : 240, toolCol = phone ? 150 : 170;
+  VIS = visibleTools();
+
+  const columns = [{
+    title: "Feature", field: "label", frozen: true, width: firstCol, headerSort: false,
+    resizable: false, formatter: featureCellFormatter,
+    titleFormatter: () => { const s = document.createElement("span"); s.id = "feat-head"; s.textContent = "Feature"; return s; },
+    headerClick: () => { if (table.getSorters().length) table.clearSort(); },
+  }];
+  DATA.tools.forEach((t, i) => columns.push({
+    title: t.name, field: "t" + i, minWidth: toolCol, widthGrow: 1, resizable: false,
+    visible: VIS.includes(t), headerWordWrap: true,
+    sorter: (a, b) => MARK_RANK[a.mark] - MARK_RANK[b.mark], headerSortStartingDir: "asc",
+    titleFormatter: toolTitleFormatter(t), formatter: toolCellFormatter,
+  }));
+
+  const rows = DATA.features.map(f => {
+    const r = { key: f.key, label: f.label, description: f.description, group: f.group };
+    DATA.tools.forEach((t, i) => { r["t" + i] = t.features[f.key]; });
+    return r;
   });
-  table.appendChild(tbody);
-  // No trailing spacer after the last column: with snapping it left the far-right stop fighting the
-  // swipe on Android. The right-edge fade and its at-end state mark the end instead.
-  table.style.marginRight = "";
-  updateEdge();
+
+  table = new Tabulator("#matrix", {
+    data: rows, columns, index: "key",
+    layout: "fitColumns",
+    renderVertical: "basic",                    // 38 rows: render them all, no virtual DOM
+    maxHeight: phone ? "calc(100dvh - 16px)" : "calc(100vh - 32px)",
+    groupBy: "group",
+    groupValues: [nonEmptySections()],
+    groupStartOpen: value => !collapsed.has(value),
+    groupToggleElement: "header",
+    groupHeader: (value, count) =>
+      `<span class="group-label">${value}<span class="group-count">${count} ${count === 1 ? "row" : "rows"}</span></span>`,
+    initialSort: keepSort,
+    placeholder: "No features match these filters.",
+  });
+  table.on("tableBuilt", () => {
+    table.setFilter(data => rowPasses(data));
+    table.rowManager.element.scrollLeft = keepLeft;
+    table.rowManager.element.addEventListener("scroll", updateEdge, { passive: true });
+    updateFeatureHead(table.getSorters().length > 0);
+    updateEdge();
+  });
+  table.on("dataSorted", sorters => updateFeatureHead(sorters.length > 0));
+  table.on("groupVisibilityChanged", (group, visible) => {
+    if (visible) collapsed.delete(group.getKey()); else collapsed.add(group.getKey());
+    renderChips();
+  });
+  table.on("scrollHorizontal", updateEdge);
+  table.on("renderComplete", updateEdge);
+}
+
+// Open or close every section. Each show()/hide() regroups the table and replaces the group
+// objects, so look each one up fresh by name instead of reusing one getGroups() list.
+function setAllGroups(open) {
+  sectionOrder().forEach(k => {
+    const g = table.getGroups().find(x => x.getKey() === k);
+    if (g && g.isVisible() !== open) { open ? g.show() : g.hide(); }
+  });
+}
+
+// Only sections with at least one matching row get a heading, in the fixed section order.
+function nonEmptySections() {
+  return sectionOrder().filter(g => DATA.features.some(f => f.group === g && rowPasses(f)));
+}
+
+// Re-apply everything that decides which columns and rows show, without rebuilding the table.
+function applyMatrix(opts = {}) {
+  if (!table) return;
+  VIS = visibleTools();
+  table.blockRedraw();
+  let sortedHidden = false, colsChanged = false;
+  DATA.tools.forEach((t, i) => {
+    const col = table.getColumn("t" + i);
+    const want = VIS.includes(t);
+    if (col.isVisible() !== want) { want ? col.show() : col.hide(); colsChanged = true; }
+  });
+  table.getSorters().forEach(s => { if (!s.column.isVisible()) sortedHidden = true; });
+  if (sortedHidden || opts.clearSort) table.clearSort();
+  if (opts.reformat) table.getRows().forEach(r => r.reformat());
+  table.refreshFilter();
+  table.setGroupValues([nonEmptySections()]);
+  table.restoreRedraw();
+  if (colsChanged) table.redraw(true);   // re-fit column widths to the new column set
+  requestAnimationFrame(updateEdge);
 }
 
 function countYes(tool) {
@@ -604,8 +665,8 @@ function renderByTool() {
     return String(va).localeCompare(String(vb)) * bytoolSortDir;
   });
 
-  const table = document.getElementById("bytool-table");
-  table.innerHTML = "";
+  const tbl = document.getElementById("bytool-table");
+  tbl.innerHTML = "";
   const thead = document.createElement("thead");
   const trh = document.createElement("tr");
   cols.forEach(col => {
@@ -618,7 +679,7 @@ function renderByTool() {
     trh.appendChild(th);
   });
   thead.appendChild(trh);
-  table.appendChild(thead);
+  tbl.appendChild(thead);
 
   const tbody = document.createElement("tbody");
   rows.forEach(r => {
@@ -638,7 +699,7 @@ function renderByTool() {
     });
     tbody.appendChild(tr);
   });
-  table.appendChild(tbody);
+  tbl.appendChild(tbody);
 }
 
 function chip(label, on, onClick) {
@@ -671,34 +732,40 @@ function sep() {
 function sameSet(a, b) {
   return a.size === b.size && [...a].every(x => b.has(x));
 }
-function sectionOrder() {
-  return (DATA.group_order || []).length ? DATA.group_order : [...new Set(DATA.features.map(f => f.group))];
-}
 function renderChips() {
   const tc = document.getElementById("tool-chips");
   tc.innerHTML = "";
   const allNames = new Set(DATA.tools.map(t => t.name));
   const six = new Set(DEFAULT_TOOLS.filter(n => allNames.has(n)));
   tc.appendChild(seg([
-    { label: "Main " + six.size, on: sameSet(shownTools, six), onClick: () => { shownTools = new Set(six); sortToolIdx = null; renderChips(); renderAll(); } },
-    { label: "All " + allNames.size, on: sameSet(shownTools, allNames), onClick: () => { shownTools = new Set(allNames); sortToolIdx = null; renderChips(); renderAll(); } },
+    { label: "Main " + six.size, on: sameSet(shownTools, six), onClick: () => { shownTools = new Set(six); toolsChanged(); } },
+    { label: "All " + allNames.size, on: sameSet(shownTools, allNames), onClick: () => { shownTools = new Set(allNames); toolsChanged(); } },
   ]));
   tc.appendChild(sep());
   DATA.tools.forEach(t => tc.appendChild(chip(t.name, shownTools.has(t.name), () => {
     if (shownTools.has(t.name)) shownTools.delete(t.name); else shownTools.add(t.name);
-    sortToolIdx = null; renderChips(); renderAll(); renderActiveFilters();
+    toolsChanged();
   })));
   const sc = document.getElementById("section-chips");
   sc.innerHTML = "";
   const secs = sectionOrder();
   sc.appendChild(seg([
-    { label: "Show all", on: hiddenSections.size === 0 && collapsed.size === 0, onClick: () => { hiddenSections.clear(); collapsed.clear(); renderChips(); renderMatrix(); } },
-    { label: "Collapse all", on: secs.every(g => collapsed.has(g)), onClick: () => { secs.forEach(g => collapsed.add(g)); renderChips(); renderMatrix(); } },
+    { label: "Show all", on: hiddenSections.size === 0 && collapsed.size === 0, onClick: () => {
+        hiddenSections.clear(); collapsed.clear();
+        applyMatrix();
+        setAllGroups(true);
+        renderChips();
+      } },
+    { label: "Collapse all", on: secs.every(g => collapsed.has(g)), onClick: () => {
+        secs.forEach(g => collapsed.add(g));
+        setAllGroups(false);
+        renderChips();
+      } },
   ]));
   sc.appendChild(sep());
-  sectionOrder().forEach(g => sc.appendChild(chip(g, !hiddenSections.has(g), () => {
+  secs.forEach(g => sc.appendChild(chip(g, !hiddenSections.has(g), () => {
     if (hiddenSections.has(g)) hiddenSections.delete(g); else hiddenSections.add(g);
-    renderChips(); renderMatrix();
+    renderChips(); applyMatrix();
   })));
 }
 
@@ -713,9 +780,9 @@ function renderActiveFilters() {
     const opt = (filterOptions(f) || []).find(o => o[0] === featFilters[k]);
     const b = document.createElement("button");
     b.className = "af";
-    b.textContent = f.label + ": " + (opt ? opt[1] : featFilters[k]) + "  \u2715";
+    b.textContent = f.label + ": " + (opt ? opt[1] : featFilters[k]) + "  ✕";
     b.title = "Remove this filter";
-    b.addEventListener("click", () => { delete featFilters[k]; sortToolIdx = null; renderAll(); renderActiveFilters(); });
+    b.addEventListener("click", () => { delete featFilters[k]; filtersChanged(); });
     el.appendChild(b);
   });
   const n = visibleTools().length;
@@ -726,14 +793,24 @@ function renderActiveFilters() {
   const clr = document.createElement("button");
   clr.className = "af";
   clr.textContent = "Clear all";
-  clr.addEventListener("click", () => { featFilters = {}; sortToolIdx = null; renderAll(); renderActiveFilters(); });
+  clr.addEventListener("click", () => { featFilters = {}; filtersChanged(); });
   el.appendChild(clr);
 }
 
-function renderAll() {
-  renderMatrix();
+// A tool chip / preset changed: columns change, any sort resets (as before).
+function toolsChanged() {
+  renderChips();
+  applyMatrix({ clearSort: true });
+  renderByTool();
+  renderActiveFilters();
+}
+// A per-row "Show tools" filter changed: re-run the feature-cell formatters so their dropdowns
+// show the current choice, then re-apply columns and rows.
+function filtersChanged() {
+  applyMatrix({ clearSort: true, reformat: true });
   renderByTool();
   renderPhoneFilter();
+  renderActiveFilters();
 }
 
 // Phones: one "Show tools" picker in the filters panel replaces the dropdown under every row.
@@ -762,7 +839,7 @@ document.getElementById("ff-feature").addEventListener("change", renderPhoneFilt
 document.getElementById("ff-option").addEventListener("change", e => {
   const key = document.getElementById("ff-feature").value;
   if (e.target.value) featFilters[key] = e.target.value; else delete featFilters[key];
-  sortToolIdx = null; renderAll(); renderActiveFilters();
+  filtersChanged();
 });
 document.getElementById("filters-btn").addEventListener("click", e => {
   const open = document.body.classList.toggle("filters-open");
@@ -771,34 +848,33 @@ document.getElementById("filters-btn").addEventListener("click", e => {
 });
 // Phones: drop the right-edge fade once the table is scrolled to its last column.
 function updateEdge() {
-  const m = document.getElementById("view-matrix");
-  m.parentElement.classList.toggle("at-end", m.scrollLeft + m.clientWidth >= m.scrollWidth - 2);
+  const h = document.querySelector("#matrix .tabulator-tableholder");
+  if (!h) return;
+  document.getElementById("matrix-wrap").classList.toggle("at-end", h.scrollLeft + h.clientWidth >= h.scrollWidth - 2);
 }
-document.getElementById("view-matrix").addEventListener("scroll", updateEdge, { passive: true });
-// Re-lay the matrix when the screen crosses the phone breakpoint (e.g. rotating a phone).
-PHONE.addEventListener("change", () => { if (DATA) renderMatrix(); });
-let resizeTimer = null;
-window.addEventListener("resize", () => {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => { if (DATA && PHONE.matches) renderMatrix(); }, 150);
-});
+// Crossing the phone breakpoint (e.g. rotating a phone) rebuilds the matrix with that layout's widths.
+PHONE.addEventListener("change", () => { if (DATA) buildMatrix(); });
 
 function setView(view) {
   currentView = view;
-  document.getElementById("view-matrix").style.display = view === "matrix" ? "block" : "none";
+  document.getElementById("matrix").style.display = view === "matrix" ? "" : "none";
+  document.getElementById("matrix-wrap").classList.toggle("bytool", view !== "matrix");
   document.getElementById("view-bytool").style.display = view === "bytool" ? "block" : "none";
   document.getElementById("btn-matrix").classList.toggle("active", view === "matrix");
   document.getElementById("btn-bytool").classList.toggle("active", view === "bytool");
-  if (view === "matrix" && DATA && PHONE.matches) renderMatrix();   // box had no width while hidden
+  if (view === "matrix" && table) { table.redraw(true); updateEdge(); }   // it had no size while hidden
 }
 
 document.getElementById("btn-matrix").addEventListener("click", () => setView("matrix"));
 document.getElementById("btn-bytool").addEventListener("click", () => setView("bytool"));
-document.getElementById("filter-category").addEventListener("change", renderAll);
-document.getElementById("filter-search").addEventListener("input", renderMatrix);
-document.getElementById("filter-hide-unknown").addEventListener("change", renderMatrix);
-document.getElementById("filter-diff").addEventListener("change", renderMatrix);
-document.getElementById("compact").addEventListener("change", e => document.body.classList.toggle("compact", e.target.checked));
+document.getElementById("filter-category").addEventListener("change", () => { applyMatrix({ clearSort: true }); renderByTool(); renderActiveFilters(); });
+document.getElementById("filter-search").addEventListener("input", () => applyMatrix());
+document.getElementById("filter-hide-unknown").addEventListener("change", () => applyMatrix());
+document.getElementById("filter-diff").addEventListener("change", () => applyMatrix());
+document.getElementById("compact").addEventListener("change", e => {
+  document.body.classList.toggle("compact", e.target.checked);
+  applyMatrix({ reformat: true });   // row heights are measured once; re-measure them
+});
 
 fetch("data/tools.json")
   .then(r => r.json())
@@ -807,7 +883,9 @@ fetch("data/tools.json")
     shownTools = new Set(DEFAULT_TOOLS.filter(n => data.tools.some(t => t.name === n)));
     renderLegend();
     renderChips();
-    renderAll();
+    buildMatrix();
+    renderByTool();
+    renderPhoneFilter();
   })
   .catch(err => {
     document.querySelector("main").innerHTML =

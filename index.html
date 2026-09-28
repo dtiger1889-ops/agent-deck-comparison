@@ -99,6 +99,9 @@
     border-bottom: 2px solid var(--border);
   }
   thead th:hover { color: var(--accent); }
+  thead th a { text-decoration: none; }
+  thead th a:hover { text-decoration: underline; }
+  .sort-hint { display: block; font-size: 0.7rem; font-weight: normal; color: var(--muted); }
   #matrix-table th:first-child, #matrix-table td:first-child {
     position: sticky; left: 0; z-index: 2;
     background: var(--sticky-bg);
@@ -259,7 +262,20 @@ function renderMatrix() {
   trh.appendChild(thFeat);
   tools.forEach((t, i) => {
     const th = document.createElement("th");
-    th.textContent = t.name;
+    if (t.url) {
+      const a = document.createElement("a");
+      a.href = t.url; a.target = "_blank"; a.rel = "noopener";
+      a.textContent = t.name + " ↗";
+      a.title = "Open " + t.name + " in a new tab";
+      a.addEventListener("click", e => e.stopPropagation());
+      th.appendChild(a);
+      const s = document.createElement("span");
+      s.className = "sort-hint";
+      s.textContent = "sort";
+      th.appendChild(s);
+    } else {
+      th.textContent = t.name;
+    }
     th.addEventListener("click", () => {
       if (sortToolIdx === i) { sortDir *= -1; } else { sortToolIdx = i; sortDir = 1; }
       renderMatrix();

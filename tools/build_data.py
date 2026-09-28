@@ -185,7 +185,7 @@ pantheon = {
 
 # ---- Paseo ----
 paseo = {
-    "name": "Paseo", "url": None, "category": "agent manager",
+    "name": "Paseo", "url": "https://paseo.sh", "category": "agent manager",
     "where_agents_run": "your machine + cloud (self-hosted relay or Tailscale) + mobile + web",
     "license": "Apache-2.0, free", "checked_on": "2026-09-06 (source- and hands-on-verified)",
     "source_note": "Source-verified and installed/live-tested.",
@@ -230,7 +230,7 @@ paseo = {
 
 # ---- Kepler ----
 kepler = {
-    "name": "GitKraken Kepler", "url": None, "category": "agent manager",
+    "name": "GitKraken Kepler", "url": "https://www.gitkraken.com/kepler", "category": "agent manager",
     "where_agents_run": "your machine (Win/Mac/Linux) plus SSH/WSL remote execution",
     "license": "commercial, free tier", "checked_on": "2026-09-06 (site-verified)",
     "source_note": "Site-verified, not installed.",
@@ -275,7 +275,7 @@ kepler = {
 
 # ---- AO ----
 ao = {
-    "name": "Agent Orchestrator (AO)", "url": None, "category": "agent manager",
+    "name": "Agent Orchestrator (AO)", "url": "https://github.com/Untrivial-ai/agent-orchestrator", "category": "agent manager",
     "where_agents_run": "your machine + mobile companion (LAN/Tailscale)",
     "license": "OSS-ish, ~11k stars", "checked_on": "2026-09-06 (site-verified)",
     "source_note": "Site-verified, not installed.",
@@ -332,46 +332,46 @@ def thin(name, url, category, where, license_, note, extra=None):
     return t
 
 ccmanager = thin(
-    "CCManager", None, "agent manager", "your machine (Linux/macOS)",
+    "CCManager", "https://github.com/kbwo/ccmanager", "agent manager", "your machine (Linux/macOS)",
     "unknown", "Evaluated and not adopted (2026-09-01). Terminal session manager; state detection parses tool output rather than reading structured hook events.",
     {"needs_you_signal": c("partial", "Output-parsed, coarser than hook-event-based detection"),
      "runs_in_terminal": c("yes", "TUI session manager")},
 )
 
 opencove = thin(
-    "OpenCove", None, "agent manager", "your machine (desktop)",
+    "OpenCove", "https://github.com/DeadWaveWave/opencove", "agent manager", "your machine (desktop)",
     "unknown", "Alpha desktop canvas of agent sessions, used here as a visual-design reference; its state-detection mechanism is undocumented.",
 )
 
 wave = thin(
-    "Wave Terminal", None, "agent manager", "your machine",
+    "Wave Terminal", "https://www.waveterm.dev", "agent manager", "your machine",
     "unknown", "Terminal with waiting/done badges built on the same hook events Pantheon uses; project has been quiet since 2026-04.",
     {"needs_you_signal": c("yes", "Waiting/done badges from the same hook events"),
      "runs_in_terminal": c("yes", "Yes, it is a terminal")},
 )
 
 vibekanban = thin(
-    "vibe-kanban", None, "agent manager", "your machine",
+    "vibe-kanban", "https://github.com/BloopAI/vibe-kanban", "agent manager", "your machine",
     "unknown", "Used here as a deliberate anti-example: functional but, in the compiler's words, \"boring af.\"",
     {"session_organization": c("yes", "Kanban board")},
 )
 
 t3code = thin(
-    "T3 Code", None, "agent manager", "your machine + mobile",
+    "T3 Code", "https://github.com/pingdotgg/t3code", "agent manager", "your machine + mobile",
     "MIT", "Site/discussion pass only, 2026-09-07. All-platform desktop plus mobile; standout feature is switching models mid-conversation.",
     {"native_mobile_app": c("yes", "Mobile app"),
      "license_cost": c("yes", "MIT")},
 )
 
 superset = thin(
-    "Superset", None, "agent manager", "your machine (macOS, experimental Linux)",
+    "Superset", "https://superset.sh", "agent manager", "your machine (macOS, experimental Linux)",
     "Elastic-2.0", "Site/discussion pass only, 2026-09-07. Ships a TypeScript SDK and MCP server so agents can spawn agents.",
     {"extensibility": c("yes", "TypeScript SDK plus MCP server so agents can spawn agents"),
      "license_cost": c("yes", "Elastic-2.0")},
 )
 
 conductor = thin(
-    "Conductor", None, "agent manager", "your machine (macOS only)",
+    "Conductor", "https://www.conductor.build", "agent manager", "your machine (macOS only)",
     "proprietary", "Site/discussion pass only, 2026-09-07. Checkpoint/rollback called best-in-class.",
     {"license_cost": c("no", "Proprietary")},
 )

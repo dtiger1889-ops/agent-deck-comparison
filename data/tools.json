@@ -620,7 +620,7 @@
     },
     {
       "name": "Paseo",
-      "url": null,
+      "url": "https://paseo.sh",
       "category": "agent manager",
       "where_agents_run": "your machine + cloud (self-hosted relay or Tailscale) + mobile + web",
       "license": "Apache-2.0, free",
@@ -768,7 +768,7 @@
     },
     {
       "name": "GitKraken Kepler",
-      "url": null,
+      "url": "https://www.gitkraken.com/kepler",
       "category": "agent manager",
       "where_agents_run": "your machine (Win/Mac/Linux) plus SSH/WSL remote execution",
       "license": "commercial, free tier",
@@ -916,7 +916,7 @@
     },
     {
       "name": "Agent Orchestrator (AO)",
-      "url": null,
+      "url": "https://github.com/Untrivial-ai/agent-orchestrator",
       "category": "agent manager",
       "where_agents_run": "your machine + mobile companion (LAN/Tailscale)",
       "license": "OSS-ish, ~11k stars",
@@ -1064,7 +1064,7 @@
     },
     {
       "name": "CCManager",
-      "url": null,
+      "url": "https://github.com/kbwo/ccmanager",
       "category": "agent manager",
       "where_agents_run": "your machine (Linux/macOS)",
       "license": "unknown",
@@ -1212,7 +1212,7 @@
     },
     {
       "name": "OpenCove",
-      "url": null,
+      "url": "https://github.com/DeadWaveWave/opencove",
       "category": "agent manager",
       "where_agents_run": "your machine (desktop)",
       "license": "unknown",
@@ -1360,7 +1360,7 @@
     },
     {
       "name": "Wave Terminal",
-      "url": null,
+      "url": "https://www.waveterm.dev",
       "category": "agent manager",
       "where_agents_run": "your machine",
       "license": "unknown",
@@ -1508,7 +1508,7 @@
     },
     {
       "name": "vibe-kanban",
-      "url": null,
+      "url": "https://github.com/BloopAI/vibe-kanban",
       "category": "agent manager",
       "where_agents_run": "your machine",
       "license": "unknown",
@@ -1656,7 +1656,7 @@
     },
     {
       "name": "T3 Code",
-      "url": null,
+      "url": "https://github.com/pingdotgg/t3code",
       "category": "agent manager",
       "where_agents_run": "your machine + mobile",
       "license": "MIT",
@@ -1804,7 +1804,7 @@
     },
     {
       "name": "Superset",
-      "url": null,
+      "url": "https://superset.sh",
       "category": "agent manager",
       "where_agents_run": "your machine (macOS, experimental Linux)",
       "license": "Elastic-2.0",
@@ -1952,7 +1952,7 @@
     },
     {
       "name": "Conductor",
-      "url": null,
+      "url": "https://www.conductor.build",
       "category": "agent manager",
       "where_agents_run": "your machine (macOS only)",
       "license": "proprietary",

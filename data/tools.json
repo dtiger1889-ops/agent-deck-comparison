@@ -112,8 +112,8 @@
     },
     {
       "key": "issue_tracker_pipeline",
-      "label": "Issues and PRs through to merge",
-      "description": "Works with GitHub, GitLab, Linear or Jira issues and pull requests.",
+      "label": "Turns GitHub or Jira issues into pull requests",
+      "description": "Picks up an issue from GitHub, GitLab, Linear or Jira, hands it to an agent, and carries the resulting pull request through review.",
       "group": "Tasks, planning & merging"
     },
     {
@@ -444,8 +444,8 @@
           "mark": "yes"
         },
         "usage_hud": {
-          "value": "Not mentioned in its launch posts",
-          "mark": "undocumented"
+          "value": "Plan quota, context and tokens in its side panel (README, checked 2026-09-29)",
+          "mark": "yes"
         },
         "burn_rate_forecast": {
           "value": "Not mentioned in its launch posts",
@@ -624,8 +624,8 @@
           "mark": "partial"
         },
         "usage_hud": {
-          "value": "Homepage demo shows context use and a rate-limit line; no documented usage-window view",
-          "mark": "undocumented"
+          "value": "None in its docs or changelog (checked 2026-09-29); the rate-limit line in its demo is Claude Code's own status line",
+          "mark": "no"
         },
         "burn_rate_forecast": {
           "value": "Not mentioned in its docs",
@@ -644,12 +644,12 @@
           "mark": "no"
         },
         "issue_tracker_pipeline": {
-          "value": "Not mentioned in its docs",
-          "mark": "undocumented"
+          "value": "None in its docs, changelog or code (checked 2026-09-29)",
+          "mark": "no"
         },
         "worktree_management": {
-          "value": "Not mentioned in its docs",
-          "mark": "undocumented"
+          "value": "Creates, opens and removes worktrees from the sidebar or the herdr worktree command (changelog, checked 2026-09-29)",
+          "mark": "yes"
         },
         "planner_orchestrator": {
           "value": "No planner of its own, but agents can spawn panes and prompt each other through its CLI and socket API",

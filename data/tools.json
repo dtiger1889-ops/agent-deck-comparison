@@ -356,7 +356,7 @@
           "mark": "yes"
         },
         "extensibility": {
-          "value": "CLI supports \"any agent\"",
+          "value": "Scriptable CLI and installable agent skills; no plugin system or SDK (docs, 2026-09-29)",
           "mark": "partial"
         },
         "teams_multiuser": {
@@ -1012,7 +1012,7 @@
           "mark": "yes"
         },
         "extensibility": {
-          "value": "Best in this table: MCP server, CLI and TypeScript SDK for automation",
+          "value": "MCP server, CLI and TypeScript SDK for automation",
           "mark": "yes"
         },
         "teams_multiuser": {
@@ -1176,7 +1176,7 @@
           "mark": "yes"
         },
         "extensibility": {
-          "value": "Partial",
+          "value": "Custom Actions: your own prompt, agent and skill per action; no plugins, SDK or API (help docs, 2026-09-29)",
           "mark": "partial"
         },
         "teams_multiuser": {
@@ -1340,7 +1340,7 @@
           "mark": "partial"
         },
         "extensibility": {
-          "value": "Partial",
+          "value": "Scriptable ao CLI over a local API; its plugin system was removed in the Go rewrite (docs, 2026-09-29)",
           "mark": "partial"
         },
         "teams_multiuser": {

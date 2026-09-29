@@ -978,6 +978,13 @@ fetch("data/tools.json")
   }
 })();
 </script>
+<script>
+// GoatCounter: record the page path only, dropping query strings (share links can carry tracking IDs);
+// keep ?view=differ so that view's visits are counted on their own.
+window.goatcounter = { path: function (p) {
+  return location.pathname + (new URLSearchParams(location.search).get("view") === "differ" ? "?view=differ" : "");
+} };
+</script>
 <script data-goatcounter="https://agentdeck.goatcounter.com/count"
         async src="https://gc.zgo.at/count.v5.js"
         crossorigin="anonymous"

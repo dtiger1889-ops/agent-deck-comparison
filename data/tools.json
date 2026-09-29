@@ -580,23 +580,23 @@
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Runs Claude Code, Codex, Cursor, Grok Build, OpenCode and Google Antigravity threads side by side in one sidebar, using your own logins (README, 2026-09-29)",
+          "value": "6 agents side by side in one sidebar, your own logins",
           "mark": "yes"
         },
         "harness_count": {
-          "value": "6: Claude Code, Codex, Cursor, Grok Build, OpenCode, Antigravity (README, 2026-09-29)",
+          "value": "6: Claude Code, Codex, Cursor, Grok, OpenCode, Antigravity",
           "mark": "info"
         },
         "needs_you_signal": {
-          "value": "Sidebar status per thread (amber for approval, indigo for a question, sky blue while working), desktop notifications with optional sound and an unread badge; phone push when an agent finishes, fails, needs approval or asks something, which needs T3 Connect (source and docs/user/mobile-notifications.md, 2026-09-29)",
+          "value": "Colored thread status, desktop alerts, phone push",
           "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "Approve or reject requests in the conversation on desktop, web or the phone app; the default mode for new threads is Full access, so prompts appear only in Supervised, Auto-accept edits or Auto mode (docs/user/permission-modes.md and mobile source, 2026-09-29)",
+          "value": "Approve or reject in chat on desktop, web or phone",
           "mark": "yes"
         },
         "cross_provider_delegation": {
-          "value": "Has threads from every provider in one sidebar and can send one prompt to several models at once, each in its own thread and worktree; lacks a documented hand-off of work from one agent to another (docs/user/thread-sidebar.md, 2026-09-29)",
+          "value": "All agents in one sidebar; no agent-to-agent hand-off",
           "mark": "partial"
         },
         "always_on_assistant": {
@@ -604,39 +604,39 @@
           "mark": "undocumented"
         },
         "conversation_gui_view": {
-          "value": "Threads read as a chat with tool calls you can expand to see the full command and output (docs/user/thread-sidebar.md, 2026-09-29)",
+          "value": "Chat threads with expandable tool calls",
           "mark": "yes"
         },
         "real_terminal": {
-          "value": "Has a terminal drawer per thread that opens a shell on the environment's machine, 5,000 lines of scrollback; lacks the agent's own terminal screen, because agents are driven through their programming interfaces (Claude Agent SDK, Codex app server, ACP) rather than a terminal (docs/user/terminal.md and package files, 2026-09-29)",
+          "value": "Shell drawer per thread; not the agent's own terminal",
           "mark": "partial"
         },
         "session_organization": {
-          "value": "Projects, then threads in pinned, active, snoozed and settled sections, with an optional git worktree per thread and drag-to-reorder; projects can be grouped across machines (docs/user/thread-sidebar.md, 2026-09-29)",
+          "value": "Projects, then threads, optional worktree per thread",
           "mark": "yes"
         },
         "prompt_scratchpad": {
-          "value": "Prompt stash: Ctrl+S (Cmd+S on macOS) saves the current prompt and its attachments for later without sending (docs/user/composer.md, 2026-09-29)",
+          "value": "Prompt stash saves a prompt without sending",
           "mark": "yes"
         },
         "saved_prompt_library": {
-          "value": "Has the prompt stash, which keeps prompts with their attached context, plus the agents' own skills through a $ menu; lacks a named, lasting library, and uploaded files in a stash expire after 24 hours (docs/user/composer.md, 2026-09-29)",
+          "value": "Prompt stash with context; no lasting named library",
           "mark": "partial"
         },
         "builtin_editors_browser": {
-          "value": "File browser with an editor that saves files, a diff viewer, a preview browser that agents can also drive, and an iOS Simulator or Android Emulator panel (docs/user/devices.md and source, 2026-09-29)",
+          "value": "Editor, diff viewer, preview browser, phone emulators",
           "mark": "yes"
         },
         "appearance_control": {
-          "value": "Built-in and custom themes (VS Code themes import), light and dark modes, and font family and size for interface, code and terminal (docs/user/appearance.md and apps/web/src/appearanceFonts.ts, 2026-09-29)",
+          "value": "Custom themes plus font family and size everywhere",
           "mark": "yes"
         },
         "usage_hud": {
-          "value": "Usage page with tokens and estimated cost per provider from local history, plus subscription limits with reset times for Codex, Claude and others, pooled across accounts and machines (docs/user/usage.md, 2026-09-29)",
+          "value": "Tokens, cost and plan limits with resets per provider",
           "mark": "yes"
         },
         "burn_rate_forecast": {
-          "value": "Has a pace mark per limit window (ahead of pace, on pace, under pace); lacks a predicted time when you will hit the limit (packages/shared/src/usageLimits.ts, 2026-09-29)",
+          "value": "Pace mark per limit; no predicted time to the limit",
           "mark": "partial"
         },
         "limit_governor": {
@@ -644,27 +644,27 @@
           "mark": "undocumented"
         },
         "account_hotswap": {
-          "value": "Several Codex or Claude accounts added as separate provider instances and picked from the thread's model picker; switching inside an existing thread only works between accounts that share a config folder (docs/user/providers-codex.md and providers-claude.md, 2026-09-29)",
+          "value": "Several accounts per provider, picked per thread",
           "mark": "yes"
         },
         "vault_task_source": {
-          "value": "Tasks come from prompts you type; a source and docs search found no notes-vault or Obsidian reading (source search, 2026-09-29)",
+          "value": "No notes-vault reading",
           "mark": "no"
         },
         "issue_tracker_pipeline": {
-          "value": "Has pull request creation, review, stacking and merging for GitHub, GitLab, Forgejo, Gitea, Bitbucket and Azure DevOps, and auto-settles a thread when its pull request merges; lacks picking up issues from a tracker, with no issue or Jira/Linear code found in the source (docs/user/source-control.md and source search, 2026-09-29)",
+          "value": "Full pull request flow on 6 hosts; no issue intake",
           "mark": "partial"
         },
         "worktree_management": {
-          "value": "New worktree per thread from the composer, one per model when sending to several; revert can restore files in a worktree (docs/user/thread-sidebar.md and composer.md, 2026-09-29)",
+          "value": "New worktree per thread, one per model",
           "mark": "yes"
         },
         "planner_orchestrator": {
-          "value": "Has a Plan mode that shows the agent's proposed plan as a card you can copy or download, and an Agents view for an agent's own subagents; lacks splitting one goal across several agents (docs/user/composer.md, thread-sidebar.md and source, 2026-09-29)",
+          "value": "Plan mode for one agent; no splitting across agents",
           "mark": "partial"
         },
         "agent_to_agent_messaging": {
-          "value": "The tools it gives agents cover the preview browser, devices and linking pull requests only; nothing lets one thread message another (apps/server/src/mcp/toolkits, 2026-09-29)",
+          "value": "No way for one thread to message another",
           "mark": "no"
         },
         "knowledge_base": {
@@ -672,63 +672,63 @@
           "mark": "undocumented"
         },
         "native_mobile_app": {
-          "value": "iOS app in the App Store and Android app in Google Play, with home-screen usage widgets and live activity cards (README and docs/user/usage.md, 2026-09-29)",
+          "value": "iOS and Android apps in the stores",
           "mark": "yes"
         },
         "phone_no_new_app": {
-          "value": "Hosted web app at app.t3.codes or a direct pairing link in the phone's browser; needs the server reachable over HTTPS, for example through Tailscale HTTPS or T3 Connect (docs/user/remote-access.md, 2026-09-29)",
+          "value": "Hosted web app in the phone browser; needs HTTPS access",
           "mark": "yes"
         },
         "remote_ssh": {
-          "value": "Desktop-managed SSH: enter a host and it installs or reuses its server there and forwards the port; projects and logins stay on the remote machine (Linux or Apple Silicon Mac) (docs/user/remote-access.md, 2026-09-29)",
+          "value": "Installs its server on a remote host over SSH",
           "mark": "yes"
         },
         "voice_input": {
-          "value": "Has on-device dictation in the iPhone app (iOS 26 or later); lacks it on desktop, web and Android (docs/user/composer.md and docs/internals/voice-input.md, 2026-09-29)",
+          "value": "Dictation in the iPhone app only",
           "mark": "partial"
         },
         "os": {
-          "value": "Windows, macOS, Linux (x64 and ARM64 each); iOS and Android apps; web app in any browser (release files and README, 2026-09-29)",
+          "value": "Windows, macOS, Linux; iOS, Android; any browser",
           "mark": "info"
         },
         "app_shell": {
-          "value": "Electron 44.4.2 with a React 19.2.6 interface; the same interface also runs as a web app served by its command-line server (apps/desktop/package.json and apps/web/package.json, 2026-09-29)",
+          "value": "Electron 44, also served as a web app",
           "mark": "info"
         },
         "languages": {
-          "value": "TypeScript ~96%, MDX ~2% (GitHub, 2026-09-29)",
+          "value": "TypeScript ~96%, MDX ~2%",
           "mark": "info"
         },
         "background_process": {
-          "value": "Yes: the desktop app bundles and starts its own server, which owns agents, terminals and git; the command-line version can install that server as a user service on Linux and macOS (docs/internals/overview.md and docs/user/background-service.md, 2026-09-29)",
+          "value": "Yes: bundled server that runs agents, terminals, git",
           "mark": "info"
         },
         "download_size": {
-          "value": "v0.0.43: 209 MB Windows x64 installer, 143-150 MB mac dmg, 125 MB Linux .deb / 158 MB AppImage; command-line server alone 61-73 MB (GitHub release, 2026-09-29)",
+          "value": "209 MB Windows installer",
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "Medium (estimate: Electron app plus a bundled Node server process)",
+          "value": "Medium (estimate: Electron app plus a Node server)",
           "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "Own desktop, web and phone apps; the t3 command starts a server and opens the web app rather than showing an interface in the terminal (README, 2026-09-29)",
+          "value": "No; own desktop, web and phone apps",
           "mark": "no"
         },
         "license_cost": {
-          "value": "MIT, free, no paid plan listed; uses your own agent subscriptions (LICENSE and t3.codes, 2026-09-29)",
+          "value": "MIT, free",
           "mark": "info"
         },
         "extensibility": {
-          "value": "No plugin system or SDK in its docs or source; outside additions are limited to custom theme files (docs/user/appearance.md and source search, 2026-09-29)",
+          "value": "No plugins or SDK; custom themes only",
           "mark": "no"
         },
         "teams_multiuser": {
-          "value": "Not in its docs (checked 2026-09-29); pairing links authorize more devices, not more people",
+          "value": "Not in its docs (checked 2026-09-29)",
           "mark": "undocumented"
         },
         "stability_maturity": {
-          "value": "v0.0.43 released 2026-09-29 alongside nightly builds, repo started 2026-02-08, ~23,900 GitHub stars; its README says it is very early and to expect bugs (GitHub and README, 2026-09-29)",
+          "value": "v0.0.43, started February 2026; README says very early",
           "mark": "info"
         }
       }
@@ -744,19 +744,19 @@
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Any command-line agent runs in its own terminal block, side by side in tiled tabs; only Claude Code has a documented status setup (README and docs, 2026-09-29)",
+          "value": "Any CLI agent in tiled terminal blocks",
           "mark": "yes"
         },
         "harness_count": {
-          "value": "Any command-line agent; 1 with a documented integration (Claude Code tab badges through its hooks). Its own Wave AI panel is a separate chat assistant, not a coding agent it runs (docs, 2026-09-29)",
+          "value": "Any CLI agent; only Claude Code has a documented setup",
           "mark": "info"
         },
         "needs_you_signal": {
-          "value": "Colored badges on the terminal and its tab (waiting on permission, question asked, done) with an optional beep, set by Claude Code hooks you add to your Claude settings file; the terminal bell also lights the tab, and a command can raise a desktop notification (docs: Claude Code page and wsh reference, 2026-09-29)",
+          "value": "Tab badges via Claude Code hooks, optional beep",
           "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "You click into the agent's terminal and answer there; the badge only points you to it. Allow and deny buttons exist only for its own Wave AI panel's file access (docs: Claude Code and Wave AI pages, 2026-09-29)",
+          "value": "Badge points you there; you answer in its terminal",
           "mark": "no"
         },
         "cross_provider_delegation": {
@@ -764,19 +764,19 @@
           "mark": "undocumented"
         },
         "always_on_assistant": {
-          "value": "Has the Wave AI side panel in every window, which reads your terminals and widgets and edits files with your approval; lacks running commands or starting and directing agent sessions, which its README lists as coming soon (README and ROADMAP.md, 2026-09-29)",
+          "value": "Wave AI side panel; can't run commands or direct agents",
           "mark": "partial"
         },
         "conversation_gui_view": {
-          "value": "Agent sessions show only as terminals; no code reads agent transcripts (source search, 2026-09-29). The only chat view is its own Wave AI panel",
+          "value": "Terminals only; chat is just its own AI panel",
           "mark": "no"
         },
         "real_terminal": {
-          "value": "Each block is a full terminal drawn with xterm.js 6 (package.json and release notes, 2026-09-29)",
+          "value": "Full terminal in every block",
           "mark": "yes"
         },
         "session_organization": {
-          "value": "Saved workspaces, then tabs (across the top or down the side), then terminal blocks in a drag-and-drop tiled layout; badges roll up from blocks to their tab (docs: workspaces, tabs and release notes, 2026-09-29)",
+          "value": "Workspaces, then tabs, then tiled terminal blocks",
           "mark": "yes"
         },
         "prompt_scratchpad": {
@@ -784,27 +784,27 @@
           "mark": "undocumented"
         },
         "saved_prompt_library": {
-          "value": "Not in its docs (checked 2026-09-29); custom widgets can launch a saved command, not a saved prompt",
+          "value": "Not in its docs (checked 2026-09-29)",
           "mark": "undocumented"
         },
         "builtin_editors_browser": {
-          "value": "Code editor (Monaco), web browser widget, file previews for markdown, images, video, PDFs and CSVs, and a process viewer, all as blocks next to the terminals (README, docs: widgets and package.json, 2026-09-29)",
+          "value": "Code editor, web browser and file previews",
           "mark": "yes"
         },
         "appearance_control": {
-          "value": "Tab themes and backgrounds (including your own images), per-terminal color themes including your own, font size from the menu, and terminal font family through the settings file (docs: customization, 2026-09-29)",
+          "value": "Themes, backgrounds, terminal font and size",
           "mark": "yes"
         },
         "usage_hud": {
-          "value": "Reads no Claude or Codex usage logs (source search, 2026-09-29); the only limit it shows is its own Wave AI panel's free request allowance",
+          "value": "None; only its own AI panel's allowance",
           "mark": "no"
         },
         "burn_rate_forecast": {
-          "value": "No coding-agent usage tracking in its source, so no forecast (source search, 2026-09-29)",
+          "value": "None",
           "mark": "no"
         },
         "limit_governor": {
-          "value": "No coding-agent limit handling in its source; its limit code covers only its own Wave AI panel (source search, 2026-09-29)",
+          "value": "None",
           "mark": "no"
         },
         "account_hotswap": {
@@ -820,23 +820,23 @@
           "mark": "undocumented"
         },
         "worktree_management": {
-          "value": "The word worktree appears nowhere in its source or docs (source search, 2026-09-29)",
+          "value": "None",
           "mark": "no"
         },
         "planner_orchestrator": {
-          "value": "Not in its docs (checked 2026-09-29); its roadmap lists letting its AI open new blocks as planned",
+          "value": "Not in its docs (checked 2026-09-29)",
           "mark": "undocumented"
         },
         "agent_to_agent_messaging": {
-          "value": "Has a command any terminal can run to read another block's output, and one to open a new block running a command; lacks a way to send input or messages into another session (docs: wsh reference, 2026-09-29)",
+          "value": "Can read another block's output; can't send it input",
           "mark": "partial"
         },
         "knowledge_base": {
-          "value": "Not in its docs (checked 2026-09-29); its roadmap plans markdown context files for its own Wave AI panel only",
+          "value": "Not in its docs (checked 2026-09-29)",
           "mark": "undocumented"
         },
         "native_mobile_app": {
-          "value": "Desktop app only; no phone app in the repo or release files (source search and GitHub release, 2026-09-29)",
+          "value": "Desktop only",
           "mark": "no"
         },
         "phone_no_new_app": {
@@ -844,47 +844,47 @@
           "mark": "undocumented"
         },
         "remote_ssh": {
-          "value": "One-click SSH and WSL connections with terminals, file browsing and editing on the remote machine; durable SSH sessions keep running on the server through disconnects and restarts (README and docs: durable sessions, 2026-09-29)",
+          "value": "One-click SSH and WSL; sessions survive disconnects",
           "mark": "yes"
         },
         "voice_input": {
-          "value": "No speech or dictation code in its source; the only microphone mention is a macOS permission prompt for programs run inside it (source search and release notes, 2026-09-29)",
+          "value": "None",
           "mark": "no"
         },
         "os": {
-          "value": "Windows 10 1809+ (x64), macOS 11+ (Intel and Apple Silicon), Linux x64 and ARM64 (AppImage, deb, rpm, pacman, snap); no phone or browser access (README and GitHub release, 2026-09-29)",
+          "value": "Windows, macOS, Linux; no phone or browser access",
           "mark": "info"
         },
         "app_shell": {
-          "value": "Electron 41.1.0 with a Go backend (package.json and package-lock.json, 2026-09-29)",
+          "value": "Electron 41 with a Go backend",
           "mark": "info"
         },
         "languages": {
-          "value": "Go ~49%, TypeScript ~43% (GitHub languages, 2026-09-29)",
+          "value": "Go ~49%, TypeScript ~43%",
           "mark": "info"
         },
         "background_process": {
-          "value": "Yes: the app starts its own Go server process (wavesrv) next to the window; durable SSH sessions also leave a small manager process on each remote server (source: emain/emain-wavesrv.ts and docs: durable sessions, 2026-09-29)",
+          "value": "Yes: its own Go server process",
           "mark": "info"
         },
         "download_size": {
-          "value": "v0.14.5: 156 MB Windows installer (171 MB msi), 190-198 MB mac dmg, 152 MB Linux x64 deb / 196 MB AppImage (GitHub release, 2026-09-29)",
+          "value": "156 MB Windows installer",
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "Medium (estimate: Electron app plus a separate Go server process)",
+          "value": "Medium (estimate: Electron plus a Go server)",
           "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "It is its own terminal app; agents run inside Wave rather than Wave running inside your existing terminal (README, 2026-09-29)",
+          "value": "Is its own terminal app",
           "mark": "no"
         },
         "license_cost": {
-          "value": "Apache-2.0, free, no account needed; its Wave AI panel has free beta credits with request limits, or your own API keys and local models (LICENSE and README, 2026-09-29)",
+          "value": "Apache-2.0, free; AI panel has free beta credits",
           "mark": "info"
         },
         "extensibility": {
-          "value": "Has custom widgets defined in its config files, a scriptable command-line tool (wsh) and your own AI providers; lacks a plugin package system or SDK (docs: custom widgets and wsh reference, 2026-09-29)",
+          "value": "Custom widgets and a scripting CLI; no plugins or SDK",
           "mark": "partial"
         },
         "teams_multiuser": {
@@ -892,7 +892,7 @@
           "mark": "undocumented"
         },
         "stability_maturity": {
-          "value": "Repo since 2022, about 22,400 stars; latest release v0.14.5 on 2026-04-16 with none since, though 21 commits landed in the 30 days to 2026-09-29; the Wave AI panel is labeled beta (GitHub and README, 2026-09-29)",
+          "value": "Since 2022, ~22,400 stars; no release since April 2026",
           "mark": "info"
         }
       }
@@ -1072,59 +1072,59 @@
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Runs only its own Antigravity agent. You can switch that agent's model between Gemini, Claude Sonnet and Opus 4.6, and GPT-OSS 120B, but it does not drive Claude Code, Codex or other coding tools (models and overview docs, 2026-09-29)",
-          "mark": "no"
+          "value": "Own agent only, on Gemini, Claude or GPT models",
+          "mark": "partial"
         },
         "harness_count": {
-          "value": "1: its own agent, with a model picker (Gemini 3.x, Claude Sonnet 4.6, Claude Opus 4.6, GPT-OSS 120B) (models docs, 2026-09-29)",
+          "value": "1: its own agent, with a model picker",
           "mark": "info"
         },
         "needs_you_signal": {
-          "value": "A desktop notification and a bell chime when a task finishes or needs you, plus browser push notifications through Remote Control (settings and remote-control docs, 2026-09-29)",
+          "value": "Desktop notification and chime; phone push",
           "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "An approval card in the app for commands, files, web and tool calls, which you can widen before allowing; also answerable from the Remote Control web page on your phone (permissions and remote-control docs, 2026-09-29)",
+          "value": "Approval card in the app or on your phone",
           "mark": "yes"
         },
         "cross_provider_delegation": {
-          "value": "Has: subagents the main agent starts show as live cards inside the same conversation. Lacks: every hand-off is between its own agents, not to other coding tools (changelog v2.16.0 and launch blog, 2026-09-29)",
+          "value": "Subagents show as cards; only its own agents",
           "mark": "partial"
         },
         "always_on_assistant": {
-          "value": "Not in its docs (checked 2026-09-29); it has scheduled tasks and a background Remote Control service, but no standing assistant session",
+          "value": "Not in its docs (checked 2026-09-29)",
           "mark": "undocumented"
         },
         "conversation_gui_view": {
-          "value": "Each agent session is a chat conversation with plans and other work shown as artifacts (overview and artifacts docs, 2026-09-29)",
+          "value": "Chat per session, plans shown as artifacts",
           "mark": "yes"
         },
         "real_terminal": {
-          "value": "Has: a built-in terminal panel in the sidebar (Ctrl or Cmd plus backtick) with split layouts. Lacks: the agent session itself is a chat, not a terminal you drop into (features docs and changelog v2.12.0, 2026-09-29)",
+          "value": "Terminal panel; the agent session itself is a chat",
           "mark": "partial"
         },
         "session_organization": {
-          "value": "Projects in a sidebar, each holding conversations; each conversation works in the local folder or a new git worktree; archived conversations can be filtered (projects docs and changelog v2.18.1, 2026-09-29)",
-          "mark": "info"
+          "value": "Projects holding conversations; optional worktree",
+          "mark": "yes"
         },
         "prompt_scratchpad": {
           "value": "Not in its docs (checked 2026-09-29)",
           "mark": "undocumented"
         },
         "saved_prompt_library": {
-          "value": "Not in its docs (checked 2026-09-29); it saves reusable rules and skills, not saved prompts",
+          "value": "Not in its docs (checked 2026-09-29)",
           "mark": "undocumented"
         },
         "builtin_editors_browser": {
-          "value": "Has: a built-in browser the agent drives, with Chrome DevTools and video recording, plus diff viewers. Lacks: no code editor in the 2.0 app, by design; editing lives in the separate Antigravity IDE (features docs and launch blog, 2026-09-29)",
+          "value": "Agent-driven browser; no code editor",
           "mark": "partial"
         },
         "appearance_control": {
-          "value": "Has: dark, light or automatic theme. Lacks: no font setting in its docs (features docs, 2026-09-29)",
+          "value": "Theme only; no font setting",
           "mark": "partial"
         },
         "usage_hud": {
-          "value": "Shows its own quota: weekly and five-hour limits remaining as percentages, separately for Gemini and for Claude and GPT models (models docs, 2026-09-29)",
+          "value": "Weekly and five-hour quota left, per model family",
           "mark": "yes"
         },
         "burn_rate_forecast": {
@@ -1132,11 +1132,11 @@
           "mark": "undocumented"
         },
         "limit_governor": {
-          "value": "Not in its docs (checked 2026-09-29); a setting chooses between spending paid credits or waiting for the quota to refresh, with no mention of pausing and resuming work",
+          "value": "Not in its docs (checked 2026-09-29)",
           "mark": "undocumented"
         },
         "account_hotswap": {
-          "value": "Not in its docs (checked 2026-09-29); settings only say they manage sign-in sessions",
+          "value": "Not in its docs (checked 2026-09-29)",
           "mark": "undocumented"
         },
         "vault_task_source": {
@@ -1144,59 +1144,59 @@
           "mark": "undocumented"
         },
         "issue_tracker_pipeline": {
-          "value": "Not in its docs (checked 2026-09-29); its git panel can commit and push a branch, but nothing picks up issues",
+          "value": "Not in its docs (checked 2026-09-29)",
           "mark": "undocumented"
         },
         "worktree_management": {
-          "value": "A conversation can run in a new isolated git worktree so agents work in parallel (projects docs and FAQ, 2026-09-29)",
+          "value": "Optional new git worktree per conversation",
           "mark": "yes"
         },
         "planner_orchestrator": {
-          "value": "The main agent splits work into subagents on its own; a preview teamwork mode runs a coordinated team of planner, worker and checker agents (launch blog and teamwork docs, 2026-09-29)",
+          "value": "Splits work into subagents; team mode in preview",
           "mark": "yes"
         },
         "agent_to_agent_messaging": {
-          "value": "In the preview teamwork mode, agents pass work to each other through shared artifacts; background helper processes can also message conversations through its agentapi tool (teamwork and sidecars docs, 2026-09-29)",
+          "value": "Preview team mode, through shared artifacts",
           "mark": "experimental"
         },
         "knowledge_base": {
-          "value": "Has: saved rules and skills, and a Documents section for files such as Google Drive, PDF and Office documents. Lacks: no searchable notes store for agents in its docs (skills docs and changelog v2.13.0, 2026-09-29)",
+          "value": "Rules, skills and documents; no searchable notes",
           "mark": "partial"
         },
         "native_mobile_app": {
-          "value": "No phone app; phone access is the Remote Control web page, which can be added to the home screen as a web app for push notifications (remote-control docs, 2026-09-29)",
+          "value": "None; a web page you can add to the home screen",
           "mark": "no"
         },
         "phone_no_new_app": {
-          "value": "Sign in to the Remote Control page in any phone browser to watch sessions, send prompts and answer approvals (remote-control docs, 2026-09-29)",
+          "value": "Remote Control page in any phone browser",
           "mark": "yes"
         },
         "remote_ssh": {
-          "value": "Has: its command-line version can run on a machine you reach over SSH, and the desktop app can connect to a WSL Linux install. Lacks: no SSH-remote mode for the desktop app in its docs (CLI voice docs and changelog v2.16.0, 2026-09-29)",
+          "value": "Command-line version over SSH; not the desktop app",
           "mark": "partial"
         },
         "voice_input": {
-          "value": "Built-in live dictation with cleanup of filler words, toggled with Ctrl+M (features docs, 2026-09-29)",
+          "value": "Built-in dictation that strips filler words",
           "mark": "yes"
         },
         "os": {
-          "value": "macOS 12 or later (Apple Silicon and Intel), Windows 10 or later (x64 and ARM64), Linux x64 and ARM64 (glibc 2.28 or later); plus any browser or phone through Remote Control (getting-started and remote-control docs, 2026-09-29)",
+          "value": "Windows, macOS, Linux; phone or browser via web page",
           "mark": "info"
         },
         "app_shell": {
-          "value": "Electron (the v2.18.1 Linux package ships Electron and Chromium license files, checked 2026-09-29)",
+          "value": "Electron",
           "mark": "info"
         },
         "languages": {
-          "value": "Closed source: no public repo for the app to break down (checked 2026-09-29)",
+          "value": "Closed source",
           "mark": "n/a"
         },
         "background_process": {
-          "value": "Optional: a headless Remote Control service that keeps sessions reachable, plus helper processes (sidecars) you define, which it launches and restarts (remote-control and sidecars docs, 2026-09-29)",
+          "value": "Optional: remote-access service and helper processes",
           "mark": "info"
         },
         "download_size": {
-          "value": "v2.18.1: 164 MB Windows x64 installer (154 MB ARM64), 206-220 MB mac dmg, 178-180 MB Linux tar.gz (download server, 2026-09-29)",
+          "value": "164 MB Windows installer",
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
@@ -1204,23 +1204,23 @@
           "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "Has: its separate command-line version (agy) runs in your own terminal. Lacks: the 2.0 desktop app is its own window (getting-started docs, 2026-09-29)",
+          "value": "Separate command-line version; the app is its own window",
           "mark": "partial"
         },
         "license_cost": {
-          "value": "Proprietary. Free tier with a weekly quota; higher quotas through Google AI Pro and Ultra (Ultra $100 or $200 a month at launch); company use through Gemini Enterprise (plans docs and TechCrunch, 2026-09-29)",
+          "value": "Proprietary; free tier + paid plans",
           "mark": "info"
         },
         "extensibility": {
-          "value": "Plugins from its Marketplace (skills, rules, subagents, MCP servers, hooks), JSON hooks, and a Python SDK in preview (marketplace, hooks and home docs, 2026-09-29)",
+          "value": "Plugin marketplace, hooks, Python SDK in preview",
           "mark": "yes"
         },
         "teams_multiuser": {
-          "value": "Has: company sign-in, license assignment and central admin controls through Gemini Enterprise. Lacks: no shared workspaces or collaboration between people in its docs (enterprise docs, 2026-09-29)",
+          "value": "Company sign-in and admin; no shared workspaces",
           "mark": "partial"
         },
         "stability_maturity": {
-          "value": "Version 2.18.1 (2026-09-28); 2.0 launched at Google I/O on 2026-05-19, with releases several times a month; the teamwork mode and SDK are previews (changelog and TechCrunch, 2026-09-29)",
+          "value": "Version 2.18; 2.0 launched May 2026; parts in preview",
           "mark": "info"
         }
       }
@@ -1400,39 +1400,39 @@
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Natively runs only Claude Code sessions (local, cloud, SSH, WSL). Other coding agents such as Codex are reachable only through unofficial community MCP plugins/servers (e.g. a third-party \"codex\" plugin or an npm codex-mcp-server), not an Anthropic-built connector (GitHub plugin listings, checked 2026-09-29)",
+          "value": "Claude Code only; others via community plugins",
           "mark": "partial"
         },
         "harness_count": {
-          "value": "1 built in (Claude Code). Community MCP plugins can bridge to the Codex CLI, but that bridge is not a documented, Anthropic-supported integration (docs pass, 2026-09-29)",
+          "value": "1 built in (Claude Code)",
           "mark": "info"
         },
         "needs_you_signal": {
-          "value": "Sends a desktop OS notification when a Code session finishes a task you aren't viewing; Dispatch also sends a push notification to your phone when a session finishes or needs your approval (code.claude.com/docs/en/desktop, 2026-09-29)",
+          "value": "Desktop notification; phone push via Dispatch",
           "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "Permission prompts appear in the session, and Dispatch pushes them to your phone; approvals for Dispatch-spawned sessions expire after 30 minutes instead of lasting the whole session (code.claude.com/docs/en/desktop, 2026-09-29)",
+          "value": "Prompts in the session, pushed to your phone",
           "mark": "yes"
         },
         "cross_provider_delegation": {
-          "value": "Has: Dispatch hands tasks to Code sessions that show in the same sidebar. Lacks: every hand-off is between Claude sessions, not other coding tools (docs, 2026-09-29)",
+          "value": "Dispatch hands off in one sidebar; only Claude",
           "mark": "partial"
         },
         "always_on_assistant": {
-          "value": "Dispatch is a persistent conversation living in the Cowork tab that you can message any time; it decides whether a task stays in Cowork or spawns a Code session (code.claude.com/docs/en/desktop, 2026-09-29)",
+          "value": "Dispatch, a standing chat you can message any time",
           "mark": "yes"
         },
         "conversation_gui_view": {
-          "value": "Normal, Thinking, and Verbose transcript view modes read a session as a conversation with tool calls collapsed into summaries (code.claude.com/docs/en/desktop, 2026-09-29)",
+          "value": "Transcript views with tool calls summarized",
           "mark": "yes"
         },
         "real_terminal": {
-          "value": "Integrated terminal pane opens in the session's working directory and shares its environment with Claude; local sessions only (code.claude.com/docs/en/desktop, 2026-09-29)",
+          "value": "Terminal pane in the session folder; local only",
           "mark": "yes"
         },
         "session_organization": {
-          "value": "Sidebar session list, filterable by status/project/environment and groupable by project, plus an optional Git worktree per session (code.claude.com/docs/en/desktop, 2026-09-29)",
+          "value": "Filterable sidebar list grouped by project",
           "mark": "yes"
         },
         "prompt_scratchpad": {
@@ -1440,23 +1440,23 @@
           "mark": "undocumented"
         },
         "saved_prompt_library": {
-          "value": "Not in its docs (checked 2026-09-29); slash commands and skills cover reusable workflows but the docs don't describe a saved-prompt library with context pre-attached",
+          "value": "Not in its docs (checked 2026-09-29)",
           "mark": "undocumented"
         },
         "builtin_editors_browser": {
-          "value": "Ships its own file editor pane and a tabbed Browser pane with a clean, separate browser profile for previewing and verifying your app (code.claude.com/docs/en/desktop, 2026-09-29)",
+          "value": "File editor pane and a tabbed browser pane",
           "mark": "yes"
         },
         "appearance_control": {
-          "value": "Has a light/dark theme toggle only; no font control in the native desktop app, unlike claude.ai's own Chat font options, and font/accent-color customization is an open feature request (support.claude.com + open GitHub issues, checked 2026-09-29)",
+          "value": "Light or dark theme only; no font setting",
           "mark": "partial"
         },
         "usage_hud": {
-          "value": "A usage ring next to the model picker shows context usage for the current session and plan usage for the period, shared across every Claude Code surface (code.claude.com/docs/en/desktop, 2026-09-29)",
+          "value": "Usage ring: session context and plan usage",
           "mark": "yes"
         },
         "burn_rate_forecast": {
-          "value": "Not in its docs (checked 2026-09-29): the usage ring shows current usage, not a burn rate or time-to-limit",
+          "value": "Not in its docs (checked 2026-09-29)",
           "mark": "undocumented"
         },
         "limit_governor": {
@@ -1468,23 +1468,23 @@
           "mark": "undocumented"
         },
         "vault_task_source": {
-          "value": "Tasks come from chat prompts and Dispatch messages, not a personal notes vault (docs, 2026-09-29)",
+          "value": "None",
           "mark": "no"
         },
         "issue_tracker_pipeline": {
-          "value": "Connects to GitHub, Linear, and other trackers as connectors, and once a PR is open it can auto-fix failing CI and auto-merge, but the docs don't describe an automatic issue-to-PR pipeline the way a dedicated tracker connector does (code.claude.com/docs/en/desktop, 2026-09-29)",
+          "value": "GitHub and Linear connectors; no issue-to-PR flow",
           "mark": "partial"
         },
         "worktree_management": {
-          "value": "Optional Git worktree per session, stored under .claude/worktrees/ by default with a configurable location and branch prefix (code.claude.com/docs/en/desktop, 2026-09-29)",
+          "value": "Optional git worktree per session",
           "mark": "yes"
         },
         "planner_orchestrator": {
-          "value": "Dynamic workflows run multi-step work inside one session, and Claude can spin off a suggested task into a new session as a task chip, but there's no dedicated planner that splits one goal across several agents up front (code.claude.com/docs/en/desktop, 2026-09-29)",
+          "value": "Multi-step work in one session; no planner",
           "mark": "partial"
         },
         "agent_to_agent_messaging": {
-          "value": "Claude can list, check on, message, and archive your other Code tab sessions (\"work across sessions\"); cross-session messaging also reaches terminal CLI sessions (code.claude.com/docs/en/desktop, 2026-09-29)",
+          "value": "Sessions can list, check on and message each other",
           "mark": "yes"
         },
         "knowledge_base": {
@@ -1492,63 +1492,63 @@
           "mark": "undocumented"
         },
         "native_mobile_app": {
-          "value": "The Claude iOS/Android app can view and steer cloud sessions and Dispatch tasks, and receives Dispatch push notifications (code.claude.com/docs/en/desktop, 2026-09-29)",
+          "value": "Claude iOS and Android app",
           "mark": "yes"
         },
         "phone_no_new_app": {
-          "value": "Requires installing the Claude mobile app; no route through tools you already have is documented (docs, 2026-09-29)",
+          "value": "Requires the Claude mobile app",
           "mark": "no"
         },
         "remote_ssh": {
-          "value": "SSH sessions run Claude Code on a remote Linux or macOS machine that Desktop installs on first connect; support permission modes, connectors, plugins, and MCP servers (code.claude.com/docs/en/desktop, 2026-09-29)",
+          "value": "Runs Claude Code on a remote Linux or Mac machine",
           "mark": "yes"
         },
         "voice_input": {
-          "value": "Quick Entry voice dictation (press Caps Lock, real-time transcription) is macOS-only and needs macOS 14 or later; not available on Windows Desktop (support.claude.com, checked 2026-09-29)",
+          "value": "Dictation on macOS only; not on Windows",
           "mark": "partial"
         },
         "os": {
-          "value": "macOS 11+; Windows 10+ (x64 and ARM64); Linux beta (Ubuntu 22.04+ and other apt-based distributions, x64/arm64) (support.claude.com, 2026-09-29)",
+          "value": "macOS, Windows; Linux beta; iOS/Android app",
           "mark": "info"
         },
         "app_shell": {
-          "value": "Electron (exact bundled version not published in official docs; not independently confirmed)",
+          "value": "Electron",
           "mark": "info"
         },
         "languages": {
-          "value": "Closed source: no public repo to measure",
+          "value": "Closed source",
           "mark": "n/a"
         },
         "background_process": {
-          "value": "Yes: Cowork starts a virtual machine alongside the app (measured 2026-09-28)",
+          "value": "Yes: Cowork starts a virtual machine",
           "mark": "info"
         },
         "download_size": {
-          "value": "Not published by Anthropic; the Windows installer is a small bootstrapper that downloads the app (checked 2026-09-29)",
+          "value": "Not published; Windows installer downloads the app",
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "The reference: about 7.5 GB measured on one Windows PC, 2026-09-28 (about 3.7 GB app across 24 processes plus about 4 GB Cowork virtual machine)",
+          "value": "The reference: about 7.5 GB measured",
           "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "Its own desktop app window; it embeds a terminal pane but is not itself a terminal tool (code.claude.com/docs/en/desktop, 2026-09-29)",
+          "value": "Own app window with a terminal pane inside",
           "mark": "no"
         },
         "license_cost": {
-          "value": "Subscription only: Pro $17-20/mo, Max $100-200/mo (5x or 20x Pro usage), Team $20-100/seat/mo (5-seat minimum), Enterprise $20/seat/mo plus API-rate usage; Claude Code is included in every paid plan (claude.com/pricing, checked 2026-09-29)",
+          "value": "Proprietary; paid plans from $17 a month",
           "mark": "info"
         },
         "extensibility": {
-          "value": "Connectors (MCP servers with a graphical setup flow), a plugin manager for skills/agents/hooks/MCP/LSP configs, and manual MCP server configuration via settings files (code.claude.com/docs/en/desktop, 2026-09-29)",
+          "value": "Connectors, plugins, MCP servers and hooks",
           "mark": "yes"
         },
         "teams_multiuser": {
-          "value": "Team and Enterprise plans add SSO, managed settings, an admin console, and org-wide connector/plugin/SSH controls (code.claude.com/docs/en/desktop, 2026-09-29)",
+          "value": "Team and Enterprise plans with admin controls",
           "mark": "yes"
         },
         "stability_maturity": {
-          "value": "GA product on macOS and Windows; the Linux desktop app is beta (no Computer use yet); Computer use and Cowork are labeled research preview features (code.claude.com/docs/en/desktop and support.claude.com, checked 2026-09-29)",
+          "value": "Stable on macOS and Windows; Linux in beta",
           "mark": "info"
         }
       }
@@ -1564,59 +1564,59 @@
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Runs only Codex agents; it can import setup and recent work from Claude Code, Claude Cowork and Cursor, but does not run those agents (import docs, 2026-09-29)",
+          "value": "Codex only; imports setup from other tools",
           "mark": "no"
         },
         "harness_count": {
-          "value": "1 (Codex). Models can come from OpenAI or Amazon Bedrock, but the agent is always Codex (import and Bedrock docs, 2026-09-29)",
+          "value": "1 (Codex)",
           "mark": "info"
         },
         "needs_you_signal": {
-          "value": "Desktop notifications for finished turns, permission requests and questions; an Activity view lists chats that are unread, running or waiting on you; an optional floating pet shows Needs input or Blocked (notifications docs, 2026-09-29)",
+          "value": "Notifications plus a waiting-on-you activity list",
           "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "Ask for approval mode shows requests in the chat, and Remote in the ChatGPT mobile app lets you approve requested commands from your phone (permission modes and Codex Remote docs, 2026-09-29)",
+          "value": "Approve in the chat or from the phone app",
           "mark": "yes"
         },
         "cross_provider_delegation": {
-          "value": "Has: subagent threads and voice-started tasks show in the same app next to the main chat. Lacks: every hand-off is between Codex agents, not other coding tools (subagents and voice docs, 2026-09-29)",
+          "value": "Subagent threads shown; only Codex agents",
           "mark": "partial"
         },
         "always_on_assistant": {
-          "value": "Has: dots, an always-on cloud agent you can message or call from the same desktop app, Slack or Teams. Lacks: it is rolling out gradually to eligible accounts, and it lives in the ChatGPT side of the app rather than the Codex view (dots docs, 2026-09-29)",
+          "value": "Always-on cloud agent; still rolling out",
           "mark": "partial"
         },
         "conversation_gui_view": {
-          "value": "Every Codex chat is a conversation view with diffs, files and subagent threads shown inline (desktop app and subagents docs, 2026-09-29)",
+          "value": "Chat view with diffs and subagent threads inline",
           "mark": "yes"
         },
         "real_terminal": {
-          "value": "Each chat has an integrated terminal scoped to its project or worktree; on Windows you choose PowerShell, WSL or another shell (integrated terminal and Windows app docs, 2026-09-29)",
+          "value": "Terminal per chat, scoped to its project",
           "mark": "yes"
         },
         "session_organization": {
-          "value": "Projects (one or several folders each) holding chats you can pin, rename, search and archive; each chat runs in the local checkout or its own worktree (projects and worktrees docs, 2026-09-29)",
+          "value": "Projects holding chats; optional worktree per chat",
           "mark": "yes"
         },
         "prompt_scratchpad": {
-          "value": "Has a queue of follow-up messages above the composer that you can edit, reorder, send or delete while Codex works; the docs describe no separate drafts area that never sends on its own (prompting docs, 2026-09-29)",
+          "value": "Editable queue of follow-ups; no drafts area",
           "mark": "partial"
         },
         "saved_prompt_library": {
-          "value": "Has skills (saved instructions you call by name) and scheduled tasks that rerun a saved prompt; the docs describe no plain list of saved prompts (skills and scheduled tasks docs, 2026-09-29)",
+          "value": "Skills and scheduled prompts; no saved-prompt list",
           "mark": "partial"
         },
         "builtin_editors_browser": {
-          "value": "Built-in browser with page preview and comments, inline editing in diffs, a pull request review view, and previews of generated documents, spreadsheets and PDFs (browser, code review and What's new docs, 2026-09-29)",
+          "value": "Built-in browser, diff editing, pull request view",
           "mark": "yes"
         },
         "appearance_control": {
-          "value": "Base theme, accent, background and foreground colors, separate UI and code fonts, font size shortcuts, and shareable custom themes (settings docs, 2026-09-29)",
+          "value": "Themes, colors, separate interface and code fonts",
           "mark": "yes"
         },
         "usage_hud": {
-          "value": "Has lifetime and peak token counts and token activity under Profile in the app; lacks plan limits and reset times in the desktop app, which the docs send to a web usage dashboard (settings and pricing docs, 2026-09-29)",
+          "value": "Token counts; plan limits and resets only on the web",
           "mark": "partial"
         },
         "burn_rate_forecast": {
@@ -1624,11 +1624,11 @@
           "mark": "undocumented"
         },
         "limit_governor": {
-          "value": "Not in its docs (checked 2026-09-29); a turn already running may finish past the limit, and Plus and Pro users can buy credits to continue",
+          "value": "Not in its docs (checked 2026-09-29)",
           "mark": "undocumented"
         },
         "account_hotswap": {
-          "value": "Not in its docs (checked 2026-09-29); the docs describe only logging out and signing in again",
+          "value": "Not in its docs (checked 2026-09-29)",
           "mark": "undocumented"
         },
         "vault_task_source": {
@@ -1636,83 +1636,83 @@
           "mark": "undocumented"
         },
         "issue_tracker_pipeline": {
-          "value": "Has Linear issues assigned to Codex and GitHub pull request reviews, plus a pull request view inside the app; lacks an issue-to-pull-request flow run in the desktop app, since Linear work runs as Codex cloud chats (Linear and code review docs, 2026-09-29)",
+          "value": "Linear issues and pull request reviews; runs in the cloud",
           "mark": "partial"
         },
         "worktree_management": {
-          "value": "Start any chat in a git worktree, hand it back to the local checkout, and let scheduled tasks run in their own background worktrees; Codex creates and cleans them up (worktrees docs, 2026-09-29)",
+          "value": "Creates and cleans up a worktree per chat",
           "mark": "yes"
         },
         "planner_orchestrator": {
-          "value": "Codex splits independent parts of a task across subagents when asked, shows each subagent thread, and returns their summaries to the main chat; Goal mode keeps work going toward a long objective (subagents and What's new docs, 2026-09-29)",
+          "value": "Splits a task across subagents when asked",
           "mark": "yes"
         },
         "agent_to_agent_messaging": {
-          "value": "Has subagents that report back to their parent chat, and ChatGPT Voice can start, check and steer other chats; lacks documented messaging between two separate chats (subagents and voice docs, 2026-09-29)",
+          "value": "Subagents report to their parent; not chat to chat",
           "mark": "partial"
         },
         "knowledge_base": {
-          "value": "Has Memories, a local store Codex draws on across chats, plus AGENTS.md project instructions; lacks a notes store you write to directly, since the docs call Memories a recall layer (Memories docs, 2026-09-29)",
+          "value": "Memories and project instructions; no notes store",
           "mark": "partial"
         },
         "native_mobile_app": {
-          "value": "The ChatGPT app for iOS and Android starts, steers, approves and reviews Codex chats running on a connected Mac or Windows PC (Codex Remote and remote connections docs, 2026-09-29)",
+          "value": "ChatGPT iOS and Android app",
           "mark": "yes"
         },
         "phone_no_new_app": {
-          "value": "Phone access goes through the ChatGPT mobile app; no route through tools you already have is documented (remote connections docs, 2026-09-29)",
+          "value": "Requires the ChatGPT mobile app",
           "mark": "no"
         },
         "remote_ssh": {
-          "value": "Adds projects from hosts in your SSH config and runs chats there; the app starts a Codex app server on the remote machine (remote connections docs, 2026-09-29)",
+          "value": "Runs chats on hosts from your SSH config",
           "mark": "yes"
         },
         "voice_input": {
-          "value": "Voice dictation with cleanup and a custom dictionary, plus ChatGPT Voice for spoken conversations on Plus plans and up (voice and What's new docs, 2026-09-29)",
+          "value": "Dictation with cleanup, plus spoken conversation",
           "mark": "yes"
         },
         "os": {
-          "value": "macOS (Apple Silicon); Windows (Microsoft Store); Linux preview on Ubuntu 24.04 and 26.04, Fedora 43 and 44, Arch and one other apt-based Linux, x64 and ARM64; phone through the ChatGPT iOS and Android app (desktop app and Linux docs, 2026-09-29)",
+          "value": "macOS, Windows, Linux (preview); iOS/Android app",
           "mark": "info"
         },
         "app_shell": {
-          "value": "Electron (Windows error reports in openai/codex issues such as 25671 and 25203, 2026-09-29; OpenAI's docs do not name it)",
+          "value": "Electron",
           "mark": "info"
         },
         "languages": {
-          "value": "Closed source: no public repo for the app to measure (checked 2026-09-29); the Rust app server behind it is open source in openai/codex",
+          "value": "Closed source; its Rust app server is open source",
           "mark": "n/a"
         },
         "background_process": {
-          "value": "Yes: a Codex app server process runs next to the app; over SSH the app starts one on the remote host (app server and remote connections docs, 2026-09-29)",
+          "value": "Yes: a Codex app server process",
           "mark": "info"
         },
         "download_size": {
-          "value": "Whole ChatGPT desktop app: 744 MB macOS dmg, 475 MB Linux .deb, 527 MB Linux .rpm; Windows comes from the Microsoft Store with no published size (official download links, 2026-09-29)",
+          "value": "744 MB mac dmg, 475 MB Linux .deb",
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "Medium (estimate: Electron app plus a separate Codex app server process, no virtual machine)",
+          "value": "Medium (estimate: Electron app plus a server)",
           "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "Its own desktop app window with a terminal inside it; Codex CLI is the separate terminal tool (desktop app docs, 2026-09-29)",
+          "value": "Own app window; Codex CLI is the terminal tool",
           "mark": "no"
         },
         "license_cost": {
-          "value": "Closed source. Included in ChatGPT plans: Free $0, Go $8/mo, Plus $20/mo, Pro $100, $200 or $500/mo, Business $20/user/mo, Enterprise and Edu by contract; extra use through credits or an API key at API rates (pricing and open source docs, 2026-09-29)",
+          "value": "Proprietary; free tier + paid ChatGPT plans",
           "mark": "info"
         },
         "extensibility": {
-          "value": "Plugins, skills, MCP servers and lifecycle hooks, plus the open-source app server protocol and Codex SDK (plugins, MCP, hooks and app server docs, 2026-09-29)",
+          "value": "Plugins, skills, MCP servers, hooks and an SDK",
           "mark": "yes"
         },
         "teams_multiuser": {
-          "value": "Business, Edu and Enterprise workspaces with admin policies, managed configuration, managed Windows installs and usage analytics (administration and enterprise docs, 2026-09-29)",
+          "value": "Business and Enterprise workspaces with admin",
           "mark": "yes"
         },
         "stability_maturity": {
-          "value": "Launched on macOS the week of 2026-02-02 and on Windows the week of 2026-03-02; merged into the ChatGPT desktop app 2026-07-09; Linux app in preview; dots rolling out (What's new and Linux docs, 2026-09-29)",
+          "value": "Launched Feb 2026; Linux in preview",
           "mark": "info"
         }
       }
@@ -2384,23 +2384,23 @@
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Nine coding agents run side by side in one list, each in its own tmux session (README, 2026-09-29)",
+          "value": "Nine CLI agents in one list, each in tmux",
           "mark": "yes"
         },
         "harness_count": {
-          "value": "9: Claude Code, Codex, OpenCode, Grok Build, Gemini CLI, Pi, Command Code, Hermes Agent, Muse Code, plus plain shell tabs (README, 2026-09-29)",
+          "value": "9 named, plus plain shell tabs",
           "mark": "info"
         },
         "needs_you_signal": {
-          "value": "A waiting mark on the session row, an attention filter, and a desktop notification when a session starts waiting or errors (docs/usage.md Status and Notifications, 2026-09-29)",
+          "value": "Waiting mark, attention filter, desktop notification",
           "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "Has: the waiting permission prompt shows in the preview, and you can answer it by typing into the session from the list without attaching. Lacks: no dedicated allow or deny control, and no phone route (README and docs/usage.md, 2026-09-29)",
+          "value": "Answer from the list by typing; no allow or deny control",
           "mark": "partial"
         },
         "cross_provider_delegation": {
-          "value": "An agent can start another agent on any supported CLI; the new session appears in the same list (docs/usage.md, MCP section, 2026-09-29)",
+          "value": "Agents start other agents; all in the same list",
           "mark": "yes"
         },
         "always_on_assistant": {
@@ -2408,15 +2408,15 @@
           "mark": "undocumented"
         },
         "conversation_gui_view": {
-          "value": "Has: list rows can show your last message and the agent's last reply. Lacks: no full conversation view; sessions are read as their terminal (docs/usage.md Full-screen sessions, 2026-09-29)",
+          "value": "Last message and reply per row; no full chat view",
           "mark": "partial"
         },
         "real_terminal": {
-          "value": "Focus a session in place or attach to its real tmux session full screen (docs/usage.md Keys, 2026-09-29)",
+          "value": "Attach to its real tmux session full screen",
           "mark": "yes"
         },
         "session_organization": {
-          "value": "Folding tree of nested groups, drag to reorder, optional git worktree per session, shell tabs nested under agents (docs/usage.md Groups, 2026-09-29)",
+          "value": "Nested groups in a folding tree",
           "mark": "yes"
         },
         "prompt_scratchpad": {
@@ -2428,23 +2428,23 @@
           "mark": "undocumented"
         },
         "builtin_editors_browser": {
-          "value": "Has: a built-in diff review screen with line comments sent back to the agent. Lacks: no editor or browser of its own; it opens your editor and your browser (docs/usage.md, 2026-09-29)",
+          "value": "Diff review with line comments; no editor or browser",
           "mark": "partial"
         },
         "appearance_control": {
-          "value": "Has: 17 color themes, can follow the system light or dark mode, two list densities, split or full-screen layout. Lacks: no font setting; the font is your terminal's (docs/usage.md Themes, 2026-09-29)",
+          "value": "17 color themes; no font setting",
           "mark": "partial"
         },
         "usage_hud": {
-          "value": "README says \"Not here yet: cost tracking\"; its stats show only computer CPU, memory and disk (README and docs/usage.md Stats, 2026-09-29)",
+          "value": "None; \"cost tracking\" listed as not here yet",
           "mark": "no"
         },
         "burn_rate_forecast": {
-          "value": "No usage tracking at all, so no forecast (README, 2026-09-29)",
+          "value": "None",
           "mark": "no"
         },
         "limit_governor": {
-          "value": "A rate-limit banner only marks the session as errored; nothing pauses or resumes work (docs/usage.md Status, 2026-09-29)",
+          "value": "Rate limits only mark the session errored",
           "mark": "no"
         },
         "account_hotswap": {
@@ -2460,15 +2460,15 @@
           "mark": "undocumented"
         },
         "worktree_management": {
-          "value": "Optional git worktree and branch per session, on the new-session form or as a default; deleting the session removes a clean worktree and its branch (docs/usage.md Worktree sessions, 2026-09-29)",
+          "value": "Optional worktree and branch per session",
           "mark": "yes"
         },
         "planner_orchestrator": {
-          "value": "Has: agents can start other agents, share a task list with claim and finish, and wait on each other. Lacks: no built-in planner that splits a goal; the agent itself decides (docs/usage.md MCP section, 2026-09-29)",
+          "value": "Agents share a task list; no built-in planner",
           "mark": "partial"
         },
         "agent_to_agent_messaging": {
-          "value": "Agents send each other queued messages and read each other's screens through its built-in MCP server (docs/usage.md Messages between agents, 2026-09-29)",
+          "value": "Queued messages through its built-in MCP server",
           "mark": "yes"
         },
         "knowledge_base": {
@@ -2484,7 +2484,7 @@
           "mark": "undocumented"
         },
         "remote_ssh": {
-          "value": "Has: runs on a remote machine you log into over SSH, with notifications and links still reaching you. Lacks: no way to manage another machine's sessions from your own (docs/usage.md Notifications, 2026-09-29)",
+          "value": "Runs on a machine you SSH into; can't manage another",
           "mark": "partial"
         },
         "voice_input": {
@@ -2492,39 +2492,39 @@
           "mark": "undocumented"
         },
         "os": {
-          "value": "macOS and Linux; Windows only inside WSL2 (README and docs/install.md, 2026-09-29)",
+          "value": "macOS, Linux; Windows only inside WSL2",
           "mark": "info"
         },
         "app_shell": {
-          "value": "Terminal UI: Bubble Tea 1.3.10 in Go, over tmux 3.1+ (go.mod, 2026-09-29)",
+          "value": "Terminal UI in Go, over tmux",
           "mark": "info"
         },
         "languages": {
-          "value": "Go ~99.8%, Shell ~0.2% (GitHub languages, 2026-09-29)",
+          "value": "Go ~99.8%",
           "mark": "info"
         },
         "background_process": {
-          "value": "Its own private tmux server keeps sessions running after the manager quits; no separate daemon of its own (README, 2026-09-29)",
+          "value": "Its own tmux server; no separate daemon",
           "mark": "info"
         },
         "download_size": {
-          "value": "v0.39.0: 7.7-8.3 MB Linux archive, 8.2-8.7 MB macOS archive; no Windows file (GitHub release, 2026-09-29)",
+          "value": "8 MB archive; no Windows file",
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "Tiny (estimate: one Go terminal program plus tmux)",
+          "value": "Tiny (estimate: a Go terminal program plus tmux)",
           "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "A terminal program you start with agent-manager in your own terminal (README, 2026-09-29)",
+          "value": "Runs inside your own terminal",
           "mark": "yes"
         },
         "license_cost": {
-          "value": "Apache-2.0, free; runs your own installed CLIs on your own subscriptions (README, 2026-09-29)",
+          "value": "Apache-2.0, free",
           "mark": "info"
         },
         "extensibility": {
-          "value": "Has: a built-in MCP server and command-line subcommands that agents and scripts can drive. Lacks: no plugin system; support for a new CLI is a feature request (docs/usage.md and docs/configuration.md, 2026-09-29)",
+          "value": "MCP server and CLI commands; no plugin system",
           "mark": "partial"
         },
         "teams_multiuser": {
@@ -2532,7 +2532,7 @@
           "mark": "undocumented"
         },
         "stability_maturity": {
-          "value": "Public since July 2026, 540 stars, v0.39.0 released 2026-09-26 with releases most weeks; one navigation feature marked beta (GitHub, 2026-09-29)",
+          "value": "Since July 2026, 540 stars, releases most weeks",
           "mark": "info"
         }
       }
@@ -2548,39 +2548,39 @@
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Runs any terminal agent side by side; Claude Code, Codex and Cursor Agent get built-in status reading (README, 2026-09-29)",
+          "value": "Any terminal agent side by side",
           "mark": "yes"
         },
         "harness_count": {
-          "value": "Any command-line agent; 3 with built-in status detection (Claude Code, Codex, Cursor Agent), Aider and Goose named as working (README and source, 2026-09-29)",
+          "value": "Any CLI agent; 3 with built-in status reading",
           "mark": "info"
         },
         "needs_you_signal": {
-          "value": "Status dots per pane (red when blocked on approval, amber while working, a done cue), read from each agent's screen; phone push on a blocked turn or finish (README and docs, 2026-09-29)",
+          "value": "Status dots per pane read from the screen; phone push",
           "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "Has an allow/deny dialog on desktop and remote clients for Claude Code when a pane runs in approve mode; lacks it for other agents, and the default mode skips permission prompts (source, 2026-09-29)",
+          "value": "Allow/deny dialog for Claude Code only, when enabled",
           "mark": "partial"
         },
         "cross_provider_delegation": {
-          "value": "Pane Chat hands work to Claude, Codex or Cursor panes and lists them under its Session in the sidebar (README and docs, 2026-09-29)",
+          "value": "Pane Chat hands work to agent panes, listed together",
           "mark": "yes"
         },
         "always_on_assistant": {
-          "value": "Pane Chat: a standing orchestrator chat not tied to any repository, kept as named Sessions and reachable from the phone (README and docs, 2026-09-29)",
+          "value": "Pane Chat: standing orchestrator chat, reachable by phone",
           "mark": "yes"
         },
         "conversation_gui_view": {
-          "value": "Terminals only by design (\"just terminals, no abstractions\"); a command can read an agent's last reply from its transcript (README and changelog, 2026-09-29)",
+          "value": "Terminals only, by design",
           "mark": "no"
         },
         "real_terminal": {
-          "value": "Every agent runs in a real terminal drawn with xterm.js, 50,000 lines of scrollback (README, 2026-09-29)",
+          "value": "Real terminal per agent, 50,000 lines of scrollback",
           "mark": "yes"
         },
         "session_organization": {
-          "value": "Projects, then panes (one git worktree each), then tabs; Sessions group related panes (README and docs, 2026-09-29)",
+          "value": "Projects, then panes (one worktree each), then tabs",
           "mark": "yes"
         },
         "prompt_scratchpad": {
@@ -2588,23 +2588,23 @@
           "mark": "undocumented"
         },
         "saved_prompt_library": {
-          "value": "Has saved text snippets pasted with a keyboard shortcut; lacks context attached to a saved prompt (README, 2026-09-29)",
+          "value": "Text snippets on a shortcut; no attached context",
           "mark": "partial"
         },
         "builtin_editors_browser": {
-          "value": "Browser tab, file explorer, code editor (Monaco), diff viewer and git tree (README and source, 2026-09-29)",
+          "value": "Browser tab, code editor, file explorer, diff viewer",
           "mark": "yes"
         },
         "appearance_control": {
-          "value": "Light and dark palettes that follow the system or stay fixed, plus terminal font family and size (docs and source, 2026-09-29)",
+          "value": "Light and dark palettes plus terminal font and size",
           "mark": "yes"
         },
         "usage_hud": {
-          "value": "Has token and estimated-cost totals per pane from local Claude and Codex logs, and plan limits with reset times for Codex; lacks plan limits for Claude (source, 2026-09-29)",
+          "value": "Tokens and cost per pane; plan limits for Codex only",
           "mark": "partial"
         },
         "burn_rate_forecast": {
-          "value": "Shows current limit use and reset time only, no rate or forecast (source, 2026-09-29)",
+          "value": "Current use and reset only; no forecast",
           "mark": "no"
         },
         "limit_governor": {
@@ -2620,19 +2620,19 @@
           "mark": "undocumented"
         },
         "issue_tracker_pipeline": {
-          "value": "Has pull request watching (conflicts, checks, merged) through the GitHub command-line tool and lets an agent open a pane per issue; lacks its own tracker connection, leaving GitHub, Linear and Jira to the agents' own tools by design (README and changelog, 2026-09-29)",
+          "value": "Watches pull requests; issue trackers left to agents",
           "mark": "partial"
         },
         "worktree_management": {
-          "value": "Creates a worktree per pane and cleans it up on delete; rebase, squash and merge from the keyboard (README, 2026-09-29)",
+          "value": "Worktree per pane, cleanup, merge from the keyboard",
           "mark": "yes"
         },
         "planner_orchestrator": {
-          "value": "Pane Chat turns a goal into tickets or briefs and starts agents in panes to do them (README, 2026-09-29)",
+          "value": "Pane Chat splits a goal into tickets and starts agents",
           "mark": "yes"
         },
         "agent_to_agent_messaging": {
-          "value": "Agents start, check on and send follow-ups to other panes through its MCP server and command-line tool; @mention pulls another terminal's output (README, 2026-09-29)",
+          "value": "Agents start and message other panes via its MCP server",
           "mark": "yes"
         },
         "knowledge_base": {
@@ -2640,63 +2640,63 @@
           "mark": "undocumented"
         },
         "native_mobile_app": {
-          "value": "iOS and Android companion in the repo with a TestFlight test build; not yet in the App Store or Play Store (docs and open pull requests 740 and 748, 2026-09-29)",
+          "value": "iOS and Android test builds; not in the stores yet",
           "mark": "experimental"
         },
         "phone_no_new_app": {
-          "value": "Browser web app at runpane.com/app, paired with a connection code; the phone must be on the same Tailscale network or use an SSH tunnel (README, 2026-09-29)",
+          "value": "Browser web app; needs Tailscale or an SSH tunnel",
           "mark": "yes"
         },
         "remote_ssh": {
-          "value": "Remote Pane: agents, terminals, files and git run on another machine over Tailscale or SSH (README, 2026-09-29)",
+          "value": "Agents, files and git on another machine",
           "mark": "yes"
         },
         "voice_input": {
-          "value": "Has dictation in the phone and browser client using your own transcription service keys; lacks it in the desktop app (docs and source, 2026-09-29)",
+          "value": "Dictation in phone and browser; not desktop",
           "mark": "partial"
         },
         "os": {
-          "value": "Windows, macOS, Linux (x64 and ARM64 each); phone or tablet through the browser web app (release files and README, 2026-09-29)",
+          "value": "Windows, macOS, Linux; phone through the browser",
           "mark": "info"
         },
         "app_shell": {
-          "value": "Electron 41.10.3 (package.json, 2026-09-29)",
+          "value": "Electron 41",
           "mark": "info"
         },
         "languages": {
-          "value": "TypeScript ~84%, Python ~7% (GitHub, 2026-09-29)",
+          "value": "TypeScript ~84%, Python ~7%",
           "mark": "info"
         },
         "background_process": {
-          "value": "Yes: a separate terminal-host process started by the app; a remote host runs Pane as a background service (source and docs, 2026-09-29)",
+          "value": "Yes: a separate terminal-host process",
           "mark": "info"
         },
         "download_size": {
-          "value": "v2.4.138: 115 MB Windows x64 installer, 133-142 MB mac dmg, 107 MB Linux .deb / 140 MB AppImage (GitHub release, 2026-09-29)",
+          "value": "115 MB Windows installer",
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "Medium (estimate: Electron app plus a separate terminal-host process)",
+          "value": "Medium (estimate: Electron app plus terminal host)",
           "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "Own desktop app with its own terminals (README, 2026-09-29)",
+          "value": "No; own desktop app with its own terminals",
           "mark": "no"
         },
         "license_cost": {
-          "value": "AGPL-3.0, free, no paid plan; uses your own subscriptions (LICENSE and runpane.com pricing, 2026-09-29)",
+          "value": "AGPL-3.0, free",
           "mark": "info"
         },
         "extensibility": {
-          "value": "Has a scriptable command-line tool, a documented command contract and an MCP server; lacks a plugin system or SDK (README, 2026-09-29)",
+          "value": "Scriptable command-line tool and MCP server; no plugins",
           "mark": "partial"
         },
         "teams_multiuser": {
-          "value": "Not in its docs (checked 2026-09-29); the README names teams only as an audience",
+          "value": "Not in its docs (checked 2026-09-29)",
           "mark": "undocumented"
         },
         "stability_maturity": {
-          "value": "v2.4.138 released 2026-09-29, repo started 2026-02-27, ~500 GitHub stars, frequent releases (GitHub, 2026-09-29)",
+          "value": "v2.4.138, started February 2026, frequent releases",
           "mark": "info"
         }
       }
@@ -2876,19 +2876,19 @@
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Any terminal program runs in each worktree's terminal: Claude Code, Codex CLI, Gemini CLI, Aider, opencode named (README, 2026-09-29)",
+          "value": "Any CLI agent, one terminal per worktree",
           "mark": "yes"
         },
         "harness_count": {
-          "value": "Any terminal program; 5 named: Claude Code, Codex CLI, Gemini CLI, Aider, opencode (README, 2026-09-29)",
+          "value": "Any terminal program; 5 named",
           "mark": "info"
         },
         "needs_you_signal": {
-          "value": "Sidebar shows working, needs input or done per worktree, plays a ding, and sends desktop notifications (README and v0.2.0 release notes, 2026-09-29)",
+          "value": "Sidebar status, a ding and desktop notifications",
           "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "Spots yes/no and choice prompts in the terminal and flags the worktree as needing input; no allow or deny buttons, you answer by typing in that agent's terminal, which also works from the phone web app (source: packages/core/src/utils/agent-activity.ts, 2026-09-29)",
+          "value": "Flags waiting prompts; no buttons, you type the answer",
           "mark": "partial"
         },
         "cross_provider_delegation": {
@@ -2900,15 +2900,15 @@
           "mark": "undocumented"
         },
         "conversation_gui_view": {
-          "value": "Sessions show only as terminals; the app has terminal, diff and browser preview panes but no chat view (README and source tree, 2026-09-29)",
+          "value": "Terminals only; no chat view",
           "mark": "no"
         },
         "real_terminal": {
-          "value": "Each worktree gets a persistent terminal with splits and search; scrollback survives reloads and reconnects (README, 2026-09-29)",
+          "value": "Persistent terminals with splits and search",
           "mark": "yes"
         },
         "session_organization": {
-          "value": "Projects open as tabs; each project has a sidebar list of worktrees, each with its own terminals and live status (docs, 2026-09-29)",
+          "value": "Project tabs, each with a list of worktrees",
           "mark": "yes"
         },
         "prompt_scratchpad": {
@@ -2916,27 +2916,27 @@
           "mark": "undocumented"
         },
         "saved_prompt_library": {
-          "value": "Not in its docs (checked 2026-09-29); it has a one-click agent launch command, not saved prompts",
+          "value": "Not in its docs (checked 2026-09-29)",
           "mark": "undocumented"
         },
         "builtin_editors_browser": {
-          "value": "Has a browser preview pane for dev servers and a diff viewer; lacks a code editor, and opens files in your installed Cursor or VS Code instead (README and source: apps/desktop/src/main/ide-detector.ts, 2026-09-29)",
+          "value": "Browser preview and diff viewer; no code editor",
           "mark": "partial"
         },
         "appearance_control": {
-          "value": "Has terminal font, font size and cursor blink settings; lacks a theme picker, light or dark just follows your system setting (source: apps/desktop/src/main/terminal-settings.ts and ipc-handlers.ts, 2026-09-29)",
+          "value": "Terminal font and size; no theme picker",
           "mark": "partial"
         },
         "usage_hud": {
-          "value": "No usage or limit tracking anywhere in its source; its Stats window lists terminal processes only (source search, 2026-09-29)",
+          "value": "None",
           "mark": "no"
         },
         "burn_rate_forecast": {
-          "value": "No usage tracking in its source (source search, 2026-09-29)",
+          "value": "None",
           "mark": "no"
         },
         "limit_governor": {
-          "value": "No usage-limit handling in its source; its scheduler only re-sends a typed command after a set delay (source search, 2026-09-29)",
+          "value": "None",
           "mark": "no"
         },
         "account_hotswap": {
@@ -2952,7 +2952,7 @@
           "mark": "undocumented"
         },
         "worktree_management": {
-          "value": "Core: one git worktree and branch per task, created and deleted from the app or its CLI, with setup and cleanup hook scripts (README and docs, 2026-09-29)",
+          "value": "Core: one worktree and branch per task",
           "mark": "yes"
         },
         "planner_orchestrator": {
@@ -2968,63 +2968,63 @@
           "mark": "undocumented"
         },
         "native_mobile_app": {
-          "value": "No store app; the phone route is its installable web app (docs, 2026-09-29)",
+          "value": "No store app; installable web app instead",
           "mark": "no"
         },
         "phone_no_new_app": {
-          "value": "Open the server address in the phone's browser, paired by QR code, over your home network or Tailscale; optionally install it as a web app (docs, 2026-09-29)",
+          "value": "Phone browser, paired by QR code",
           "mark": "yes"
         },
         "remote_ssh": {
-          "value": "Has a standalone server you install on another machine and reach from a browser; lacks any SSH connection mode (docs: server page, 2026-09-29)",
+          "value": "Standalone server for another machine; no SSH mode",
           "mark": "partial"
         },
         "voice_input": {
-          "value": "No speech or dictation code in its source (source search, 2026-09-29)",
+          "value": "None",
           "mark": "no"
         },
         "os": {
-          "value": "Windows, macOS (Intel and Apple Silicon, not notarized), Linux (AppImage, deb); plus any browser or phone through its standalone server (v0.2.0 release and README, 2026-09-29)",
+          "value": "Windows, macOS, Linux; any browser via its server",
           "mark": "info"
         },
         "app_shell": {
-          "value": "Electron 38.0.0 (apps/desktop/package.json), plus a React web app served by the same Node server",
+          "value": "Electron 38",
           "mark": "info"
         },
         "languages": {
-          "value": "TypeScript ~89%, HTML ~8% (GitHub languages, 2026-09-29)",
+          "value": "TypeScript ~89%, HTML ~8%",
           "mark": "info"
         },
         "background_process": {
-          "value": "Desktop: no, its server runs inside the app's own main process on a local-only port (ARCHITECTURE.md); browser and phone use need a separate standalone Node server",
+          "value": "Desktop: no; browser and phone need its Node server",
           "mark": "info"
         },
         "download_size": {
-          "value": "v0.2.0: 98 MB Windows Setup.exe, 121-126 MB mac dmg, 127 MB Linux AppImage, 85 MB deb (GitHub release, 2026-09-29)",
+          "value": "98 MB Windows installer",
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "Small (estimate: one Electron app with its server in the same process)",
+          "value": "Small (estimate: one Electron app)",
           "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "Its command-line tool lists worktrees, shows agent states and starts agents from your own terminal; the terminals themselves live in its desktop or web app (docs: CLI page, 2026-09-29)",
+          "value": "Its CLI lists and starts agents; terminals live in the app",
           "mark": "partial"
         },
         "license_cost": {
-          "value": "MIT, free; no cloud component and no telemetry (license per GitHub and site FAQ, 2026-09-29)",
+          "value": "MIT, free, no telemetry",
           "mark": "info"
         },
         "extensibility": {
-          "value": "Has worktree hook scripts and a command-line tool that talks to its server; lacks a plugin system or SDK (docs, 2026-09-29)",
+          "value": "Hook scripts and a CLI; no plugins or SDK",
           "mark": "partial"
         },
         "teams_multiuser": {
-          "value": "Has project settings and hook scripts you commit to share with a team; lacks user accounts, the server has one shared login (docs: config page, 2026-09-29)",
+          "value": "Shareable project settings; no user accounts",
           "mark": "partial"
         },
         "stability_maturity": {
-          "value": "Early: v0.2.0 released 2026-07-24, two releases in total, last push 2026-07-25, about 270 stars, mac builds not notarized (GitHub, 2026-09-29)",
+          "value": "Early: v0.2.0, two releases, ~270 stars",
           "mark": "info"
         }
       }
@@ -3368,23 +3368,23 @@
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Pick a different coding agent per workspace or session and run them side by side; the app reads each agent's output into its own chat view (README and docs, 2026-09-29)",
+          "value": "Different agent per workspace, run side by side",
           "mark": "yes"
         },
         "harness_count": {
-          "value": "10 per its docs: Claude Code, Codex, GitHub Copilot, Gemini CLI, Amp, Cursor Agent, OpenCode, Droid, Claude Code Router, Qwen Code (docs/supported-coding-agents.mdx, 2026-09-29)",
+          "value": "10, including Claude Code, Codex, Gemini CLI, Copilot",
           "mark": "info"
         },
         "needs_you_signal": {
-          "value": "Sound effects and system notifications when a task finishes, needs attention or errors; approval cards in the chat (docs/settings/general.mdx and source, 2026-09-29)",
+          "value": "Sounds and system notifications; approval cards in chat",
           "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "Tool-permission and plan approvals from the agent appear as cards in the app's chat to approve or deny; wired for Claude Code, Codex, OpenCode, Copilot and the agents it drives through the Agent Client Protocol, such as Gemini and Qwen; unanswered requests time out (docs/workspaces/chat-interface.mdx and crates/executors source, 2026-09-29)",
+          "value": "Approve or deny cards in its chat, for most agents",
           "mark": "yes"
         },
         "cross_provider_delegation": {
-          "value": "Has sessions with different agents inside one workspace, sharing its files, and an MCP server an agent can use to start another agent's workspace; lacks a view that tracks a hand-off from one agent to another, and sessions do not share conversation context (docs/workspaces/sessions.mdx and docs/integrations/vibe-kanban-mcp-server.mdx, 2026-09-29)",
+          "value": "Several agents share one workspace; no hand-off view",
           "mark": "partial"
         },
         "always_on_assistant": {
@@ -3392,39 +3392,39 @@
           "mark": "undocumented"
         },
         "conversation_gui_view": {
-          "value": "Each session is a chat: agent replies rendered as formatted text, tool calls and system messages styled separately, edit and resend, a queue for follow-ups (docs/workspaces/chat-interface.mdx, 2026-09-29)",
+          "value": "Each session is a formatted chat with tool calls",
           "mark": "yes"
         },
         "real_terminal": {
-          "value": "Has an xterm.js terminal in each workspace's sidebar for your own commands; lacks the agent's own terminal, since agents run in the background and are shown only as chat and logs (docs/workspaces/interface.mdx and crates/executors source, 2026-09-29)",
+          "value": "Terminal for your own commands; not the agent's",
           "mark": "partial"
         },
         "session_organization": {
-          "value": "Workspaces (one git worktree and branch each, pinned or archived) holding one or more chat sessions; the kanban board that grouped them was retired in v0.1.44 and now shows only a data-export page (docs and pull request 3387, 2026-09-29)",
+          "value": "Workspaces holding chat sessions; kanban board retired",
           "mark": "yes"
         },
         "prompt_scratchpad": {
-          "value": "Has an unsent follow-up message saved as a draft per session, plus a queue that holds a message until the agent finishes; lacks a separate place to keep several prompt drafts (source useSessionMessageEditor.ts and docs/workspaces/chat-interface.mdx, 2026-09-29)",
+          "value": "One unsent draft per session; no set of saved drafts",
           "mark": "partial"
         },
         "saved_prompt_library": {
-          "value": "Has task tags: reusable text snippets inserted with @ into a task description; lacks context attached to a saved prompt (docs/configuration-customisation/creating-task-tags.mdx, 2026-09-29)",
+          "value": "Reusable text snippets via @; no attached context",
           "mark": "partial"
         },
         "builtin_editors_browser": {
-          "value": "Built-in browser preview of your app with devtools, inspect mode and device emulation, plus a diff viewer with inline comments; files open in your own editor (README and docs, 2026-09-29)",
+          "value": "Preview browser with devtools, diff viewer",
           "mark": "yes"
         },
         "appearance_control": {
-          "value": "Has light and dark themes and an interface language setting; lacks font or terminal font settings in its docs (docs/settings/general.mdx, 2026-09-29)",
+          "value": "Light and dark themes; no font setting",
           "mark": "partial"
         },
         "usage_hud": {
-          "value": "Has a context gauge per session (tokens used of the model's window) and, in Codex sessions, a status command that reads the account's rate limits; lacks Claude plan limits and a running usage display (docs/workspaces/chat-interface.mdx and codex slash_commands.rs, 2026-09-29)",
+          "value": "Context gauge per session; no Claude plan limits",
           "mark": "partial"
         },
         "burn_rate_forecast": {
-          "value": "No burn rate or time-to-limit; source search for rate-limit handling finds only the Codex status command and a Claude event it ignores (source, 2026-09-29)",
+          "value": "No burn rate or time to the limit",
           "mark": "no"
         },
         "limit_governor": {
@@ -3436,87 +3436,87 @@
           "mark": "undocumented"
         },
         "vault_task_source": {
-          "value": "Tasks came from its own kanban issues (now retired); a source search finds no notes-vault or Obsidian reader (source, 2026-09-29)",
+          "value": "No notes-vault reading",
           "mark": "no"
         },
         "issue_tracker_pipeline": {
-          "value": "Has pull request creation with generated descriptions and merge through the GitHub command-line tool, and Azure Repos support; lacks a connection that pulls issues from GitHub, Linear or Jira, and its own issue board was retired in v0.1.44 (docs/integrations and pull request 3387, 2026-09-29)",
+          "value": "Creates and merges pull requests; no issue intake",
           "mark": "partial"
         },
         "worktree_management": {
-          "value": "Every workspace gets its own git worktree and branch, with rebase, conflict help, merge and cleanup of old worktrees (docs/workspaces and README, 2026-09-29)",
+          "value": "Worktree and branch per workspace, with merge and cleanup",
           "mark": "yes"
         },
         "planner_orchestrator": {
-          "value": "Has an MCP server an outside agent can use to split a plan into issues and start a workspace per issue; lacks a built-in planner, and the issue tools depended on the retired hosted projects (docs/integrations/vibe-kanban-mcp-server.mdx and shutdown notice, 2026-09-29)",
+          "value": "Outside agent can split a plan via MCP; no built-in planner",
           "mark": "partial"
         },
         "agent_to_agent_messaging": {
-          "value": "Its MCP server lets an agent start workspaces, create sessions, send a prompt into another session and read its final message (docs/integrations/vibe-kanban-mcp-server.mdx, 2026-09-29)",
+          "value": "Agents prompt and read other sessions via its MCP server",
           "mark": "yes"
         },
         "knowledge_base": {
-          "value": "Not in its docs (checked 2026-09-29); per-workspace notes exist for you, and the docs don't say agents can read them",
+          "value": "Not in its docs (checked 2026-09-29)",
           "mark": "undocumented"
         },
         "native_mobile_app": {
-          "value": "No iOS or Android app in the repo; phone access is through the browser (repo search for mobile app frameworks, 2026-09-29)",
+          "value": "No phone app; browser only",
           "mark": "no"
         },
         "phone_no_new_app": {
-          "value": "Docs describe pairing a phone browser to your computer through cloud.vibekanban.com; the shutdown notice ended hosted services 30 days after 2026-04-10, the site still loads, and whether pairing still works was not tested (docs/remote-access.mdx and shutdown notice, 2026-09-29)",
+          "value": "Phone browser pairing via its cloud; untested since shutdown",
           "mark": "unknown"
         },
         "remote_ssh": {
-          "value": "Has running it on a remote server reached through a tunnel, with \"Open in VS Code\" links that connect over SSH; lacks running agents on another machine from your local app (README and docs/settings/general.mdx, 2026-09-29)",
+          "value": "Can run on a remote server; no remote agents from local app",
           "mark": "partial"
         },
         "voice_input": {
-          "value": "No dictation: a source search for speech or voice input in the web app finds nothing (source, 2026-09-29)",
+          "value": "No dictation",
           "mark": "no"
         },
         "os": {
-          "value": "Windows, macOS, Linux (x64 and ARM64 installers each); any of them through npx with Node 20.19 or later; other devices through a browser (v0.1.44 release files and npx-cli/package.json, 2026-09-29)",
+          "value": "Windows, macOS, Linux; any browser",
           "mark": "info"
         },
         "app_shell": {
-          "value": "Tauri 2.10.3 desktop app, or a local web server opened in your browser through npx; React 18 interface (Cargo.lock and package.json, 2026-09-29)",
+          "value": "Tauri 2, or a local web server via npx",
           "mark": "info"
         },
         "languages": {
-          "value": "Rust ~50%, TypeScript ~46% (GitHub, 2026-09-29)",
+          "value": "Rust ~50%, TypeScript ~46%",
           "mark": "info"
         },
         "background_process": {
-          "value": "No separate daemon: its Rust server runs inside the desktop app's process, or is the process you start with npx (crates/tauri-app source, 2026-09-29)",
+          "value": "None; its server runs inside the app",
           "mark": "info"
         },
         "download_size": {
-          "value": "v0.1.44: 39 MB Windows x64 installer (56 MB .msi), 51-53 MB mac dmg, 56 MB Linux .deb / 124 MB AppImage, 24 MB npx download (GitHub release, 2026-09-29)",
+          "value": "39 MB Windows installer",
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "Small (estimate: Tauri app on the system web view with its Rust server in the same process)",
+          "value": "Small (estimate: Tauri app, server in same process)",
           "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "Started from a terminal with npx, but the interface is a desktop app or browser page (README, 2026-09-29)",
+          "value": "No; desktop app or browser page",
           "mark": "no"
         },
         "license_cost": {
-          "value": "Apache-2.0, free; the paid hosted plans ended with the 2026-04-10 shutdown notice; uses your own agent subscriptions (LICENSE and vibekanban.com/blog/shutdown, 2026-09-29)",
+          "value": "Apache-2.0, free; paid hosted plans ended",
           "mark": "info"
         },
         "extensibility": {
-          "value": "Has an MCP server, per-agent configuration variants and MCP server settings for agents; lacks a plugin system or SDK (docs/integrations and docs/settings, 2026-09-29)",
+          "value": "MCP server and agent settings; no plugins or SDK",
           "mark": "partial"
         },
         "teams_multiuser": {
-          "value": "Had organisations, team members and shared issues in its hosted service; the shutdown notice removed organisations, projects and issues, leaving a local single-user app unless you self-host (docs/cloud and shutdown notice, 2026-09-29)",
+          "value": "Hosted teams removed; self-hosted teams unconfirmed",
           "mark": "partial"
         },
         "stability_maturity": {
-          "value": "Sunset announced 2026-04-10, now community maintained; last stable v0.1.44 on 2026-04-24, npx-only v0.1.45 prerelease 2026-09-19; repo started 2025-06-14, ~28,200 GitHub stars (GitHub and shutdown notice, 2026-09-29)",
+          "value": "Shutdown announced April 2026; community maintained",
           "mark": "info"
         }
       }

@@ -39,7 +39,7 @@ if SET == "2":
     FEATURE_ORDER = [
         "harness_count", "usage_hud", "planner_orchestrator", "phone_access",
         "agent_to_agent_messaging", "conversation_gui_view", "issue_tracker_pipeline",
-        "extensibility", "os", "license_cost",
+        "extensibility", "app_shell", "license_cost",
     ]
     SHORT_LABEL = {
         "harness_count": "Coding agents supported",
@@ -50,7 +50,7 @@ if SET == "2":
         "conversation_gui_view": "Read sessions as chat",
         "issue_tracker_pipeline": "GitHub/Jira issues to PRs",
         "extensibility": "Plugins / SDK",
-        "os": "Runs on",
+        "app_shell": "App shell",
         "license_cost": "License",
     }
     SUBTITLE = "Seven AI coding-agent managers, the ten features where they differ most"
@@ -90,7 +90,7 @@ SHORT_SHELL = {
     "herdr": "Terminal UI",
     "Pantheon": "Terminal UI",
     "Paseo": "Electron",
-    "GitKraken Kepler": "not verified",
+    "GitKraken Kepler": "Unknown",
     "Agent Orchestrator (AO)": "Electron",
 }
 

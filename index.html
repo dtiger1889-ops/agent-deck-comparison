@@ -73,6 +73,8 @@
   .title-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-bottom: 8px; }
   .gh-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.9rem; font-weight: 600; color: var(--text); text-decoration: none; border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px; background: var(--panel); }
   .gh-link:hover { color: var(--accent); border-color: var(--accent); }
+  .featured-note { margin: 0; font-size: 0.85rem; color: var(--muted); }
+  #bytool-table .num { white-space: nowrap; text-align: right; min-width: 7.5rem; }
   .own-star { margin-left: 2px; color: var(--accent); text-decoration: none; font-weight: 700; }
   .title-actions { display: flex; align-items: center; gap: 8px; flex: none; }
   .share { position: relative; }
@@ -336,7 +338,7 @@
   <details class="about">
     <summary>About this comparison</summary>
     <p>Built to find where a personal, terminal-native project differs from the field, not as marketing for any one tool.</p>
-    <p><b>Column order.</b> "Most used" shows the five tools still in development with the most GitHub stars on 2026-09-29, plus Google Antigravity and Pantheon. After those come Claude Desktop and ChatGPT Desktop (which now holds the Codex app), then the other open-source tools by stars; vibe-kanban comes last among them because it announced its shutdown in April 2026. Closed-source tools have no public usage numbers, so they follow, ordered by Hacker News posts linking their site: a rough stand-in. Tools not researched yet come last.</p>
+    <p><b>Column order.</b> Featured tools come first. Every other tool follows A-Z, and tools not researched yet come last. GitHub stars (checked 2026-09-29) are in the By tool view.</p>
     <p>Cells come from each tool's own docs, sites, source or posts at the dates shown for that tool, and were not re-verified after that pass. <b>Not documented</b> means the tool's own materials don't mention it, which is not the same as a confirmed <b>No</b>. <b>Unknown</b> means the tool wasn't researched that far.</p>
   </details>
   <div class="legend" id="legend"></div>
@@ -367,6 +369,7 @@
    </div>
   </div>
   <div class="row"><span class="row-label">Tools</span><div class="row-body" id="tool-chips"></div></div>
+    <div class="row"><span class="row-label"></span><div class="row-body"><p class="featured-note">Features: picked for how versatile they are</p></div></div>
   <div class="row more" id="section-row"><span class="row-label">Sections</span><div class="row-body" id="section-chips"></div></div>
   <div class="row more phone-only" id="phone-ff"><span class="row-label">Show tools</span><div class="row-body">
     <select id="ff-feature" aria-label="Feature to filter tools by"></select>
@@ -403,8 +406,8 @@ let VIS = [];                     // tools currently shown as columns (DATA orde
 let bytoolSortKey = "name";
 let bytoolSortDir = 1;
 let currentView = "matrix";
-// "Most used": the top five by GitHub stars (2026-09-29) among tools still developed, plus Google Antigravity and Pantheon.
-const DEFAULT_TOOLS = ["Orca", "herdr", "T3 Code", "Wave Terminal", "Paseo", "Google Antigravity", "Pantheon"];
+// "Featured": picked for how versatile they are (owner decision 2026-09-29).
+const DEFAULT_TOOLS = ["Orca", "VelaTerm", "herdr", "Paseo", "Agent Orchestrator (AO)", "Pane", "Pantheon"];
 let shownTools = null;            // tool names picked in the Tools chips
 let hiddenSections = new Set();   // sections switched off in the Sections chips
 let collapsed = new Set();        // sections collapsed to their heading
@@ -701,12 +704,14 @@ function renderByTool() {
     { key: "license", label: "License" },
     { key: "checked_on", label: "Checked on" },
     { key: "source_note", label: "Source note" },
-    { key: "yes_count", label: "Yes count" },
+    { key: "yes_count", label: "Features", num: true },
+    { key: "stars", label: "GitHub stars", num: true },
   ];
   const rows = tools.map(t => ({
     name: t.name, category: t.category, where_agents_run: t.where_agents_run,
     license: t.license, checked_on: t.checked_on, source_note: t.source_note,
     yes_count: countYes(t), url: t.url,
+    stars: t.github_stars == null ? -1 : t.github_stars,
   }));
   rows.sort((a, b) => {
     const va = a[bytoolSortKey], vb = b[bytoolSortKey];
@@ -721,6 +726,7 @@ function renderByTool() {
   cols.forEach(col => {
     const th = document.createElement("th");
     th.textContent = col.label;
+    if (col.num) th.className = "num";
     th.addEventListener("click", () => {
       if (bytoolSortKey === col.key) bytoolSortDir *= -1; else { bytoolSortKey = col.key; bytoolSortDir = 1; }
       renderByTool();
@@ -741,9 +747,12 @@ function renderByTool() {
         a.href = r.url; a.target = "_blank"; a.rel = "noopener";
         a.textContent = r.name;
         td.appendChild(a);
+      } else if (col.key === "stars") {
+        td.textContent = r.stars < 0 ? "Closed source" : r.stars.toLocaleString("en-US");
       } else {
         td.textContent = r[col.key];
       }
+      if (col.num) td.className = "num";
       tr.appendChild(td);
     });
     tbody.appendChild(tr);
@@ -787,7 +796,7 @@ function renderChips() {
   const allNames = new Set(DATA.tools.map(t => t.name));
   const six = new Set(DEFAULT_TOOLS.filter(n => allNames.has(n)));
   tc.appendChild(seg([
-    { label: "Most used", on: sameSet(shownTools, six), onClick: () => { shownTools = new Set(six); toolsChanged(); } },
+    { label: "Featured", on: sameSet(shownTools, six), onClick: () => { shownTools = new Set(six); toolsChanged(); } },
     { label: "All " + allNames.size, on: sameSet(shownTools, allNames), onClick: () => { shownTools = new Set(allNames); toolsChanged(); } },
   ]));
   tc.appendChild(sep());

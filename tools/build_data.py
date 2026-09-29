@@ -944,17 +944,23 @@ agtx = placeholder("AGTX", "https://github.com/thereal4th/AGTX",
 nimbalyst = placeholder("Nimbalyst", "https://nimbalyst.com", "Listed 2026-09-29, research pending.")
 parallelcode = placeholder("Parallel Code", "https://github.com/johannesjo/parallel-code", "Listed 2026-09-29, research pending.")
 
-# Column order (owner decision 2026-09-29): the "Most used" default first (top five by GitHub stars
-# on 2026-09-29 among tools still developed, then Google Antigravity and Pantheon); then Claude Desktop and
-# ChatGPT Desktop; then the
-# other researched open-source tools by stars; then closed-source tools by Hacker News posts linking
-# their site (a rough stand-in); then tools not researched yet.
-TOOLS = [orca, herdr, t3code, wave, paseo, antigravity, pantheon,
-         claudedesktop, codexapp,
-         superset, ao, opencove, ccmanager, agentmanager, pane, micracode, vibetree, velaterm, jenny,
-         vibekanban,  # announced its shutdown 2026-04-10, so it sits last among the open-source tools
-         conductor, kepler, teleclod, oyren,
-         agtx, nimbalyst, parallelcode]
+# Column order (owner decision 2026-09-29): the "Featured" set first, picked for how versatile they
+# are; then every other researched tool A-Z; then tools not researched yet.
+FEATURED = [orca, velaterm, herdr, paseo, ao, pane, pantheon]
+PENDING = [agtx, nimbalyst, parallelcode]
+_rest = [antigravity, claudedesktop, codexapp, superset, opencove, ccmanager, agentmanager, micracode,
+         vibetree, jenny, vibekanban, conductor, kepler, teleclod, oyren, t3code, wave]
+TOOLS = FEATURED + sorted(_rest, key=lambda t: t["name"].lower()) + PENDING
+
+# GitHub stars, read from the GitHub API on 2026-09-29. None = closed source, no public repo.
+STARS = {
+    "Orca": 81580, "herdr": 41461, "vibe-kanban": 28221, "T3 Code": 23911, "Wave Terminal": 22388,
+    "Paseo": 19013, "Superset": 14740, "Agent Orchestrator (AO)": 12530, "Nimbalyst": 1803,
+    "OpenCove": 1600, "CCManager": 1256, "Parallel Code": 1026, "agent-manager": 540, "Pane": 497,
+    "micracode": 289, "VibeTree": 267, "VelaTerm": 230, "Jenny": 47, "AGTX": 0, "Pantheon": 0,
+}
+for t in TOOLS:
+    t["github_stars"] = STARS.get(t["name"])
 
 # Operating systems: release assets / vendor pages as recorded in the source doc and the raw-evidence
 # file (2026-09-28). Anything not on record stays "not verified".

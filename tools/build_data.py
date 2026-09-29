@@ -877,12 +877,12 @@ wave = {
     },
 }
 
-# Research entry for the Codex app (OpenAI), checked 2026-09-29.
+# Research entry for ChatGPT Desktop (OpenAI; home of the former Codex app), checked 2026-09-29.
 # Shape matches the pane / claudedesktop entries in portfolio_repos/agent-deck-comparison/tools/build_data.py.
 # Findings and sources: project_pantheon/archive/research_raw/2026-09-29-new-agent-managers/codex-app.md
 # Note: on 2026-07-09 the standalone Codex app merged into the ChatGPT desktop app; Codex keeps its own view there.
 codexapp = {
-    "name": "Codex app", "url": "https://learn.chatgpt.com/docs/app", "category": "agent manager",
+    "name": "ChatGPT Desktop", "url": "https://learn.chatgpt.com/docs/app", "category": "agent manager",
     "where_agents_run": "your machine (local checkout or a git worktree per chat) + SSH hosts + OpenAI-hosted Codex cloud chats; your phone reaches the desktop through Remote in the ChatGPT mobile app",
     "license": "Closed source; included in every ChatGPT plan: Free $0, Go $8/mo, Plus $20/mo, Pro $100-500/mo, Business $20/user/mo, Enterprise and Edu by contract",
     "checked_on": "2026-09-29 (docs pass)",
@@ -945,12 +945,14 @@ nimbalyst = placeholder("Nimbalyst", "https://nimbalyst.com", "Listed 2026-09-29
 parallelcode = placeholder("Parallel Code", "https://github.com/johannesjo/parallel-code", "Listed 2026-09-29, research pending.")
 
 # Column order (owner decision 2026-09-29): the "Most used" default first (top five by GitHub stars
-# on 2026-09-29, then Google Antigravity and Pantheon); then Claude Desktop and the Codex app; then the
+# on 2026-09-29 among tools still developed, then Google Antigravity and Pantheon); then Claude Desktop and
+# ChatGPT Desktop; then the
 # other researched open-source tools by stars; then closed-source tools by Hacker News posts linking
 # their site (a rough stand-in); then tools not researched yet.
-TOOLS = [orca, herdr, vibekanban, t3code, wave, antigravity, pantheon,
+TOOLS = [orca, herdr, t3code, wave, paseo, antigravity, pantheon,
          claudedesktop, codexapp,
-         paseo, superset, ao, opencove, ccmanager, agentmanager, pane, micracode, vibetree, velaterm, jenny,
+         superset, ao, opencove, ccmanager, agentmanager, pane, micracode, vibetree, velaterm, jenny,
+         vibekanban,  # announced its shutdown 2026-04-10, so it sits last among the open-source tools
          conductor, kepler, teleclod, oyren,
          agtx, nimbalyst, parallelcode]
 

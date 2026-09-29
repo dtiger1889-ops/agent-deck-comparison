@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Agent-manager comparison</title>
-<meta name="description" content="Sortable feature comparison of AI coding-agent managers: Orca, herdr, vibe-kanban, T3 Code, Wave, Antigravity, Claude Desktop, Codex and more.">
+<meta name="description" content="Sortable feature comparison of AI coding-agent managers: Orca, herdr, T3 Code, Wave, Paseo, Antigravity, Claude Desktop, ChatGPT Desktop and more.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Agent-manager comparison">
-<meta property="og:description" content="Sortable feature comparison of AI coding-agent managers: Orca, herdr, vibe-kanban, T3 Code, Wave, Antigravity, Claude Desktop, Codex and more.">
+<meta property="og:description" content="Sortable feature comparison of AI coding-agent managers: Orca, herdr, T3 Code, Wave, Paseo, Antigravity, Claude Desktop, ChatGPT Desktop and more.">
 <meta property="og:url" content="https://dtiger1889-ops.github.io/agent-deck-comparison/">
 <meta property="og:image" content="https://dtiger1889-ops.github.io/agent-deck-comparison/assets/screenshot.png">
 <meta property="og:image:width" content="1400">
@@ -336,7 +336,7 @@
   <details class="about">
     <summary>About this comparison</summary>
     <p>Built to find where a personal, terminal-native project differs from the field, not as marketing for any one tool.</p>
-    <p><b>Column order.</b> "Most used" shows the five tools with the most GitHub stars on 2026-09-29, plus Google Antigravity and Pantheon. After those come Claude Desktop and the Codex app, then the other open-source tools by stars. Closed-source tools have no public usage numbers, so they follow, ordered by Hacker News posts linking their site: a rough stand-in. Tools not researched yet come last.</p>
+    <p><b>Column order.</b> "Most used" shows the five tools still in development with the most GitHub stars on 2026-09-29, plus Google Antigravity and Pantheon. After those come Claude Desktop and ChatGPT Desktop (which now holds the Codex app), then the other open-source tools by stars; vibe-kanban comes last among them because it announced its shutdown in April 2026. Closed-source tools have no public usage numbers, so they follow, ordered by Hacker News posts linking their site: a rough stand-in. Tools not researched yet come last.</p>
     <p>Cells come from each tool's own docs, sites, source or posts at the dates shown for that tool, and were not re-verified after that pass. <b>Not documented</b> means the tool's own materials don't mention it, which is not the same as a confirmed <b>No</b>. <b>Unknown</b> means the tool wasn't researched that far.</p>
   </details>
   <div class="legend" id="legend"></div>
@@ -404,8 +404,8 @@ let VIS = [];                     // tools currently shown as columns (DATA orde
 let bytoolSortKey = "name";
 let bytoolSortDir = 1;
 let currentView = "matrix";
-// "Most used": the top five by GitHub stars (2026-09-29), plus Google Antigravity and Pantheon.
-const DEFAULT_TOOLS = ["Orca", "herdr", "vibe-kanban", "T3 Code", "Wave Terminal", "Google Antigravity", "Pantheon"];
+// "Most used": the top five by GitHub stars (2026-09-29) among tools still developed, plus Google Antigravity and Pantheon.
+const DEFAULT_TOOLS = ["Orca", "herdr", "T3 Code", "Wave Terminal", "Paseo", "Google Antigravity", "Pantheon"];
 let shownTools = null;            // tool names picked in the Tools chips
 let hiddenSections = new Set();   // sections switched off in the Sections chips
 let collapsed = new Set();        // sections collapsed to their heading
@@ -959,7 +959,7 @@ fetch("data/tools.json")
 // Share: plain share links for each network, copy-link, and the device's own share sheet when it has one.
 (function () {
   const url = "https://dtiger1889-ops.github.io/agent-deck-comparison/";
-  const title = "Agent-manager comparison: Orca, herdr, T3 Code, Antigravity, Claude Desktop, Codex and more, feature by feature";
+  const title = "Agent-manager comparison: Orca, herdr, T3 Code, Paseo, Antigravity, Claude Desktop, ChatGPT Desktop and more, feature by feature";
   const u = encodeURIComponent(url), t = encodeURIComponent(title);
   const links = {
     linkedin: "https://www.linkedin.com/sharing/share-offsite/?url=" + u,

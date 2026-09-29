@@ -353,7 +353,7 @@ kepler = {
 ao = {
     "name": "Agent Orchestrator (AO)", "url": "https://github.com/Untrivial-ai/agent-orchestrator", "category": "agent manager",
     "where_agents_run": "your machine + mobile companion (LAN/Tailscale)",
-    "license": "OSS-ish, ~11k stars", "checked_on": "2026-09-06 (site-verified)",
+    "license": "Apache-2.0, free, ~12.5k stars", "checked_on": "2026-09-06 (site-verified)",
     "source_note": "Site-verified, not installed.",
     "is_authors_own": False,
     "features": {
@@ -386,7 +386,7 @@ ao = {
         "extensibility": c("partial", "Partial"),
         "teams_multiuser": c("partial", "Partial"),
         "voice_input": c("no", "None"),
-        "license_cost": c("info", "Open-ish, roughly 11k stars"),
+        "license_cost": c("info", "Apache-2.0, free (license per GitHub, 2026-09-29)"),
         "app_shell": c("info", "Electron ^33.0.0 (frontend/package.json), plus a separate Go backend"),
         "languages": c("info", "Go ~59%, TypeScript ~38%"),
         "background_process": c("info", "Yes: a separate Go backend process (repo has a distinct backend/ Go module via go.work, apart from the Electron frontend/)"),

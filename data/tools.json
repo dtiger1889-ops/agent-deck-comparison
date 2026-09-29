@@ -352,7 +352,7 @@
           "mark": "unknown"
         },
         "appearance_control": {
-          "value": "Ships its own GPU terminal instead of using the host's",
+          "value": "Has its own built-in terminal, so there is no host terminal to style",
           "mark": "n/a"
         },
         "extensibility": {
@@ -812,7 +812,7 @@
           "mark": "partial"
         },
         "knowledge_base": {
-          "value": "The vault is read only as tasks, not queried as a knowledge base",
+          "value": "Reads the vault only as a task list",
           "mark": "n/a"
         },
         "builtin_editors_browser": {
@@ -996,8 +996,8 @@
           "mark": "yes"
         },
         "account_hotswap": {
-          "value": "Not applicable",
-          "mark": "n/a"
+          "value": "Not in its docs (checked 2026-09-06)",
+          "mark": "undocumented"
         },
         "prompt_scratchpad": {
           "value": "None",
@@ -1008,7 +1008,7 @@
           "mark": "no"
         },
         "appearance_control": {
-          "value": "Not applicable",
+          "value": "Its own app window, not a terminal you style",
           "mark": "n/a"
         },
         "extensibility": {
@@ -1124,8 +1124,8 @@
           "mark": "yes"
         },
         "planner_orchestrator": {
-          "value": "Not applicable",
-          "mark": "n/a"
+          "value": "Not in its feature list (checked 2026-09-06)",
+          "mark": "undocumented"
         },
         "agent_to_agent_messaging": {
           "value": "None",
@@ -1160,8 +1160,8 @@
           "mark": "yes"
         },
         "account_hotswap": {
-          "value": "Not applicable",
-          "mark": "n/a"
+          "value": "Not in its feature list (checked 2026-09-06)",
+          "mark": "undocumented"
         },
         "prompt_scratchpad": {
           "value": "\"Actions\": saved one-click prompts",
@@ -1172,7 +1172,7 @@
           "mark": "yes"
         },
         "appearance_control": {
-          "value": "Not applicable",
+          "value": "Its own app window, not a terminal you style",
           "mark": "n/a"
         },
         "extensibility": {
@@ -1324,8 +1324,8 @@
           "mark": "unknown"
         },
         "account_hotswap": {
-          "value": "Not applicable",
-          "mark": "n/a"
+          "value": "Not in its docs (checked 2026-09-06)",
+          "mark": "undocumented"
         },
         "prompt_scratchpad": {
           "value": "None",
@@ -1336,7 +1336,7 @@
           "mark": "no"
         },
         "appearance_control": {
-          "value": "Not applicable",
+          "value": "Its own app window, not a terminal you style",
           "mark": "n/a"
         },
         "extensibility": {
@@ -3140,7 +3140,7 @@
           "mark": "unknown"
         },
         "remote_ssh": {
-          "value": "It is itself the remote machine",
+          "value": "Hosted service: it already is the remote machine",
           "mark": "n/a"
         },
         "voice_input": {
@@ -3160,7 +3160,7 @@
           "mark": "unknown"
         },
         "background_process": {
-          "value": "It is itself the remote machine; there is no separate local process to report",
+          "value": "Hosted service: nothing runs on your machine",
           "mark": "n/a"
         },
         "download_size": {

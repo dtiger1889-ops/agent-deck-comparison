@@ -115,7 +115,8 @@ features.sort(key=lambda f: FEATURE_ORDER.index(f["key"]))
 def badge_html(cell):
     bg, fg, label = MARK_STYLE[cell["mark"]]
     border = ";border:2px dashed #9a9a9a;padding:3px 7px" if cell["mark"] == "undocumented" else ""
-    return f'<span class="b" style="background:{bg};color:{fg}{border}">{label}</span>'
+    cls = "b nd" if cell["mark"] == "undocumented" else "b"
+    return f'<span class="{cls}" style="background:{bg};color:{fg}{border}">{label}</span>'
 
 rows_html = []
 for f in features:
@@ -150,12 +151,13 @@ html = f"""<!DOCTYPE html>
   h1 {{ font-size: 46px; margin: 0 0 6px; }}
   .sub {{ font-size: 22px; color: #5c5f66; margin: 0 0 4px; }}
   .snap {{ font-size: 20px; color: #2f5fd8; font-weight: 600; margin: 0 0 22px; }}
-  table {{ border-collapse: collapse; width: 100%; background: #fff; border: 1px solid #dcdde1; border-radius: 10px; overflow: hidden; }}
+  table {{ table-layout: fixed; border-collapse: collapse; width: 100%; background: #fff; border: 1px solid #dcdde1; border-radius: 10px; overflow: hidden; }}
   th, td {{ padding: 22px 4px; font-size: 22px; text-align: center; border-bottom: 1px solid #dcdde1; }}
   th {{ background: #eef0f3; font-size: 22px; }}
   tbody th {{ text-align: left; font-size: 21px; font-weight: 600; white-space: nowrap; }}
-  td:first-child, th:first-child {{ text-align: left; padding-left: 16px; width: 260px; }}
+  td:first-child, th:first-child {{ text-align: left; padding-left: 16px; width: 290px; }}
   .b {{ white-space: nowrap; display: inline-block; padding: 5px 11px; border-radius: 999px; font-size: 19px; font-weight: 700; }}
+  td .b.nd {{ white-space: normal; border-radius: 12px; line-height: 1.2; font-size: 17px; padding: 3px 4px !important; }}
   td.plain {{ font-size: 22px; color: #3a3c40; font-weight: 600; }}
   td.plain.small {{ font-size: 18px; line-height: 1.25; padding: 14px 4px; }}
   .key {{ margin-top: 24px; font-size: 19px; color: #5c5f66; line-height: 1.5; }}

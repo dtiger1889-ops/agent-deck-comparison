@@ -73,7 +73,6 @@
   .title-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-bottom: 8px; }
   .gh-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.9rem; font-weight: 600; color: var(--text); text-decoration: none; border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px; background: var(--panel); }
   .gh-link:hover { color: var(--accent); border-color: var(--accent); }
-  .featured-note { margin: 0; font-size: 0.85rem; color: var(--muted); }
   #bytool-table .num { white-space: nowrap; text-align: right; min-width: 7.5rem; }
   .own-star { margin-left: 2px; color: var(--accent); text-decoration: none; font-weight: 700; }
   .title-actions { display: flex; align-items: center; gap: 8px; flex: none; }
@@ -368,7 +367,6 @@
    </div>
   </div>
   <div class="row"><span class="row-label">Tools</span><div class="row-body" id="tool-chips"></div></div>
-    <div class="row"><span class="row-label"></span><div class="row-body"><p class="featured-note">Features: picked for how versatile they are</p></div></div>
   <div class="row more" id="section-row"><span class="row-label">Sections</span><div class="row-body" id="section-chips"></div></div>
   <div class="row more phone-only" id="phone-ff"><span class="row-label">Show tools</span><div class="row-body">
     <select id="ff-feature" aria-label="Feature to filter tools by"></select>
@@ -405,7 +403,7 @@ let VIS = [];                     // tools currently shown as columns (DATA orde
 let bytoolSortKey = "name";
 let bytoolSortDir = 1;
 let currentView = "matrix";
-// "Featured": picked for how versatile they are (owner decision 2026-09-29).
+// The "Featured" default view.
 const DEFAULT_TOOLS = ["Orca", "VelaTerm", "herdr", "Paseo", "Agent Orchestrator (AO)", "Pane", "Pantheon"];
 let shownTools = null;            // tool names picked in the Tools chips
 let hiddenSections = new Set();   // sections switched off in the Sections chips

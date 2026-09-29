@@ -944,8 +944,7 @@ agtx = placeholder("AGTX", "https://github.com/thereal4th/AGTX",
 nimbalyst = placeholder("Nimbalyst", "https://nimbalyst.com", "Listed 2026-09-29, research pending.")
 parallelcode = placeholder("Parallel Code", "https://github.com/johannesjo/parallel-code", "Listed 2026-09-29, research pending.")
 
-# Column order (owner decision 2026-09-29): the "Featured" set first, picked for how versatile they
-# are; then every other researched tool A-Z; then tools not researched yet.
+# Column order: the "Featured" set first, then every other researched tool A-Z, then tools not researched yet.
 FEATURED = [orca, velaterm, herdr, paseo, ao, pane, pantheon]
 PENDING = [agtx, nimbalyst, parallelcode]
 _rest = [antigravity, claudedesktop, codexapp, superset, opencove, ccmanager, agentmanager, micracode,

@@ -422,26 +422,6 @@ opencove = thin(
     "unknown", "Alpha desktop canvas of agent sessions, used here as a visual-design reference; its state-detection mechanism is undocumented.",
 )
 
-wave = thin(
-    "Wave Terminal", "https://www.waveterm.dev", "agent manager", "your machine",
-    "unknown", "Terminal with waiting/done badges built on the same hook events Pantheon uses; project has been quiet since 2026-04.",
-    {"needs_you_signal": c("yes", "Waiting/done badges from the same hook events"),
-     "runs_in_terminal": c("yes", "Yes, it is a terminal")},
-)
-
-vibekanban = thin(
-    "vibe-kanban", "https://github.com/BloopAI/vibe-kanban", "agent manager", "your machine",
-    "unknown", "Used here as a deliberate anti-example: functional but, in the compiler's words, \"boring af.\"",
-    {"session_organization": c("yes", "Kanban board")},
-)
-
-t3code = thin(
-    "T3 Code", "https://github.com/pingdotgg/t3code", "agent manager", "your machine + mobile",
-    "MIT", "Site/discussion pass only, 2026-09-07. All-platform desktop plus mobile; standout feature is switching models mid-conversation.",
-    {"native_mobile_app": c("yes", "Mobile app"),
-     "license_cost": c("info", "MIT")},
-)
-
 superset = thin(
     "Superset", "https://superset.sh", "agent manager", "your machine (macOS, experimental Linux)",
     "Elastic-2.0", "Site/discussion pass only, 2026-09-07. Ships a TypeScript SDK and MCP server so agents can spawn agents.",
@@ -749,6 +729,207 @@ vibetree = {
     },
 }
 
+# ---- Researched 2026-09-29 for the "Most used" default view; sources in project_pantheon/archive/research_raw/2026-09-29-new-agent-managers/ ----
+vibekanban = {
+    "name": "vibe-kanban", "url": "https://github.com/BloopAI/vibe-kanban", "category": "agent manager",
+    "where_agents_run": "your machine (desktop app or a local web server opened in your browser); a self-hosted server you reach through a tunnel; phone or another computer through the browser after pairing",
+    "license": "Apache-2.0, free", "checked_on": "2026-09-29 (repo/docs pass)",
+    "source_note": "Checked against its README, docs/ folder, source code, releases (last stable v0.1.44, 2026-04-24; npx-only v0.1.45 prerelease, 2026-09-19) and the shutdown announcement at vibekanban.com/blog/shutdown. The company announced a sunset on 2026-04-10; the kanban board and hosted issues were retired in v0.1.44 and the project is now community maintained. Not installed or run here.",
+    "is_authors_own": False,
+    "features": {
+        "multi_provider_supervision": c("yes", "Pick a different coding agent per workspace or session and run them side by side; the app reads each agent's output into its own chat view (README and docs, 2026-09-29)"),
+        "harness_count": c("info", "10 per its docs: Claude Code, Codex, GitHub Copilot, Gemini CLI, Amp, Cursor Agent, OpenCode, Droid, Claude Code Router, Qwen Code (docs/supported-coding-agents.mdx, 2026-09-29)"),
+        "needs_you_signal": c("yes", "Sound effects and system notifications when a task finishes, needs attention or errors; approval cards in the chat (docs/settings/general.mdx and source, 2026-09-29)"),
+        "approve_deny_prompt": c("yes", "Tool-permission and plan approvals from the agent appear as cards in the app's chat to approve or deny; wired for Claude Code, Codex, OpenCode, Copilot and the agents it drives through the Agent Client Protocol, such as Gemini and Qwen; unanswered requests time out (docs/workspaces/chat-interface.mdx and crates/executors source, 2026-09-29)"),
+        "cross_provider_delegation": c("partial", "Has sessions with different agents inside one workspace, sharing its files, and an MCP server an agent can use to start another agent's workspace; lacks a view that tracks a hand-off from one agent to another, and sessions do not share conversation context (docs/workspaces/sessions.mdx and docs/integrations/vibe-kanban-mcp-server.mdx, 2026-09-29)"),
+        "always_on_assistant": c("undocumented", "Not in its docs (checked 2026-09-29)"),
+        "conversation_gui_view": c("yes", "Each session is a chat: agent replies rendered as formatted text, tool calls and system messages styled separately, edit and resend, a queue for follow-ups (docs/workspaces/chat-interface.mdx, 2026-09-29)"),
+        "real_terminal": c("partial", "Has an xterm.js terminal in each workspace's sidebar for your own commands; lacks the agent's own terminal, since agents run in the background and are shown only as chat and logs (docs/workspaces/interface.mdx and crates/executors source, 2026-09-29)"),
+        "session_organization": c("yes", "Workspaces (one git worktree and branch each, pinned or archived) holding one or more chat sessions; the kanban board that grouped them was retired in v0.1.44 and now shows only a data-export page (docs and pull request 3387, 2026-09-29)"),
+        "prompt_scratchpad": c("partial", "Has an unsent follow-up message saved as a draft per session, plus a queue that holds a message until the agent finishes; lacks a separate place to keep several prompt drafts (source useSessionMessageEditor.ts and docs/workspaces/chat-interface.mdx, 2026-09-29)"),
+        "saved_prompt_library": c("partial", "Has task tags: reusable text snippets inserted with @ into a task description; lacks context attached to a saved prompt (docs/configuration-customisation/creating-task-tags.mdx, 2026-09-29)"),
+        "builtin_editors_browser": c("yes", "Built-in browser preview of your app with devtools, inspect mode and device emulation, plus a diff viewer with inline comments; files open in your own editor (README and docs, 2026-09-29)"),
+        "appearance_control": c("partial", "Has light and dark themes and an interface language setting; lacks font or terminal font settings in its docs (docs/settings/general.mdx, 2026-09-29)"),
+        "usage_hud": c("partial", "Has a context gauge per session (tokens used of the model's window) and, in Codex sessions, a status command that reads the account's rate limits; lacks Claude plan limits and a running usage display (docs/workspaces/chat-interface.mdx and codex slash_commands.rs, 2026-09-29)"),
+        "burn_rate_forecast": c("no", "No burn rate or time-to-limit; source search for rate-limit handling finds only the Codex status command and a Claude event it ignores (source, 2026-09-29)"),
+        "limit_governor": c("undocumented", "Not in its docs (checked 2026-09-29)"),
+        "account_hotswap": c("undocumented", "Not in its docs (checked 2026-09-29)"),
+        "vault_task_source": c("no", "Tasks came from its own kanban issues (now retired); a source search finds no notes-vault or Obsidian reader (source, 2026-09-29)"),
+        "issue_tracker_pipeline": c("partial", "Has pull request creation with generated descriptions and merge through the GitHub command-line tool, and Azure Repos support; lacks a connection that pulls issues from GitHub, Linear or Jira, and its own issue board was retired in v0.1.44 (docs/integrations and pull request 3387, 2026-09-29)"),
+        "worktree_management": c("yes", "Every workspace gets its own git worktree and branch, with rebase, conflict help, merge and cleanup of old worktrees (docs/workspaces and README, 2026-09-29)"),
+        "planner_orchestrator": c("partial", "Has an MCP server an outside agent can use to split a plan into issues and start a workspace per issue; lacks a built-in planner, and the issue tools depended on the retired hosted projects (docs/integrations/vibe-kanban-mcp-server.mdx and shutdown notice, 2026-09-29)"),
+        "agent_to_agent_messaging": c("yes", "Its MCP server lets an agent start workspaces, create sessions, send a prompt into another session and read its final message (docs/integrations/vibe-kanban-mcp-server.mdx, 2026-09-29)"),
+        "knowledge_base": c("undocumented", "Not in its docs (checked 2026-09-29); per-workspace notes exist for you, and the docs don't say agents can read them"),
+        "native_mobile_app": c("no", "No iOS or Android app in the repo; phone access is through the browser (repo search for mobile app frameworks, 2026-09-29)"),
+        "phone_no_new_app": c("unknown", "Docs describe pairing a phone browser to your computer through cloud.vibekanban.com; the shutdown notice ended hosted services 30 days after 2026-04-10, the site still loads, and whether pairing still works was not tested (docs/remote-access.mdx and shutdown notice, 2026-09-29)"),
+        "remote_ssh": c("partial", "Has running it on a remote server reached through a tunnel, with \"Open in VS Code\" links that connect over SSH; lacks running agents on another machine from your local app (README and docs/settings/general.mdx, 2026-09-29)"),
+        "voice_input": c("no", "No dictation: a source search for speech or voice input in the web app finds nothing (source, 2026-09-29)"),
+        "os": c("info", "Windows, macOS, Linux (x64 and ARM64 installers each); any of them through npx with Node 20.19 or later; other devices through a browser (v0.1.44 release files and npx-cli/package.json, 2026-09-29)"),
+        "app_shell": c("info", "Tauri 2.10.3 desktop app, or a local web server opened in your browser through npx; React 18 interface (Cargo.lock and package.json, 2026-09-29)"),
+        "languages": c("info", "Rust ~50%, TypeScript ~46% (GitHub, 2026-09-29)"),
+        "background_process": c("info", "No separate daemon: its Rust server runs inside the desktop app's process, or is the process you start with npx (crates/tauri-app source, 2026-09-29)"),
+        "download_size": c("info", "v0.1.44: 39 MB Windows x64 installer (56 MB .msi), 51-53 MB mac dmg, 56 MB Linux .deb / 124 MB AppImage, 24 MB npx download (GitHub release, 2026-09-29)"),
+        "ram_vs_claude_desktop": c("info", "Small (estimate: Tauri app on the system web view with its Rust server in the same process)"),
+        "runs_in_terminal": c("no", "Started from a terminal with npx, but the interface is a desktop app or browser page (README, 2026-09-29)"),
+        "license_cost": c("info", "Apache-2.0, free; the paid hosted plans ended with the 2026-04-10 shutdown notice; uses your own agent subscriptions (LICENSE and vibekanban.com/blog/shutdown, 2026-09-29)"),
+        "extensibility": c("partial", "Has an MCP server, per-agent configuration variants and MCP server settings for agents; lacks a plugin system or SDK (docs/integrations and docs/settings, 2026-09-29)"),
+        "teams_multiuser": c("partial", "Had organisations, team members and shared issues in its hosted service; the shutdown notice removed organisations, projects and issues, leaving a local single-user app unless you self-host (docs/cloud and shutdown notice, 2026-09-29)"),
+        "stability_maturity": c("info", "Sunset announced 2026-04-10, now community maintained; last stable v0.1.44 on 2026-04-24, npx-only v0.1.45 prerelease 2026-09-19; repo started 2025-06-14, ~28,200 GitHub stars (GitHub and shutdown notice, 2026-09-29)"),
+    },
+}
+
+t3code = {
+    "name": "T3 Code", "url": "https://github.com/pingdotgg/t3code", "category": "agent manager",
+    "where_agents_run": "your machine + another machine you pair or reach over SSH (Linux or Apple Silicon Mac); phone, browser or another desktop app control it through T3 Connect, Tailscale or a local network",
+    "license": "MIT, free", "checked_on": "2026-09-29 (repo/docs pass)",
+    "source_note": "Checked against its README, docs/ folder, source code at commit 4222485, latest stable release (v0.0.43) and t3.codes. Not installed or run here.",
+    "is_authors_own": False,
+    "features": {
+        "multi_provider_supervision": c("yes", "Runs Claude Code, Codex, Cursor, Grok Build, OpenCode and Google Antigravity threads side by side in one sidebar, using your own logins (README, 2026-09-29)"),
+        "harness_count": c("info", "6: Claude Code, Codex, Cursor, Grok Build, OpenCode, Antigravity (README, 2026-09-29)"),
+        "needs_you_signal": c("yes", "Sidebar status per thread (amber for approval, indigo for a question, sky blue while working), desktop notifications with optional sound and an unread badge; phone push when an agent finishes, fails, needs approval or asks something, which needs T3 Connect (source and docs/user/mobile-notifications.md, 2026-09-29)"),
+        "approve_deny_prompt": c("yes", "Approve or reject requests in the conversation on desktop, web or the phone app; the default mode for new threads is Full access, so prompts appear only in Supervised, Auto-accept edits or Auto mode (docs/user/permission-modes.md and mobile source, 2026-09-29)"),
+        "cross_provider_delegation": c("partial", "Has threads from every provider in one sidebar and can send one prompt to several models at once, each in its own thread and worktree; lacks a documented hand-off of work from one agent to another (docs/user/thread-sidebar.md, 2026-09-29)"),
+        "always_on_assistant": c("undocumented", "Not in its docs (checked 2026-09-29)"),
+        "conversation_gui_view": c("yes", "Threads read as a chat with tool calls you can expand to see the full command and output (docs/user/thread-sidebar.md, 2026-09-29)"),
+        "real_terminal": c("partial", "Has a terminal drawer per thread that opens a shell on the environment's machine, 5,000 lines of scrollback; lacks the agent's own terminal screen, because agents are driven through their programming interfaces (Claude Agent SDK, Codex app server, ACP) rather than a terminal (docs/user/terminal.md and package files, 2026-09-29)"),
+        "session_organization": c("yes", "Projects, then threads in pinned, active, snoozed and settled sections, with an optional git worktree per thread and drag-to-reorder; projects can be grouped across machines (docs/user/thread-sidebar.md, 2026-09-29)"),
+        "prompt_scratchpad": c("yes", "Prompt stash: Ctrl+S (Cmd+S on macOS) saves the current prompt and its attachments for later without sending (docs/user/composer.md, 2026-09-29)"),
+        "saved_prompt_library": c("partial", "Has the prompt stash, which keeps prompts with their attached context, plus the agents' own skills through a $ menu; lacks a named, lasting library, and uploaded files in a stash expire after 24 hours (docs/user/composer.md, 2026-09-29)"),
+        "builtin_editors_browser": c("yes", "File browser with an editor that saves files, a diff viewer, a preview browser that agents can also drive, and an iOS Simulator or Android Emulator panel (docs/user/devices.md and source, 2026-09-29)"),
+        "appearance_control": c("yes", "Built-in and custom themes (VS Code themes import), light and dark modes, and font family and size for interface, code and terminal (docs/user/appearance.md and apps/web/src/appearanceFonts.ts, 2026-09-29)"),
+        "usage_hud": c("yes", "Usage page with tokens and estimated cost per provider from local history, plus subscription limits with reset times for Codex, Claude and others, pooled across accounts and machines (docs/user/usage.md, 2026-09-29)"),
+        "burn_rate_forecast": c("partial", "Has a pace mark per limit window (ahead of pace, on pace, under pace); lacks a predicted time when you will hit the limit (packages/shared/src/usageLimits.ts, 2026-09-29)"),
+        "limit_governor": c("undocumented", "Not in its docs (checked 2026-09-29)"),
+        "account_hotswap": c("yes", "Several Codex or Claude accounts added as separate provider instances and picked from the thread's model picker; switching inside an existing thread only works between accounts that share a config folder (docs/user/providers-codex.md and providers-claude.md, 2026-09-29)"),
+        "vault_task_source": c("no", "Tasks come from prompts you type; a source and docs search found no notes-vault or Obsidian reading (source search, 2026-09-29)"),
+        "issue_tracker_pipeline": c("partial", "Has pull request creation, review, stacking and merging for GitHub, GitLab, Forgejo, Gitea, Bitbucket and Azure DevOps, and auto-settles a thread when its pull request merges; lacks picking up issues from a tracker, with no issue or Jira/Linear code found in the source (docs/user/source-control.md and source search, 2026-09-29)"),
+        "worktree_management": c("yes", "New worktree per thread from the composer, one per model when sending to several; revert can restore files in a worktree (docs/user/thread-sidebar.md and composer.md, 2026-09-29)"),
+        "planner_orchestrator": c("partial", "Has a Plan mode that shows the agent's proposed plan as a card you can copy or download, and an Agents view for an agent's own subagents; lacks splitting one goal across several agents (docs/user/composer.md, thread-sidebar.md and source, 2026-09-29)"),
+        "agent_to_agent_messaging": c("no", "The tools it gives agents cover the preview browser, devices and linking pull requests only; nothing lets one thread message another (apps/server/src/mcp/toolkits, 2026-09-29)"),
+        "knowledge_base": c("undocumented", "Not in its docs (checked 2026-09-29)"),
+        "native_mobile_app": c("yes", "iOS app in the App Store and Android app in Google Play, with home-screen usage widgets and live activity cards (README and docs/user/usage.md, 2026-09-29)"),
+        "phone_no_new_app": c("yes", "Hosted web app at app.t3.codes or a direct pairing link in the phone's browser; needs the server reachable over HTTPS, for example through Tailscale HTTPS or T3 Connect (docs/user/remote-access.md, 2026-09-29)"),
+        "remote_ssh": c("yes", "Desktop-managed SSH: enter a host and it installs or reuses its server there and forwards the port; projects and logins stay on the remote machine (Linux or Apple Silicon Mac) (docs/user/remote-access.md, 2026-09-29)"),
+        "voice_input": c("partial", "Has on-device dictation in the iPhone app (iOS 26 or later); lacks it on desktop, web and Android (docs/user/composer.md and docs/internals/voice-input.md, 2026-09-29)"),
+        "os": c("info", "Windows, macOS, Linux (x64 and ARM64 each); iOS and Android apps; web app in any browser (release files and README, 2026-09-29)"),
+        "app_shell": c("info", "Electron 44.4.2 with a React 19.2.6 interface; the same interface also runs as a web app served by its command-line server (apps/desktop/package.json and apps/web/package.json, 2026-09-29)"),
+        "languages": c("info", "TypeScript ~96%, MDX ~2% (GitHub, 2026-09-29)"),
+        "background_process": c("info", "Yes: the desktop app bundles and starts its own server, which owns agents, terminals and git; the command-line version can install that server as a user service on Linux and macOS (docs/internals/overview.md and docs/user/background-service.md, 2026-09-29)"),
+        "download_size": c("info", "v0.0.43: 209 MB Windows x64 installer, 143-150 MB mac dmg, 125 MB Linux .deb / 158 MB AppImage; command-line server alone 61-73 MB (GitHub release, 2026-09-29)"),
+        "ram_vs_claude_desktop": c("info", "Medium (estimate: Electron app plus a bundled Node server process)"),
+        "runs_in_terminal": c("no", "Own desktop, web and phone apps; the t3 command starts a server and opens the web app rather than showing an interface in the terminal (README, 2026-09-29)"),
+        "license_cost": c("info", "MIT, free, no paid plan listed; uses your own agent subscriptions (LICENSE and t3.codes, 2026-09-29)"),
+        "extensibility": c("no", "No plugin system or SDK in its docs or source; outside additions are limited to custom theme files (docs/user/appearance.md and source search, 2026-09-29)"),
+        "teams_multiuser": c("undocumented", "Not in its docs (checked 2026-09-29); pairing links authorize more devices, not more people"),
+        "stability_maturity": c("info", "v0.0.43 released 2026-09-29 alongside nightly builds, repo started 2026-02-08, ~23,900 GitHub stars; its README says it is very early and to expect bugs (GitHub and README, 2026-09-29)"),
+    },
+}
+
+# Research entry for Wave Terminal (https://www.waveterm.dev), checked 2026-09-29.
+# Shape matches the pane entry in portfolio_repos/agent-deck-comparison/tools/build_data.py.
+# Findings and sources: project_pantheon/archive/research_raw/2026-09-29-new-agent-managers/wave-terminal.md
+wave = {
+    "name": "Wave Terminal", "url": "https://www.waveterm.dev", "category": "agent manager",
+    "where_agents_run": "your machine, plus remote machines over SSH (sessions can keep running there after you disconnect) and WSL",
+    "license": "Apache-2.0, free", "checked_on": "2026-09-29 (repo/docs pass)",
+    "source_note": "Checked against its README, ROADMAP.md, docs/ folder (docs.waveterm.dev source), source code at commit c58bf7f (2026-09-25), latest release (v0.14.5) and waveterm.dev. Not installed or run here.",
+    "is_authors_own": False,
+    "features": {
+        "multi_provider_supervision": c("yes", "Any command-line agent runs in its own terminal block, side by side in tiled tabs; only Claude Code has a documented status setup (README and docs, 2026-09-29)"),
+        "harness_count": c("info", "Any command-line agent; 1 with a documented integration (Claude Code tab badges through its hooks). Its own Wave AI panel is a separate chat assistant, not a coding agent it runs (docs, 2026-09-29)"),
+        "needs_you_signal": c("yes", "Colored badges on the terminal and its tab (waiting on permission, question asked, done) with an optional beep, set by Claude Code hooks you add to your Claude settings file; the terminal bell also lights the tab, and a command can raise a desktop notification (docs: Claude Code page and wsh reference, 2026-09-29)"),
+        "approve_deny_prompt": c("no", "You click into the agent's terminal and answer there; the badge only points you to it. Allow and deny buttons exist only for its own Wave AI panel's file access (docs: Claude Code and Wave AI pages, 2026-09-29)"),
+        "cross_provider_delegation": c("undocumented", "Not in its docs (checked 2026-09-29)"),
+        "always_on_assistant": c("partial", "Has the Wave AI side panel in every window, which reads your terminals and widgets and edits files with your approval; lacks running commands or starting and directing agent sessions, which its README lists as coming soon (README and ROADMAP.md, 2026-09-29)"),
+        "conversation_gui_view": c("no", "Agent sessions show only as terminals; no code reads agent transcripts (source search, 2026-09-29). The only chat view is its own Wave AI panel"),
+        "real_terminal": c("yes", "Each block is a full terminal drawn with xterm.js 6 (package.json and release notes, 2026-09-29)"),
+        "session_organization": c("yes", "Saved workspaces, then tabs (across the top or down the side), then terminal blocks in a drag-and-drop tiled layout; badges roll up from blocks to their tab (docs: workspaces, tabs and release notes, 2026-09-29)"),
+        "prompt_scratchpad": c("undocumented", "Not in its docs (checked 2026-09-29)"),
+        "saved_prompt_library": c("undocumented", "Not in its docs (checked 2026-09-29); custom widgets can launch a saved command, not a saved prompt"),
+        "builtin_editors_browser": c("yes", "Code editor (Monaco), web browser widget, file previews for markdown, images, video, PDFs and CSVs, and a process viewer, all as blocks next to the terminals (README, docs: widgets and package.json, 2026-09-29)"),
+        "appearance_control": c("yes", "Tab themes and backgrounds (including your own images), per-terminal color themes including your own, font size from the menu, and terminal font family through the settings file (docs: customization, 2026-09-29)"),
+        "usage_hud": c("no", "Reads no Claude or Codex usage logs (source search, 2026-09-29); the only limit it shows is its own Wave AI panel's free request allowance"),
+        "burn_rate_forecast": c("no", "No coding-agent usage tracking in its source, so no forecast (source search, 2026-09-29)"),
+        "limit_governor": c("no", "No coding-agent limit handling in its source; its limit code covers only its own Wave AI panel (source search, 2026-09-29)"),
+        "account_hotswap": c("undocumented", "Not in its docs (checked 2026-09-29)"),
+        "vault_task_source": c("undocumented", "Not in its docs (checked 2026-09-29)"),
+        "issue_tracker_pipeline": c("undocumented", "Not in its docs (checked 2026-09-29)"),
+        "worktree_management": c("no", "The word worktree appears nowhere in its source or docs (source search, 2026-09-29)"),
+        "planner_orchestrator": c("undocumented", "Not in its docs (checked 2026-09-29); its roadmap lists letting its AI open new blocks as planned"),
+        "agent_to_agent_messaging": c("partial", "Has a command any terminal can run to read another block's output, and one to open a new block running a command; lacks a way to send input or messages into another session (docs: wsh reference, 2026-09-29)"),
+        "knowledge_base": c("undocumented", "Not in its docs (checked 2026-09-29); its roadmap plans markdown context files for its own Wave AI panel only"),
+        "native_mobile_app": c("no", "Desktop app only; no phone app in the repo or release files (source search and GitHub release, 2026-09-29)"),
+        "phone_no_new_app": c("undocumented", "Not in its docs (checked 2026-09-29)"),
+        "remote_ssh": c("yes", "One-click SSH and WSL connections with terminals, file browsing and editing on the remote machine; durable SSH sessions keep running on the server through disconnects and restarts (README and docs: durable sessions, 2026-09-29)"),
+        "voice_input": c("no", "No speech or dictation code in its source; the only microphone mention is a macOS permission prompt for programs run inside it (source search and release notes, 2026-09-29)"),
+        "os": c("info", "Windows 10 1809+ (x64), macOS 11+ (Intel and Apple Silicon), Linux x64 and ARM64 (AppImage, deb, rpm, pacman, snap); no phone or browser access (README and GitHub release, 2026-09-29)"),
+        "app_shell": c("info", "Electron 41.1.0 with a Go backend (package.json and package-lock.json, 2026-09-29)"),
+        "languages": c("info", "Go ~49%, TypeScript ~43% (GitHub languages, 2026-09-29)"),
+        "background_process": c("info", "Yes: the app starts its own Go server process (wavesrv) next to the window; durable SSH sessions also leave a small manager process on each remote server (source: emain/emain-wavesrv.ts and docs: durable sessions, 2026-09-29)"),
+        "download_size": c("info", "v0.14.5: 156 MB Windows installer (171 MB msi), 190-198 MB mac dmg, 152 MB Linux x64 deb / 196 MB AppImage (GitHub release, 2026-09-29)"),
+        "ram_vs_claude_desktop": c("info", "Medium (estimate: Electron app plus a separate Go server process)"),
+        "runs_in_terminal": c("no", "It is its own terminal app; agents run inside Wave rather than Wave running inside your existing terminal (README, 2026-09-29)"),
+        "license_cost": c("info", "Apache-2.0, free, no account needed; its Wave AI panel has free beta credits with request limits, or your own API keys and local models (LICENSE and README, 2026-09-29)"),
+        "extensibility": c("partial", "Has custom widgets defined in its config files, a scriptable command-line tool (wsh) and your own AI providers; lacks a plugin package system or SDK (docs: custom widgets and wsh reference, 2026-09-29)"),
+        "teams_multiuser": c("undocumented", "Not in its docs (checked 2026-09-29)"),
+        "stability_maturity": c("info", "Repo since 2022, about 22,400 stars; latest release v0.14.5 on 2026-04-16 with none since, though 21 commits landed in the 30 days to 2026-09-29; the Wave AI panel is labeled beta (GitHub and README, 2026-09-29)"),
+    },
+}
+
+# Research entry for the Codex app (OpenAI), checked 2026-09-29.
+# Shape matches the pane / claudedesktop entries in portfolio_repos/agent-deck-comparison/tools/build_data.py.
+# Findings and sources: project_pantheon/archive/research_raw/2026-09-29-new-agent-managers/codex-app.md
+# Note: on 2026-07-09 the standalone Codex app merged into the ChatGPT desktop app; Codex keeps its own view there.
+codexapp = {
+    "name": "Codex app", "url": "https://learn.chatgpt.com/docs/app", "category": "agent manager",
+    "where_agents_run": "your machine (local checkout or a git worktree per chat) + SSH hosts + OpenAI-hosted Codex cloud chats; your phone reaches the desktop through Remote in the ChatGPT mobile app",
+    "license": "Closed source; included in every ChatGPT plan: Free $0, Go $8/mo, Plus $20/mo, Pro $100-500/mo, Business $20/user/mo, Enterprise and Edu by contract",
+    "checked_on": "2026-09-29 (docs pass)",
+    "source_note": "Checked against learn.chatgpt.com (the Codex and ChatGPT desktop app docs that developers.openai.com/codex/app now redirects to), its What's new page, the pricing page, the official download links, and openai/codex GitHub issues for the app shell. Since 2026-07-09 the Codex app ships inside the ChatGPT desktop app. Not installed or run here.",
+    "is_authors_own": False,
+    "features": {
+        "multi_provider_supervision": c("no", "Runs only Codex agents; it can import setup and recent work from Claude Code, Claude Cowork and Cursor, but does not run those agents (import docs, 2026-09-29)"),
+        "harness_count": c("info", "1 (Codex). Models can come from OpenAI or Amazon Bedrock, but the agent is always Codex (import and Bedrock docs, 2026-09-29)"),
+        "needs_you_signal": c("yes", "Desktop notifications for finished turns, permission requests and questions; an Activity view lists chats that are unread, running or waiting on you; an optional floating pet shows Needs input or Blocked (notifications docs, 2026-09-29)"),
+        "approve_deny_prompt": c("yes", "Ask for approval mode shows requests in the chat, and Remote in the ChatGPT mobile app lets you approve requested commands from your phone (permission modes and Codex Remote docs, 2026-09-29)"),
+        "cross_provider_delegation": c("partial", "Has: subagent threads and voice-started tasks show in the same app next to the main chat. Lacks: every hand-off is between Codex agents, not other coding tools (subagents and voice docs, 2026-09-29)"),
+        "always_on_assistant": c("partial", "Has: dots, an always-on cloud agent you can message or call from the same desktop app, Slack or Teams. Lacks: it is rolling out gradually to eligible accounts, and it lives in the ChatGPT side of the app rather than the Codex view (dots docs, 2026-09-29)"),
+        "conversation_gui_view": c("yes", "Every Codex chat is a conversation view with diffs, files and subagent threads shown inline (desktop app and subagents docs, 2026-09-29)"),
+        "real_terminal": c("yes", "Each chat has an integrated terminal scoped to its project or worktree; on Windows you choose PowerShell, WSL or another shell (integrated terminal and Windows app docs, 2026-09-29)"),
+        "session_organization": c("yes", "Projects (one or several folders each) holding chats you can pin, rename, search and archive; each chat runs in the local checkout or its own worktree (projects and worktrees docs, 2026-09-29)"),
+        "prompt_scratchpad": c("partial", "Has a queue of follow-up messages above the composer that you can edit, reorder, send or delete while Codex works; the docs describe no separate drafts area that never sends on its own (prompting docs, 2026-09-29)"),
+        "saved_prompt_library": c("partial", "Has skills (saved instructions you call by name) and scheduled tasks that rerun a saved prompt; the docs describe no plain list of saved prompts (skills and scheduled tasks docs, 2026-09-29)"),
+        "builtin_editors_browser": c("yes", "Built-in browser with page preview and comments, inline editing in diffs, a pull request review view, and previews of generated documents, spreadsheets and PDFs (browser, code review and What's new docs, 2026-09-29)"),
+        "appearance_control": c("yes", "Base theme, accent, background and foreground colors, separate UI and code fonts, font size shortcuts, and shareable custom themes (settings docs, 2026-09-29)"),
+        "usage_hud": c("partial", "Has lifetime and peak token counts and token activity under Profile in the app; lacks plan limits and reset times in the desktop app, which the docs send to a web usage dashboard (settings and pricing docs, 2026-09-29)"),
+        "burn_rate_forecast": c("undocumented", "Not in its docs (checked 2026-09-29)"),
+        "limit_governor": c("undocumented", "Not in its docs (checked 2026-09-29); a turn already running may finish past the limit, and Plus and Pro users can buy credits to continue"),
+        "account_hotswap": c("undocumented", "Not in its docs (checked 2026-09-29); the docs describe only logging out and signing in again"),
+        "vault_task_source": c("undocumented", "Not in its docs (checked 2026-09-29)"),
+        "issue_tracker_pipeline": c("partial", "Has Linear issues assigned to Codex and GitHub pull request reviews, plus a pull request view inside the app; lacks an issue-to-pull-request flow run in the desktop app, since Linear work runs as Codex cloud chats (Linear and code review docs, 2026-09-29)"),
+        "worktree_management": c("yes", "Start any chat in a git worktree, hand it back to the local checkout, and let scheduled tasks run in their own background worktrees; Codex creates and cleans them up (worktrees docs, 2026-09-29)"),
+        "planner_orchestrator": c("yes", "Codex splits independent parts of a task across subagents when asked, shows each subagent thread, and returns their summaries to the main chat; Goal mode keeps work going toward a long objective (subagents and What's new docs, 2026-09-29)"),
+        "agent_to_agent_messaging": c("partial", "Has subagents that report back to their parent chat, and ChatGPT Voice can start, check and steer other chats; lacks documented messaging between two separate chats (subagents and voice docs, 2026-09-29)"),
+        "knowledge_base": c("partial", "Has Memories, a local store Codex draws on across chats, plus AGENTS.md project instructions; lacks a notes store you write to directly, since the docs call Memories a recall layer (Memories docs, 2026-09-29)"),
+        "native_mobile_app": c("yes", "The ChatGPT app for iOS and Android starts, steers, approves and reviews Codex chats running on a connected Mac or Windows PC (Codex Remote and remote connections docs, 2026-09-29)"),
+        "phone_no_new_app": c("no", "Phone access goes through the ChatGPT mobile app; no route through tools you already have is documented (remote connections docs, 2026-09-29)"),
+        "remote_ssh": c("yes", "Adds projects from hosts in your SSH config and runs chats there; the app starts a Codex app server on the remote machine (remote connections docs, 2026-09-29)"),
+        "voice_input": c("yes", "Voice dictation with cleanup and a custom dictionary, plus ChatGPT Voice for spoken conversations on Plus plans and up (voice and What's new docs, 2026-09-29)"),
+        "os": c("info", "macOS (Apple Silicon); Windows (Microsoft Store); Linux preview on Ubuntu 24.04 and 26.04, Fedora 43 and 44, Arch and one other apt-based Linux, x64 and ARM64; phone through the ChatGPT iOS and Android app (desktop app and Linux docs, 2026-09-29)"),
+        "app_shell": c("info", "Electron (Windows error reports in openai/codex issues such as 25671 and 25203, 2026-09-29; OpenAI's docs do not name it)"),
+        "languages": c("n/a", "Closed source: no public repo for the app to measure (checked 2026-09-29); the Rust app server behind it is open source in openai/codex"),
+        "background_process": c("info", "Yes: a Codex app server process runs next to the app; over SSH the app starts one on the remote host (app server and remote connections docs, 2026-09-29)"),
+        "download_size": c("info", "Whole ChatGPT desktop app: 744 MB macOS dmg, 475 MB Linux .deb, 527 MB Linux .rpm; Windows comes from the Microsoft Store with no published size (official download links, 2026-09-29)"),
+        "ram_vs_claude_desktop": c("info", "Medium (estimate: Electron app plus a separate Codex app server process, no virtual machine)"),
+        "runs_in_terminal": c("no", "Its own desktop app window with a terminal inside it; Codex CLI is the separate terminal tool (desktop app docs, 2026-09-29)"),
+        "license_cost": c("info", "Closed source. Included in ChatGPT plans: Free $0, Go $8/mo, Plus $20/mo, Pro $100, $200 or $500/mo, Business $20/user/mo, Enterprise and Edu by contract; extra use through credits or an API key at API rates (pricing and open source docs, 2026-09-29)"),
+        "extensibility": c("yes", "Plugins, skills, MCP servers and lifecycle hooks, plus the open-source app server protocol and Codex SDK (plugins, MCP, hooks and app server docs, 2026-09-29)"),
+        "teams_multiuser": c("yes", "Business, Edu and Enterprise workspaces with admin policies, managed configuration, managed Windows installs and usage analytics (administration and enterprise docs, 2026-09-29)"),
+        "stability_maturity": c("info", "Launched on macOS the week of 2026-02-02 and on Windows the week of 2026-03-02; merged into the ChatGPT desktop app 2026-07-09; Linux app in preview; dots rolling out (What's new and Linux docs, 2026-09-29)"),
+    },
+}
+
 # ---- Listed 2026-09-29, not researched yet: every cell Unknown until a research pass ----
 def placeholder(name, url, note):
     return {
@@ -763,10 +944,14 @@ agtx = placeholder("AGTX", "https://github.com/thereal4th/AGTX",
 nimbalyst = placeholder("Nimbalyst", "https://nimbalyst.com", "Listed 2026-09-29, research pending.")
 parallelcode = placeholder("Parallel Code", "https://github.com/johannesjo/parallel-code", "Listed 2026-09-29, research pending.")
 
-TOOLS = [orca, velaterm, herdr, pantheon, paseo, kepler, ao,
-         antigravity, pane, claudedesktop, agentmanager, vibetree,
-         ccmanager, opencove, wave, vibekanban, t3code, superset, conductor,
-         jenny, micracode, teleclod, oyren,
+# Column order (owner decision 2026-09-29): the "Most used" default first (top five by GitHub stars
+# on 2026-09-29, then Google Antigravity and Pantheon); then Claude Desktop and the Codex app; then the
+# other researched open-source tools by stars; then closed-source tools by Hacker News posts linking
+# their site (a rough stand-in); then tools not researched yet.
+TOOLS = [orca, herdr, vibekanban, t3code, wave, antigravity, pantheon,
+         claudedesktop, codexapp,
+         paseo, superset, ao, opencove, ccmanager, agentmanager, pane, micracode, vibetree, velaterm, jenny,
+         conductor, kepler, teleclod, oyren,
          agtx, nimbalyst, parallelcode]
 
 # Operating systems: release assets / vendor pages as recorded in the source doc and the raw-evidence
@@ -780,7 +965,6 @@ OS = {
     "GitKraken Kepler": c("info", "Windows, macOS, Linux; mobile check-and-answer"),
     "Agent Orchestrator (AO)": c("info", "Windows, macOS, Linux; mobile companion"),
     "CCManager": c("info", "Linux, macOS"),
-    "T3 Code": c("info", "Windows, macOS, Linux; iOS/Android; web"),
     "Superset": c("info", "macOS; Linux experimental"),
     "Conductor": c("info", "macOS only"),
     "Jenny": c("info", "Windows (macOS untested, no Linux)"),

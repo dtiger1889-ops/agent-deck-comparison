@@ -28,7 +28,7 @@ website, or public posts at the date noted for that tool — it has not been ind
 re-verified beyond that single pass. Where a tool's own materials don't state something, the cell
 reads "unknown" rather than a guess.
 
-**Pantheon is the author's own project** ([open source](https://github.com/dtiger1889-ops/pantheon), pre-release, published as-is) and is scored by exactly the same
+**Pantheon is the author's own project** ([open source](https://github.com/dtiger1889-ops/pantheon), pre-release, published as-is) and is held to exactly the same
 rules as every other tool here, including its weak spots (for example: 2 agent harnesses so far,
 no native mobile app, a terminal-multiplexer stability issue still open as of the snapshot date).
 

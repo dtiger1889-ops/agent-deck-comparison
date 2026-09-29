@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Agent-manager comparison</title>
-<meta name="description" content="Sortable feature comparison of AI coding-agent managers: Orca, VelaTerm, herdr, Pantheon, Paseo, Kepler, AO and more.">
+<meta name="description" content="Sortable feature comparison of AI coding-agent managers: Orca, herdr, vibe-kanban, T3 Code, Wave, Antigravity, Claude Desktop, Codex and more.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Agent-manager comparison">
-<meta property="og:description" content="Sortable feature comparison of AI coding-agent managers: Orca, VelaTerm, herdr, Pantheon, Paseo, Kepler, AO and more.">
+<meta property="og:description" content="Sortable feature comparison of AI coding-agent managers: Orca, herdr, vibe-kanban, T3 Code, Wave, Antigravity, Claude Desktop, Codex and more.">
 <meta property="og:url" content="https://dtiger1889-ops.github.io/agent-deck-comparison/">
 <meta property="og:image" content="https://dtiger1889-ops.github.io/agent-deck-comparison/assets/screenshot.png">
 <meta property="og:image:width" content="1400">
@@ -73,6 +73,7 @@
   .title-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-bottom: 8px; }
   .gh-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.9rem; font-weight: 600; color: var(--text); text-decoration: none; border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px; background: var(--panel); }
   .gh-link:hover { color: var(--accent); border-color: var(--accent); }
+  .own-star { margin-left: 2px; color: var(--accent); text-decoration: none; font-weight: 700; }
   .title-actions { display: flex; align-items: center; gap: 8px; flex: none; }
   .share { position: relative; }
   .share-btn { cursor: pointer; font-family: inherit; }
@@ -331,10 +332,11 @@
     </div>
     </div>
   </div>
-  <p class="sub"><span id="n-tools">26</span> tools for running a fleet of coding agents (Claude Code, Codex and others), compared across <span id="n-features">38</span> features. Updated 2026-09-29.</p>
+  <p class="sub"><span id="n-tools">27</span> tools for running a fleet of coding agents (Claude Code, Codex and others), compared across <span id="n-features">38</span> features. Updated 2026-09-29.</p>
   <details class="about">
     <summary>About this comparison</summary>
-    <p>Built to find where a personal, terminal-native project differs from the field, not as marketing for any one tool. Pantheon is the author's own project and is scored by the same rules.</p>
+    <p>Built to find where a personal, terminal-native project differs from the field, not as marketing for any one tool.</p>
+    <p><b>Column order.</b> "Most used" shows the five tools with the most GitHub stars on 2026-09-29, plus Google Antigravity and Pantheon. After those come Claude Desktop and the Codex app, then the other open-source tools by stars. Closed-source tools have no public usage numbers, so they follow, ordered by Hacker News posts linking their site: a rough stand-in. Tools not researched yet come last.</p>
     <p>Cells come from each tool's own docs, sites, source or posts at the dates shown for that tool, and were not re-verified after that pass. <b>Not documented</b> means the tool's own materials don't mention it, which is not the same as a confirmed <b>No</b>. <b>Unknown</b> means the tool wasn't researched that far.</p>
   </details>
   <div class="legend" id="legend"></div>
@@ -382,8 +384,9 @@
 </main>
 
 <footer>
-  Compiled by Daniel Mack (dtiger1889-ops). Pantheon is the author's own project and is scored by the
-  same rules as everything else here.
+  <p id="own-note">* Pantheon is my own work in progress. Read it as a benchmark for what one person can build
+  themselves, useful if you'd rather build your own than use something out of the box.</p>
+  Compiled by Daniel Mack (dtiger1889-ops).
   Page views are counted with GoatCounter: aggregate counts only, no cookies, no ad trackers.
 </footer>
 
@@ -401,7 +404,8 @@ let VIS = [];                     // tools currently shown as columns (DATA orde
 let bytoolSortKey = "name";
 let bytoolSortDir = 1;
 let currentView = "matrix";
-const DEFAULT_TOOLS = ["Orca", "VelaTerm", "herdr", "Pantheon", "Paseo", "GitKraken Kepler", "Agent Orchestrator (AO)"];
+// "Most used": the top five by GitHub stars (2026-09-29), plus Google Antigravity and Pantheon.
+const DEFAULT_TOOLS = ["Orca", "herdr", "vibe-kanban", "T3 Code", "Wave Terminal", "Google Antigravity", "Pantheon"];
 let shownTools = null;            // tool names picked in the Tools chips
 let hiddenSections = new Set();   // sections switched off in the Sections chips
 let collapsed = new Set();        // sections collapsed to their heading
@@ -500,8 +504,10 @@ function toolCellFormatter(cell) {
   if (c.mark === "info") {
     // Fact rows (app shell, languages, sizes): the value is the content, no badge.
     const v = document.createElement("span");
-    v.className = "fact-value";
+    v.className = "fact-value cell-value";   // clamped to 3 lines like every note; click to expand
     v.textContent = c.value || "";
+    v.title = c.value || "";
+    v.addEventListener("click", () => { v.classList.toggle("open"); cell.getRow().normalizeHeight(); });
     wrap.appendChild(v);
     return wrap;
   }
@@ -567,6 +573,13 @@ function toolTitleFormatter(t) {
       d.appendChild(a);
     } else {
       d.textContent = t.name;
+    }
+    if (t.is_authors_own) {
+      const star = document.createElement("a");
+      star.href = "#own-note"; star.className = "own-star"; star.textContent = "*";
+      star.title = "The author's own project: see the note at the bottom";
+      star.addEventListener("click", e => e.stopPropagation());
+      d.appendChild(star);
     }
     const s = document.createElement("span");
     s.className = "sort-hint";
@@ -775,7 +788,7 @@ function renderChips() {
   const allNames = new Set(DATA.tools.map(t => t.name));
   const six = new Set(DEFAULT_TOOLS.filter(n => allNames.has(n)));
   tc.appendChild(seg([
-    { label: "Main " + six.size, on: sameSet(shownTools, six), onClick: () => { shownTools = new Set(six); toolsChanged(); } },
+    { label: "Most used", on: sameSet(shownTools, six), onClick: () => { shownTools = new Set(six); toolsChanged(); } },
     { label: "All " + allNames.size, on: sameSet(shownTools, allNames), onClick: () => { shownTools = new Set(allNames); toolsChanged(); } },
   ]));
   tc.appendChild(sep());
@@ -946,7 +959,7 @@ fetch("data/tools.json")
 // Share: plain share links for each network, copy-link, and the device's own share sheet when it has one.
 (function () {
   const url = "https://dtiger1889-ops.github.io/agent-deck-comparison/";
-  const title = "Agent-manager comparison: Orca, VelaTerm, herdr, Pantheon, Paseo, Kepler, AO and more, feature by feature";
+  const title = "Agent-manager comparison: Orca, herdr, T3 Code, Antigravity, Claude Desktop, Codex and more, feature by feature";
   const u = encodeURIComponent(url), t = encodeURIComponent(title);
   const links = {
     linkedin: "https://www.linkedin.com/sharing/share-offsite/?url=" + u,

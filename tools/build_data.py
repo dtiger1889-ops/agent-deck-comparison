@@ -489,8 +489,8 @@ antigravity = {
     "source_note": "Docs-verified: official docs, changelog, launch blog and download page read; installer sizes and app shell read from the v2.18.1 downloads; not installed or run.",
     "is_authors_own": False,
     "features": {
-        "multi_provider_supervision": c("partial", "Own agent only, on Gemini, Claude or GPT models"),
-        "harness_count": c("info", "1: its own agent, with a model picker"),
+        "multi_provider_supervision": c("yes", "Gemini, Claude or GPT, switched per task"),
+        "harness_count": c("info", "3: Gemini, Claude, GPT"),
         "needs_you_signal": c("yes", "Desktop notification and chime; phone push"),
         "approve_deny_prompt": c("yes", "Approval card in the app or on your phone"),
         "cross_provider_delegation": c("partial", "Subagents show as cards; only its own agents"),
@@ -507,7 +507,7 @@ antigravity = {
         "limit_governor": c("undocumented", "Not in its docs (checked 2026-09-29)"),
         "account_hotswap": c("undocumented", "Not in its docs (checked 2026-09-29)"),
         "vault_task_source": c("undocumented", "Not in its docs (checked 2026-09-29)"),
-        "issue_tracker_pipeline": c("undocumented", "Not in its docs (checked 2026-09-29)"),
+        "issue_tracker_pipeline": c("partial", "Through GitHub's MCP server; no built-in issue-to-PR flow"),
         "worktree_management": c("yes", "Optional new git worktree per conversation"),
         "planner_orchestrator": c("yes", "Splits work into subagents; team mode in preview"),
         "agent_to_agent_messaging": c("experimental", "Preview team mode, through shared artifacts"),
@@ -588,7 +588,7 @@ claudedesktop = {
     "source_note": "Checked against code.claude.com/docs/en/desktop (the Code tab reference), support.claude.com (Cowork, install, voice), and claude.com/pricing. Not installed or run here.",
     "is_authors_own": False,
     "features": {
-        "multi_provider_supervision": c("partial", "Claude Code only; others via community plugins"),
+        "multi_provider_supervision": c("partial", "Claude Code; Codex needs unofficial add-ons"),
         "harness_count": c("info", "1 built in (Claude Code)"),
         "needs_you_signal": c("yes", "Desktop notification; phone push via Dispatch"),
         "approve_deny_prompt": c("yes", "Prompts in the session, pushed to your phone"),
@@ -889,7 +889,7 @@ codexapp = {
     "source_note": "Checked against learn.chatgpt.com (the Codex and ChatGPT desktop app docs that developers.openai.com/codex/app now redirects to), its What's new page, the pricing page, the official download links, and openai/codex GitHub issues for the app shell. Since 2026-07-09 the Codex app ships inside the ChatGPT desktop app. Not installed or run here.",
     "is_authors_own": False,
     "features": {
-        "multi_provider_supervision": c("no", "Codex only; imports setup from other tools"),
+        "multi_provider_supervision": c("no", "Only Codex"),
         "harness_count": c("info", "1 (Codex)"),
         "needs_you_signal": c("yes", "Notifications plus a waiting-on-you activity list"),
         "approve_deny_prompt": c("yes", "Approve in the chat or from the phone app"),

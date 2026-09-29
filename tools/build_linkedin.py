@@ -85,7 +85,7 @@ SHORT_AGENTS = {
     "Pantheon": "2",
     "Paseo": "~39",
     "GitKraken Kepler": "Any (claimed)",
-    "Google Antigravity": "1 (its own)",
+    "Google Antigravity": "Gemini, Claude, GPT",
     "Pane": "Any",
     "Agent Orchestrator (AO)": "25+",
 }

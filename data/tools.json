@@ -1072,11 +1072,11 @@
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Own agent only, on Gemini, Claude or GPT models",
-          "mark": "partial"
+          "value": "Gemini, Claude or GPT, switched per task",
+          "mark": "yes"
         },
         "harness_count": {
-          "value": "1: its own agent, with a model picker",
+          "value": "3: Gemini, Claude, GPT",
           "mark": "info"
         },
         "needs_you_signal": {
@@ -1144,8 +1144,8 @@
           "mark": "undocumented"
         },
         "issue_tracker_pipeline": {
-          "value": "Not in its docs (checked 2026-09-29)",
-          "mark": "undocumented"
+          "value": "Through GitHub's MCP server; no built-in issue-to-PR flow",
+          "mark": "partial"
         },
         "worktree_management": {
           "value": "Optional new git worktree per conversation",
@@ -1400,7 +1400,7 @@
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Claude Code only; others via community plugins",
+          "value": "Claude Code; Codex needs unofficial add-ons",
           "mark": "partial"
         },
         "harness_count": {
@@ -1564,7 +1564,7 @@
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Codex only; imports setup from other tools",
+          "value": "Only Codex",
           "mark": "no"
         },
         "harness_count": {

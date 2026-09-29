@@ -115,7 +115,7 @@ velaterm = {
     "name": "VelaTerm", "url": "https://velaterm.com", "category": "agent manager",
     "where_agents_run": "your machine + remote (SSH), plus browser pairing and a phone app",
     "license": "MIT, v0.2.x, free", "checked_on": "2026-09-28, author's posts only",
-    "source_note": "Not independently verified — every cell comes from two of the developer's own launch posts, not the repo or site.",
+    "source_note": "Not independently verified: every cell comes from two of the developer's own launch posts, not the repo or site.",
     "is_authors_own": False,
     "features": {
         "multi_provider_supervision": c("yes", "8+ named agents (Claude Code, Codex, OpenCode, Copilot, Cursor, Antigravity, Cline, Pi) \"and more\""),

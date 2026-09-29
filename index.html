@@ -331,7 +331,7 @@
     </div>
     </div>
   </div>
-  <p class="sub">Tools for running a fleet of coding agents (Claude Code, Codex and others), compared feature by feature. Snapshot 2026-09-28.</p>
+  <p class="sub"><span id="n-tools">18</span> tools for running a fleet of coding agents (Claude Code, Codex and others), compared across <span id="n-features">38</span> features. Updated 2026-09-29.</p>
   <details class="about">
     <summary>About this comparison</summary>
     <p>Built to find where a personal, terminal-native project differs from the field, not as marketing for any one tool. Pantheon is the author's own project and is scored by the same rules.</p>
@@ -348,6 +348,9 @@
       <button id="btn-matrix" class="active">Feature matrix</button>
       <button id="btn-bytool">By tool</button>
     </div>
+    <div class="view-toggle">
+      <button id="btn-split" aria-pressed="false" title="Only rows where the shown tools split between yes and no">Where they differ most</button>
+    </div>
     <button id="filters-btn" class="phone-only" aria-expanded="false" aria-controls="section-row phone-ff">More filters</button>
     <label class="more">Category
       <select id="filter-category">
@@ -358,7 +361,6 @@
     </label>
     <input type="text" id="filter-search" class="more" placeholder="Filter features…">
     <label class="more"><input type="checkbox" id="filter-hide-unknown"> Hide unknown-only rows</label>
-    <label class="more"><input type="checkbox" id="filter-diff"> Only rows where tools differ</label>
     <label class="more"><input type="checkbox" id="compact"> Compact (badges only)</label>
    </div>
   </div>
@@ -449,16 +451,27 @@ function visibleTools() {
     && Object.entries(featFilters).every(([k, o]) => passes(t, k, o)));
 }
 
+// How evenly the shown tools split on a row: min(yes side, no side), partial counting half, unknowns
+// left out. Fact rows score by how many different types they show. Same rule as the share image.
+let splitOnly = false;
+function splitScore(f) {
+  const cells = VIS.map(t => t.features[f.key]);
+  if (cells.some(c => c.mark === "info")) {
+    const kinds = new Set(cells.filter(c => c.mark !== "unknown").map(c => category(f.key, c)));
+    return kinds.size >= 3 ? 2 : kinds.size - 1;
+  }
+  const known = cells.filter(c => !["unknown", "undocumented", "n/a"].includes(c.mark));
+  const yes = known.reduce((n, c) => n + (c.mark === "yes" ? 1 : (c.mark === "no" ? 0 : 0.5)), 0);
+  return Math.min(yes, known.length - yes);
+}
+
 // Does a feature row pass the row filters (section chips, search, diff-only, unknown-only)?
 function rowPasses(f) {
   const q = document.getElementById("filter-search").value.trim().toLowerCase();
   const hideUnknown = document.getElementById("filter-hide-unknown").checked;
-  const diffOnly = document.getElementById("filter-diff").checked;
+  const diffOnly = splitOnly;
   if (hiddenSections.has(f.group)) return false;
-  if (diffOnly && VIS.length > 1) {
-    const marks = new Set(VIS.map(t => t.features[f.key].mark + "|" + (t.features[f.key].value || "")));
-    if (marks.size === 1) return false;
-  }
+  if (diffOnly && VIS.length > 1 && splitScore(f) < (VIS.length >= 4 ? 2 : 1)) return false;
   if (q && !(f.label.toLowerCase().includes(q) || f.description.toLowerCase().includes(q))) return false;
   if (hideUnknown && VIS.every(t => t.features[f.key].mark === "unknown")) return false;
   return true;
@@ -893,7 +906,12 @@ document.getElementById("btn-bytool").addEventListener("click", () => setView("b
 document.getElementById("filter-category").addEventListener("change", () => { applyMatrix({ clearSort: true }); renderByTool(); renderActiveFilters(); });
 document.getElementById("filter-search").addEventListener("input", () => applyMatrix());
 document.getElementById("filter-hide-unknown").addEventListener("change", () => applyMatrix());
-document.getElementById("filter-diff").addEventListener("change", () => applyMatrix());
+document.getElementById("btn-split").addEventListener("click", e => {
+  splitOnly = !splitOnly;
+  e.currentTarget.classList.toggle("active", splitOnly);
+  e.currentTarget.setAttribute("aria-pressed", String(splitOnly));
+  applyMatrix();
+});
 document.getElementById("compact").addEventListener("change", e => {
   document.body.classList.toggle("compact", e.target.checked);
   applyMatrix({ reformat: true });   // row heights are measured once; re-measure them
@@ -903,9 +921,18 @@ fetch("data/tools.json")
   .then(r => r.json())
   .then(data => {
     DATA = data;
+    document.getElementById("n-tools").textContent = data.tools.length;
+    document.getElementById("n-features").textContent = data.features.length;
     shownTools = new Set(DEFAULT_TOOLS.filter(n => data.tools.some(t => t.name === n)));
     renderLegend();
     renderChips();
+    // ?view=differ opens straight into "Where they differ most" (a link to share). Set before the
+    // table is built: filtering a Tabulator table before its tableBuilt event leaves it blank.
+    if (new URLSearchParams(location.search).get("view") === "differ") {
+      splitOnly = true;
+      const b = document.getElementById("btn-split");
+      b.classList.add("active"); b.setAttribute("aria-pressed", "true");
+    }
     buildMatrix();
     renderByTool();
     renderPhoneFilter();

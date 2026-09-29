@@ -23,7 +23,7 @@ down to a 390px-wide phone screen with light/dark mode following the OS setting.
 
 ## Snapshot and verification caveat
 
-**This is a snapshot as of 2026-09-28.** Every cell comes from each tool's own documentation,
+**Last updated 2026-09-29.** Every cell comes from each tool's own documentation,
 website, or public posts at the date noted for that tool — it has not been independently
 re-verified beyond that single pass. Where a tool's own materials don't state something, the cell
 reads "unknown" rather than a guess.

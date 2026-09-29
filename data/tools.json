@@ -22,8 +22,8 @@
     },
     {
       "key": "approve_deny_prompt",
-      "label": "Answer permission prompts",
-      "description": "Approve or deny an agent's permission request from the manager.",
+      "label": "Answer \"Allow?\" prompts from the manager",
+      "description": "When an agent stops to ask permission (run this command? edit this file?), you can allow or deny it from the manager or your phone instead of opening that agent's own window.",
       "group": "Agents & supervision"
     },
     {

@@ -21,7 +21,7 @@ FEATURES = [
     ("multi_provider_supervision", "Runs more than one kind of agent", "Can drive more than one coding agent (Claude Code, Codex and so on) side by side.", G_AGENTS),
     ("harness_count", "Coding agents supported", "How many different coding agents it can run, per its own docs.", G_AGENTS),
     ("needs_you_signal", "Alerts when you're needed", "How it tells you an agent is waiting on you.", G_AGENTS),
-    ("approve_deny_prompt", "Answer permission prompts", "Approve or deny an agent's permission request from the manager.", G_AGENTS),
+    ("approve_deny_prompt", "Answer \"Allow?\" prompts from the manager", "When an agent stops to ask permission (run this command? edit this file?), you can allow or deny it from the manager or your phone instead of opening that agent's own window.", G_AGENTS),
     ("cross_provider_delegation", "Hand-offs between agents in one view", "Work passed from one agent to another shows up in the same place.", G_AGENTS),
     ("always_on_assistant", "Always-on assistant", "A standing assistant session you can reach any time.", G_AGENTS),
     ("conversation_gui_view", "Chat view of a session", "Read a session as a conversation instead of raw terminal text.", G_SESSIONS),

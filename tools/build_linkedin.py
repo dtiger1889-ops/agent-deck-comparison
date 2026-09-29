@@ -41,7 +41,7 @@ if SET == "2":
     ]
     SHORT_LABEL = {
         "harness_count": "Coding agents supported",
-        "approve_deny_prompt": "Approve/deny prompts",
+        "approve_deny_prompt": "Answer \"Allow?\" asks",
         "needs_you_signal": "Alerts when needed",
         "issue_tracker_pipeline": "Issues through to PRs",
         "worktree_management": "Manages worktrees",

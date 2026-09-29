@@ -472,7 +472,7 @@
           "mark": "yes"
         },
         "agent_to_agent_messaging": {
-          "value": "Best in this table: search another session's conversation, ask about it, or message/steer a running session, across providers",
+          "value": "Search another session's conversation, ask about it, or message/steer a running session, across providers",
           "mark": "yes"
         },
         "cross_provider_delegation": {
@@ -924,7 +924,7 @@
           "mark": "yes"
         },
         "conversation_gui_view": {
-          "value": "Best in this table",
+          "value": "Shows messages, reasoning and tool calls as a readable timeline (changelog and docs, 2026-09-29)",
           "mark": "yes"
         },
         "real_terminal": {
@@ -952,7 +952,7 @@
           "mark": "no"
         },
         "issue_tracker_pipeline": {
-          "value": "Partial",
+          "value": "Mention its bot on a GitHub issue and an agent works it and can open a PR; GitHub only, no Jira, Linear or GitLab (Paseo Hub, 2026-09-29)",
           "mark": "partial"
         },
         "worktree_management": {
@@ -984,7 +984,7 @@
           "mark": "unknown"
         },
         "native_mobile_app": {
-          "value": "Best in this table: celebrated mobile experience across iOS/Android",
+          "value": "Native iOS and Android apps",
           "mark": "yes"
         },
         "phone_no_new_app": {
@@ -1116,7 +1116,7 @@
           "mark": "no"
         },
         "issue_tracker_pipeline": {
-          "value": "Best in this table: Jira, Trello, GitHub, GitLab Issues, Linear",
+          "value": "Jira, Trello, GitHub, GitLab Issues, Linear",
           "mark": "yes"
         },
         "worktree_management": {
@@ -1168,7 +1168,7 @@
           "mark": "partial"
         },
         "saved_prompt_library": {
-          "value": "Best in this table: Actions come with issue, diff and repo state pre-attached",
+          "value": "Actions come with issue, diff and repo state pre-attached",
           "mark": "yes"
         },
         "appearance_control": {
@@ -1344,8 +1344,8 @@
           "mark": "partial"
         },
         "teams_multiuser": {
-          "value": "Partial",
-          "mark": "partial"
+          "value": "Organizations and sharing are built for AO Cloud, which is waitlist-only (site and repo, 2026-09-29)",
+          "mark": "planned"
         },
         "voice_input": {
           "value": "None",

@@ -210,7 +210,7 @@ pantheon = {
     "name": "Pantheon", "url": "https://github.com/dtiger1889-ops/pantheon", "category": "agent manager",
     "where_agents_run": "your machine (terminal-native, tmux-hosted; phone reaches it over an existing SSH tunnel)",
     "license": "MIT, free, your own subscriptions", "checked_on": "2026-09-28 (author's own build, cells refreshed for the 2026-09-22..27 builds)",
-    "source_note": "Author's own project (open source, pre-release, published as-is). Scored by the same rules as every other row here, including its weak spots.",
+    "source_note": "Author's own project (open source, pre-release, published as-is). Held to the same rules as every other tool here, weak spots included.",
     "is_authors_own": True,
     "features": {
         "multi_provider_supervision": c("yes", "Hooks-based"),

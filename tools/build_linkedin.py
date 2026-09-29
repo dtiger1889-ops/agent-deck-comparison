@@ -53,7 +53,9 @@ if SET == "2":
         "app_shell": "App shell",
         "license_cost": "License",
     }
-    SUBTITLE = "Seven AI coding-agent managers, the ten features where they differ most"
+    SUBTITLE = "7 of 20+ tools and 35+ features, the ten where they differ most"
+    # Paseo and Kepler swapped out for Antigravity and Pane (owner request, 2026-09-29).
+    TOOL_ORDER = ["Orca", "VelaTerm", "herdr", "Pantheon", "Google Antigravity", "Pane", "Agent Orchestrator (AO)"]
     OUT_NAME = "share-2.html"
 
 # Short text for the text rows, condensed from each cell in data/tools.json.
@@ -61,6 +63,7 @@ TEXT_ROWS = {
     "phone_access": {
         "Orca": "Own app (beta)", "VelaTerm": "Own app or browser", "herdr": "Any SSH app",
         "Pantheon": "Any SSH app", "Paseo": "Own app", "GitKraken Kepler": "Own app (limited)",
+        "Google Antigravity": "Any browser", "Pane": "Browser; app in beta",
         "Agent Orchestrator (AO)": "Own app",
     },
     "os": {
@@ -71,6 +74,7 @@ TEXT_ROWS = {
     "license_cost": {
         "Orca": "Free (MIT)", "VelaTerm": "Free (MIT)", "herdr": "Free (Apache)", "Pantheon": "Free (MIT)",
         "Paseo": "Free (Apache)", "GitKraken Kepler": "Paid, free tier", "Agent Orchestrator (AO)": "Free (Apache)",
+        "Google Antigravity": "Free tier, paid plans", "Pane": "Free (AGPL)",
     },
 }
 
@@ -81,9 +85,11 @@ SHORT_AGENTS = {
     "Pantheon": "2",
     "Paseo": "~39",
     "GitKraken Kepler": "Any (claimed)",
+    "Google Antigravity": "1 (its own)",
+    "Pane": "Any",
     "Agent Orchestrator (AO)": "25+",
 }
-DISPLAY_NAME = {"Agent Orchestrator (AO)": "AO", "GitKraken Kepler": "Kepler"}
+DISPLAY_NAME = {"Agent Orchestrator (AO)": "AO", "GitKraken Kepler": "Kepler", "Google Antigravity": "Antigravity"}
 SHORT_SHELL = {
     "Orca": "Electron",
     "VelaTerm": "Tauri 2",
@@ -91,6 +97,8 @@ SHORT_SHELL = {
     "Pantheon": "Terminal UI",
     "Paseo": "Electron",
     "GitKraken Kepler": "Unknown",
+    "Google Antigravity": "Electron",
+    "Pane": "Electron",
     "Agent Orchestrator (AO)": "Electron",
 }
 
@@ -153,8 +161,8 @@ html = f"""<!DOCTYPE html>
   table {{ border-collapse: collapse; width: 100%; background: #fff; border: 1px solid #dcdde1; border-radius: 10px; overflow: hidden; }}
   th, td {{ padding: 22px 4px; font-size: 22px; text-align: center; border-bottom: 1px solid #dcdde1; }}
   th {{ background: #eef0f3; font-size: 22px; }}
-  tbody th {{ text-align: left; font-size: 21px; font-weight: 600; white-space: nowrap; }}
-  td:first-child, th:first-child {{ text-align: left; padding-left: 16px; width: 260px; }}
+  tbody th {{ text-align: left; font-size: 21px; font-weight: 600; line-height: 1.25; }}
+  td:first-child, th:first-child {{ text-align: left; padding-left: 16px; width: 210px; }}
   .b {{ white-space: nowrap; display: inline-block; padding: 5px 11px; border-radius: 999px; font-size: 19px; font-weight: 700; }}
   td.plain {{ font-size: 22px; color: #3a3c40; font-weight: 600; }}
   td.plain.small {{ font-size: 18px; line-height: 1.25; padding: 14px 4px; }}
@@ -166,7 +174,7 @@ html = f"""<!DOCTYPE html>
 <body>
   <h1>Agent-manager comparison</h1>
   <p class="sub">{SUBTITLE}</p>
-  <p class="snap">Snapshot 2026-09-28 &middot; not re-verified beyond each tool's own docs/posts</p>
+  <p class="snap">Snapshot {DATA["snapshot_date"]} &middot; not re-verified beyond each tool's own docs/posts</p>
   <table>
     <thead><tr><th>Feature<span class="wm"><svg class="gh" viewBox="0 0 16 16" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.37A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>dtiger1889-ops</span></th>{header_cells}</tr></thead>
     <tbody>{''.join(rows_html)}</tbody>

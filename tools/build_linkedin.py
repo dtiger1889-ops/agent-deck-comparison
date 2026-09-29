@@ -172,7 +172,7 @@ html = f"""<!DOCTYPE html>
   .footer {{ margin-top: 18px; font-size: 21px; line-height: 1.5; color: #8a8a8a; }}
 </style></head>
 <body>
-  <h1>Agent-manager comparison</h1>
+  <h1>Agent manager comparison</h1>
   <p class="sub">{SUBTITLE}</p>
   <p class="snap">Snapshot {DATA["snapshot_date"]}. Not re-verified beyond each tool's own docs or posts.</p>
   <table>

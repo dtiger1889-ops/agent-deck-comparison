@@ -352,8 +352,8 @@
           "mark": "unknown"
         },
         "appearance_control": {
-          "value": "Has its own built-in terminal, so there is no host terminal to style",
-          "mark": "n/a"
+          "value": "Terminal font, theme, cursor and padding; imports Ghostty and Warp themes (docs, 2026-09-29)",
+          "mark": "yes"
         },
         "extensibility": {
           "value": "CLI supports \"any agent\"",
@@ -1008,8 +1008,8 @@
           "mark": "no"
         },
         "appearance_control": {
-          "value": "Its own app window, not a terminal you style",
-          "mark": "n/a"
+          "value": "App theme, interface and code fonts, text sizes, content width (GitHub, 2026-09-29)",
+          "mark": "yes"
         },
         "extensibility": {
           "value": "Best in this table: MCP server, CLI and TypeScript SDK for automation",
@@ -1172,8 +1172,8 @@
           "mark": "yes"
         },
         "appearance_control": {
-          "value": "Its own app window, not a terminal you style",
-          "mark": "n/a"
+          "value": "Two themes, dark/light/system, terminal font and spacing (help docs, 2026-09-29)",
+          "mark": "yes"
         },
         "extensibility": {
           "value": "Partial",
@@ -1336,8 +1336,8 @@
           "mark": "no"
         },
         "appearance_control": {
-          "value": "Its own app window, not a terminal you style",
-          "mark": "n/a"
+          "value": "Light/dark and named color themes; no font setting found (source, 2026-09-29)",
+          "mark": "partial"
         },
         "extensibility": {
           "value": "Partial",

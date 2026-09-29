@@ -917,7 +917,7 @@ document.getElementById("compact").addEventListener("change", e => {
   applyMatrix({ reformat: true });   // row heights are measured once; re-measure them
 });
 
-fetch("data/tools.json", { cache: "no-cache" })  // revalidate so a data update shows on the next load
+fetch("data/tools.json")
   .then(r => r.json())
   .then(data => {
     DATA = data;

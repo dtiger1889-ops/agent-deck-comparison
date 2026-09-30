@@ -1,65 +1,38 @@
 #!/usr/bin/env python3
-"""Generates assets/linkedin-agent-managers.html: a standalone 1080x1350 page
-with tools.json data inlined, for headless screenshotting. Agent managers
-only, a curated feature subset."""
+"""Generates assets/share-2.html: a standalone 1080x1350 page with tools.json data
+inlined, screenshotted to assets/share-2-agent-managers.png, the one share image.
+Agent managers only, ten rows where the seven tools differ most."""
 import json
 import os
-import sys
-
-# --set 2 renders the second share image (the rows most people choose a tool on);
-# the default is the original LinkedIn image.
-SET = "2" if "--set" in sys.argv and sys.argv[sys.argv.index("--set") + 1] == "2" else "1"
 
 here = os.path.dirname(os.path.abspath(__file__))
 with open(os.path.join(here, "..", "data", "tools.json"), encoding="utf-8") as f:
     DATA = json.load(f)
 
-TOOL_ORDER = ["Orca", "VelaTerm", "herdr", "Pantheon", "Paseo", "GitKraken Kepler", "Agent Orchestrator (AO)"]
 # Rows are the ones people choose a tool on AND where these seven tools split (some yes, some no).
-# A row where nearly every tool reads No or Not documented tells a reader nothing; re-pick
-# rows whenever the data changes (owner correction, 2026-09-30).
+# A row where nearly every tool reads No or Not documented tells a reader nothing; re-pick rows
+# whenever the data changes (owner correction, 2026-09-30). This is the only share image.
 FEATURE_ORDER = [
-    "harness_count", "app_shell", "usage_hud", "approve_deny_prompt",
-    "planner_orchestrator", "issue_tracker_pipeline", "remote_ssh",
-    "native_mobile_app", "voice_input", "runs_in_terminal",
+    "harness_count", "usage_hud", "planner_orchestrator", "phone_access",
+    "agent_to_agent_messaging", "conversation_gui_view", "issue_tracker_pipeline",
+    "extensibility", "app_shell", "license_cost",
 ]
 SHORT_LABEL = {
     "harness_count": "Coding agents supported",
-    "app_shell": "App shell",
     "usage_hud": "Shows usage limits",
-    "approve_deny_prompt": "Answer \"Allow?\" prompts",
-    "planner_orchestrator": "Splits the work",
+    "planner_orchestrator": "Splits a goal into tasks",
+    "phone_access": "Phone access",
+    "agent_to_agent_messaging": "Agents message each other",
+    "conversation_gui_view": "Read sessions as chat",
     "issue_tracker_pipeline": "GitHub/Jira issues to PRs",
-    "remote_ssh": "Remote machines (SSH)",
-    "voice_input": "Voice input",
-    "native_mobile_app": "Phone app",
-    "runs_in_terminal": "Runs in your terminal",
+    "extensibility": "Plugins / SDK",
+    "app_shell": "App shell",
+    "license_cost": "License",
 }
-SUBTITLE = "Seven AI coding-agent managers, ten features that matter most"
-OUT_NAME = "linkedin.html"
-if SET == "2":
-    # Rows chosen where the seven tools split most (yes on some, no on others), 2026-09-29.
-    FEATURE_ORDER = [
-        "harness_count", "usage_hud", "planner_orchestrator", "phone_access",
-        "agent_to_agent_messaging", "conversation_gui_view", "issue_tracker_pipeline",
-        "extensibility", "app_shell", "license_cost",
-    ]
-    SHORT_LABEL = {
-        "harness_count": "Coding agents supported",
-        "usage_hud": "Shows usage limits",
-        "planner_orchestrator": "Splits a goal into tasks",
-        "phone_access": "Phone access",
-        "agent_to_agent_messaging": "Agents message each other",
-        "conversation_gui_view": "Read sessions as chat",
-        "issue_tracker_pipeline": "GitHub/Jira issues to PRs",
-        "extensibility": "Plugins / SDK",
-        "app_shell": "App shell",
-        "license_cost": "License",
-    }
-    SUBTITLE = "7 of 20+ tools and 35+ features, the ten where they differ most"
-    # Paseo and Kepler swapped out for Antigravity and Pane (owner request, 2026-09-29).
-    TOOL_ORDER = ["Orca", "VelaTerm", "herdr", "Pantheon", "Google Antigravity", "Pane", "Agent Orchestrator (AO)"]
-    OUT_NAME = "share-2.html"
+SUBTITLE = "7 of 20+ tools and 35+ features, the ten where they differ most"
+# Paseo and Kepler swapped out for Antigravity and Pane (owner request, 2026-09-29).
+TOOL_ORDER = ["Orca", "VelaTerm", "herdr", "Pantheon", "Google Antigravity", "Pane", "Agent Orchestrator (AO)"]
+OUT_NAME = "share-2.html"
 
 # Short text for the text rows, condensed from each cell in data/tools.json.
 TEXT_ROWS = {

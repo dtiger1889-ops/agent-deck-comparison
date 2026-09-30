@@ -1541,6 +1541,16 @@ out = {
     "tools": TOOLS,
 }
 
+# A published chart has no Unknown cells: research every cell before publishing (owner correction,
+# 2026-09-30). Pass --allow-unknown only for a local draft that will not be pushed.
+import sys
+_unknown = [(t["name"], k) for t in TOOLS for k, v in t["features"].items() if v["mark"] == "unknown"]
+if _unknown and "--allow-unknown" not in sys.argv:
+    print(f"REFUSED: {len(_unknown)} Unknown cell(s); research them first:")
+    for name, key in _unknown:
+        print(f"  {name}: {key}")
+    sys.exit(1)
+
 here = os.path.dirname(os.path.abspath(__file__))
 out_path = os.path.join(here, "..", "data", "tools.json")
 with open(out_path, "w", encoding="utf-8") as f:

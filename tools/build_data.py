@@ -930,6 +930,55 @@ codexapp = {
     },
 }
 
+ccc = {
+    "name": "Claude Command Center", "url": "https://github.com/amirfish1/claude-command-center", "category": "agent manager",
+    "where_agents_run": "your machine, plus other machines you pair over SSH; phone or any browser on your own network (Tailscale)",
+    "license": "Source-available: free for non-commercial use, commercial use needs permission (MIT before 2026-07-28)",
+    "checked_on": "2026-09-30 (repo/docs pass)",
+    "source_note": "Checked against its README, docs/ folder, source code and latest release (v5.35.0). Not installed or run here.",
+    "is_authors_own": False,
+    "features": {
+        "multi_provider_supervision": c("yes", "Claude Code, Codex, Cursor and more on one board"),
+        "harness_count": c("info", "8, plus 3 more read-only"),
+        "needs_you_signal": c("yes", "Needs-you flag on each session row"),
+        "approve_deny_prompt": c("yes", "Claude Code prompts answered in the dashboard"),
+        "cross_provider_delegation": c("yes", "Spawns and queues to any engine, on one board"),
+        "always_on_assistant": c("undocumented", "Not in its docs (checked 2026-09-30)"),
+        "conversation_gui_view": c("yes", "Transcript view, two side by side"),
+        "real_terminal": c("partial", "Jumps to the session's terminal, macOS only"),
+        "session_organization": c("yes", "List, kanban board, nested groups, project tree"),
+        "prompt_scratchpad": c("undocumented", "Not in its docs (checked 2026-09-30)"),
+        "saved_prompt_library": c("yes", "Template gallery for new-session prompts"),
+        "builtin_editors_browser": c("undocumented", "Not in its docs (checked 2026-09-30)"),
+        "appearance_control": c("yes", "Light, dark or system; text size; accent colors"),
+        "usage_hud": c("yes", "Plan limits per engine, cost per session"),
+        "burn_rate_forecast": c("yes", "Pace against your plan limits, per engine"),
+        "limit_governor": c("partial", "Resumes after a limit stop; no pause before it"),
+        "account_hotswap": c("partial", "API key profiles per spawn; not logins"),
+        "vault_task_source": c("partial", "Reads a markdown strategy board; no vault"),
+        "issue_tracker_pipeline": c("partial", "GitHub issue to session to close; no PR step"),
+        "worktree_management": c("yes", "Optional new worktree per spawn"),
+        "planner_orchestrator": c("yes", "Turns a plan into queue tickets for workers"),
+        "agent_to_agent_messaging": c("yes", "Group chats and ask-a-sibling between sessions"),
+        "knowledge_base": c("yes", "Session history search and shared learnings files"),
+        "native_mobile_app": c("no", "Phone browser only"),
+        "phone_no_new_app": c("yes", "Phone browser over Tailscale, PIN protected"),
+        "remote_ssh": c("yes", "Paired machines over SSH, one board"),
+        "voice_input": c("yes", "Browser dictation"),
+        "os": c("info", "macOS, Linux, Windows (foreground only); any browser"),
+        "app_shell": c("info", "Browser UI on a local Python server; Mac app"),
+        "languages": c("info", "Python ~60%, JavaScript ~28%"),
+        "background_process": c("info", "Yes: local server, worker, queue daemon"),
+        "download_size": c("info", "1.2 MB macOS app (fetches source on first run)"),
+        "ram_vs_claude_desktop": c("info", "Small (estimate: Python server plus a browser tab)"),
+        "runs_in_terminal": c("no", "Browser dashboard"),
+        "license_cost": c("info", "Source-available; free for non-commercial use"),
+        "extensibility": c("yes", "HTTP API, command-line tool, skills, VS Code extension"),
+        "teams_multiuser": c("no", "Single-user local tool by design"),
+        "stability_maturity": c("info", "v5.35.0, started April 2026, frequent releases"),
+    },
+}
+
 # ---- Listed 2026-09-29, not researched yet: every cell Unknown until a research pass ----
 def placeholder(name, url, note):
     return {
@@ -948,7 +997,7 @@ parallelcode = placeholder("Parallel Code", "https://github.com/johannesjo/paral
 FEATURED = [orca, velaterm, herdr, paseo, ao, pane, pantheon]
 PENDING = [agtx, nimbalyst, parallelcode]
 _rest = [antigravity, claudedesktop, codexapp, superset, opencove, ccmanager, agentmanager, micracode,
-         vibetree, jenny, vibekanban, conductor, kepler, teleclod, oyren, t3code, wave]
+         vibetree, jenny, vibekanban, ccc, conductor, kepler, teleclod, oyren, t3code, wave]
 TOOLS = FEATURED + sorted(_rest, key=lambda t: t["name"].lower()) + PENDING
 
 # GitHub stars, read from the GitHub API on 2026-09-29. None = closed source, no public repo.
@@ -956,7 +1005,7 @@ STARS = {
     "Orca": 81580, "herdr": 41461, "vibe-kanban": 28221, "T3 Code": 23911, "Wave Terminal": 22388,
     "Paseo": 19013, "Superset": 14740, "Agent Orchestrator (AO)": 12530, "Nimbalyst": 1803,
     "OpenCove": 1600, "CCManager": 1256, "Parallel Code": 1026, "agent-manager": 540, "Pane": 497,
-    "micracode": 289, "VibeTree": 267, "VelaTerm": 230, "Jenny": 47, "AGTX": 0, "Pantheon": 0,
+    "micracode": 289, "VibeTree": 267, "Claude Command Center": 175, "VelaTerm": 230, "Jenny": 47, "AGTX": 0, "Pantheon": 0,
 }
 for t in TOOLS:
     t["github_stars"] = STARS.get(t["name"])

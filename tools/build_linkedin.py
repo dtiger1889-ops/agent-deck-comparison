@@ -93,8 +93,8 @@ DISPLAY_NAME = {"Agent Orchestrator (AO)": "AO", "GitKraken Kepler": "Kepler", "
 SHORT_SHELL = {
     "Orca": "Electron",
     "VelaTerm": "Tauri 2",
-    "herdr": "Terminal UI",
-    "Pantheon": "Terminal UI",
+    "herdr": "Terminal",
+    "Pantheon": "Terminal",
     "Paseo": "Electron",
     "GitKraken Kepler": "Unknown",
     "Google Antigravity": "Electron",

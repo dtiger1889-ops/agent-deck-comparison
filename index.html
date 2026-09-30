@@ -337,7 +337,7 @@
   <details class="about">
     <summary>About this comparison</summary>
     <p><b>Column order.</b> Featured tools come first. Every other tool follows A-Z. GitHub stars (checked 2026-09-29) are in the By tool view.</p>
-    <p>Cells come from each tool's own docs, sites, source or posts at the dates shown for that tool, and were not re-verified after that pass. <b>Not documented</b> means the tool's own materials don't mention it, which is not the same as a confirmed <b>No</b>. <b>Unknown</b> means the tool wasn't researched that far.</p>
+    <p>Cells come from each tool's own docs, sites, source or posts at the dates shown for that tool, and were not re-verified after that pass. <b>Not documented</b> means the tool's own materials don't mention it, which is not the same as a confirmed <b>No</b>. <span id="unknown-note"><b>Unknown</b> means the tool wasn't researched that far.</span></p>
   </details>
   <div class="legend" id="legend"></div>
 </header>
@@ -362,7 +362,7 @@
       </select>
     </label>
     <input type="text" id="filter-search" class="more" placeholder="Filter features…">
-    <label class="more"><input type="checkbox" id="filter-hide-unknown"> Hide unknown-only rows</label>
+    <label class="more" id="hide-unknown-label"><input type="checkbox" id="filter-hide-unknown"> Hide unknown-only rows</label>
     <label class="more"><input type="checkbox" id="compact"> Compact (badges only)</label>
    </div>
   </div>
@@ -398,6 +398,7 @@ const MARK_LABEL = {
 };
 
 let DATA = null;
+let HAS_UNKNOWN = false;   // true when any cell is Unknown; the Unknown filter, legend chip and note show only then
 let table = null;                 // the Tabulator instance (feature matrix)
 let VIS = [];                     // tools currently shown as columns (DATA order)
 let bytoolSortKey = "name";
@@ -428,11 +429,11 @@ function filterOptions(f) {
   const cells = DATA.tools.map(t => t.features[f.key]);
   const isFact = cells.every(c => c.mark === "info" || c.mark === "unknown");
   if (!isFact) {
-    return [["", "Any"], ["has", "Has it"], ["hasany", "Has it (incl. partial / exp.)"], ["no", "Doesn't have it"], ["undocumented", "Not documented"], ["unknown", "Unknown"]];
+    return [["", "Any"], ["has", "Has it"], ["hasany", "Has it (incl. partial / exp.)"], ["no", "Doesn't have it"], ["undocumented", "Not documented"]].concat(HAS_UNKNOWN ? [["unknown", "Unknown"]] : []);
   }
   const cats = [...new Set(DATA.tools.map(t => category(f.key, t.features[f.key])))];
   if (["harness_count", "languages", "download_size"].includes(f.key)) return null;   // counts and sizes: nothing useful to pick
-  if (f.key === "os") return [["", "Any"], ["os:Windows", "Runs on Windows"], ["os:macOS", "Runs on macOS"], ["os:Linux", "Runs on Linux"], ["os:browser", "Works in a browser"], ["unknown", "Not verified"]];
+  if (f.key === "os") return [["", "Any"], ["os:Windows", "Runs on Windows"], ["os:macOS", "Runs on macOS"], ["os:Linux", "Runs on Linux"], ["os:browser", "Works in a browser"]].concat(HAS_UNKNOWN ? [["unknown", "Not verified"]] : []);
   if (cats.length < 2 || cats.length > 8) return null;
   return [["", "Any"], ...cats.map(c => ["cat:" + c, c])];
 }
@@ -484,7 +485,9 @@ function rowPasses(f) {
 function renderLegend() {
   const el = document.getElementById("legend");
   el.innerHTML = "";
-  MARK_ORDER.filter(m => m !== "info").forEach(m => {
+  // Only marks that appear somewhere in the data get a legend chip.
+  const used = new Set(DATA.tools.flatMap(t => Object.values(t.features).map(c => c.mark)));
+  MARK_ORDER.filter(m => m !== "info" && used.has(m)).forEach(m => {
     const span = document.createElement("span");
     span.className = "badge badge-" + (m === "n/a" ? "na" : m);
     span.textContent = MARK_LABEL[m];
@@ -941,6 +944,11 @@ fetch("data/tools.json")
   .then(r => r.json())
   .then(data => {
     DATA = data;
+    HAS_UNKNOWN = data.tools.some(t => Object.values(t.features).some(c => c.mark === "unknown"));
+    if (!HAS_UNKNOWN) {
+      document.getElementById("unknown-note").style.display = "none";
+      document.getElementById("hide-unknown-label").style.display = "none";
+    }
     document.getElementById("n-tools").textContent = data.tools.length;
     document.getElementById("n-features").textContent = data.features.length;
     shownTools = new Set(DEFAULT_TOOLS.filter(n => data.tools.some(t => t.name === n)));

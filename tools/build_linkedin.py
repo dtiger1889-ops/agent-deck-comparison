@@ -64,7 +64,7 @@ if SET == "2":
 # Short text for the text rows, condensed from each cell in data/tools.json.
 TEXT_ROWS = {
     "phone_access": {
-        "Orca": "Own app (beta)", "VelaTerm": "Own app or browser", "herdr": "Any SSH app",
+        "Orca": "Own app (beta)", "VelaTerm": "Browser, same network", "herdr": "Any SSH app",
         "Pantheon": "Any SSH app", "Paseo": "Own app or browser", "GitKraken Kepler": "Browser (paid plans)",
         "Google Antigravity": "Any browser", "Pane": "Browser; app in beta",
         "Agent Orchestrator (AO)": "Own app",
@@ -83,7 +83,7 @@ TEXT_ROWS = {
 
 SHORT_AGENTS = {
     "Orca": "36",
-    "VelaTerm": "8+",
+    "VelaTerm": "14",
     "herdr": "22",
     "Pantheon": "2",
     "Paseo": "41",
@@ -116,9 +116,8 @@ MARK_STYLE = {
     "n/a": ("#f2f2f2", "#8a8a8a", "N/A"),
 }
 
-if SET == "1":
-    # Seven columns of "Not documented" do not fit at 1080 px; image 1 uses the short form it was approved with.
-    MARK_STYLE["undocumented"] = ("#ffffff", "#6a6a6a", "Not doc.")
+# The full "Not documented" badge is too wide for seven columns at 1080 px; both images use the short form.
+MARK_STYLE["undocumented"] = ("#ffffff", "#6a6a6a", "Not doc.")
 
 tools_by_name = {t["name"]: t for t in DATA["tools"]}
 tools = [tools_by_name[n] for n in TOOL_ORDER]

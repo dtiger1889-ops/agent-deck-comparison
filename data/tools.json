@@ -245,130 +245,122 @@
       "name": "Orca",
       "url": "https://onorca.dev",
       "category": "agent manager",
-      "where_agents_run": "your machine + remote (SSH worktrees, headless Linux server, phone companion)",
+      "where_agents_run": "your machine + remote (SSH worktrees, Remote Orca Server (beta), headless `orca serve`, cloud VM (experimental)); phone companion (beta)",
       "license": "MIT, free",
-      "checked_on": "2026-09-22 (installed + shipped-code read)",
-      "source_note": "Source-verified: installed desktop + phone, shipped app.asar read, own docs.",
+      "checked_on": "2026-09-30 (docs/release re-check; installed 2026-09-22)",
+      "source_note": "Re-checked 2026-09-30 against all 57 pages of onorca.dev/docs, the v1.4.217 release page, package.json and the repo home. Earlier: desktop and phone installed 2026-09-22, shipped app.asar read, memory measured on one PC.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "27+ agents / \"any CLI agent\"",
+          "value": "36 agents preset, plus any CLI agent",
           "mark": "yes"
         },
         "harness_count": {
-          "value": "27+ (\"any CLI agent\")",
+          "value": "36 preset (\"works with any CLI agent\")",
           "mark": "info"
         },
         "needs_you_signal": {
-          "value": "Hook-driven + unread/attention state",
+          "value": "Hook-driven status, alerts, sound, unread bell",
           "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "Not verified",
-          "mark": "unknown"
-        },
-        "conversation_gui_view": {
-          "value": "Experimental Chat UI",
-          "mark": "experimental"
-        },
-        "real_terminal": {
-          "value": "Embedded GPU terminal, infinite splits, restored scrollback",
-          "mark": "yes"
-        },
-        "session_organization": {
-          "value": "Worktree per task",
-          "mark": "yes"
-        },
-        "usage_hud": {
-          "value": "Local state + account read, 6 providers, weekly resets, 80% warning chip",
-          "mark": "yes"
-        },
-        "burn_rate_forecast": {
-          "value": "Usage % and reset windows only, no burn rate or forecast",
-          "mark": "no"
-        },
-        "limit_governor": {
-          "value": "None",
-          "mark": "no"
-        },
-        "vault_task_source": {
-          "value": "Task providers are GitHub, GitLab, Linear, Jira only",
-          "mark": "no"
-        },
-        "issue_tracker_pipeline": {
-          "value": "GitHub, GitLab, Linear, Jira",
-          "mark": "yes"
-        },
-        "worktree_management": {
-          "value": "Core: every task gets one, fan-out across N, SSH worktrees",
-          "mark": "yes"
-        },
-        "planner_orchestrator": {
-          "value": "Experimental Orchestration (CLI-driven), off by default",
-          "mark": "experimental"
-        },
-        "agent_to_agent_messaging": {
-          "value": "Via experimental Orchestration",
+          "value": "Approval cards in its experimental chat view, desktop and phone",
           "mark": "experimental"
         },
         "cross_provider_delegation": {
-          "value": "Visible in one place",
+          "value": "Workers on any agent, shown as child rows",
           "mark": "yes"
         },
         "always_on_assistant": {
-          "value": "None",
-          "mark": "no"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
-        "knowledge_base": {
-          "value": "None",
-          "mark": "no"
-        },
-        "builtin_editors_browser": {
-          "value": "Browser and computer-use via its CLI",
-          "mark": "yes"
-        },
-        "native_mobile_app": {
-          "value": "Companion app, beta",
+        "conversation_gui_view": {
+          "value": "Experimental chat view over agent terminals",
           "mark": "experimental"
         },
-        "phone_no_new_app": {
-          "value": "Requires its own companion app",
-          "mark": "no"
-        },
-        "remote_ssh": {
-          "value": "SSH worktrees + Remote Server (beta)",
+        "real_terminal": {
+          "value": "Embedded GPU terminal, splits, restored scrollback",
           "mark": "yes"
         },
-        "account_hotswap": {
-          "value": "Hot-swap between Codex accounts without re-login",
+        "session_organization": {
+          "value": "Worktree per task; experimental kanban dashboard",
           "mark": "yes"
         },
         "prompt_scratchpad": {
-          "value": "Not verified",
-          "mark": "unknown"
-        },
-        "saved_prompt_library": {
-          "value": "Not verified",
-          "mark": "unknown"
-        },
-        "appearance_control": {
-          "value": "Terminal font, theme, cursor and padding; imports Ghostty and Warp themes (docs, 2026-09-29)",
-          "mark": "yes"
-        },
-        "extensibility": {
-          "value": "Scriptable CLI and installable agent skills; no plugin system or SDK (docs, 2026-09-29)",
+          "value": "Unsent chat drafts kept; no separate drafts pad",
           "mark": "partial"
         },
-        "teams_multiuser": {
-          "value": "Not verified",
-          "mark": "unknown"
+        "saved_prompt_library": {
+          "value": "Quick Commands save agent prompts, synced to phone",
+          "mark": "yes"
+        },
+        "builtin_editors_browser": {
+          "value": "Code and markdown editors, per-worktree browser",
+          "mark": "yes"
+        },
+        "appearance_control": {
+          "value": "Theme, accent, UI and terminal fonts; Ghostty and Warp themes",
+          "mark": "yes"
+        },
+        "usage_hud": {
+          "value": "Usage and resets for 8 agents, 80% warning chip",
+          "mark": "yes"
+        },
+        "burn_rate_forecast": {
+          "value": "Shows usage and reset times only; no forecast in docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "limit_governor": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "account_hotswap": {
+          "value": "Switch Codex and Claude accounts, no re-login",
+          "mark": "yes"
+        },
+        "vault_task_source": {
+          "value": "Task sources are GitHub, GitLab, Linear, Jira only",
+          "mark": "no"
+        },
+        "issue_tracker_pipeline": {
+          "value": "GitHub, GitLab, Linear, Jira issues to worktree to PR",
+          "mark": "yes"
+        },
+        "worktree_management": {
+          "value": "Core: every task gets one, local or over SSH",
+          "mark": "yes"
+        },
+        "planner_orchestrator": {
+          "value": "Orchestration runs, tasks and workers; off by default",
+          "mark": "experimental"
+        },
+        "agent_to_agent_messaging": {
+          "value": "Inbox messages via experimental orchestration",
+          "mark": "experimental"
+        },
+        "knowledge_base": {
+          "value": "Leaves memory files to the agents; no store of its own",
+          "mark": "no"
+        },
+        "native_mobile_app": {
+          "value": "iOS and Android companion, beta",
+          "mark": "experimental"
+        },
+        "phone_no_new_app": {
+          "value": "Phone access is through its companion app",
+          "mark": "no"
+        },
+        "remote_ssh": {
+          "value": "SSH worktrees; Remote Orca Servers (beta)",
+          "mark": "yes"
         },
         "voice_input": {
-          "value": "Not verified",
-          "mark": "unknown"
+          "value": "Dictation on desktop (on-device models) and phone",
+          "mark": "yes"
         },
-        "license_cost": {
-          "value": "MIT, free, uses your own subscriptions",
+        "os": {
+          "value": "Windows, macOS, Linux; iOS/Android companion (beta)",
           "mark": "info"
         },
         "app_shell": {
@@ -380,11 +372,11 @@
           "mark": "info"
         },
         "background_process": {
-          "value": "Yes: a daemon-host process (docs/reference/windows-daemon-host-relocation.md)",
+          "value": "Yes: a separate daemon process",
           "mark": "info"
         },
         "download_size": {
-          "value": "v1.4.216: 193 MB Windows setup.exe, 218-226 MB mac dmg, 207-209 MB Linux AppImage",
+          "value": "v1.4.217: 193 MB Windows setup, 218-226 MB macOS dmg, 207-209 MB Linux AppImage",
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
@@ -395,12 +387,20 @@
           "value": "Embeds its own GPU terminal instead",
           "mark": "no"
         },
-        "stability_maturity": {
-          "value": "\"Features shipped daily\"; chat, orchestration and mobile are experimental",
+        "license_cost": {
+          "value": "MIT, free, uses your own subscriptions",
           "mark": "info"
         },
-        "os": {
-          "value": "Windows, macOS, Linux; phone companion (beta)",
+        "extensibility": {
+          "value": "Experimental plugins and marketplaces; scriptable CLI, skills",
+          "mark": "experimental"
+        },
+        "teams_multiuser": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "stability_maturity": {
+          "value": "v1.4.217 (2026-09-29), daily builds; chat, plugins, mobile still beta",
           "mark": "info"
         }
       },
@@ -740,130 +740,122 @@
       "name": "Paseo",
       "url": "https://paseo.sh",
       "category": "agent manager",
-      "where_agents_run": "your machine + cloud (self-hosted relay or Tailscale) + mobile + web",
-      "license": "Apache-2.0, free",
-      "checked_on": "2026-09-06 (source- and hands-on-verified)",
-      "source_note": "Source-verified and installed/live-tested.",
+      "where_agents_run": "your machine, or any host running its daemon (server, Docker, SSH); reached from desktop, phone, browser or CLI via relay or Tailscale",
+      "license": "Apache-2.0, free; optional hosted Hub: free plan, Pro $15 per seat per month",
+      "checked_on": "2026-09-30 (docs/release re-check; installed 2026-09-06)",
+      "source_note": "Re-checked 2026-09-30 against paseo.sh/llms.txt and 68 docs pages (markdown), the changelog to v0.10.2, the download and Hub pages, package.json and the v0.10.2 release. Earlier: source read and installed/live-tested 2026-09-06.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Deep per-provider SDK adapters",
+          "value": "Claude Code, Codex, OpenCode and 30+ more",
           "mark": "yes"
         },
         "harness_count": {
-          "value": "~39",
+          "value": "41: 5 built in, 36 in its catalog, plus custom",
           "mark": "info"
         },
         "needs_you_signal": {
-          "value": "SDK-level",
+          "value": "Attention status per agent, push notifications",
           "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "Dedicated control-plane tool to respond to a permission request",
-          "mark": "yes"
-        },
-        "conversation_gui_view": {
-          "value": "Shows messages, reasoning and tool calls as a readable timeline (changelog and docs, 2026-09-29)",
-          "mark": "yes"
-        },
-        "real_terminal": {
-          "value": "Yes",
-          "mark": "yes"
-        },
-        "session_organization": {
-          "value": "Per workspace",
-          "mark": "yes"
-        },
-        "usage_hud": {
-          "value": "Risky reverse-engineered endpoint, display-only, no rate-limit mitigation seen",
-          "mark": "partial"
-        },
-        "burn_rate_forecast": {
-          "value": "None",
-          "mark": "no"
-        },
-        "limit_governor": {
-          "value": "None",
-          "mark": "no"
-        },
-        "vault_task_source": {
-          "value": "None",
-          "mark": "no"
-        },
-        "issue_tracker_pipeline": {
-          "value": "Mention its bot on a GitHub issue and an agent works it and can open a PR; GitHub only, no Jira, Linear or GitLab (Paseo Hub, 2026-09-29)",
-          "mark": "partial"
-        },
-        "worktree_management": {
-          "value": "Mature: rollback, recovery, git-contention queue",
-          "mark": "yes"
-        },
-        "planner_orchestrator": {
-          "value": "The agent itself gets control-plane tools such as creating agents and responding to permission requests",
-          "mark": "yes"
-        },
-        "agent_to_agent_messaging": {
-          "value": "Via its control-plane tools",
+          "value": "Permission cards in the app, also by API",
           "mark": "yes"
         },
         "cross_provider_delegation": {
-          "value": "Visible in one place",
+          "value": "Agents launch agents on any provider, shown in one place",
           "mark": "yes"
         },
         "always_on_assistant": {
-          "value": "None",
-          "mark": "no"
+          "value": "Voice mode: talk to an agent that can launch and steer others",
+          "mark": "partial"
         },
-        "knowledge_base": {
-          "value": "None",
-          "mark": "no"
+        "conversation_gui_view": {
+          "value": "Messages, reasoning and tool calls as a readable timeline",
+          "mark": "yes"
+        },
+        "real_terminal": {
+          "value": "Terminal tabs beside agents in each workspace",
+          "mark": "yes"
+        },
+        "session_organization": {
+          "value": "Projects, then workspaces, then session tabs",
+          "mark": "yes"
+        },
+        "prompt_scratchpad": {
+          "value": "Composer drafts kept per workspace; no drafts pad",
+          "mark": "partial"
+        },
+        "saved_prompt_library": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "builtin_editors_browser": {
-          "value": "Not stated in this doc",
-          "mark": "unknown"
+          "value": "Editable file panes, diffs, built-in browser tabs",
+          "mark": "yes"
+        },
+        "appearance_control": {
+          "value": "Themes (plugins add more), interface and code fonts, text sizes",
+          "mark": "yes"
+        },
+        "usage_hud": {
+          "value": "Plan usage for Claude, Codex, Copilot, Cursor and 3 more",
+          "mark": "yes"
+        },
+        "burn_rate_forecast": {
+          "value": "Shows plan usage only; no forecast in docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "limit_governor": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "account_hotswap": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "vault_task_source": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "issue_tracker_pipeline": {
+          "value": "GitHub issue and PR events start agents via Paseo Hub; no Jira",
+          "mark": "partial"
+        },
+        "worktree_management": {
+          "value": "Managed worktree per workspace, removed when archived",
+          "mark": "yes"
+        },
+        "planner_orchestrator": {
+          "value": "Agents split work across providers and machines via its tools",
+          "mark": "yes"
+        },
+        "agent_to_agent_messaging": {
+          "value": "Agents send prompts to other agents by ID",
+          "mark": "yes"
+        },
+        "knowledge_base": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "native_mobile_app": {
-          "value": "Native iOS and Android apps",
+          "value": "iOS (App Store) and Android (Play Store, APK)",
           "mark": "yes"
         },
         "phone_no_new_app": {
-          "value": "Requires its own app",
-          "mark": "no"
+          "value": "Web app in the phone's browser, hosted or self-served",
+          "mark": "yes"
         },
         "remote_ssh": {
-          "value": "Via its daemon",
-          "mark": "yes"
-        },
-        "account_hotswap": {
-          "value": "Not in its docs (checked 2026-09-06)",
-          "mark": "undocumented"
-        },
-        "prompt_scratchpad": {
-          "value": "None",
-          "mark": "no"
-        },
-        "saved_prompt_library": {
-          "value": "None",
-          "mark": "no"
-        },
-        "appearance_control": {
-          "value": "App theme, interface and code fonts, text sizes, content width (GitHub, 2026-09-29)",
-          "mark": "yes"
-        },
-        "extensibility": {
-          "value": "MCP server, CLI and TypeScript SDK for automation",
-          "mark": "yes"
-        },
-        "teams_multiuser": {
-          "value": "Teams plus triggers from GitHub/Slack/Discord",
+          "value": "Connect to daemons on other machines over SSH",
           "mark": "yes"
         },
         "voice_input": {
-          "value": "Yes",
+          "value": "Dictation and voice mode, on-device or OpenAI",
           "mark": "yes"
         },
-        "license_cost": {
-          "value": "Apache-2.0, free",
+        "os": {
+          "value": "Windows, macOS 13+, Linux; iOS, Android; any browser",
           "mark": "info"
         },
         "app_shell": {
@@ -875,11 +867,11 @@
           "mark": "info"
         },
         "background_process": {
-          "value": "Yes: a Node daemon (package.json `dev:server` runs `PASEO_LISTEN=... dev-daemon.sh`)",
+          "value": "Yes: a Node daemon the desktop app starts",
           "mark": "info"
         },
         "download_size": {
-          "value": "v0.10.0: 137 MB Windows Setup x64, 186 MB mac x64 dmg, 129 MB Linux .deb",
+          "value": "v0.10.2: 137 MB Windows setup, 177-186 MB macOS dmg, 129 MB Linux .deb",
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
@@ -887,15 +879,23 @@
           "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "Own desktop/mobile/web app",
+          "value": "Own desktop, phone and web app",
           "mark": "no"
         },
-        "stability_maturity": {
-          "value": "Mature",
+        "license_cost": {
+          "value": "Apache-2.0, free; hosted Hub Pro $15 per seat",
           "mark": "info"
         },
-        "os": {
-          "value": "Windows, macOS, Linux; iOS/Android; web",
+        "extensibility": {
+          "value": "Plugin SDK, TypeScript SDK, MCP server, CLI",
+          "mark": "yes"
+        },
+        "teams_multiuser": {
+          "value": "Paseo Hub: shared org, seats, GitHub/Slack/Discord triggers",
+          "mark": "yes"
+        },
+        "stability_maturity": {
+          "value": "v0.10.2 (2026-09-30), frequent releases since Feb 2026; plugin API changed in 0.8",
           "mark": "info"
         }
       },
@@ -905,134 +905,126 @@
       "name": "Agent Orchestrator (AO)",
       "url": "https://github.com/Untrivial-ai/agent-orchestrator",
       "category": "agent manager",
-      "where_agents_run": "your machine + mobile companion (LAN/Tailscale)",
-      "license": "Apache-2.0, free, ~12.5k stars",
-      "checked_on": "2026-09-06 (site-verified)",
-      "source_note": "Site-verified, not installed.",
+      "where_agents_run": "your machine; phone app over home Wi-Fi or Tailscale; cloud workspaces behind a waitlist",
+      "license": "Apache-2.0, free",
+      "checked_on": "2026-09-30 (repo/docs/release pass)",
+      "source_note": "Checked 2026-09-30 against the README, docs/STATUS.md, go.work and frontend/package.json, docs.orchestrator.inc (intro, capabilities, trackers, Connect Mobile, FAQ, migration), orchestrator.inc and its changelog, and the v0.13.2 release. Not installed.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "25 harnesses, per-project defaults",
+          "value": "Claude Code, Codex, Cursor, OpenCode and more, per task",
           "mark": "yes"
         },
         "harness_count": {
-          "value": "25+",
+          "value": "32 per its README (docs page says 24 terminal adapters)",
           "mark": "info"
         },
         "needs_you_signal": {
-          "value": "Escalates only what needs a human",
+          "value": "Needs-you column, in-app alerts and toasts",
           "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "Escalations to a human",
-          "mark": "yes"
-        },
-        "conversation_gui_view": {
-          "value": "Yes",
-          "mark": "yes"
-        },
-        "real_terminal": {
-          "value": "Not stated",
-          "mark": "unknown"
-        },
-        "session_organization": {
-          "value": "Kanban board: Pending / Iterating / In Review / Ready-to-merge",
-          "mark": "yes"
-        },
-        "usage_hud": {
-          "value": "None",
-          "mark": "no"
-        },
-        "burn_rate_forecast": {
-          "value": "None",
-          "mark": "no"
-        },
-        "limit_governor": {
-          "value": "None",
-          "mark": "no"
-        },
-        "vault_task_source": {
-          "value": "None",
-          "mark": "no"
-        },
-        "issue_tracker_pipeline": {
-          "value": "CI feedback loop: failed checks and review comments route back to the owning session until approved",
-          "mark": "yes"
-        },
-        "worktree_management": {
-          "value": "Orchestrator spawns worktree workers per task",
-          "mark": "yes"
-        },
-        "planner_orchestrator": {
-          "value": "Core: a per-project main orchestrator agent that plans and spawns worktree workers; orchestrators can message each other",
-          "mark": "yes"
-        },
-        "agent_to_agent_messaging": {
-          "value": "Orchestrators message other orchestrators",
+          "value": "Approval cards in its chat view, desktop and phone",
           "mark": "yes"
         },
         "cross_provider_delegation": {
-          "value": "Visible in one place",
+          "value": "Orchestrator hands tasks to workers on any agent, one board",
           "mark": "yes"
         },
         "always_on_assistant": {
-          "value": "None",
-          "mark": "no"
+          "value": "A lasting orchestrator chat per project, for planning",
+          "mark": "partial"
         },
-        "knowledge_base": {
-          "value": "None",
-          "mark": "no"
+        "conversation_gui_view": {
+          "value": "Chat view for Codex, Claude Code, OpenCode, Droid",
+          "mark": "yes"
+        },
+        "real_terminal": {
+          "value": "Each agent's own terminal UI, switchable with chat",
+          "mark": "yes"
+        },
+        "session_organization": {
+          "value": "Kanban: Working, Needs you, In review, Ready to merge",
+          "mark": "yes"
+        },
+        "prompt_scratchpad": {
+          "value": "Unsent drafts survive restarts; no separate drafts pad",
+          "mark": "partial"
+        },
+        "saved_prompt_library": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "builtin_editors_browser": {
-          "value": "Not stated",
-          "mark": "unknown"
+          "value": "Per-worker browser with DevTools; file browser",
+          "mark": "yes"
+        },
+        "appearance_control": {
+          "value": "Light and dark themes; no font setting found",
+          "mark": "partial"
+        },
+        "usage_hud": {
+          "value": "Token use and cost per session; Codex account limits only",
+          "mark": "partial"
+        },
+        "burn_rate_forecast": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "limit_governor": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "account_hotswap": {
+          "value": "Switch Codex accounts without re-login; Codex only",
+          "mark": "partial"
+        },
+        "vault_task_source": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "issue_tracker_pipeline": {
+          "value": "GitHub issues only, opt-in; then PR, CI and review loop",
+          "mark": "partial"
+        },
+        "worktree_management": {
+          "value": "Own branch and worktree per worker",
+          "mark": "yes"
+        },
+        "planner_orchestrator": {
+          "value": "Core: project orchestrator plans and spawns workers",
+          "mark": "yes"
+        },
+        "agent_to_agent_messaging": {
+          "value": "Orchestrator messages and redirects its workers",
+          "mark": "yes"
+        },
+        "knowledge_base": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "native_mobile_app": {
-          "value": "Mobile companion with working/need-you/mergeable counts",
+          "value": "AO Mobile 2.0 on App Store and Google Play",
           "mark": "yes"
         },
         "phone_no_new_app": {
-          "value": "Requires its own companion app",
+          "value": "Phone access is through its own app",
           "mark": "no"
         },
         "remote_ssh": {
-          "value": "Not stated",
-          "mark": "unknown"
-        },
-        "account_hotswap": {
-          "value": "Not in its docs (checked 2026-09-06)",
-          "mark": "undocumented"
-        },
-        "prompt_scratchpad": {
-          "value": "None",
+          "value": "Local by design; its FAQ says not to expose it remotely",
           "mark": "no"
-        },
-        "saved_prompt_library": {
-          "value": "None",
-          "mark": "no"
-        },
-        "appearance_control": {
-          "value": "Light/dark and named color themes; no font setting found (source, 2026-09-29)",
-          "mark": "partial"
-        },
-        "extensibility": {
-          "value": "Scriptable ao CLI over a local API; its plugin system was removed in the Go rewrite (docs, 2026-09-29)",
-          "mark": "partial"
-        },
-        "teams_multiuser": {
-          "value": "Organizations and sharing are built for AO Cloud, which is waitlist-only (site and repo, 2026-09-29)",
-          "mark": "planned"
         },
         "voice_input": {
-          "value": "None",
-          "mark": "no"
+          "value": "Dictation in the phone app",
+          "mark": "yes"
         },
-        "license_cost": {
-          "value": "Apache-2.0, free (license per GitHub, 2026-09-29)",
+        "os": {
+          "value": "Windows, macOS, Linux; iOS/Android app",
           "mark": "info"
         },
         "app_shell": {
-          "value": "Electron ^33.0.0 (frontend/package.json), plus a separate Go backend",
+          "value": "Electron ^33.0.0, plus a separate Go backend",
           "mark": "info"
         },
         "languages": {
@@ -1040,11 +1032,11 @@
           "mark": "info"
         },
         "background_process": {
-          "value": "Yes: a separate Go backend process (repo has a distinct backend/ Go module via go.work, apart from the Electron frontend/)",
+          "value": "Yes: a local Go daemon the app starts",
           "mark": "info"
         },
         "download_size": {
-          "value": "v0.13.2-nightly: 136 MB Windows Setup.exe, 177-189 MB mac zip, 181 MB Linux AppImage",
+          "value": "v0.13.2: 136 MB Windows setup, 218-233 MB macOS dmg, 182 MB Linux AppImage",
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
@@ -1055,12 +1047,20 @@
           "value": "Own desktop app",
           "mark": "no"
         },
-        "stability_maturity": {
-          "value": "Active development",
+        "license_cost": {
+          "value": "Apache-2.0, free; uses your own agent accounts",
           "mark": "info"
         },
-        "os": {
-          "value": "Windows, macOS, Linux; mobile companion",
+        "extensibility": {
+          "value": "Optional ao CLI over a local API; no plugins since the Go rewrite",
+          "mark": "partial"
+        },
+        "teams_multiuser": {
+          "value": "Desktop is single-user; cloud version on a waitlist",
+          "mark": "planned"
+        },
+        "stability_maturity": {
+          "value": "v0.13.2 (2026-09-30), nightly builds; rebuilt in Go, old npm CLI frozen",
           "mark": "info"
         }
       },
@@ -1730,163 +1730,163 @@
       "name": "CCManager",
       "url": "https://github.com/kbwo/ccmanager",
       "category": "agent manager",
-      "where_agents_run": "your machine (Linux/macOS)",
-      "license": "unknown",
-      "checked_on": "2026-09-07 (site/discussion pass only, no full comparison run)",
-      "source_note": "Evaluated and not adopted (2026-09-01). Terminal session manager; state detection parses tool output rather than reading structured hook events.",
+      "where_agents_run": "your machine (Windows, macOS, Linux), optionally inside devcontainers",
+      "license": "MIT, free",
+      "checked_on": "2026-09-30 (repo/docs pass)",
+      "source_note": "Checked against its README, package.json, LICENSE, all 11 files in docs/, the config-skill plugin README, the npm registry (v4.4.4 and its per-platform binaries) and the GitHub releases page. Not installed or run here. Evaluated and not adopted for Pantheon (2026-09-01).",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Claude Code, Codex, Gemini, Cursor, Copilot and more",
+          "mark": "yes"
         },
         "harness_count": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "9 named CLIs, each with its own state detection",
+          "mark": "info"
         },
         "needs_you_signal": {
-          "value": "Output-parsed, coarser than hook-event-based detection",
-          "mark": "partial"
+          "value": "Waiting flag per session; status hooks for alerts",
+          "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Answer inside the session; AI auto-approve is experimental",
+          "mark": "partial"
         },
         "cross_provider_delegation": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Different agents listed side by side; no hand-off",
+          "mark": "partial"
         },
         "always_on_assistant": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "conversation_gui_view": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Terminal view only, by design",
+          "mark": "no"
         },
         "real_terminal": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Each session is the agent's full terminal",
+          "mark": "yes"
         },
         "session_organization": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Worktree list per project; multi-project list",
+          "mark": "yes"
         },
         "prompt_scratchpad": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "saved_prompt_library": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30); presets save commands, not prompts",
+          "mark": "undocumented"
         },
         "builtin_editors_browser": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "appearance_control": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Uses your terminal's font and colors; custom shortcuts only",
+          "mark": "partial"
         },
         "usage_hud": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "burn_rate_forecast": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "limit_governor": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "account_hotswap": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "vault_task_source": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "issue_tracker_pipeline": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "worktree_management": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Create, merge and delete worktrees; setup hooks",
+          "mark": "yes"
         },
         "planner_orchestrator": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "agent_to_agent_messaging": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "knowledge_base": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "native_mobile_app": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "phone_no_new_app": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "remote_ssh": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30); devcontainers only",
+          "mark": "undocumented"
         },
         "voice_input": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "os": {
-          "value": "Linux, macOS",
+          "value": "Windows, macOS, Linux (npm binaries for each)",
           "mark": "info"
         },
         "app_shell": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Terminal UI (Ink/React), shipped as a Bun binary",
+          "mark": "info"
         },
         "languages": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "TypeScript (GitHub's main language; exact split not read)",
+          "mark": "info"
         },
         "background_process": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "No: closing it ends the agent sessions it started",
+          "mark": "info"
         },
         "download_size": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "v4.4.4: 24 MB macOS arm64, 40 MB Linux x64, 43 MB Windows (npm)",
+          "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Tiny (estimate: one terminal program)",
+          "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "TUI session manager",
+          "value": "Runs in your own terminal, no tmux needed",
           "mark": "yes"
         },
         "license_cost": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "MIT, free",
+          "mark": "info"
         },
         "extensibility": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Status and worktree hooks, custom approval command; no plugin API",
+          "mark": "partial"
         },
         "teams_multiuser": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "stability_maturity": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "v4.4.4, since June 2025, 159 npm releases",
+          "mark": "info"
         }
       },
       "github_stars": 1256
@@ -2390,163 +2390,163 @@
       "name": "Conductor",
       "url": "https://www.conductor.build",
       "category": "agent manager",
-      "where_agents_run": "your machine (macOS only)",
-      "license": "proprietary",
-      "checked_on": "2026-09-07 (site/discussion pass only, no full comparison run)",
-      "source_note": "Site/discussion pass only, 2026-09-07. Checkpoint/rollback called best-in-class.",
+      "where_agents_run": "your Mac, or Conductor's cloud sandboxes (paid plans), which keep running after you close the app",
+      "license": "Closed source; free, Pro $50/month, Teams $60 per user per month",
+      "checked_on": "2026-09-30 (docs/site pass)",
+      "source_note": "Checked against conductor.build/llms-full.txt (all docs, pricing and FAQ pages), the homepage, the changelog index and the 0.77-0.89 release notes, the installer file sizes (v0.89.2), and a June 2026 engineering write-up on performance.dev for the app shell. No public source repo. Not installed or run here.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Claude Code, Codex, Cursor, OpenCode side by side",
+          "mark": "yes"
         },
         "harness_count": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "4 in chat; Amp, Pi, Copilot, Gemini as terminal presets",
+          "mark": "info"
         },
         "needs_you_signal": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Sidebar marks sessions that need input; completion sounds",
+          "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Tool approvals answered in the chat, if turned on",
+          "mark": "yes"
         },
         "cross_provider_delegation": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Mixed agents in tabs of one workspace; agent hand-off only in cloud",
+          "mark": "partial"
         },
         "always_on_assistant": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "conversation_gui_view": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Chat view per tab, with plans and tool calls",
+          "mark": "yes"
         },
         "real_terminal": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Workspace terminals; agent CLIs in Big Terminal Mode (experimental)",
+          "mark": "partial"
         },
         "session_organization": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Sidebar of workspaces with sections and pins; tabs inside",
+          "mark": "yes"
         },
         "prompt_scratchpad": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "saved_prompt_library": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Slash commands from .claude/commands; editable action prompts",
+          "mark": "yes"
         },
         "builtin_editors_browser": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Edit files in diffs, file viewer, browser previews",
+          "mark": "yes"
         },
         "appearance_control": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Light and dark modes, zoom; no font setting found",
+          "mark": "partial"
         },
         "usage_hud": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Claude and Codex account limits and resets",
+          "mark": "yes"
         },
         "burn_rate_forecast": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "limit_governor": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "account_hotswap": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "vault_task_source": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "issue_tracker_pipeline": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "GitHub or Linear issue to workspace, PR, checks, merge",
+          "mark": "yes"
         },
         "worktree_management": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Every workspace is its own git worktree",
+          "mark": "yes"
         },
         "planner_orchestrator": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Plan Mode per chat; you split the work yourself",
+          "mark": "partial"
         },
         "agent_to_agent_messaging": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Agents can prompt other sessions via its MCP, cloud only",
+          "mark": "partial"
         },
         "knowledge_base": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Per-workspace .context folder for notes and hand-offs",
+          "mark": "partial"
         },
         "native_mobile_app": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "iOS app marked Soon on its homepage",
+          "mark": "planned"
         },
         "phone_no_new_app": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "remote_ssh": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Its own cloud sandboxes, reachable by SSH; not your own hosts",
+          "mark": "partial"
         },
         "voice_input": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "os": {
-          "value": "macOS only",
+          "value": "macOS only (Apple silicon, Intel); Windows and Linux not yet",
           "mark": "info"
         },
         "app_shell": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Tauri (Rust core, macOS WebKit view)",
+          "mark": "info"
         },
         "languages": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Closed source; no public repo",
+          "mark": "info"
         },
         "background_process": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "No: local agents stop when the app quits; cloud ones keep going",
+          "mark": "info"
         },
         "download_size": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "v0.89.2: 80 MB Apple silicon dmg, 86 MB Intel dmg",
+          "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Small (estimate: Tauri app on the system webview; idle agents shut down)",
+          "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Own Mac app",
+          "mark": "no"
         },
         "license_cost": {
-          "value": "Proprietary",
+          "value": "Closed source; free, Pro $50/month, Teams $60/user/month",
           "mark": "info"
         },
         "extensibility": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "HTTP API and MCP server (Pro, cloud), deep links",
+          "mark": "yes"
         },
         "teams_multiuser": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Shared cloud workspaces, live multiplayer, Teams plan",
+          "mark": "yes"
         },
         "stability_maturity": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "v0.89.2, releases several times a week since July 2025",
+          "mark": "info"
         }
       },
       "github_stars": null
@@ -2555,162 +2555,162 @@
       "name": "GitKraken Kepler",
       "url": "https://www.gitkraken.com/kepler",
       "category": "agent manager",
-      "where_agents_run": "your machine (Win/Mac/Linux) plus SSH/WSL remote execution",
-      "license": "commercial, free tier",
-      "checked_on": "2026-09-06 (site-verified)",
-      "source_note": "Site-verified, not installed.",
+      "where_agents_run": "your machine (Windows, macOS, Linux), or another machine over SSH or WSL (paid plans); phone or another computer reaches it through a browser link (paid plans)",
+      "license": "Closed source; free in public preview, some features need a paid GitKraken plan",
+      "checked_on": "2026-09-30 (docs/site pass)",
+      "source_note": "Checked against all 18 Kepler pages on help.gitkraken.com (Sept 2026), the Kepler 0.x release notes (v0.11.0, Sept 29 2026), the gitkraken.com/kepler product page and FAQ, installer file sizes, and the public gk-ade GitHub repo (issues only, no source). Not installed or run here.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Agent-agnostic model choice per task",
+          "value": "Claude Code, Codex, Copilot, Cursor and more side by side",
           "mark": "yes"
         },
         "harness_count": {
-          "value": "\"Any agent\" (not counted)",
+          "value": "9 built in, plus any agent that speaks ACP",
           "mark": "info"
         },
         "needs_you_signal": {
-          "value": "Yes",
+          "value": "Waiting status, desktop alerts, waiting counts per window",
           "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "Not stated",
-          "mark": "unknown"
-        },
-        "conversation_gui_view": {
-          "value": "Agent Graph: live tree of every session, turn, tool call and subagent",
+          "value": "Allow or reject cards in Kepler, terminal sessions too",
           "mark": "yes"
-        },
-        "real_terminal": {
-          "value": "Not stated",
-          "mark": "unknown"
-        },
-        "session_organization": {
-          "value": "Three views of one fleet: live, kanban, dense list",
-          "mark": "yes"
-        },
-        "usage_hud": {
-          "value": "Org-level spend analytics, not a live burn view",
-          "mark": "no"
-        },
-        "burn_rate_forecast": {
-          "value": "None",
-          "mark": "no"
-        },
-        "limit_governor": {
-          "value": "None",
-          "mark": "no"
-        },
-        "vault_task_source": {
-          "value": "None",
-          "mark": "no"
-        },
-        "issue_tracker_pipeline": {
-          "value": "Jira, Trello, GitHub, GitLab Issues, Linear",
-          "mark": "yes"
-        },
-        "worktree_management": {
-          "value": "Parallel worktrees with per-branch diffs, plus setup hooks that run repo scripts before the agent starts",
-          "mark": "yes"
-        },
-        "planner_orchestrator": {
-          "value": "Not in its feature list (checked 2026-09-06)",
-          "mark": "undocumented"
-        },
-        "agent_to_agent_messaging": {
-          "value": "None",
-          "mark": "no"
         },
         "cross_provider_delegation": {
-          "value": "Visible in one place",
+          "value": "Agents start sessions on any agent, shown in the task",
           "mark": "yes"
         },
         "always_on_assistant": {
-          "value": "None",
-          "mark": "no"
-        },
-        "knowledge_base": {
-          "value": "None",
-          "mark": "no"
-        },
-        "builtin_editors_browser": {
-          "value": "Diffs plus in-app commit/PR",
-          "mark": "yes"
-        },
-        "native_mobile_app": {
-          "value": "Mobile check-and-answer, not a full session manager",
-          "mark": "partial"
-        },
-        "phone_no_new_app": {
-          "value": "Requires its own app",
-          "mark": "no"
-        },
-        "remote_ssh": {
-          "value": "SSH/WSL remote execution",
-          "mark": "yes"
-        },
-        "account_hotswap": {
-          "value": "Not in its feature list (checked 2026-09-06)",
+          "value": "Not in its docs (checked 2026-09-30)",
           "mark": "undocumented"
         },
+        "conversation_gui_view": {
+          "value": "Rich chat view per session, plus a live Agent Graph",
+          "mark": "yes"
+        },
+        "real_terminal": {
+          "value": "Terminal mode runs the agent's own CLI in the task",
+          "mark": "yes"
+        },
+        "session_organization": {
+          "value": "List or column board, grouped by inbox, stage or repo",
+          "mark": "yes"
+        },
         "prompt_scratchpad": {
-          "value": "\"Actions\": saved one-click prompts",
+          "value": "Keeps an unsent new-task draft; no drafts pad",
           "mark": "partial"
         },
         "saved_prompt_library": {
-          "value": "Actions come with issue, diff and repo state pre-attached",
+          "value": "Actions: saved prompts sent with issue, diff and repo attached",
           "mark": "yes"
         },
-        "appearance_control": {
-          "value": "Two themes, dark/light/system, terminal font and spacing (help docs, 2026-09-29)",
-          "mark": "yes"
-        },
-        "extensibility": {
-          "value": "Custom Actions: your own prompt, agent and skill per action; no plugins, SDK or API (help docs, 2026-09-29)",
+        "builtin_editors_browser": {
+          "value": "Diff viewer and terminals; opens your own editor",
           "mark": "partial"
         },
-        "teams_multiuser": {
-          "value": "Org-level analytics on agent spend",
+        "appearance_control": {
+          "value": "Dark, Midnight, Light or System; terminal font, size, spacing",
+          "mark": "yes"
+        },
+        "usage_hud": {
+          "value": "Claude, Codex and Auggie plan windows, opt-in",
+          "mark": "yes"
+        },
+        "burn_rate_forecast": {
+          "value": "Not in its docs (checked 2026-09-30); shows reset times only",
+          "mark": "undocumented"
+        },
+        "limit_governor": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "account_hotswap": {
+          "value": "Several logins per agent, picked per session",
+          "mark": "yes"
+        },
+        "vault_task_source": {
+          "value": "Not in its docs (checked 2026-09-30); tasks come from trackers",
+          "mark": "undocumented"
+        },
+        "issue_tracker_pipeline": {
+          "value": "GitHub, GitLab, Azure, Jira, Linear, Trello issues to PR review",
+          "mark": "yes"
+        },
+        "worktree_management": {
+          "value": "Worktree per repo per task, setup commands run first",
+          "mark": "yes"
+        },
+        "planner_orchestrator": {
+          "value": "Plan action and plan review; no automatic work splitting",
+          "mark": "partial"
+        },
+        "agent_to_agent_messaging": {
+          "value": "Agents read other sessions and send them follow-ups",
+          "mark": "yes"
+        },
+        "knowledge_base": {
+          "value": "Per-task notes every agent reads and can write",
+          "mark": "partial"
+        },
+        "native_mobile_app": {
+          "value": "None; phones use a browser link instead",
+          "mark": "no"
+        },
+        "phone_no_new_app": {
+          "value": "Phone browser via QR code link, paid plans",
+          "mark": "yes"
+        },
+        "remote_ssh": {
+          "value": "SSH hosts and WSL; installs its server itself (paid plans)",
           "mark": "yes"
         },
         "voice_input": {
-          "value": "None",
-          "mark": "no"
+          "value": "On-device Whisper dictation, off by default",
+          "mark": "yes"
         },
-        "license_cost": {
-          "value": "Commercial with a free tier",
+        "os": {
+          "value": "Windows 10+, macOS 12+, Linux (x64 and ARM); phone browser",
           "mark": "info"
         },
         "app_shell": {
-          "value": "not verified: not stated on gitkraken.com/kepler or help.gitkraken.com; not extrapolated from GitKraken's separate main git client",
-          "mark": "unknown"
+          "value": "Electron desktop app; remote hosts run its Node server",
+          "mark": "info"
         },
         "languages": {
-          "value": "not verified: closed source, no public repo",
-          "mark": "unknown"
+          "value": "Closed source; public GitHub repo holds issues only",
+          "mark": "info"
         },
         "background_process": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Yes: a local backend and a supervisor that keeps agents alive",
+          "mark": "info"
         },
         "download_size": {
-          "value": "not verified: not stated on the vendor's pages",
-          "mark": "unknown"
+          "value": "v0.11.0: 170 MB Windows setup, 192-202 MB macOS dmg, 158 MB Linux deb",
+          "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "not verified: app shell unknown",
-          "mark": "unknown"
+          "value": "Medium (estimate: Electron app plus a local backend)",
+          "mark": "info"
         },
         "runs_in_terminal": {
           "value": "Own desktop app",
           "mark": "no"
         },
-        "stability_maturity": {
-          "value": "Commercial product",
+        "license_cost": {
+          "value": "Closed source; free in preview, some features need a paid plan",
           "mark": "info"
         },
-        "os": {
-          "value": "Windows, macOS, Linux; mobile check-and-answer",
+        "extensibility": {
+          "value": "Custom ACP agents, custom Actions, deep links; no plugins",
+          "mark": "partial"
+        },
+        "teams_multiuser": {
+          "value": "GitKraken org accounts; spend analytics is the separate Insights product",
+          "mark": "partial"
+        },
+        "stability_maturity": {
+          "value": "v0.11.0 public preview, releases every few weeks",
           "mark": "info"
         }
       },
@@ -2885,163 +2885,163 @@
       "name": "Jenny",
       "url": "https://github.com/SaltyPretz3l/jenny",
       "category": "other tool we looked at",
-      "where_agents_run": "your machine",
-      "license": "MIT",
-      "checked_on": "2026-09-07 (site/discussion pass only, no full comparison run)",
-      "source_note": "A single-agent local-LLM chat app and IDE (llama.cpp / vLLM / any OpenAI-compatible endpoint), not a fleet manager, so it doesn't compete on most rows here. Recorded for its file-edit checkpointing, destructive-command approval, and a scratchpad/calendar the model can read and modify.",
+      "where_agents_run": "your machine, on a local model (Ollama, llama-server, vLLM or another OpenAI-compatible server); optional self-hosted browser host via Docker (experimental)",
+      "license": "MIT, free",
+      "checked_on": "2026-09-30 (repo/docs pass)",
+      "source_note": "Checked against its README, RELEASE_NOTES (to 1.2.0), docs index, FAQ, tools reference, architecture, themes, Remote Control and browser-hosting docs, and the v1.2.0 release assets. A single local-model assistant with its own IDE, not a manager of coding-agent CLIs. Not installed or run here.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Single local-model chat app, not a multi-agent fleet manager",
+          "value": "One assistant on one model; not an agent manager",
           "mark": "no"
         },
         "harness_count": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "None; runs models directly, not agent CLIs",
+          "mark": "info"
         },
         "needs_you_signal": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Needs-you inbox for approvals and questions; reminders",
+          "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Its own tool calls wait for your approval in chat",
+          "mark": "yes"
         },
         "cross_provider_delegation": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Single assistant; no other agents to hand off to",
+          "mark": "n/a"
         },
         "always_on_assistant": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "The app is an assistant; reminders only while open",
+          "mark": "partial"
         },
         "conversation_gui_view": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Chat is the main view",
+          "mark": "yes"
         },
         "real_terminal": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Sessions are chats; IDE has a project terminal",
+          "mark": "n/a"
         },
         "session_organization": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Chats grouped by project, bulk archive, task rail",
+          "mark": "yes"
         },
         "prompt_scratchpad": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Home scratchpad notes the model can read",
+          "mark": "partial"
         },
         "saved_prompt_library": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Skills fired with / in the composer",
+          "mark": "yes"
         },
         "builtin_editors_browser": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Monaco IDE, terminal, PDF and DOCX editing; no browser",
+          "mark": "yes"
         },
         "appearance_control": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Palettes, background effects, chat zoom; no font choice",
+          "mark": "partial"
         },
         "usage_hud": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Local models, no plan limits; shows context-window use",
+          "mark": "n/a"
         },
         "burn_rate_forecast": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Local models, no plan limits",
+          "mark": "n/a"
         },
         "limit_governor": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Local models, no plan limits",
+          "mark": "n/a"
         },
         "account_hotswap": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Local models, no provider accounts",
+          "mark": "n/a"
         },
         "vault_task_source": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Tasks live in its own task board",
+          "mark": "undocumented"
         },
         "issue_tracker_pipeline": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Git tools are read-only: no commit or push",
+          "mark": "no"
         },
         "worktree_management": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "planner_orchestrator": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Plan mode you approve; read-only research sub-agents",
+          "mark": "partial"
         },
         "agent_to_agent_messaging": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Single assistant",
+          "mark": "n/a"
         },
         "knowledge_base": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Searches your registered folders; approved memories",
+          "mark": "yes"
         },
         "native_mobile_app": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs; phone Remote Control not shipped",
+          "mark": "undocumented"
         },
         "phone_no_new_app": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Experimental Docker browser host, reachable over Tailscale",
+          "mark": "experimental"
         },
         "remote_ssh": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "voice_input": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "os": {
-          "value": "Windows (macOS untested, no Linux)",
+          "value": "Windows; Linux x64 experimental; macOS from source only",
           "mark": "info"
         },
         "app_shell": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Electron app with a Python sidecar",
+          "mark": "info"
         },
         "languages": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "JavaScript, Python, HTML, CSS (GitHub percentages not checked)",
+          "mark": "info"
         },
         "background_process": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Yes: Python sidecar, plus Ollama or llama-server",
+          "mark": "info"
         },
         "download_size": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "v1.2.0: 248 MB Windows, 309 MB AppImage, 275 MB deb",
+          "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Medium (estimate: Electron app plus Python sidecar; the local model uses more)",
+          "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Own desktop app window",
+          "mark": "no"
         },
         "license_cost": {
-          "value": "MIT",
+          "value": "MIT, free",
           "mark": "info"
         },
         "extensibility": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Plugin host, MCP servers, skills",
+          "mark": "yes"
         },
         "teams_multiuser": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Built for one owner, including the browser host",
+          "mark": "no"
         },
         "stability_maturity": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "v1.2.0 (2026-09-25); one-person hobby project since Aug 2026",
+          "mark": "info"
         }
       },
       "github_stars": 47
@@ -3050,163 +3050,163 @@
       "name": "micracode",
       "url": "https://github.com/Jamessdevops/micracode",
       "category": "other tool we looked at",
-      "where_agents_run": "your machine",
-      "license": "open-source",
-      "checked_on": "2026-09-07 (site/discussion pass only, no full comparison run)",
-      "source_note": "An AI web-app builder (Next.js, exports components as a zip), a different category from a fleet manager; recorded for completeness only. Local-model support is planned by its author.",
+      "where_agents_run": "your machine (macOS app); the model runs at OpenAI, Google or Anthropic with your API key",
+      "license": "MIT, free (you pay for your own model API)",
+      "checked_on": "2026-09-30 (repo/docs pass)",
+      "source_note": "Checked against its README, docs/ (getting started, configuration, usage, FAQ), apps/core README, desktop build config, micracode.com, and the v0.4.0 release assets. An AI web-app builder with one built-in agent (pi SDK), not a manager of coding-agent CLIs. Its docs list only OpenAI, Gemini and Anthropic keys; the site says any OpenAI-compatible model. Not installed or run here.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "App builder, not a fleet/agent manager",
+          "value": "App builder with one built-in agent; not an agent manager",
           "mark": "no"
         },
         "harness_count": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "None; one built-in agent on OpenAI, Gemini or Anthropic keys",
+          "mark": "info"
         },
         "needs_you_signal": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "approve_deny_prompt": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Tool approval not built yet (endpoint returns 501)",
+          "mark": "no"
         },
         "cross_provider_delegation": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "One built-in agent; no hand-offs",
+          "mark": "n/a"
         },
         "always_on_assistant": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "App builder; no standing assistant",
+          "mark": "n/a"
         },
         "conversation_gui_view": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Chat panel beside the code",
+          "mark": "yes"
         },
         "real_terminal": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Chat, editor and preview panels; no terminal",
+          "mark": "no"
         },
         "session_organization": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "One chat per project; recent-projects list",
+          "mark": "partial"
         },
         "prompt_scratchpad": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "saved_prompt_library": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Keeps prompt history per project; no saved prompts",
+          "mark": "undocumented"
         },
         "builtin_editors_browser": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Monaco editor and live app preview",
+          "mark": "yes"
         },
         "appearance_control": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Resizable panels only in docs",
+          "mark": "undocumented"
         },
         "usage_hud": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "burn_rate_forecast": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "limit_governor": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "account_hotswap": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "One API key per provider; no accounts",
+          "mark": "undocumented"
         },
         "vault_task_source": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "App builder; no task list",
+          "mark": "n/a"
         },
         "issue_tracker_pipeline": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "App builder; no issue intake",
+          "mark": "n/a"
         },
         "worktree_management": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Version-control features not built yet (return 501)",
+          "mark": "no"
         },
         "planner_orchestrator": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "agent_to_agent_messaging": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "One built-in agent",
+          "mark": "n/a"
         },
         "knowledge_base": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "native_mobile_app": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "phone_no_new_app": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Listens on this computer only, by design",
+          "mark": "no"
         },
         "remote_ssh": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Meant to run on your laptop only",
+          "mark": "no"
         },
         "voice_input": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "os": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "macOS (Apple Silicon, Intel); source build runs in a browser",
+          "mark": "info"
         },
         "app_shell": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Electron 33 app with a Next.js UI",
+          "mark": "info"
         },
         "languages": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "TypeScript, JavaScript, Python (GitHub percentages not checked)",
+          "mark": "info"
         },
         "background_process": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "No daemon: backend runs inside the app",
+          "mark": "info"
         },
         "download_size": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "v0.4.0: 115 MB Apple Silicon, 122 MB Intel (dmg)",
+          "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Small (estimate: one Electron app, backend in-process)",
+          "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Own desktop app window",
+          "mark": "no"
         },
         "license_cost": {
-          "value": "open-source",
+          "value": "MIT, free; bring your own model API key",
           "mark": "info"
         },
         "extensibility": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Local HTTP API; no plugin system in docs",
+          "mark": "partial"
         },
         "teams_multiuser": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "No accounts or login; one person, one laptop",
+          "mark": "no"
         },
         "stability_maturity": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "v0.4.0 (2026-09-06); since May 2026; parts still stubbed",
+          "mark": "info"
         }
       },
       "github_stars": 289
@@ -3338,7 +3338,7 @@
           "mark": "info"
         },
         "languages": {
-          "value": "TypeScript (Electron), Swift for iOS, Kotlin for Android; GitHub percentages not read",
+          "value": "TypeScript (Electron), Swift for iOS, Kotlin for Android; GitHub percentages not checked",
           "mark": "info"
         },
         "background_process": {
@@ -3545,163 +3545,163 @@
       "name": "OpenCove",
       "url": "https://github.com/DeadWaveWave/opencove",
       "category": "agent manager",
-      "where_agents_run": "your machine (desktop)",
-      "license": "unknown",
-      "checked_on": "2026-09-07 (site/discussion pass only, no full comparison run)",
-      "source_note": "Alpha desktop canvas of agent sessions, used here as a visual-design reference; its state-detection mechanism is undocumented.",
+      "where_agents_run": "your machine, or remote machines over SSH (managed Workers); browser Web UI (experimental)",
+      "license": "MIT, free",
+      "checked_on": "2026-09-30 (repo/docs pass)",
+      "source_note": "Checked against its README, CHANGELOG (to v0.3.3 and Unreleased), docs/ (agent runtime, CLI, control surface, releasing, UI), agent settings source, and the v0.3.3 release assets. Not installed or run here; used as a visual-design reference for Pantheon.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Claude Code, Codex, OpenCode, Pi, Kimi on one canvas",
+          "mark": "yes"
         },
         "harness_count": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "5 to launch; Gemini kept for old sessions only",
+          "mark": "info"
         },
         "needs_you_signal": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Waiting status, standby banners, system notifications",
+          "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Answer in the agent's terminal on the canvas; no allow button",
+          "mark": "partial"
         },
         "cross_provider_delegation": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Agents can open other agents via its CLI; no hand-off view",
+          "mark": "partial"
         },
         "always_on_assistant": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "conversation_gui_view": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Agents shown as terminals; no chat view in docs",
+          "mark": "undocumented"
         },
         "real_terminal": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Full terminals (xterm.js + node-pty) on the canvas",
+          "mark": "yes"
         },
         "session_organization": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Infinite canvas, projects, nested Spaces, sidebar groups",
+          "mark": "yes"
         },
         "prompt_scratchpad": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Notes on the canvas; phrase insertion into terminals",
+          "mark": "partial"
         },
         "saved_prompt_library": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Task prompt templates, reusable roles, quick phrases",
+          "mark": "yes"
         },
         "builtin_editors_browser": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Monaco file editor, file explorer, full browser windows",
+          "mark": "yes"
         },
         "appearance_control": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "5 themes; UI and terminal font size and family",
+          "mark": "yes"
         },
         "usage_hud": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "burn_rate_forecast": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "limit_governor": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "account_hotswap": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "vault_task_source": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Tasks and notes live on its own canvas",
+          "mark": "undocumented"
         },
         "issue_tracker_pipeline": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "No issue intake in docs; shows a PR chip per worktree",
+          "mark": "undocumented"
         },
         "worktree_management": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Space per git worktree, create and archive",
+          "mark": "yes"
         },
         "planner_orchestrator": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Tasks run by agents you pick; no auto-split in docs",
+          "mark": "undocumented"
         },
         "agent_to_agent_messaging": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "knowledge_base": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Canvas notes agents can read through its CLI",
+          "mark": "partial"
         },
         "native_mobile_app": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "phone_no_new_app": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Experimental Web UI in a browser on your network",
+          "mark": "experimental"
         },
         "remote_ssh": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Managed SSH Workers run sessions on other machines",
+          "mark": "yes"
         },
         "voice_input": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "os": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Windows, macOS (Apple Silicon, Intel), Linux; browser Web UI (experimental)",
+          "mark": "info"
         },
         "app_shell": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Electron desktop app (React, infinite canvas)",
+          "mark": "info"
         },
         "languages": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "TypeScript, JavaScript (GitHub percentages not checked)",
+          "mark": "info"
         },
         "background_process": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Yes: a local Worker process owns terminals and sessions",
+          "mark": "info"
         },
         "download_size": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "v0.3.3: 128 MB Windows, 150-156 MB macOS, 163 MB AppImage, 124 MB deb",
+          "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Medium (estimate: Electron app plus a Worker process)",
+          "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Own desktop app window; CLI is for scripting",
+          "mark": "no"
         },
         "license_cost": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "MIT, free",
+          "mark": "info"
         },
         "extensibility": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "CLI and local HTTP API; no plugin system in docs",
+          "mark": "partial"
         },
         "teams_multiuser": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "stability_maturity": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Alpha; v0.3.3 (2026-09-12) plus nightlies; since Feb 2026",
+          "mark": "info"
         }
       },
       "github_stars": 1600
@@ -3710,163 +3710,163 @@
       "name": "Oyren",
       "url": "https://oyren.ai/development",
       "category": "agent manager",
-      "where_agents_run": "cloud (remote codespaces, deliberately not your machine)",
-      "license": "commercial, hourly",
-      "checked_on": "2026-09-07 (site/discussion pass only, no full comparison run)",
-      "source_note": "Site-verified, 2026-09-23. Remote disposable codespaces with several agent CLIs preinstalled and tmux in every codespace.",
+      "where_agents_run": "cloud (Oyren codespaces billed by the hour, deliberately not your machine); agents on your own computer can also work its board over MCP",
+      "license": "Closed source; free workspace, Pro $2.99/month, Max $5.99/month (billed yearly); codespaces and AI paid in credits",
+      "checked_on": "2026-09-30 (site pass)",
+      "source_note": "Checked against oyren.ai llms.txt, the codespaces, plans, platforms and feature pages (cloud computer, kanban, supervised loops, MCP server, second brain), two guides, a use-case page and two blog posts. Desktop download links redirect to the homepage. No public repo found. Not tried here.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Claude Code, Codex, Cursor, opencode, Qwen Code, DeepSeek Harness, Antigravity preinstalled",
+          "value": "Claude Code, Codex, opencode, Cursor CLI, Qwen Code, plus any you install",
           "mark": "yes"
         },
         "harness_count": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "5 in its launcher, plus Antigravity and any CLI you install",
+          "mark": "info"
         },
         "needs_you_signal": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Emails you the question when a board card is blocked",
+          "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30); its pitch is agents running with prompts bypassed",
+          "mark": "undocumented"
         },
         "cross_provider_delegation": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Agents hand work to other CLIs in tmux panes on one machine",
+          "mark": "yes"
         },
         "always_on_assistant": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "conversation_gui_view": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Agent app: chat view of a coding agent on the codespace",
+          "mark": "yes"
         },
         "real_terminal": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Terminal and VS Code on the codespace",
+          "mark": "yes"
         },
         "session_organization": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Codespaces per workspace; kanban board tracks agent tickets",
+          "mark": "yes"
         },
         "prompt_scratchpad": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "saved_prompt_library": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "builtin_editors_browser": {
-          "value": "Streamed VS Code/Zed IDE plus a Playwright-driven built-in browser",
+          "value": "VS Code or Zed, plus a browser agents drive with Playwright",
           "mark": "yes"
         },
         "appearance_control": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Light and dark mode; colourblind textures on boards",
+          "mark": "partial"
         },
         "usage_hud": {
-          "value": "Not mentioned on its site",
+          "value": "Shows credit cost per step; no subscription limit meter in its docs (checked 2026-09-30)",
           "mark": "undocumented"
         },
         "burn_rate_forecast": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "limit_governor": {
-          "value": "A blocked card emails the human a specific question and resumes on reply, but only for one card, not a whole session against a usage window",
-          "mark": "partial"
+          "value": "Not in its docs (checked 2026-09-30); loops pause for questions, not limits",
+          "mark": "undocumented"
         },
         "account_hotswap": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "One codespace per login; no switching inside one",
+          "mark": "partial"
         },
         "vault_task_source": {
-          "value": "Its own kanban board is the tracker",
-          "mark": "no"
+          "value": "Not in its docs (checked 2026-09-30); notes and tasks live in its hosted workspace",
+          "mark": "undocumented"
         },
         "issue_tracker_pipeline": {
-          "value": "Its own kanban board with an importance/urgency matrix and calendar/milestone views, read and written by agents over its own MCP server",
-          "mark": "yes"
+          "value": "Its own board card to agent to draft PR; no GitHub or Jira intake",
+          "mark": "partial"
         },
         "worktree_management": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30); each codespace is its own clone",
+          "mark": "undocumented"
         },
         "planner_orchestrator": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Board loop picks cards and launches agents; agents split work in tmux",
+          "mark": "yes"
         },
         "agent_to_agent_messaging": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Agents message each other in tmux; MCP can message another container",
+          "mark": "yes"
         },
         "knowledge_base": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Workspace notes and scanned PDFs agents read over MCP",
+          "mark": "yes"
         },
         "native_mobile_app": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "iPad and Android tablet apps listed; store links say coming soon",
+          "mark": "planned"
         },
         "phone_no_new_app": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Responsive web app in a phone browser",
+          "mark": "yes"
         },
         "remote_ssh": {
-          "value": "Hosted service: it already is the remote machine",
+          "value": "Hosted service: agents already run on its cloud machines",
           "mark": "n/a"
         },
         "voice_input": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "os": {
-          "value": "Any browser (hosted)",
+          "value": "Any browser; desktop apps listed but downloads not live; tablet apps coming soon",
           "mark": "info"
         },
         "app_shell": {
-          "value": "Hosted cloud service, browser-based, no local install (vendor: \"VS Code runs as web app in your browser while Zed editor is streamed\")",
+          "value": "Hosted web app; desktop builds described as Tauri",
           "mark": "info"
         },
         "languages": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Closed source; no public repo found",
+          "mark": "info"
         },
         "background_process": {
-          "value": "Hosted service: nothing runs on your machine",
+          "value": "Hosted service: agents run on its servers",
           "mark": "n/a"
         },
         "download_size": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "No installer available: download links redirect to the homepage",
+          "mark": "info"
         },
         "ram_vs_claude_desktop": {
           "value": "Runs in the cloud (local cost: a browser tab)",
           "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "Cloud codespace, not a local terminal tool",
+          "value": "Hosted workspace in a browser, not a local terminal tool",
           "mark": "no"
         },
         "license_cost": {
-          "value": "Commercial: hourly compute plus an optional credit wallet",
+          "value": "Closed source; free plan, Pro $2.99/month; codespaces from about $0.17/hour",
           "mark": "info"
         },
         "extensibility": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "MCP servers both ways; editor plugins; no SDK",
+          "mark": "partial"
         },
         "teams_multiuser": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Blog says workspaces are often shared; no team plan listed",
+          "mark": "partial"
         },
         "stability_maturity": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Live paid service; guides still missing screenshots of a running agent",
+          "mark": "info"
         }
       },
       "github_stars": null
@@ -3998,7 +3998,7 @@
           "mark": "info"
         },
         "languages": {
-          "value": "TypeScript (GitHub breakdown not readable here)",
+          "value": "TypeScript (GitHub percentages not checked)",
           "mark": "info"
         },
         "background_process": {
@@ -4040,163 +4040,163 @@
       "name": "Superset",
       "url": "https://superset.sh",
       "category": "agent manager",
-      "where_agents_run": "your machine (macOS, experimental Linux)",
-      "license": "Elastic-2.0",
-      "checked_on": "2026-09-07 (site/discussion pass only, no full comparison run)",
-      "source_note": "Site/discussion pass only, 2026-09-07. Ships a TypeScript SDK and MCP server so agents can spawn agents.",
+      "where_agents_run": "your machine; other machines you add through its relay; its cloud workspaces where your account has them; iPhone app reaches them",
+      "license": "Elastic-2.0 (source-available); desktop app free, Pro $20 per user per month ($15 billed yearly)",
+      "checked_on": "2026-09-30 (repo/docs pass)",
+      "source_note": "Checked against docs.superset.sh (full docs text), superset.sh llms.txt, pricing and mobile blog posts, the repo README and desktop package.json, and the latest release (desktop v1.33.0). Not installed or run here.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Claude Code, Codex, Gemini, OpenCode and more side by side",
+          "mark": "yes"
         },
         "harness_count": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "20 named CLIs plus its own chat; others via custom command",
+          "mark": "info"
         },
         "needs_you_signal": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Hook-driven waiting and done alerts, sounds, dock badge",
+          "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Inline approvals for its own chat agent; CLI agents ask in their terminal",
+          "mark": "partial"
         },
         "cross_provider_delegation": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Coordinator agent hands slices to any agent; each shows as a workspace",
+          "mark": "yes"
         },
         "always_on_assistant": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "@superset Slack bot files tasks and starts agents (Pro)",
+          "mark": "partial"
         },
         "conversation_gui_view": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Chat view for its own agent only; CLI agents shown as terminals",
+          "mark": "partial"
         },
         "real_terminal": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Built-in persistent terminal per workspace, survives restarts",
+          "mark": "yes"
         },
         "session_organization": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Workspaces per project in a sidebar, sessions, tabs and splits",
+          "mark": "yes"
         },
         "prompt_scratchpad": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Rich prompt editor; auto-run off stages prompts unsent",
+          "mark": "partial"
         },
         "saved_prompt_library": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Searchable prompt history and saved terminal scripts",
+          "mark": "partial"
         },
         "builtin_editors_browser": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Code editor, diff viewer, in-app browser",
+          "mark": "yes"
         },
         "appearance_control": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Themes, theme files and marketplace, terminal font size",
+          "mark": "yes"
         },
         "usage_hud": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "5-hour and weekly quota per Claude and Codex login, plus token costs",
+          "mark": "yes"
         },
         "burn_rate_forecast": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Shows fill and reset time; no forecast in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "limit_governor": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "account_hotswap": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Several Claude or Codex logins; pick the default for new launches",
+          "mark": "yes"
         },
         "vault_task_source": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30); tasks come from Linear, GitHub or its own list",
+          "mark": "undocumented"
         },
         "issue_tracker_pipeline": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "GitHub or Linear issue to agent workspace to PR, merged in app",
+          "mark": "yes"
         },
         "worktree_management": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Every workspace is its own git worktree and branch",
+          "mark": "yes"
         },
         "planner_orchestrator": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Orchestrate skill lets one agent split work across workers",
+          "mark": "yes"
         },
         "agent_to_agent_messaging": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Agents read and write other terminals through its CLI",
+          "mark": "yes"
         },
         "knowledge_base": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "native_mobile_app": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "iPhone app (iOS 26, Pro plan); Android waitlist",
+          "mark": "yes"
         },
         "phone_no_new_app": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "FAQ: no supported web dashboard; phone needs its app",
+          "mark": "no"
         },
         "remote_ssh": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Reach workspaces on other machines through its relay (Pro), not SSH",
+          "mark": "yes"
         },
         "voice_input": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Dictation in the iPhone app only",
+          "mark": "partial"
         },
         "os": {
-          "value": "macOS; Linux experimental",
+          "value": "macOS; Linux AppImage experimental; Windows planned; iPhone app",
           "mark": "info"
         },
         "app_shell": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Electron 41.10.3 desktop app",
+          "mark": "info"
         },
         "languages": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "TypeScript (GitHub's main language; percentage split not reachable here)",
+          "mark": "info"
         },
         "background_process": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Yes: host-service daemon and a terminal daemon",
+          "mark": "info"
         },
         "download_size": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "v1.33.0: 434 MB Apple Silicon dmg, 446 MB Intel dmg, 537 MB Linux AppImage",
+          "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Medium (estimate: Electron app plus host and terminal daemons)",
+          "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Desktop app; its CLI can drive agents from any terminal",
+          "mark": "partial"
         },
         "license_cost": {
-          "value": "Elastic-2.0",
+          "value": "Elastic-2.0; desktop free, Pro $20/user/month ($15 yearly)",
           "mark": "info"
         },
         "extensibility": {
-          "value": "TypeScript SDK plus MCP server so agents can spawn agents",
+          "value": "CLI, TypeScript SDK, MCP server, agent skills, theme marketplace",
           "mark": "yes"
         },
         "teams_multiuser": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Organizations, shared hosts, team automations; SSO on Enterprise",
+          "mark": "yes"
         },
         "stability_maturity": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "v1.33.0 (2026-09-30), daily releases since late 2025; Linux experimental",
+          "mark": "info"
         }
       },
       "github_stars": 14740
@@ -4370,163 +4370,163 @@
       "name": "Teleclod",
       "url": "https://teleclod.com",
       "category": "agent manager",
-      "where_agents_run": "cloud (Windows/macOS/Linux/Android/browser plus a Chrome extension)",
-      "license": "commercial (Free / EUR49 Pro / EUR99 Studio)",
-      "checked_on": "2026-09-07 (site/discussion pass only, no full comparison run)",
-      "source_note": "Site-only pass, 2026-09-22; no independent verification found (no reviews, repo, or discussion beyond the single source comment).",
+      "where_agents_run": "your machine (or another computer or Docker/VPS you own); phone or browser controls it through its cloud relay",
+      "license": "Closed source; Free plan, Pro $29/month ($24 billed yearly), $5/month per extra machine",
+      "checked_on": "2026-09-30 (site pass)",
+      "source_note": "Checked against teleclod.com llms.txt and llms-full.txt, the homepage and FAQ text in its site bundle, its public release feed (/api/releases/all) and four blog posts. No public repo, no independent reviews found. Not installed or run here.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Claims 14+ providers including Claude Code, Codex, OpenRouter, Ollama, Kimi",
+          "value": "Claude Code, Codex, Gemini CLI, Kimi CLI side by side",
           "mark": "yes"
         },
         "harness_count": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "4 CLI agents, plus 10+ API providers and Ollama",
+          "mark": "info"
         },
         "needs_you_signal": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Waiting-on-you status; desktop and phone notifications",
+          "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "You approve each plan and answer agent questions; no per-command allow/deny documented",
+          "mark": "partial"
         },
         "cross_provider_delegation": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Plan, run and review phases of one task can use different agents",
+          "mark": "yes"
         },
         "always_on_assistant": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "conversation_gui_view": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Plans, questions and summaries instead of terminal text",
+          "mark": "yes"
         },
         "real_terminal": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30); it shows tasks, not terminals",
+          "mark": "undocumented"
         },
         "session_organization": {
-          "value": "Task list, kanban, and a global dashboard",
+          "value": "Task list and kanban per project; global dashboard (Pro)",
           "mark": "yes"
         },
         "prompt_scratchpad": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "saved_prompt_library": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "builtin_editors_browser": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Chrome extension lets agents click and inspect your tabs; diff view; no editor",
+          "mark": "partial"
         },
         "appearance_control": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "usage_hud": {
-          "value": "Not mentioned on its site",
+          "value": "Not in its docs (checked 2026-09-30)",
           "mark": "undocumented"
         },
         "burn_rate_forecast": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "limit_governor": {
-          "value": "None",
-          "mark": "no"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "account_hotswap": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "vault_task_source": {
-          "value": "It is its own task store",
-          "mark": "no"
+          "value": "Not in its docs (checked 2026-09-30); tasks live in its own per-project store",
+          "mark": "undocumented"
         },
         "issue_tracker_pipeline": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30); lists Gmail, Calendar, Slack, Sentry links",
+          "mark": "undocumented"
         },
         "worktree_management": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
         },
         "planner_orchestrator": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Planning agent splits each task into steps you approve",
+          "mark": "yes"
         },
         "agent_to_agent_messaging": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "A task can create tasks in another project and hear back",
+          "mark": "partial"
         },
         "knowledge_base": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Remembers your rules and conventions per project",
+          "mark": "partial"
         },
         "native_mobile_app": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Android app (APK from its site); no iOS app",
+          "mark": "partial"
         },
         "phone_no_new_app": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Any mobile browser through its relay (Pro)",
+          "mark": "yes"
         },
         "remote_ssh": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Run tasks on other machines you own, via its relay (Pro), not SSH",
+          "mark": "yes"
         },
         "voice_input": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Dictate tasks; say \"over\" to send",
+          "mark": "yes"
         },
         "os": {
-          "value": "Windows, macOS, Linux, Android; browser",
+          "value": "macOS, Windows (current downloads); Linux claimed; Android app; any browser via relay",
           "mark": "info"
         },
         "app_shell": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Electron app with a built-in local web server",
+          "mark": "info"
         },
         "languages": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Closed source; no public repo",
+          "mark": "info"
         },
         "background_process": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Yes: built-in Express/Socket.IO server; optional cloud relay",
+          "mark": "info"
         },
         "download_size": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "628 MB macOS universal (v1.0.28), 417 MB Windows x64 (v1.0.29)",
+          "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Small (estimate: Electron app with a built-in local server)",
+          "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "Replaces the terminal outright",
+          "value": "Own desktop app; replaces terminals with task cards",
           "mark": "no"
         },
         "license_cost": {
-          "value": "Closed-source, paid tiers",
+          "value": "Closed source; Free plan, Pro $29/month ($24 yearly)",
           "mark": "info"
         },
         "extensibility": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "MCP server so other AI tools can add tasks; no plugin SDK",
+          "mark": "partial"
         },
         "teams_multiuser": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "Share a device with other signed-in users; no team plan",
+          "mark": "partial"
         },
         "stability_maturity": {
-          "value": "not verified",
-          "mark": "unknown"
+          "value": "v1.0.29 (Windows), v1.0.28 (macOS); no public reviews found",
+          "mark": "info"
         }
       },
       "github_stars": null

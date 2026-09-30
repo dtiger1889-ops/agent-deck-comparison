@@ -795,6 +795,7 @@ function renderChips() {
   tc.appendChild(seg([
     { label: "Featured", on: sameSet(shownTools, six), onClick: () => { shownTools = new Set(six); toolsChanged(); } },
     { label: "All " + allNames.size, on: sameSet(shownTools, allNames), onClick: () => { shownTools = new Set(allNames); toolsChanged(); } },
+    { label: "None", on: shownTools.size === 0, onClick: () => { shownTools = new Set(); toolsChanged(); } },
   ]));
   tc.appendChild(sep());
   DATA.tools.forEach(t => tc.appendChild(chip(t.name, shownTools.has(t.name), () => {

@@ -979,7 +979,155 @@ ccc = {
     },
 }
 
-# ---- Listed 2026-09-29, not researched yet: every cell Unknown until a research pass ----
+# ---- Researched 2026-09-30 ----
+omniscio = {
+    "name": "Omniscio", "url": "https://omniscio.com", "category": "agent manager",
+    "where_agents_run": "your machine, or a remote host over SSH per session; Devin runs in Cognition's cloud; phone reaches it via browser (same Wi-Fi, or Tailscale)",
+    "license": "Closed source; free plan, Pro $15/month or $144/year (early access free)",
+    "checked_on": "2026-09-30 (docs/site pass)",
+    "source_note": "Checked against docs.omniscio.com (full docs page, v0.1.108), its features, roadmap, download, EULA and terms pages, the homepage, and installer file sizes. No public source repo. Not installed or run here.",
+    "is_authors_own": False,
+    "features": {
+        "multi_provider_supervision": c("yes", "Claude Code, Codex, Gemini, OpenCode, Devin side by side"),
+        "harness_count": c("info", "5 with own docs pages, about 10 named; DeepSeek/Kimi run inside Claude Code"),
+        "needs_you_signal": c("yes", "Needs-you inbox, desktop alerts, tray badge, phone push"),
+        "approve_deny_prompt": c("yes", "Approve or decline cards in inbox, chat and phone"),
+        "cross_provider_delegation": c("yes", "Agents spawn sessions on any engine, linked back to parent"),
+        "always_on_assistant": c("partial", "Voice assistant (off by default) and ask-about-this-page"),
+        "conversation_gui_view": c("yes", "Chat view with plain-English rewrite of replies"),
+        "real_terminal": c("no", "Sessions shown as chat; built-in terminal is a separate shell"),
+        "session_organization": c("yes", "Folders with sessions, groups, tags, inbox view"),
+        "prompt_scratchpad": c("partial", "Unsent drafts saved per session; separate scratchpad notes"),
+        "saved_prompt_library": c("yes", "Prompt template library and saved quick replies"),
+        "builtin_editors_browser": c("yes", "File viewer and editor, diff viewer, AI browser, shell"),
+        "appearance_control": c("yes", "13 skins, custom themes, light or dark, font size"),
+        "usage_hud": c("yes", "Claude 5-hour and weekly use per account, plus costs"),
+        "burn_rate_forecast": c("yes", "Predicts when each Claude account hits its 5-hour limit"),
+        "limit_governor": c("partial", "Waits at a limit and resumes after reset; no early pause"),
+        "account_hotswap": c("yes", "Several Claude logins; switches when one hits its limit"),
+        "vault_task_source": c("partial", "Opens your Markdown/Obsidian vault; tasks live in its own lists"),
+        "issue_tracker_pipeline": c("partial", "Jira issues can start agent work; PR merge queue; no issue-to-PR flow"),
+        "worktree_management": c("yes", "Optional worktree per session, merged back when done"),
+        "planner_orchestrator": c("yes", "Multi-step recipes, including split into parallel sessions"),
+        "agent_to_agent_messaging": c("yes", "Agents send messages into other sessions via its local API"),
+        "knowledge_base": c("yes", "Agent memory store and a notes vault agents read and write"),
+        "native_mobile_app": c("no", "Not in app stores; installable web app instead"),
+        "phone_no_new_app": c("yes", "Phone browser on same Wi-Fi, or anywhere via Tailscale"),
+        "remote_ssh": c("yes", "Run any session's Claude on an SSH host"),
+        "voice_input": c("yes", "Wake word, dictation and voice commands"),
+        "os": c("info", "Windows 10/11, macOS (Apple Silicon, Intel), Linux AppImage; phone browser"),
+        "app_shell": c("info", "Electron desktop app"),
+        "languages": c("info", "Closed source; no public repo"),
+        "background_process": c("info", "Yes: local control server (port 19519) and phone web server"),
+        "download_size": c("info", "v0.1.108: 461 MB Windows setup, 570-577 MB macOS dmg, 579 MB Linux AppImage"),
+        "ram_vs_claude_desktop": c("info", "Medium (estimate: Electron app with many built-in services; recommends 16 GB RAM)"),
+        "runs_in_terminal": c("no", "Own desktop app window"),
+        "license_cost": c("info", "Closed source; Free plan, Pro $15/month; early access free"),
+        "extensibility": c("yes", "Plugin SDK and marketplace, local HTTP API, skills, MCP"),
+        "teams_multiuser": c("partial", "Team chat and shared workspaces; SSO not yet, SCIM off"),
+        "stability_maturity": c("info", "v0.1.108, early access, releases since April 2026"),
+    },
+}
+
+nimbalyst = {
+    "name": "Nimbalyst", "url": "https://nimbalyst.com", "category": "agent manager",
+    "where_agents_run": "your machine; the iOS app starts and answers sessions that run on your desktop",
+    "license": "MIT, free for individuals; Teams $20 per user per month (free during beta)",
+    "checked_on": "2026-09-30 (site/docs pass)",
+    "source_note": "Checked against docs.nimbalyst.com (full text), nimbalyst.com pricing, download, open-source and orchestration pages, the GitHub README, and release notes through v0.79.1. Not installed or run here.",
+    "is_authors_own": False,
+    "features": {
+        "multi_provider_supervision": c("yes", "Claude Code, Codex and others side by side"),
+        "harness_count": c("info", "7: Claude Code and Codex, plus 5 in alpha"),
+        "needs_you_signal": c("yes", "Awaiting-input list, OS alerts, phone push"),
+        "approve_deny_prompt": c("yes", "Allow or deny inline, or from the phone"),
+        "cross_provider_delegation": c("yes", "Sessions launch sibling sessions in one list"),
+        "always_on_assistant": c("experimental", "Crew teammates on scheduled shifts, alpha, off by default"),
+        "conversation_gui_view": c("yes", "Transcript view with edit cards"),
+        "real_terminal": c("partial", "Claude Code CLI mode in an embedded terminal; others chat only"),
+        "session_organization": c("yes", "List, kanban by phase, workstreams, worktrees"),
+        "prompt_scratchpad": c("partial", "Drafts kept per session and synced to phone; no draft pad"),
+        "saved_prompt_library": c("yes", "AI Actions: prompt presets in one workspace file"),
+        "builtin_editors_browser": c("yes", "Code editor, markdown and diagram editors, built-in browser"),
+        "appearance_control": c("partial", "Light and dark themes, custom themes via extensions; no font setting in docs"),
+        "usage_hud": c("yes", "Claude 5-hour and weekly limits with reset times"),
+        "burn_rate_forecast": c("partial", "Claude meter with pace tracking; no time-to-limit in docs"),
+        "limit_governor": c("undocumented", "Not in its docs (checked 2026-09-30)"),
+        "account_hotswap": c("undocumented", "Not in its docs (checked 2026-09-30)"),
+        "vault_task_source": c("undocumented", "Not in its docs (checked 2026-09-30)"),
+        "issue_tracker_pipeline": c("partial", "GitHub issues to tracker to session; PR review and merge; Linear and Jira only via MCP"),
+        "worktree_management": c("yes", "One-click worktree per session"),
+        "planner_orchestrator": c("experimental", "Agent Teams, Meta Agent and Super Loops, all experimental or alpha"),
+        "agent_to_agent_messaging": c("yes", "Sessions read and mention other sessions"),
+        "knowledge_base": c("yes", "Project Memory search; Knowledge extension, off by default"),
+        "native_mobile_app": c("yes", "iOS app; Android app only in the source repo"),
+        "phone_no_new_app": c("no", "Sessions need the phone app; web console covers team docs only"),
+        "remote_ssh": c("undocumented", "Not in its docs (checked 2026-09-30)"),
+        "voice_input": c("experimental", "Voice Mode on desktop and iPhone, alpha, needs an OpenAI key"),
+        "os": c("info", "macOS, Windows, Linux; iPhone app"),
+        "app_shell": c("info", "Electron (React)"),
+        "languages": c("info", "TypeScript (Electron), Swift for iOS, Kotlin for Android; GitHub percentages not read"),
+        "background_process": c("info", "None documented; agents run inside the app, which must stay open"),
+        "download_size": c("info", "v0.79.1: 419 MB Windows, 492-708 MB macOS, 571-784 MB Linux"),
+        "ram_vs_claude_desktop": c("info", "Medium (estimate: Electron app with many editors; 4 GB default memory ceiling)"),
+        "runs_in_terminal": c("no", "Desktop app"),
+        "license_cost": c("info", "MIT, free for individuals; Teams $20 per user per month"),
+        "extensibility": c("yes", "Extension SDK and marketplace, MCP servers, nim command-line tool"),
+        "teams_multiuser": c("experimental", "Teams beta: shared docs and trackers, each person's own agents"),
+        "stability_maturity": c("info", "v0.79.1 (2026-09-30), weekly releases, many alpha features"),
+    },
+}
+
+parallelcode = {
+    "name": "Parallel Code", "url": "https://github.com/johannesjo/parallel-code", "category": "agent manager",
+    "where_agents_run": "your machine (optionally inside a local Docker container); phone browser on your network (LAN or Tailscale)",
+    "license": "MIT, free",
+    "checked_on": "2026-09-30 (repo/docs pass)",
+    "source_note": "Checked against its README, PRIVACY.md, AGENTS.md, docs/ folder, package.json, source code and latest release (v3.1.0). Not installed or run here.",
+    "is_authors_own": False,
+    "features": {
+        "multi_provider_supervision": c("yes", "Claude Code, Codex, Gemini and more side by side"),
+        "harness_count": c("info", "6 built in, plus custom agent commands"),
+        "needs_you_signal": c("yes", "Attention tray, status dots, desktop notifications"),
+        "approve_deny_prompt": c("yes", "Accept or decline cards in Chat mode (Claude, Codex)"),
+        "cross_provider_delegation": c("partial", "Sub-tasks run the parent's agent; peer prompts between sessions"),
+        "always_on_assistant": c("undocumented", "Not in its docs (checked 2026-09-30)"),
+        "conversation_gui_view": c("yes", "Chat mode for Claude and Codex tasks"),
+        "real_terminal": c("yes", "Agent terminal plus shell terminals per task"),
+        "session_organization": c("yes", "Tiled panels, projects, coordinator folders"),
+        "prompt_scratchpad": c("yes", "Saved drafts and a notes panel sent as a prompt"),
+        "saved_prompt_library": c("partial", "Per-task prompt history; no saved library in docs"),
+        "builtin_editors_browser": c("yes", "Diff viewer, Markdown canvas, browser preview"),
+        "appearance_control": c("yes", "10 themes, custom themes, terminal font choice"),
+        "usage_hud": c("yes", "Claude and Codex 5-hour and weekly limits, from your login"),
+        "burn_rate_forecast": c("no", "Percent left and reset time only"),
+        "limit_governor": c("undocumented", "Not in its docs (checked 2026-09-30)"),
+        "account_hotswap": c("undocumented", "Not in its docs (checked 2026-09-30)"),
+        "vault_task_source": c("partial", "Links to Super Productivity tasks; no notes vault"),
+        "issue_tracker_pipeline": c("partial", "Watches GitHub PR checks; no issue intake"),
+        "worktree_management": c("yes", "Core: every task gets its own branch and worktree"),
+        "planner_orchestrator": c("partial", "Agents can create and merge sub-tasks; no planner of its own"),
+        "agent_to_agent_messaging": c("yes", "Queued prompts between live sessions, with receipts"),
+        "knowledge_base": c("partial", "Per-task mind map and reasoning graph agents read"),
+        "native_mobile_app": c("no", "Phone uses a browser page"),
+        "phone_no_new_app": c("yes", "Phone browser via QR code, LAN or Tailscale"),
+        "remote_ssh": c("undocumented", "Not in its docs (checked 2026-09-30)"),
+        "voice_input": c("no", "Privacy policy: no microphone capture code yet"),
+        "os": c("info", "macOS, Linux; phone browser. No Windows build"),
+        "app_shell": c("info", "Electron 40 with SolidJS"),
+        "languages": c("info", "TypeScript (GitHub breakdown not readable here)"),
+        "background_process": c("info", "No separate daemon; phone and agent servers run inside the app"),
+        "download_size": c("info", "v3.1.0: 251 MB mac dmg, 166 MB AppImage, 129 MB deb"),
+        "ram_vs_claude_desktop": c("info", "Medium (estimate: Electron app with many terminals)"),
+        "runs_in_terminal": c("no", "Own desktop app window"),
+        "license_cost": c("info", "MIT, free, uses your own agent subscriptions"),
+        "extensibility": c("partial", "Custom agent commands and an MCP server for agents; no plugin SDK"),
+        "teams_multiuser": c("undocumented", "Not in its docs (checked 2026-09-30)"),
+        "stability_maturity": c("info", "v3.1.0, tags since Feb 2026, near-weekly releases"),
+    },
+}
+
+# ---- For a tool listed before its research pass: every cell Unknown until then ----
 def placeholder(name, url, note):
     return {
         "name": name, "url": url, "category": "agent manager", "where_agents_run": "not verified",
@@ -988,16 +1136,60 @@ def placeholder(name, url, note):
         "features": {k: c("unknown", "Not researched yet") for k, _, _, _ in FEATURES},
     }
 
-agtx = placeholder("AGTX", "https://github.com/thereal4th/AGTX",
-                   "Listed 2026-09-29, research pending. Its README describes an orchestrator agent that hands tasks from a terminal kanban board to coding agents running in parallel.")
-nimbalyst = placeholder("Nimbalyst", "https://nimbalyst.com", "Listed 2026-09-29, research pending.")
-parallelcode = placeholder("Parallel Code", "https://github.com/johannesjo/parallel-code", "Listed 2026-09-29, research pending.")
+agtx = {
+    "name": "agtx", "url": "https://github.com/fynnfluegge/agtx", "category": "agent manager",
+    "where_agents_run": "your machine, one tmux window and git worktree per task; optional Docker sandbox; phone browser over wifi or Tailscale",
+    "license": "Apache-2.0, free",
+    "checked_on": "2026-09-30 (repo/docs pass)",
+    "source_note": "The upstream project. Checked against its README, CLAUDE.md, AGENTS.md, LICENSE, install.sh, Cargo.toml, agent source, phone web app source and the v1.0.6 release. Not the thereal4th/AGTX fork, which stopped at the March 2026 code. Not installed or run here.",
+    "is_authors_own": False,
+    "features": {
+        "multi_provider_supervision": c("yes", "Nine coding agents on one kanban board"),
+        "harness_count": c("info", "9: Claude, Codex, Gemini, Copilot, OpenCode, Cursor, Grok, Antigravity, pi"),
+        "needs_you_signal": c("yes", "Blocked badge with the reason; no desktop alert"),
+        "approve_deny_prompt": c("partial", "Type answers into the agent's terminal, phone included"),
+        "cross_provider_delegation": c("yes", "Different agent per phase, switched on the same task"),
+        "always_on_assistant": c("undocumented", "Not in its docs (checked 2026-09-30)"),
+        "conversation_gui_view": c("no", "Popup and phone show the live terminal, not a chat"),
+        "real_terminal": c("yes", "Live pane in a popup or fullscreen; tmux attach"),
+        "session_organization": c("yes", "Kanban per project, dependency graph, project sidebar"),
+        "prompt_scratchpad": c("partial", "Backlog task text waits until you start it"),
+        "saved_prompt_library": c("partial", "Per-phase prompt templates in plugins; no free library"),
+        "builtin_editors_browser": c("partial", "Built-in diff view and config editor; no code editor"),
+        "appearance_control": c("partial", "Theme colors with live preview; font is your terminal's"),
+        "usage_hud": c("undocumented", "Not in its docs (checked 2026-09-30)"),
+        "burn_rate_forecast": c("undocumented", "Not in its docs (checked 2026-09-30)"),
+        "limit_governor": c("undocumented", "Not in its docs (checked 2026-09-30)"),
+        "account_hotswap": c("undocumented", "Not in its docs (checked 2026-09-30)"),
+        "vault_task_source": c("undocumented", "Not in its docs (checked 2026-09-30)"),
+        "issue_tracker_pipeline": c("partial", "Opens a GitHub pull request at Review; no issue intake"),
+        "worktree_management": c("yes", "Every task gets its own worktree"),
+        "planner_orchestrator": c("yes", "Oneshot skill plans waves and merges; orchestrator experimental"),
+        "agent_to_agent_messaging": c("partial", "Board-running session reads and messages task agents"),
+        "knowledge_base": c("partial", "Board carries specs, plans and diffs to dependent tasks"),
+        "native_mobile_app": c("no", "Installable web app instead of a store app"),
+        "phone_no_new_app": c("yes", "Phone browser over wifi or Tailscale, paired by QR"),
+        "remote_ssh": c("undocumented", "Not in its docs (checked 2026-09-30)"),
+        "voice_input": c("undocumented", "Not in its docs (checked 2026-09-30)"),
+        "os": c("info", "macOS, Linux; phone browser; Windows only via Docker sandbox"),
+        "app_shell": c("info", "Terminal UI (Rust, ratatui) over tmux; phone web app"),
+        "languages": c("info", "Rust ~89% (7 languages in all)"),
+        "background_process": c("info", "Yes: its own tmux server; web server only while serving"),
+        "download_size": c("info", "v1.0.6: 4.4-4.9 MB archives for macOS and Linux"),
+        "ram_vs_claude_desktop": c("info", "Tiny (estimate: one Rust binary plus tmux)"),
+        "runs_in_terminal": c("yes", "Runs in your terminal"),
+        "license_cost": c("info", "Apache-2.0, free; uses your own agent subscriptions"),
+        "extensibility": c("yes", "TOML workflow plugins, custom skills, MCP server"),
+        "teams_multiuser": c("undocumented", "Not in its docs (checked 2026-09-30)"),
+        "stability_maturity": c("info", "v1.0.6 (2026-09-16), started February 2026, frequent releases"),
+    },
+}
 
 # Column order: the "Featured" set first, then every other researched tool A-Z, then tools not researched yet.
 FEATURED = [orca, velaterm, herdr, paseo, ao, pane, pantheon]
-PENDING = [agtx, nimbalyst, parallelcode]
-_rest = [antigravity, claudedesktop, codexapp, superset, opencove, ccmanager, agentmanager, micracode,
-         vibetree, jenny, vibekanban, ccc, conductor, kepler, teleclod, oyren, t3code, wave]
+PENDING = []
+_rest = [agtx, antigravity, claudedesktop, codexapp, superset, opencove, ccmanager, agentmanager, micracode,
+         vibetree, jenny, vibekanban, ccc, conductor, omniscio, nimbalyst, parallelcode, kepler, teleclod, oyren, t3code, wave]
 TOOLS = FEATURED + sorted(_rest, key=lambda t: t["name"].lower()) + PENDING
 
 # GitHub stars, read from the GitHub API on 2026-09-29. None = closed source, no public repo.
@@ -1005,8 +1197,10 @@ STARS = {
     "Orca": 81580, "herdr": 41461, "vibe-kanban": 28221, "T3 Code": 23911, "Wave Terminal": 22388,
     "Paseo": 19013, "Superset": 14740, "Agent Orchestrator (AO)": 12530, "Nimbalyst": 1803,
     "OpenCove": 1600, "CCManager": 1256, "Parallel Code": 1026, "agent-manager": 540, "Pane": 497,
-    "micracode": 289, "VibeTree": 267, "Claude Command Center": 175, "VelaTerm": 230, "Jenny": 47, "AGTX": 0, "Pantheon": 0,
+    "micracode": 289, "VibeTree": 267, "Claude Command Center": 175, "VelaTerm": 230, "Jenny": 47, "Pantheon": 0,
 }
+# agtx: exact count from the repos.ecosyste.ms mirror (synced 2026-09-25); GitHub's page shows 1.7k.
+STARS["agtx"] = 1692
 for t in TOOLS:
     t["github_stars"] = STARS.get(t["name"])
 
@@ -1032,8 +1226,8 @@ for t in TOOLS:
         t["features"]["os"] = OS[t["name"]]
 
 out = {
-    "snapshot_date": "2026-09-29",
-    "snapshot_note": "Snapshot as of 2026-09-29. Cells come from each tool's own docs/posts at the dates shown; not re-verified beyond that pass.",
+    "snapshot_date": "2026-09-30",
+    "snapshot_note": "Snapshot as of 2026-09-30. Cells come from each tool's own docs/posts at the dates shown; not re-verified beyond that pass.",
     "features": [{"key": k, "label": label, "description": desc, "group": group} for k, label, desc, group in FEATURES],
     "group_order": GROUP_ORDER,
     "tools": TOOLS,

@@ -1,6 +1,6 @@
 {
-  "snapshot_date": "2026-09-29",
-  "snapshot_note": "Snapshot as of 2026-09-29. Cells come from each tool's own docs/posts at the dates shown; not re-verified beyond that pass.",
+  "snapshot_date": "2026-09-30",
+  "snapshot_note": "Snapshot as of 2026-09-30. Cells come from each tool's own docs/posts at the dates shown; not re-verified beyond that pass.",
   "features": [
     {
       "key": "multi_provider_supervision",
@@ -1562,6 +1562,171 @@
       "github_stars": 540
     },
     {
+      "name": "agtx",
+      "url": "https://github.com/fynnfluegge/agtx",
+      "category": "agent manager",
+      "where_agents_run": "your machine, one tmux window and git worktree per task; optional Docker sandbox; phone browser over wifi or Tailscale",
+      "license": "Apache-2.0, free",
+      "checked_on": "2026-09-30 (repo/docs pass)",
+      "source_note": "The upstream project. Checked against its README, CLAUDE.md, AGENTS.md, LICENSE, install.sh, Cargo.toml, agent source, phone web app source and the v1.0.6 release. Not the thereal4th/AGTX fork, which stopped at the March 2026 code. Not installed or run here.",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "Nine coding agents on one kanban board",
+          "mark": "yes"
+        },
+        "harness_count": {
+          "value": "9: Claude, Codex, Gemini, Copilot, OpenCode, Cursor, Grok, Antigravity, pi",
+          "mark": "info"
+        },
+        "needs_you_signal": {
+          "value": "Blocked badge with the reason; no desktop alert",
+          "mark": "yes"
+        },
+        "approve_deny_prompt": {
+          "value": "Type answers into the agent's terminal, phone included",
+          "mark": "partial"
+        },
+        "cross_provider_delegation": {
+          "value": "Different agent per phase, switched on the same task",
+          "mark": "yes"
+        },
+        "always_on_assistant": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "conversation_gui_view": {
+          "value": "Popup and phone show the live terminal, not a chat",
+          "mark": "no"
+        },
+        "real_terminal": {
+          "value": "Live pane in a popup or fullscreen; tmux attach",
+          "mark": "yes"
+        },
+        "session_organization": {
+          "value": "Kanban per project, dependency graph, project sidebar",
+          "mark": "yes"
+        },
+        "prompt_scratchpad": {
+          "value": "Backlog task text waits until you start it",
+          "mark": "partial"
+        },
+        "saved_prompt_library": {
+          "value": "Per-phase prompt templates in plugins; no free library",
+          "mark": "partial"
+        },
+        "builtin_editors_browser": {
+          "value": "Built-in diff view and config editor; no code editor",
+          "mark": "partial"
+        },
+        "appearance_control": {
+          "value": "Theme colors with live preview; font is your terminal's",
+          "mark": "partial"
+        },
+        "usage_hud": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "burn_rate_forecast": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "limit_governor": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "account_hotswap": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "vault_task_source": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "issue_tracker_pipeline": {
+          "value": "Opens a GitHub pull request at Review; no issue intake",
+          "mark": "partial"
+        },
+        "worktree_management": {
+          "value": "Every task gets its own worktree",
+          "mark": "yes"
+        },
+        "planner_orchestrator": {
+          "value": "Oneshot skill plans waves and merges; orchestrator experimental",
+          "mark": "yes"
+        },
+        "agent_to_agent_messaging": {
+          "value": "Board-running session reads and messages task agents",
+          "mark": "partial"
+        },
+        "knowledge_base": {
+          "value": "Board carries specs, plans and diffs to dependent tasks",
+          "mark": "partial"
+        },
+        "native_mobile_app": {
+          "value": "Installable web app instead of a store app",
+          "mark": "no"
+        },
+        "phone_no_new_app": {
+          "value": "Phone browser over wifi or Tailscale, paired by QR",
+          "mark": "yes"
+        },
+        "remote_ssh": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "voice_input": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "os": {
+          "value": "macOS, Linux; phone browser; Windows only via Docker sandbox",
+          "mark": "info"
+        },
+        "app_shell": {
+          "value": "Terminal UI (Rust, ratatui) over tmux; phone web app",
+          "mark": "info"
+        },
+        "languages": {
+          "value": "Rust ~89% (7 languages in all)",
+          "mark": "info"
+        },
+        "background_process": {
+          "value": "Yes: its own tmux server; web server only while serving",
+          "mark": "info"
+        },
+        "download_size": {
+          "value": "v1.0.6: 4.4-4.9 MB archives for macOS and Linux",
+          "mark": "info"
+        },
+        "ram_vs_claude_desktop": {
+          "value": "Tiny (estimate: one Rust binary plus tmux)",
+          "mark": "info"
+        },
+        "runs_in_terminal": {
+          "value": "Runs in your terminal",
+          "mark": "yes"
+        },
+        "license_cost": {
+          "value": "Apache-2.0, free; uses your own agent subscriptions",
+          "mark": "info"
+        },
+        "extensibility": {
+          "value": "TOML workflow plugins, custom skills, MCP server",
+          "mark": "yes"
+        },
+        "teams_multiuser": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "stability_maturity": {
+          "value": "v1.0.6 (2026-09-16), started February 2026, frequent releases",
+          "mark": "info"
+        }
+      },
+      "github_stars": 1692
+    },
+    {
       "name": "CCManager",
       "url": "https://github.com/kbwo/ccmanager",
       "category": "agent manager",
@@ -3047,6 +3212,336 @@
       "github_stars": 289
     },
     {
+      "name": "Nimbalyst",
+      "url": "https://nimbalyst.com",
+      "category": "agent manager",
+      "where_agents_run": "your machine; the iOS app starts and answers sessions that run on your desktop",
+      "license": "MIT, free for individuals; Teams $20 per user per month (free during beta)",
+      "checked_on": "2026-09-30 (site/docs pass)",
+      "source_note": "Checked against docs.nimbalyst.com (full text), nimbalyst.com pricing, download, open-source and orchestration pages, the GitHub README, and release notes through v0.79.1. Not installed or run here.",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "Claude Code, Codex and others side by side",
+          "mark": "yes"
+        },
+        "harness_count": {
+          "value": "7: Claude Code and Codex, plus 5 in alpha",
+          "mark": "info"
+        },
+        "needs_you_signal": {
+          "value": "Awaiting-input list, OS alerts, phone push",
+          "mark": "yes"
+        },
+        "approve_deny_prompt": {
+          "value": "Allow or deny inline, or from the phone",
+          "mark": "yes"
+        },
+        "cross_provider_delegation": {
+          "value": "Sessions launch sibling sessions in one list",
+          "mark": "yes"
+        },
+        "always_on_assistant": {
+          "value": "Crew teammates on scheduled shifts, alpha, off by default",
+          "mark": "experimental"
+        },
+        "conversation_gui_view": {
+          "value": "Transcript view with edit cards",
+          "mark": "yes"
+        },
+        "real_terminal": {
+          "value": "Claude Code CLI mode in an embedded terminal; others chat only",
+          "mark": "partial"
+        },
+        "session_organization": {
+          "value": "List, kanban by phase, workstreams, worktrees",
+          "mark": "yes"
+        },
+        "prompt_scratchpad": {
+          "value": "Drafts kept per session and synced to phone; no draft pad",
+          "mark": "partial"
+        },
+        "saved_prompt_library": {
+          "value": "AI Actions: prompt presets in one workspace file",
+          "mark": "yes"
+        },
+        "builtin_editors_browser": {
+          "value": "Code editor, markdown and diagram editors, built-in browser",
+          "mark": "yes"
+        },
+        "appearance_control": {
+          "value": "Light and dark themes, custom themes via extensions; no font setting in docs",
+          "mark": "partial"
+        },
+        "usage_hud": {
+          "value": "Claude 5-hour and weekly limits with reset times",
+          "mark": "yes"
+        },
+        "burn_rate_forecast": {
+          "value": "Claude meter with pace tracking; no time-to-limit in docs",
+          "mark": "partial"
+        },
+        "limit_governor": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "account_hotswap": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "vault_task_source": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "issue_tracker_pipeline": {
+          "value": "GitHub issues to tracker to session; PR review and merge; Linear and Jira only via MCP",
+          "mark": "partial"
+        },
+        "worktree_management": {
+          "value": "One-click worktree per session",
+          "mark": "yes"
+        },
+        "planner_orchestrator": {
+          "value": "Agent Teams, Meta Agent and Super Loops, all experimental or alpha",
+          "mark": "experimental"
+        },
+        "agent_to_agent_messaging": {
+          "value": "Sessions read and mention other sessions",
+          "mark": "yes"
+        },
+        "knowledge_base": {
+          "value": "Project Memory search; Knowledge extension, off by default",
+          "mark": "yes"
+        },
+        "native_mobile_app": {
+          "value": "iOS app; Android app only in the source repo",
+          "mark": "yes"
+        },
+        "phone_no_new_app": {
+          "value": "Sessions need the phone app; web console covers team docs only",
+          "mark": "no"
+        },
+        "remote_ssh": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "voice_input": {
+          "value": "Voice Mode on desktop and iPhone, alpha, needs an OpenAI key",
+          "mark": "experimental"
+        },
+        "os": {
+          "value": "macOS, Windows, Linux; iPhone app",
+          "mark": "info"
+        },
+        "app_shell": {
+          "value": "Electron (React)",
+          "mark": "info"
+        },
+        "languages": {
+          "value": "TypeScript (Electron), Swift for iOS, Kotlin for Android; GitHub percentages not read",
+          "mark": "info"
+        },
+        "background_process": {
+          "value": "None documented; agents run inside the app, which must stay open",
+          "mark": "info"
+        },
+        "download_size": {
+          "value": "v0.79.1: 419 MB Windows, 492-708 MB macOS, 571-784 MB Linux",
+          "mark": "info"
+        },
+        "ram_vs_claude_desktop": {
+          "value": "Medium (estimate: Electron app with many editors; 4 GB default memory ceiling)",
+          "mark": "info"
+        },
+        "runs_in_terminal": {
+          "value": "Desktop app",
+          "mark": "no"
+        },
+        "license_cost": {
+          "value": "MIT, free for individuals; Teams $20 per user per month",
+          "mark": "info"
+        },
+        "extensibility": {
+          "value": "Extension SDK and marketplace, MCP servers, nim command-line tool",
+          "mark": "yes"
+        },
+        "teams_multiuser": {
+          "value": "Teams beta: shared docs and trackers, each person's own agents",
+          "mark": "experimental"
+        },
+        "stability_maturity": {
+          "value": "v0.79.1 (2026-09-30), weekly releases, many alpha features",
+          "mark": "info"
+        }
+      },
+      "github_stars": 1803
+    },
+    {
+      "name": "Omniscio",
+      "url": "https://omniscio.com",
+      "category": "agent manager",
+      "where_agents_run": "your machine, or a remote host over SSH per session; Devin runs in Cognition's cloud; phone reaches it via browser (same Wi-Fi, or Tailscale)",
+      "license": "Closed source; free plan, Pro $15/month or $144/year (early access free)",
+      "checked_on": "2026-09-30 (docs/site pass)",
+      "source_note": "Checked against docs.omniscio.com (full docs page, v0.1.108), its features, roadmap, download, EULA and terms pages, the homepage, and installer file sizes. No public source repo. Not installed or run here.",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "Claude Code, Codex, Gemini, OpenCode, Devin side by side",
+          "mark": "yes"
+        },
+        "harness_count": {
+          "value": "5 with own docs pages, about 10 named; DeepSeek/Kimi run inside Claude Code",
+          "mark": "info"
+        },
+        "needs_you_signal": {
+          "value": "Needs-you inbox, desktop alerts, tray badge, phone push",
+          "mark": "yes"
+        },
+        "approve_deny_prompt": {
+          "value": "Approve or decline cards in inbox, chat and phone",
+          "mark": "yes"
+        },
+        "cross_provider_delegation": {
+          "value": "Agents spawn sessions on any engine, linked back to parent",
+          "mark": "yes"
+        },
+        "always_on_assistant": {
+          "value": "Voice assistant (off by default) and ask-about-this-page",
+          "mark": "partial"
+        },
+        "conversation_gui_view": {
+          "value": "Chat view with plain-English rewrite of replies",
+          "mark": "yes"
+        },
+        "real_terminal": {
+          "value": "Sessions shown as chat; built-in terminal is a separate shell",
+          "mark": "no"
+        },
+        "session_organization": {
+          "value": "Folders with sessions, groups, tags, inbox view",
+          "mark": "yes"
+        },
+        "prompt_scratchpad": {
+          "value": "Unsent drafts saved per session; separate scratchpad notes",
+          "mark": "partial"
+        },
+        "saved_prompt_library": {
+          "value": "Prompt template library and saved quick replies",
+          "mark": "yes"
+        },
+        "builtin_editors_browser": {
+          "value": "File viewer and editor, diff viewer, AI browser, shell",
+          "mark": "yes"
+        },
+        "appearance_control": {
+          "value": "13 skins, custom themes, light or dark, font size",
+          "mark": "yes"
+        },
+        "usage_hud": {
+          "value": "Claude 5-hour and weekly use per account, plus costs",
+          "mark": "yes"
+        },
+        "burn_rate_forecast": {
+          "value": "Predicts when each Claude account hits its 5-hour limit",
+          "mark": "yes"
+        },
+        "limit_governor": {
+          "value": "Waits at a limit and resumes after reset; no early pause",
+          "mark": "partial"
+        },
+        "account_hotswap": {
+          "value": "Several Claude logins; switches when one hits its limit",
+          "mark": "yes"
+        },
+        "vault_task_source": {
+          "value": "Opens your Markdown/Obsidian vault; tasks live in its own lists",
+          "mark": "partial"
+        },
+        "issue_tracker_pipeline": {
+          "value": "Jira issues can start agent work; PR merge queue; no issue-to-PR flow",
+          "mark": "partial"
+        },
+        "worktree_management": {
+          "value": "Optional worktree per session, merged back when done",
+          "mark": "yes"
+        },
+        "planner_orchestrator": {
+          "value": "Multi-step recipes, including split into parallel sessions",
+          "mark": "yes"
+        },
+        "agent_to_agent_messaging": {
+          "value": "Agents send messages into other sessions via its local API",
+          "mark": "yes"
+        },
+        "knowledge_base": {
+          "value": "Agent memory store and a notes vault agents read and write",
+          "mark": "yes"
+        },
+        "native_mobile_app": {
+          "value": "Not in app stores; installable web app instead",
+          "mark": "no"
+        },
+        "phone_no_new_app": {
+          "value": "Phone browser on same Wi-Fi, or anywhere via Tailscale",
+          "mark": "yes"
+        },
+        "remote_ssh": {
+          "value": "Run any session's Claude on an SSH host",
+          "mark": "yes"
+        },
+        "voice_input": {
+          "value": "Wake word, dictation and voice commands",
+          "mark": "yes"
+        },
+        "os": {
+          "value": "Windows 10/11, macOS (Apple Silicon, Intel), Linux AppImage; phone browser",
+          "mark": "info"
+        },
+        "app_shell": {
+          "value": "Electron desktop app",
+          "mark": "info"
+        },
+        "languages": {
+          "value": "Closed source; no public repo",
+          "mark": "info"
+        },
+        "background_process": {
+          "value": "Yes: local control server (port 19519) and phone web server",
+          "mark": "info"
+        },
+        "download_size": {
+          "value": "v0.1.108: 461 MB Windows setup, 570-577 MB macOS dmg, 579 MB Linux AppImage",
+          "mark": "info"
+        },
+        "ram_vs_claude_desktop": {
+          "value": "Medium (estimate: Electron app with many built-in services; recommends 16 GB RAM)",
+          "mark": "info"
+        },
+        "runs_in_terminal": {
+          "value": "Own desktop app window",
+          "mark": "no"
+        },
+        "license_cost": {
+          "value": "Closed source; Free plan, Pro $15/month; early access free",
+          "mark": "info"
+        },
+        "extensibility": {
+          "value": "Plugin SDK and marketplace, local HTTP API, skills, MCP",
+          "mark": "yes"
+        },
+        "teams_multiuser": {
+          "value": "Team chat and shared workspaces; SSO not yet, SCIM off",
+          "mark": "partial"
+        },
+        "stability_maturity": {
+          "value": "v0.1.108, early access, releases since April 2026",
+          "mark": "info"
+        }
+      },
+      "github_stars": null
+    },
+    {
       "name": "OpenCove",
       "url": "https://github.com/DeadWaveWave/opencove",
       "category": "agent manager",
@@ -3375,6 +3870,171 @@
         }
       },
       "github_stars": null
+    },
+    {
+      "name": "Parallel Code",
+      "url": "https://github.com/johannesjo/parallel-code",
+      "category": "agent manager",
+      "where_agents_run": "your machine (optionally inside a local Docker container); phone browser on your network (LAN or Tailscale)",
+      "license": "MIT, free",
+      "checked_on": "2026-09-30 (repo/docs pass)",
+      "source_note": "Checked against its README, PRIVACY.md, AGENTS.md, docs/ folder, package.json, source code and latest release (v3.1.0). Not installed or run here.",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "Claude Code, Codex, Gemini and more side by side",
+          "mark": "yes"
+        },
+        "harness_count": {
+          "value": "6 built in, plus custom agent commands",
+          "mark": "info"
+        },
+        "needs_you_signal": {
+          "value": "Attention tray, status dots, desktop notifications",
+          "mark": "yes"
+        },
+        "approve_deny_prompt": {
+          "value": "Accept or decline cards in Chat mode (Claude, Codex)",
+          "mark": "yes"
+        },
+        "cross_provider_delegation": {
+          "value": "Sub-tasks run the parent's agent; peer prompts between sessions",
+          "mark": "partial"
+        },
+        "always_on_assistant": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "conversation_gui_view": {
+          "value": "Chat mode for Claude and Codex tasks",
+          "mark": "yes"
+        },
+        "real_terminal": {
+          "value": "Agent terminal plus shell terminals per task",
+          "mark": "yes"
+        },
+        "session_organization": {
+          "value": "Tiled panels, projects, coordinator folders",
+          "mark": "yes"
+        },
+        "prompt_scratchpad": {
+          "value": "Saved drafts and a notes panel sent as a prompt",
+          "mark": "yes"
+        },
+        "saved_prompt_library": {
+          "value": "Per-task prompt history; no saved library in docs",
+          "mark": "partial"
+        },
+        "builtin_editors_browser": {
+          "value": "Diff viewer, Markdown canvas, browser preview",
+          "mark": "yes"
+        },
+        "appearance_control": {
+          "value": "10 themes, custom themes, terminal font choice",
+          "mark": "yes"
+        },
+        "usage_hud": {
+          "value": "Claude and Codex 5-hour and weekly limits, from your login",
+          "mark": "yes"
+        },
+        "burn_rate_forecast": {
+          "value": "Percent left and reset time only",
+          "mark": "no"
+        },
+        "limit_governor": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "account_hotswap": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "vault_task_source": {
+          "value": "Links to Super Productivity tasks; no notes vault",
+          "mark": "partial"
+        },
+        "issue_tracker_pipeline": {
+          "value": "Watches GitHub PR checks; no issue intake",
+          "mark": "partial"
+        },
+        "worktree_management": {
+          "value": "Core: every task gets its own branch and worktree",
+          "mark": "yes"
+        },
+        "planner_orchestrator": {
+          "value": "Agents can create and merge sub-tasks; no planner of its own",
+          "mark": "partial"
+        },
+        "agent_to_agent_messaging": {
+          "value": "Queued prompts between live sessions, with receipts",
+          "mark": "yes"
+        },
+        "knowledge_base": {
+          "value": "Per-task mind map and reasoning graph agents read",
+          "mark": "partial"
+        },
+        "native_mobile_app": {
+          "value": "Phone uses a browser page",
+          "mark": "no"
+        },
+        "phone_no_new_app": {
+          "value": "Phone browser via QR code, LAN or Tailscale",
+          "mark": "yes"
+        },
+        "remote_ssh": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "voice_input": {
+          "value": "Privacy policy: no microphone capture code yet",
+          "mark": "no"
+        },
+        "os": {
+          "value": "macOS, Linux; phone browser. No Windows build",
+          "mark": "info"
+        },
+        "app_shell": {
+          "value": "Electron 40 with SolidJS",
+          "mark": "info"
+        },
+        "languages": {
+          "value": "TypeScript (GitHub breakdown not readable here)",
+          "mark": "info"
+        },
+        "background_process": {
+          "value": "No separate daemon; phone and agent servers run inside the app",
+          "mark": "info"
+        },
+        "download_size": {
+          "value": "v3.1.0: 251 MB mac dmg, 166 MB AppImage, 129 MB deb",
+          "mark": "info"
+        },
+        "ram_vs_claude_desktop": {
+          "value": "Medium (estimate: Electron app with many terminals)",
+          "mark": "info"
+        },
+        "runs_in_terminal": {
+          "value": "Own desktop app window",
+          "mark": "no"
+        },
+        "license_cost": {
+          "value": "MIT, free, uses your own agent subscriptions",
+          "mark": "info"
+        },
+        "extensibility": {
+          "value": "Custom agent commands and an MCP server for agents; no plugin SDK",
+          "mark": "partial"
+        },
+        "teams_multiuser": {
+          "value": "Not in its docs (checked 2026-09-30)",
+          "mark": "undocumented"
+        },
+        "stability_maturity": {
+          "value": "v3.1.0, tags since Feb 2026, near-weekly releases",
+          "mark": "info"
+        }
+      },
+      "github_stars": 1026
     },
     {
       "name": "Superset",
@@ -4365,501 +5025,6 @@
         }
       },
       "github_stars": 22388
-    },
-    {
-      "name": "AGTX",
-      "url": "https://github.com/thereal4th/AGTX",
-      "category": "agent manager",
-      "where_agents_run": "not verified",
-      "license": "not verified",
-      "checked_on": "not researched yet (listed 2026-09-29)",
-      "source_note": "Listed 2026-09-29, research pending. Its README describes an orchestrator agent that hands tasks from a terminal kanban board to coding agents running in parallel.",
-      "is_authors_own": false,
-      "features": {
-        "multi_provider_supervision": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "harness_count": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "needs_you_signal": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "approve_deny_prompt": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "cross_provider_delegation": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "always_on_assistant": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "conversation_gui_view": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "real_terminal": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "session_organization": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "prompt_scratchpad": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "saved_prompt_library": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "builtin_editors_browser": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "appearance_control": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "usage_hud": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "burn_rate_forecast": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "limit_governor": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "account_hotswap": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "vault_task_source": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "issue_tracker_pipeline": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "worktree_management": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "planner_orchestrator": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "agent_to_agent_messaging": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "knowledge_base": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "native_mobile_app": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "phone_no_new_app": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "remote_ssh": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "voice_input": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "os": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "app_shell": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "languages": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "background_process": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "download_size": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "ram_vs_claude_desktop": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "runs_in_terminal": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "license_cost": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "extensibility": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "teams_multiuser": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "stability_maturity": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        }
-      },
-      "github_stars": 0
-    },
-    {
-      "name": "Nimbalyst",
-      "url": "https://nimbalyst.com",
-      "category": "agent manager",
-      "where_agents_run": "not verified",
-      "license": "not verified",
-      "checked_on": "not researched yet (listed 2026-09-29)",
-      "source_note": "Listed 2026-09-29, research pending.",
-      "is_authors_own": false,
-      "features": {
-        "multi_provider_supervision": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "harness_count": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "needs_you_signal": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "approve_deny_prompt": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "cross_provider_delegation": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "always_on_assistant": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "conversation_gui_view": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "real_terminal": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "session_organization": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "prompt_scratchpad": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "saved_prompt_library": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "builtin_editors_browser": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "appearance_control": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "usage_hud": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "burn_rate_forecast": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "limit_governor": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "account_hotswap": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "vault_task_source": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "issue_tracker_pipeline": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "worktree_management": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "planner_orchestrator": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "agent_to_agent_messaging": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "knowledge_base": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "native_mobile_app": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "phone_no_new_app": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "remote_ssh": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "voice_input": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "os": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "app_shell": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "languages": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "background_process": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "download_size": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "ram_vs_claude_desktop": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "runs_in_terminal": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "license_cost": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "extensibility": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "teams_multiuser": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "stability_maturity": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        }
-      },
-      "github_stars": 1803
-    },
-    {
-      "name": "Parallel Code",
-      "url": "https://github.com/johannesjo/parallel-code",
-      "category": "agent manager",
-      "where_agents_run": "not verified",
-      "license": "not verified",
-      "checked_on": "not researched yet (listed 2026-09-29)",
-      "source_note": "Listed 2026-09-29, research pending.",
-      "is_authors_own": false,
-      "features": {
-        "multi_provider_supervision": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "harness_count": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "needs_you_signal": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "approve_deny_prompt": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "cross_provider_delegation": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "always_on_assistant": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "conversation_gui_view": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "real_terminal": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "session_organization": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "prompt_scratchpad": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "saved_prompt_library": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "builtin_editors_browser": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "appearance_control": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "usage_hud": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "burn_rate_forecast": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "limit_governor": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "account_hotswap": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "vault_task_source": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "issue_tracker_pipeline": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "worktree_management": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "planner_orchestrator": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "agent_to_agent_messaging": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "knowledge_base": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "native_mobile_app": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "phone_no_new_app": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "remote_ssh": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "voice_input": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "os": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "app_shell": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "languages": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "background_process": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "download_size": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "ram_vs_claude_desktop": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "runs_in_terminal": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "license_cost": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "extensibility": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "teams_multiuser": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        },
-        "stability_maturity": {
-          "value": "Not researched yet",
-          "mark": "unknown"
-        }
-      },
-      "github_stars": 1026
     }
   ]
 }

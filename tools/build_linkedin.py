@@ -62,7 +62,7 @@ if SET == "2":
 TEXT_ROWS = {
     "phone_access": {
         "Orca": "Own app (beta)", "VelaTerm": "Own app or browser", "herdr": "Any SSH app",
-        "Pantheon": "Any SSH app", "Paseo": "Own app", "GitKraken Kepler": "Own app (limited)",
+        "Pantheon": "Any SSH app", "Paseo": "Own app or browser", "GitKraken Kepler": "Browser (paid plans)",
         "Google Antigravity": "Any browser", "Pane": "Browser; app in beta",
         "Agent Orchestrator (AO)": "Own app",
     },
@@ -73,21 +73,21 @@ TEXT_ROWS = {
     },
     "license_cost": {
         "Orca": "Free (MIT)", "VelaTerm": "Free (MIT)", "herdr": "Free (Apache)", "Pantheon": "Free (MIT)",
-        "Paseo": "Free (Apache)", "GitKraken Kepler": "Paid, free tier", "Agent Orchestrator (AO)": "Free (Apache)",
+        "Paseo": "Free (Apache)", "GitKraken Kepler": "Free in preview", "Agent Orchestrator (AO)": "Free (Apache)",
         "Google Antigravity": "Free tier, paid plans", "Pane": "Free (AGPL)",
     },
 }
 
 SHORT_AGENTS = {
-    "Orca": "27+",
+    "Orca": "36",
     "VelaTerm": "8+",
     "herdr": "22",
     "Pantheon": "2",
-    "Paseo": "~39",
-    "GitKraken Kepler": "Any (claimed)",
+    "Paseo": "41",
+    "GitKraken Kepler": "9 + any ACP",
     "Google Antigravity": "Gemini, Claude, GPT",
     "Pane": "Any",
-    "Agent Orchestrator (AO)": "25+",
+    "Agent Orchestrator (AO)": "32",
 }
 DISPLAY_NAME = {"Agent Orchestrator (AO)": "AO", "GitKraken Kepler": "Kepler", "Google Antigravity": "Antigravity"}
 SHORT_SHELL = {
@@ -96,7 +96,7 @@ SHORT_SHELL = {
     "herdr": "Terminal",
     "Pantheon": "Terminal",
     "Paseo": "Electron",
-    "GitKraken Kepler": "Unknown",
+    "GitKraken Kepler": "Electron",
     "Google Antigravity": "Electron",
     "Pane": "Electron",
     "Agent Orchestrator (AO)": "Electron",
@@ -112,6 +112,10 @@ MARK_STYLE = {
     "unknown": ("#ececec", "#6a6a6a", "Unknown"),
     "n/a": ("#f2f2f2", "#8a8a8a", "N/A"),
 }
+
+if SET == "1":
+    # Seven columns of "Not documented" do not fit at 1080 px; image 1 uses the short form it was approved with.
+    MARK_STYLE["undocumented"] = ("#ffffff", "#6a6a6a", "Not doc.")
 
 tools_by_name = {t["name"]: t for t in DATA["tools"]}
 tools = [tools_by_name[n] for n in TOOL_ORDER]

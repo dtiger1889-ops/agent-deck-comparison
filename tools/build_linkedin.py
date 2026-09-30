@@ -15,20 +15,23 @@ with open(os.path.join(here, "..", "data", "tools.json"), encoding="utf-8") as f
     DATA = json.load(f)
 
 TOOL_ORDER = ["Orca", "VelaTerm", "herdr", "Pantheon", "Paseo", "GitKraken Kepler", "Agent Orchestrator (AO)"]
+# Rows are the ones people choose a tool on AND where these seven tools split (some yes, some no).
+# A row where nearly every tool reads No or Not documented tells a reader nothing; re-pick
+# rows whenever the data changes (owner correction, 2026-09-30).
 FEATURE_ORDER = [
-    "harness_count", "app_shell", "usage_hud", "burn_rate_forecast",
-    "limit_governor", "vault_task_source", "worktree_management",
-    "planner_orchestrator", "native_mobile_app", "runs_in_terminal",
+    "harness_count", "app_shell", "usage_hud", "approve_deny_prompt",
+    "planner_orchestrator", "issue_tracker_pipeline", "remote_ssh",
+    "native_mobile_app", "voice_input", "runs_in_terminal",
 ]
 SHORT_LABEL = {
     "harness_count": "Coding agents supported",
     "app_shell": "App shell",
     "usage_hud": "Shows usage limits",
-    "burn_rate_forecast": "Predicts limit hits",
-    "limit_governor": "Pause/resume at limits",
-    "vault_task_source": "Tasks from notes vault",
-    "worktree_management": "Manages worktrees",
+    "approve_deny_prompt": "Answer \"Allow?\" prompts",
     "planner_orchestrator": "Splits the work",
+    "issue_tracker_pipeline": "GitHub/Jira issues to PRs",
+    "remote_ssh": "Remote machines (SSH)",
+    "voice_input": "Voice input",
     "native_mobile_app": "Phone app",
     "runs_in_terminal": "Runs in your terminal",
 }

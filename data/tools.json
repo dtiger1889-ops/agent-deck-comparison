@@ -1306,7 +1306,7 @@
           "mark": "yes"
         },
         "always_on_assistant": {
-          "value": "Pinned Assistant window built; reachable from the phone over the existing remote-control link",
+          "value": "Pinned Assistant window built; phone access through remote control not yet tested live",
           "mark": "partial"
         },
         "knowledge_base": {
@@ -1386,7 +1386,7 @@
           "mark": "yes"
         },
         "stability_maturity": {
-          "value": "Personal, pre-release; its terminal-multiplexer server froze four times on one day (cause still open)",
+          "value": "Personal, pre-release; published as-is",
           "mark": "info"
         },
         "os": {

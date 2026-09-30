@@ -231,7 +231,7 @@ pantheon = {
         "planner_orchestrator": c("planned", "Planning card built; dispatching from it is still greyed out"),
         "agent_to_agent_messaging": c("no", "None"),
         "cross_provider_delegation": c("yes", "Visible in the deck, with auto-fallback to console mode"),
-        "always_on_assistant": c("partial", "Pinned Assistant window built; reachable from the phone over the existing remote-control link"),
+        "always_on_assistant": c("partial", "Pinned Assistant window built; phone access through remote control not yet tested live"),
         "knowledge_base": c("n/a", "Reads the vault only as a task list"),
         "builtin_editors_browser": c("partial", "A terminal editor pane is built"),
         "native_mobile_app": c("no", "Reuses a terminal app over an existing SSH tunnel at a narrower column width instead"),
@@ -251,7 +251,7 @@ pantheon = {
         "download_size": c("info", "No installer; runs from source (git clone + Python)"),
         "ram_vs_claude_desktop": c("info", "Tiny: about 1% (measured 77 MB)"),
         "runs_in_terminal": c("yes", "Runs inside the terminal you already have, under tmux"),
-        "stability_maturity": c("info", "Personal, pre-release; its terminal-multiplexer server froze four times on one day (cause still open)"),
+        "stability_maturity": c("info", "Personal, pre-release; published as-is"),
     },
 }
 

@@ -1308,9 +1308,9 @@ omniscio = {
     "is_authors_own": False,
     "features": {
         "multi_provider_supervision": c("yes", "Claude Code, Codex, Gemini, OpenCode, Devin side by side"),
-        "harness_count": c("info", "5 with own docs pages, about 10 named; DeepSeek/Kimi run inside Claude Code"),
-        "needs_you_signal": c("yes", "Needs-you inbox, desktop alerts, tray badge, phone push"),
-        "approve_deny_prompt": c("yes", "Approve or decline cards in inbox, chat and phone"),
+        "harness_count": c("info", "20, all in the new-session picker (per its developer); docs name about 10"),
+        "needs_you_signal": c("yes", "Needs-you inbox, desktop alerts, phone push, SMS, Telegram"),
+        "approve_deny_prompt": c("yes", "Approve or decline in inbox, chat and phone; reply by SMS or Telegram"),
         "cross_provider_delegation": c("yes", "Agents spawn sessions on any engine, linked back to parent"),
         "always_on_assistant": c("partial", "Voice assistant (off by default) and ask-about-this-page"),
         "conversation_gui_view": c("yes", "Chat view with plain-English rewrite of replies"),

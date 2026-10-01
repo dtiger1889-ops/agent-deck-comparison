@@ -3391,15 +3391,15 @@
           "mark": "yes"
         },
         "harness_count": {
-          "value": "5 with own docs pages, about 10 named; DeepSeek/Kimi run inside Claude Code",
+          "value": "20, all in the new-session picker (per its developer); docs name about 10",
           "mark": "info"
         },
         "needs_you_signal": {
-          "value": "Needs-you inbox, desktop alerts, tray badge, phone push",
+          "value": "Needs-you inbox, desktop alerts, phone push, SMS, Telegram",
           "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "Approve or decline cards in inbox, chat and phone",
+          "value": "Approve or decline in inbox, chat and phone; reply by SMS or Telegram",
           "mark": "yes"
         },
         "cross_provider_delegation": {

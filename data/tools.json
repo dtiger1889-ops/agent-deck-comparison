@@ -3391,7 +3391,7 @@
           "mark": "yes"
         },
         "harness_count": {
-          "value": "20, all in the new-session picker (per its developer); docs name about 10",
+          "value": "20",
           "mark": "info"
         },
         "needs_you_signal": {

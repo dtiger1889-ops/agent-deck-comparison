@@ -659,7 +659,7 @@ micracode = {
     "is_authors_own": False,
     "features": {
         "multi_provider_supervision": c("partial", "Claude Code or Codex CLI, one per chat"),
-        "harness_count": c("info", "None; one built-in agent on OpenAI, Gemini or Anthropic keys"),
+        "harness_count": c("info", "Its own agent, or the Claude Code or Codex CLI"),
         "needs_you_signal": c("undocumented", "Not in its docs (checked 2026-09-30)"),
         "approve_deny_prompt": c("no", "Not built yet; the agent runs its tools unchecked"),
         "cross_provider_delegation": c("n/a", "One built-in agent; no hand-offs"),

@@ -3061,7 +3061,7 @@
           "mark": "partial"
         },
         "harness_count": {
-          "value": "None; one built-in agent on OpenAI, Gemini or Anthropic keys",
+          "value": "Its own agent, or the Claude Code or Codex CLI",
           "mark": "info"
         },
         "needs_you_signal": {

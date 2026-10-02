@@ -264,7 +264,7 @@
           "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "Approval cards in its experimental chat view, desktop and phone",
+          "value": "Approval cards in its beta chat view, desktop and phone",
           "mark": "experimental"
         },
         "cross_provider_delegation": {
@@ -300,7 +300,7 @@
           "mark": "yes"
         },
         "appearance_control": {
-          "value": "Theme, accent, UI and terminal fonts; Ghostty and Warp themes",
+          "value": "Themes, accent, UI and terminal fonts",
           "mark": "yes"
         },
         "usage_hud": {
@@ -308,7 +308,7 @@
           "mark": "yes"
         },
         "burn_rate_forecast": {
-          "value": "Shows usage and reset times only; no forecast in docs (checked 2026-09-30)",
+          "value": "Usage and resets only; no forecast in docs",
           "mark": "undocumented"
         },
         "limit_governor": {
@@ -392,7 +392,7 @@
           "mark": "info"
         },
         "extensibility": {
-          "value": "Experimental plugins and marketplaces; scriptable CLI, skills",
+          "value": "Plugins in beta; scriptable CLI, skills",
           "mark": "experimental"
         },
         "teams_multiuser": {
@@ -457,7 +457,7 @@
           "mark": "partial"
         },
         "saved_prompt_library": {
-          "value": "Presets save launch settings, not prompts (checked 2026-09-30)",
+          "value": "Presets save launch settings, not prompts",
           "mark": "undocumented"
         },
         "builtin_editors_browser": {
@@ -465,7 +465,7 @@
           "mark": "yes"
         },
         "appearance_control": {
-          "value": "Light/dark, accent, density; interface, terminal and chat fonts",
+          "value": "Light/dark, accent; interface, terminal and chat fonts",
           "mark": "yes"
         },
         "usage_hud": {
@@ -473,23 +473,23 @@
           "mark": "yes"
         },
         "burn_rate_forecast": {
-          "value": "Shows usage and reset times only; no forecast in docs (checked 2026-09-30)",
+          "value": "Usage and resets only; no forecast in docs",
           "mark": "undocumented"
         },
         "limit_governor": {
-          "value": "Resumes Claude or Codex after a limit resets; no pause before it",
+          "value": "Resumes after a limit resets; no pause before it",
           "mark": "partial"
         },
         "account_hotswap": {
-          "value": "Only sign in again or sign out; no switching in docs (checked 2026-09-30)",
+          "value": "Sign in again or out; no switching in docs",
           "mark": "undocumented"
         },
         "vault_task_source": {
-          "value": "Opens an Obsidian vault for agents to search; not a task list",
+          "value": "Agents can search an Obsidian vault; not a task list",
           "mark": "partial"
         },
         "issue_tracker_pipeline": {
-          "value": "Not in its docs; merges branches locally, no issues or PRs (checked 2026-09-30)",
+          "value": "Not in its docs; merges branches locally, no PRs",
           "mark": "undocumented"
         },
         "worktree_management": {
@@ -497,7 +497,7 @@
           "mark": "yes"
         },
         "planner_orchestrator": {
-          "value": "Planner splits the task, you edit it, executors build in parallel",
+          "value": "Planner splits the task; you edit; agents build in parallel",
           "mark": "yes"
         },
         "agent_to_agent_messaging": {
@@ -505,7 +505,7 @@
           "mark": "yes"
         },
         "knowledge_base": {
-          "value": "Session knowledge, your Markdown notes and a code graph, searchable by agents",
+          "value": "Agents search session notes, your Markdown, a code graph",
           "mark": "yes"
         },
         "native_mobile_app": {
@@ -549,7 +549,7 @@
           "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "Own desktop app; the Windows full installer bundles Git Bash",
+          "value": "Own desktop app",
           "mark": "no"
         },
         "license_cost": {
@@ -561,7 +561,7 @@
           "mark": "partial"
         },
         "teams_multiuser": {
-          "value": "Not in its docs; sharing is between your own devices (checked 2026-09-30)",
+          "value": "Not in its docs; sharing is only between your devices",
           "mark": "undocumented"
         },
         "stability_maturity": {
@@ -582,7 +582,7 @@
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Claude Code, Codex, Cursor, opencode, Grok and more; it owns their terminals rather than wrapping them",
+          "value": "Claude Code, Codex, Cursor, opencode, Grok and more",
           "mark": "yes"
         },
         "harness_count": {
@@ -590,7 +590,7 @@
           "mark": "info"
         },
         "needs_you_signal": {
-          "value": "Every pane marked working, blocked or idle, read from the screen (hooks are used only to restore sessions)",
+          "value": "Each pane marked working, blocked or idle",
           "mark": "partial"
         },
         "approve_deny_prompt": {
@@ -606,7 +606,7 @@
           "mark": "yes"
         },
         "session_organization": {
-          "value": "Workspaces and split panes, with one agent list across local and SSH machines",
+          "value": "Workspaces and split panes; one list across machines",
           "mark": "yes"
         },
         "prompt_scratchpad": {
@@ -622,11 +622,11 @@
           "mark": "no"
         },
         "appearance_control": {
-          "value": "Uses the terminal you already have; its own configuration file",
+          "value": "Your terminal's look; settings in its config file",
           "mark": "partial"
         },
         "usage_hud": {
-          "value": "None in its docs or changelog (checked 2026-09-29); the rate-limit line in its demo is Claude Code's own status line",
+          "value": "None",
           "mark": "no"
         },
         "burn_rate_forecast": {
@@ -650,15 +650,15 @@
           "mark": "no"
         },
         "worktree_management": {
-          "value": "Creates, opens and removes worktrees from the sidebar or the herdr worktree command (changelog, checked 2026-09-29)",
+          "value": "Create, open and remove worktrees from the sidebar",
           "mark": "yes"
         },
         "planner_orchestrator": {
-          "value": "No planner of its own, but agents can spawn panes and prompt each other through its CLI and socket API",
+          "value": "No planner; agents can start and prompt each other",
           "mark": "partial"
         },
         "agent_to_agent_messaging": {
-          "value": "Agents spawn panes, prompt each other and wait until another agent is really blocked (socket API + agent skill)",
+          "value": "Agents start, prompt and wait on each other",
           "mark": "yes"
         },
         "cross_provider_delegation": {
@@ -682,7 +682,7 @@
           "mark": "yes"
         },
         "remote_ssh": {
-          "value": "Saved SSH machines sit beside local ones with independent reconnects; a hosted option is announced",
+          "value": "Saved SSH machines listed beside local ones",
           "mark": "yes"
         },
         "voice_input": {
@@ -767,7 +767,7 @@
           "mark": "yes"
         },
         "always_on_assistant": {
-          "value": "Voice mode: talk to an agent that can launch and steer others",
+          "value": "Voice mode: an agent that launches and steers others",
           "mark": "partial"
         },
         "conversation_gui_view": {
@@ -775,7 +775,7 @@
           "mark": "yes"
         },
         "real_terminal": {
-          "value": "Terminal tabs beside agents in each workspace",
+          "value": "Each agent runs in its own terminal tab",
           "mark": "yes"
         },
         "session_organization": {
@@ -795,7 +795,7 @@
           "mark": "yes"
         },
         "appearance_control": {
-          "value": "Themes (plugins add more), interface and code fonts, text sizes",
+          "value": "Themes, interface and code fonts, text sizes",
           "mark": "yes"
         },
         "usage_hud": {
@@ -803,7 +803,7 @@
           "mark": "yes"
         },
         "burn_rate_forecast": {
-          "value": "Shows plan usage only; no forecast in docs (checked 2026-09-30)",
+          "value": "Plan usage only; no forecast in docs",
           "mark": "undocumented"
         },
         "limit_governor": {
@@ -819,7 +819,7 @@
           "mark": "undocumented"
         },
         "issue_tracker_pipeline": {
-          "value": "GitHub issue and PR events start agents via Paseo Hub; no Jira",
+          "value": "GitHub issues and PRs start agents; no Jira",
           "mark": "partial"
         },
         "worktree_management": {
@@ -827,7 +827,7 @@
           "mark": "yes"
         },
         "planner_orchestrator": {
-          "value": "Agents split work across providers and machines via its tools",
+          "value": "Agents split work across providers and machines",
           "mark": "yes"
         },
         "agent_to_agent_messaging": {
@@ -1052,7 +1052,7 @@
           "mark": "info"
         },
         "extensibility": {
-          "value": "Optional ao CLI over a local API; no plugins since the Go rewrite",
+          "value": "Optional command-line tool and local API; no plugins",
           "mark": "partial"
         },
         "teams_multiuser": {
@@ -1254,11 +1254,11 @@
           "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "Allow/deny/view a waiting prompt from the deck, built, not yet tested live",
+          "value": "Allow, deny or view from the deck; not tested live",
           "mark": "partial"
         },
         "conversation_gui_view": {
-          "value": "Detail panel shows recent actions and the latest ask read from the transcript, not a full chat view",
+          "value": "Recent actions and latest ask; no full chat view",
           "mark": "partial"
         },
         "real_terminal": {
@@ -1270,7 +1270,7 @@
           "mark": "yes"
         },
         "usage_hud": {
-          "value": "Shipped, from local logs; reading the same account-usage numbers claude.ai shows is built, not yet tested live",
+          "value": "Usage and resets from local logs",
           "mark": "yes"
         },
         "burn_rate_forecast": {
@@ -1278,11 +1278,11 @@
           "mark": "partial"
         },
         "limit_governor": {
-          "value": "Built: wind down near a limit, park, and resume after reset, plus limit hand-off to another provider and timed starts; not yet tested live, off by default",
+          "value": "Pauses near a limit, resumes after; not tested live",
           "mark": "partial"
         },
         "vault_task_source": {
-          "value": "Unique in this table: reads a personal notes vault directly as its live task source",
+          "value": "Reads your notes vault as its live task list",
           "mark": "yes"
         },
         "issue_tracker_pipeline": {
@@ -1306,7 +1306,7 @@
           "mark": "yes"
         },
         "always_on_assistant": {
-          "value": "Pinned Assistant window built; phone access through remote control not yet tested live",
+          "value": "Pinned Assistant window; phone access not tested live",
           "mark": "partial"
         },
         "knowledge_base": {
@@ -1318,11 +1318,11 @@
           "mark": "partial"
         },
         "native_mobile_app": {
-          "value": "Reuses a terminal app over an existing SSH tunnel at a narrower column width instead",
+          "value": "None; your phone's terminal app over SSH instead",
           "mark": "no"
         },
         "phone_no_new_app": {
-          "value": "Reuses an existing terminal app and SSH tunnel already on the phone",
+          "value": "Your phone's terminal app over SSH",
           "mark": "yes"
         },
         "remote_ssh": {
@@ -1334,7 +1334,7 @@
           "mark": "no"
         },
         "prompt_scratchpad": {
-          "value": "Autosaved tabbed drafts, insert-without-send, slash completion",
+          "value": "Saved tabbed drafts, insert without sending",
           "mark": "yes"
         },
         "saved_prompt_library": {
@@ -1342,7 +1342,7 @@
           "mark": "planned"
         },
         "appearance_control": {
-          "value": "Unusual for this table: palette and per-token overrides write directly into the host terminal's own settings file",
+          "value": "Colors written into your terminal's own settings",
           "mark": "yes"
         },
         "extensibility": {
@@ -1652,7 +1652,7 @@
           "mark": "yes"
         },
         "planner_orchestrator": {
-          "value": "Oneshot skill plans waves and merges; orchestrator experimental",
+          "value": "Plans work in waves and merges it; orchestrator in beta",
           "mark": "yes"
         },
         "agent_to_agent_messaging": {
@@ -1777,7 +1777,7 @@
           "mark": "undocumented"
         },
         "saved_prompt_library": {
-          "value": "Not in its docs (checked 2026-09-30); presets save commands, not prompts",
+          "value": "Not in its docs; presets save commands, not prompts",
           "mark": "undocumented"
         },
         "builtin_editors_browser": {
@@ -1877,7 +1877,7 @@
           "mark": "info"
         },
         "extensibility": {
-          "value": "Status and worktree hooks, custom approval command; no plugin API",
+          "value": "Status and worktree hooks; no plugin API",
           "mark": "partial"
         },
         "teams_multiuser": {
@@ -1930,8 +1930,8 @@
           "mark": "yes"
         },
         "real_terminal": {
-          "value": "Terminal per chat, scoped to its project",
-          "mark": "yes"
+          "value": "Chat only; its terminal is for your own commands",
+          "mark": "no"
         },
         "session_organization": {
           "value": "Projects holding chats; optional worktree per chat",
@@ -2034,7 +2034,7 @@
           "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "Own app window; Codex CLI is the terminal tool",
+          "value": "Own app window; Codex CLI is a separate tool",
           "mark": "no"
         },
         "license_cost": {
@@ -2260,8 +2260,8 @@
           "mark": "yes"
         },
         "real_terminal": {
-          "value": "Terminal pane in the session folder; local only",
-          "mark": "yes"
+          "value": "Chat only; its terminal is for your own commands",
+          "mark": "no"
         },
         "session_organization": {
           "value": "Filterable sidebar list grouped by project",
@@ -2364,7 +2364,7 @@
           "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "Own app window with a terminal pane inside",
+          "value": "Own app window",
           "mark": "no"
         },
         "license_cost": {
@@ -2413,7 +2413,7 @@
           "mark": "yes"
         },
         "cross_provider_delegation": {
-          "value": "Mixed agents in tabs of one workspace; agent hand-off only in cloud",
+          "value": "Mixed agents in one workspace; hand-off only in cloud",
           "mark": "partial"
         },
         "always_on_assistant": {
@@ -2425,8 +2425,8 @@
           "mark": "yes"
         },
         "real_terminal": {
-          "value": "Workspace terminals; agent CLIs in Big Terminal Mode (experimental)",
-          "mark": "partial"
+          "value": "Agent's own terminal in an experimental mode",
+          "mark": "experimental"
         },
         "session_organization": {
           "value": "Sidebar of workspaces with sections and pins; tabs inside",
@@ -2437,7 +2437,7 @@
           "mark": "undocumented"
         },
         "saved_prompt_library": {
-          "value": "Slash commands from .claude/commands; editable action prompts",
+          "value": "Slash commands and editable action prompts",
           "mark": "yes"
         },
         "builtin_editors_browser": {
@@ -2497,7 +2497,7 @@
           "mark": "undocumented"
         },
         "remote_ssh": {
-          "value": "Its own cloud sandboxes, reachable by SSH; not your own hosts",
+          "value": "Its own cloud machines over SSH; not your own hosts",
           "mark": "partial"
         },
         "voice_input": {
@@ -2602,7 +2602,7 @@
           "mark": "partial"
         },
         "saved_prompt_library": {
-          "value": "Actions: saved prompts sent with issue, diff and repo attached",
+          "value": "Saved prompts sent with issue, diff and repo attached",
           "mark": "yes"
         },
         "builtin_editors_browser": {
@@ -2610,7 +2610,7 @@
           "mark": "partial"
         },
         "appearance_control": {
-          "value": "Dark, Midnight, Light or System; terminal font, size, spacing",
+          "value": "Four themes; terminal font, size and spacing",
           "mark": "yes"
         },
         "usage_hud": {
@@ -2630,11 +2630,11 @@
           "mark": "yes"
         },
         "vault_task_source": {
-          "value": "Not in its docs (checked 2026-09-30); tasks come from trackers",
+          "value": "Not in its docs; tasks come from issue trackers",
           "mark": "undocumented"
         },
         "issue_tracker_pipeline": {
-          "value": "GitHub, GitLab, Azure, Jira, Linear, Trello issues to PR review",
+          "value": "Issues from 6 trackers to pull request review",
           "mark": "yes"
         },
         "worktree_management": {
@@ -2706,7 +2706,7 @@
           "mark": "partial"
         },
         "teams_multiuser": {
-          "value": "GitKraken org accounts; spend analytics is the separate Insights product",
+          "value": "GitKraken organization accounts",
           "mark": "partial"
         },
         "stability_maturity": {
@@ -2755,8 +2755,8 @@
           "mark": "yes"
         },
         "real_terminal": {
-          "value": "Terminal panel; the agent session itself is a chat",
-          "mark": "partial"
+          "value": "Chat only; its terminal is for your own commands",
+          "mark": "no"
         },
         "session_organization": {
           "value": "Projects holding conversations; optional worktree",
@@ -2859,8 +2859,8 @@
           "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "Separate command-line version; the app is its own window",
-          "mark": "partial"
+          "value": "Own app window; its CLI is a separate tool",
+          "mark": "no"
         },
         "license_cost": {
           "value": "Proprietary; free tier + paid plans",
@@ -3250,7 +3250,7 @@
           "mark": "yes"
         },
         "real_terminal": {
-          "value": "Claude Code CLI mode in an embedded terminal; others chat only",
+          "value": "Claude Code only; other agents are chat only",
           "mark": "partial"
         },
         "session_organization": {
@@ -3270,7 +3270,7 @@
           "mark": "yes"
         },
         "appearance_control": {
-          "value": "Light and dark themes, custom themes via extensions; no font setting in docs",
+          "value": "Light, dark and add-on themes; no font setting",
           "mark": "partial"
         },
         "usage_hud": {
@@ -3294,7 +3294,7 @@
           "mark": "undocumented"
         },
         "issue_tracker_pipeline": {
-          "value": "GitHub issues to tracker to session; PR review and merge; Linear and Jira only via MCP",
+          "value": "GitHub issues to PR merge; Linear and Jira via add-ons",
           "mark": "partial"
         },
         "worktree_management": {
@@ -3302,7 +3302,7 @@
           "mark": "yes"
         },
         "planner_orchestrator": {
-          "value": "Agent Teams, Meta Agent and Super Loops, all experimental or alpha",
+          "value": "Agent teams and planners, all experimental",
           "mark": "experimental"
         },
         "agent_to_agent_messaging": {
@@ -3318,7 +3318,7 @@
           "mark": "yes"
         },
         "phone_no_new_app": {
-          "value": "Sessions need the phone app; web console covers team docs only",
+          "value": "Sessions need the phone app",
           "mark": "no"
         },
         "remote_ssh": {
@@ -3362,11 +3362,11 @@
           "mark": "info"
         },
         "extensibility": {
-          "value": "Extension SDK and marketplace, MCP servers, nim command-line tool",
+          "value": "Extension SDK and marketplace, MCP, command-line tool",
           "mark": "yes"
         },
         "teams_multiuser": {
-          "value": "Teams beta: shared docs and trackers, each person's own agents",
+          "value": "Teams beta: shared docs and trackers",
           "mark": "experimental"
         },
         "stability_maturity": {
@@ -3399,7 +3399,7 @@
           "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "Approve or decline in inbox, chat and phone; reply by SMS or Telegram",
+          "value": "Approve or decline in the app, by phone, SMS or Telegram",
           "mark": "yes"
         },
         "cross_provider_delegation": {
@@ -3415,7 +3415,7 @@
           "mark": "yes"
         },
         "real_terminal": {
-          "value": "Sessions shown as chat; built-in terminal is a separate shell",
+          "value": "Chat only; its terminal is for your own commands",
           "mark": "no"
         },
         "session_organization": {
@@ -3423,7 +3423,7 @@
           "mark": "yes"
         },
         "prompt_scratchpad": {
-          "value": "Unsent drafts saved per session; separate scratchpad notes",
+          "value": "Unsent drafts per session; no drafts pad",
           "mark": "partial"
         },
         "saved_prompt_library": {
@@ -3455,11 +3455,11 @@
           "mark": "yes"
         },
         "vault_task_source": {
-          "value": "Opens your Markdown/Obsidian vault; tasks live in its own lists",
+          "value": "Opens your Obsidian vault; tasks live in its own lists",
           "mark": "partial"
         },
         "issue_tracker_pipeline": {
-          "value": "Jira issues can start agent work; PR merge queue; no issue-to-PR flow",
+          "value": "Jira issues start agents; no issue-to-PR flow",
           "mark": "partial"
         },
         "worktree_management": {
@@ -3564,7 +3564,7 @@
           "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "Answer in the agent's terminal on the canvas; no allow button",
+          "value": "Answer in the agent's terminal; no allow button",
           "mark": "partial"
         },
         "cross_provider_delegation": {
@@ -3717,7 +3717,7 @@
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Claude Code, Codex, opencode, Cursor CLI, Qwen Code, plus any you install",
+          "value": "Claude Code, Codex, opencode, Cursor, Qwen and more",
           "mark": "yes"
         },
         "harness_count": {
@@ -3729,7 +3729,7 @@
           "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "Not in its docs (checked 2026-09-30); its pitch is agents running with prompts bypassed",
+          "value": "Not in its docs; agents run with prompts skipped",
           "mark": "undocumented"
         },
         "cross_provider_delegation": {
@@ -3769,7 +3769,7 @@
           "mark": "partial"
         },
         "usage_hud": {
-          "value": "Shows credit cost per step; no subscription limit meter in its docs (checked 2026-09-30)",
+          "value": "Credit cost per step; no plan limits in its docs",
           "mark": "undocumented"
         },
         "burn_rate_forecast": {
@@ -3777,7 +3777,7 @@
           "mark": "undocumented"
         },
         "limit_governor": {
-          "value": "Not in its docs (checked 2026-09-30); loops pause for questions, not limits",
+          "value": "Not in its docs; pauses for questions, not limits",
           "mark": "undocumented"
         },
         "account_hotswap": {
@@ -3785,23 +3785,23 @@
           "mark": "partial"
         },
         "vault_task_source": {
-          "value": "Not in its docs (checked 2026-09-30); notes and tasks live in its hosted workspace",
+          "value": "Not in its docs; tasks live in its hosted workspace",
           "mark": "undocumented"
         },
         "issue_tracker_pipeline": {
-          "value": "Its own board card to agent to draft PR; no GitHub or Jira intake",
+          "value": "Its own board to draft PR; no GitHub or Jira intake",
           "mark": "partial"
         },
         "worktree_management": {
-          "value": "Not in its docs (checked 2026-09-30); each codespace is its own clone",
+          "value": "Not in its docs; each workspace is its own copy",
           "mark": "undocumented"
         },
         "planner_orchestrator": {
-          "value": "Board loop picks cards and launches agents; agents split work in tmux",
+          "value": "Board picks cards and starts agents; agents split work",
           "mark": "yes"
         },
         "agent_to_agent_messaging": {
-          "value": "Agents message each other in tmux; MCP can message another container",
+          "value": "Agents message each other, across workspaces too",
           "mark": "yes"
         },
         "knowledge_base": {
@@ -3809,7 +3809,7 @@
           "mark": "yes"
         },
         "native_mobile_app": {
-          "value": "iPad and Android tablet apps listed; store links say coming soon",
+          "value": "Tablet apps listed as coming soon",
           "mark": "planned"
         },
         "phone_no_new_app": {
@@ -3861,7 +3861,7 @@
           "mark": "partial"
         },
         "teams_multiuser": {
-          "value": "Blog says workspaces are often shared; no team plan listed",
+          "value": "Shared workspaces; no team plan",
           "mark": "partial"
         },
         "stability_maturity": {
@@ -3898,7 +3898,7 @@
           "mark": "yes"
         },
         "cross_provider_delegation": {
-          "value": "Sub-tasks run the parent's agent; peer prompts between sessions",
+          "value": "Sub-tasks use the parent's agent; sessions prompt peers",
           "mark": "partial"
         },
         "always_on_assistant": {
@@ -4022,7 +4022,7 @@
           "mark": "info"
         },
         "extensibility": {
-          "value": "Custom agent commands and an MCP server for agents; no plugin SDK",
+          "value": "Custom agent commands and an MCP server; no plugins",
           "mark": "partial"
         },
         "teams_multiuser": {
@@ -4059,11 +4059,11 @@
           "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "Inline approvals for its own chat agent; CLI agents ask in their terminal",
+          "value": "Its own chat agent only; others ask in their terminal",
           "mark": "partial"
         },
         "cross_provider_delegation": {
-          "value": "Coordinator agent hands slices to any agent; each shows as a workspace",
+          "value": "Coordinator hands parts to any agent, one workspace each",
           "mark": "yes"
         },
         "always_on_assistant": {
@@ -4071,15 +4071,15 @@
           "mark": "partial"
         },
         "conversation_gui_view": {
-          "value": "Chat view for its own agent only; CLI agents shown as terminals",
+          "value": "Chat for its own agent only; others are terminals",
           "mark": "partial"
         },
         "real_terminal": {
-          "value": "Built-in persistent terminal per workspace, survives restarts",
+          "value": "Agent's own terminal per workspace, survives restarts",
           "mark": "yes"
         },
         "session_organization": {
-          "value": "Workspaces per project in a sidebar, sessions, tabs and splits",
+          "value": "Workspaces per project, with sessions, tabs and splits",
           "mark": "yes"
         },
         "prompt_scratchpad": {
@@ -4099,11 +4099,11 @@
           "mark": "yes"
         },
         "usage_hud": {
-          "value": "5-hour and weekly quota per Claude and Codex login, plus token costs",
+          "value": "5-hour and weekly limits per login, plus token costs",
           "mark": "yes"
         },
         "burn_rate_forecast": {
-          "value": "Shows fill and reset time; no forecast in its docs (checked 2026-09-30)",
+          "value": "Usage and resets only; no forecast in docs",
           "mark": "undocumented"
         },
         "limit_governor": {
@@ -4111,15 +4111,15 @@
           "mark": "undocumented"
         },
         "account_hotswap": {
-          "value": "Several Claude or Codex logins; pick the default for new launches",
+          "value": "Several Claude or Codex logins, switched per launch",
           "mark": "yes"
         },
         "vault_task_source": {
-          "value": "Not in its docs (checked 2026-09-30); tasks come from Linear, GitHub or its own list",
+          "value": "Not in its docs; tasks come from Linear or GitHub",
           "mark": "undocumented"
         },
         "issue_tracker_pipeline": {
-          "value": "GitHub or Linear issue to agent workspace to PR, merged in app",
+          "value": "GitHub or Linear issue to PR, merged in the app",
           "mark": "yes"
         },
         "worktree_management": {
@@ -4147,7 +4147,7 @@
           "mark": "no"
         },
         "remote_ssh": {
-          "value": "Reach workspaces on other machines through its relay (Pro), not SSH",
+          "value": "Other machines through its relay (paid), not SSH",
           "mark": "yes"
         },
         "voice_input": {
@@ -4187,11 +4187,11 @@
           "mark": "info"
         },
         "extensibility": {
-          "value": "CLI, TypeScript SDK, MCP server, agent skills, theme marketplace",
+          "value": "CLI, TypeScript SDK, MCP server, theme marketplace",
           "mark": "yes"
         },
         "teams_multiuser": {
-          "value": "Organizations, shared hosts, team automations; SSO on Enterprise",
+          "value": "Organizations, shared machines; SSO on Enterprise",
           "mark": "yes"
         },
         "stability_maturity": {
@@ -4240,8 +4240,8 @@
           "mark": "yes"
         },
         "real_terminal": {
-          "value": "Shell drawer per thread; not the agent's own terminal",
-          "mark": "partial"
+          "value": "Chat only; its terminal is for your own commands",
+          "mark": "no"
         },
         "session_organization": {
           "value": "Projects, then threads, optional worktree per thread",
@@ -4389,11 +4389,11 @@
           "mark": "yes"
         },
         "approve_deny_prompt": {
-          "value": "You approve each plan and answer agent questions; no per-command allow/deny documented",
+          "value": "Approve plans, answer questions; no per-command allow",
           "mark": "partial"
         },
         "cross_provider_delegation": {
-          "value": "Plan, run and review phases of one task can use different agents",
+          "value": "Plan, run and review can each use a different agent",
           "mark": "yes"
         },
         "always_on_assistant": {
@@ -4405,7 +4405,7 @@
           "mark": "yes"
         },
         "real_terminal": {
-          "value": "Not in its docs (checked 2026-09-30); it shows tasks, not terminals",
+          "value": "Not in its docs; shows tasks, not terminals",
           "mark": "undocumented"
         },
         "session_organization": {
@@ -4421,7 +4421,7 @@
           "mark": "undocumented"
         },
         "builtin_editors_browser": {
-          "value": "Chrome extension lets agents click and inspect your tabs; diff view; no editor",
+          "value": "Agents use your Chrome tabs; diff view; no editor",
           "mark": "partial"
         },
         "appearance_control": {
@@ -4445,11 +4445,11 @@
           "mark": "undocumented"
         },
         "vault_task_source": {
-          "value": "Not in its docs (checked 2026-09-30); tasks live in its own per-project store",
+          "value": "Not in its docs; tasks live in its own store",
           "mark": "undocumented"
         },
         "issue_tracker_pipeline": {
-          "value": "Not in its docs (checked 2026-09-30); lists Gmail, Calendar, Slack, Sentry links",
+          "value": "Not in its docs; links Gmail, Slack and Sentry",
           "mark": "undocumented"
         },
         "worktree_management": {
@@ -4477,7 +4477,7 @@
           "mark": "yes"
         },
         "remote_ssh": {
-          "value": "Run tasks on other machines you own, via its relay (Pro), not SSH",
+          "value": "Your other machines through its relay (paid), not SSH",
           "mark": "yes"
         },
         "voice_input": {
@@ -4570,8 +4570,8 @@
           "mark": "yes"
         },
         "real_terminal": {
-          "value": "Terminal for your own commands; not the agent's",
-          "mark": "partial"
+          "value": "Chat only; its terminal is for your own commands",
+          "mark": "no"
         },
         "session_organization": {
           "value": "Workspaces holding chat sessions; kanban board retired",
@@ -4638,7 +4638,7 @@
           "mark": "no"
         },
         "phone_no_new_app": {
-          "value": "Phone browser via your own tunnel or relay; hosted pairing unconfirmed",
+          "value": "Phone browser through your own tunnel or relay",
           "mark": "partial"
         },
         "remote_ssh": {
@@ -4686,7 +4686,7 @@
           "mark": "partial"
         },
         "teams_multiuser": {
-          "value": "Hosted teams removed; self-hosted teams unconfirmed",
+          "value": "Hosted teams removed; self-hosted teams unclear",
           "mark": "partial"
         },
         "stability_maturity": {

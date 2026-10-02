@@ -594,8 +594,8 @@
           "mark": "partial"
         },
         "approve_deny_prompt": {
-          "value": "Marks the pane blocked; you answer in the pane itself",
-          "mark": "no"
+          "value": "Its CLI can type an answer; no allow or deny button",
+          "mark": "partial"
         },
         "conversation_gui_view": {
           "value": "Terminal panes only",
@@ -626,8 +626,8 @@
           "mark": "partial"
         },
         "usage_hud": {
-          "value": "None",
-          "mark": "no"
+          "value": "Not in its docs (checked 2026-10-02)",
+          "mark": "undocumented"
         },
         "burn_rate_forecast": {
           "value": "Not mentioned in its docs",
@@ -642,12 +642,12 @@
           "mark": "undocumented"
         },
         "vault_task_source": {
-          "value": "No task source",
-          "mark": "no"
+          "value": "Not in its docs (checked 2026-10-02)",
+          "mark": "undocumented"
         },
         "issue_tracker_pipeline": {
-          "value": "None in its docs, changelog or code (checked 2026-09-29)",
-          "mark": "no"
+          "value": "Not in its docs (checked 2026-10-02)",
+          "mark": "undocumented"
         },
         "worktree_management": {
           "value": "Create, open and remove worktrees from the sidebar",
@@ -666,12 +666,12 @@
           "mark": "yes"
         },
         "always_on_assistant": {
-          "value": "None",
-          "mark": "no"
+          "value": "Not in its docs (checked 2026-10-02)",
+          "mark": "undocumented"
         },
         "knowledge_base": {
-          "value": "None",
-          "mark": "no"
+          "value": "Not in its docs (checked 2026-10-02)",
+          "mark": "undocumented"
         },
         "native_mobile_app": {
           "value": "None (a separate community macOS console, herdrm, exists)",
@@ -879,8 +879,8 @@
           "mark": "info"
         },
         "runs_in_terminal": {
-          "value": "Own desktop, phone and web app",
-          "mark": "no"
+          "value": "Desktop app; its CLI drives agents from any terminal",
+          "mark": "partial"
         },
         "license_cost": {
           "value": "Apache-2.0, free; hosted Hub Pro $15 per seat",
@@ -1998,8 +1998,8 @@
           "mark": "yes"
         },
         "phone_no_new_app": {
-          "value": "Requires the ChatGPT mobile app",
-          "mark": "no"
+          "value": "Cloud tasks in a phone browser; local ones need the app",
+          "mark": "partial"
         },
         "remote_ssh": {
           "value": "Runs chats on hosts from your SSH config",
@@ -2300,8 +2300,8 @@
           "mark": "undocumented"
         },
         "vault_task_source": {
-          "value": "None",
-          "mark": "no"
+          "value": "Not in its docs (checked 2026-10-02)",
+          "mark": "undocumented"
         },
         "issue_tracker_pipeline": {
           "value": "GitHub and Linear connectors; no issue-to-PR flow",
@@ -2328,8 +2328,8 @@
           "mark": "yes"
         },
         "phone_no_new_app": {
-          "value": "Requires the Claude mobile app",
-          "mark": "no"
+          "value": "Any phone browser, through Remote Control",
+          "mark": "yes"
         },
         "remote_ssh": {
           "value": "Runs Claude Code on a remote Linux or Mac machine",
@@ -3057,8 +3057,8 @@
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "App builder with one built-in agent; not an agent manager",
-          "mark": "no"
+          "value": "Claude Code or Codex CLI, one per chat",
+          "mark": "partial"
         },
         "harness_count": {
           "value": "None; one built-in agent on OpenAI, Gemini or Anthropic keys",
@@ -3069,7 +3069,7 @@
           "mark": "undocumented"
         },
         "approve_deny_prompt": {
-          "value": "Tool approval not built yet (endpoint returns 501)",
+          "value": "Not built yet; the agent runs its tools unchecked",
           "mark": "no"
         },
         "cross_provider_delegation": {
@@ -3133,7 +3133,7 @@
           "mark": "n/a"
         },
         "worktree_management": {
-          "value": "Version-control features not built yet (return 501)",
+          "value": "Git snapshot per turn; no worktrees",
           "mark": "no"
         },
         "planner_orchestrator": {
@@ -4759,16 +4759,16 @@
           "mark": "partial"
         },
         "usage_hud": {
-          "value": "None",
-          "mark": "no"
+          "value": "Not in its docs (checked 2026-10-02)",
+          "mark": "undocumented"
         },
         "burn_rate_forecast": {
-          "value": "None",
-          "mark": "no"
+          "value": "Not in its docs (checked 2026-10-02)",
+          "mark": "undocumented"
         },
         "limit_governor": {
-          "value": "None",
-          "mark": "no"
+          "value": "Not in its docs (checked 2026-10-02)",
+          "mark": "undocumented"
         },
         "account_hotswap": {
           "value": "Not in its docs (checked 2026-09-29)",
@@ -4811,8 +4811,8 @@
           "mark": "partial"
         },
         "voice_input": {
-          "value": "None",
-          "mark": "no"
+          "value": "Not in its docs (checked 2026-10-02)",
+          "mark": "undocumented"
         },
         "os": {
           "value": "Windows, macOS, Linux; any browser via its server",
@@ -4948,8 +4948,8 @@
           "mark": "undocumented"
         },
         "worktree_management": {
-          "value": "None",
-          "mark": "no"
+          "value": "Not in its docs (checked 2026-10-02)",
+          "mark": "undocumented"
         },
         "planner_orchestrator": {
           "value": "Not in its docs (checked 2026-09-29)",
@@ -4976,8 +4976,8 @@
           "mark": "yes"
         },
         "voice_input": {
-          "value": "None",
-          "mark": "no"
+          "value": "Not in its docs (checked 2026-10-02)",
+          "mark": "undocumented"
         },
         "os": {
           "value": "Windows, macOS, Linux; no phone or browser access",

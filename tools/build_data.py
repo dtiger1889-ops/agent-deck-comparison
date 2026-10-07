@@ -832,7 +832,7 @@ spaces = {
         "phone_no_new_app": c("no", "Phone access is the iPhone app"),
         "remote_ssh": c("yes", "Pair other Macs and Linux servers over SSH; each shows in the sidebar"),
         "voice_input": c("undocumented", "Not in its docs (checked 2026-10-06)"),
-        "os": c("info", "macOS 14+; Linux servers with systemd (Ubuntu, Fedora, AlmaLinux and more) as remote machines; iPhone beta"),
+        "os": c("info", "macOS 14+; Linux servers with systemd (Ubuntu, Debian, Fedora, AlmaLinux) as remote machines; iPhone beta"),
         "app_shell": c("info", "Native macOS app (Swift, AppKit), not Electron"),
         "languages": c("info", "Swift ~82% (8 languages in all)"),
         "background_process": c("info", "Yes: a Spaces service on each machine; agents keep running when the app quits or updates"),

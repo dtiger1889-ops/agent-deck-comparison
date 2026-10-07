@@ -4155,7 +4155,7 @@
           "mark": "undocumented"
         },
         "os": {
-          "value": "macOS 14+; Linux servers with systemd (Ubuntu, Fedora, AlmaLinux and more) as remote machines; iPhone beta",
+          "value": "macOS 14+; Linux servers with systemd (Ubuntu, Debian, Fedora, AlmaLinux) as remote machines; iPhone beta",
           "mark": "info"
         },
         "app_shell": {

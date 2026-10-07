@@ -797,6 +797,55 @@ oyren = {
     },
 }
 
+spaces = {
+    "name": "Spaces", "url": "https://usespaces.dev", "category": "agent manager",
+    "where_agents_run": "your Mac, plus any other Mac or Linux server you pair over SSH; a background service on each machine keeps agents running when the app is closed",
+    "license": "MIT, free on Mac and Linux; iPhone app in invite-only TestFlight",
+    "checked_on": "2026-10-06 (site pass, GitHub repo and release; the developer's own feature list)",
+    "source_note": "Checked against usespaces.dev (home page and FAQ), the GitHub repo yogesh-dhande/spaces (licence, languages, latest release v0.21.0) and a feature list the developer posted asking to be added. Not tried here (macOS only).",
+    "is_authors_own": False,
+    "features": {
+        "multi_provider_supervision": c("yes", "Claude Code, Codex and opencode, each shown as working, waiting on you or done"),
+        "harness_count": c("info", "3: Claude Code, Codex, opencode"),
+        "needs_you_signal": c("yes", "One Alerts list of agents waiting on you or done, across every machine"),
+        "approve_deny_prompt": c("partial", "Answer in the agent's own terminal, from the Mac or iPhone; no approve button"),
+        "cross_provider_delegation": c("yes", "Any harness can lead and any can be a child, through the Spaces MCP server"),
+        "always_on_assistant": c("undocumented", "Not in its docs (checked 2026-10-06)"),
+        "conversation_gui_view": c("partial", "Agent brief (status, questions, task list) beside a real terminal"),
+        "real_terminal": c("yes", "Real terminals built on libghostty"),
+        "session_organization": c("yes", "Projects and workspaces per task, each with its own terminals, processes and browser tabs"),
+        "prompt_scratchpad": c("undocumented", "Not in its docs (checked 2026-10-06)"),
+        "saved_prompt_library": c("partial", "Automations save a prompt that starts an agent on demand or on a schedule; no library"),
+        "builtin_editors_browser": c("yes", "Editor with a diff view (comment a line, send it to the agent) and Chrome browser sessions"),
+        "appearance_control": c("partial", "Configurable keyboard shortcuts; themes not in its docs"),
+        "usage_hud": c("undocumented", "Not in its docs (checked 2026-10-06)"),
+        "burn_rate_forecast": c("undocumented", "Not in its docs (checked 2026-10-06)"),
+        "limit_governor": c("undocumented", "Not in its docs (checked 2026-10-06)"),
+        "account_hotswap": c("undocumented", "Not in its docs (checked 2026-10-06)"),
+        "vault_task_source": c("undocumented", "Not in its docs (checked 2026-10-06)"),
+        "issue_tracker_pipeline": c("undocumented", "Not in its docs; an automation could run a triage prompt"),
+        "worktree_management": c("yes", "A git worktree per workspace, with its own ports, URLs and dev servers"),
+        "planner_orchestrator": c("yes", "One orchestrator agent starts children and hears back when they finish or need you"),
+        "agent_to_agent_messaging": c("yes", "Agents start other agents, send them prompts and read their output over MCP, across machines"),
+        "knowledge_base": c("undocumented", "Not in its docs (checked 2026-10-06)"),
+        "native_mobile_app": c("partial", "iPhone app in invite-only TestFlight"),
+        "phone_no_new_app": c("no", "Phone access is the iPhone app"),
+        "remote_ssh": c("yes", "Pair other Macs and Linux servers over SSH; each shows in the sidebar"),
+        "voice_input": c("undocumented", "Not in its docs (checked 2026-10-06)"),
+        "os": c("info", "macOS 14+; Linux servers with systemd (Ubuntu, Fedora, AlmaLinux and more) as remote machines; iPhone beta"),
+        "app_shell": c("info", "Native macOS app (Swift, AppKit), not Electron"),
+        "languages": c("info", "Swift ~82% (8 languages in all)"),
+        "background_process": c("info", "Yes: a Spaces service on each machine; agents keep running when the app quits or updates"),
+        "download_size": c("info", "v0.21.0: 135 MB DMG"),
+        "ram_vs_claude_desktop": c("info", "About 430 MB (the developer's own figure, not measured here)"),
+        "runs_in_terminal": c("no", "Native Mac app, not a terminal tool"),
+        "license_cost": c("info", "MIT, free; uses your own agent subscriptions"),
+        "extensibility": c("partial", "Spaces MCP server; no plugin SDK in its docs"),
+        "teams_multiuser": c("undocumented", "Not in its docs (checked 2026-10-06)"),
+        "stability_maturity": c("info", "v0.21.0 (2026-10-06), started February 2026"),
+    },
+}
+
 # ---- Added 2026-09-29 with a research pass each; sources in project_pantheon/archive/research_raw/2026-09-29-new-agent-managers/ ----
 # Research entry for Google Antigravity 2.0 (https://antigravity.google), checked 2026-09-29.
 # Shape matches the orca/ao entries in portfolio_repos/agent-deck-comparison/tools/build_data.py.
@@ -1508,7 +1557,7 @@ agtx = {
 FEATURED = [orca, velaterm, herdr, paseo, ao, pane, pantheon]
 PENDING = []
 _rest = [agtx, antigravity, claudedesktop, codexapp, superset, opencove, ccmanager, agentmanager, micracode,
-         vibetree, jenny, vibekanban, ccc, conductor, omniscio, nimbalyst, parallelcode, kepler, teleclod, oyren, t3code, wave]
+         vibetree, jenny, vibekanban, ccc, conductor, omniscio, nimbalyst, parallelcode, kepler, teleclod, oyren, spaces, t3code, wave]
 TOOLS = FEATURED + sorted(_rest, key=lambda t: t["name"].lower()) + PENDING
 
 # GitHub stars, read from the GitHub API on 2026-09-29. None = closed source, no public repo.
@@ -1516,7 +1565,7 @@ STARS = {
     "Orca": 81580, "herdr": 41461, "vibe-kanban": 28221, "T3 Code": 23911, "Wave Terminal": 22388,
     "Paseo": 19013, "Superset": 14740, "Agent Orchestrator (AO)": 12530, "Nimbalyst": 1803,
     "OpenCove": 1600, "CCManager": 1256, "Parallel Code": 1026, "agent-manager": 540, "Pane": 497,
-    "micracode": 289, "VibeTree": 267, "Claude Command Center": 175, "VelaTerm": 241, "Jenny": 47, "Pantheon": 0,
+    "micracode": 289, "VibeTree": 267, "Spaces": 4, "Claude Command Center": 175, "VelaTerm": 241, "Jenny": 47, "Pantheon": 0,
 }
 # agtx: exact count from the repos.ecosyste.ms mirror (synced 2026-09-25); GitHub's page shows 1.7k.
 STARS["agtx"] = 1692

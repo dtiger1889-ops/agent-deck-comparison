@@ -4037,6 +4037,171 @@
       "github_stars": 1026
     },
     {
+      "name": "Spaces",
+      "url": "https://usespaces.dev",
+      "category": "agent manager",
+      "where_agents_run": "your Mac, plus any other Mac or Linux server you pair over SSH; a background service on each machine keeps agents running when the app is closed",
+      "license": "MIT, free on Mac and Linux; iPhone app in invite-only TestFlight",
+      "checked_on": "2026-10-06 (site pass, GitHub repo and release; the developer's own feature list)",
+      "source_note": "Checked against usespaces.dev (home page and FAQ), the GitHub repo yogesh-dhande/spaces (licence, languages, latest release v0.21.0) and a feature list the developer posted asking to be added. Not tried here (macOS only).",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "Claude Code, Codex and opencode, each shown as working, waiting on you or done",
+          "mark": "yes"
+        },
+        "harness_count": {
+          "value": "3: Claude Code, Codex, opencode",
+          "mark": "info"
+        },
+        "needs_you_signal": {
+          "value": "One Alerts list of agents waiting on you or done, across every machine",
+          "mark": "yes"
+        },
+        "approve_deny_prompt": {
+          "value": "Answer in the agent's own terminal, from the Mac or iPhone; no approve button",
+          "mark": "partial"
+        },
+        "cross_provider_delegation": {
+          "value": "Any harness can lead and any can be a child, through the Spaces MCP server",
+          "mark": "yes"
+        },
+        "always_on_assistant": {
+          "value": "Not in its docs (checked 2026-10-06)",
+          "mark": "undocumented"
+        },
+        "conversation_gui_view": {
+          "value": "Agent brief (status, questions, task list) beside a real terminal",
+          "mark": "partial"
+        },
+        "real_terminal": {
+          "value": "Real terminals built on libghostty",
+          "mark": "yes"
+        },
+        "session_organization": {
+          "value": "Projects and workspaces per task, each with its own terminals, processes and browser tabs",
+          "mark": "yes"
+        },
+        "prompt_scratchpad": {
+          "value": "Not in its docs (checked 2026-10-06)",
+          "mark": "undocumented"
+        },
+        "saved_prompt_library": {
+          "value": "Automations save a prompt that starts an agent on demand or on a schedule; no library",
+          "mark": "partial"
+        },
+        "builtin_editors_browser": {
+          "value": "Editor with a diff view (comment a line, send it to the agent) and Chrome browser sessions",
+          "mark": "yes"
+        },
+        "appearance_control": {
+          "value": "Configurable keyboard shortcuts; themes not in its docs",
+          "mark": "partial"
+        },
+        "usage_hud": {
+          "value": "Not in its docs (checked 2026-10-06)",
+          "mark": "undocumented"
+        },
+        "burn_rate_forecast": {
+          "value": "Not in its docs (checked 2026-10-06)",
+          "mark": "undocumented"
+        },
+        "limit_governor": {
+          "value": "Not in its docs (checked 2026-10-06)",
+          "mark": "undocumented"
+        },
+        "account_hotswap": {
+          "value": "Not in its docs (checked 2026-10-06)",
+          "mark": "undocumented"
+        },
+        "vault_task_source": {
+          "value": "Not in its docs (checked 2026-10-06)",
+          "mark": "undocumented"
+        },
+        "issue_tracker_pipeline": {
+          "value": "Not in its docs; an automation could run a triage prompt",
+          "mark": "undocumented"
+        },
+        "worktree_management": {
+          "value": "A git worktree per workspace, with its own ports, URLs and dev servers",
+          "mark": "yes"
+        },
+        "planner_orchestrator": {
+          "value": "One orchestrator agent starts children and hears back when they finish or need you",
+          "mark": "yes"
+        },
+        "agent_to_agent_messaging": {
+          "value": "Agents start other agents, send them prompts and read their output over MCP, across machines",
+          "mark": "yes"
+        },
+        "knowledge_base": {
+          "value": "Not in its docs (checked 2026-10-06)",
+          "mark": "undocumented"
+        },
+        "native_mobile_app": {
+          "value": "iPhone app in invite-only TestFlight",
+          "mark": "partial"
+        },
+        "phone_no_new_app": {
+          "value": "Phone access is the iPhone app",
+          "mark": "no"
+        },
+        "remote_ssh": {
+          "value": "Pair other Macs and Linux servers over SSH; each shows in the sidebar",
+          "mark": "yes"
+        },
+        "voice_input": {
+          "value": "Not in its docs (checked 2026-10-06)",
+          "mark": "undocumented"
+        },
+        "os": {
+          "value": "macOS 14+; Linux servers with systemd (Ubuntu, Fedora, AlmaLinux and more) as remote machines; iPhone beta",
+          "mark": "info"
+        },
+        "app_shell": {
+          "value": "Native macOS app (Swift, AppKit), not Electron",
+          "mark": "info"
+        },
+        "languages": {
+          "value": "Swift ~82% (8 languages in all)",
+          "mark": "info"
+        },
+        "background_process": {
+          "value": "Yes: a Spaces service on each machine; agents keep running when the app quits or updates",
+          "mark": "info"
+        },
+        "download_size": {
+          "value": "v0.21.0: 135 MB DMG",
+          "mark": "info"
+        },
+        "ram_vs_claude_desktop": {
+          "value": "About 430 MB (the developer's own figure, not measured here)",
+          "mark": "info"
+        },
+        "runs_in_terminal": {
+          "value": "Native Mac app, not a terminal tool",
+          "mark": "no"
+        },
+        "license_cost": {
+          "value": "MIT, free; uses your own agent subscriptions",
+          "mark": "info"
+        },
+        "extensibility": {
+          "value": "Spaces MCP server; no plugin SDK in its docs",
+          "mark": "partial"
+        },
+        "teams_multiuser": {
+          "value": "Not in its docs (checked 2026-10-06)",
+          "mark": "undocumented"
+        },
+        "stability_maturity": {
+          "value": "v0.21.0 (2026-10-06), started February 2026",
+          "mark": "info"
+        }
+      },
+      "github_stars": 4
+    },
+    {
       "name": "Superset",
       "url": "https://superset.sh",
       "category": "agent manager",

@@ -8,12 +8,12 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Agent-manager comparison">
 <meta property="og:description" content="Sortable feature comparison of AI coding-agent managers: Orca, herdr, T3 Code, Wave, Paseo, Antigravity, Claude Desktop, ChatGPT Desktop and more.">
-<meta property="og:url" content="https://mackforge.dev/charts/agent-managers/">
-<meta property="og:image" content="https://mackforge.dev/charts/agent-managers/assets/screenshot.png">
+<meta property="og:url" content="https://dtiger1889-ops.github.io/agent-deck-comparison/">
+<meta property="og:image" content="https://dtiger1889-ops.github.io/agent-deck-comparison/assets/screenshot.png">
 <meta property="og:image:width" content="1400">
 <meta property="og:image:height" content="900">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://mackforge.dev/charts/agent-managers/assets/screenshot.png">
+<meta name="twitter:image" content="https://dtiger1889-ops.github.io/agent-deck-comparison/assets/screenshot.png">
 <!-- Tabulator (MIT, https://tabulator.info) draws the feature matrix: scrolling, frozen first column,
      sticky header, grouping and sorting all come from the library. Pinned version. -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tabulator-tables@6.5.3/dist/css/tabulator.min.css">
@@ -312,7 +312,14 @@
     #bytool-table td:first-child { font-size: 1rem; font-weight: 700; padding-bottom: 4px; }
     #bytool-table td:first-child::before { content: none; }
   }
+  /* Embed mode (?embed=1): the chart alone, for pasting into another site. */
+  html.embed .title-actions, html.embed .about, html.embed footer { display: none; }
+  html.embed header { padding-top: 8px; }
+  html.embed h1 { font-size: 1.15rem; }
+  html.embed h1 a { color: inherit; text-decoration: none; }
+  html.embed h1 a::after { content: " \2197"; color: var(--accent); }
 </style>
+<script>if (new URLSearchParams(location.search).has("embed")) document.documentElement.classList.add("embed");</script>
 </head>
 <body>
 <header>
@@ -328,6 +335,7 @@
         <a role="menuitem" data-net="x" target="_blank" rel="noopener">X</a>
         <a role="menuitem" data-net="bluesky" target="_blank" rel="noopener">Bluesky</a>
         <button type="button" role="menuitem" id="share-copy">Copy link</button>
+        <button type="button" role="menuitem" id="share-embed">Copy embed code</button>
         <button type="button" role="menuitem" id="share-native" hidden>More&hellip;</button>
       </div>
     </div>
@@ -972,7 +980,7 @@ fetch("data/tools.json")
 
 // Share: plain share links for each network, copy-link, and the device's own share sheet when it has one.
 (function () {
-  const url = "https://mackforge.dev/charts/agent-managers/";
+  const url = "https://dtiger1889-ops.github.io/agent-deck-comparison/";
   const title = "Agent-manager comparison: Orca, herdr, T3 Code, Paseo, Antigravity, Claude Desktop, ChatGPT Desktop and more, feature by feature";
   const u = encodeURIComponent(url), t = encodeURIComponent(title);
   const links = {
@@ -998,6 +1006,21 @@ fetch("data/tools.json")
     catch (err) { window.prompt("Copy this link:", url); }
     setTimeout(() => { copy.textContent = "Copy link"; close(); }, 1200);
   });
+  // Embed code: an iframe of this page in embed mode (no header buttons, About or footer).
+  const embed = document.getElementById("share-embed");
+  const snippet = '<iframe src="' + url + '?embed=1" title="' + document.title +
+    '" width="100%" height="800" style="border:0" loading="lazy"></iframe>';
+  embed.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(snippet); embed.textContent = "Embed code copied"; }
+    catch (err) { window.prompt("Copy this embed code:", snippet); }
+    setTimeout(() => { embed.textContent = "Copy embed code"; close(); }, 1200);
+  });
+  if (document.documentElement.classList.contains("embed")) {
+    const h = document.querySelector("h1"), a = document.createElement("a");
+    a.href = url; a.target = "_blank"; a.rel = "noopener"; a.textContent = h.textContent;
+    a.title = "Open the full chart in a new tab";
+    h.textContent = ""; h.appendChild(a);
+  }
   const native = document.getElementById("share-native");
   if (navigator.share) {
     native.hidden = false;

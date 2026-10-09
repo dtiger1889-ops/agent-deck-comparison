@@ -1,0 +1,165 @@
+{
+  "name": "Wave Terminal",
+  "url": "https://www.waveterm.dev",
+  "category": "agent manager",
+  "where_agents_run": "your machine, plus remote machines over SSH (sessions can keep running there after you disconnect) and WSL",
+  "license": "Apache-2.0, free",
+  "checked_on": "2026-09-29 (repo/docs pass)",
+  "source_note": "Checked against its README, ROADMAP.md, docs/ folder (docs.waveterm.dev source), source code at commit c58bf7f (2026-09-25), latest release (v0.14.5) and waveterm.dev. Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Any CLI agent in tiled terminal blocks",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "Any CLI agent; only Claude Code has a documented setup",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Tab badges via Claude Code hooks, optional beep",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Badge points you there; you answer in its terminal",
+      "mark": "no"
+    },
+    "cross_provider_delegation": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "always_on_assistant": {
+      "value": "Wave AI side panel; can't run commands or direct agents",
+      "mark": "partial"
+    },
+    "conversation_gui_view": {
+      "value": "Terminals only; chat is just its own AI panel",
+      "mark": "no"
+    },
+    "real_terminal": {
+      "value": "Full terminal in every block",
+      "mark": "yes"
+    },
+    "session_organization": {
+      "value": "Workspaces, then tabs, then tiled terminal blocks",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "saved_prompt_library": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "builtin_editors_browser": {
+      "value": "Code editor, web browser and file previews",
+      "mark": "yes"
+    },
+    "appearance_control": {
+      "value": "Themes, backgrounds, terminal font and size",
+      "mark": "yes"
+    },
+    "usage_hud": {
+      "value": "None; only its own AI panel's allowance",
+      "mark": "no"
+    },
+    "burn_rate_forecast": {
+      "value": "None",
+      "mark": "no"
+    },
+    "limit_governor": {
+      "value": "None",
+      "mark": "no"
+    },
+    "account_hotswap": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "worktree_management": {
+      "value": "Not in its docs (checked 2026-10-02)",
+      "mark": "undocumented"
+    },
+    "planner_orchestrator": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Can read another block's output; can't send it input",
+      "mark": "partial"
+    },
+    "knowledge_base": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "native_mobile_app": {
+      "value": "Desktop only",
+      "mark": "no"
+    },
+    "phone_no_new_app": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "remote_ssh": {
+      "value": "One-click SSH and WSL; sessions survive disconnects",
+      "mark": "yes"
+    },
+    "voice_input": {
+      "value": "Not in its docs (checked 2026-10-02)",
+      "mark": "undocumented"
+    },
+    "os": {
+      "value": "Windows, macOS, Linux; no phone or browser access",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Electron 41 with a Go backend",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "Go ~49%, TypeScript ~43%",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "Yes: its own Go server process",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "156 MB Windows installer",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Medium (estimate: Electron plus a Go server)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Is its own terminal app",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "Apache-2.0, free; AI panel has free beta credits",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "Custom widgets and a scripting CLI; no plugins or SDK",
+      "mark": "partial"
+    },
+    "teams_multiuser": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "stability_maturity": {
+      "value": "Since 2022, ~22,400 stars; no release since April 2026",
+      "mark": "info"
+    }
+  },
+  "github_stars": 22388
+}

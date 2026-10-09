@@ -1,0 +1,165 @@
+{
+  "name": "Teleclod",
+  "url": "https://teleclod.com",
+  "category": "agent manager",
+  "where_agents_run": "your machine (or another computer or Docker/VPS you own); phone or browser controls it through its cloud relay",
+  "license": "Closed source; Free plan, Pro $29/month ($24 billed yearly), $5/month per extra machine",
+  "checked_on": "2026-09-30 (site pass)",
+  "source_note": "Checked against teleclod.com llms.txt and llms-full.txt, the homepage and FAQ text in its site bundle, its public release feed (/api/releases/all) and four blog posts. No public repo, no independent reviews found. Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Claude Code, Codex, Gemini CLI, Kimi CLI side by side",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "4 CLI agents, plus 10+ API providers and Ollama",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Waiting-on-you status; desktop and phone notifications",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Approve plans, answer questions; no per-command allow",
+      "mark": "partial"
+    },
+    "cross_provider_delegation": {
+      "value": "Plan, run and review can each use a different agent",
+      "mark": "yes"
+    },
+    "always_on_assistant": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "conversation_gui_view": {
+      "value": "Plans, questions and summaries instead of terminal text",
+      "mark": "yes"
+    },
+    "real_terminal": {
+      "value": "Not in its docs; shows tasks, not terminals",
+      "mark": "undocumented"
+    },
+    "session_organization": {
+      "value": "Task list and kanban per project; global dashboard (Pro)",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "saved_prompt_library": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "builtin_editors_browser": {
+      "value": "Agents use your Chrome tabs; diff view; no editor",
+      "mark": "partial"
+    },
+    "appearance_control": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "usage_hud": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "burn_rate_forecast": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "Not in its docs; tasks live in its own store",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Not in its docs; links Gmail, Slack and Sentry",
+      "mark": "undocumented"
+    },
+    "worktree_management": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "planner_orchestrator": {
+      "value": "Planning agent splits each task into steps you approve",
+      "mark": "yes"
+    },
+    "agent_to_agent_messaging": {
+      "value": "A task can create tasks in another project and hear back",
+      "mark": "partial"
+    },
+    "knowledge_base": {
+      "value": "Remembers your rules and conventions per project",
+      "mark": "partial"
+    },
+    "native_mobile_app": {
+      "value": "Android app (APK from its site); no iOS app",
+      "mark": "partial"
+    },
+    "phone_no_new_app": {
+      "value": "Any mobile browser through its relay (Pro)",
+      "mark": "yes"
+    },
+    "remote_ssh": {
+      "value": "Your other machines through its relay (paid), not SSH",
+      "mark": "yes"
+    },
+    "voice_input": {
+      "value": "Dictate tasks; say \"over\" to send",
+      "mark": "yes"
+    },
+    "os": {
+      "value": "macOS, Windows (current downloads); Linux claimed; Android app; any browser via relay",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Electron app with a built-in local web server",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "Closed source; no public repo",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "Yes: built-in Express/Socket.IO server; optional cloud relay",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "628 MB macOS universal (v1.0.28), 417 MB Windows x64 (v1.0.29)",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Small (estimate: Electron app with a built-in local server)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Own desktop app; replaces terminals with task cards",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "Closed source; Free plan, Pro $29/month ($24 yearly)",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "MCP server so other AI tools can add tasks; no plugin SDK",
+      "mark": "partial"
+    },
+    "teams_multiuser": {
+      "value": "Share a device with other signed-in users; no team plan",
+      "mark": "partial"
+    },
+    "stability_maturity": {
+      "value": "v1.0.29 (Windows), v1.0.28 (macOS); no public reviews found",
+      "mark": "info"
+    }
+  },
+  "github_stars": null
+}

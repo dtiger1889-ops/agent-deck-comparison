@@ -1,0 +1,165 @@
+{
+  "name": "Omniscio",
+  "url": "https://omniscio.com",
+  "category": "agent manager",
+  "where_agents_run": "your machine, or a remote host over SSH per session; Devin runs in Cognition's cloud; phone reaches it via browser (same Wi-Fi, or Tailscale)",
+  "license": "Closed source; free plan, Pro $15/month or $144/year (early access free)",
+  "checked_on": "2026-09-30 (docs/site pass)",
+  "source_note": "Checked against docs.omniscio.com (full docs page, v0.1.108), its features, roadmap, download, EULA and terms pages, the homepage, and installer file sizes. No public source repo. Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Claude Code, Codex, Gemini, OpenCode, Devin side by side",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "20",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Needs-you inbox, desktop alerts, phone push, SMS, Telegram",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Approve or decline in the app, by phone, SMS or Telegram",
+      "mark": "yes"
+    },
+    "cross_provider_delegation": {
+      "value": "Agents spawn sessions on any engine, linked back to parent",
+      "mark": "yes"
+    },
+    "always_on_assistant": {
+      "value": "Voice assistant (off by default) and ask-about-this-page",
+      "mark": "partial"
+    },
+    "conversation_gui_view": {
+      "value": "Chat view with plain-English rewrite of replies",
+      "mark": "yes"
+    },
+    "real_terminal": {
+      "value": "Chat only; its terminal is for your own commands",
+      "mark": "no"
+    },
+    "session_organization": {
+      "value": "Folders with sessions, groups, tags, inbox view",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Unsent drafts per session; no drafts pad",
+      "mark": "partial"
+    },
+    "saved_prompt_library": {
+      "value": "Prompt template library and saved quick replies",
+      "mark": "yes"
+    },
+    "builtin_editors_browser": {
+      "value": "File viewer and editor, diff viewer, AI browser, shell",
+      "mark": "yes"
+    },
+    "appearance_control": {
+      "value": "13 skins, custom themes, light or dark, font size",
+      "mark": "yes"
+    },
+    "usage_hud": {
+      "value": "Claude 5-hour and weekly use per account, plus costs",
+      "mark": "yes"
+    },
+    "burn_rate_forecast": {
+      "value": "Predicts when each Claude account hits its 5-hour limit",
+      "mark": "yes"
+    },
+    "limit_governor": {
+      "value": "Waits at a limit and resumes after reset; no early pause",
+      "mark": "partial"
+    },
+    "account_hotswap": {
+      "value": "Several Claude logins; switches when one hits its limit",
+      "mark": "yes"
+    },
+    "vault_task_source": {
+      "value": "Opens your Obsidian vault; tasks live in its own lists",
+      "mark": "partial"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Jira issues start agents; no issue-to-PR flow",
+      "mark": "partial"
+    },
+    "worktree_management": {
+      "value": "Optional worktree per session, merged back when done",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Multi-step recipes, including split into parallel sessions",
+      "mark": "yes"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Agents send messages into other sessions via its local API",
+      "mark": "yes"
+    },
+    "knowledge_base": {
+      "value": "Agent memory store and a notes vault agents read and write",
+      "mark": "yes"
+    },
+    "native_mobile_app": {
+      "value": "Not in app stores; installable web app instead",
+      "mark": "no"
+    },
+    "phone_no_new_app": {
+      "value": "Phone browser on same Wi-Fi, or anywhere via Tailscale",
+      "mark": "yes"
+    },
+    "remote_ssh": {
+      "value": "Run any session's Claude on an SSH host",
+      "mark": "yes"
+    },
+    "voice_input": {
+      "value": "Wake word, dictation and voice commands",
+      "mark": "yes"
+    },
+    "os": {
+      "value": "Windows 10/11, macOS (Apple Silicon, Intel), Linux AppImage; phone browser",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Electron desktop app",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "Closed source; no public repo",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "Yes: local control server (port 19519) and phone web server",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "v0.1.108: 461 MB Windows setup, 570-577 MB macOS dmg, 579 MB Linux AppImage",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Medium (estimate: Electron app with many built-in services; recommends 16 GB RAM)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Own desktop app window",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "Closed source; Free plan, Pro $15/month; early access free",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "Plugin SDK and marketplace, local HTTP API, skills, MCP",
+      "mark": "yes"
+    },
+    "teams_multiuser": {
+      "value": "Team chat and shared workspaces; SSO not yet, SCIM off",
+      "mark": "partial"
+    },
+    "stability_maturity": {
+      "value": "v0.1.108, early access, releases since April 2026",
+      "mark": "info"
+    }
+  },
+  "github_stars": null
+}

@@ -1,0 +1,165 @@
+{
+  "name": "VibeTree",
+  "url": "https://github.com/sahithvibudhi/vibe-tree",
+  "category": "agent manager",
+  "where_agents_run": "your machine, or a server you run yourself (home server or VM) reached from any browser or phone",
+  "license": "MIT, free",
+  "checked_on": "2026-09-29 (repo pass)",
+  "source_note": "Repo-verified: README, docs site, v0.2.0 release notes and source read at commit f889077 (2026-07-25); not installed.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Any CLI agent, one terminal per worktree",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "Any terminal program; 5 named",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Sidebar status, a ding and desktop notifications",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Flags waiting prompts; no buttons, you type the answer",
+      "mark": "partial"
+    },
+    "cross_provider_delegation": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "always_on_assistant": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "conversation_gui_view": {
+      "value": "Terminals only; no chat view",
+      "mark": "no"
+    },
+    "real_terminal": {
+      "value": "Persistent terminals with splits and search",
+      "mark": "yes"
+    },
+    "session_organization": {
+      "value": "Project tabs, each with a list of worktrees",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "saved_prompt_library": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "builtin_editors_browser": {
+      "value": "Browser preview and diff viewer; no code editor",
+      "mark": "partial"
+    },
+    "appearance_control": {
+      "value": "Terminal font and size; no theme picker",
+      "mark": "partial"
+    },
+    "usage_hud": {
+      "value": "Not in its docs (checked 2026-10-02)",
+      "mark": "undocumented"
+    },
+    "burn_rate_forecast": {
+      "value": "Not in its docs (checked 2026-10-02)",
+      "mark": "undocumented"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-10-02)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "worktree_management": {
+      "value": "Core: one worktree and branch per task",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "knowledge_base": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "native_mobile_app": {
+      "value": "No store app; installable web app instead",
+      "mark": "no"
+    },
+    "phone_no_new_app": {
+      "value": "Phone browser, paired by QR code",
+      "mark": "yes"
+    },
+    "remote_ssh": {
+      "value": "Standalone server for another machine; no SSH mode",
+      "mark": "partial"
+    },
+    "voice_input": {
+      "value": "Not in its docs (checked 2026-10-02)",
+      "mark": "undocumented"
+    },
+    "os": {
+      "value": "Windows, macOS, Linux; any browser via its server",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Electron 38",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "TypeScript ~89%, HTML ~8%",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "Desktop: no; browser and phone need its Node server",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "98 MB Windows installer",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Small (estimate: one Electron app)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Its CLI lists and starts agents; terminals live in the app",
+      "mark": "partial"
+    },
+    "license_cost": {
+      "value": "MIT, free, no telemetry",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "Hook scripts and a CLI; no plugins or SDK",
+      "mark": "partial"
+    },
+    "teams_multiuser": {
+      "value": "Shareable project settings; no user accounts",
+      "mark": "partial"
+    },
+    "stability_maturity": {
+      "value": "Early: v0.2.0, two releases, ~270 stars",
+      "mark": "info"
+    }
+  },
+  "github_stars": 267
+}

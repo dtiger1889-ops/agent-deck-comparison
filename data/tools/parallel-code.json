@@ -1,0 +1,165 @@
+{
+  "name": "Parallel Code",
+  "url": "https://github.com/johannesjo/parallel-code",
+  "category": "agent manager",
+  "where_agents_run": "your machine (optionally inside a local Docker container); phone browser on your network (LAN or Tailscale)",
+  "license": "MIT, free",
+  "checked_on": "2026-09-30 (repo/docs pass)",
+  "source_note": "Checked against its README, PRIVACY.md, AGENTS.md, docs/ folder, package.json, source code and latest release (v3.1.0). Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Claude Code, Codex, Gemini and more side by side",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "6 built in, plus custom agent commands",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Attention tray, status dots, desktop notifications",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Accept or decline cards in Chat mode (Claude, Codex)",
+      "mark": "yes"
+    },
+    "cross_provider_delegation": {
+      "value": "Sub-tasks use the parent's agent; sessions prompt peers",
+      "mark": "partial"
+    },
+    "always_on_assistant": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "conversation_gui_view": {
+      "value": "Chat mode for Claude and Codex tasks",
+      "mark": "yes"
+    },
+    "real_terminal": {
+      "value": "Agent terminal plus shell terminals per task",
+      "mark": "yes"
+    },
+    "session_organization": {
+      "value": "Tiled panels, projects, coordinator folders",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Saved drafts and a notes panel sent as a prompt",
+      "mark": "yes"
+    },
+    "saved_prompt_library": {
+      "value": "Per-task prompt history; no saved library in docs",
+      "mark": "partial"
+    },
+    "builtin_editors_browser": {
+      "value": "Diff viewer, Markdown canvas, browser preview",
+      "mark": "yes"
+    },
+    "appearance_control": {
+      "value": "10 themes, custom themes, terminal font choice",
+      "mark": "yes"
+    },
+    "usage_hud": {
+      "value": "Claude and Codex 5-hour and weekly limits, from your login",
+      "mark": "yes"
+    },
+    "burn_rate_forecast": {
+      "value": "Percent left and reset time only",
+      "mark": "no"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "Links to Super Productivity tasks; no notes vault",
+      "mark": "partial"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Watches GitHub PR checks; no issue intake",
+      "mark": "partial"
+    },
+    "worktree_management": {
+      "value": "Core: every task gets its own branch and worktree",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Agents can create and merge sub-tasks; no planner of its own",
+      "mark": "partial"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Queued prompts between live sessions, with receipts",
+      "mark": "yes"
+    },
+    "knowledge_base": {
+      "value": "Per-task mind map and reasoning graph agents read",
+      "mark": "partial"
+    },
+    "native_mobile_app": {
+      "value": "Phone uses a browser page",
+      "mark": "no"
+    },
+    "phone_no_new_app": {
+      "value": "Phone browser via QR code, LAN or Tailscale",
+      "mark": "yes"
+    },
+    "remote_ssh": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "voice_input": {
+      "value": "Privacy policy: no microphone capture code yet",
+      "mark": "no"
+    },
+    "os": {
+      "value": "macOS, Linux; phone browser. No Windows build",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Electron 40 with SolidJS",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "TypeScript (GitHub percentages not checked)",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "No separate daemon; phone and agent servers run inside the app",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "v3.1.0: 251 MB mac dmg, 166 MB AppImage, 129 MB deb",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Medium (estimate: Electron app with many terminals)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Own desktop app window",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "MIT, free, uses your own agent subscriptions",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "Custom agent commands and an MCP server; no plugins",
+      "mark": "partial"
+    },
+    "teams_multiuser": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "stability_maturity": {
+      "value": "v3.1.0, tags since Feb 2026, near-weekly releases",
+      "mark": "info"
+    }
+  },
+  "github_stars": 1026
+}

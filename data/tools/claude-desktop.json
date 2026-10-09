@@ -1,0 +1,165 @@
+{
+  "name": "Claude Desktop",
+  "url": "https://claude.com/download",
+  "category": "agent manager",
+  "where_agents_run": "your machine (local, SSH, or WSL sessions) + Anthropic-managed cloud sessions; your phone reaches it through Dispatch and the Claude mobile app",
+  "license": "Subscription: Pro $17-20/mo, Max $100-200/mo, Team $20-100/seat/mo (5-seat minimum), Enterprise $20/seat/mo plus API-rate usage",
+  "checked_on": "2026-09-29 (docs pass)",
+  "source_note": "Checked against code.claude.com/docs/en/desktop (the Code tab reference), support.claude.com (Cowork, install, voice), and claude.com/pricing. Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Claude Code; Codex needs unofficial add-ons",
+      "mark": "partial"
+    },
+    "harness_count": {
+      "value": "1 built in (Claude Code)",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Desktop notification; phone push via Dispatch",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Prompts in the session, pushed to your phone",
+      "mark": "yes"
+    },
+    "cross_provider_delegation": {
+      "value": "Dispatch hands off in one sidebar; only Claude",
+      "mark": "partial"
+    },
+    "always_on_assistant": {
+      "value": "Dispatch, a standing chat you can message any time",
+      "mark": "yes"
+    },
+    "conversation_gui_view": {
+      "value": "Transcript views with tool calls summarized",
+      "mark": "yes"
+    },
+    "real_terminal": {
+      "value": "Chat only; its terminal is for your own commands",
+      "mark": "no"
+    },
+    "session_organization": {
+      "value": "Filterable sidebar list grouped by project",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "saved_prompt_library": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "builtin_editors_browser": {
+      "value": "File editor pane and a tabbed browser pane",
+      "mark": "yes"
+    },
+    "appearance_control": {
+      "value": "Light or dark theme only; no font setting",
+      "mark": "partial"
+    },
+    "usage_hud": {
+      "value": "Usage ring: session context and plan usage",
+      "mark": "yes"
+    },
+    "burn_rate_forecast": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "Not in its docs (checked 2026-10-02)",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "GitHub and Linear connectors; no issue-to-PR flow",
+      "mark": "partial"
+    },
+    "worktree_management": {
+      "value": "Optional git worktree per session",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Multi-step work in one session; no planner",
+      "mark": "partial"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Sessions can list, check on and message each other",
+      "mark": "yes"
+    },
+    "knowledge_base": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "native_mobile_app": {
+      "value": "Claude iOS and Android app",
+      "mark": "yes"
+    },
+    "phone_no_new_app": {
+      "value": "Any phone browser, through Remote Control",
+      "mark": "yes"
+    },
+    "remote_ssh": {
+      "value": "Runs Claude Code on a remote Linux or Mac machine",
+      "mark": "yes"
+    },
+    "voice_input": {
+      "value": "Dictation on macOS only; not on Windows",
+      "mark": "partial"
+    },
+    "os": {
+      "value": "macOS, Windows; Linux beta; iOS/Android app",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Electron",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "Closed source",
+      "mark": "n/a"
+    },
+    "background_process": {
+      "value": "Yes: Cowork starts a virtual machine",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "Not published; Windows installer downloads the app",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "The reference: the app plus Cowork's virtual machine",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Own app window",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "Proprietary; paid plans from $17 a month",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "Connectors, plugins, MCP servers and hooks",
+      "mark": "yes"
+    },
+    "teams_multiuser": {
+      "value": "Team and Enterprise plans with admin controls",
+      "mark": "yes"
+    },
+    "stability_maturity": {
+      "value": "Stable on macOS and Windows; Linux in beta",
+      "mark": "info"
+    }
+  },
+  "github_stars": null
+}

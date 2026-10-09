@@ -1,0 +1,165 @@
+{
+  "name": "T3 Code",
+  "url": "https://github.com/pingdotgg/t3code",
+  "category": "agent manager",
+  "where_agents_run": "your machine + another machine you pair or reach over SSH (Linux or Apple Silicon Mac); phone, browser or another desktop app control it through T3 Connect, Tailscale or a local network",
+  "license": "MIT, free",
+  "checked_on": "2026-09-29 (repo/docs pass)",
+  "source_note": "Checked against its README, docs/ folder, source code at commit 4222485, latest stable release (v0.0.43) and t3.codes. Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "6 agents side by side in one sidebar, your own logins",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "6: Claude Code, Codex, Cursor, Grok, OpenCode, Antigravity",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Colored thread status, desktop alerts, phone push",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Approve or reject in chat on desktop, web or phone",
+      "mark": "yes"
+    },
+    "cross_provider_delegation": {
+      "value": "All agents in one sidebar; no agent-to-agent hand-off",
+      "mark": "partial"
+    },
+    "always_on_assistant": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "conversation_gui_view": {
+      "value": "Chat threads with expandable tool calls",
+      "mark": "yes"
+    },
+    "real_terminal": {
+      "value": "Chat only; its terminal is for your own commands",
+      "mark": "no"
+    },
+    "session_organization": {
+      "value": "Projects, then threads, optional worktree per thread",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Prompt stash saves a prompt without sending",
+      "mark": "yes"
+    },
+    "saved_prompt_library": {
+      "value": "Prompt stash with context; no lasting named library",
+      "mark": "partial"
+    },
+    "builtin_editors_browser": {
+      "value": "Editor, diff viewer, preview browser, phone emulators",
+      "mark": "yes"
+    },
+    "appearance_control": {
+      "value": "Custom themes plus font family and size everywhere",
+      "mark": "yes"
+    },
+    "usage_hud": {
+      "value": "Tokens, cost and plan limits with resets per provider",
+      "mark": "yes"
+    },
+    "burn_rate_forecast": {
+      "value": "Pace mark per limit; no predicted time to the limit",
+      "mark": "partial"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Several accounts per provider, picked per thread",
+      "mark": "yes"
+    },
+    "vault_task_source": {
+      "value": "No notes-vault reading",
+      "mark": "no"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Full pull request flow on 6 hosts; no issue intake",
+      "mark": "partial"
+    },
+    "worktree_management": {
+      "value": "New worktree per thread, one per model",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Plan mode for one agent; no splitting across agents",
+      "mark": "partial"
+    },
+    "agent_to_agent_messaging": {
+      "value": "No way for one thread to message another",
+      "mark": "no"
+    },
+    "knowledge_base": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "native_mobile_app": {
+      "value": "iOS and Android apps in the stores",
+      "mark": "yes"
+    },
+    "phone_no_new_app": {
+      "value": "Hosted web app in the phone browser; needs HTTPS access",
+      "mark": "yes"
+    },
+    "remote_ssh": {
+      "value": "Installs its server on a remote host over SSH",
+      "mark": "yes"
+    },
+    "voice_input": {
+      "value": "Dictation in the iPhone app only",
+      "mark": "partial"
+    },
+    "os": {
+      "value": "Windows, macOS, Linux; iOS, Android; any browser",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Electron 44, also served as a web app",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "TypeScript ~96%, MDX ~2%",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "Yes: bundled server that runs agents, terminals, git",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "209 MB Windows installer",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Medium (estimate: Electron app plus a Node server)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "No; own desktop, web and phone apps",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "MIT, free",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "No plugins or SDK; custom themes only",
+      "mark": "no"
+    },
+    "teams_multiuser": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "stability_maturity": {
+      "value": "v0.0.43, started February 2026; README says very early",
+      "mark": "info"
+    }
+  },
+  "github_stars": 23911
+}

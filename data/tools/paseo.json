@@ -1,0 +1,165 @@
+{
+  "name": "Paseo",
+  "url": "https://paseo.sh",
+  "category": "agent manager",
+  "where_agents_run": "your machine, or any host running its daemon (server, Docker, SSH); reached from desktop, phone, browser or CLI via relay or Tailscale",
+  "license": "Apache-2.0, free; optional hosted Hub: free plan, Pro $15 per seat per month",
+  "checked_on": "2026-09-30 (docs/release re-check; installed 2026-09-06)",
+  "source_note": "Re-checked 2026-09-30 against paseo.sh/llms.txt and 68 docs pages (markdown), the changelog to v0.10.2, the download and Hub pages, package.json and the v0.10.2 release. Earlier: source read and installed/live-tested 2026-09-06.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Claude Code, Codex, OpenCode and 30+ more",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "41: 5 built in, 36 in its catalog, plus custom",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Attention status per agent, push notifications",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Permission cards in the app, also by API",
+      "mark": "yes"
+    },
+    "cross_provider_delegation": {
+      "value": "Agents launch agents on any provider, shown in one place",
+      "mark": "yes"
+    },
+    "always_on_assistant": {
+      "value": "Voice mode: an agent that launches and steers others",
+      "mark": "partial"
+    },
+    "conversation_gui_view": {
+      "value": "Messages, reasoning and tool calls as a readable timeline",
+      "mark": "yes"
+    },
+    "real_terminal": {
+      "value": "Each agent runs in its own terminal tab",
+      "mark": "yes"
+    },
+    "session_organization": {
+      "value": "Projects, then workspaces, then session tabs",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Composer drafts kept per workspace; no drafts pad",
+      "mark": "partial"
+    },
+    "saved_prompt_library": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "builtin_editors_browser": {
+      "value": "Editable file panes, diffs, built-in browser tabs",
+      "mark": "yes"
+    },
+    "appearance_control": {
+      "value": "Themes, interface and code fonts, text sizes",
+      "mark": "yes"
+    },
+    "usage_hud": {
+      "value": "Plan usage for Claude, Codex, Copilot, Cursor and 3 more",
+      "mark": "yes"
+    },
+    "burn_rate_forecast": {
+      "value": "Plan usage only; no forecast in docs",
+      "mark": "undocumented"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "GitHub issues and PRs start agents; no Jira",
+      "mark": "partial"
+    },
+    "worktree_management": {
+      "value": "Managed worktree per workspace, removed when archived",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Agents split work across providers and machines",
+      "mark": "yes"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Agents send prompts to other agents by ID",
+      "mark": "yes"
+    },
+    "knowledge_base": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "native_mobile_app": {
+      "value": "iOS (App Store) and Android (Play Store, APK)",
+      "mark": "yes"
+    },
+    "phone_no_new_app": {
+      "value": "Web app in the phone's browser, hosted or self-served",
+      "mark": "yes"
+    },
+    "remote_ssh": {
+      "value": "Connect to daemons on other machines over SSH",
+      "mark": "yes"
+    },
+    "voice_input": {
+      "value": "Dictation and voice mode, on-device or OpenAI",
+      "mark": "yes"
+    },
+    "os": {
+      "value": "Windows, macOS 13+, Linux; iOS, Android; any browser",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Electron 44.2.0",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "TypeScript ~98%, JavaScript ~1%",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "Yes: a Node daemon the desktop app starts",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "v0.10.2: 137 MB Windows setup, 177-186 MB macOS dmg, 129 MB Linux .deb",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Medium (estimate: Electron app plus a background server)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Desktop app; its CLI drives agents from any terminal",
+      "mark": "partial"
+    },
+    "license_cost": {
+      "value": "Apache-2.0, free; hosted Hub Pro $15 per seat",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "Plugin SDK, TypeScript SDK, MCP server, CLI",
+      "mark": "yes"
+    },
+    "teams_multiuser": {
+      "value": "Paseo Hub: shared org, seats, GitHub/Slack/Discord triggers",
+      "mark": "yes"
+    },
+    "stability_maturity": {
+      "value": "v0.10.2 (2026-09-30), frequent releases since Feb 2026; plugin API changed in 0.8",
+      "mark": "info"
+    }
+  },
+  "github_stars": 19013
+}

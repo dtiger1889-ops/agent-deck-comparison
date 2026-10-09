@@ -1,0 +1,165 @@
+{
+  "name": "Agent Orchestrator (AO)",
+  "url": "https://github.com/Untrivial-ai/agent-orchestrator",
+  "category": "agent manager",
+  "where_agents_run": "your machine; phone app over home Wi-Fi or Tailscale; cloud workspaces behind a waitlist",
+  "license": "Apache-2.0, free",
+  "checked_on": "2026-09-30 (repo/docs/release pass)",
+  "source_note": "Checked 2026-09-30 against the README, docs/STATUS.md, go.work and frontend/package.json, docs.orchestrator.inc (intro, capabilities, trackers, Connect Mobile, FAQ, migration), orchestrator.inc and its changelog, and the v0.13.2 release. Not installed.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Claude Code, Codex, Cursor, OpenCode and more, per task",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "32 per its README (docs page says 24 terminal adapters)",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Needs-you column, in-app alerts and toasts",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Approval cards in its chat view, desktop and phone",
+      "mark": "yes"
+    },
+    "cross_provider_delegation": {
+      "value": "Orchestrator hands tasks to workers on any agent, one board",
+      "mark": "yes"
+    },
+    "always_on_assistant": {
+      "value": "A lasting orchestrator chat per project, for planning",
+      "mark": "partial"
+    },
+    "conversation_gui_view": {
+      "value": "Chat view for Codex, Claude Code, OpenCode, Droid",
+      "mark": "yes"
+    },
+    "real_terminal": {
+      "value": "Each agent's own terminal UI, switchable with chat",
+      "mark": "yes"
+    },
+    "session_organization": {
+      "value": "Kanban: Working, Needs you, In review, Ready to merge",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Unsent drafts survive restarts; no separate drafts pad",
+      "mark": "partial"
+    },
+    "saved_prompt_library": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "builtin_editors_browser": {
+      "value": "Per-worker browser with DevTools; file browser",
+      "mark": "yes"
+    },
+    "appearance_control": {
+      "value": "Light and dark themes; no font setting found",
+      "mark": "partial"
+    },
+    "usage_hud": {
+      "value": "Token use and cost per session; Codex account limits only",
+      "mark": "partial"
+    },
+    "burn_rate_forecast": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Switch Codex accounts without re-login; Codex only",
+      "mark": "partial"
+    },
+    "vault_task_source": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "GitHub issues only, opt-in; then PR, CI and review loop",
+      "mark": "partial"
+    },
+    "worktree_management": {
+      "value": "Own branch and worktree per worker",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Core: project orchestrator plans and spawns workers",
+      "mark": "yes"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Orchestrator messages and redirects its workers",
+      "mark": "yes"
+    },
+    "knowledge_base": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "native_mobile_app": {
+      "value": "AO Mobile 2.0 on App Store and Google Play",
+      "mark": "yes"
+    },
+    "phone_no_new_app": {
+      "value": "Phone access is through its own app",
+      "mark": "no"
+    },
+    "remote_ssh": {
+      "value": "Local by design; its FAQ says not to expose it remotely",
+      "mark": "no"
+    },
+    "voice_input": {
+      "value": "Dictation in the phone app",
+      "mark": "yes"
+    },
+    "os": {
+      "value": "Windows, macOS, Linux; iOS/Android app",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Electron ^33.0.0, plus a separate Go backend",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "Go ~59%, TypeScript ~38%",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "Yes: a local Go daemon the app starts",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "v0.13.2: 136 MB Windows setup, 218-233 MB macOS dmg, 182 MB Linux AppImage",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Medium (estimate: Electron app plus a Go backend)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Own desktop app",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "Apache-2.0, free; uses your own agent accounts",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "Optional command-line tool and local API; no plugins",
+      "mark": "partial"
+    },
+    "teams_multiuser": {
+      "value": "Desktop is single-user; cloud version on a waitlist",
+      "mark": "planned"
+    },
+    "stability_maturity": {
+      "value": "v0.13.2 (2026-09-30), nightly builds; rebuilt in Go, old npm CLI frozen",
+      "mark": "info"
+    }
+  },
+  "github_stars": 12530
+}

@@ -1,0 +1,165 @@
+{
+  "name": "Orca",
+  "url": "https://onorca.dev",
+  "category": "agent manager",
+  "where_agents_run": "your machine + remote (SSH worktrees, Remote Orca Server (beta), headless `orca serve`, cloud VM (experimental)); phone companion (beta)",
+  "license": "MIT, free",
+  "checked_on": "2026-09-30 (docs/release re-check; installed 2026-09-22)",
+  "source_note": "Re-checked 2026-09-30 against all 57 pages of onorca.dev/docs, the v1.4.217 release page, package.json and the repo home. Earlier: desktop and phone installed 2026-09-22, shipped app.asar read, memory measured on one PC.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "36 agents preset, plus any CLI agent",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "36 preset (\"works with any CLI agent\")",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Hook-driven status, alerts, sound, unread bell",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Approval cards in its beta chat view, desktop and phone",
+      "mark": "experimental"
+    },
+    "cross_provider_delegation": {
+      "value": "Workers on any agent, shown as child rows",
+      "mark": "yes"
+    },
+    "always_on_assistant": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "conversation_gui_view": {
+      "value": "Experimental chat view over agent terminals",
+      "mark": "experimental"
+    },
+    "real_terminal": {
+      "value": "Embedded GPU terminal, splits, restored scrollback",
+      "mark": "yes"
+    },
+    "session_organization": {
+      "value": "Worktree per task; experimental kanban dashboard",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Unsent chat drafts kept; no separate drafts pad",
+      "mark": "partial"
+    },
+    "saved_prompt_library": {
+      "value": "Quick Commands save agent prompts, synced to phone",
+      "mark": "yes"
+    },
+    "builtin_editors_browser": {
+      "value": "Code and markdown editors, per-worktree browser",
+      "mark": "yes"
+    },
+    "appearance_control": {
+      "value": "Themes, accent, UI and terminal fonts",
+      "mark": "yes"
+    },
+    "usage_hud": {
+      "value": "Usage and resets for 8 agents, 80% warning chip",
+      "mark": "yes"
+    },
+    "burn_rate_forecast": {
+      "value": "Usage and resets only; no forecast in docs",
+      "mark": "undocumented"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Switch Codex and Claude accounts, no re-login",
+      "mark": "yes"
+    },
+    "vault_task_source": {
+      "value": "Task sources are GitHub, GitLab, Linear, Jira only",
+      "mark": "no"
+    },
+    "issue_tracker_pipeline": {
+      "value": "GitHub, GitLab, Linear, Jira issues to worktree to PR",
+      "mark": "yes"
+    },
+    "worktree_management": {
+      "value": "Core: every task gets one, local or over SSH",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Orchestration runs, tasks and workers; off by default",
+      "mark": "experimental"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Inbox messages via experimental orchestration",
+      "mark": "experimental"
+    },
+    "knowledge_base": {
+      "value": "Leaves memory files to the agents; no store of its own",
+      "mark": "no"
+    },
+    "native_mobile_app": {
+      "value": "iOS and Android companion, beta",
+      "mark": "experimental"
+    },
+    "phone_no_new_app": {
+      "value": "Phone access is through its companion app",
+      "mark": "no"
+    },
+    "remote_ssh": {
+      "value": "SSH worktrees; Remote Orca Servers (beta)",
+      "mark": "yes"
+    },
+    "voice_input": {
+      "value": "Dictation on desktop (on-device models) and phone",
+      "mark": "yes"
+    },
+    "os": {
+      "value": "Windows, macOS, Linux; iOS/Android companion (beta)",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Electron 43.7.5",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "TypeScript ~95%, JavaScript ~4%, Swift <1%",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "Yes: a separate daemon process",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "v1.4.217: 193 MB Windows setup, 218-226 MB macOS dmg, 207-209 MB Linux AppImage",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Medium (estimate: Electron app plus a background process)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Embeds its own GPU terminal instead",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "MIT, free, uses your own subscriptions",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "Plugins in beta; scriptable CLI, skills",
+      "mark": "experimental"
+    },
+    "teams_multiuser": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "stability_maturity": {
+      "value": "v1.4.217 (2026-09-29), daily builds; chat, plugins, mobile still beta",
+      "mark": "info"
+    }
+  },
+  "github_stars": 81580
+}

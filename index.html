@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Agent-manager comparison</title>
-<meta name="description" content="This comparison now lives at mackforge.dev/charts/agent-managers/.">
-<link rel="canonical" href="https://mackforge.dev/charts/agent-managers/">
-<meta http-equiv="refresh" content="0; url=https://mackforge.dev/charts/agent-managers/">
+<meta name="description" content="Sortable feature comparison of AI coding-agent managers: Orca, herdr, T3 Code, Wave, Paseo, Antigravity, Claude Desktop, ChatGPT Desktop and more.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Agent-manager comparison">
 <meta property="og:description" content="Sortable feature comparison of AI coding-agent managers: Orca, herdr, T3 Code, Wave, Paseo, Antigravity, Claude Desktop, ChatGPT Desktop and more.">
@@ -16,16 +14,1000 @@
 <meta property="og:image:height" content="900">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://mackforge.dev/charts/agent-managers/assets/screenshot.png">
-<script>
-  // Keep any ?view=... or #anchor from an old shared link.
-  location.replace("https://mackforge.dev/charts/agent-managers/" + location.search + location.hash);
-</script>
+<!-- Tabulator (MIT, https://tabulator.info) draws the feature matrix: scrolling, frozen first column,
+     sticky header, grouping and sorting all come from the library. Pinned version. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tabulator-tables@6.5.3/dist/css/tabulator.min.css">
+<script src="https://cdn.jsdelivr.net/npm/tabulator-tables@6.5.3/dist/js/tabulator.min.js"></script>
 <style>
-  body { font: 16px/1.5 system-ui, sans-serif; margin: 2rem 16px; background: #fff; color: #1d1d1f; }
-  @media (prefers-color-scheme: dark) { body { background: #111; color: #eee; } a { color: #8ab4ff; } }
+  :root {
+    color-scheme: light dark;
+    --bg: #f7f7f8;
+    --panel: #ffffff;
+    --text: #1b1c1f;
+    --muted: #5c5f66;
+    --border: #dcdde1;
+    --sticky-bg: #eef0f3;
+    --accent: #2f5fd8;
+    --yes-bg: #dcf5e2; --yes-fg: #1d6b34;
+    --partial-bg: #fdf1cf; --partial-fg: #8a6100;
+    --experimental-bg: #ece3fb; --experimental-fg: #5b3aa8;
+    --planned-bg: #e6ecf5; --planned-fg: #3a4f78;
+    --no-bg: #f8dede; --no-fg: #9c2b2b;
+    --unknown-bg: #ececec; --unknown-fg: #6a6a6a;
+    --na-bg: #f2f2f2; --na-fg: #8a8a8a;
+    --info-bg: #e1ecf7; --info-fg: #2c5f8a;
+    --group-bg: #eef0f3; --group-fg: #1b1c1f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #15161a;
+      --panel: #1d1f24;
+      --text: #e8e9ec;
+      --muted: #a2a5ad;
+      --border: #33353b;
+      --sticky-bg: #23252b;
+      --accent: #86a4ff;
+      --yes-bg: #163a24; --yes-fg: #7fe3a0;
+      --partial-bg: #453a10; --partial-fg: #f0c95f;
+      --experimental-bg: #2f2249; --experimental-fg: #c6aef2;
+      --planned-bg: #202b40; --planned-fg: #9cb4de;
+      --no-bg: #3a1c1c; --no-fg: #f29a9a;
+      --unknown-bg: #2a2b30; --unknown-fg: #9a9ca3;
+      --na-bg: #222327; --na-fg: #7a7c82;
+      --info-bg: #1c3a52; --info-fg: #8fc2ee;
+      --group-bg: #23252b; --group-fg: #e8e9ec;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.45;
+  }
+  header { max-width: 1600px; margin: 0 auto; padding: 16px 16px 8px; }
+  footer { max-width: 1600px; margin: 0 auto; padding: 20px 16px; }
+  main { max-width: 1600px; margin: 0 auto; padding: 0 16px 20px; }
+  h1 { font-size: 1.5rem; margin: 0; }
+  .title-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-bottom: 8px; }
+  .gh-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.9rem; font-weight: 600; color: var(--text); text-decoration: none; border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px; background: var(--panel); }
+  .gh-link:hover { color: var(--accent); border-color: var(--accent); }
+  #bytool-table .num { white-space: nowrap; text-align: right; min-width: 7.5rem; }
+  .own-star { margin-left: 2px; color: var(--accent); text-decoration: none; font-weight: 700; }
+  .title-actions { display: flex; align-items: center; gap: 8px; flex: none; }
+  .share { position: relative; }
+  .share-btn { cursor: pointer; font-family: inherit; }
+  .share-menu { position: absolute; right: 0; top: calc(100% + 6px); z-index: 50; min-width: 160px;
+    background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 6px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18); display: flex; flex-direction: column; }
+  .share-menu[hidden] { display: none; }
+  .share-menu a, .share-menu button { text-align: left; padding: 8px 10px; border-radius: 6px; font-size: 0.9rem;
+    color: var(--text); text-decoration: none; background: none; border: none; cursor: pointer; font-family: inherit; }
+  .share-menu a:hover, .share-menu button:hover { background: var(--sticky-bg); color: var(--accent); }
+  .sub { color: var(--muted); font-size: 0.95rem; max-width: 90ch; margin: 0 0 8px; }
+  .about { max-width: 90ch; font-size: 0.9rem; color: var(--muted); margin: 0 0 4px; }
+  .about summary { cursor: pointer; color: var(--accent); font-weight: 600; font-size: 0.88rem; }
+  .about p { margin: 8px 0 0; }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; font-size: 0.85rem; }
+  .row { display: grid; grid-template-columns: 88px 1fr; column-gap: 8px; align-items: start; margin: 0 0 10px; }
+  .row-label { color: var(--muted); font-size: 0.85rem; padding-top: 6px; }
+  .row-body { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; min-width: 0; }
+  .controls { margin-top: 8px; }
+  .controls input[type="text"], .controls select {
+    background: var(--panel);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 0.9rem;
+  }
+  .controls label { font-size: 0.9rem; display: flex; align-items: center; gap: 6px; }
+  .view-toggle button {
+    background: var(--panel);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 7px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  .view-toggle button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .badge-yes { background: var(--yes-bg); color: var(--yes-fg); }
+  .badge-partial { background: var(--partial-bg); color: var(--partial-fg); }
+  .badge-experimental { background: var(--experimental-bg); color: var(--experimental-fg); }
+  .badge-planned { background: var(--planned-bg); color: var(--planned-fg); }
+  .badge-no { background: var(--no-bg); color: var(--no-fg); }
+  .badge-unknown { background: var(--unknown-bg); color: var(--unknown-fg); }
+  .badge-undocumented { background: transparent; color: var(--unknown-fg); border: 1px dashed var(--unknown-fg); }
+  .badge-na { background: var(--na-bg); color: var(--na-fg); }
+  .badge-info { background: var(--info-bg); color: var(--info-fg); }
+  .chip { border: 1px solid var(--border); background: var(--panel); color: var(--text); border-radius: 999px; padding: 4px 10px; font-size: 0.82rem; cursor: pointer; }
+  .chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .seg { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; margin-right: 6px; background: var(--panel); }
+  .seg button { border: none; background: none; color: var(--muted); font-size: 0.78rem; font-weight: 600; padding: 4px 11px; cursor: pointer; }
+  .seg button + button { border-left: 1px solid var(--border); }
+  .seg button:hover { color: var(--accent); }
+  .seg button.on { background: var(--sticky-bg); color: var(--text); }
+  .feat-filter { display: block; margin-top: 6px; }
+  .feat-filter select { font-size: 0.75rem; padding: 2px 4px; border: 1px solid var(--border); border-radius: 5px; background: var(--panel); color: var(--text); max-width: 100%; }
+  .feat-filter select.active { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+  .row.empty { display: none; }
+  .match-count { color: var(--muted); font-size: 0.85rem; }
+  .af { border: 1px solid var(--accent); color: var(--accent); background: var(--panel); border-radius: 999px; padding: 3px 10px; font-size: 0.8rem; cursor: pointer; }
+  .af:hover { background: var(--accent); color: #fff; }
+  .chips-sep { width: 1px; height: 22px; background: var(--border); margin: 0 2px; }
+  body.compact .cell-value, body.compact .feature-desc { display: none !important; }
+  .fact-value { font-size: 0.875rem; line-height: 1.5; }
+  .cell-value { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-top: 4px; color: var(--text); font-size: 0.875rem; line-height: 1.5; cursor: pointer; }
+  .cell-value.open { display: block; }
+  .feature-label { font-weight: 600; }
+  .feature-desc { display: block; color: var(--muted); font-size: 0.82rem; line-height: 1.45; font-weight: normal; margin-top: 3px; }
+  footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 24px; }
+  a { color: var(--accent); }
+  .phone-only { display: none; }
+
+  /* ---------- Feature matrix: Tabulator, themed with the page's own colors ---------- */
+  #matrix.tabulator {
+    background: var(--panel); color: var(--text);
+    border: 1px solid var(--border); border-radius: 8px;
+    font-size: 0.9rem; isolation: isolate;
+  }
+  #matrix .tabulator-header {
+    background: var(--sticky-bg); color: var(--text);
+    border-bottom: 2px solid var(--border); font-weight: 700;
+  }
+  #matrix .tabulator-header .tabulator-col {
+    background: var(--sticky-bg); border-right: none;
+  }
+  #matrix .tabulator-header .tabulator-col .tabulator-col-content { padding: 10px 12px; }
+  #matrix .tabulator-header .tabulator-col.tabulator-sortable.tabulator-col-sorter-element:hover {
+    background: var(--sticky-bg); color: var(--accent);
+  }
+  #matrix .tabulator-header .tabulator-col.tabulator-sortable .tabulator-col-title { padding-right: 18px; }
+  #matrix .tabulator-col-sorter { right: 6px; }
+  #matrix .tabulator-header .tabulator-col.tabulator-sortable[aria-sort=none] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow { border-bottom-color: var(--border); }
+  #matrix .tabulator-header .tabulator-col.tabulator-sortable[aria-sort=ascending] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow { border-bottom-color: var(--accent); }
+  #matrix .tabulator-header .tabulator-col.tabulator-sortable[aria-sort=descending] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow { border-top-color: var(--accent); }
+  #matrix .tabulator-header .tabulator-frozen.tabulator-frozen-left { border-right: none; }
+  #matrix .tool-head a { text-decoration: none; }
+  #matrix .tool-head a:hover { text-decoration: underline; }
+  .sort-hint { display: block; font-size: 0.7rem; font-weight: normal; color: var(--muted); }
+  #feat-head { font-weight: 700; }
+  #feat-head.sorted { cursor: pointer; }
+  #feat-head .reset { display: block; font-size: 0.7rem; font-weight: normal; color: var(--accent); }
+  #matrix .tabulator-tableholder { background: var(--panel); overscroll-behavior: contain; }
+  #matrix .tabulator-tableholder .tabulator-table { background: var(--panel); color: var(--text); }
+  #matrix .tabulator-row, #matrix .tabulator-row.tabulator-row-even {
+    background: var(--panel); border-bottom: 1px solid var(--border); min-height: 0;
+  }
+  #matrix .tabulator-row .tabulator-cell {
+    padding: 10px 12px; border-right: none; vertical-align: top;
+    white-space: normal; text-overflow: clip;
+  }
+  /* The frozen Feature column: opaque, so scrolled cells never show through it. */
+  #matrix .tabulator-row .tabulator-cell.tabulator-frozen,
+  #matrix .tabulator-header .tabulator-col.tabulator-frozen { background: var(--sticky-bg); }
+  #matrix .tabulator-row .tabulator-cell.tabulator-frozen.tabulator-frozen-left { border-right: none; }
+  /* Section headers: Tabulator's own group rows, restyled; the label stays pinned at the left edge. */
+  #matrix .tabulator-row.tabulator-group {
+    background: var(--group-bg); color: var(--group-fg);
+    border-top: none; border-bottom: 1px solid var(--border); border-right: none;
+    padding: 0; font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em;
+    user-select: none;
+  }
+  #matrix .tabulator-row.tabulator-group:hover { background: var(--group-bg); color: var(--accent); }
+  #matrix .tabulator-group .tabulator-group-toggle { display: none; }
+  #matrix .tabulator-row.tabulator-group span { margin-left: 0; color: inherit; }   /* undo Tabulator's red count */
+  #matrix .group-label { position: sticky; left: 0; display: inline-block; padding: 8px 10px; }
+  #matrix .group-label::before { content: "\25B8  "; white-space: pre; }
+  #matrix .tabulator-group-visible .group-label::before { content: "\25BE  "; }
+  #matrix .tabulator-row.tabulator-group .group-count { font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--muted); margin-left: 6px; }
+  #matrix .tabulator-placeholder-contents { color: var(--muted); font-size: 0.9rem; font-weight: 400; }
+  body.compact #matrix .tabulator-row .tabulator-cell { padding-top: 5px; padding-bottom: 5px; }
+
+  /* ---------- By tool view (hand-built table) ---------- */
+  #view-bytool { display: none; }
+  .table-scroll {
+    overflow: auto;
+    max-height: calc(100vh - 32px);
+    overscroll-behavior: contain;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    max-width: 100%;
+    isolation: isolate;
+  }
+  table { border-collapse: collapse; width: 100%; background: var(--panel); }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; font-size: 0.9rem; }
+  thead th {
+    position: sticky; top: 0; z-index: 3;
+    background: var(--sticky-bg);
+    cursor: pointer;
+    white-space: normal; overflow-wrap: anywhere;
+    border-bottom: 2px solid var(--border);
+  }
+  thead th:hover { color: var(--accent); }
+
+  /* ---------- Phones (<= 760 px). Desktop above this width is untouched. ---------- */
+  @media (max-width: 760px) {
+    header { padding: 10px 10px 4px; }
+    main { padding: 0 10px 16px; }
+    footer { padding: 16px 10px; }
+    h1 { font-size: 1.15rem; }
+    .title-row { flex-wrap: nowrap; margin-bottom: 4px; }
+    .gh-link { flex: none; font-size: 0.75rem; padding: 3px 9px; gap: 5px; }
+    .gh-link svg { width: 14px; height: 14px; }
+    .sub { font-size: 0.84rem; line-height: 1.4; margin-bottom: 4px; }
+    .about { font-size: 0.85rem; }
+    .legend { gap: 5px 6px; margin-top: 8px; }
+
+    /* Controls: no gutter; each row is one line; a small label sits inline at its start. */
+    .row { display: flex; align-items: center; gap: 8px; margin: 0 0 8px; }
+    .row-label { flex: none; padding-top: 0; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+    #view-row .row-label { display: none; }
+    .row-body { flex: 1 1 auto; gap: 6px 8px; }
+    #tool-chips, #section-chips, #active-filters {
+      flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding: 1px 0;
+      -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+      mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+    }
+    #tool-chips > *, #section-chips > *, #active-filters > * { flex: none; white-space: nowrap; }
+    .view-toggle button, #filters-btn { padding: 6px 10px; font-size: 0.85rem; }
+    #filters-btn {
+      display: inline-block; background: var(--panel); color: var(--text); border: 1px solid var(--border);
+      border-radius: 6px; cursor: pointer; margin-left: auto;
+    }
+    #filters-btn::after { content: " \25BE"; color: var(--muted); }
+    body.filters-open #filters-btn { border-color: var(--accent); color: var(--accent); }
+    body.filters-open #filters-btn::after { content: " \25B4"; }
+    body:not(.filters-open) .more { display: none !important; }
+    #phone-ff { display: flex; }
+    #phone-ff .row-body { flex-wrap: nowrap; min-width: 0; }
+    #phone-ff select { flex: 1 1 0; min-width: 0; font-size: 0.85rem; padding: 6px 6px; background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 6px; }
+    #filter-search { flex: 1 1 100%; }
+
+    /* The matrix: sideways swipes stay in the box, vertical swipes hand off to the page at its ends.
+       No scroll-snap: snapping made Android Chrome fight the swipe at the far right (2026-09-28). */
+    #matrix .tabulator-tableholder { overscroll-behavior-x: contain; overscroll-behavior-y: auto; }
+    /* Right-edge fade: the part-visible next column fades out instead of being cut mid-word,
+       and it shows there is more to swipe to. Hidden once scrolled to the last column. */
+    .matrix-wrap { position: relative; }
+    .matrix-wrap::after {
+      content: ""; position: absolute; top: 1px; right: 1px; bottom: 1px; width: 36px; pointer-events: none;
+      border-radius: 0 8px 8px 0; background: linear-gradient(to right, transparent, var(--panel) 90%); z-index: 5;
+    }
+    .matrix-wrap.at-end::after, .matrix-wrap.bytool::after { display: none; }
+    #matrix.tabulator { font-size: 0.84rem; }
+    #matrix .tabulator-header .tabulator-col .tabulator-col-content { padding: 8px 9px; }
+    #matrix .tabulator-row .tabulator-cell { padding: 8px 9px; overflow-wrap: anywhere; }
+    #matrix .tabulator-row .tabulator-cell.tabulator-frozen,
+    #matrix .tabulator-header .tabulator-col.tabulator-frozen { box-shadow: inset -1px 0 0 var(--border); }
+    .feature-label { display: block; line-height: 1.3; }
+    .feature-desc { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 0.76rem; line-height: 1.35; cursor: pointer; }
+    .feature-desc.open { display: block; }
+    .feat-filter { display: none; }
+    .cell-value, .fact-value { font-size: 0.82rem; line-height: 1.45; }
+    .sort-hint { font-size: 0.66rem; }
+    #matrix .group-label { padding: 7px 9px; }
+    .table-scroll { background: var(--panel); max-height: calc(100vh - 16px); max-height: calc(100dvh - 16px); overscroll-behavior-x: contain; overscroll-behavior-y: auto; }
+    th, td { padding: 8px 9px; font-size: 0.84rem; overflow-wrap: anywhere; }
+
+    /* By tool: one card per tool; the column headings become a row of sort buttons. */
+    #bytool-table, #bytool-table tbody, #bytool-table tr, #bytool-table td { display: block; width: auto; }
+    #bytool-table thead { display: block; position: sticky; top: 0; z-index: 3; background: var(--sticky-bg); border-bottom: 1px solid var(--border); }
+    #bytool-table thead tr { display: flex; align-items: center; gap: 6px; overflow-x: auto; padding: 8px 9px; scrollbar-width: none; }
+    #bytool-table thead tr::before { content: "Sort by"; flex: none; color: var(--muted); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; }
+    #bytool-table thead th { position: static; flex: none; white-space: nowrap; border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px; font-size: 0.78rem; background: var(--panel); }
+    #bytool-table tbody tr { padding: 10px 10px; border-bottom: 1px solid var(--border); }
+    #bytool-table td { border: 0; padding: 2px 0; }
+    #bytool-table td::before { content: attr(data-label) ": "; color: var(--muted); font-size: 0.76rem; }
+    #bytool-table td:first-child { font-size: 1rem; font-weight: 700; padding-bottom: 4px; }
+    #bytool-table td:first-child::before { content: none; }
+  }
 </style>
 </head>
 <body>
-<p>The agent-manager comparison has moved to <a href="https://mackforge.dev/charts/agent-managers/">mackforge.dev/charts/agent-managers</a>.</p>
+<header>
+  <div class="title-row">
+    <h1>Agent-manager comparison</h1>
+    <div class="title-actions">
+    <a class="gh-link" href="https://github.com/dtiger1889-ops" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.37A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>dtiger1889-ops</a>
+    <div class="share">
+      <button type="button" class="gh-link share-btn" id="share-btn" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 10a2 2 0 0 0-1.6.8L5.9 8.6a2 2 0 0 0 0-1.2l4.5-2.2A2 2 0 1 0 10 4c0 .2 0 .4.1.6L5.6 6.8a2 2 0 1 0 0 2.4l4.5 2.2A2 2 0 1 0 12 10Z"/></svg>Share</button>
+      <div class="share-menu" id="share-menu" role="menu" hidden>
+        <a role="menuitem" data-net="linkedin" target="_blank" rel="noopener">LinkedIn</a>
+        <a role="menuitem" data-net="reddit" target="_blank" rel="noopener">Reddit</a>
+        <a role="menuitem" data-net="x" target="_blank" rel="noopener">X</a>
+        <a role="menuitem" data-net="bluesky" target="_blank" rel="noopener">Bluesky</a>
+        <button type="button" role="menuitem" id="share-copy">Copy link</button>
+        <button type="button" role="menuitem" id="share-native" hidden>More&hellip;</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  <p class="sub"><span id="n-tools">29</span> tools for running a fleet of coding agents (Claude Code, Codex and others), compared across <span id="n-features">38</span> features. Updated 2026-09-30.</p>
+  <details class="about">
+    <summary>About this comparison</summary>
+    <p><b>Column order.</b> Featured tools come first. Every other tool follows A-Z. GitHub stars (checked 2026-09-29) are in the By tool view.</p>
+    <p>Cells come from each tool's own docs, sites, source or posts at the dates shown for that tool, and were not re-verified after that pass. <b>Not documented</b> means the tool's own materials don't mention it, which is not the same as a confirmed <b>No</b>. <span id="unknown-note"><b>Unknown</b> means the tool wasn't researched that far.</span></p>
+  </details>
+  <div class="legend" id="legend"></div>
+</header>
+
+<main>
+  <div class="row controls" id="view-row">
+   <span class="row-label">View</span>
+   <div class="row-body">
+    <div class="view-toggle">
+      <button id="btn-matrix" class="active">Feature matrix</button>
+      <button id="btn-bytool">By tool</button>
+    </div>
+    <div class="view-toggle">
+      <button id="btn-split" aria-pressed="false" title="Only rows where the shown tools split between yes and no">Where they differ most</button>
+    </div>
+    <button id="filters-btn" class="phone-only" aria-expanded="false" aria-controls="section-row phone-ff">More filters</button>
+    <label class="more">Category
+      <select id="filter-category">
+        <option value="all">All</option>
+        <option value="agent manager">Agent managers</option>
+        <option value="other tool we looked at">Other tools</option>
+      </select>
+    </label>
+    <input type="text" id="filter-search" class="more" placeholder="Filter features…">
+    <label class="more" id="hide-unknown-label"><input type="checkbox" id="filter-hide-unknown"> Hide unknown-only rows</label>
+    <label class="more"><input type="checkbox" id="compact"> Compact (badges only)</label>
+   </div>
+  </div>
+  <div class="row"><span class="row-label">Tools</span><div class="row-body" id="tool-chips"></div></div>
+  <div class="row more" id="section-row"><span class="row-label">Sections</span><div class="row-body" id="section-chips"></div></div>
+  <div class="row more phone-only" id="phone-ff"><span class="row-label">Show tools</span><div class="row-body">
+    <select id="ff-feature" aria-label="Feature to filter tools by"></select>
+    <select id="ff-option" aria-label="Which tools to show for that feature"></select>
+  </div></div>
+  <div class="row empty" id="active-row"><span class="row-label">Filtering by</span><div class="row-body" id="active-filters"></div></div>
+
+  <div class="matrix-wrap" id="matrix-wrap">
+    <div id="matrix"></div>
+  </div>
+
+  <div id="view-bytool" class="table-scroll">
+    <table id="bytool-table"></table>
+  </div>
+</main>
+
+<footer>
+  <p id="own-note">* Pantheon is my own work in progress. Read it as a benchmark for what one person can build
+  themselves, useful if you'd rather build your own than use something out of the box.</p>
+  Compiled by dtiger1889-ops.
+</footer>
+
+<script>
+const MARK_ORDER = ["yes", "partial", "experimental", "planned", "no", "undocumented", "unknown", "n/a", "info"];
+const MARK_RANK = Object.fromEntries(MARK_ORDER.map((m, i) => [m, i]));
+const MARK_LABEL = {
+  yes: "Yes", partial: "Partial", experimental: "Experimental",
+  planned: "Planned", no: "No", undocumented: "Not documented", unknown: "Unknown", "n/a": "N/A", info: "Info"
+};
+
+let DATA = null;
+let HAS_UNKNOWN = false;   // true when any cell is Unknown; the Unknown filter, legend chip and note show only then
+let table = null;                 // the Tabulator instance (feature matrix)
+let VIS = [];                     // tools currently shown as columns (DATA order)
+let bytoolSortKey = "name";
+let bytoolSortDir = 1;
+let currentView = "matrix";
+// The "Featured" default view.
+const DEFAULT_TOOLS = ["Orca", "VelaTerm", "herdr", "Paseo", "Agent Orchestrator (AO)", "Pane", "Pantheon"];
+let shownTools = null;            // tool names picked in the Tools chips
+let hiddenSections = new Set();   // sections switched off in the Sections chips
+let collapsed = new Set();        // sections collapsed to their heading
+let featFilters = {};             // feature key -> chosen option value ("" = any)
+const PHONE = window.matchMedia("(max-width: 760px)");   // must match the CSS breakpoint
+
+// Options for a feature row's "Show tools" filter.
+const HAS = new Set(["yes"]);
+const HAS_ANY = new Set(["yes", "partial", "experimental"]);
+function category(key, cell) {
+  // For fact rows (mark "info"), group the free-text value into a short type.
+  if (cell.mark === "unknown") return "Not verified";
+  const v = (cell.value || "").trim();
+  if (key === "app_shell") {
+    const m = v.match(/^(Electron|Tauri|Terminal UI|Hosted|Web|Native)/i);
+    return m ? (m[1].toLowerCase() === "tauri" ? "Tauri" : m[1]) : "Other";
+  }
+  return v.split(/ \(|;|:|,/)[0].trim() || "Other";
+}
+function filterOptions(f) {
+  const cells = DATA.tools.map(t => t.features[f.key]);
+  const isFact = cells.every(c => c.mark === "info" || c.mark === "unknown");
+  if (!isFact) {
+    return [["", "Any"], ["has", "Has it"], ["hasany", "Has it (incl. partial / exp.)"], ["no", "Doesn't have it"], ["undocumented", "Not documented"]].concat(HAS_UNKNOWN ? [["unknown", "Unknown"]] : []);
+  }
+  const cats = [...new Set(DATA.tools.map(t => category(f.key, t.features[f.key])))];
+  if (["harness_count", "languages", "download_size"].includes(f.key)) return null;   // counts and sizes: nothing useful to pick
+  if (f.key === "os") return [["", "Any"], ["os:Windows", "Runs on Windows"], ["os:macOS", "Runs on macOS"], ["os:Linux", "Runs on Linux"], ["os:browser", "Works in a browser"]].concat(HAS_UNKNOWN ? [["unknown", "Not verified"]] : []);
+  if (cats.length < 2 || cats.length > 8) return null;
+  return [["", "Any"], ...cats.map(c => ["cat:" + c, c])];
+}
+function passes(tool, key, opt) {
+  const cell = tool.features[key];
+  if (!opt) return true;
+  if (opt === "has") return HAS.has(cell.mark);
+  if (opt === "hasany") return HAS_ANY.has(cell.mark);
+  if (opt === "no") return cell.mark === "no";
+  if (opt === "unknown") return cell.mark === "unknown";
+  if (opt === "undocumented") return cell.mark === "undocumented";
+  if (opt.startsWith("os:")) return cell.mark !== "unknown" && (cell.value || "").toLowerCase().includes(opt.slice(3).toLowerCase());
+  if (opt.startsWith("cat:")) return category(key, cell) === opt.slice(4);
+  return true;
+}
+
+function visibleTools() {
+  const cat = document.getElementById("filter-category").value;
+  return DATA.tools.filter(t => (cat === "all" || t.category === cat) && shownTools.has(t.name)
+    && Object.entries(featFilters).every(([k, o]) => passes(t, k, o)));
+}
+
+// How evenly the shown tools split on a row: min(yes side, no side), partial counting half, unknowns
+// left out. Fact rows score by how many different types they show. Same rule as the share image.
+let splitOnly = false;
+function splitScore(f) {
+  const cells = VIS.map(t => t.features[f.key]);
+  if (cells.some(c => c.mark === "info")) {
+    const kinds = new Set(cells.filter(c => c.mark !== "unknown").map(c => category(f.key, c)));
+    return kinds.size >= 3 ? 2 : kinds.size - 1;
+  }
+  const known = cells.filter(c => !["unknown", "undocumented", "n/a"].includes(c.mark));
+  const yes = known.reduce((n, c) => n + (c.mark === "yes" ? 1 : (c.mark === "no" ? 0 : 0.5)), 0);
+  return Math.min(yes, known.length - yes);
+}
+
+// Does a feature row pass the row filters (section chips, search, diff-only, unknown-only)?
+function rowPasses(f) {
+  const q = document.getElementById("filter-search").value.trim().toLowerCase();
+  const hideUnknown = document.getElementById("filter-hide-unknown").checked;
+  const diffOnly = splitOnly;
+  if (hiddenSections.has(f.group)) return false;
+  if (diffOnly && VIS.length > 1 && splitScore(f) < (VIS.length >= 4 ? 2 : 1)) return false;
+  if (q && !(f.label.toLowerCase().includes(q) || f.description.toLowerCase().includes(q))) return false;
+  if (hideUnknown && VIS.every(t => t.features[f.key].mark === "unknown")) return false;
+  return true;
+}
+
+function renderLegend() {
+  const el = document.getElementById("legend");
+  el.innerHTML = "";
+  // Only marks that appear somewhere in the data get a legend chip.
+  const used = new Set(DATA.tools.flatMap(t => Object.values(t.features).map(c => c.mark)));
+  MARK_ORDER.filter(m => m !== "info" && used.has(m)).forEach(m => {
+    const span = document.createElement("span");
+    span.className = "badge badge-" + (m === "n/a" ? "na" : m);
+    span.textContent = MARK_LABEL[m];
+    el.appendChild(span);
+  });
+}
+
+function sectionOrder() {
+  return (DATA.group_order || []).length ? DATA.group_order : [...new Set(DATA.features.map(f => f.group))];
+}
+
+// ---------- Tabulator formatters ----------
+function toolCellFormatter(cell) {
+  const c = cell.getValue() || { mark: "unknown" };
+  const wrap = document.createElement("div");
+  if (c.mark === "info") {
+    // Fact rows (app shell, languages, sizes): the value is the content, no badge.
+    const v = document.createElement("span");
+    v.className = "fact-value cell-value";   // clamped to 3 lines like every note; click to expand
+    v.textContent = c.value || "";
+    v.title = c.value || "";
+    v.addEventListener("click", () => { v.classList.toggle("open"); cell.getRow().normalizeHeight(); });
+    wrap.appendChild(v);
+    return wrap;
+  }
+  const b = document.createElement("span");
+  b.className = "badge badge-" + (c.mark === "n/a" ? "na" : c.mark);
+  b.textContent = MARK_LABEL[c.mark] || c.mark;
+  wrap.appendChild(b);
+  if (c.value) {
+    const v = document.createElement("span");
+    v.className = "cell-value";
+    v.textContent = c.value;
+    v.title = c.value;
+    v.addEventListener("click", () => { v.classList.toggle("open"); cell.getRow().normalizeHeight(); });
+    wrap.appendChild(v);
+  }
+  return wrap;
+}
+
+function featureCellFormatter(cell) {
+  const f = cell.getData();
+  const wrap = document.createElement("div");
+  const lab = document.createElement("span");
+  lab.className = "feature-label";
+  lab.textContent = f.label;
+  const desc = document.createElement("span");
+  desc.className = "feature-desc";
+  desc.textContent = f.description;
+  desc.addEventListener("click", () => { desc.classList.toggle("open"); cell.getRow().normalizeHeight(); });   // phones clamp it to 2 lines
+  wrap.append(lab, desc);
+  const opts = filterOptions(f);
+  if (opts) {
+    const l = document.createElement("label");
+    l.className = "feat-filter";
+    const sel = document.createElement("select");
+    sel.setAttribute("aria-label", "Show tools by " + f.label);
+    opts.forEach(([val, text]) => {
+      const o = document.createElement("option");
+      o.value = val; o.textContent = (val ? "" : "Show tools: ") + text;
+      sel.appendChild(o);
+    });
+    sel.value = featFilters[f.key] || "";
+    if (sel.value) sel.classList.add("active");
+    sel.addEventListener("change", () => {
+      if (sel.value) featFilters[f.key] = sel.value; else delete featFilters[f.key];
+      filtersChanged();
+    });
+    l.appendChild(sel);
+    wrap.appendChild(l);
+  }
+  return wrap;
+}
+
+function toolTitleFormatter(t) {
+  return () => {
+    const d = document.createElement("div");
+    d.className = "tool-head";
+    if (t.url) {
+      const a = document.createElement("a");
+      a.href = t.url; a.target = "_blank"; a.rel = "noopener";
+      a.textContent = t.name + " ↗";
+      a.title = "Open " + t.name + " in a new tab";
+      a.addEventListener("click", e => e.stopPropagation());   // following the link must not sort
+      d.appendChild(a);
+    } else {
+      d.textContent = t.name;
+    }
+    if (t.is_authors_own) {
+      const star = document.createElement("a");
+      star.href = "#own-note"; star.className = "own-star"; star.textContent = "*";
+      star.title = "The author's own project: see the note at the bottom";
+      star.addEventListener("click", e => e.stopPropagation());
+      d.appendChild(star);
+    }
+    const s = document.createElement("span");
+    s.className = "sort-hint";
+    s.textContent = "sort";
+    d.appendChild(s);
+    return d;
+  };
+}
+
+function updateFeatureHead(sorted) {
+  const h = document.getElementById("feat-head");
+  if (!h) return;
+  h.classList.toggle("sorted", sorted);
+  h.innerHTML = "Feature" + (sorted ? '<span class="reset">click to reset sort</span>' : "");
+}
+
+// ---------- Build the Tabulator matrix ----------
+function buildMatrix() {
+  const keepSort = table ? table.getSorters().map(s => ({ column: s.field, dir: s.dir })) : [];
+  const keepLeft = table ? table.rowManager.element.scrollLeft : 0;
+  if (table) { table.destroy(); table = null; }
+  const phone = PHONE.matches;
+  const firstCol = phone ? 132 : 240, toolCol = phone ? 150 : 170;
+  VIS = visibleTools();
+
+  const columns = [{
+    title: "Feature", field: "label", frozen: true, width: firstCol, headerSort: false,
+    resizable: false, formatter: featureCellFormatter,
+    titleFormatter: () => { const s = document.createElement("span"); s.id = "feat-head"; s.textContent = "Feature"; return s; },
+    headerClick: () => { if (table.getSorters().length) table.clearSort(); },
+  }];
+  DATA.tools.forEach((t, i) => columns.push({
+    title: t.name, field: "t" + i, minWidth: toolCol, widthGrow: 1, resizable: false,
+    visible: VIS.includes(t), headerWordWrap: true,
+    sorter: (a, b) => MARK_RANK[a.mark] - MARK_RANK[b.mark], headerSortStartingDir: "asc",
+    titleFormatter: toolTitleFormatter(t), formatter: toolCellFormatter,
+  }));
+
+  const rows = DATA.features.map(f => {
+    const r = { key: f.key, label: f.label, description: f.description, group: f.group };
+    DATA.tools.forEach((t, i) => { r["t" + i] = t.features[f.key]; });
+    return r;
+  });
+
+  table = new Tabulator("#matrix", {
+    data: rows, columns, index: "key",
+    layout: "fitColumns",
+    renderVertical: "basic",                    // 38 rows: render them all, no virtual DOM
+    maxHeight: phone ? "calc(100dvh - 16px)" : "calc(100vh - 32px)",
+    groupBy: "group",
+    groupValues: [nonEmptySections()],
+    groupStartOpen: value => !collapsed.has(value),
+    groupToggleElement: "header",
+    groupHeader: (value, count) =>
+      `<span class="group-label">${value}<span class="group-count">${count} ${count === 1 ? "row" : "rows"}</span></span>`,
+    initialSort: keepSort,
+    placeholder: "No features match these filters.",
+  });
+  table.on("tableBuilt", () => {
+    table.setFilter(data => rowPasses(data));
+    table.rowManager.element.scrollLeft = keepLeft;
+    table.rowManager.element.addEventListener("scroll", updateEdge, { passive: true });
+    updateFeatureHead(table.getSorters().length > 0);
+    updateEdge();
+  });
+  table.on("dataSorted", sorters => updateFeatureHead(sorters.length > 0));
+  table.on("groupVisibilityChanged", (group, visible) => {
+    if (visible) collapsed.delete(group.getKey()); else collapsed.add(group.getKey());
+    renderChips();
+  });
+  table.on("scrollHorizontal", updateEdge);
+  table.on("renderComplete", updateEdge);
+}
+
+// Open or close every section. Each show()/hide() regroups the table and replaces the group
+// objects, so look each one up fresh by name instead of reusing one getGroups() list.
+function setAllGroups(open) {
+  sectionOrder().forEach(k => {
+    const g = table.getGroups().find(x => x.getKey() === k);
+    if (g && g.isVisible() !== open) { open ? g.show() : g.hide(); }
+  });
+}
+
+// Only sections with at least one matching row get a heading, in the fixed section order.
+function nonEmptySections() {
+  return sectionOrder().filter(g => DATA.features.some(f => f.group === g && rowPasses(f)));
+}
+
+// Re-apply everything that decides which columns and rows show, without rebuilding the table.
+function applyMatrix(opts = {}) {
+  if (!table) return;
+  VIS = visibleTools();
+  table.blockRedraw();
+  let sortedHidden = false, colsChanged = false;
+  DATA.tools.forEach((t, i) => {
+    const col = table.getColumn("t" + i);
+    const want = VIS.includes(t);
+    if (col.isVisible() !== want) { want ? col.show() : col.hide(); colsChanged = true; }
+  });
+  table.getSorters().forEach(s => { if (!s.column.isVisible()) sortedHidden = true; });
+  if (sortedHidden || opts.clearSort) table.clearSort();
+  if (opts.reformat) table.getRows().forEach(r => r.reformat());
+  table.refreshFilter();
+  table.setGroupValues([nonEmptySections()]);
+  table.restoreRedraw();
+  if (colsChanged) table.redraw(true);   // re-fit column widths to the new column set
+  requestAnimationFrame(updateEdge);
+}
+
+function countYes(tool) {
+  return Object.values(tool.features).filter(c => c.mark === "yes").length;
+}
+
+function renderByTool() {
+  const tools = visibleTools();
+  const cols = [
+    { key: "name", label: "Tool" },
+    { key: "category", label: "Category" },
+    { key: "where_agents_run", label: "Where agents run" },
+    { key: "license", label: "License" },
+    { key: "checked_on", label: "Checked on" },
+    { key: "source_note", label: "Source note" },
+    { key: "yes_count", label: "Features", num: true },
+    { key: "stars", label: "GitHub stars", num: true },
+  ];
+  const rows = tools.map(t => ({
+    name: t.name, category: t.category, where_agents_run: t.where_agents_run,
+    license: t.license, checked_on: t.checked_on, source_note: t.source_note,
+    yes_count: countYes(t), url: t.url,
+    stars: t.github_stars == null ? -1 : t.github_stars,
+  }));
+  rows.sort((a, b) => {
+    const va = a[bytoolSortKey], vb = b[bytoolSortKey];
+    if (typeof va === "number") return (va - vb) * bytoolSortDir;
+    return String(va).localeCompare(String(vb)) * bytoolSortDir;
+  });
+
+  const tbl = document.getElementById("bytool-table");
+  tbl.innerHTML = "";
+  const thead = document.createElement("thead");
+  const trh = document.createElement("tr");
+  cols.forEach(col => {
+    const th = document.createElement("th");
+    th.textContent = col.label;
+    if (col.num) th.className = "num";
+    th.addEventListener("click", () => {
+      if (bytoolSortKey === col.key) bytoolSortDir *= -1; else { bytoolSortKey = col.key; bytoolSortDir = 1; }
+      renderByTool();
+    });
+    trh.appendChild(th);
+  });
+  thead.appendChild(trh);
+  tbl.appendChild(thead);
+
+  const tbody = document.createElement("tbody");
+  rows.forEach(r => {
+    const tr = document.createElement("tr");
+    cols.forEach(col => {
+      const td = document.createElement("td");
+      td.dataset.label = col.label;   // phones show each cell as "Label: value" in a card
+      if (col.key === "name" && r.url) {
+        const a = document.createElement("a");
+        a.href = r.url; a.target = "_blank"; a.rel = "noopener";
+        a.textContent = r.name;
+        td.appendChild(a);
+      } else if (col.key === "stars") {
+        td.textContent = r.stars < 0 ? "Closed source" : r.stars.toLocaleString("en-US");
+      } else {
+        td.textContent = r[col.key];
+      }
+      if (col.num) td.className = "num";
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+  tbl.appendChild(tbody);
+}
+
+function chip(label, on, onClick) {
+  const b = document.createElement("button");
+  b.className = "chip" + (on ? " on" : "");
+  b.textContent = label;
+  b.setAttribute("aria-pressed", on ? "true" : "false");
+  b.addEventListener("click", onClick);
+  return b;
+}
+function seg(items) {
+  // items: [{label, on, onClick}] -> one pill-shaped button group
+  const wrap = document.createElement("span");
+  wrap.className = "seg";
+  items.forEach(it => {
+    const b = document.createElement("button");
+    b.textContent = it.label;
+    if (it.on) b.classList.add("on");
+    b.setAttribute("aria-pressed", it.on ? "true" : "false");
+    b.addEventListener("click", it.onClick);
+    wrap.appendChild(b);
+  });
+  return wrap;
+}
+function sep() {
+  const d = document.createElement("span");
+  d.className = "chips-sep";
+  return d;
+}
+function sameSet(a, b) {
+  return a.size === b.size && [...a].every(x => b.has(x));
+}
+function renderChips() {
+  const tc = document.getElementById("tool-chips");
+  tc.innerHTML = "";
+  const allNames = new Set(DATA.tools.map(t => t.name));
+  const six = new Set(DEFAULT_TOOLS.filter(n => allNames.has(n)));
+  tc.appendChild(seg([
+    { label: "Featured", on: sameSet(shownTools, six), onClick: () => { shownTools = new Set(six); toolsChanged(); } },
+    { label: "All " + allNames.size, on: sameSet(shownTools, allNames), onClick: () => { shownTools = new Set(allNames); toolsChanged(); } },
+    { label: "None", on: shownTools.size === 0, onClick: () => { shownTools = new Set(); toolsChanged(); } },
+  ]));
+  tc.appendChild(sep());
+  DATA.tools.forEach(t => tc.appendChild(chip(t.name, shownTools.has(t.name), () => {
+    if (shownTools.has(t.name)) shownTools.delete(t.name); else shownTools.add(t.name);
+    toolsChanged();
+  })));
+  const sc = document.getElementById("section-chips");
+  sc.innerHTML = "";
+  const secs = sectionOrder();
+  sc.appendChild(seg([
+    { label: "Show all", on: hiddenSections.size === 0 && collapsed.size === 0, onClick: () => {
+        hiddenSections.clear(); collapsed.clear();
+        applyMatrix();
+        setAllGroups(true);
+        renderChips();
+      } },
+    { label: "Collapse all", on: secs.every(g => collapsed.has(g)), onClick: () => {
+        secs.forEach(g => collapsed.add(g));
+        setAllGroups(false);
+        renderChips();
+      } },
+  ]));
+  sc.appendChild(sep());
+  secs.forEach(g => sc.appendChild(chip(g, !hiddenSections.has(g), () => {
+    if (hiddenSections.has(g)) hiddenSections.delete(g); else hiddenSections.add(g);
+    renderChips(); applyMatrix();
+  })));
+}
+
+function renderActiveFilters() {
+  const el = document.getElementById("active-filters");
+  el.innerHTML = "";
+  const keys = Object.keys(featFilters);
+  document.getElementById("active-row").classList.toggle("empty", !keys.length);
+  if (!keys.length) return;
+  keys.forEach(k => {
+    const f = DATA.features.find(x => x.key === k);
+    const opt = (filterOptions(f) || []).find(o => o[0] === featFilters[k]);
+    const b = document.createElement("button");
+    b.className = "af";
+    b.textContent = f.label + ": " + (opt ? opt[1] : featFilters[k]) + "  ✕";
+    b.title = "Remove this filter";
+    b.addEventListener("click", () => { delete featFilters[k]; filtersChanged(); });
+    el.appendChild(b);
+  });
+  const n = visibleTools().length;
+  const cnt = document.createElement("span");
+  cnt.className = "match-count";
+  cnt.textContent = n + (n === 1 ? " tool matches" : " tools match") + " among the picked tools";
+  el.appendChild(cnt);
+  const clr = document.createElement("button");
+  clr.className = "af";
+  clr.textContent = "Clear all";
+  clr.addEventListener("click", () => { featFilters = {}; filtersChanged(); });
+  el.appendChild(clr);
+}
+
+// A tool chip / preset changed: columns change, any sort resets (as before).
+function toolsChanged() {
+  renderChips();
+  applyMatrix({ clearSort: true });
+  renderByTool();
+  renderActiveFilters();
+}
+// A per-row "Show tools" filter changed: re-run the feature-cell formatters so their dropdowns
+// show the current choice, then re-apply columns and rows.
+function filtersChanged() {
+  applyMatrix({ clearSort: true, reformat: true });
+  renderByTool();
+  renderPhoneFilter();
+  renderActiveFilters();
+}
+
+// Phones: one "Show tools" picker in the filters panel replaces the dropdown under every row.
+function renderPhoneFilter() {
+  const fs = document.getElementById("ff-feature"), os = document.getElementById("ff-option");
+  const prev = fs.value;
+  const usable = DATA.features.filter(f => filterOptions(f));
+  fs.innerHTML = "";
+  usable.forEach(f => {
+    const o = document.createElement("option");
+    o.value = f.key; o.textContent = f.label;
+    fs.appendChild(o);
+  });
+  if (prev && usable.some(f => f.key === prev)) fs.value = prev;
+  const f = usable.find(x => x.key === fs.value);
+  os.innerHTML = "";
+  if (!f) return;
+  filterOptions(f).forEach(([val, text]) => {
+    const o = document.createElement("option");
+    o.value = val; o.textContent = val ? text : "Any (no filter)";
+    os.appendChild(o);
+  });
+  os.value = featFilters[f.key] || "";
+}
+document.getElementById("ff-feature").addEventListener("change", renderPhoneFilter);
+document.getElementById("ff-option").addEventListener("change", e => {
+  const key = document.getElementById("ff-feature").value;
+  if (e.target.value) featFilters[key] = e.target.value; else delete featFilters[key];
+  filtersChanged();
+});
+document.getElementById("filters-btn").addEventListener("click", e => {
+  const open = document.body.classList.toggle("filters-open");
+  e.currentTarget.setAttribute("aria-expanded", open ? "true" : "false");
+  e.currentTarget.textContent = open ? "Fewer filters" : "More filters";
+});
+// Phones: drop the right-edge fade once the table is scrolled to its last column.
+function updateEdge() {
+  const h = document.querySelector("#matrix .tabulator-tableholder");
+  if (!h) return;
+  document.getElementById("matrix-wrap").classList.toggle("at-end", h.scrollLeft + h.clientWidth >= h.scrollWidth - 2);
+}
+// Crossing the phone breakpoint (e.g. rotating a phone) rebuilds the matrix with that layout's widths.
+PHONE.addEventListener("change", () => { if (DATA) buildMatrix(); });
+
+function setView(view) {
+  currentView = view;
+  document.getElementById("matrix").style.display = view === "matrix" ? "" : "none";
+  document.getElementById("matrix-wrap").classList.toggle("bytool", view !== "matrix");
+  document.getElementById("view-bytool").style.display = view === "bytool" ? "block" : "none";
+  document.getElementById("btn-matrix").classList.toggle("active", view === "matrix");
+  document.getElementById("btn-bytool").classList.toggle("active", view === "bytool");
+  if (view === "matrix" && table) { table.redraw(true); updateEdge(); }   // it had no size while hidden
+}
+
+document.getElementById("btn-matrix").addEventListener("click", () => setView("matrix"));
+document.getElementById("btn-bytool").addEventListener("click", () => setView("bytool"));
+document.getElementById("filter-category").addEventListener("change", () => { applyMatrix({ clearSort: true }); renderByTool(); renderActiveFilters(); });
+document.getElementById("filter-search").addEventListener("input", () => applyMatrix());
+document.getElementById("filter-hide-unknown").addEventListener("change", () => applyMatrix());
+document.getElementById("btn-split").addEventListener("click", e => {
+  splitOnly = !splitOnly;
+  e.currentTarget.classList.toggle("active", splitOnly);
+  e.currentTarget.setAttribute("aria-pressed", String(splitOnly));
+  applyMatrix();
+});
+document.getElementById("compact").addEventListener("change", e => {
+  document.body.classList.toggle("compact", e.target.checked);
+  applyMatrix({ reformat: true });   // row heights are measured once; re-measure them
+});
+
+fetch("data/tools.json")
+  .then(r => r.json())
+  .then(data => {
+    DATA = data;
+    HAS_UNKNOWN = data.tools.some(t => Object.values(t.features).some(c => c.mark === "unknown"));
+    if (!HAS_UNKNOWN) {
+      document.getElementById("unknown-note").style.display = "none";
+      document.getElementById("hide-unknown-label").style.display = "none";
+    }
+    document.getElementById("n-tools").textContent = data.tools.length;
+    document.getElementById("n-features").textContent = data.features.length;
+    shownTools = new Set(DEFAULT_TOOLS.filter(n => data.tools.some(t => t.name === n)));
+    renderLegend();
+    renderChips();
+    // ?view=differ opens straight into "Where they differ most" (a link to share). Set before the
+    // table is built: filtering a Tabulator table before its tableBuilt event leaves it blank.
+    if (new URLSearchParams(location.search).get("view") === "differ") {
+      splitOnly = true;
+      const b = document.getElementById("btn-split");
+      b.classList.add("active"); b.setAttribute("aria-pressed", "true");
+    }
+    buildMatrix();
+    renderByTool();
+    renderPhoneFilter();
+  })
+  .catch(err => {
+    document.querySelector("main").innerHTML =
+      '<p style="color:#9c2b2b">Could not load data/tools.json: ' + err + '</p>';
+  });
+
+// Share: plain share links for each network, copy-link, and the device's own share sheet when it has one.
+(function () {
+  const url = "https://mackforge.dev/charts/agent-managers/";
+  const title = "Agent-manager comparison: Orca, herdr, T3 Code, Paseo, Antigravity, Claude Desktop, ChatGPT Desktop and more, feature by feature";
+  const u = encodeURIComponent(url), t = encodeURIComponent(title);
+  const links = {
+    linkedin: "https://www.linkedin.com/sharing/share-offsite/?url=" + u,
+    reddit: "https://www.reddit.com/submit?url=" + u + "&title=" + t,
+    x: "https://x.com/intent/post?url=" + u + "&text=" + t,
+    bluesky: "https://bsky.app/intent/compose?text=" + encodeURIComponent(title + " " + url),
+  };
+  const btn = document.getElementById("share-btn"), menu = document.getElementById("share-menu");
+  menu.querySelectorAll("a[data-net]").forEach(a => { a.href = links[a.dataset.net]; });
+  const close = () => { menu.hidden = true; btn.setAttribute("aria-expanded", "false"); };
+  btn.addEventListener("click", e => {
+    e.stopPropagation();
+    menu.hidden = !menu.hidden;
+    btn.setAttribute("aria-expanded", menu.hidden ? "false" : "true");
+  });
+  document.addEventListener("click", e => { if (!menu.contains(e.target)) close(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", close));
+  const copy = document.getElementById("share-copy");
+  copy.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(url); copy.textContent = "Link copied"; }
+    catch (err) { window.prompt("Copy this link:", url); }
+    setTimeout(() => { copy.textContent = "Copy link"; close(); }, 1200);
+  });
+  const native = document.getElementById("share-native");
+  if (navigator.share) {
+    native.hidden = false;
+    native.addEventListener("click", () => { close(); navigator.share({ title: document.title, text: title, url }).catch(() => {}); });
+  }
+})();
+</script>
+<script data-goatcounter="https://agentdeck.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.v5.js"
+        crossorigin="anonymous"
+        integrity="sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ"></script>
 </body>
 </html>

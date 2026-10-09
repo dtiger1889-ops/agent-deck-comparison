@@ -1,0 +1,165 @@
+{
+  "name": "Conductor",
+  "url": "https://www.conductor.build",
+  "category": "agent manager",
+  "where_agents_run": "your Mac, or Conductor's cloud sandboxes (paid plans), which keep running after you close the app",
+  "license": "Closed source; free, Pro $50/month, Teams $60 per user per month",
+  "checked_on": "2026-09-30 (docs/site pass)",
+  "source_note": "Checked against conductor.build/llms-full.txt (all docs, pricing and FAQ pages), the homepage, the changelog index and the 0.77-0.89 release notes, the installer file sizes (v0.89.2), and a June 2026 engineering write-up on performance.dev for the app shell. No public source repo. Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Claude Code, Codex, Cursor, OpenCode side by side",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "4 in chat; Amp, Pi, Copilot, Gemini as terminal presets",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Sidebar marks sessions that need input; completion sounds",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Tool approvals answered in the chat, if turned on",
+      "mark": "yes"
+    },
+    "cross_provider_delegation": {
+      "value": "Mixed agents in one workspace; hand-off only in cloud",
+      "mark": "partial"
+    },
+    "always_on_assistant": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "conversation_gui_view": {
+      "value": "Chat view per tab, with plans and tool calls",
+      "mark": "yes"
+    },
+    "real_terminal": {
+      "value": "Agent's own terminal in an experimental mode",
+      "mark": "experimental"
+    },
+    "session_organization": {
+      "value": "Sidebar of workspaces with sections and pins; tabs inside",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "saved_prompt_library": {
+      "value": "Slash commands and editable action prompts",
+      "mark": "yes"
+    },
+    "builtin_editors_browser": {
+      "value": "Edit files in diffs, file viewer, browser previews",
+      "mark": "yes"
+    },
+    "appearance_control": {
+      "value": "Light and dark modes, zoom; no font setting found",
+      "mark": "partial"
+    },
+    "usage_hud": {
+      "value": "Claude and Codex account limits and resets",
+      "mark": "yes"
+    },
+    "burn_rate_forecast": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "GitHub or Linear issue to workspace, PR, checks, merge",
+      "mark": "yes"
+    },
+    "worktree_management": {
+      "value": "Every workspace is its own git worktree",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Plan Mode per chat; you split the work yourself",
+      "mark": "partial"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Agents can prompt other sessions via its MCP, cloud only",
+      "mark": "partial"
+    },
+    "knowledge_base": {
+      "value": "Per-workspace .context folder for notes and hand-offs",
+      "mark": "partial"
+    },
+    "native_mobile_app": {
+      "value": "iOS app marked Soon on its homepage",
+      "mark": "planned"
+    },
+    "phone_no_new_app": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "remote_ssh": {
+      "value": "Its own cloud machines over SSH; not your own hosts",
+      "mark": "partial"
+    },
+    "voice_input": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "os": {
+      "value": "macOS only (Apple silicon, Intel); Windows and Linux not yet",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Tauri (Rust core, macOS WebKit view)",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "Closed source; no public repo",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "No: local agents stop when the app quits; cloud ones keep going",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "v0.89.2: 80 MB Apple silicon dmg, 86 MB Intel dmg",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Small (estimate: Tauri app on the system webview; idle agents shut down)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Own Mac app",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "Closed source; free, Pro $50/month, Teams $60/user/month",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "HTTP API and MCP server (Pro, cloud), deep links",
+      "mark": "yes"
+    },
+    "teams_multiuser": {
+      "value": "Shared cloud workspaces, live multiplayer, Teams plan",
+      "mark": "yes"
+    },
+    "stability_maturity": {
+      "value": "v0.89.2, releases several times a week since July 2025",
+      "mark": "info"
+    }
+  },
+  "github_stars": null
+}

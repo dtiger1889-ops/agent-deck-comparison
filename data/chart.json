@@ -1,0 +1,275 @@
+{
+  "snapshot_date": "2026-09-30",
+  "snapshot_note": "Snapshot as of 2026-09-30. Cells come from each tool's own docs/posts at the dates shown; not re-verified beyond that pass.",
+  "features": [
+    {
+      "key": "multi_provider_supervision",
+      "label": "Runs more than one kind of agent",
+      "description": "Can drive more than one coding agent (Claude Code, Codex and so on) side by side.",
+      "group": "Agents & supervision"
+    },
+    {
+      "key": "harness_count",
+      "label": "Coding agents supported",
+      "description": "How many different coding agents it can run, per its own docs.",
+      "group": "Agents & supervision"
+    },
+    {
+      "key": "needs_you_signal",
+      "label": "Alerts when you're needed",
+      "description": "How it tells you an agent is waiting on you.",
+      "group": "Agents & supervision"
+    },
+    {
+      "key": "approve_deny_prompt",
+      "label": "Answer \"Allow?\" prompts from the manager",
+      "description": "When an agent stops to ask permission (run this command? edit this file?), you can allow or deny it from the manager or your phone instead of opening that agent's own window.",
+      "group": "Agents & supervision"
+    },
+    {
+      "key": "cross_provider_delegation",
+      "label": "Hand-offs between agents in one view",
+      "description": "Work passed from one agent to another shows up in the same place.",
+      "group": "Agents & supervision"
+    },
+    {
+      "key": "always_on_assistant",
+      "label": "Always-on assistant",
+      "description": "A standing assistant session you can reach any time.",
+      "group": "Agents & supervision"
+    },
+    {
+      "key": "conversation_gui_view",
+      "label": "Chat view of a session",
+      "description": "Read a session as a conversation instead of raw terminal text.",
+      "group": "Sessions & views"
+    },
+    {
+      "key": "real_terminal",
+      "label": "Open the real terminal",
+      "description": "Drop into the session's actual terminal.",
+      "group": "Sessions & views"
+    },
+    {
+      "key": "session_organization",
+      "label": "How sessions are organized",
+      "description": "List, worktrees, kanban or nested groups.",
+      "group": "Sessions & views"
+    },
+    {
+      "key": "prompt_scratchpad",
+      "label": "Prompt drafts",
+      "description": "Draft prompts and insert them without sending.",
+      "group": "Sessions & views"
+    },
+    {
+      "key": "saved_prompt_library",
+      "label": "Saved prompts",
+      "description": "Reusable prompts you can fire with context attached.",
+      "group": "Sessions & views"
+    },
+    {
+      "key": "builtin_editors_browser",
+      "label": "Built-in editor / browser",
+      "description": "Ships its own editor or browser.",
+      "group": "Sessions & views"
+    },
+    {
+      "key": "appearance_control",
+      "label": "Look and font control",
+      "description": "How far you can change its look, including your terminal's font.",
+      "group": "Sessions & views"
+    },
+    {
+      "key": "usage_hud",
+      "label": "Shows your usage limits",
+      "description": "Your subscription usage and resets, read from local logs.",
+      "group": "Usage & limits"
+    },
+    {
+      "key": "burn_rate_forecast",
+      "label": "Predicts when you'll hit a limit",
+      "description": "Burn rate and time to the limit, not just current usage.",
+      "group": "Usage & limits"
+    },
+    {
+      "key": "limit_governor",
+      "label": "Pause and resume at usage limits",
+      "description": "Pauses work near a limit and picks it back up after the reset.",
+      "group": "Usage & limits"
+    },
+    {
+      "key": "account_hotswap",
+      "label": "Switch accounts without logging in again",
+      "description": "Move between provider accounts without re-login.",
+      "group": "Usage & limits"
+    },
+    {
+      "key": "vault_task_source",
+      "label": "Tasks from your notes vault",
+      "description": "Reads your own notes vault (such as Obsidian) as the task list.",
+      "group": "Tasks, planning & merging"
+    },
+    {
+      "key": "issue_tracker_pipeline",
+      "label": "Turns GitHub or Jira issues into pull requests",
+      "description": "Picks up an issue from GitHub, GitLab, Linear or Jira, hands it to an agent, and carries the resulting pull request through review.",
+      "group": "Tasks, planning & merging"
+    },
+    {
+      "key": "worktree_management",
+      "label": "Manages git worktrees",
+      "description": "Gives each agent or task its own git worktree.",
+      "group": "Tasks, planning & merging"
+    },
+    {
+      "key": "planner_orchestrator",
+      "label": "Planner that splits the work",
+      "description": "Breaks a goal into parts and runs them.",
+      "group": "Tasks, planning & merging"
+    },
+    {
+      "key": "agent_to_agent_messaging",
+      "label": "Agents message each other",
+      "description": "One session can message or query another.",
+      "group": "Tasks, planning & merging"
+    },
+    {
+      "key": "knowledge_base",
+      "label": "Knowledge base for agents",
+      "description": "A notes store agents can look things up in.",
+      "group": "Tasks, planning & merging"
+    },
+    {
+      "key": "native_mobile_app",
+      "label": "Phone app",
+      "description": "A dedicated iOS or Android app.",
+      "group": "Remote & mobile"
+    },
+    {
+      "key": "phone_no_new_app",
+      "label": "Phone access with no new app",
+      "description": "Reach it from your phone with tools you already have.",
+      "group": "Remote & mobile"
+    },
+    {
+      "key": "remote_ssh",
+      "label": "Remote machines over SSH",
+      "description": "Run or edit sessions on another machine.",
+      "group": "Remote & mobile"
+    },
+    {
+      "key": "voice_input",
+      "label": "Voice input",
+      "description": "Dictate to it.",
+      "group": "Remote & mobile"
+    },
+    {
+      "key": "os",
+      "label": "Operating systems",
+      "description": "Which systems it runs on, plus phone or browser access, per its own release files or docs.",
+      "group": "Under the hood"
+    },
+    {
+      "key": "app_shell",
+      "label": "App shell",
+      "description": "What the app is built on: Electron, Tauri, a terminal UI, or a hosted service.",
+      "group": "Under the hood"
+    },
+    {
+      "key": "languages",
+      "label": "Main languages",
+      "description": "Top languages in its repo, from GitHub's breakdown.",
+      "group": "Under the hood"
+    },
+    {
+      "key": "background_process",
+      "label": "Background process",
+      "description": "Whether it runs a separate server or daemon next to the app.",
+      "group": "Under the hood"
+    },
+    {
+      "key": "download_size",
+      "label": "Download size",
+      "description": "Installer size from its latest release. Not memory use.",
+      "group": "Under the hood"
+    },
+    {
+      "key": "ram_vs_claude_desktop",
+      "label": "Memory vs Claude Desktop",
+      "description": "Size as a share of Claude Desktop, counting the app and the virtual machine it starts for Cowork. Scale: Tiny = under 5%, Small = 5-15%, Medium = 15-40%. Each tool's cell is an estimate from what the tool is built on. The coding agents themselves cost the same under every tool.",
+      "group": "Under the hood"
+    },
+    {
+      "key": "runs_in_terminal",
+      "label": "Runs in your own terminal",
+      "description": "Lives inside the terminal you already use.",
+      "group": "Under the hood"
+    },
+    {
+      "key": "license_cost",
+      "label": "License / cost",
+      "description": "Open-source license or pricing.",
+      "group": "Project & openness"
+    },
+    {
+      "key": "extensibility",
+      "label": "Plugins / SDK",
+      "description": "Outside developers can extend it.",
+      "group": "Project & openness"
+    },
+    {
+      "key": "teams_multiuser",
+      "label": "Teams",
+      "description": "Built for more than one person.",
+      "group": "Project & openness"
+    },
+    {
+      "key": "stability_maturity",
+      "label": "Maturity",
+      "description": "How far along and how stable it is.",
+      "group": "Project & openness"
+    }
+  ],
+  "group_order": [
+    "Agents & supervision",
+    "Sessions & views",
+    "Usage & limits",
+    "Tasks, planning & merging",
+    "Remote & mobile",
+    "Under the hood",
+    "Project & openness"
+  ],
+  "tools": [
+    "orca",
+    "velaterm",
+    "herdr",
+    "paseo",
+    "agent-orchestrator",
+    "pane",
+    "pantheon",
+    "agent-manager",
+    "agtx",
+    "ccmanager",
+    "chatgpt-desktop",
+    "claude-command-center",
+    "claude-desktop",
+    "conductor",
+    "gitkraken-kepler",
+    "google-antigravity",
+    "jenny",
+    "micracode",
+    "nimbalyst",
+    "omniscio",
+    "opencove",
+    "oyren",
+    "parallel-code",
+    "spaces",
+    "superset",
+    "t3-code",
+    "teleclod",
+    "vibe-kanban",
+    "vibetree",
+    "wave-terminal"
+  ]
+}

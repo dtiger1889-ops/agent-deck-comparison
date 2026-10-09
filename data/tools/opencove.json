@@ -1,0 +1,165 @@
+{
+  "name": "OpenCove",
+  "url": "https://github.com/DeadWaveWave/opencove",
+  "category": "agent manager",
+  "where_agents_run": "your machine, or remote machines over SSH (managed Workers); browser Web UI (experimental)",
+  "license": "MIT, free",
+  "checked_on": "2026-09-30 (repo/docs pass)",
+  "source_note": "Checked against its README, CHANGELOG (to v0.3.3 and Unreleased), docs/ (agent runtime, CLI, control surface, releasing, UI), agent settings source, and the v0.3.3 release assets. Not installed or run here; used as a visual-design reference for Pantheon.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Claude Code, Codex, OpenCode, Pi, Kimi on one canvas",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "5 to launch; Gemini kept for old sessions only",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Waiting status, standby banners, system notifications",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Answer in the agent's terminal; no allow button",
+      "mark": "partial"
+    },
+    "cross_provider_delegation": {
+      "value": "Agents can open other agents via its CLI; no hand-off view",
+      "mark": "partial"
+    },
+    "always_on_assistant": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "conversation_gui_view": {
+      "value": "Agents shown as terminals; no chat view in docs",
+      "mark": "undocumented"
+    },
+    "real_terminal": {
+      "value": "Full terminals (xterm.js + node-pty) on the canvas",
+      "mark": "yes"
+    },
+    "session_organization": {
+      "value": "Infinite canvas, projects, nested Spaces, sidebar groups",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Notes on the canvas; phrase insertion into terminals",
+      "mark": "partial"
+    },
+    "saved_prompt_library": {
+      "value": "Task prompt templates, reusable roles, quick phrases",
+      "mark": "yes"
+    },
+    "builtin_editors_browser": {
+      "value": "Monaco file editor, file explorer, full browser windows",
+      "mark": "yes"
+    },
+    "appearance_control": {
+      "value": "5 themes; UI and terminal font size and family",
+      "mark": "yes"
+    },
+    "usage_hud": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "burn_rate_forecast": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "Tasks and notes live on its own canvas",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "No issue intake in docs; shows a PR chip per worktree",
+      "mark": "undocumented"
+    },
+    "worktree_management": {
+      "value": "Space per git worktree, create and archive",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Tasks run by agents you pick; no auto-split in docs",
+      "mark": "undocumented"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "knowledge_base": {
+      "value": "Canvas notes agents can read through its CLI",
+      "mark": "partial"
+    },
+    "native_mobile_app": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "phone_no_new_app": {
+      "value": "Experimental Web UI in a browser on your network",
+      "mark": "experimental"
+    },
+    "remote_ssh": {
+      "value": "Managed SSH Workers run sessions on other machines",
+      "mark": "yes"
+    },
+    "voice_input": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "os": {
+      "value": "Windows, macOS (Apple Silicon, Intel), Linux; browser Web UI (experimental)",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Electron desktop app (React, infinite canvas)",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "TypeScript, JavaScript (GitHub percentages not checked)",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "Yes: a local Worker process owns terminals and sessions",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "v0.3.3: 128 MB Windows, 150-156 MB macOS, 163 MB AppImage, 124 MB deb",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Medium (estimate: Electron app plus a Worker process)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Own desktop app window; CLI is for scripting",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "MIT, free",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "CLI and local HTTP API; no plugin system in docs",
+      "mark": "partial"
+    },
+    "teams_multiuser": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "stability_maturity": {
+      "value": "Alpha; v0.3.3 (2026-09-12) plus nightlies; since Feb 2026",
+      "mark": "info"
+    }
+  },
+  "github_stars": 1600
+}

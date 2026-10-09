@@ -1,0 +1,165 @@
+{
+  "name": "Claude Command Center",
+  "url": "https://github.com/amirfish1/claude-command-center",
+  "category": "agent manager",
+  "where_agents_run": "your machine, plus other machines you pair over SSH; phone or any browser on your own network (Tailscale)",
+  "license": "Source-available: free for non-commercial use, commercial use needs permission (MIT before 2026-07-28)",
+  "checked_on": "2026-09-30 (repo/docs pass)",
+  "source_note": "Checked against its README, docs/ folder, source code and latest release (v5.35.0). Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Claude Code, Codex, Cursor and more on one board",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "8, plus 3 more read-only",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Needs-you flag on each session row",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Claude Code prompts answered in the dashboard",
+      "mark": "yes"
+    },
+    "cross_provider_delegation": {
+      "value": "Spawns and queues to any engine, on one board",
+      "mark": "yes"
+    },
+    "always_on_assistant": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "conversation_gui_view": {
+      "value": "Transcript view, two side by side",
+      "mark": "yes"
+    },
+    "real_terminal": {
+      "value": "Jumps to the session's terminal, macOS only",
+      "mark": "partial"
+    },
+    "session_organization": {
+      "value": "List, kanban board, nested groups, project tree",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "saved_prompt_library": {
+      "value": "Template gallery for new-session prompts",
+      "mark": "yes"
+    },
+    "builtin_editors_browser": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "appearance_control": {
+      "value": "Light, dark or system; text size; accent colors",
+      "mark": "yes"
+    },
+    "usage_hud": {
+      "value": "Plan limits per engine, cost per session",
+      "mark": "yes"
+    },
+    "burn_rate_forecast": {
+      "value": "Pace against your plan limits, per engine",
+      "mark": "yes"
+    },
+    "limit_governor": {
+      "value": "Resumes after a limit stop; no pause before it",
+      "mark": "partial"
+    },
+    "account_hotswap": {
+      "value": "API key profiles per spawn; not logins",
+      "mark": "partial"
+    },
+    "vault_task_source": {
+      "value": "Reads a markdown strategy board; no vault",
+      "mark": "partial"
+    },
+    "issue_tracker_pipeline": {
+      "value": "GitHub issue to session to close; no PR step",
+      "mark": "partial"
+    },
+    "worktree_management": {
+      "value": "Optional new worktree per spawn",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Turns a plan into queue tickets for workers",
+      "mark": "yes"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Group chats and ask-a-sibling between sessions",
+      "mark": "yes"
+    },
+    "knowledge_base": {
+      "value": "Session history search and shared learnings files",
+      "mark": "yes"
+    },
+    "native_mobile_app": {
+      "value": "Phone browser only",
+      "mark": "no"
+    },
+    "phone_no_new_app": {
+      "value": "Phone browser over Tailscale, PIN protected",
+      "mark": "yes"
+    },
+    "remote_ssh": {
+      "value": "Paired machines over SSH, one board",
+      "mark": "yes"
+    },
+    "voice_input": {
+      "value": "Browser dictation",
+      "mark": "yes"
+    },
+    "os": {
+      "value": "macOS, Linux, Windows (foreground only); any browser",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Browser UI on a local Python server; Mac app",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "Python ~60%, JavaScript ~28%",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "Yes: local server, worker, queue daemon",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "1.2 MB macOS app (fetches source on first run)",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Small (estimate: Python server plus a browser tab)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Browser dashboard",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "Source-available; free for non-commercial use",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "HTTP API, command-line tool, skills, VS Code extension",
+      "mark": "yes"
+    },
+    "teams_multiuser": {
+      "value": "Single-user local tool by design",
+      "mark": "no"
+    },
+    "stability_maturity": {
+      "value": "v5.35.0, started April 2026, frequent releases",
+      "mark": "info"
+    }
+  },
+  "github_stars": 175
+}

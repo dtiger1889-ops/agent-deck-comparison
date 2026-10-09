@@ -1,0 +1,165 @@
+{
+  "name": "micracode",
+  "url": "https://github.com/Jamessdevops/micracode",
+  "category": "other tool we looked at",
+  "where_agents_run": "your machine (macOS app); the model runs at OpenAI, Google or Anthropic with your API key",
+  "license": "MIT, free (you pay for your own model API)",
+  "checked_on": "2026-09-30 (repo/docs pass)",
+  "source_note": "Checked against its README, docs/ (getting started, configuration, usage, FAQ), apps/core README, desktop build config, micracode.com, and the v0.4.0 release assets. An AI web-app builder with one built-in agent (pi SDK), not a manager of coding-agent CLIs. Its docs list only OpenAI, Gemini and Anthropic keys; the site says any OpenAI-compatible model. Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Claude Code or Codex CLI, one per chat",
+      "mark": "partial"
+    },
+    "harness_count": {
+      "value": "Its own agent, or the Claude Code or Codex CLI",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "approve_deny_prompt": {
+      "value": "Not built yet; the agent runs its tools unchecked",
+      "mark": "no"
+    },
+    "cross_provider_delegation": {
+      "value": "One built-in agent; no hand-offs",
+      "mark": "n/a"
+    },
+    "always_on_assistant": {
+      "value": "App builder; no standing assistant",
+      "mark": "n/a"
+    },
+    "conversation_gui_view": {
+      "value": "Chat panel beside the code",
+      "mark": "yes"
+    },
+    "real_terminal": {
+      "value": "Chat, editor and preview panels; no terminal",
+      "mark": "no"
+    },
+    "session_organization": {
+      "value": "One chat per project; recent-projects list",
+      "mark": "partial"
+    },
+    "prompt_scratchpad": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "saved_prompt_library": {
+      "value": "Keeps prompt history per project; no saved prompts",
+      "mark": "undocumented"
+    },
+    "builtin_editors_browser": {
+      "value": "Monaco editor and live app preview",
+      "mark": "yes"
+    },
+    "appearance_control": {
+      "value": "Resizable panels only in docs",
+      "mark": "undocumented"
+    },
+    "usage_hud": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "burn_rate_forecast": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "One API key per provider; no accounts",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "App builder; no task list",
+      "mark": "n/a"
+    },
+    "issue_tracker_pipeline": {
+      "value": "App builder; no issue intake",
+      "mark": "n/a"
+    },
+    "worktree_management": {
+      "value": "Git snapshot per turn; no worktrees",
+      "mark": "no"
+    },
+    "planner_orchestrator": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "agent_to_agent_messaging": {
+      "value": "One built-in agent",
+      "mark": "n/a"
+    },
+    "knowledge_base": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "native_mobile_app": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "phone_no_new_app": {
+      "value": "Listens on this computer only, by design",
+      "mark": "no"
+    },
+    "remote_ssh": {
+      "value": "Meant to run on your laptop only",
+      "mark": "no"
+    },
+    "voice_input": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "os": {
+      "value": "macOS (Apple Silicon, Intel); source build runs in a browser",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Electron 33 app with a Next.js UI",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "TypeScript, JavaScript, Python (GitHub percentages not checked)",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "No daemon: backend runs inside the app",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "v0.4.0: 115 MB Apple Silicon, 122 MB Intel (dmg)",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Small (estimate: one Electron app, backend in-process)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Own desktop app window",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "MIT, free; bring your own model API key",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "Local HTTP API; no plugin system in docs",
+      "mark": "partial"
+    },
+    "teams_multiuser": {
+      "value": "No accounts or login; one person, one laptop",
+      "mark": "no"
+    },
+    "stability_maturity": {
+      "value": "v0.4.0 (2026-09-06); since May 2026; parts still stubbed",
+      "mark": "info"
+    }
+  },
+  "github_stars": 289
+}

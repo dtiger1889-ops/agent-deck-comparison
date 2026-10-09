@@ -1,0 +1,165 @@
+{
+  "name": "Pane",
+  "url": "https://github.com/greenfield-inc/Pane",
+  "category": "agent manager",
+  "where_agents_run": "your machine + a self-hosted remote host (VM, server, WSL, Mac mini) over Tailscale or SSH; phone or browser through its web app",
+  "license": "AGPL-3.0, free",
+  "checked_on": "2026-09-29 (repo/docs pass)",
+  "source_note": "Checked against its README, docs/ folder, source code, latest release (v2.4.138) and runpane.com. Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Any terminal agent side by side",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "Any CLI agent; 3 with built-in status reading",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Status dots per pane read from the screen; phone push",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Allow/deny dialog for Claude Code only, when enabled",
+      "mark": "partial"
+    },
+    "cross_provider_delegation": {
+      "value": "Pane Chat hands work to agent panes, listed together",
+      "mark": "yes"
+    },
+    "always_on_assistant": {
+      "value": "Pane Chat: standing orchestrator chat, reachable by phone",
+      "mark": "yes"
+    },
+    "conversation_gui_view": {
+      "value": "Terminals only, by design",
+      "mark": "no"
+    },
+    "real_terminal": {
+      "value": "Real terminal per agent, 50,000 lines of scrollback",
+      "mark": "yes"
+    },
+    "session_organization": {
+      "value": "Projects, then panes (one worktree each), then tabs",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "saved_prompt_library": {
+      "value": "Text snippets on a shortcut; no attached context",
+      "mark": "partial"
+    },
+    "builtin_editors_browser": {
+      "value": "Browser tab, code editor, file explorer, diff viewer",
+      "mark": "yes"
+    },
+    "appearance_control": {
+      "value": "Light and dark palettes plus terminal font and size",
+      "mark": "yes"
+    },
+    "usage_hud": {
+      "value": "Tokens and cost per pane; plan limits for Codex only",
+      "mark": "partial"
+    },
+    "burn_rate_forecast": {
+      "value": "Current use and reset only; no forecast",
+      "mark": "no"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Watches pull requests; issue trackers left to agents",
+      "mark": "partial"
+    },
+    "worktree_management": {
+      "value": "Worktree per pane, cleanup, merge from the keyboard",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Pane Chat splits a goal into tickets and starts agents",
+      "mark": "yes"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Agents start and message other panes via its MCP server",
+      "mark": "yes"
+    },
+    "knowledge_base": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "native_mobile_app": {
+      "value": "iOS and Android test builds; not in the stores yet",
+      "mark": "experimental"
+    },
+    "phone_no_new_app": {
+      "value": "Browser web app; needs Tailscale or an SSH tunnel",
+      "mark": "yes"
+    },
+    "remote_ssh": {
+      "value": "Agents, files and git on another machine",
+      "mark": "yes"
+    },
+    "voice_input": {
+      "value": "Dictation in phone and browser; not desktop",
+      "mark": "partial"
+    },
+    "os": {
+      "value": "Windows, macOS, Linux; phone through the browser",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Electron 41",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "TypeScript ~84%, Python ~7%",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "Yes: a separate terminal-host process",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "115 MB Windows installer",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Medium (estimate: Electron app plus terminal host)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "No; own desktop app with its own terminals",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "AGPL-3.0, free",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "Scriptable command-line tool and MCP server; no plugins",
+      "mark": "partial"
+    },
+    "teams_multiuser": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "stability_maturity": {
+      "value": "v2.4.138, started February 2026, frequent releases",
+      "mark": "info"
+    }
+  },
+  "github_stars": 497
+}

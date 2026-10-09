@@ -1,0 +1,165 @@
+{
+  "name": "Superset",
+  "url": "https://superset.sh",
+  "category": "agent manager",
+  "where_agents_run": "your machine; other machines you add through its relay; its cloud workspaces where your account has them; iPhone app reaches them",
+  "license": "Elastic-2.0 (source-available); desktop app free, Pro $20 per user per month ($15 billed yearly)",
+  "checked_on": "2026-09-30 (repo/docs pass)",
+  "source_note": "Checked against docs.superset.sh (full docs text), superset.sh llms.txt, pricing and mobile blog posts, the repo README and desktop package.json, and the latest release (desktop v1.33.0). Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Claude Code, Codex, Gemini, OpenCode and more side by side",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "20 named CLIs plus its own chat; others via custom command",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Hook-driven waiting and done alerts, sounds, dock badge",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Its own chat agent only; others ask in their terminal",
+      "mark": "partial"
+    },
+    "cross_provider_delegation": {
+      "value": "Coordinator hands parts to any agent, one workspace each",
+      "mark": "yes"
+    },
+    "always_on_assistant": {
+      "value": "@superset Slack bot files tasks and starts agents (Pro)",
+      "mark": "partial"
+    },
+    "conversation_gui_view": {
+      "value": "Chat for its own agent only; others are terminals",
+      "mark": "partial"
+    },
+    "real_terminal": {
+      "value": "Agent's own terminal per workspace, survives restarts",
+      "mark": "yes"
+    },
+    "session_organization": {
+      "value": "Workspaces per project, with sessions, tabs and splits",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Rich prompt editor; auto-run off stages prompts unsent",
+      "mark": "partial"
+    },
+    "saved_prompt_library": {
+      "value": "Searchable prompt history and saved terminal scripts",
+      "mark": "partial"
+    },
+    "builtin_editors_browser": {
+      "value": "Code editor, diff viewer, in-app browser",
+      "mark": "yes"
+    },
+    "appearance_control": {
+      "value": "Themes, theme files and marketplace, terminal font size",
+      "mark": "yes"
+    },
+    "usage_hud": {
+      "value": "5-hour and weekly limits per login, plus token costs",
+      "mark": "yes"
+    },
+    "burn_rate_forecast": {
+      "value": "Usage and resets only; no forecast in docs",
+      "mark": "undocumented"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Several Claude or Codex logins, switched per launch",
+      "mark": "yes"
+    },
+    "vault_task_source": {
+      "value": "Not in its docs; tasks come from Linear or GitHub",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "GitHub or Linear issue to PR, merged in the app",
+      "mark": "yes"
+    },
+    "worktree_management": {
+      "value": "Every workspace is its own git worktree and branch",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Orchestrate skill lets one agent split work across workers",
+      "mark": "yes"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Agents read and write other terminals through its CLI",
+      "mark": "yes"
+    },
+    "knowledge_base": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "native_mobile_app": {
+      "value": "iPhone app (iOS 26, Pro plan); Android waitlist",
+      "mark": "yes"
+    },
+    "phone_no_new_app": {
+      "value": "FAQ: no supported web dashboard; phone needs its app",
+      "mark": "no"
+    },
+    "remote_ssh": {
+      "value": "Other machines through its relay (paid), not SSH",
+      "mark": "yes"
+    },
+    "voice_input": {
+      "value": "Dictation in the iPhone app only",
+      "mark": "partial"
+    },
+    "os": {
+      "value": "macOS; Linux AppImage experimental; Windows planned; iPhone app",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Electron 41.10.3 desktop app",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "TypeScript (GitHub's main language; percentage split not reachable here)",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "Yes: host-service daemon and a terminal daemon",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "v1.33.0: 434 MB Apple Silicon dmg, 446 MB Intel dmg, 537 MB Linux AppImage",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Medium (estimate: Electron app plus host and terminal daemons)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Desktop app; its CLI can drive agents from any terminal",
+      "mark": "partial"
+    },
+    "license_cost": {
+      "value": "Elastic-2.0; desktop free, Pro $20/user/month ($15 yearly)",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "CLI, TypeScript SDK, MCP server, theme marketplace",
+      "mark": "yes"
+    },
+    "teams_multiuser": {
+      "value": "Organizations, shared machines; SSO on Enterprise",
+      "mark": "yes"
+    },
+    "stability_maturity": {
+      "value": "v1.33.0 (2026-09-30), daily releases since late 2025; Linux experimental",
+      "mark": "info"
+    }
+  },
+  "github_stars": 14740
+}

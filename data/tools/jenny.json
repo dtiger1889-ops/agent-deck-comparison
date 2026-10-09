@@ -1,0 +1,165 @@
+{
+  "name": "Jenny",
+  "url": "https://github.com/SaltyPretz3l/jenny",
+  "category": "other tool we looked at",
+  "where_agents_run": "your machine, on a local model (Ollama, llama-server, vLLM or another OpenAI-compatible server); optional self-hosted browser host via Docker (experimental)",
+  "license": "MIT, free",
+  "checked_on": "2026-09-30 (repo/docs pass)",
+  "source_note": "Checked against its README, RELEASE_NOTES (to 1.2.0), docs index, FAQ, tools reference, architecture, themes, Remote Control and browser-hosting docs, and the v1.2.0 release assets. A single local-model assistant with its own IDE, not a manager of coding-agent CLIs. Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "One assistant on one model; not an agent manager",
+      "mark": "no"
+    },
+    "harness_count": {
+      "value": "None; runs models directly, not agent CLIs",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Needs-you inbox for approvals and questions; reminders",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Its own tool calls wait for your approval in chat",
+      "mark": "yes"
+    },
+    "cross_provider_delegation": {
+      "value": "Single assistant; no other agents to hand off to",
+      "mark": "n/a"
+    },
+    "always_on_assistant": {
+      "value": "The app is an assistant; reminders only while open",
+      "mark": "partial"
+    },
+    "conversation_gui_view": {
+      "value": "Chat is the main view",
+      "mark": "yes"
+    },
+    "real_terminal": {
+      "value": "Sessions are chats; IDE has a project terminal",
+      "mark": "n/a"
+    },
+    "session_organization": {
+      "value": "Chats grouped by project, bulk archive, task rail",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Home scratchpad notes the model can read",
+      "mark": "partial"
+    },
+    "saved_prompt_library": {
+      "value": "Skills fired with / in the composer",
+      "mark": "yes"
+    },
+    "builtin_editors_browser": {
+      "value": "Monaco IDE, terminal, PDF and DOCX editing; no browser",
+      "mark": "yes"
+    },
+    "appearance_control": {
+      "value": "Palettes, background effects, chat zoom; no font choice",
+      "mark": "partial"
+    },
+    "usage_hud": {
+      "value": "Local models, no plan limits; shows context-window use",
+      "mark": "n/a"
+    },
+    "burn_rate_forecast": {
+      "value": "Local models, no plan limits",
+      "mark": "n/a"
+    },
+    "limit_governor": {
+      "value": "Local models, no plan limits",
+      "mark": "n/a"
+    },
+    "account_hotswap": {
+      "value": "Local models, no provider accounts",
+      "mark": "n/a"
+    },
+    "vault_task_source": {
+      "value": "Tasks live in its own task board",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Git tools are read-only: no commit or push",
+      "mark": "no"
+    },
+    "worktree_management": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "planner_orchestrator": {
+      "value": "Plan mode you approve; read-only research sub-agents",
+      "mark": "partial"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Single assistant",
+      "mark": "n/a"
+    },
+    "knowledge_base": {
+      "value": "Searches your registered folders; approved memories",
+      "mark": "yes"
+    },
+    "native_mobile_app": {
+      "value": "Not in its docs; phone Remote Control not shipped",
+      "mark": "undocumented"
+    },
+    "phone_no_new_app": {
+      "value": "Experimental Docker browser host, reachable over Tailscale",
+      "mark": "experimental"
+    },
+    "remote_ssh": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "voice_input": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "os": {
+      "value": "Windows; Linux x64 experimental; macOS from source only",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Electron app with a Python sidecar",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "JavaScript, Python, HTML, CSS (GitHub percentages not checked)",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "Yes: Python sidecar, plus Ollama or llama-server",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "v1.2.0: 248 MB Windows, 309 MB AppImage, 275 MB deb",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Medium (estimate: Electron app plus Python sidecar; the local model uses more)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Own desktop app window",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "MIT, free",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "Plugin host, MCP servers, skills",
+      "mark": "yes"
+    },
+    "teams_multiuser": {
+      "value": "Built for one owner, including the browser host",
+      "mark": "no"
+    },
+    "stability_maturity": {
+      "value": "v1.2.0 (2026-09-25); one-person hobby project since Aug 2026",
+      "mark": "info"
+    }
+  },
+  "github_stars": 47
+}

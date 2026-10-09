@@ -1,0 +1,165 @@
+{
+  "name": "agtx",
+  "url": "https://github.com/fynnfluegge/agtx",
+  "category": "agent manager",
+  "where_agents_run": "your machine, one tmux window and git worktree per task; optional Docker sandbox; phone browser over wifi or Tailscale",
+  "license": "Apache-2.0, free",
+  "checked_on": "2026-09-30 (repo/docs pass)",
+  "source_note": "The upstream project. Checked against its README, CLAUDE.md, AGENTS.md, LICENSE, install.sh, Cargo.toml, agent source, phone web app source and the v1.0.6 release. Not the thereal4th/AGTX fork, which stopped at the March 2026 code. Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Nine coding agents on one kanban board",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "9: Claude, Codex, Gemini, Copilot, OpenCode, Cursor, Grok, Antigravity, pi",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Blocked badge with the reason; no desktop alert",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Type answers into the agent's terminal, phone included",
+      "mark": "partial"
+    },
+    "cross_provider_delegation": {
+      "value": "Different agent per phase, switched on the same task",
+      "mark": "yes"
+    },
+    "always_on_assistant": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "conversation_gui_view": {
+      "value": "Popup and phone show the live terminal, not a chat",
+      "mark": "no"
+    },
+    "real_terminal": {
+      "value": "Live pane in a popup or fullscreen; tmux attach",
+      "mark": "yes"
+    },
+    "session_organization": {
+      "value": "Kanban per project, dependency graph, project sidebar",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Backlog task text waits until you start it",
+      "mark": "partial"
+    },
+    "saved_prompt_library": {
+      "value": "Per-phase prompt templates in plugins; no free library",
+      "mark": "partial"
+    },
+    "builtin_editors_browser": {
+      "value": "Built-in diff view and config editor; no code editor",
+      "mark": "partial"
+    },
+    "appearance_control": {
+      "value": "Theme colors with live preview; font is your terminal's",
+      "mark": "partial"
+    },
+    "usage_hud": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "burn_rate_forecast": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Opens a GitHub pull request at Review; no issue intake",
+      "mark": "partial"
+    },
+    "worktree_management": {
+      "value": "Every task gets its own worktree",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Plans work in waves and merges it; orchestrator in beta",
+      "mark": "yes"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Board-running session reads and messages task agents",
+      "mark": "partial"
+    },
+    "knowledge_base": {
+      "value": "Board carries specs, plans and diffs to dependent tasks",
+      "mark": "partial"
+    },
+    "native_mobile_app": {
+      "value": "Installable web app instead of a store app",
+      "mark": "no"
+    },
+    "phone_no_new_app": {
+      "value": "Phone browser over wifi or Tailscale, paired by QR",
+      "mark": "yes"
+    },
+    "remote_ssh": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "voice_input": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "os": {
+      "value": "macOS, Linux; phone browser; Windows only via Docker sandbox",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Terminal UI (Rust, ratatui) over tmux; phone web app",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "Rust ~89% (7 languages in all)",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "Yes: its own tmux server; web server only while serving",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "v1.0.6: 4.4-4.9 MB archives for macOS and Linux",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Tiny (estimate: one Rust binary plus tmux)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Runs in your terminal",
+      "mark": "yes"
+    },
+    "license_cost": {
+      "value": "Apache-2.0, free; uses your own agent subscriptions",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "TOML workflow plugins, custom skills, MCP server",
+      "mark": "yes"
+    },
+    "teams_multiuser": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "stability_maturity": {
+      "value": "v1.0.6 (2026-09-16), started February 2026, frequent releases",
+      "mark": "info"
+    }
+  },
+  "github_stars": 1692
+}

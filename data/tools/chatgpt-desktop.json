@@ -1,0 +1,165 @@
+{
+  "name": "ChatGPT Desktop",
+  "url": "https://learn.chatgpt.com/docs/app",
+  "category": "agent manager",
+  "where_agents_run": "your machine (local checkout or a git worktree per chat) + SSH hosts + OpenAI-hosted Codex cloud chats; your phone reaches the desktop through Remote in the ChatGPT mobile app",
+  "license": "Closed source; included in every ChatGPT plan: Free $0, Go $8/mo, Plus $20/mo, Pro $100-500/mo, Business $20/user/mo, Enterprise and Edu by contract",
+  "checked_on": "2026-09-29 (docs pass)",
+  "source_note": "Checked against learn.chatgpt.com (the Codex and ChatGPT desktop app docs that developers.openai.com/codex/app now redirects to), its What's new page, the pricing page, the official download links, and openai/codex GitHub issues for the app shell. Since 2026-07-09 the Codex app ships inside the ChatGPT desktop app. Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Only Codex",
+      "mark": "no"
+    },
+    "harness_count": {
+      "value": "1 (Codex)",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Notifications plus a waiting-on-you activity list",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Approve in the chat or from the phone app",
+      "mark": "yes"
+    },
+    "cross_provider_delegation": {
+      "value": "Subagent threads shown; only Codex agents",
+      "mark": "partial"
+    },
+    "always_on_assistant": {
+      "value": "Always-on cloud agent; still rolling out",
+      "mark": "partial"
+    },
+    "conversation_gui_view": {
+      "value": "Chat view with diffs and subagent threads inline",
+      "mark": "yes"
+    },
+    "real_terminal": {
+      "value": "Chat only; its terminal is for your own commands",
+      "mark": "no"
+    },
+    "session_organization": {
+      "value": "Projects holding chats; optional worktree per chat",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Editable queue of follow-ups; no drafts area",
+      "mark": "partial"
+    },
+    "saved_prompt_library": {
+      "value": "Skills and scheduled prompts; no saved-prompt list",
+      "mark": "partial"
+    },
+    "builtin_editors_browser": {
+      "value": "Built-in browser, diff editing, pull request view",
+      "mark": "yes"
+    },
+    "appearance_control": {
+      "value": "Themes, colors, separate interface and code fonts",
+      "mark": "yes"
+    },
+    "usage_hud": {
+      "value": "Token counts; plan limits and resets only on the web",
+      "mark": "partial"
+    },
+    "burn_rate_forecast": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Linear issues and pull request reviews; runs in the cloud",
+      "mark": "partial"
+    },
+    "worktree_management": {
+      "value": "Creates and cleans up a worktree per chat",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Splits a task across subagents when asked",
+      "mark": "yes"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Subagents report to their parent; not chat to chat",
+      "mark": "partial"
+    },
+    "knowledge_base": {
+      "value": "Memories and project instructions; no notes store",
+      "mark": "partial"
+    },
+    "native_mobile_app": {
+      "value": "ChatGPT iOS and Android app",
+      "mark": "yes"
+    },
+    "phone_no_new_app": {
+      "value": "Cloud tasks in a phone browser; local ones need the app",
+      "mark": "partial"
+    },
+    "remote_ssh": {
+      "value": "Runs chats on hosts from your SSH config",
+      "mark": "yes"
+    },
+    "voice_input": {
+      "value": "Dictation with cleanup, plus spoken conversation",
+      "mark": "yes"
+    },
+    "os": {
+      "value": "macOS, Windows, Linux (preview); iOS/Android app",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Electron",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "Closed source; its Rust app server is open source",
+      "mark": "n/a"
+    },
+    "background_process": {
+      "value": "Yes: a Codex app server process",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "744 MB mac dmg, 475 MB Linux .deb",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Medium (estimate: Electron app plus a server)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Own app window; Codex CLI is a separate tool",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "Proprietary; free tier + paid ChatGPT plans",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "Plugins, skills, MCP servers, hooks and an SDK",
+      "mark": "yes"
+    },
+    "teams_multiuser": {
+      "value": "Business and Enterprise workspaces with admin",
+      "mark": "yes"
+    },
+    "stability_maturity": {
+      "value": "Launched Feb 2026; Linux in preview",
+      "mark": "info"
+    }
+  },
+  "github_stars": null
+}

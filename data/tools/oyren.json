@@ -1,0 +1,165 @@
+{
+  "name": "Oyren",
+  "url": "https://oyren.ai/development",
+  "category": "agent manager",
+  "where_agents_run": "cloud (Oyren codespaces billed by the hour, deliberately not your machine); agents on your own computer can also work its board over MCP",
+  "license": "Closed source; free workspace, Pro $2.99/month, Max $5.99/month (billed yearly); codespaces and AI paid in credits",
+  "checked_on": "2026-09-30 (site pass)",
+  "source_note": "Checked against oyren.ai llms.txt, the codespaces, plans, platforms and feature pages (cloud computer, kanban, supervised loops, MCP server, second brain), two guides, a use-case page and two blog posts. Desktop download links redirect to the homepage. No public repo found. Not tried here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Claude Code, Codex, opencode, Cursor, Qwen and more",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "5 in its launcher, plus Antigravity and any CLI you install",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Emails you the question when a board card is blocked",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Not in its docs; agents run with prompts skipped",
+      "mark": "undocumented"
+    },
+    "cross_provider_delegation": {
+      "value": "Agents hand work to other CLIs in tmux panes on one machine",
+      "mark": "yes"
+    },
+    "always_on_assistant": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "conversation_gui_view": {
+      "value": "Agent app: chat view of a coding agent on the codespace",
+      "mark": "yes"
+    },
+    "real_terminal": {
+      "value": "Terminal and VS Code on the codespace",
+      "mark": "yes"
+    },
+    "session_organization": {
+      "value": "Codespaces per workspace; kanban board tracks agent tickets",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "saved_prompt_library": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "builtin_editors_browser": {
+      "value": "VS Code or Zed, plus a browser agents drive with Playwright",
+      "mark": "yes"
+    },
+    "appearance_control": {
+      "value": "Light and dark mode; colourblind textures on boards",
+      "mark": "partial"
+    },
+    "usage_hud": {
+      "value": "Credit cost per step; no plan limits in its docs",
+      "mark": "undocumented"
+    },
+    "burn_rate_forecast": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "limit_governor": {
+      "value": "Not in its docs; pauses for questions, not limits",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "One codespace per login; no switching inside one",
+      "mark": "partial"
+    },
+    "vault_task_source": {
+      "value": "Not in its docs; tasks live in its hosted workspace",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Its own board to draft PR; no GitHub or Jira intake",
+      "mark": "partial"
+    },
+    "worktree_management": {
+      "value": "Not in its docs; each workspace is its own copy",
+      "mark": "undocumented"
+    },
+    "planner_orchestrator": {
+      "value": "Board picks cards and starts agents; agents split work",
+      "mark": "yes"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Agents message each other, across workspaces too",
+      "mark": "yes"
+    },
+    "knowledge_base": {
+      "value": "Workspace notes and scanned PDFs agents read over MCP",
+      "mark": "yes"
+    },
+    "native_mobile_app": {
+      "value": "Tablet apps listed as coming soon",
+      "mark": "planned"
+    },
+    "phone_no_new_app": {
+      "value": "Responsive web app in a phone browser",
+      "mark": "yes"
+    },
+    "remote_ssh": {
+      "value": "Hosted service: agents already run on its cloud machines",
+      "mark": "n/a"
+    },
+    "voice_input": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "os": {
+      "value": "Any browser; desktop apps listed but downloads not live; tablet apps coming soon",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Hosted web app; desktop builds described as Tauri",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "Closed source; no public repo found",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "Hosted service: agents run on its servers",
+      "mark": "n/a"
+    },
+    "download_size": {
+      "value": "No installer available: download links redirect to the homepage",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Runs in the cloud (local cost: a browser tab)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Hosted workspace in a browser, not a local terminal tool",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "Closed source; free plan, Pro $2.99/month; codespaces from about $0.17/hour",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "MCP servers both ways; editor plugins; no SDK",
+      "mark": "partial"
+    },
+    "teams_multiuser": {
+      "value": "Shared workspaces; no team plan",
+      "mark": "partial"
+    },
+    "stability_maturity": {
+      "value": "Live paid service; guides still missing screenshots of a running agent",
+      "mark": "info"
+    }
+  },
+  "github_stars": null
+}

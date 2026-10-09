@@ -1,0 +1,165 @@
+{
+  "name": "agent-manager",
+  "url": "https://github.com/YoanWai/agent-manager",
+  "category": "agent manager",
+  "where_agents_run": "your machine, each agent in its own tmux session (Windows only inside WSL2)",
+  "license": "Apache-2.0, free",
+  "checked_on": "2026-09-29 (repo pass)",
+  "source_note": "Repo-verified: README, docs/, release assets, go.mod and source read; not installed.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Nine CLI agents in one list, each in tmux",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "9 named, plus plain shell tabs",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Waiting mark, attention filter, desktop notification",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Answer from the list by typing; no allow or deny control",
+      "mark": "partial"
+    },
+    "cross_provider_delegation": {
+      "value": "Agents start other agents; all in the same list",
+      "mark": "yes"
+    },
+    "always_on_assistant": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "conversation_gui_view": {
+      "value": "Last message and reply per row; no full chat view",
+      "mark": "partial"
+    },
+    "real_terminal": {
+      "value": "Attach to its real tmux session full screen",
+      "mark": "yes"
+    },
+    "session_organization": {
+      "value": "Nested groups in a folding tree",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "saved_prompt_library": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "builtin_editors_browser": {
+      "value": "Diff review with line comments; no editor or browser",
+      "mark": "partial"
+    },
+    "appearance_control": {
+      "value": "17 color themes; no font setting",
+      "mark": "partial"
+    },
+    "usage_hud": {
+      "value": "None; \"cost tracking\" listed as not here yet",
+      "mark": "no"
+    },
+    "burn_rate_forecast": {
+      "value": "None",
+      "mark": "no"
+    },
+    "limit_governor": {
+      "value": "Rate limits only mark the session errored",
+      "mark": "no"
+    },
+    "account_hotswap": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "worktree_management": {
+      "value": "Optional worktree and branch per session",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Agents share a task list; no built-in planner",
+      "mark": "partial"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Queued messages through its built-in MCP server",
+      "mark": "yes"
+    },
+    "knowledge_base": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "native_mobile_app": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "phone_no_new_app": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "remote_ssh": {
+      "value": "Runs on a machine you SSH into; can't manage another",
+      "mark": "partial"
+    },
+    "voice_input": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "os": {
+      "value": "macOS, Linux; Windows only inside WSL2",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Terminal UI in Go, over tmux",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "Go ~99.8%",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "Its own tmux server; no separate daemon",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "8 MB archive; no Windows file",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Tiny (estimate: a Go terminal program plus tmux)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Runs inside your own terminal",
+      "mark": "yes"
+    },
+    "license_cost": {
+      "value": "Apache-2.0, free",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "MCP server and CLI commands; no plugin system",
+      "mark": "partial"
+    },
+    "teams_multiuser": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "stability_maturity": {
+      "value": "Since July 2026, 540 stars, releases most weeks",
+      "mark": "info"
+    }
+  },
+  "github_stars": 540
+}

@@ -1,0 +1,165 @@
+{
+  "name": "CCManager",
+  "url": "https://github.com/kbwo/ccmanager",
+  "category": "agent manager",
+  "where_agents_run": "your machine (Windows, macOS, Linux), optionally inside devcontainers",
+  "license": "MIT, free",
+  "checked_on": "2026-09-30 (repo/docs pass)",
+  "source_note": "Checked against its README, package.json, LICENSE, all 11 files in docs/, the config-skill plugin README, the npm registry (v4.4.4 and its per-platform binaries) and the GitHub releases page. Not installed or run here. Evaluated and not adopted for Pantheon (2026-09-01).",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Claude Code, Codex, Gemini, Cursor, Copilot and more",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "9 named CLIs, each with its own state detection",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Waiting flag per session; status hooks for alerts",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Answer inside the session; AI auto-approve is experimental",
+      "mark": "partial"
+    },
+    "cross_provider_delegation": {
+      "value": "Different agents listed side by side; no hand-off",
+      "mark": "partial"
+    },
+    "always_on_assistant": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "conversation_gui_view": {
+      "value": "Terminal view only, by design",
+      "mark": "no"
+    },
+    "real_terminal": {
+      "value": "Each session is the agent's full terminal",
+      "mark": "yes"
+    },
+    "session_organization": {
+      "value": "Worktree list per project; multi-project list",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "saved_prompt_library": {
+      "value": "Not in its docs; presets save commands, not prompts",
+      "mark": "undocumented"
+    },
+    "builtin_editors_browser": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "appearance_control": {
+      "value": "Uses your terminal's font and colors; custom shortcuts only",
+      "mark": "partial"
+    },
+    "usage_hud": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "burn_rate_forecast": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "worktree_management": {
+      "value": "Create, merge and delete worktrees; setup hooks",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "knowledge_base": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "native_mobile_app": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "phone_no_new_app": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "remote_ssh": {
+      "value": "Not in its docs (checked 2026-09-30); devcontainers only",
+      "mark": "undocumented"
+    },
+    "voice_input": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "os": {
+      "value": "Windows, macOS, Linux (npm binaries for each)",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Terminal UI (Ink/React), shipped as a Bun binary",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "TypeScript (GitHub's main language; exact split not read)",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "No: closing it ends the agent sessions it started",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "v4.4.4: 24 MB macOS arm64, 40 MB Linux x64, 43 MB Windows (npm)",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Tiny (estimate: one terminal program)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Runs in your own terminal, no tmux needed",
+      "mark": "yes"
+    },
+    "license_cost": {
+      "value": "MIT, free",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "Status and worktree hooks; no plugin API",
+      "mark": "partial"
+    },
+    "teams_multiuser": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "stability_maturity": {
+      "value": "v4.4.4, since June 2025, 159 npm releases",
+      "mark": "info"
+    }
+  },
+  "github_stars": 1256
+}

@@ -1,0 +1,165 @@
+{
+  "name": "VelaTerm",
+  "url": "https://velaterm.com",
+  "category": "agent manager",
+  "where_agents_run": "your machine + remote machines over SSH (or joined to your account with vela-server); phone or any browser through a pairing link",
+  "license": "MIT, free",
+  "checked_on": "2026-09-30 (repo/docs pass)",
+  "source_note": "Checked against its README, package.json, the file tree, all 16 English user-manual chapters and the changelog on velaterm.com/docs, and the v0.2.6 release page (2026-09-30). Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "14 agents, each run as a managed session",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "14, including Claude Code, Codex, OpenCode, Copilot, Cursor",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Status dots, system notification, unread badge",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Allow and Deny cards in chat view, also from a phone browser",
+      "mark": "yes"
+    },
+    "cross_provider_delegation": {
+      "value": "Child sessions on any of four agents, under the parent",
+      "mark": "yes"
+    },
+    "always_on_assistant": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "conversation_gui_view": {
+      "value": "Chat view for 5 agents; switch to terminal view anytime",
+      "mark": "yes"
+    },
+    "real_terminal": {
+      "value": "Every session is a real terminal that keeps running",
+      "mark": "yes"
+    },
+    "session_organization": {
+      "value": "Projects, collections, nested groups, sessions",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Unsent text and queued messages kept; no drafts pad",
+      "mark": "partial"
+    },
+    "saved_prompt_library": {
+      "value": "Presets save launch settings, not prompts",
+      "mark": "undocumented"
+    },
+    "builtin_editors_browser": {
+      "value": "Markdown and code editors, image viewer, browser tab",
+      "mark": "yes"
+    },
+    "appearance_control": {
+      "value": "Light/dark, accent; interface, terminal and chat fonts",
+      "mark": "yes"
+    },
+    "usage_hud": {
+      "value": "Plan usage and reset times for Claude, Codex, Grok",
+      "mark": "yes"
+    },
+    "burn_rate_forecast": {
+      "value": "Usage and resets only; no forecast in docs",
+      "mark": "undocumented"
+    },
+    "limit_governor": {
+      "value": "Resumes after a limit resets; no pause before it",
+      "mark": "partial"
+    },
+    "account_hotswap": {
+      "value": "Sign in again or out; no switching in docs",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "Agents can search an Obsidian vault; not a task list",
+      "mark": "partial"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Not in its docs; merges branches locally, no PRs",
+      "mark": "undocumented"
+    },
+    "worktree_management": {
+      "value": "Optional worktree per child session, graphical merge",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Planner splits the task; you edit; agents build in parallel",
+      "mark": "yes"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Sessions search, read and message each other",
+      "mark": "yes"
+    },
+    "knowledge_base": {
+      "value": "Agents search session notes, your Markdown, a code graph",
+      "mark": "yes"
+    },
+    "native_mobile_app": {
+      "value": "iOS and Android app in development, not yet published",
+      "mark": "planned"
+    },
+    "phone_no_new_app": {
+      "value": "Phone browser via a pairing link, encrypted",
+      "mark": "yes"
+    },
+    "remote_ssh": {
+      "value": "SSH to Linux, macOS or Windows; sessions keep running there",
+      "mark": "yes"
+    },
+    "voice_input": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "os": {
+      "value": "Windows, macOS, Linux; any browser; phone app not yet published",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Tauri 2 on macOS and Windows; Electron on Linux since v0.2.6",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "TypeScript ~46%, Rust ~39%, Python ~8%",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "None locally; SSH hosts run a vela-server process",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "v0.2.6: 59.5 MB Windows min / 148 MB full setup, 49.8-51.1 MB macOS dmg, 140-142 MB Linux AppImage",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Small (estimate: Tauri app on the system WebView; Linux build is Electron)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Own desktop app",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "MIT, free, uses your own subscriptions",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "Scriptable session commands and agent skills; no plugin API",
+      "mark": "partial"
+    },
+    "teams_multiuser": {
+      "value": "Not in its docs; sharing is only between your devices",
+      "mark": "undocumented"
+    },
+    "stability_maturity": {
+      "value": "v0.2.6 (2026-09-30); public since July 2026, near-daily releases; account sharing experimental",
+      "mark": "info"
+    }
+  },
+  "github_stars": 241
+}

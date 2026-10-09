@@ -1,0 +1,165 @@
+{
+  "name": "vibe-kanban",
+  "url": "https://github.com/BloopAI/vibe-kanban",
+  "category": "agent manager",
+  "where_agents_run": "your machine (desktop app or a local web server opened in your browser); a self-hosted server you reach through a tunnel; phone or another computer through the browser after pairing",
+  "license": "Apache-2.0, free",
+  "checked_on": "2026-09-29 (repo/docs pass)",
+  "source_note": "Checked against its README, docs/ folder, source code, releases (last stable v0.1.44, 2026-04-24; npx-only v0.1.45 prerelease, 2026-09-19) and the shutdown announcement at vibekanban.com/blog/shutdown. The company announced a sunset on 2026-04-10; the kanban board and hosted issues were retired in v0.1.44 and the project is now community maintained. Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Different agent per workspace, run side by side",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "10, including Claude Code, Codex, Gemini CLI, Copilot",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Sounds and system notifications; approval cards in chat",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Approve or deny cards in its chat, for most agents",
+      "mark": "yes"
+    },
+    "cross_provider_delegation": {
+      "value": "Several agents share one workspace; no hand-off view",
+      "mark": "partial"
+    },
+    "always_on_assistant": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "conversation_gui_view": {
+      "value": "Each session is a formatted chat with tool calls",
+      "mark": "yes"
+    },
+    "real_terminal": {
+      "value": "Chat only; its terminal is for your own commands",
+      "mark": "no"
+    },
+    "session_organization": {
+      "value": "Workspaces holding chat sessions; kanban board retired",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "One unsent draft per session; no set of saved drafts",
+      "mark": "partial"
+    },
+    "saved_prompt_library": {
+      "value": "Reusable text snippets via @; no attached context",
+      "mark": "partial"
+    },
+    "builtin_editors_browser": {
+      "value": "Preview browser with devtools, diff viewer",
+      "mark": "yes"
+    },
+    "appearance_control": {
+      "value": "Light and dark themes; no font setting",
+      "mark": "partial"
+    },
+    "usage_hud": {
+      "value": "Context gauge per session; no Claude plan limits",
+      "mark": "partial"
+    },
+    "burn_rate_forecast": {
+      "value": "No burn rate or time to the limit",
+      "mark": "no"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "No notes-vault reading",
+      "mark": "no"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Creates and merges pull requests; no issue intake",
+      "mark": "partial"
+    },
+    "worktree_management": {
+      "value": "Worktree and branch per workspace, with merge and cleanup",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Outside agent can split a plan via MCP; no built-in planner",
+      "mark": "partial"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Agents prompt and read other sessions via its MCP server",
+      "mark": "yes"
+    },
+    "knowledge_base": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "native_mobile_app": {
+      "value": "No phone app; browser only",
+      "mark": "no"
+    },
+    "phone_no_new_app": {
+      "value": "Phone browser through your own tunnel or relay",
+      "mark": "partial"
+    },
+    "remote_ssh": {
+      "value": "Can run on a remote server; no remote agents from local app",
+      "mark": "partial"
+    },
+    "voice_input": {
+      "value": "No dictation",
+      "mark": "no"
+    },
+    "os": {
+      "value": "Windows, macOS, Linux; any browser",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Tauri 2, or a local web server via npx",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "Rust ~50%, TypeScript ~46%",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "None; its server runs inside the app",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "39 MB Windows installer",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Small (estimate: Tauri app, server in same process)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "No; desktop app or browser page",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "Apache-2.0, free; paid hosted plans ended",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "MCP server and agent settings; no plugins or SDK",
+      "mark": "partial"
+    },
+    "teams_multiuser": {
+      "value": "Hosted teams removed; self-hosted teams unclear",
+      "mark": "partial"
+    },
+    "stability_maturity": {
+      "value": "Shutdown announced April 2026; community maintained",
+      "mark": "info"
+    }
+  },
+  "github_stars": 28221
+}

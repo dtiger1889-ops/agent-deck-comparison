@@ -1,0 +1,165 @@
+{
+  "name": "Pantheon",
+  "url": "https://github.com/dtiger1889-ops/pantheon",
+  "category": "agent manager",
+  "where_agents_run": "your machine (terminal-native, tmux-hosted; phone reaches it over an existing SSH tunnel)",
+  "license": "MIT, free, your own subscriptions",
+  "checked_on": "2026-10-09 (author's own build; every cell reviewed against the code and its recorded live checks)",
+  "source_note": "Author's own project (open source, pre-release, published as-is). Cells describe the author's current build, which is newer than the public repo (last updated 2026-09-28). Held to the same rules as every other tool here, weak spots included.",
+  "is_authors_own": true,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Claude Code and Codex; Codex runs as headless jobs only",
+      "mark": "partial"
+    },
+    "harness_count": {
+      "value": "2 (Claude Code, Codex); local-model adapter built, unused",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Exact: derived from hook events, not inferred from silence",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Allow or deny from the deck; walked on a test deck only",
+      "mark": "experimental"
+    },
+    "conversation_gui_view": {
+      "value": "Recent actions and latest ask; no full chat view",
+      "mark": "partial"
+    },
+    "real_terminal": {
+      "value": "Jumps to the session's own real tmux window",
+      "mark": "yes"
+    },
+    "session_organization": {
+      "value": "Sidebar session list plus a live fleet table",
+      "mark": "yes"
+    },
+    "usage_hud": {
+      "value": "Usage and resets from local logs and your account",
+      "mark": "yes"
+    },
+    "burn_rate_forecast": {
+      "value": "Burn rate and run-out time; not yet checked against real use",
+      "mark": "partial"
+    },
+    "limit_governor": {
+      "value": "Built but switched off by default; never tested live",
+      "mark": "experimental"
+    },
+    "vault_task_source": {
+      "value": "Reads your notes vault as its live task list",
+      "mark": "yes"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Deliberately absent; the notes vault is the tracker",
+      "mark": "no"
+    },
+    "worktree_management": {
+      "value": "Agents use worktrees; the deck itself doesn't manage them",
+      "mark": "no"
+    },
+    "planner_orchestrator": {
+      "value": "None; the planning page only estimates usage cost",
+      "mark": "no"
+    },
+    "agent_to_agent_messaging": {
+      "value": "None",
+      "mark": "no"
+    },
+    "cross_provider_delegation": {
+      "value": "Codex hand-offs to Claude show in the deck; not walked live",
+      "mark": "experimental"
+    },
+    "always_on_assistant": {
+      "value": "Pinned Assistant session, used from desk and phone",
+      "mark": "yes"
+    },
+    "knowledge_base": {
+      "value": "None; the vault is read only as a task list",
+      "mark": "no"
+    },
+    "builtin_editors_browser": {
+      "value": "Terminal editor pane beside a session; not walked live",
+      "mark": "experimental"
+    },
+    "native_mobile_app": {
+      "value": "None; your phone's terminal app over SSH instead",
+      "mark": "no"
+    },
+    "phone_no_new_app": {
+      "value": "Your phone's terminal app over SSH",
+      "mark": "yes"
+    },
+    "remote_ssh": {
+      "value": "None",
+      "mark": "no"
+    },
+    "account_hotswap": {
+      "value": "None",
+      "mark": "no"
+    },
+    "prompt_scratchpad": {
+      "value": "Saved drafts, inserted without sending; not walked live",
+      "mark": "experimental"
+    },
+    "saved_prompt_library": {
+      "value": "None; an idea only, not specced or built",
+      "mark": "no"
+    },
+    "appearance_control": {
+      "value": "Writes your terminal's colors and font; not walked live",
+      "mark": "experimental"
+    },
+    "extensibility": {
+      "value": "None",
+      "mark": "no"
+    },
+    "teams_multiuser": {
+      "value": "Single-user by design",
+      "mark": "no"
+    },
+    "voice_input": {
+      "value": "None",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "MIT, free; pre-release; uses your own subscriptions",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Terminal UI (Python + Textual) in your own terminal",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "Python, with Shell and PowerShell scripts",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "Yes: a usage collector and a health watcher",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "No installer; runs from source (git clone + Python)",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Tiny (estimate: Python terminal app)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Runs inside the terminal you already have, under tmux",
+      "mark": "yes"
+    },
+    "stability_maturity": {
+      "value": "Personal, pre-release; stability fixes still under way",
+      "mark": "info"
+    },
+    "os": {
+      "value": "Windows only (MSYS2 + tmux); phone over SSH",
+      "mark": "info"
+    }
+  },
+  "github_stars": 0
+}

@@ -1,0 +1,165 @@
+{
+  "name": "Nimbalyst",
+  "url": "https://nimbalyst.com",
+  "category": "agent manager",
+  "where_agents_run": "your machine; the iOS app starts and answers sessions that run on your desktop",
+  "license": "MIT, free for individuals; Teams $20 per user per month (free during beta)",
+  "checked_on": "2026-09-30 (site/docs pass)",
+  "source_note": "Checked against docs.nimbalyst.com (full text), nimbalyst.com pricing, download, open-source and orchestration pages, the GitHub README, and release notes through v0.79.1. Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Claude Code, Codex and others side by side",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "7: Claude Code and Codex, plus 5 in alpha",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Awaiting-input list, OS alerts, phone push",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Allow or deny inline, or from the phone",
+      "mark": "yes"
+    },
+    "cross_provider_delegation": {
+      "value": "Sessions launch sibling sessions in one list",
+      "mark": "yes"
+    },
+    "always_on_assistant": {
+      "value": "Crew teammates on scheduled shifts, alpha, off by default",
+      "mark": "experimental"
+    },
+    "conversation_gui_view": {
+      "value": "Transcript view with edit cards",
+      "mark": "yes"
+    },
+    "real_terminal": {
+      "value": "Claude Code only; other agents are chat only",
+      "mark": "partial"
+    },
+    "session_organization": {
+      "value": "List, kanban by phase, workstreams, worktrees",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Drafts kept per session and synced to phone; no draft pad",
+      "mark": "partial"
+    },
+    "saved_prompt_library": {
+      "value": "AI Actions: prompt presets in one workspace file",
+      "mark": "yes"
+    },
+    "builtin_editors_browser": {
+      "value": "Code editor, markdown and diagram editors, built-in browser",
+      "mark": "yes"
+    },
+    "appearance_control": {
+      "value": "Light, dark and add-on themes; no font setting",
+      "mark": "partial"
+    },
+    "usage_hud": {
+      "value": "Claude 5-hour and weekly limits with reset times",
+      "mark": "yes"
+    },
+    "burn_rate_forecast": {
+      "value": "Claude meter with pace tracking; no time-to-limit in docs",
+      "mark": "partial"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "GitHub issues to PR merge; Linear and Jira via add-ons",
+      "mark": "partial"
+    },
+    "worktree_management": {
+      "value": "One-click worktree per session",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Agent teams and planners, all experimental",
+      "mark": "experimental"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Sessions read and mention other sessions",
+      "mark": "yes"
+    },
+    "knowledge_base": {
+      "value": "Project Memory search; Knowledge extension, off by default",
+      "mark": "yes"
+    },
+    "native_mobile_app": {
+      "value": "iOS app; Android app only in the source repo",
+      "mark": "yes"
+    },
+    "phone_no_new_app": {
+      "value": "Sessions need the phone app",
+      "mark": "no"
+    },
+    "remote_ssh": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "voice_input": {
+      "value": "Voice Mode on desktop and iPhone, alpha, needs an OpenAI key",
+      "mark": "experimental"
+    },
+    "os": {
+      "value": "macOS, Windows, Linux; iPhone app",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Electron (React)",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "TypeScript (Electron), Swift for iOS, Kotlin for Android; GitHub percentages not checked",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "None documented; agents run inside the app, which must stay open",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "v0.79.1: 419 MB Windows, 492-708 MB macOS, 571-784 MB Linux",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Medium (estimate: Electron app with many editors; 4 GB default memory ceiling)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Desktop app",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "MIT, free for individuals; Teams $20 per user per month",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "Extension SDK and marketplace, MCP, command-line tool",
+      "mark": "yes"
+    },
+    "teams_multiuser": {
+      "value": "Teams beta: shared docs and trackers",
+      "mark": "experimental"
+    },
+    "stability_maturity": {
+      "value": "v0.79.1 (2026-09-30), weekly releases, many alpha features",
+      "mark": "info"
+    }
+  },
+  "github_stars": 1803
+}

@@ -1,0 +1,165 @@
+{
+  "name": "GitKraken Kepler",
+  "url": "https://www.gitkraken.com/kepler",
+  "category": "agent manager",
+  "where_agents_run": "your machine (Windows, macOS, Linux), or another machine over SSH or WSL (paid plans); phone or another computer reaches it through a browser link (paid plans)",
+  "license": "Closed source; free in public preview, some features need a paid GitKraken plan",
+  "checked_on": "2026-09-30 (docs/site pass)",
+  "source_note": "Checked against all 18 Kepler pages on help.gitkraken.com (Sept 2026), the Kepler 0.x release notes (v0.11.0, Sept 29 2026), the gitkraken.com/kepler product page and FAQ, installer file sizes, and the public gk-ade GitHub repo (issues only, no source). Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Claude Code, Codex, Copilot, Cursor and more side by side",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "9 built in, plus any agent that speaks ACP",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Waiting status, desktop alerts, waiting counts per window",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Allow or reject cards in Kepler, terminal sessions too",
+      "mark": "yes"
+    },
+    "cross_provider_delegation": {
+      "value": "Agents start sessions on any agent, shown in the task",
+      "mark": "yes"
+    },
+    "always_on_assistant": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "conversation_gui_view": {
+      "value": "Rich chat view per session, plus a live Agent Graph",
+      "mark": "yes"
+    },
+    "real_terminal": {
+      "value": "Terminal mode runs the agent's own CLI in the task",
+      "mark": "yes"
+    },
+    "session_organization": {
+      "value": "List or column board, grouped by inbox, stage or repo",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Keeps an unsent new-task draft; no drafts pad",
+      "mark": "partial"
+    },
+    "saved_prompt_library": {
+      "value": "Saved prompts sent with issue, diff and repo attached",
+      "mark": "yes"
+    },
+    "builtin_editors_browser": {
+      "value": "Diff viewer and terminals; opens your own editor",
+      "mark": "partial"
+    },
+    "appearance_control": {
+      "value": "Four themes; terminal font, size and spacing",
+      "mark": "yes"
+    },
+    "usage_hud": {
+      "value": "Claude, Codex and Auggie plan windows, opt-in",
+      "mark": "yes"
+    },
+    "burn_rate_forecast": {
+      "value": "Not in its docs (checked 2026-09-30); shows reset times only",
+      "mark": "undocumented"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-09-30)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Several logins per agent, picked per session",
+      "mark": "yes"
+    },
+    "vault_task_source": {
+      "value": "Not in its docs; tasks come from issue trackers",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Issues from 6 trackers to pull request review",
+      "mark": "yes"
+    },
+    "worktree_management": {
+      "value": "Worktree per repo per task, setup commands run first",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Plan action and plan review; no automatic work splitting",
+      "mark": "partial"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Agents read other sessions and send them follow-ups",
+      "mark": "yes"
+    },
+    "knowledge_base": {
+      "value": "Per-task notes every agent reads and can write",
+      "mark": "partial"
+    },
+    "native_mobile_app": {
+      "value": "None; phones use a browser link instead",
+      "mark": "no"
+    },
+    "phone_no_new_app": {
+      "value": "Phone browser via QR code link, paid plans",
+      "mark": "yes"
+    },
+    "remote_ssh": {
+      "value": "SSH hosts and WSL; installs its server itself (paid plans)",
+      "mark": "yes"
+    },
+    "voice_input": {
+      "value": "On-device Whisper dictation, off by default",
+      "mark": "yes"
+    },
+    "os": {
+      "value": "Windows 10+, macOS 12+, Linux (x64 and ARM); phone browser",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Electron desktop app; remote hosts run its Node server",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "Closed source; public GitHub repo holds issues only",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "Yes: a local backend and a supervisor that keeps agents alive",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "v0.11.0: 170 MB Windows setup, 192-202 MB macOS dmg, 158 MB Linux deb",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Medium (estimate: Electron app plus a local backend)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Own desktop app",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "Closed source; free in preview, some features need a paid plan",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "Custom ACP agents, custom Actions, deep links; no plugins",
+      "mark": "partial"
+    },
+    "teams_multiuser": {
+      "value": "GitKraken organization accounts",
+      "mark": "partial"
+    },
+    "stability_maturity": {
+      "value": "v0.11.0 public preview, releases every few weeks",
+      "mark": "info"
+    }
+  },
+  "github_stars": null
+}

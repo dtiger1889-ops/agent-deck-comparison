@@ -1,0 +1,165 @@
+{
+  "name": "Google Antigravity",
+  "url": "https://antigravity.google",
+  "category": "agent manager",
+  "where_agents_run": "your machine (projects, local folders or git worktrees, optional WSL connection on Windows), driven from any browser or phone through its Remote Control web page",
+  "license": "Proprietary, closed source; free tier plus paid Google AI plans",
+  "checked_on": "2026-09-29 (docs/site pass)",
+  "source_note": "Docs-verified: official docs, changelog, launch blog and download page read; installer sizes and app shell read from the v2.18.1 downloads; not installed or run.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Gemini, Claude or GPT, switched per task",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "3: Gemini, Claude, GPT",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Desktop notification and chime; phone push",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Approval card in the app or on your phone",
+      "mark": "yes"
+    },
+    "cross_provider_delegation": {
+      "value": "Subagents show as cards; only its own agents",
+      "mark": "partial"
+    },
+    "always_on_assistant": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "conversation_gui_view": {
+      "value": "Chat per session, plans shown as artifacts",
+      "mark": "yes"
+    },
+    "real_terminal": {
+      "value": "Chat only; its terminal is for your own commands",
+      "mark": "no"
+    },
+    "session_organization": {
+      "value": "Projects holding conversations; optional worktree",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "saved_prompt_library": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "builtin_editors_browser": {
+      "value": "Agent-driven browser; no code editor",
+      "mark": "partial"
+    },
+    "appearance_control": {
+      "value": "Theme only; no font setting",
+      "mark": "partial"
+    },
+    "usage_hud": {
+      "value": "Weekly and five-hour quota left, per model family",
+      "mark": "yes"
+    },
+    "burn_rate_forecast": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "Not in its docs (checked 2026-09-29)",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Through GitHub's MCP server; no built-in issue-to-PR flow",
+      "mark": "partial"
+    },
+    "worktree_management": {
+      "value": "Optional new git worktree per conversation",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Splits work into subagents; team mode in preview",
+      "mark": "yes"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Preview team mode, through shared artifacts",
+      "mark": "experimental"
+    },
+    "knowledge_base": {
+      "value": "Rules, skills and documents; no searchable notes",
+      "mark": "partial"
+    },
+    "native_mobile_app": {
+      "value": "None; a web page you can add to the home screen",
+      "mark": "no"
+    },
+    "phone_no_new_app": {
+      "value": "Remote Control page in any phone browser",
+      "mark": "yes"
+    },
+    "remote_ssh": {
+      "value": "Command-line version over SSH; not the desktop app",
+      "mark": "partial"
+    },
+    "voice_input": {
+      "value": "Built-in dictation that strips filler words",
+      "mark": "yes"
+    },
+    "os": {
+      "value": "Windows, macOS, Linux; phone or browser via web page",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Electron",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "Closed source",
+      "mark": "n/a"
+    },
+    "background_process": {
+      "value": "Optional: remote-access service and helper processes",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "164 MB Windows installer",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Medium (estimate: Electron app)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Own app window; its CLI is a separate tool",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "Proprietary; free tier + paid plans",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "Plugin marketplace, hooks, Python SDK in preview",
+      "mark": "yes"
+    },
+    "teams_multiuser": {
+      "value": "Company sign-in and admin; no shared workspaces",
+      "mark": "partial"
+    },
+    "stability_maturity": {
+      "value": "Version 2.18; 2.0 launched May 2026; parts in preview",
+      "mark": "info"
+    }
+  },
+  "github_stars": null
+}

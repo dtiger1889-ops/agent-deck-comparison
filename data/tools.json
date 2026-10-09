@@ -197,7 +197,7 @@
     {
       "key": "ram_vs_claude_desktop",
       "label": "Memory vs Claude Desktop",
-      "description": "Size as a share of Claude Desktop, which measured about 7.5 GB on one Windows PC on 2026-09-28 (about 3.7 GB for the app across 24 processes, plus about 4 GB for the virtual machine it starts for Cowork). Scale: Tiny = under 5%, Small = 5-15%, Medium = 15-40%. Measured where the cell says so; otherwise an estimate from what the tool is built on. The coding agents themselves cost the same under every tool.",
+      "description": "Size as a share of Claude Desktop, counting the app and the virtual machine it starts for Cowork. Scale: Tiny = under 5%, Small = 5-15%, Medium = 15-40%. Each tool's cell is an estimate from what the tool is built on. The coding agents themselves cost the same under every tool.",
       "group": "Under the hood"
     },
     {
@@ -380,7 +380,7 @@
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "Medium: about 30% (measured 2.3 GB with five projects and agents running)",
+          "value": "Medium (estimate: Electron app plus a background process)",
           "mark": "info"
         },
         "runs_in_terminal": {
@@ -577,8 +577,8 @@
       "category": "agent manager",
       "where_agents_run": "your machine + saved SSH machines, in one window",
       "license": "Apache-2.0, free",
-      "checked_on": "2026-09-28 (repo README, release assets, herdr.dev and its integrations docs)",
-      "source_note": "Checked against its own README, latest release (v0.9.1), herdr.dev and the integrations docs. Not installed or run here.",
+      "checked_on": "2026-10-09 (latest release, herdr.dev agents, install and Windows docs)",
+      "source_note": "Re-checked 2026-10-09 against the v0.9.3 release, herdr.dev's agents, install, connecting-machines and Windows pages, and its issue tracker. First checked 2026-09-28 against v0.9.1. Not installed or run here.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -586,11 +586,11 @@
           "mark": "yes"
         },
         "harness_count": {
-          "value": "22 detected out of the box",
+          "value": "23 detected out of the box",
           "mark": "info"
         },
         "needs_you_signal": {
-          "value": "Each pane marked working, blocked or idle",
+          "value": "Each pane marked working, blocked, done or idle",
           "mark": "partial"
         },
         "approve_deny_prompt": {
@@ -674,7 +674,7 @@
           "mark": "undocumented"
         },
         "native_mobile_app": {
-          "value": "None (a separate community macOS console, herdrm, exists)",
+          "value": "None; installer refuses Android, community Termux builds exist",
           "mark": "no"
         },
         "phone_no_new_app": {
@@ -702,7 +702,7 @@
           "mark": "info"
         },
         "download_size": {
-          "value": "v0.9.1: 9 MB Windows zip, 20-22 MB macOS, 23-25 MB Linux",
+          "value": "v0.9.3: 10 MB Windows zip, 22-24 MB macOS, 28-30 MB Linux",
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
@@ -726,7 +726,7 @@
           "mark": "undocumented"
         },
         "stability_maturity": {
-          "value": "v0.9.1, ~41k GitHub stars, fast-moving; Windows build is in beta",
+          "value": "v0.9.3, ~43k GitHub stars, fast-moving; Windows build is in beta",
           "mark": "info"
         },
         "os": {
@@ -734,7 +734,7 @@
           "mark": "info"
         }
       },
-      "github_stars": 41461
+      "github_stars": 43059
     },
     {
       "name": "Paseo",
@@ -1378,7 +1378,7 @@
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "Tiny: about 1% (measured 77 MB)",
+          "value": "Tiny (estimate: Python terminal app)",
           "mark": "info"
         },
         "runs_in_terminal": {
@@ -2360,7 +2360,7 @@
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
-          "value": "The reference: about 7.5 GB measured",
+          "value": "The reference: the app plus Cowork's virtual machine",
           "mark": "info"
         },
         "runs_in_terminal": {

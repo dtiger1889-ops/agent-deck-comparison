@@ -1,0 +1,165 @@
+{
+  "name": "Warp",
+  "url": "https://www.warp.dev",
+  "category": "agent manager",
+  "where_agents_run": "your machine, remote machines over SSH, and Warp's cloud",
+  "license": "AGPL-3.0 (UI framework MIT), free tier; paid from $20 a month",
+  "checked_on": "2026-10-15 (docs pass)",
+  "source_note": "Checked against docs.warp.dev (agents, third-party CLI agents, notifications, permissions, Remote Control, voice, vertical tabs, worktrees, SSH, Warp Drive, teams, cloud agents and orchestration, themes), warp.dev pricing and download pages, the Claude Code agent page, the GitHub repo (README, license, languages) and installer sizes from its release host. Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Its own agent plus 16 named CLI agents, in tabs",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "Own agent plus 16 auto-detected CLI agents",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Alerts, tab badges, inbox; Claude, Codex, OpenCode only",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Approve in Warp, or from a phone with Remote Control",
+      "mark": "yes"
+    },
+    "cross_provider_delegation": {
+      "value": "A parent agent hands work to a child on another agent",
+      "mark": "yes"
+    },
+    "always_on_assistant": {
+      "value": "Not in its docs (checked 2026-10-15)",
+      "mark": "undocumented"
+    },
+    "conversation_gui_view": {
+      "value": "Chat view for its own agent; others stay in terminal",
+      "mark": "partial"
+    },
+    "real_terminal": {
+      "value": "It is a terminal; each agent runs in a real pane",
+      "mark": "yes"
+    },
+    "session_organization": {
+      "value": "Vertical tabs with branch, pull request and agent status",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Not in its docs (checked 2026-10-15)",
+      "mark": "undocumented"
+    },
+    "saved_prompt_library": {
+      "value": "Warp Drive saved prompts with arguments",
+      "mark": "yes"
+    },
+    "builtin_editors_browser": {
+      "value": "Code editor, file tree and code review",
+      "mark": "yes"
+    },
+    "appearance_control": {
+      "value": "Themes, theme creator, font type, weight and size",
+      "mark": "yes"
+    },
+    "usage_hud": {
+      "value": "Own agent's credits; others' limits not documented",
+      "mark": "partial"
+    },
+    "burn_rate_forecast": {
+      "value": "Not in its docs (checked 2026-10-15)",
+      "mark": "undocumented"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-10-15)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Not in its docs (checked 2026-10-15)",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "Not in its docs (checked 2026-10-15)",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Tag Warp in Linear or GitHub; agent opens a pull request",
+      "mark": "yes"
+    },
+    "worktree_management": {
+      "value": "Detects worktrees; you create them with git",
+      "mark": "partial"
+    },
+    "planner_orchestrator": {
+      "value": "Parent agent plans and spawns child agents",
+      "mark": "yes"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Agents message each other, across different agents",
+      "mark": "yes"
+    },
+    "knowledge_base": {
+      "value": "Warp Drive notebooks and rules agents use as context",
+      "mark": "yes"
+    },
+    "native_mobile_app": {
+      "value": "Not in its docs (checked 2026-10-15)",
+      "mark": "undocumented"
+    },
+    "phone_no_new_app": {
+      "value": "Remote Control and Oz web app open in a phone browser",
+      "mark": "yes"
+    },
+    "remote_ssh": {
+      "value": "SSH sessions with agents; full extras on Mac, Linux hosts",
+      "mark": "yes"
+    },
+    "voice_input": {
+      "value": "Dictate prompts in the app, by button or hotkey",
+      "mark": "yes"
+    },
+    "os": {
+      "value": "Windows 10/11, macOS 10.14+, Linux",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Native Rust app with its own UI framework",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "Rust ~98%, Shell ~1%",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "None documented; SSH extension adds a remote server",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "v0.2026.10.07: 135 MB Windows, 335 MB macOS dmg",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Small (estimate: native Rust app)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Is its own terminal app",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "AGPL-3.0, free tier; paid from $20 a month",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "Open client code, MCP servers, skills, cloud agent API",
+      "mark": "yes"
+    },
+    "teams_multiuser": {
+      "value": "Teams share Warp Drive; Business plan with SSO",
+      "mark": "yes"
+    },
+    "stability_maturity": {
+      "value": "Repo since 2021; ~65,500 stars; stable v0.2026.10.07",
+      "mark": "info"
+    }
+  },
+  "github_stars": 65468
+}

@@ -1,6 +1,6 @@
 {
-  "snapshot_date": "2026-09-30",
-  "snapshot_note": "Snapshot as of 2026-09-30. Cells come from each tool's own docs/posts at the dates shown; not re-verified beyond that pass.",
+  "snapshot_date": "2026-10-15",
+  "snapshot_note": "Cells come from each tool's own docs/posts at the dates shown; not re-verified beyond that pass.",
   "features": [
     {
       "key": "multi_provider_supervision",

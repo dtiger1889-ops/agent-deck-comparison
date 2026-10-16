@@ -742,8 +742,8 @@
       "category": "agent manager",
       "where_agents_run": "your machine, or any host running its daemon (server, Docker, SSH); reached from desktop, phone, browser or CLI via relay or Tailscale",
       "license": "Apache-2.0, free; optional hosted Hub: free plan, Pro $15 per seat per month",
-      "checked_on": "2026-09-30 (docs/release re-check; installed 2026-09-06)",
-      "source_note": "Re-checked 2026-09-30 against paseo.sh/llms.txt and 68 docs pages (markdown), the changelog to v0.10.2, the download and Hub pages, package.json and the v0.10.2 release. Earlier: source read and installed/live-tested 2026-09-06.",
+      "checked_on": "2026-10-16 (change-report recheck of maturity and agent count; full pass 2026-09-30; installed 2026-09-06)",
+      "source_note": "Re-checked 2026-09-30 against paseo.sh/llms.txt and 68 docs pages (markdown), the changelog to v0.10.2, the download and Hub pages, package.json and the v0.10.2 release. Earlier: source read and installed/live-tested 2026-09-06. Rechecked 2026-10-16: maturity against the v0.11.4 release, agent count against paseo.sh/docs/supported-providers.md.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -907,8 +907,8 @@
       "category": "agent manager",
       "where_agents_run": "your machine; phone app over home Wi-Fi or Tailscale; cloud workspaces behind a waitlist",
       "license": "Apache-2.0, free",
-      "checked_on": "2026-09-30 (repo/docs/release pass)",
-      "source_note": "Checked 2026-09-30 against the README, docs/STATUS.md, go.work and frontend/package.json, docs.orchestrator.inc (intro, capabilities, trackers, Connect Mobile, FAQ, migration), orchestrator.inc and its changelog, and the v0.13.2 release. Not installed.",
+      "checked_on": "2026-10-16 (change-report recheck of repo link and agent count; full pass 2026-09-30)",
+      "source_note": "Checked 2026-09-30 against the README, docs/STATUS.md, go.work and frontend/package.json, docs.orchestrator.inc (intro, capabilities, trackers, Connect Mobile, FAQ, migration), orchestrator.inc and its changelog, and the v0.13.2 release. Not installed. Rechecked 2026-10-16: the repo moved to OrchestratorInc; agent count against its README's supported-agents list.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -1402,8 +1402,8 @@
       "category": "agent manager",
       "where_agents_run": "your machine, each agent in its own tmux session (psmux on Windows)",
       "license": "Apache-2.0, free",
-      "checked_on": "2026-09-29 (repo pass)",
-      "source_note": "Repo-verified: README, docs/, release assets, go.mod and source read; not installed.",
+      "checked_on": "2026-10-16 (change-report recheck of platforms and download size; full pass 2026-09-29)",
+      "source_note": "Repo-verified: README, docs/, release assets, go.mod and source read; not installed. Rechecked 2026-10-16: native Windows and download sizes against the v0.42.0 release.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -2392,8 +2392,8 @@
       "category": "agent manager",
       "where_agents_run": "your Mac, or Conductor's cloud sandboxes (paid plans), which keep running after you close the app",
       "license": "Closed source; free, Pro $50/month, Teams $60 per user per month",
-      "checked_on": "2026-09-30 (docs/site pass)",
-      "source_note": "Checked against conductor.build/llms-full.txt (all docs, pricing and FAQ pages), the homepage, the changelog index and the 0.77-0.89 release notes, the installer file sizes (v0.89.2), and a June 2026 engineering write-up on performance.dev for the app shell. No public source repo. Not installed or run here.",
+      "checked_on": "2026-10-16 (change-report recheck of maturity; full pass 2026-09-30)",
+      "source_note": "Checked against conductor.build/llms-full.txt (all docs, pricing and FAQ pages), the homepage, the changelog index and the 0.77-0.89 release notes, the installer file sizes (v0.89.2), and a June 2026 engineering write-up on performance.dev for the app shell. No public source repo. Not installed or run here. Rechecked 2026-10-16: maturity against the 0.91.0 changelog entry.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {

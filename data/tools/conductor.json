@@ -4,8 +4,8 @@
   "category": "agent manager",
   "where_agents_run": "your Mac, or Conductor's cloud sandboxes (paid plans), which keep running after you close the app",
   "license": "Closed source; free, Pro $50/month, Teams $60 per user per month",
-  "checked_on": "2026-09-30 (docs/site pass)",
-  "source_note": "Checked against conductor.build/llms-full.txt (all docs, pricing and FAQ pages), the homepage, the changelog index and the 0.77-0.89 release notes, the installer file sizes (v0.89.2), and a June 2026 engineering write-up on performance.dev for the app shell. No public source repo. Not installed or run here.",
+  "checked_on": "2026-10-16 (change-report recheck of maturity; full pass 2026-09-30)",
+  "source_note": "Checked against conductor.build/llms-full.txt (all docs, pricing and FAQ pages), the homepage, the changelog index and the 0.77-0.89 release notes, the installer file sizes (v0.89.2), and a June 2026 engineering write-up on performance.dev for the app shell. No public source repo. Not installed or run here. Rechecked 2026-10-16: maturity against the 0.91.0 changelog entry.",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {

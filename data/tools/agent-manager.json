@@ -4,8 +4,8 @@
   "category": "agent manager",
   "where_agents_run": "your machine, each agent in its own tmux session (psmux on Windows)",
   "license": "Apache-2.0, free",
-  "checked_on": "2026-09-29 (repo pass)",
-  "source_note": "Repo-verified: README, docs/, release assets, go.mod and source read; not installed.",
+  "checked_on": "2026-10-16 (change-report recheck of platforms and download size; full pass 2026-09-29)",
+  "source_note": "Repo-verified: README, docs/, release assets, go.mod and source read; not installed. Rechecked 2026-10-16: native Windows and download sizes against the v0.42.0 release.",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {

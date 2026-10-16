@@ -4,8 +4,8 @@
   "category": "agent manager",
   "where_agents_run": "your machine; phone app over home Wi-Fi or Tailscale; cloud workspaces behind a waitlist",
   "license": "Apache-2.0, free",
-  "checked_on": "2026-09-30 (repo/docs/release pass)",
-  "source_note": "Checked 2026-09-30 against the README, docs/STATUS.md, go.work and frontend/package.json, docs.orchestrator.inc (intro, capabilities, trackers, Connect Mobile, FAQ, migration), orchestrator.inc and its changelog, and the v0.13.2 release. Not installed.",
+  "checked_on": "2026-10-16 (change-report recheck of repo link and agent count; full pass 2026-09-30)",
+  "source_note": "Checked 2026-09-30 against the README, docs/STATUS.md, go.work and frontend/package.json, docs.orchestrator.inc (intro, capabilities, trackers, Connect Mobile, FAQ, migration), orchestrator.inc and its changelog, and the v0.13.2 release. Not installed. Rechecked 2026-10-16: the repo moved to OrchestratorInc; agent count against its README's supported-agents list.",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {

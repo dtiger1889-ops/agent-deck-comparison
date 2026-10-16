@@ -157,7 +157,7 @@
       "mark": "yes"
     },
     "stability_maturity": {
-      "value": "v0.10.2 (2026-09-30), frequent releases since Feb 2026; plugin API changed in 0.8",
+      "value": "v0.11.4 (2026-10-15), frequent releases since Feb 2026; plugin API changed in 0.8",
       "mark": "info"
     }
   },

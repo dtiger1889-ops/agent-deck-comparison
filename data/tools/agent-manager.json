@@ -2,7 +2,7 @@
   "name": "agent-manager",
   "url": "https://github.com/YoanWai/agent-manager",
   "category": "agent manager",
-  "where_agents_run": "your machine, each agent in its own tmux session (Windows only inside WSL2)",
+  "where_agents_run": "your machine, each agent in its own tmux session (psmux on Windows)",
   "license": "Apache-2.0, free",
   "checked_on": "2026-09-29 (repo pass)",
   "source_note": "Repo-verified: README, docs/, release assets, go.mod and source read; not installed.",
@@ -117,7 +117,7 @@
       "mark": "undocumented"
     },
     "os": {
-      "value": "macOS, Linux; Windows only inside WSL2",
+      "value": "macOS, Linux, Windows (natively, with psmux)",
       "mark": "info"
     },
     "app_shell": {

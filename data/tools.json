@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-10-15",
+  "snapshot_date": "2026-10-16",
   "snapshot_note": "Cells come from each tool's own docs/posts at the dates shown; not re-verified beyond that pass.",
   "features": [
     {
@@ -895,7 +895,7 @@
           "mark": "yes"
         },
         "stability_maturity": {
-          "value": "v0.10.2 (2026-09-30), frequent releases since Feb 2026; plugin API changed in 0.8",
+          "value": "v0.11.4 (2026-10-15), frequent releases since Feb 2026; plugin API changed in 0.8",
           "mark": "info"
         }
       },
@@ -903,7 +903,7 @@
     },
     {
       "name": "Agent Orchestrator (AO)",
-      "url": "https://github.com/Untrivial-ai/agent-orchestrator",
+      "url": "https://github.com/OrchestratorInc/agent-orchestrator",
       "category": "agent manager",
       "where_agents_run": "your machine; phone app over home Wi-Fi or Tailscale; cloud workspaces behind a waitlist",
       "license": "Apache-2.0, free",
@@ -916,7 +916,7 @@
           "mark": "yes"
         },
         "harness_count": {
-          "value": "32 per its README (docs page says 24 terminal adapters)",
+          "value": "36 per its README (docs page says 24 terminal adapters)",
           "mark": "info"
         },
         "needs_you_signal": {
@@ -1400,7 +1400,7 @@
       "name": "agent-manager",
       "url": "https://github.com/YoanWai/agent-manager",
       "category": "agent manager",
-      "where_agents_run": "your machine, each agent in its own tmux session (Windows only inside WSL2)",
+      "where_agents_run": "your machine, each agent in its own tmux session (psmux on Windows)",
       "license": "Apache-2.0, free",
       "checked_on": "2026-09-29 (repo pass)",
       "source_note": "Repo-verified: README, docs/, release assets, go.mod and source read; not installed.",
@@ -1515,7 +1515,7 @@
           "mark": "undocumented"
         },
         "os": {
-          "value": "macOS, Linux; Windows only inside WSL2",
+          "value": "macOS, Linux, Windows (natively, with psmux)",
           "mark": "info"
         },
         "app_shell": {
@@ -2545,7 +2545,7 @@
           "mark": "yes"
         },
         "stability_maturity": {
-          "value": "v0.89.2, releases several times a week since July 2025",
+          "value": "v0.91.0, releases several times a week since July 2025",
           "mark": "info"
         }
       },

@@ -751,7 +751,7 @@
           "mark": "yes"
         },
         "harness_count": {
-          "value": "41: 5 built in, 36 in its catalog, plus custom",
+          "value": "43: 6 built in, 37 in its catalog, plus custom",
           "mark": "info"
         },
         "needs_you_signal": {
@@ -1531,7 +1531,7 @@
           "mark": "info"
         },
         "download_size": {
-          "value": "8 MB archive; no Windows file",
+          "value": "8-9 MB archive for macOS, Linux and Windows",
           "mark": "info"
         },
         "ram_vs_claude_desktop": {

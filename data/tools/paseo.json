@@ -13,7 +13,7 @@
       "mark": "yes"
     },
     "harness_count": {
-      "value": "41: 5 built in, 36 in its catalog, plus custom",
+      "value": "43: 6 built in, 37 in its catalog, plus custom",
       "mark": "info"
     },
     "needs_you_signal": {

@@ -2,10 +2,10 @@
   "name": "Jenny",
   "url": "https://github.com/SaltyPretz3l/jenny",
   "category": "other tool we looked at",
-  "where_agents_run": "your machine, on a local model (Ollama, llama-server, vLLM or another OpenAI-compatible server); optional self-hosted browser host via Docker (experimental)",
+  "where_agents_run": "your machine, on a local model (Ollama, llama-server, vLLM or another OpenAI-compatible server), or optionally a cloud model through ChatGPT sign-in or the Codex CLI; optional self-hosted browser host via Docker (experimental)",
   "license": "MIT, free",
-  "checked_on": "2026-09-30 (repo/docs pass)",
-  "source_note": "Checked against its README, RELEASE_NOTES (to 1.2.0), docs index, FAQ, tools reference, architecture, themes, Remote Control and browser-hosting docs, and the v1.2.0 release assets. A single local-model assistant with its own IDE, not a manager of coding-agent CLIs. Not installed or run here.",
+  "checked_on": "2026-10-19 (change-report recheck of where it runs, issue pipeline, planner, agent messaging, platforms and download size; full pass 2026-09-30)",
+  "source_note": "Checked against its README, RELEASE_NOTES (to 1.2.0), docs index, FAQ, tools reference, architecture, themes, Remote Control and browser-hosting docs, and the v1.2.0 release assets. A single local-model assistant with its own IDE, not a manager of coding-agent CLIs. Not installed or run here. Maturity rechecked 2026-10-18 against the v1.5.0 release page. Rechecked 2026-10-19: v1.5.0 release notes, assets and the README for linked chats, messages between chats, git proposals, platforms, sizes and cloud model options.",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
@@ -81,7 +81,7 @@
       "mark": "undocumented"
     },
     "issue_tracker_pipeline": {
-      "value": "Git tools are read-only: no commit or push",
+      "value": "No issue intake; git actions only as proposals you approve",
       "mark": "no"
     },
     "worktree_management": {
@@ -89,12 +89,12 @@
       "mark": "undocumented"
     },
     "planner_orchestrator": {
-      "value": "Plan mode you approve; read-only research sub-agents",
-      "mark": "partial"
+      "value": "Plan mode; splits work into linked chats that report back",
+      "mark": "yes"
     },
     "agent_to_agent_messaging": {
-      "value": "Single assistant",
-      "mark": "n/a"
+      "value": "Chats send messages to other chats, with your approval",
+      "mark": "yes"
     },
     "knowledge_base": {
       "value": "Searches your registered folders; approved memories",
@@ -117,7 +117,7 @@
       "mark": "undocumented"
     },
     "os": {
-      "value": "Windows; Linux x64 experimental; macOS from source only",
+      "value": "Windows; Linux x64 and Apple Silicon Mac experimental",
       "mark": "info"
     },
     "app_shell": {
@@ -133,7 +133,7 @@
       "mark": "info"
     },
     "download_size": {
-      "value": "v1.2.0: 248 MB Windows, 309 MB AppImage, 275 MB deb",
+      "value": "v1.5.0: 266 MB Windows, 222 MB Mac dmg, 335 MB AppImage, 297 MB deb",
       "mark": "info"
     },
     "ram_vs_claude_desktop": {
@@ -157,7 +157,7 @@
       "mark": "no"
     },
     "stability_maturity": {
-      "value": "v1.2.0 (2026-09-25); one-person hobby project since Aug 2026",
+      "value": "v1.5.0 (2026-10-17); one-person hobby project since Aug 2026",
       "mark": "info"
     }
   },

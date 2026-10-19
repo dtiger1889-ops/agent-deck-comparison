@@ -4,8 +4,8 @@
   "category": "agent manager",
   "where_agents_run": "your machine; phone app over home Wi-Fi or Tailscale; cloud workspaces behind a waitlist",
   "license": "Apache-2.0, free",
-  "checked_on": "2026-10-16 (change-report recheck of repo link and agent count; full pass 2026-09-30)",
-  "source_note": "Checked 2026-09-30 against the README, docs/STATUS.md, go.work and frontend/package.json, docs.orchestrator.inc (intro, capabilities, trackers, Connect Mobile, FAQ, migration), orchestrator.inc and its changelog, and the v0.13.2 release. Not installed. Rechecked 2026-10-16: the repo moved to OrchestratorInc; agent count against its README's supported-agents list.",
+  "checked_on": "2026-10-19 (change-report recheck of agent count; full pass 2026-09-30)",
+  "source_note": "Checked 2026-09-30 against the README, docs/STATUS.md, go.work and frontend/package.json, docs.orchestrator.inc (intro, capabilities, trackers, Connect Mobile, FAQ, migration), orchestrator.inc and its changelog, and the v0.13.2 release. Not installed. Rechecked 2026-10-16: the repo moved to OrchestratorInc; agent count against its README's supported-agents list. Rechecked 2026-10-19: agent count against the README and the docs' built-in agent table (docs.orchestrator.inc/plugins/agents).",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
@@ -13,7 +13,7 @@
       "mark": "yes"
     },
     "harness_count": {
-      "value": "36 per its README (docs page says 24 terminal adapters)",
+      "value": "36 per its README; 35 in its docs agent table",
       "mark": "info"
     },
     "needs_you_signal": {

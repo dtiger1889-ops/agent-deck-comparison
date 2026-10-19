@@ -4,8 +4,8 @@
   "category": "agent manager",
   "where_agents_run": "your machine (optionally inside a local Docker container); phone browser on your network (LAN or Tailscale)",
   "license": "MIT, free",
-  "checked_on": "2026-09-30 (repo/docs pass)",
-  "source_note": "Checked against its README, PRIVACY.md, AGENTS.md, docs/ folder, package.json, source code and latest release (v3.1.0). Not installed or run here.",
+  "checked_on": "2026-10-19 (change-report recheck of session organization and planner; full pass 2026-09-30)",
+  "source_note": "Checked against its README, PRIVACY.md, AGENTS.md, docs/ folder, package.json, source code and latest release (v3.1.0). Not installed or run here. Rechecked 2026-10-19: session organization and planner against the README and docs/kanban.md (new Markdown Kanban board per project).",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
@@ -41,7 +41,7 @@
       "mark": "yes"
     },
     "session_organization": {
-      "value": "Tiled panels, projects, coordinator folders",
+      "value": "Tiled panels, projects, coordinator folders, Kanban",
       "mark": "yes"
     },
     "prompt_scratchpad": {
@@ -89,7 +89,7 @@
       "mark": "yes"
     },
     "planner_orchestrator": {
-      "value": "Agents can create and merge sub-tasks; no planner of its own",
+      "value": "Agent splits a goal into board cards; you start each task",
       "mark": "partial"
     },
     "agent_to_agent_messaging": {

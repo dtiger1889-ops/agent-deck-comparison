@@ -2,10 +2,10 @@
   "name": "Omniscio",
   "url": "https://omniscio.com",
   "category": "agent manager",
-  "where_agents_run": "your machine, or a remote host over SSH per session; Devin runs in Cognition's cloud; phone reaches it via browser (same Wi-Fi, or Tailscale)",
+  "where_agents_run": "your machine, or a remote host over SSH per session; optionally a session's file and command tools in Archil cloud machines (your own Archil account); Devin runs in Cognition's cloud; phone reaches it via browser (same Wi-Fi, or Tailscale)",
   "license": "Closed source; free plan, Pro $15/month or $144/year (early access free)",
-  "checked_on": "2026-09-30 (docs/site pass)",
-  "source_note": "Checked against docs.omniscio.com (full docs page, v0.1.108), its features, roadmap, download, EULA and terms pages, the homepage, and installer file sizes. No public source repo. Not installed or run here.",
+  "checked_on": "2026-10-19 (change-report recheck of where agents run; full pass 2026-09-30)",
+  "source_note": "Checked against docs.omniscio.com (full docs page, v0.1.108), its features, roadmap, download, EULA and terms pages, the homepage, and installer file sizes. No public source repo. Not installed or run here. Rechecked 2026-10-19: where agents run against its Archil workspace docs page (docs.omniscio.com/library/archil-workspace.html).",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {

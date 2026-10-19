@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-10-16",
+  "snapshot_date": "2026-10-19",
   "snapshot_note": "Cells come from each tool's own docs/posts at the dates shown; not re-verified beyond that pass.",
   "features": [
     {
@@ -247,8 +247,8 @@
       "category": "agent manager",
       "where_agents_run": "your machine + remote (SSH worktrees, Remote Orca Server (beta), headless `orca serve`, cloud VM (experimental)); phone companion (beta)",
       "license": "MIT, free",
-      "checked_on": "2026-09-30 (docs/release re-check; installed 2026-09-22)",
-      "source_note": "Re-checked 2026-09-30 against all 57 pages of onorca.dev/docs, the v1.4.217 release page, package.json and the repo home. Earlier: desktop and phone installed 2026-09-22, shipped app.asar read, memory measured on one PC.",
+      "checked_on": "2026-10-18 (change-report recheck of maturity; full pass 2026-09-30 (docs/release re-check; installed 2026-09-22))",
+      "source_note": "Re-checked 2026-09-30 against all 57 pages of onorca.dev/docs, the v1.4.217 release page, package.json and the repo home. Earlier: desktop and phone installed 2026-09-22, shipped app.asar read, memory measured on one PC. Maturity rechecked 2026-10-18 against the v1.4.229 release page.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -400,7 +400,7 @@
           "mark": "undocumented"
         },
         "stability_maturity": {
-          "value": "v1.4.217 (2026-09-29), daily builds; chat, plugins, mobile still beta",
+          "value": "v1.4.229 (2026-10-17), daily builds; chat, plugins, mobile still beta",
           "mark": "info"
         }
       },
@@ -412,8 +412,8 @@
       "category": "agent manager",
       "where_agents_run": "your machine + remote machines over SSH (or joined to your account with vela-server); phone or any browser through a pairing link",
       "license": "MIT, free",
-      "checked_on": "2026-09-30 (repo/docs pass)",
-      "source_note": "Checked against its README, package.json, the file tree, all 16 English user-manual chapters and the changelog on velaterm.com/docs, and the v0.2.6 release page (2026-09-30). Not installed or run here.",
+      "checked_on": "2026-10-18 (change-report recheck of maturity; full pass 2026-09-30)",
+      "source_note": "Checked against its README, package.json, the file tree, all 16 English user-manual chapters and the changelog on velaterm.com/docs, and the v0.2.6 release page (2026-09-30). Not installed or run here. Maturity rechecked 2026-10-18 against the v0.2.11 release page.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -565,7 +565,7 @@
           "mark": "undocumented"
         },
         "stability_maturity": {
-          "value": "v0.2.6 (2026-09-30); public since July 2026, near-daily releases; account sharing experimental",
+          "value": "v0.2.11 (2026-10-18); public since July 2026, near-daily releases; account sharing experimental",
           "mark": "info"
         }
       },
@@ -577,8 +577,8 @@
       "category": "agent manager",
       "where_agents_run": "your machine + saved SSH machines, in one window",
       "license": "Apache-2.0, free",
-      "checked_on": "2026-10-09 (latest release, herdr.dev agents, install and Windows docs)",
-      "source_note": "Re-checked 2026-10-09 against the v0.9.3 release, herdr.dev's agents, install, connecting-machines and Windows pages, and its issue tracker. First checked 2026-09-28 against v0.9.1. Not installed or run here.",
+      "checked_on": "2026-10-18 (change-report recheck of operating systems and maturity; full pass 2026-10-09)",
+      "source_note": "Re-checked 2026-10-09 against the v0.9.3 release, herdr.dev's agents, install, connecting-machines and Windows pages, and its issue tracker. First checked 2026-09-28 against v0.9.1. Not installed or run here. Rechecked 2026-10-18: operating systems and maturity against the v0.9.5 release and herdr.dev/docs/windows-beta/.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -726,15 +726,15 @@
           "mark": "undocumented"
         },
         "stability_maturity": {
-          "value": "v0.9.3, ~43k GitHub stars, fast-moving; Windows build is in beta",
+          "value": "v0.9.5, ~45k GitHub stars, fast-moving; Windows out of beta",
           "mark": "info"
         },
         "os": {
-          "value": "macOS, Linux, Windows (beta)",
+          "value": "macOS, Linux, Windows (native)",
           "mark": "info"
         }
       },
-      "github_stars": 43059
+      "github_stars": 44623
     },
     {
       "name": "Paseo",
@@ -907,8 +907,8 @@
       "category": "agent manager",
       "where_agents_run": "your machine; phone app over home Wi-Fi or Tailscale; cloud workspaces behind a waitlist",
       "license": "Apache-2.0, free",
-      "checked_on": "2026-10-16 (change-report recheck of repo link and agent count; full pass 2026-09-30)",
-      "source_note": "Checked 2026-09-30 against the README, docs/STATUS.md, go.work and frontend/package.json, docs.orchestrator.inc (intro, capabilities, trackers, Connect Mobile, FAQ, migration), orchestrator.inc and its changelog, and the v0.13.2 release. Not installed. Rechecked 2026-10-16: the repo moved to OrchestratorInc; agent count against its README's supported-agents list.",
+      "checked_on": "2026-10-19 (change-report recheck of agent count; full pass 2026-09-30)",
+      "source_note": "Checked 2026-09-30 against the README, docs/STATUS.md, go.work and frontend/package.json, docs.orchestrator.inc (intro, capabilities, trackers, Connect Mobile, FAQ, migration), orchestrator.inc and its changelog, and the v0.13.2 release. Not installed. Rechecked 2026-10-16: the repo moved to OrchestratorInc; agent count against its README's supported-agents list. Rechecked 2026-10-19: agent count against the README and the docs' built-in agent table (docs.orchestrator.inc/plugins/agents).",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -916,7 +916,7 @@
           "mark": "yes"
         },
         "harness_count": {
-          "value": "36 per its README (docs page says 24 terminal adapters)",
+          "value": "36 per its README; 35 in its docs agent table",
           "mark": "info"
         },
         "needs_you_signal": {
@@ -1072,8 +1072,8 @@
       "category": "agent manager",
       "where_agents_run": "your machine + a self-hosted remote host (VM, server, WSL, Mac mini) over Tailscale or SSH; phone or browser through its web app",
       "license": "AGPL-3.0, free",
-      "checked_on": "2026-09-29 (repo/docs pass)",
-      "source_note": "Checked against its README, docs/ folder, source code, latest release (v2.4.138) and runpane.com. Not installed or run here.",
+      "checked_on": "2026-10-18 (change-report recheck of maturity; full pass 2026-09-29)",
+      "source_note": "Checked against its README, docs/ folder, source code, latest release (v2.4.138) and runpane.com. Not installed or run here. Maturity rechecked 2026-10-18 against the v2.4.185 release page.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -1225,7 +1225,7 @@
           "mark": "undocumented"
         },
         "stability_maturity": {
-          "value": "v2.4.138, started February 2026, frequent releases",
+          "value": "v2.4.185, started February 2026, frequent releases",
           "mark": "info"
         }
       },
@@ -1266,7 +1266,7 @@
           "mark": "yes"
         },
         "session_organization": {
-          "value": "Sidebar session list plus a live fleet table",
+          "value": "Sidebar session list plus a live fleet view",
           "mark": "yes"
         },
         "usage_hud": {
@@ -1274,7 +1274,7 @@
           "mark": "yes"
         },
         "burn_rate_forecast": {
-          "value": "Burn rate and run-out time; not yet checked against real use",
+          "value": "Burn rate and run-out time; first live checks, still being tuned",
           "mark": "partial"
         },
         "limit_governor": {
@@ -1402,16 +1402,16 @@
       "category": "agent manager",
       "where_agents_run": "your machine, each agent in its own tmux session (psmux on Windows)",
       "license": "Apache-2.0, free",
-      "checked_on": "2026-10-16 (change-report recheck of platforms and download size; full pass 2026-09-29)",
-      "source_note": "Repo-verified: README, docs/, release assets, go.mod and source read; not installed. Rechecked 2026-10-16: native Windows and download sizes against the v0.42.0 release.",
+      "checked_on": "2026-10-19 (change-report recheck of saved prompts and agent count; full pass 2026-09-29)",
+      "source_note": "Repo-verified: README, docs/, release assets, go.mod and source read; not installed. Rechecked 2026-10-16: native Windows and download sizes against the v0.42.0 release. Rechecked 2026-10-19: saved prompts and the agent list against the README and docs/usage.md.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Nine CLI agents in one list, each in tmux",
+          "value": "Eleven CLI agents in one list, each in tmux",
           "mark": "yes"
         },
         "harness_count": {
-          "value": "9 named, plus plain shell tabs",
+          "value": "11 named, plus plain shell tabs",
           "mark": "info"
         },
         "needs_you_signal": {
@@ -1447,8 +1447,8 @@
           "mark": "undocumented"
         },
         "saved_prompt_library": {
-          "value": "Not in its docs (checked 2026-09-29)",
-          "mark": "undocumented"
+          "value": "Named saved prompts, picked in forms, CLI or MCP",
+          "mark": "yes"
         },
         "builtin_editors_browser": {
           "value": "Diff review with line comments; no editor or browser",
@@ -1732,8 +1732,8 @@
       "category": "agent manager",
       "where_agents_run": "your machine (Windows, macOS, Linux), optionally inside devcontainers",
       "license": "MIT, free",
-      "checked_on": "2026-09-30 (repo/docs pass)",
-      "source_note": "Checked against its README, package.json, LICENSE, all 11 files in docs/, the config-skill plugin README, the npm registry (v4.4.4 and its per-platform binaries) and the GitHub releases page. Not installed or run here. Evaluated and not adopted for Pantheon (2026-09-01).",
+      "checked_on": "2026-10-18 (change-report recheck of maturity; full pass 2026-09-30)",
+      "source_note": "Checked against its README, package.json, LICENSE, all 11 files in docs/, the config-skill plugin README, the npm registry (v4.4.4 and its per-platform binaries) and the GitHub releases page. Not installed or run here. Evaluated and not adopted for Pantheon (2026-09-01). Maturity rechecked 2026-10-18 against the v4.4.9 release page.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -1885,7 +1885,7 @@
           "mark": "undocumented"
         },
         "stability_maturity": {
-          "value": "v4.4.4, since June 2025, 159 npm releases",
+          "value": "v4.4.9, since June 2025, frequent npm releases",
           "mark": "info"
         }
       },
@@ -2062,8 +2062,8 @@
       "category": "agent manager",
       "where_agents_run": "your machine, plus other machines you pair over SSH; phone or any browser on your own network (Tailscale)",
       "license": "Source-available: free for non-commercial use, commercial use needs permission (MIT before 2026-07-28)",
-      "checked_on": "2026-09-30 (repo/docs pass)",
-      "source_note": "Checked against its README, docs/ folder, source code and latest release (v5.35.0). Not installed or run here.",
+      "checked_on": "2026-10-18 (change-report recheck of maturity; full pass 2026-09-30)",
+      "source_note": "Checked against its README, docs/ folder, source code and latest release (v5.35.0). Not installed or run here. Maturity rechecked 2026-10-18 against the v5.38.0 release page.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -2215,7 +2215,7 @@
           "mark": "no"
         },
         "stability_maturity": {
-          "value": "v5.35.0, started April 2026, frequent releases",
+          "value": "v5.38.0, started April 2026, frequent releases",
           "mark": "info"
         }
       },
@@ -2722,8 +2722,8 @@
       "category": "agent manager",
       "where_agents_run": "your machine (projects, local folders or git worktrees, optional WSL connection on Windows), driven from any browser or phone through its Remote Control web page",
       "license": "Proprietary, closed source; free tier plus paid Google AI plans",
-      "checked_on": "2026-09-29 (docs/site pass)",
-      "source_note": "Docs-verified: official docs, changelog, launch blog and download page read; installer sizes and app shell read from the v2.18.1 downloads; not installed or run.",
+      "checked_on": "2026-10-18 (change-report recheck of maturity; full pass 2026-09-29)",
+      "source_note": "Docs-verified: official docs, changelog, launch blog and download page read; installer sizes and app shell read from the v2.18.1 downloads; not installed or run. Maturity rechecked 2026-10-18 against the changelog (v2.24.0, 2026-10-15).",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -2875,7 +2875,7 @@
           "mark": "partial"
         },
         "stability_maturity": {
-          "value": "Version 2.18; 2.0 launched May 2026; parts in preview",
+          "value": "Version 2.24; 2.0 launched May 2026; parts in preview",
           "mark": "info"
         }
       },
@@ -2885,10 +2885,10 @@
       "name": "Jenny",
       "url": "https://github.com/SaltyPretz3l/jenny",
       "category": "other tool we looked at",
-      "where_agents_run": "your machine, on a local model (Ollama, llama-server, vLLM or another OpenAI-compatible server); optional self-hosted browser host via Docker (experimental)",
+      "where_agents_run": "your machine, on a local model (Ollama, llama-server, vLLM or another OpenAI-compatible server), or optionally a cloud model through ChatGPT sign-in or the Codex CLI; optional self-hosted browser host via Docker (experimental)",
       "license": "MIT, free",
-      "checked_on": "2026-09-30 (repo/docs pass)",
-      "source_note": "Checked against its README, RELEASE_NOTES (to 1.2.0), docs index, FAQ, tools reference, architecture, themes, Remote Control and browser-hosting docs, and the v1.2.0 release assets. A single local-model assistant with its own IDE, not a manager of coding-agent CLIs. Not installed or run here.",
+      "checked_on": "2026-10-19 (change-report recheck of where it runs, issue pipeline, planner, agent messaging, platforms and download size; full pass 2026-09-30)",
+      "source_note": "Checked against its README, RELEASE_NOTES (to 1.2.0), docs index, FAQ, tools reference, architecture, themes, Remote Control and browser-hosting docs, and the v1.2.0 release assets. A single local-model assistant with its own IDE, not a manager of coding-agent CLIs. Not installed or run here. Maturity rechecked 2026-10-18 against the v1.5.0 release page. Rechecked 2026-10-19: v1.5.0 release notes, assets and the README for linked chats, messages between chats, git proposals, platforms, sizes and cloud model options.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -2964,7 +2964,7 @@
           "mark": "undocumented"
         },
         "issue_tracker_pipeline": {
-          "value": "Git tools are read-only: no commit or push",
+          "value": "No issue intake; git actions only as proposals you approve",
           "mark": "no"
         },
         "worktree_management": {
@@ -2972,12 +2972,12 @@
           "mark": "undocumented"
         },
         "planner_orchestrator": {
-          "value": "Plan mode you approve; read-only research sub-agents",
-          "mark": "partial"
+          "value": "Plan mode; splits work into linked chats that report back",
+          "mark": "yes"
         },
         "agent_to_agent_messaging": {
-          "value": "Single assistant",
-          "mark": "n/a"
+          "value": "Chats send messages to other chats, with your approval",
+          "mark": "yes"
         },
         "knowledge_base": {
           "value": "Searches your registered folders; approved memories",
@@ -3000,7 +3000,7 @@
           "mark": "undocumented"
         },
         "os": {
-          "value": "Windows; Linux x64 experimental; macOS from source only",
+          "value": "Windows; Linux x64 and Apple Silicon Mac experimental",
           "mark": "info"
         },
         "app_shell": {
@@ -3016,7 +3016,7 @@
           "mark": "info"
         },
         "download_size": {
-          "value": "v1.2.0: 248 MB Windows, 309 MB AppImage, 275 MB deb",
+          "value": "v1.5.0: 266 MB Windows, 222 MB Mac dmg, 335 MB AppImage, 297 MB deb",
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
@@ -3040,7 +3040,7 @@
           "mark": "no"
         },
         "stability_maturity": {
-          "value": "v1.2.0 (2026-09-25); one-person hobby project since Aug 2026",
+          "value": "v1.5.0 (2026-10-17); one-person hobby project since Aug 2026",
           "mark": "info"
         }
       },
@@ -3217,8 +3217,8 @@
       "category": "agent manager",
       "where_agents_run": "your machine; the iOS app starts and answers sessions that run on your desktop",
       "license": "MIT, free for individuals; Teams $20 per user per month (free during beta)",
-      "checked_on": "2026-09-30 (site/docs pass)",
-      "source_note": "Checked against docs.nimbalyst.com (full text), nimbalyst.com pricing, download, open-source and orchestration pages, the GitHub README, and release notes through v0.79.1. Not installed or run here.",
+      "checked_on": "2026-10-19 (change-report recheck of knowledge base and teams; full pass 2026-09-30)",
+      "source_note": "Checked against docs.nimbalyst.com (full text), nimbalyst.com pricing, download, open-source and orchestration pages, the GitHub README, and release notes through v0.79.1. Not installed or run here. Maturity rechecked 2026-10-18 against the v0.81.7 release page. Knowledge base and teams rechecked 2026-10-19 against the Nimbalyst Wiki docs and the v0.81.7 public release notes.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -3310,7 +3310,7 @@
           "mark": "yes"
         },
         "knowledge_base": {
-          "value": "Project Memory search; Knowledge extension, off by default",
+          "value": "Wiki (beta) agents write and work from; Project Memory",
           "mark": "yes"
         },
         "native_mobile_app": {
@@ -3366,11 +3366,11 @@
           "mark": "yes"
         },
         "teams_multiuser": {
-          "value": "Teams beta: shared docs and trackers",
+          "value": "Teams beta: shared wiki, docs and trackers",
           "mark": "experimental"
         },
         "stability_maturity": {
-          "value": "v0.79.1 (2026-09-30), weekly releases, many alpha features",
+          "value": "v0.81.7 (2026-10-16), weekly releases, many alpha features",
           "mark": "info"
         }
       },
@@ -3380,10 +3380,10 @@
       "name": "Omniscio",
       "url": "https://omniscio.com",
       "category": "agent manager",
-      "where_agents_run": "your machine, or a remote host over SSH per session; Devin runs in Cognition's cloud; phone reaches it via browser (same Wi-Fi, or Tailscale)",
+      "where_agents_run": "your machine, or a remote host over SSH per session; optionally a session's file and command tools in Archil cloud machines (your own Archil account); Devin runs in Cognition's cloud; phone reaches it via browser (same Wi-Fi, or Tailscale)",
       "license": "Closed source; free plan, Pro $15/month or $144/year (early access free)",
-      "checked_on": "2026-09-30 (docs/site pass)",
-      "source_note": "Checked against docs.omniscio.com (full docs page, v0.1.108), its features, roadmap, download, EULA and terms pages, the homepage, and installer file sizes. No public source repo. Not installed or run here.",
+      "checked_on": "2026-10-19 (change-report recheck of where agents run; full pass 2026-09-30)",
+      "source_note": "Checked against docs.omniscio.com (full docs page, v0.1.108), its features, roadmap, download, EULA and terms pages, the homepage, and installer file sizes. No public source repo. Not installed or run here. Rechecked 2026-10-19: where agents run against its Archil workspace docs page (docs.omniscio.com/library/archil-workspace.html).",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -3877,8 +3877,8 @@
       "category": "agent manager",
       "where_agents_run": "your machine (optionally inside a local Docker container); phone browser on your network (LAN or Tailscale)",
       "license": "MIT, free",
-      "checked_on": "2026-09-30 (repo/docs pass)",
-      "source_note": "Checked against its README, PRIVACY.md, AGENTS.md, docs/ folder, package.json, source code and latest release (v3.1.0). Not installed or run here.",
+      "checked_on": "2026-10-19 (change-report recheck of session organization and planner; full pass 2026-09-30)",
+      "source_note": "Checked against its README, PRIVACY.md, AGENTS.md, docs/ folder, package.json, source code and latest release (v3.1.0). Not installed or run here. Rechecked 2026-10-19: session organization and planner against the README and docs/kanban.md (new Markdown Kanban board per project).",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -3914,7 +3914,7 @@
           "mark": "yes"
         },
         "session_organization": {
-          "value": "Tiled panels, projects, coordinator folders",
+          "value": "Tiled panels, projects, coordinator folders, Kanban",
           "mark": "yes"
         },
         "prompt_scratchpad": {
@@ -3962,7 +3962,7 @@
           "mark": "yes"
         },
         "planner_orchestrator": {
-          "value": "Agents can create and merge sub-tasks; no planner of its own",
+          "value": "Agent splits a goal into board cards; you start each task",
           "mark": "partial"
         },
         "agent_to_agent_messaging": {
@@ -4205,10 +4205,10 @@
       "name": "Superset",
       "url": "https://superset.sh",
       "category": "agent manager",
-      "where_agents_run": "your machine; other machines you add through its relay; its cloud workspaces where your account has them; iPhone app reaches them",
+      "where_agents_run": "your machine; other machines you add through its relay; its cloud workspaces where your account has them; iPhone and iPad app reaches them",
       "license": "Elastic-2.0 (source-available); desktop app free, Pro $20 per user per month ($15 billed yearly)",
-      "checked_on": "2026-09-30 (repo/docs pass)",
-      "source_note": "Checked against docs.superset.sh (full docs text), superset.sh llms.txt, pricing and mobile blog posts, the repo README and desktop package.json, and the latest release (desktop v1.33.0). Not installed or run here.",
+      "checked_on": "2026-10-19 (change-report recheck of phone app, platforms and plugins; full pass 2026-09-30)",
+      "source_note": "Checked against docs.superset.sh (full docs text), superset.sh llms.txt, pricing and mobile blog posts, the repo README and desktop package.json, and the latest release (desktop v1.33.0). Not installed or run here. Rechecked 2026-10-19: iPad support, platforms and cloud workspace wording against the README and docs text, and plugins against superset.sh/plugins.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -4304,7 +4304,7 @@
           "mark": "undocumented"
         },
         "native_mobile_app": {
-          "value": "iPhone app (iOS 26, Pro plan); Android waitlist",
+          "value": "iPhone and iPad app (iOS 26, Pro plan); Android waitlist",
           "mark": "yes"
         },
         "phone_no_new_app": {
@@ -4320,7 +4320,7 @@
           "mark": "partial"
         },
         "os": {
-          "value": "macOS; Linux AppImage experimental; Windows planned; iPhone app",
+          "value": "macOS; Linux experimental; no Windows yet; iPhone, iPad app",
           "mark": "info"
         },
         "app_shell": {
@@ -4352,7 +4352,7 @@
           "mark": "info"
         },
         "extensibility": {
-          "value": "CLI, TypeScript SDK, MCP server, theme marketplace",
+          "value": "Plugins for every agent, CLI, SDK, MCP server, themes",
           "mark": "yes"
         },
         "teams_multiuser": {
@@ -4372,8 +4372,8 @@
       "category": "agent manager",
       "where_agents_run": "your machine + another machine you pair or reach over SSH (Linux or Apple Silicon Mac); phone, browser or another desktop app control it through T3 Connect, Tailscale or a local network",
       "license": "MIT, free",
-      "checked_on": "2026-09-29 (repo/docs pass)",
-      "source_note": "Checked against its README, docs/ folder, source code at commit 4222485, latest stable release (v0.0.43) and t3.codes. Not installed or run here.",
+      "checked_on": "2026-10-18 (change-report recheck of maturity; full pass 2026-09-29)",
+      "source_note": "Checked against its README, docs/ folder, source code at commit 4222485, latest stable release (v0.0.43) and t3.codes. Not installed or run here. Maturity rechecked 2026-10-18 against the v0.1.0 release page.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -4525,7 +4525,7 @@
           "mark": "undocumented"
         },
         "stability_maturity": {
-          "value": "v0.0.43, started February 2026; README says very early",
+          "value": "v0.1.0 (2026-10-15), first stable release; since Feb 2026",
           "mark": "info"
         }
       },
@@ -4537,8 +4537,8 @@
       "category": "agent manager",
       "where_agents_run": "your machine (or another computer or Docker/VPS you own); phone or browser controls it through its cloud relay",
       "license": "Closed source; Free plan, Pro $29/month ($24 billed yearly), $5/month per extra machine",
-      "checked_on": "2026-09-30 (site pass)",
-      "source_note": "Checked against teleclod.com llms.txt and llms-full.txt, the homepage and FAQ text in its site bundle, its public release feed (/api/releases/all) and four blog posts. No public repo, no independent reviews found. Not installed or run here.",
+      "checked_on": "2026-10-18 (change-report recheck of maturity; full pass 2026-09-30)",
+      "source_note": "Checked against teleclod.com llms.txt and llms-full.txt, the homepage and FAQ text in its site bundle, its public release feed (/api/releases/all) and four blog posts. No public repo, no independent reviews found. Not installed or run here. Maturity rechecked 2026-10-18 against its release feed (/api/releases/all).",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -4690,7 +4690,7 @@
           "mark": "partial"
         },
         "stability_maturity": {
-          "value": "v1.0.29 (Windows), v1.0.28 (macOS); no public reviews found",
+          "value": "v1.0.31 (Windows and macOS); no public reviews found",
           "mark": "info"
         }
       },
@@ -5032,16 +5032,16 @@
       "category": "agent manager",
       "where_agents_run": "your machine, remote machines over SSH, and Warp's cloud",
       "license": "AGPL-3.0 (UI framework MIT), free tier; paid from $20 a month",
-      "checked_on": "2026-10-15 (docs pass)",
-      "source_note": "Checked against docs.warp.dev (agents, third-party CLI agents, notifications, permissions, Remote Control, voice, vertical tabs, worktrees, SSH, Warp Drive, teams, cloud agents and orchestration, themes), warp.dev pricing and download pages, the Claude Code agent page, the GitHub repo (README, license, languages) and installer sizes from its release host. Not installed or run here.",
+      "checked_on": "2026-10-19 (change-report recheck of agent count, download size and maturity; full pass 2026-10-15)",
+      "source_note": "Checked against docs.warp.dev (agents, third-party CLI agents, notifications, permissions, Remote Control, voice, vertical tabs, worktrees, SSH, Warp Drive, teams, cloud agents and orchestration, themes), warp.dev pricing and download pages, the Claude Code agent page, the GitHub repo (README, license, languages) and installer sizes from its release host. Not installed or run here. Rechecked 2026-10-19: agent count, stable version and installer sizes against its 2026 changelog (Muse Code added in 2026.10.15) and the build its download links serve.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Its own agent plus 16 named CLI agents, in tabs",
+          "value": "Its own agent plus 17 named CLI agents, in tabs",
           "mark": "yes"
         },
         "harness_count": {
-          "value": "Own agent plus 16 auto-detected CLI agents",
+          "value": "Own agent plus 17 auto-detected CLI agents",
           "mark": "info"
         },
         "needs_you_signal": {
@@ -5161,7 +5161,7 @@
           "mark": "info"
         },
         "download_size": {
-          "value": "v0.2026.10.07: 135 MB Windows, 335 MB macOS dmg",
+          "value": "v0.2026.10.14: 135 MB Windows, 336 MB macOS dmg",
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
@@ -5185,7 +5185,7 @@
           "mark": "yes"
         },
         "stability_maturity": {
-          "value": "Repo since 2021; ~65,500 stars; stable v0.2026.10.07",
+          "value": "Repo since 2021; ~65,500 stars; stable v0.2026.10.14",
           "mark": "info"
         }
       },

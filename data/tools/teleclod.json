@@ -4,8 +4,8 @@
   "category": "agent manager",
   "where_agents_run": "your machine (or another computer or Docker/VPS you own); phone or browser controls it through its cloud relay",
   "license": "Closed source; Free plan, Pro $29/month ($24 billed yearly), $5/month per extra machine",
-  "checked_on": "2026-09-30 (site pass)",
-  "source_note": "Checked against teleclod.com llms.txt and llms-full.txt, the homepage and FAQ text in its site bundle, its public release feed (/api/releases/all) and four blog posts. No public repo, no independent reviews found. Not installed or run here.",
+  "checked_on": "2026-10-18 (change-report recheck of maturity; full pass 2026-09-30)",
+  "source_note": "Checked against teleclod.com llms.txt and llms-full.txt, the homepage and FAQ text in its site bundle, its public release feed (/api/releases/all) and four blog posts. No public repo, no independent reviews found. Not installed or run here. Maturity rechecked 2026-10-18 against its release feed (/api/releases/all).",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
@@ -157,7 +157,7 @@
       "mark": "partial"
     },
     "stability_maturity": {
-      "value": "v1.0.29 (Windows), v1.0.28 (macOS); no public reviews found",
+      "value": "v1.0.31 (Windows and macOS); no public reviews found",
       "mark": "info"
     }
   },

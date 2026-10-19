@@ -4,16 +4,16 @@
   "category": "agent manager",
   "where_agents_run": "your machine, remote machines over SSH, and Warp's cloud",
   "license": "AGPL-3.0 (UI framework MIT), free tier; paid from $20 a month",
-  "checked_on": "2026-10-15 (docs pass)",
-  "source_note": "Checked against docs.warp.dev (agents, third-party CLI agents, notifications, permissions, Remote Control, voice, vertical tabs, worktrees, SSH, Warp Drive, teams, cloud agents and orchestration, themes), warp.dev pricing and download pages, the Claude Code agent page, the GitHub repo (README, license, languages) and installer sizes from its release host. Not installed or run here.",
+  "checked_on": "2026-10-19 (change-report recheck of agent count, download size and maturity; full pass 2026-10-15)",
+  "source_note": "Checked against docs.warp.dev (agents, third-party CLI agents, notifications, permissions, Remote Control, voice, vertical tabs, worktrees, SSH, Warp Drive, teams, cloud agents and orchestration, themes), warp.dev pricing and download pages, the Claude Code agent page, the GitHub repo (README, license, languages) and installer sizes from its release host. Not installed or run here. Rechecked 2026-10-19: agent count, stable version and installer sizes against its 2026 changelog (Muse Code added in 2026.10.15) and the build its download links serve.",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
-      "value": "Its own agent plus 16 named CLI agents, in tabs",
+      "value": "Its own agent plus 17 named CLI agents, in tabs",
       "mark": "yes"
     },
     "harness_count": {
-      "value": "Own agent plus 16 auto-detected CLI agents",
+      "value": "Own agent plus 17 auto-detected CLI agents",
       "mark": "info"
     },
     "needs_you_signal": {
@@ -133,7 +133,7 @@
       "mark": "info"
     },
     "download_size": {
-      "value": "v0.2026.10.07: 135 MB Windows, 335 MB macOS dmg",
+      "value": "v0.2026.10.14: 135 MB Windows, 336 MB macOS dmg",
       "mark": "info"
     },
     "ram_vs_claude_desktop": {
@@ -157,7 +157,7 @@
       "mark": "yes"
     },
     "stability_maturity": {
-      "value": "Repo since 2021; ~65,500 stars; stable v0.2026.10.07",
+      "value": "Repo since 2021; ~65,500 stars; stable v0.2026.10.14",
       "mark": "info"
     }
   },

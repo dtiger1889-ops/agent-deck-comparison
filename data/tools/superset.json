@@ -2,10 +2,10 @@
   "name": "Superset",
   "url": "https://superset.sh",
   "category": "agent manager",
-  "where_agents_run": "your machine; other machines you add through its relay; its cloud workspaces where your account has them; iPhone app reaches them",
+  "where_agents_run": "your machine; other machines you add through its relay; its cloud workspaces where your account has them; iPhone and iPad app reaches them",
   "license": "Elastic-2.0 (source-available); desktop app free, Pro $20 per user per month ($15 billed yearly)",
-  "checked_on": "2026-09-30 (repo/docs pass)",
-  "source_note": "Checked against docs.superset.sh (full docs text), superset.sh llms.txt, pricing and mobile blog posts, the repo README and desktop package.json, and the latest release (desktop v1.33.0). Not installed or run here.",
+  "checked_on": "2026-10-19 (change-report recheck of phone app, platforms and plugins; full pass 2026-09-30)",
+  "source_note": "Checked against docs.superset.sh (full docs text), superset.sh llms.txt, pricing and mobile blog posts, the repo README and desktop package.json, and the latest release (desktop v1.33.0). Not installed or run here. Rechecked 2026-10-19: iPad support, platforms and cloud workspace wording against the README and docs text, and plugins against superset.sh/plugins.",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
@@ -101,7 +101,7 @@
       "mark": "undocumented"
     },
     "native_mobile_app": {
-      "value": "iPhone app (iOS 26, Pro plan); Android waitlist",
+      "value": "iPhone and iPad app (iOS 26, Pro plan); Android waitlist",
       "mark": "yes"
     },
     "phone_no_new_app": {
@@ -117,7 +117,7 @@
       "mark": "partial"
     },
     "os": {
-      "value": "macOS; Linux AppImage experimental; Windows planned; iPhone app",
+      "value": "macOS; Linux experimental; no Windows yet; iPhone, iPad app",
       "mark": "info"
     },
     "app_shell": {
@@ -149,7 +149,7 @@
       "mark": "info"
     },
     "extensibility": {
-      "value": "CLI, TypeScript SDK, MCP server, theme marketplace",
+      "value": "Plugins for every agent, CLI, SDK, MCP server, themes",
       "mark": "yes"
     },
     "teams_multiuser": {

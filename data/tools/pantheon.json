@@ -33,7 +33,7 @@
       "mark": "yes"
     },
     "session_organization": {
-      "value": "Sidebar session list plus a live fleet table",
+      "value": "Sidebar session list plus a live fleet view",
       "mark": "yes"
     },
     "usage_hud": {
@@ -41,7 +41,7 @@
       "mark": "yes"
     },
     "burn_rate_forecast": {
-      "value": "Burn rate and run-out time; not yet checked against real use",
+      "value": "Burn rate and run-out time; first live checks, still being tuned",
       "mark": "partial"
     },
     "limit_governor": {

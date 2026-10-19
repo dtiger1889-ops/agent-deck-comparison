@@ -4,8 +4,8 @@
   "category": "agent manager",
   "where_agents_run": "your machine; the iOS app starts and answers sessions that run on your desktop",
   "license": "MIT, free for individuals; Teams $20 per user per month (free during beta)",
-  "checked_on": "2026-09-30 (site/docs pass)",
-  "source_note": "Checked against docs.nimbalyst.com (full text), nimbalyst.com pricing, download, open-source and orchestration pages, the GitHub README, and release notes through v0.79.1. Not installed or run here.",
+  "checked_on": "2026-10-19 (change-report recheck of knowledge base and teams; full pass 2026-09-30)",
+  "source_note": "Checked against docs.nimbalyst.com (full text), nimbalyst.com pricing, download, open-source and orchestration pages, the GitHub README, and release notes through v0.79.1. Not installed or run here. Maturity rechecked 2026-10-18 against the v0.81.7 release page. Knowledge base and teams rechecked 2026-10-19 against the Nimbalyst Wiki docs and the v0.81.7 public release notes.",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
@@ -97,7 +97,7 @@
       "mark": "yes"
     },
     "knowledge_base": {
-      "value": "Project Memory search; Knowledge extension, off by default",
+      "value": "Wiki (beta) agents write and work from; Project Memory",
       "mark": "yes"
     },
     "native_mobile_app": {
@@ -153,11 +153,11 @@
       "mark": "yes"
     },
     "teams_multiuser": {
-      "value": "Teams beta: shared docs and trackers",
+      "value": "Teams beta: shared wiki, docs and trackers",
       "mark": "experimental"
     },
     "stability_maturity": {
-      "value": "v0.79.1 (2026-09-30), weekly releases, many alpha features",
+      "value": "v0.81.7 (2026-10-16), weekly releases, many alpha features",
       "mark": "info"
     }
   },

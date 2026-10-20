@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-10-19",
+  "snapshot_date": "2026-10-20",
   "snapshot_note": "Cells come from each tool's own docs/posts at the dates shown; not re-verified beyond that pass.",
   "features": [
     {
@@ -259,6 +259,7 @@
     "google-antigravity",
     "jenny",
     "micracode",
+    "muon",
     "nimbalyst",
     "omniscio",
     "opencove",

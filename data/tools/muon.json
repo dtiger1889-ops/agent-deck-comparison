@@ -1,0 +1,165 @@
+{
+  "name": "MUON",
+  "url": "https://getmuon.com",
+  "category": "agent manager",
+  "where_agents_run": "your machine only; its local brain listens on loopback and drives the agent tools you installed and signed in to",
+  "license": "PolyForm Noncommercial 1.0.0 plus an individual-use grant (source-available); free for one person, Team beta $20 per person a month",
+  "checked_on": "2026-10-20 (full docs pass)",
+  "source_note": "Checked against getmuon.com (home, product workspace and superagent pages, docs overview and CLI reference, integrations, FAQ, pricing, download), the GitHub repo (README, languages, releases, apps/desktop/package.json) and the installer feed at download.getmuon.com (v0.7.19, 2026-10-16). Not installed or run here. Its README says a read-only Codex turn has run live through MUON, and that there is no live Claude Code or Cursor run yet.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Claude Code, Codex, Cursor, OpenCode in one crew",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "4 run as a crew; Kiro joins through its MCP server",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Attention board and decision desk list what needs you",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Approve or reject its own gates (merges, network, edits out of scope)",
+      "mark": "partial"
+    },
+    "cross_provider_delegation": {
+      "value": "One coordinator assigns work across vendors, one board",
+      "mark": "yes"
+    },
+    "always_on_assistant": {
+      "value": "Superagent chat that plans and dispatches, per mission",
+      "mark": "partial"
+    },
+    "conversation_gui_view": {
+      "value": "Chat with the superagent; agents shown in live panes",
+      "mark": "partial"
+    },
+    "real_terminal": {
+      "value": "Live agent panes; its terminal client attaches to them",
+      "mark": "yes"
+    },
+    "session_organization": {
+      "value": "Attention board of mission cards that sorts itself",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Not in its docs (checked 2026-10-20)",
+      "mark": "undocumented"
+    },
+    "saved_prompt_library": {
+      "value": "Not in its docs (checked 2026-10-20)",
+      "mark": "undocumented"
+    },
+    "builtin_editors_browser": {
+      "value": "Browser preview and diff view; no editor found",
+      "mark": "partial"
+    },
+    "appearance_control": {
+      "value": "Not in its docs (checked 2026-10-20)",
+      "mark": "undocumented"
+    },
+    "usage_hud": {
+      "value": "Tokens and money spent per agent and turn; no plan limits found",
+      "mark": "partial"
+    },
+    "burn_rate_forecast": {
+      "value": "Not in its docs (checked 2026-10-20)",
+      "mark": "undocumented"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-10-20)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Not in its docs (checked 2026-10-20)",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "Not in its docs (checked 2026-10-20)",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Not in its docs (checked 2026-10-20)",
+      "mark": "undocumented"
+    },
+    "worktree_management": {
+      "value": "Each writing agent gets its own worktree",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Superagent sizes the crew and writes each agent's role",
+      "mark": "yes"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Bounded messages and file claims between agents",
+      "mark": "yes"
+    },
+    "knowledge_base": {
+      "value": "Shared memory of decisions; a person confirms each one",
+      "mark": "yes"
+    },
+    "native_mobile_app": {
+      "value": "Not in its docs (checked 2026-10-20)",
+      "mark": "undocumented"
+    },
+    "phone_no_new_app": {
+      "value": "Not in its docs (checked 2026-10-20)",
+      "mark": "undocumented"
+    },
+    "remote_ssh": {
+      "value": "Not in its docs (checked 2026-10-20)",
+      "mark": "undocumented"
+    },
+    "voice_input": {
+      "value": "Not in its docs (checked 2026-10-20)",
+      "mark": "undocumented"
+    },
+    "os": {
+      "value": "macOS app (Apple silicon); CLI and terminal UI on macOS, Linux",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Electron ^39.8.5, plus a terminal UI and CLI",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "TypeScript ~94%, JavaScript ~4%",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "Yes: a local brain process the CLI starts",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "v0.7.19: 1.13 GB Apple silicon dmg",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Medium (estimate: Electron app plus a local brain process)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Full terminal UI and CLI, beside the Mac app",
+      "mark": "yes"
+    },
+    "license_cost": {
+      "value": "PolyForm Noncommercial; free for one person, Team beta $20/person/month",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "MCP server for your agents; no plugins or SDK found",
+      "mark": "partial"
+    },
+    "teams_multiuser": {
+      "value": "Team plan beta: shared memory and crew",
+      "mark": "experimental"
+    },
+    "stability_maturity": {
+      "value": "v0.7.19 (2026-10-16); live run so far with Codex only, per its README",
+      "mark": "info"
+    }
+  },
+  "github_stars": 7
+}

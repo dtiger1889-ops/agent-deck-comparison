@@ -4,8 +4,8 @@
   "category": "agent manager",
   "where_agents_run": "your machine + remote (SSH worktrees, Remote Orca Server (beta), headless `orca serve`, cloud VM (experimental)); phone companion (beta)",
   "license": "MIT, free",
-  "checked_on": "2026-10-18 (change-report recheck of maturity; full pass 2026-09-30 (docs/release re-check; installed 2026-09-22))",
-  "source_note": "Re-checked 2026-09-30 against all 57 pages of onorca.dev/docs, the v1.4.217 release page, package.json and the repo home. Earlier: desktop and phone installed 2026-09-22, shipped app.asar read, memory measured on one PC. Maturity rechecked 2026-10-18 against the v1.4.229 release page.",
+  "checked_on": "2026-10-22 (change-report recheck of maturity; full pass 2026-09-30 (docs/release re-check; installed 2026-09-22))",
+  "source_note": "Re-checked 2026-09-30 against all 57 pages of onorca.dev/docs, the v1.4.217 release page, package.json and the repo home. Earlier: desktop and phone installed 2026-09-22, shipped app.asar read, memory measured on one PC. Maturity rechecked 2026-10-18 against the v1.4.229 release page. Maturity rechecked 2026-10-22 against the v1.4.237 release page.",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
@@ -157,7 +157,7 @@
       "mark": "undocumented"
     },
     "stability_maturity": {
-      "value": "v1.4.229 (2026-10-17), daily builds; chat, plugins, mobile still beta",
+      "value": "v1.4.237 (2026-10-21), daily builds; chat, plugins, mobile still beta",
       "mark": "info"
     }
   },

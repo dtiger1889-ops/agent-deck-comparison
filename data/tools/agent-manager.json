@@ -4,16 +4,16 @@
   "category": "agent manager",
   "where_agents_run": "your machine, each agent in its own tmux session (psmux on Windows)",
   "license": "Apache-2.0, free",
-  "checked_on": "2026-10-19 (change-report recheck of saved prompts and agent count; full pass 2026-09-29)",
-  "source_note": "Repo-verified: README, docs/, release assets, go.mod and source read; not installed. Rechecked 2026-10-16: native Windows and download sizes against the v0.42.0 release. Rechecked 2026-10-19: saved prompts and the agent list against the README and docs/usage.md.",
+  "checked_on": "2026-10-22 (change-report recheck of agent count; full pass 2026-09-29)",
+  "source_note": "Repo-verified: README, docs/, release assets, go.mod and source read; not installed. Rechecked 2026-10-16: native Windows and download sizes against the v0.42.0 release. Rechecked 2026-10-19: saved prompts and the agent list against the README and docs/usage.md. Rechecked 2026-10-22: agent count (Cursor CLI added) against the README.",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
-      "value": "Eleven CLI agents in one list, each in tmux",
+      "value": "Twelve CLI agents in one list, each in tmux",
       "mark": "yes"
     },
     "harness_count": {
-      "value": "11 named, plus plain shell tabs",
+      "value": "12 named, plus plain shell tabs",
       "mark": "info"
     },
     "needs_you_signal": {

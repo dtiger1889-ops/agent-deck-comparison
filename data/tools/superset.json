@@ -4,8 +4,8 @@
   "category": "agent manager",
   "where_agents_run": "your machine; other machines you add through its relay; its cloud workspaces where your account has them; iPhone and iPad app reaches them",
   "license": "Elastic-2.0 (source-available); desktop app free, Pro $20 per user per month ($15 billed yearly)",
-  "checked_on": "2026-10-19 (change-report recheck of phone app, platforms and plugins; full pass 2026-09-30)",
-  "source_note": "Checked against docs.superset.sh (full docs text), superset.sh llms.txt, pricing and mobile blog posts, the repo README and desktop package.json, and the latest release (desktop v1.33.0). Not installed or run here. Rechecked 2026-10-19: iPad support, platforms and cloud workspace wording against the README and docs text, and plugins against superset.sh/plugins.",
+  "checked_on": "2026-10-22 (change-report recheck of maturity; full pass 2026-09-30)",
+  "source_note": "Checked against docs.superset.sh (full docs text), superset.sh llms.txt, pricing and mobile blog posts, the repo README and desktop package.json, and the latest release (desktop v1.33.0). Not installed or run here. Rechecked 2026-10-19: iPad support, platforms and cloud workspace wording against the README and docs text, and plugins against superset.sh/plugins. Maturity rechecked 2026-10-22 against the desktop v1.39.0 release page.",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
@@ -157,7 +157,7 @@
       "mark": "yes"
     },
     "stability_maturity": {
-      "value": "v1.33.0 (2026-09-30), daily releases since late 2025; Linux experimental",
+      "value": "v1.39.0 (2026-10-19), daily releases since late 2025; Linux experimental",
       "mark": "info"
     }
   },

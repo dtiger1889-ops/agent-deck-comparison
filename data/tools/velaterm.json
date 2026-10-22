@@ -4,8 +4,8 @@
   "category": "agent manager",
   "where_agents_run": "your machine + remote machines over SSH (or joined to your account with vela-server); phone or any browser through a pairing link",
   "license": "MIT, free",
-  "checked_on": "2026-10-18 (change-report recheck of maturity; full pass 2026-09-30)",
-  "source_note": "Checked against its README, package.json, the file tree, all 16 English user-manual chapters and the changelog on velaterm.com/docs, and the v0.2.6 release page (2026-09-30). Not installed or run here. Maturity rechecked 2026-10-18 against the v0.2.11 release page.",
+  "checked_on": "2026-10-22 (change-report recheck of maturity; full pass 2026-09-30)",
+  "source_note": "Checked against its README, package.json, the file tree, all 16 English user-manual chapters and the changelog on velaterm.com/docs, and the v0.2.6 release page (2026-09-30). Not installed or run here. Maturity rechecked 2026-10-18 against the v0.2.11 release page. Maturity rechecked 2026-10-22 against the v0.2.13 release page.",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
@@ -157,7 +157,7 @@
       "mark": "undocumented"
     },
     "stability_maturity": {
-      "value": "v0.2.11 (2026-10-18); public since July 2026, near-daily releases; account sharing experimental",
+      "value": "v0.2.13 (2026-10-22); public since July 2026, near-daily releases; account sharing experimental",
       "mark": "info"
     }
   },

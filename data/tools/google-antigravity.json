@@ -4,8 +4,8 @@
   "category": "agent manager",
   "where_agents_run": "your machine (projects, local folders or git worktrees, optional WSL connection on Windows), driven from any browser or phone through its Remote Control web page",
   "license": "Proprietary, closed source; free tier plus paid Google AI plans",
-  "checked_on": "2026-10-18 (change-report recheck of maturity; full pass 2026-09-29)",
-  "source_note": "Docs-verified: official docs, changelog, launch blog and download page read; installer sizes and app shell read from the v2.18.1 downloads; not installed or run. Maturity rechecked 2026-10-18 against the changelog (v2.24.0, 2026-10-15).",
+  "checked_on": "2026-10-22 (change-report recheck of maturity; full pass 2026-09-29)",
+  "source_note": "Docs-verified: official docs, changelog, launch blog and download page read; installer sizes and app shell read from the v2.18.1 downloads; not installed or run. Maturity rechecked 2026-10-18 against the changelog (v2.24.0, 2026-10-15). Maturity rechecked 2026-10-22 against the changelog (v2.25.0, 2026-10-20).",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
@@ -157,7 +157,7 @@
       "mark": "partial"
     },
     "stability_maturity": {
-      "value": "Version 2.24; 2.0 launched May 2026; parts in preview",
+      "value": "Version 2.25; 2.0 launched May 2026; parts in preview",
       "mark": "info"
     }
   },

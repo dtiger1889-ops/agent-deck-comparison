@@ -4,8 +4,8 @@
   "category": "agent manager",
   "where_agents_run": "your machine, plus remote machines over SSH and WSL",
   "license": "GPL-3.0-or-later with some Apache-2.0 parts; free, Pro $10 a month",
-  "checked_on": "2026-10-15 (docs pass)",
-  "source_note": "Checked against its docs (AI overview, Agent Panel, External Agents, Parallel Agents, Terminal Threads, Tool Permissions, Instructions, Skills, remote development, collaboration, themes, extensions, git, plans and pricing, installation), its pricing page, its blog posts on Parallel Agents, Terminal Threads, Agent Metrics and Zed 1.0, GitHub repo data and the thread status code in the source. Not installed or run here.",
+  "checked_on": "2026-10-22 (change-report recheck of maturity; full pass 2026-10-15)",
+  "source_note": "Checked against its docs (AI overview, Agent Panel, External Agents, Parallel Agents, Terminal Threads, Tool Permissions, Instructions, Skills, remote development, collaboration, themes, extensions, git, plans and pricing, installation), its pricing page, its blog posts on Parallel Agents, Terminal Threads, Agent Metrics and Zed 1.0, GitHub repo data and the thread status code in the source. Not installed or run here. Maturity rechecked 2026-10-22 against the v1.25.2 release page.",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
@@ -157,7 +157,7 @@
       "mark": "yes"
     },
     "stability_maturity": {
-      "value": "v1.24.2; 1.0 since April 2026; ~91,800 stars",
+      "value": "v1.25.2; 1.0 since April 2026; ~91,800 stars",
       "mark": "info"
     }
   },

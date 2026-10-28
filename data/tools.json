@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-10-22",
+  "snapshot_date": "2026-10-28",
   "snapshot_note": "Cells come from each tool's own docs/posts at the dates shown; not re-verified beyond that pass.",
   "features": [
     {
@@ -4042,8 +4042,8 @@
       "category": "agent manager",
       "where_agents_run": "your machine (optionally inside a local Docker container); phone browser on your network (LAN or Tailscale)",
       "license": "MIT, free",
-      "checked_on": "2026-10-19 (change-report recheck of session organization and planner; full pass 2026-09-30)",
-      "source_note": "Checked against its README, PRIVACY.md, AGENTS.md, docs/ folder, package.json, source code and latest release (v3.1.0). Not installed or run here. Rechecked 2026-10-19: session organization and planner against the README and docs/kanban.md (new Markdown Kanban board per project).",
+      "checked_on": "2026-10-28 (targeted feature recheck; other cells retain their dates)",
+      "source_note": "Checked against its README, PRIVACY.md, AGENTS.md, docs/ folder, package.json, source code and latest release (v3.1.0). Not installed or run here. Rechecked 2026-10-19: session organization and planner against the README and docs/kanban.md (new Markdown Kanban board per project). Rechecked 2026-10-28: README, docs/features.md, docs/kanban.md, docs/phone.md and v5.0.0 release assets. Updated navigation, tours, orchestration, GitHub intake and Android support; older cells were not rechecked. Tours explain changes and do not verify tests; optional tours and briefs consume model usage.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -4055,7 +4055,7 @@
           "mark": "info"
         },
         "needs_you_signal": {
-          "value": "Attention tray, status dots, desktop notifications",
+          "value": "Needs-you board, Ctrl+Tab, desktop and phone alerts",
           "mark": "yes"
         },
         "approve_deny_prompt": {
@@ -4079,7 +4079,7 @@
           "mark": "yes"
         },
         "session_organization": {
-          "value": "Tiled panels, projects, coordinator folders, Kanban",
+          "value": "Focus, Tiles, status board and project Kanban",
           "mark": "yes"
         },
         "prompt_scratchpad": {
@@ -4091,7 +4091,7 @@
           "mark": "partial"
         },
         "builtin_editors_browser": {
-          "value": "Diff viewer, Markdown canvas, browser preview",
+          "value": "Diff viewer, guided tours, canvas and browser preview",
           "mark": "yes"
         },
         "appearance_control": {
@@ -4119,16 +4119,16 @@
           "mark": "partial"
         },
         "issue_tracker_pipeline": {
-          "value": "Watches GitHub PR checks; no issue intake",
-          "mark": "partial"
+          "value": "GitHub issue cards become tasks and pull requests",
+          "mark": "yes"
         },
         "worktree_management": {
           "value": "Core: every task gets its own branch and worktree",
           "mark": "yes"
         },
         "planner_orchestrator": {
-          "value": "Agent splits a goal into board cards; you start each task",
-          "mark": "partial"
+          "value": "Agents create, prompt and review child tasks via MCP",
+          "mark": "yes"
         },
         "agent_to_agent_messaging": {
           "value": "Queued prompts between live sessions, with receipts",
@@ -4139,8 +4139,8 @@
           "mark": "partial"
         },
         "native_mobile_app": {
-          "value": "Phone uses a browser page",
-          "mark": "no"
+          "value": "Android app: alerts, widget and voice; sideloaded APK",
+          "mark": "yes"
         },
         "phone_no_new_app": {
           "value": "Phone browser via QR code, LAN or Tailscale",
@@ -4151,11 +4151,11 @@
           "mark": "undocumented"
         },
         "voice_input": {
-          "value": "Privacy policy: no microphone capture code yet",
-          "mark": "no"
+          "value": "Voice input in the Android app",
+          "mark": "yes"
         },
         "os": {
-          "value": "macOS, Linux; phone browser. No Windows build",
+          "value": "macOS, Linux; Android companion and phone browser",
           "mark": "info"
         },
         "app_shell": {
@@ -4171,7 +4171,7 @@
           "mark": "info"
         },
         "download_size": {
-          "value": "v3.1.0: 251 MB mac dmg, 166 MB AppImage, 129 MB deb",
+          "value": "v5.0.0: 270 MB dmg, 180 MB AppImage, 140 MB deb",
           "mark": "info"
         },
         "ram_vs_claude_desktop": {
@@ -4195,7 +4195,7 @@
           "mark": "undocumented"
         },
         "stability_maturity": {
-          "value": "v3.1.0, tags since Feb 2026, near-weekly releases",
+          "value": "v5.0.0 (2026-10-25); not tested here",
           "mark": "info"
         }
       },
@@ -4860,6 +4860,171 @@
         }
       },
       "github_stars": null
+    },
+    {
+      "name": "Tellurion",
+      "url": "https://github.com/steventsvik/Tellurion",
+      "category": "agent manager",
+      "where_agents_run": "Your Mac; phone browser over your Tailscale network",
+      "license": "AGPL-3.0; Ghostty core MIT; free",
+      "checked_on": "2026-10-28 (documentation and source pass)",
+      "source_note": "Checked README, license, release assets, language breakdown, and Swift orchestration, phone and usage code. Release 1.8.4; current documentation may describe newer changes. Not installed or run here. The board demo labels most background tiles as stand-ins.",
+      "is_authors_own": false,
+      "features": {
+        "multi_provider_supervision": {
+          "value": "Claude Code, Codex and other agents side by side",
+          "mark": "yes"
+        },
+        "harness_count": {
+          "value": "9 with live status; 8 more recognized by name",
+          "mark": "info"
+        },
+        "needs_you_signal": {
+          "value": "Waiting list, pulsing tiles, notifications, menu bar",
+          "mark": "yes"
+        },
+        "approve_deny_prompt": {
+          "value": "Allow or deny from board, sidebar or phone",
+          "mark": "yes"
+        },
+        "cross_provider_delegation": {
+          "value": "Hand off between Claude Code and Codex sessions",
+          "mark": "yes"
+        },
+        "always_on_assistant": {
+          "value": "Board assistant arranges tiles and starts agents",
+          "mark": "partial"
+        },
+        "conversation_gui_view": {
+          "value": "Timeline of prompts, replies, tools and subagents",
+          "mark": "yes"
+        },
+        "real_terminal": {
+          "value": "Full Ghostty terminal in every tab or board tile",
+          "mark": "yes"
+        },
+        "session_organization": {
+          "value": "Project tabs, zoomable boards, groups and Kanban",
+          "mark": "yes"
+        },
+        "prompt_scratchpad": {
+          "value": "Not in its docs (checked 2026-10-28)",
+          "mark": "undocumented"
+        },
+        "saved_prompt_library": {
+          "value": "Not in its docs (checked 2026-10-28)",
+          "mark": "undocumented"
+        },
+        "builtin_editors_browser": {
+          "value": "Monaco editor, browser tiles and local preview",
+          "mark": "yes"
+        },
+        "appearance_control": {
+          "value": "20 themes; custom colors, fonts and panel layout",
+          "mark": "yes"
+        },
+        "usage_hud": {
+          "value": "Claude and ChatGPT plan limits and reset times",
+          "mark": "yes"
+        },
+        "burn_rate_forecast": {
+          "value": "Not in its docs (checked 2026-10-28)",
+          "mark": "undocumented"
+        },
+        "limit_governor": {
+          "value": "Not in its docs (checked 2026-10-28)",
+          "mark": "undocumented"
+        },
+        "account_hotswap": {
+          "value": "Choose account for new tiles; restart to switch",
+          "mark": "yes"
+        },
+        "vault_task_source": {
+          "value": "Not in its docs (checked 2026-10-28)",
+          "mark": "undocumented"
+        },
+        "issue_tracker_pipeline": {
+          "value": "Not in its docs (checked 2026-10-28)",
+          "mark": "undocumented"
+        },
+        "worktree_management": {
+          "value": "Agent races give each competitor its own worktree",
+          "mark": "yes"
+        },
+        "planner_orchestrator": {
+          "value": "Orchestrator splits work and directs wired agents",
+          "mark": "yes"
+        },
+        "agent_to_agent_messaging": {
+          "value": "Orchestrator messages and review loops",
+          "mark": "yes"
+        },
+        "knowledge_base": {
+          "value": "Shared Claude Code and Codex project memories",
+          "mark": "yes"
+        },
+        "native_mobile_app": {
+          "value": "Phone access uses a browser web app",
+          "mark": "no"
+        },
+        "phone_no_new_app": {
+          "value": "Phone browser over Tailscale; pair by code",
+          "mark": "yes"
+        },
+        "remote_ssh": {
+          "value": "Not in its docs (checked 2026-10-28)",
+          "mark": "undocumented"
+        },
+        "voice_input": {
+          "value": "Hold Space to speak to the board assistant",
+          "mark": "yes"
+        },
+        "os": {
+          "value": "macOS 13+, Apple silicon; phone browser",
+          "mark": "info"
+        },
+        "app_shell": {
+          "value": "Native Ghostty fork; SwiftUI and Monaco web view",
+          "mark": "info"
+        },
+        "languages": {
+          "value": "Zig 61%, Swift 29%, JavaScript 2%",
+          "mark": "info"
+        },
+        "background_process": {
+          "value": "In-app phone server; Tailscale for phone access",
+          "mark": "info"
+        },
+        "download_size": {
+          "value": "v1.8.4: 22.2 MB Apple silicon zip",
+          "mark": "info"
+        },
+        "ram_vs_claude_desktop": {
+          "value": "Not measured; no comparable memory figure found",
+          "mark": "info"
+        },
+        "runs_in_terminal": {
+          "value": "Its own terminal emulator app",
+          "mark": "no"
+        },
+        "license_cost": {
+          "value": "AGPL-3.0; Ghostty core MIT; free",
+          "mark": "info"
+        },
+        "extensibility": {
+          "value": "Ghostty configuration and agent hooks; no SDK found",
+          "mark": "partial"
+        },
+        "teams_multiuser": {
+          "value": "Not in its docs (checked 2026-10-28)",
+          "mark": "undocumented"
+        },
+        "stability_maturity": {
+          "value": "v1.8.4 (2026-10-27); not tested here",
+          "mark": "info"
+        }
+      },
+      "github_stars": 131
     },
     {
       "name": "vibe-kanban",

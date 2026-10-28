@@ -4,8 +4,8 @@
   "category": "agent manager",
   "where_agents_run": "your machine (optionally inside a local Docker container); phone browser on your network (LAN or Tailscale)",
   "license": "MIT, free",
-  "checked_on": "2026-10-19 (change-report recheck of session organization and planner; full pass 2026-09-30)",
-  "source_note": "Checked against its README, PRIVACY.md, AGENTS.md, docs/ folder, package.json, source code and latest release (v3.1.0). Not installed or run here. Rechecked 2026-10-19: session organization and planner against the README and docs/kanban.md (new Markdown Kanban board per project).",
+  "checked_on": "2026-10-28 (targeted feature recheck; other cells retain their dates)",
+  "source_note": "Checked against its README, PRIVACY.md, AGENTS.md, docs/ folder, package.json, source code and latest release (v3.1.0). Not installed or run here. Rechecked 2026-10-19: session organization and planner against the README and docs/kanban.md (new Markdown Kanban board per project). Rechecked 2026-10-28: README, docs/features.md, docs/kanban.md, docs/phone.md and v5.0.0 release assets. Updated navigation, tours, orchestration, GitHub intake and Android support; older cells were not rechecked. Tours explain changes and do not verify tests; optional tours and briefs consume model usage.",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
@@ -17,7 +17,7 @@
       "mark": "info"
     },
     "needs_you_signal": {
-      "value": "Attention tray, status dots, desktop notifications",
+      "value": "Needs-you board, Ctrl+Tab, desktop and phone alerts",
       "mark": "yes"
     },
     "approve_deny_prompt": {
@@ -41,7 +41,7 @@
       "mark": "yes"
     },
     "session_organization": {
-      "value": "Tiled panels, projects, coordinator folders, Kanban",
+      "value": "Focus, Tiles, status board and project Kanban",
       "mark": "yes"
     },
     "prompt_scratchpad": {
@@ -53,7 +53,7 @@
       "mark": "partial"
     },
     "builtin_editors_browser": {
-      "value": "Diff viewer, Markdown canvas, browser preview",
+      "value": "Diff viewer, guided tours, canvas and browser preview",
       "mark": "yes"
     },
     "appearance_control": {
@@ -81,16 +81,16 @@
       "mark": "partial"
     },
     "issue_tracker_pipeline": {
-      "value": "Watches GitHub PR checks; no issue intake",
-      "mark": "partial"
+      "value": "GitHub issue cards become tasks and pull requests",
+      "mark": "yes"
     },
     "worktree_management": {
       "value": "Core: every task gets its own branch and worktree",
       "mark": "yes"
     },
     "planner_orchestrator": {
-      "value": "Agent splits a goal into board cards; you start each task",
-      "mark": "partial"
+      "value": "Agents create, prompt and review child tasks via MCP",
+      "mark": "yes"
     },
     "agent_to_agent_messaging": {
       "value": "Queued prompts between live sessions, with receipts",
@@ -101,8 +101,8 @@
       "mark": "partial"
     },
     "native_mobile_app": {
-      "value": "Phone uses a browser page",
-      "mark": "no"
+      "value": "Android app: alerts, widget and voice; sideloaded APK",
+      "mark": "yes"
     },
     "phone_no_new_app": {
       "value": "Phone browser via QR code, LAN or Tailscale",
@@ -113,11 +113,11 @@
       "mark": "undocumented"
     },
     "voice_input": {
-      "value": "Privacy policy: no microphone capture code yet",
-      "mark": "no"
+      "value": "Voice input in the Android app",
+      "mark": "yes"
     },
     "os": {
-      "value": "macOS, Linux; phone browser. No Windows build",
+      "value": "macOS, Linux; Android companion and phone browser",
       "mark": "info"
     },
     "app_shell": {
@@ -133,7 +133,7 @@
       "mark": "info"
     },
     "download_size": {
-      "value": "v3.1.0: 251 MB mac dmg, 166 MB AppImage, 129 MB deb",
+      "value": "v5.0.0: 270 MB dmg, 180 MB AppImage, 140 MB deb",
       "mark": "info"
     },
     "ram_vs_claude_desktop": {
@@ -157,7 +157,7 @@
       "mark": "undocumented"
     },
     "stability_maturity": {
-      "value": "v3.1.0, tags since Feb 2026, near-weekly releases",
+      "value": "v5.0.0 (2026-10-25); not tested here",
       "mark": "info"
     }
   },

@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-10-22",
+  "snapshot_date": "2026-10-28",
   "snapshot_note": "Cells come from each tool's own docs/posts at the dates shown; not re-verified beyond that pass.",
   "features": [
     {
@@ -269,6 +269,7 @@
     "superset",
     "t3-code",
     "teleclod",
+    "tellurion",
     "vibe-kanban",
     "vibetree",
     "warp",

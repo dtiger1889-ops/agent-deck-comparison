@@ -4,8 +4,8 @@
   "category": "agent manager",
   "where_agents_run": "your machine + a self-hosted remote host (VM, server, WSL, Mac mini) over Tailscale or SSH; phone or browser through its web app",
   "license": "AGPL-3.0, free",
-  "checked_on": "2026-10-22 (change-report recheck of maturity; full pass 2026-09-29)",
-  "source_note": "Checked against its README, docs/ folder, source code, latest release (v2.4.138) and runpane.com. Not installed or run here. Maturity rechecked 2026-10-18 against the v2.4.185 release page. Maturity rechecked 2026-10-22 against the v2.4.193 release page.",
+  "checked_on": "2026-10-29 (change-report recheck of maturity; full pass 2026-09-29)",
+  "source_note": "Checked against its README, docs/ folder, source code, latest release (v2.4.138) and runpane.com. Not installed or run here. Maturity rechecked 2026-10-18 against the v2.4.185 release page. Maturity rechecked 2026-10-22 against the v2.4.193 release page. Maturity rechecked 2026-10-29 against the v2.4.207 release page.",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
@@ -157,7 +157,7 @@
       "mark": "undocumented"
     },
     "stability_maturity": {
-      "value": "v2.4.193, started February 2026, frequent releases",
+      "value": "v2.4.207, started February 2026, frequent releases",
       "mark": "info"
     }
   },

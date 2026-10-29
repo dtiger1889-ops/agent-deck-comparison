@@ -4,8 +4,8 @@
   "category": "agent manager",
   "where_agents_run": "your machine (Windows, macOS, Linux), optionally inside devcontainers",
   "license": "MIT, free",
-  "checked_on": "2026-10-18 (change-report recheck of maturity; full pass 2026-09-30)",
-  "source_note": "Checked against its README, package.json, LICENSE, all 11 files in docs/, the config-skill plugin README, the npm registry (v4.4.4 and its per-platform binaries) and the GitHub releases page. Not installed or run here. Evaluated and not adopted for Pantheon (2026-09-01). Maturity rechecked 2026-10-18 against the v4.4.9 release page.",
+  "checked_on": "2026-10-29 (change-report recheck of maturity; full pass 2026-09-30)",
+  "source_note": "Checked against its README, package.json, LICENSE, all 11 files in docs/, the config-skill plugin README, the npm registry (v4.4.4 and its per-platform binaries) and the GitHub releases page. Not installed or run here. Evaluated and not adopted for Pantheon (2026-09-01). Maturity rechecked 2026-10-18 against the v4.4.9 release page. Maturity rechecked 2026-10-29 against the v4.4.11 release page.",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
@@ -157,7 +157,7 @@
       "mark": "undocumented"
     },
     "stability_maturity": {
-      "value": "v4.4.9, since June 2025, frequent npm releases",
+      "value": "v4.4.11, since June 2025, frequent npm releases",
       "mark": "info"
     }
   },

@@ -4,8 +4,8 @@
   "category": "agent manager",
   "where_agents_run": "your machine (optionally inside a local Docker container); phone browser on your network (LAN or Tailscale)",
   "license": "MIT, free",
-  "checked_on": "2026-10-28 (targeted feature recheck; other cells retain their dates)",
-  "source_note": "Checked against its README, PRIVACY.md, AGENTS.md, docs/ folder, package.json, source code and latest release (v3.1.0). Not installed or run here. Rechecked 2026-10-19: session organization and planner against the README and docs/kanban.md (new Markdown Kanban board per project). Rechecked 2026-10-28: README, docs/features.md, docs/kanban.md, docs/phone.md and v5.0.0 release assets. Updated navigation, tours, orchestration, GitHub intake and Android support; older cells were not rechecked. Tours explain changes and do not verify tests; optional tours and briefs consume model usage.",
+  "checked_on": "2026-10-29 (change-report recheck of maturity; full pass 2026-10-28 targeted feature recheck)",
+  "source_note": "Checked against its README, PRIVACY.md, AGENTS.md, docs/ folder, package.json, source code and latest release (v3.1.0). Not installed or run here. Rechecked 2026-10-19: session organization and planner against the README and docs/kanban.md (new Markdown Kanban board per project). Rechecked 2026-10-28: README, docs/features.md, docs/kanban.md, docs/phone.md and v5.0.0 release assets. Updated navigation, tours, orchestration, GitHub intake and Android support; older cells were not rechecked. Tours explain changes and do not verify tests; optional tours and briefs consume model usage. Maturity rechecked 2026-10-29 against the v5.1.0 release page.",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
@@ -157,7 +157,7 @@
       "mark": "undocumented"
     },
     "stability_maturity": {
-      "value": "v5.0.0 (2026-10-25); not tested here",
+      "value": "v5.1.0 (2026-10-29); not tested here",
       "mark": "info"
     }
   },

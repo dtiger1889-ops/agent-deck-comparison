@@ -2921,8 +2921,8 @@
       "category": "agent manager",
       "where_agents_run": "your machine (Windows, macOS, Linux), or another machine over SSH or WSL (paid plans); phone or another computer reaches it through a browser link (paid plans)",
       "license": "Closed source; free in public preview, some features need a paid GitKraken plan",
-      "checked_on": "2026-09-30 (docs/site pass)",
-      "source_note": "Checked against all 18 Kepler pages on help.gitkraken.com (Sept 2026), the Kepler 0.x release notes (v0.11.0, Sept 29 2026), the gitkraken.com/kepler product page and FAQ, installer file sizes, and the public gk-ade GitHub repo (issues only, no source). Not installed or run here.",
+      "checked_on": "2026-10-31 (recheck of always-on assistant; full pass 2026-09-30)",
+      "source_note": "Checked against all 18 Kepler pages on help.gitkraken.com (Sept 2026), the Kepler 0.x release notes (v0.11.0, Sept 29 2026), the gitkraken.com/kepler product page and FAQ, installer file sizes, and the public gk-ade GitHub repo (issues only, no source). Not installed or run here. Always-on assistant rechecked 2026-10-31 against its Quick Answers help page.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -2946,8 +2946,8 @@
           "mark": "yes"
         },
         "always_on_assistant": {
-          "value": "Not in its docs (checked 2026-09-30)",
-          "mark": "undocumented"
+          "value": "Ask Kepler chat sees your screen and checks on tasks",
+          "mark": "yes"
         },
         "conversation_gui_view": {
           "value": "Rich chat view per session, plus a live Agent Graph",
@@ -4868,16 +4868,16 @@
       "category": "agent manager",
       "where_agents_run": "your Mac, plus any other Mac or Linux server you pair over SSH; a background service on each machine keeps agents running when the app is closed",
       "license": "MIT, free on Mac and Linux; iPhone app in invite-only TestFlight",
-      "checked_on": "2026-10-06 (site pass, GitHub repo and release; the developer's own feature list)",
-      "source_note": "Checked against usespaces.dev (home page and FAQ), the GitHub repo yogesh-dhande/spaces (licence, languages, latest release v0.21.0) and a feature list the developer posted asking to be added. Not tried here (macOS only).",
+      "checked_on": "2026-10-31 (recheck of supported agents; full pass 2026-10-06)",
+      "source_note": "Checked against usespaces.dev (home page and FAQ), the GitHub repo yogesh-dhande/spaces (licence, languages, latest release v0.21.0) and a feature list the developer posted asking to be added. Not tried here (macOS only). Supported agents rechecked 2026-10-31 against its README.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
-          "value": "Claude Code, Codex and opencode, each shown as working, waiting on you or done",
+          "value": "Claude Code, Codex, opencode, Copilot CLI, pi and Amp, each with status",
           "mark": "yes"
         },
         "harness_count": {
-          "value": "3: Claude Code, Codex, opencode",
+          "value": "6: Claude Code, Codex, opencode, Copilot CLI, pi, Amp",
           "mark": "info"
         },
         "needs_you_signal": {
@@ -5222,8 +5222,8 @@
       "category": "agent manager",
       "where_agents_run": "your machine + another machine you pair or reach over SSH (Linux or Apple Silicon Mac); phone, browser or another desktop app control it through T3 Connect, Tailscale or a local network",
       "license": "MIT, free",
-      "checked_on": "2026-10-29 (change-report recheck of maturity; full pass 2026-09-29)",
-      "source_note": "Checked against its README, docs/ folder, source code at commit 4222485, latest stable release (v0.0.43) and t3.codes. Not installed or run here. Maturity rechecked 2026-10-18 against the v0.1.0 release page. Maturity rechecked 2026-10-22 against the v0.1.1 release page. Maturity rechecked 2026-10-29 against the v0.1.4 release page.",
+      "checked_on": "2026-10-31 (recheck of teams; full pass 2026-09-29)",
+      "source_note": "Checked against its README, docs/ folder, source code at commit 4222485, latest stable release (v0.0.43) and t3.codes. Not installed or run here. Maturity rechecked 2026-10-18 against the v0.1.0 release page. Maturity rechecked 2026-10-22 against the v0.1.1 release page. Maturity rechecked 2026-10-29 against the v0.1.4 release page. Teams rechecked 2026-10-31 against its guest-links doc.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -5371,8 +5371,8 @@
           "mark": "no"
         },
         "teams_multiuser": {
-          "value": "Not in its docs (checked 2026-09-29)",
-          "mark": "undocumented"
+          "value": "Guest links (beta): a teammate follows one thread, no account",
+          "mark": "experimental"
         },
         "stability_maturity": {
           "value": "v0.1.4 (2026-10-29); first stable release 2026-10-15; since Feb 2026",
@@ -5398,9 +5398,9 @@
       "url": "https://teleclod.com",
       "category": "agent manager",
       "where_agents_run": "your machine (or another computer or Docker/VPS you own); phone or browser controls it through its cloud relay",
-      "license": "Closed source; Free plan, Pro $29/month ($24 billed yearly), $5/month per extra machine",
-      "checked_on": "2026-10-18 (change-report recheck of maturity; full pass 2026-09-30)",
-      "source_note": "Checked against teleclod.com llms.txt and llms-full.txt, the homepage and FAQ text in its site bundle, its public release feed (/api/releases/all) and four blog posts. No public repo, no independent reviews found. Not installed or run here. Maturity rechecked 2026-10-18 against its release feed (/api/releases/all).",
+      "license": "Closed source; Free plan, Pro $49/month ($39 billed yearly), $10/month per extra machine",
+      "checked_on": "2026-10-31 (recheck of price and usage-limit handling; full pass 2026-09-30)",
+      "source_note": "Checked against teleclod.com llms.txt and llms-full.txt, the homepage and FAQ text in its site bundle, its public release feed (/api/releases/all) and four blog posts. No public repo, no independent reviews found. Not installed or run here. Maturity rechecked 2026-10-18 against its release feed (/api/releases/all). Price and usage-limit handling rechecked 2026-10-31 against teleclod.com and its plans page.",
       "is_authors_own": false,
       "features": {
         "multi_provider_supervision": {
@@ -5464,8 +5464,8 @@
           "mark": "undocumented"
         },
         "limit_governor": {
-          "value": "Not in its docs (checked 2026-09-30)",
-          "mark": "undocumented"
+          "value": "Waits out a Claude session limit, then resumes the task",
+          "mark": "yes"
         },
         "account_hotswap": {
           "value": "Not in its docs (checked 2026-09-30)",
@@ -5540,7 +5540,7 @@
           "mark": "no"
         },
         "license_cost": {
-          "value": "Closed source; Free plan, Pro $29/month ($24 yearly)",
+          "value": "Closed source; Free plan, Pro $49/month ($39 yearly)",
           "mark": "info"
         },
         "extensibility": {

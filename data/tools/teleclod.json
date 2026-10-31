@@ -3,9 +3,9 @@
   "url": "https://teleclod.com",
   "category": "agent manager",
   "where_agents_run": "your machine (or another computer or Docker/VPS you own); phone or browser controls it through its cloud relay",
-  "license": "Closed source; Free plan, Pro $29/month ($24 billed yearly), $5/month per extra machine",
-  "checked_on": "2026-10-18 (change-report recheck of maturity; full pass 2026-09-30)",
-  "source_note": "Checked against teleclod.com llms.txt and llms-full.txt, the homepage and FAQ text in its site bundle, its public release feed (/api/releases/all) and four blog posts. No public repo, no independent reviews found. Not installed or run here. Maturity rechecked 2026-10-18 against its release feed (/api/releases/all).",
+  "license": "Closed source; Free plan, Pro $49/month ($39 billed yearly), $10/month per extra machine",
+  "checked_on": "2026-10-31 (recheck of price and usage-limit handling; full pass 2026-09-30)",
+  "source_note": "Checked against teleclod.com llms.txt and llms-full.txt, the homepage and FAQ text in its site bundle, its public release feed (/api/releases/all) and four blog posts. No public repo, no independent reviews found. Not installed or run here. Maturity rechecked 2026-10-18 against its release feed (/api/releases/all). Price and usage-limit handling rechecked 2026-10-31 against teleclod.com and its plans page.",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
@@ -69,8 +69,8 @@
       "mark": "undocumented"
     },
     "limit_governor": {
-      "value": "Not in its docs (checked 2026-09-30)",
-      "mark": "undocumented"
+      "value": "Waits out a Claude session limit, then resumes the task",
+      "mark": "yes"
     },
     "account_hotswap": {
       "value": "Not in its docs (checked 2026-09-30)",
@@ -145,7 +145,7 @@
       "mark": "no"
     },
     "license_cost": {
-      "value": "Closed source; Free plan, Pro $29/month ($24 yearly)",
+      "value": "Closed source; Free plan, Pro $49/month ($39 yearly)",
       "mark": "info"
     },
     "extensibility": {

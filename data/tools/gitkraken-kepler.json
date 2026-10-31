@@ -4,8 +4,8 @@
   "category": "agent manager",
   "where_agents_run": "your machine (Windows, macOS, Linux), or another machine over SSH or WSL (paid plans); phone or another computer reaches it through a browser link (paid plans)",
   "license": "Closed source; free in public preview, some features need a paid GitKraken plan",
-  "checked_on": "2026-09-30 (docs/site pass)",
-  "source_note": "Checked against all 18 Kepler pages on help.gitkraken.com (Sept 2026), the Kepler 0.x release notes (v0.11.0, Sept 29 2026), the gitkraken.com/kepler product page and FAQ, installer file sizes, and the public gk-ade GitHub repo (issues only, no source). Not installed or run here.",
+  "checked_on": "2026-10-31 (recheck of always-on assistant; full pass 2026-09-30)",
+  "source_note": "Checked against all 18 Kepler pages on help.gitkraken.com (Sept 2026), the Kepler 0.x release notes (v0.11.0, Sept 29 2026), the gitkraken.com/kepler product page and FAQ, installer file sizes, and the public gk-ade GitHub repo (issues only, no source). Not installed or run here. Always-on assistant rechecked 2026-10-31 against its Quick Answers help page.",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
@@ -29,8 +29,8 @@
       "mark": "yes"
     },
     "always_on_assistant": {
-      "value": "Not in its docs (checked 2026-09-30)",
-      "mark": "undocumented"
+      "value": "Ask Kepler chat sees your screen and checks on tasks",
+      "mark": "yes"
     },
     "conversation_gui_view": {
       "value": "Rich chat view per session, plus a live Agent Graph",

@@ -4,16 +4,16 @@
   "category": "agent manager",
   "where_agents_run": "your Mac, plus any other Mac or Linux server you pair over SSH; a background service on each machine keeps agents running when the app is closed",
   "license": "MIT, free on Mac and Linux; iPhone app in invite-only TestFlight",
-  "checked_on": "2026-10-06 (site pass, GitHub repo and release; the developer's own feature list)",
-  "source_note": "Checked against usespaces.dev (home page and FAQ), the GitHub repo yogesh-dhande/spaces (licence, languages, latest release v0.21.0) and a feature list the developer posted asking to be added. Not tried here (macOS only).",
+  "checked_on": "2026-10-31 (recheck of supported agents; full pass 2026-10-06)",
+  "source_note": "Checked against usespaces.dev (home page and FAQ), the GitHub repo yogesh-dhande/spaces (licence, languages, latest release v0.21.0) and a feature list the developer posted asking to be added. Not tried here (macOS only). Supported agents rechecked 2026-10-31 against its README.",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
-      "value": "Claude Code, Codex and opencode, each shown as working, waiting on you or done",
+      "value": "Claude Code, Codex, opencode, Copilot CLI, pi and Amp, each with status",
       "mark": "yes"
     },
     "harness_count": {
-      "value": "3: Claude Code, Codex, opencode",
+      "value": "6: Claude Code, Codex, opencode, Copilot CLI, pi, Amp",
       "mark": "info"
     },
     "needs_you_signal": {

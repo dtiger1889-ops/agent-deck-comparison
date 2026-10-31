@@ -1135,7 +1135,7 @@
           "mark": "n/a"
         },
         "requirements": {
-          "value": "Agent CLIs signed in; Settings can install them for you",
+          "value": "Your agent CLIs signed in, or none with its built-in agent",
           "mark": "info"
         },
         "agent_context_view": {
@@ -5025,7 +5025,7 @@
           "mark": "info"
         },
         "notable_extras": {
-          "value": "Runs agents on a cron schedule, even with the app closed",
+          "value": "Offers to relaunch agents a crash or restart cut off",
           "mark": "info"
         },
         "requirements": {

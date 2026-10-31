@@ -161,7 +161,7 @@
       "mark": "info"
     },
     "notable_extras": {
-      "value": "Runs agents on a cron schedule, even with the app closed",
+      "value": "Offers to relaunch agents a crash or restart cut off",
       "mark": "info"
     },
     "requirements": {

@@ -165,7 +165,7 @@
       "mark": "n/a"
     },
     "requirements": {
-      "value": "Agent CLIs signed in; Settings can install them for you",
+      "value": "Your agent CLIs signed in, or none with its built-in agent",
       "mark": "info"
     },
     "agent_context_view": {

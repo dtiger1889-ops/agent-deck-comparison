@@ -2606,7 +2606,7 @@
           "mark": "undocumented"
         },
         "builtin_editors_browser": {
-          "value": "Read-only file preview; files open in VS Code",
+          "value": "Read-only file preview and guided tours; no editor",
           "mark": "no"
         },
         "appearance_control": {
@@ -2622,7 +2622,7 @@
           "mark": "partial"
         },
         "limit_governor": {
-          "value": "Asks or blocks new agents above a usage limit; no resume",
+          "value": "Asks or blocks new agents past a limit; 45-min worker cap",
           "mark": "partial"
         },
         "account_hotswap": {
@@ -2638,7 +2638,7 @@
           "mark": "undocumented"
         },
         "worktree_management": {
-          "value": "Each worker gets its own branch and worktree",
+          "value": "Own branch and worktree; merges to main when checks pass",
           "mark": "yes"
         },
         "planner_orchestrator": {
@@ -2662,7 +2662,7 @@
           "mark": "undocumented"
         },
         "remote_ssh": {
-          "value": "SSH connector runs agent commands; sessions stay local",
+          "value": "SSH connector with safety levels; sessions stay local",
           "mark": "partial"
         },
         "voice_input": {

@@ -161,7 +161,7 @@
       "mark": "info"
     },
     "notable_extras": {
-      "value": "Own ports and local web addresses per workspace",
+      "value": "Runs agents on a cron schedule, even with the app closed",
       "mark": "info"
     },
     "requirements": {

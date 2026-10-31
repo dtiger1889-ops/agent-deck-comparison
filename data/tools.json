@@ -3967,7 +3967,7 @@
           "mark": "info"
         },
         "requirements": {
-          "value": "Apple silicon Mac, git, a signed-in agent CLI",
+          "value": "Apple silicon Mac app, or Linux CLI on Node 20+; git, an agent CLI",
           "mark": "info"
         },
         "agent_context_view": {
@@ -4325,7 +4325,7 @@
           "mark": "info"
         },
         "agent_context_view": {
-          "value": "Item-by-item context breakdown; list of files it wrote",
+          "value": "Item-by-item context breakdown (Claude only); files list in Labs",
           "mark": "yes"
         }
       },
@@ -5025,7 +5025,7 @@
           "mark": "info"
         },
         "notable_extras": {
-          "value": "Own ports and local web addresses per workspace",
+          "value": "Runs agents on a cron schedule, even with the app closed",
           "mark": "info"
         },
         "requirements": {
@@ -5383,7 +5383,7 @@
           "mark": "info"
         },
         "requirements": {
-          "value": "A signed-in agent CLI (Claude Code, Codex or others)",
+          "value": "An authenticated agent provider (Claude Code, Codex...)",
           "mark": "info"
         },
         "agent_context_view": {

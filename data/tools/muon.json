@@ -165,7 +165,7 @@
       "mark": "info"
     },
     "requirements": {
-      "value": "Apple silicon Mac, git, a signed-in agent CLI",
+      "value": "Apple silicon Mac app, or Linux CLI on Node 20+; git, an agent CLI",
       "mark": "info"
     },
     "agent_context_view": {

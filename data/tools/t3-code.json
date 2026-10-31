@@ -165,7 +165,7 @@
       "mark": "info"
     },
     "requirements": {
-      "value": "A signed-in agent CLI (Claude Code, Codex or others)",
+      "value": "An authenticated agent provider (Claude Code, Codex...)",
       "mark": "info"
     },
     "agent_context_view": {

@@ -169,7 +169,7 @@
       "mark": "info"
     },
     "agent_context_view": {
-      "value": "Item-by-item context breakdown; list of files it wrote",
+      "value": "Item-by-item context breakdown (Claude only); files list in Labs",
       "mark": "yes"
     }
   },

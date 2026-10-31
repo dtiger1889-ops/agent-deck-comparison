@@ -69,7 +69,7 @@
       "mark": "partial"
     },
     "limit_governor": {
-      "value": "Asks or blocks new agents past a limit; 45-min worker cap",
+      "value": "Asks or blocks new agents past a limit; 45-min default worker cap",
       "mark": "partial"
     },
     "account_hotswap": {

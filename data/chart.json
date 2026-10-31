@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-10-29",
+  "snapshot_date": "2026-10-31",
   "snapshot_note": "Cells come from each tool's own docs/posts at the dates shown; not re-verified beyond that pass.",
   "features": [
     {
@@ -255,9 +255,11 @@
     "claude-command-center",
     "claude-desktop",
     "conductor",
+    "corvid",
     "gitkraken-kepler",
     "google-antigravity",
     "jenny",
+    "kanzo",
     "micracode",
     "muon",
     "nimbalyst",

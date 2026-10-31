@@ -1,0 +1,165 @@
+{
+  "name": "Kanzo",
+  "url": "https://github.com/emanuele-em/kanzo",
+  "category": "other tool we looked at",
+  "where_agents_run": "Wherever you start them; the board runs on your Mac or Linux machine, or one shared machine on a network you trust",
+  "license": "AGPL-3.0, free",
+  "checked_on": "2026-10-31 (documentation and source pass)",
+  "source_note": "Checked README, license, release assets, language breakdown, and the agent-tool, storage and page code. A small, lightweight task board, not an agent manager: it starts and watches no agents. Your agents connect to it and take cards from it, and it hands each card to one agent at a time. Release 0.2.1. Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Runs no agents; Claude Code or Codex take its tasks",
+      "mark": "no"
+    },
+    "harness_count": {
+      "value": "Runs none; any agent that speaks MCP can connect",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "approve_deny_prompt": {
+      "value": "Runs no agent sessions, so no prompts reach it",
+      "mark": "n/a"
+    },
+    "cross_provider_delegation": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "always_on_assistant": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "conversation_gui_view": {
+      "value": "Agents' progress comments on each card; no session view",
+      "mark": "partial"
+    },
+    "real_terminal": {
+      "value": "Runs no agent sessions; a task board only",
+      "mark": "n/a"
+    },
+    "session_organization": {
+      "value": "Kanban of tasks per project for agents; not sessions",
+      "mark": "partial"
+    },
+    "prompt_scratchpad": {
+      "value": "Optional Backlog column parks ideas agents leave alone",
+      "mark": "partial"
+    },
+    "saved_prompt_library": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "builtin_editors_browser": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "appearance_control": {
+      "value": "Follows system light or dark; no theme setting found",
+      "mark": "partial"
+    },
+    "usage_hud": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "burn_rate_forecast": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "limit_governor": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "Tasks live in its own board; exports to Markdown",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "worktree_management": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "planner_orchestrator": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "knowledge_base": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "native_mobile_app": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "phone_no_new_app": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "remote_ssh": {
+      "value": "Agents on other machines share one board; not SSH",
+      "mark": "partial"
+    },
+    "voice_input": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "os": {
+      "value": "macOS, Linux, Raspberry Pi; board in your browser",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "One Rust program serving a browser board",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "Rust 65%, JavaScript 23%, HTML 12%",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "Optional service keeps the board running from login",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "v0.2.1: 1.5 to 1.8 MB archives; 4.1 MB program",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Tiny (estimate: author reports 4.5 MB idle)",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Started from a terminal; board opens in a browser",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "AGPL-3.0, free",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "MCP server for agents; Markdown or JSON export",
+      "mark": "partial"
+    },
+    "teams_multiuser": {
+      "value": "One board shared on a trusted network; no logins",
+      "mark": "partial"
+    },
+    "stability_maturity": {
+      "value": "v0.2.1 (2026-10-27); first release 2026-10-26",
+      "mark": "info"
+    }
+  },
+  "github_stars": 206
+}

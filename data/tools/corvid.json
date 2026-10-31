@@ -1,0 +1,165 @@
+{
+  "name": "Corvid",
+  "url": "https://github.com/jhalek90/Corvid-Official",
+  "category": "agent manager",
+  "where_agents_run": "Your computer, on your own Claude Code sign-in",
+  "license": "FSL-1.1 (not open source): free except competing use",
+  "checked_on": "2026-10-31 (documentation pass)",
+  "source_note": "Checked README, install guide, license, changelog, package file, language breakdown and the docs pages on agents, workers, usage, voice, files, extensions and SSH. No releases: installed from source. Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Claude Code only; your own local models experimental",
+      "mark": "no"
+    },
+    "harness_count": {
+      "value": "1 (Claude Code), plus experimental local models",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Needs-you count, card label, notifications",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Answer in the agent's terminal, opened from its card",
+      "mark": "partial"
+    },
+    "cross_provider_delegation": {
+      "value": "Assistant hands tasks to workers on one board; Claude only",
+      "mark": "partial"
+    },
+    "always_on_assistant": {
+      "value": "Corvid assistant answers on the board any time",
+      "mark": "yes"
+    },
+    "conversation_gui_view": {
+      "value": "Agents post to a chat board; sessions open as terminals",
+      "mark": "partial"
+    },
+    "real_terminal": {
+      "value": "Click an agent card to open its terminal",
+      "mark": "yes"
+    },
+    "session_organization": {
+      "value": "Task board, project channels and agent cards",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "saved_prompt_library": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "builtin_editors_browser": {
+      "value": "Read-only file preview; files open in VS Code",
+      "mark": "no"
+    },
+    "appearance_control": {
+      "value": "9 themes plus extension themes; no font setting found",
+      "mark": "partial"
+    },
+    "usage_hud": {
+      "value": "5-hour, weekly and Fable meters in the title bar",
+      "mark": "yes"
+    },
+    "burn_rate_forecast": {
+      "value": "Pace mark on each meter; no time-to-limit estimate",
+      "mark": "partial"
+    },
+    "limit_governor": {
+      "value": "Asks or blocks new agents above a usage limit; no resume",
+      "mark": "partial"
+    },
+    "account_hotswap": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "worktree_management": {
+      "value": "Each worker gets its own branch and worktree",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Assistant plans tasks and starts workers",
+      "mark": "yes"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Shared board; direct pings between agents if turned on",
+      "mark": "yes"
+    },
+    "knowledge_base": {
+      "value": "Shared notes agents read and write; project memory",
+      "mark": "yes"
+    },
+    "native_mobile_app": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "phone_no_new_app": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
+    },
+    "remote_ssh": {
+      "value": "SSH connector runs agent commands; sessions stay local",
+      "mark": "partial"
+    },
+    "voice_input": {
+      "value": "Dictation on Windows only; not macOS or Linux",
+      "mark": "partial"
+    },
+    "os": {
+      "value": "Windows 10 and 11; macOS and Linux in beta",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Electron desktop app, built from source",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "TypeScript 68%, JavaScript 27%, CSS 5%",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "No separate service; keeps running in the tray",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "No download; source build needs about 3 GB free",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Not measured; no comparable memory figure found",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Its own desktop app window",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "FSL-1.1 (not open source): free except competing use",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "Text-only extensions built in through fixed sockets",
+      "mark": "yes"
+    },
+    "teams_multiuser": {
+      "value": "Built for one person by design",
+      "mark": "no"
+    },
+    "stability_maturity": {
+      "value": "Beta v0.2.0 (2026-10-29), no releases; not tested here",
+      "mark": "info"
+    }
+  },
+  "github_stars": 3
+}

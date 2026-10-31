@@ -3258,8 +3258,8 @@
           "mark": "partial"
         },
         "prompt_scratchpad": {
-          "value": "Optional Backlog column parks ideas agents leave alone",
-          "mark": "partial"
+          "value": "Runs no agent sessions; Backlog parks tasks, not prompts",
+          "mark": "n/a"
         },
         "saved_prompt_library": {
           "value": "Not in its docs (checked 2026-10-31)",
@@ -3322,8 +3322,8 @@
           "mark": "undocumented"
         },
         "remote_ssh": {
-          "value": "Agents on other machines share one board; not SSH",
-          "mark": "partial"
+          "value": "Runs no agent sessions; agents elsewhere can share a board",
+          "mark": "n/a"
         },
         "voice_input": {
           "value": "Not in its docs (checked 2026-10-31)",

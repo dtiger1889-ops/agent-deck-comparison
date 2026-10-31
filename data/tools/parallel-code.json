@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "v5.1.0 (2026-10-29); not tested here",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Arena: one prompt to 2-4 agents, compare and merge the best",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "Installer plus at least one agent CLI (Claude Code, Codex...)",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Opt-in reasoning graph of goals, evidence and decisions",
+      "mark": "partial"
     }
   },
   "github_stars": 1026

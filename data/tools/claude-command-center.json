@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "v5.41.1, started April 2026, frequent releases",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Hands agents passwords or codes on request; free-model setup",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "Git, Python 3.9+, and an agent CLI to start sessions",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Files panel per session, context % and a lane map of helpers",
+      "mark": "partial"
     }
   },
   "github_stars": 175

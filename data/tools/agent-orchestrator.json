@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "v0.14.7 (2026-10-28), nightly builds; rebuilt in Go, old npm CLI frozen",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "N/A",
+      "mark": "n/a"
+    },
+    "requirements": {
+      "value": "Agent CLIs signed in; Settings can install them for you",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
     }
   },
   "github_stars": 12530

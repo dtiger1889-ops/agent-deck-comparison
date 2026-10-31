@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "v0.7.19 (2026-10-16); live run so far with Codex only, per its README",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Role contracts cap what each agent and subagent may touch",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "Apple silicon Mac, git, a signed-in agent CLI",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Each turn logs what context was included, left out and why",
+      "mark": "yes"
     }
   },
   "github_stars": 7

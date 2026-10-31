@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "Since 2022, ~22,400 stars; no release since April 2026",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Keychain secret store, usable across SSH sessions",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "Nothing extra; installer only, no account",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
     }
   },
   "github_stars": 22388

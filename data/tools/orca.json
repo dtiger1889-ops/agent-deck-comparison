@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "v1.4.244 (2026-10-29), daily builds; chat, plugins, mobile still beta",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Design Mode: click a page element to send it to an agent",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "Your agent CLIs, signed in; a local git repo",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Marks which diff lines an agent wrote; no files-read view",
+      "mark": "partial"
     }
   },
   "github_stars": 81580

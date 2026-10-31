@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "v1.0.31 (Windows and macOS); no public reviews found",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Fresh agent session per task; review agent recaps each",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "An account, plus an agent CLI or your own API keys",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
     }
   },
   "github_stars": null

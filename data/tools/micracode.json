@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "v0.4.0 (2026-09-06); since May 2026; parts still stubbed",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Public preview link for the app it builds, revocable",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "Mac app; an OpenAI, Gemini or Anthropic API key",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Chat with file writes shown live; no context view",
+      "mark": "no"
     }
   },
   "github_stars": 289

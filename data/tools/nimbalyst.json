@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "v0.81.7 (2026-10-16), weekly releases, many alpha features",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Agents schedule their own wake-ups, up to 7 days out",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "Installer only; Claude or ChatGPT plan login, or an API key",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Edited-files panel and tool calls per session; no read list",
+      "mark": "partial"
     }
   },
   "github_stars": 1803

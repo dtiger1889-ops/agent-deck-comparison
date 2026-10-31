@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "v1.6.0 (2026-10-28); one-person hobby project since Aug 2026",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Calendar and reminders from chat; makes charts and diagrams",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "A model: Ollama, your own model server, or a cloud API key",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Pick what history each chat sends; file reads shown as steps",
+      "mark": "partial"
     }
   },
   "github_stars": 47

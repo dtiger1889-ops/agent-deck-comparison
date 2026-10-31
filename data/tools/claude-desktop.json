@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "Stable on macOS and Windows; Linux in beta",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Works your other apps (preview); scheduled tasks",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "A paid Claude plan; Git only for worktree sessions",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Context card breaks down window use by category; no read list",
+      "mark": "partial"
     }
   },
   "github_stars": null

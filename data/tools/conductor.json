@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "v0.91.0, releases several times a week since July 2025",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Checkpoints: roll the code back to any earlier chat turn",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "GitHub sign-in (gh) plus one agent login or API key",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Warns when Claude's context is nearly full; no read view",
+      "mark": "partial"
     }
   },
   "github_stars": null

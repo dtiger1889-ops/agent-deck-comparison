@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "Alpha; v0.3.3 (2026-09-12) plus nightlies; since Feb 2026",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Snapshot a workspace and reopen its past state later",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "Installer; Claude Code or Codex CLI recommended",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Agents shown as live terminals on a canvas; no context view",
+      "mark": "no"
     }
   },
   "github_stars": 1600

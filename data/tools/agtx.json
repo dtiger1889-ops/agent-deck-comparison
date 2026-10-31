@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "v1.0.6 (2026-09-16), started February 2026, frequent releases",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Spots merge conflicts and sends the agent to fix them",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "tmux and a git repo; GitHub CLI optional for PRs",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Board shows the specs, plans and diffs each task was handed",
+      "mark": "partial"
     }
   },
   "github_stars": 1692

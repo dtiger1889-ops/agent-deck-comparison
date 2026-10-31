@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "v2.4.207, started February 2026, frequent releases",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Hands a task and its session to another PC; own ports per pane",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "Git, plus one agent CLI installed and signed in",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
     }
   },
   "github_stars": 497

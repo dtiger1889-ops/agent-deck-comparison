@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "v2.0.0 (2026-10-26), daily releases since late 2025; Linux experimental",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Click an element in its browser, send the change to an agent",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "Git, plus your own agent CLI and subscription; gh optional",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
     }
   },
   "github_stars": 14740

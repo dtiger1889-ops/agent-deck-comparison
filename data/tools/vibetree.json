@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "Early: v0.2.0, two releases, ~270 stars",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Diff view sends your note as the agent's next prompt",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "A git repo and any agent CLI; installer only",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
     }
   },
   "github_stars": 267

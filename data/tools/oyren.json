@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "Live paid service; guides still missing screenshots of a running agent",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "PDF OCR that keeps the math; notes that calculate as you type",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "Oyren account; agent logins or API keys; paid machine hours",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
     }
   },
   "github_stars": null

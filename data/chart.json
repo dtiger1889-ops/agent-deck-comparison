@@ -3,6 +3,12 @@
   "snapshot_note": "Cells come from each tool's own docs/posts at the dates shown; not re-verified beyond that pass.",
   "features": [
     {
+      "key": "notable_extras",
+      "label": "Notable extras",
+      "description": "Standout features no other row covers.",
+      "group": "Notable extras"
+    },
+    {
       "key": "multi_provider_supervision",
       "label": "Runs more than one kind of agent",
       "description": "Can drive more than one coding agent (Claude Code, Codex and so on) side by side.",
@@ -42,6 +48,12 @@
       "key": "conversation_gui_view",
       "label": "Chat view of a session",
       "description": "Read a session as a conversation instead of raw terminal text.",
+      "group": "Sessions & views"
+    },
+    {
+      "key": "agent_context_view",
+      "label": "Shows what an agent saw",
+      "description": "See what each agent was given, read and wrote, not just its chat.",
       "group": "Sessions & views"
     },
     {
@@ -171,6 +183,12 @@
       "group": "Under the hood"
     },
     {
+      "key": "requirements",
+      "label": "Requirements",
+      "description": "What must be installed or signed in before it runs.",
+      "group": "Under the hood"
+    },
+    {
       "key": "app_shell",
       "label": "App shell",
       "description": "What the app is built on: Electron, Tauri, a terminal UI, or a hosted service.",
@@ -232,6 +250,7 @@
     }
   ],
   "group_order": [
+    "Notable extras",
     "Agents & supervision",
     "Sessions & views",
     "Usage & limits",

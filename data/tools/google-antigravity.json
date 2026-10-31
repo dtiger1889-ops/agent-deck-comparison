@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "Version 2.25; 2.0 launched May 2026; parts in preview",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Scheduled automations prompt agents while you're away",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "A Google account (free tier works) or Google Cloud sign-in",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Lists files the agent edited; context panel only in its CLI",
+      "mark": "partial"
     }
   },
   "github_stars": null

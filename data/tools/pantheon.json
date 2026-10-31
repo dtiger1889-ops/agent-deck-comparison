@@ -159,6 +159,18 @@
     "os": {
       "value": "Windows only (MSYS2 + tmux); phone over SSH",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Schedule a start for later or the next reset; not tested live",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "MSYS2 with tmux, its Python 3.12, and Claude Code",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Recent tool calls with their files, plus context size",
+      "mark": "partial"
     }
   },
   "github_stars": 0

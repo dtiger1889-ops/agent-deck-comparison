@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "v0.14.0 (2026-10-29), frequent releases since Feb 2026; plugin API changed in 0.8",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Agents on a cron schedule; heartbeats wake an agent",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "One agent CLI signed in; desktop app needs nothing else",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Context-window meter per agent; no files-read view",
+      "mark": "partial"
     }
   },
   "github_stars": 19013

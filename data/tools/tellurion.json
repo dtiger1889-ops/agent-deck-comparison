@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "v1.8.4 (2026-10-27); not tested here",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Undo any agent turn; click a page element to have it fixed",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "An agent CLI such as Claude Code or Codex; no account",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Map of files each agent read and edited; editor follows",
+      "mark": "yes"
     }
   },
   "github_stars": 131

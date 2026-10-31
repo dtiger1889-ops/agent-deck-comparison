@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "v0.2.1 (2026-10-27); first release 2026-10-26",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Board syncs between machines through your own private git repo",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "Nothing to run it; an MCP agent like Claude Code to use it",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Runs no agent sessions; agents comment on cards",
+      "mark": "n/a"
     }
   },
   "github_stars": 206

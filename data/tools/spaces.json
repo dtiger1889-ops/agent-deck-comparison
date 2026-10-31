@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "v0.21.0 (2026-10-06), started February 2026",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Own ports and local web addresses per workspace",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "macOS 14+; Google Chrome for browser sessions",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Agent's own status brief beside its terminal; no context view",
+      "mark": "no"
     }
   },
   "github_stars": 4

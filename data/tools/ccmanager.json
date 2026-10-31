@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "v4.4.11, since June 2025, frequent npm releases",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Offers to relaunch your open sessions after a crash",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "Node.js (npm), git, and an agent CLI such as Claude Code",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Terminal view only; nothing on what an agent read",
+      "mark": "no"
     }
   },
   "github_stars": 1256

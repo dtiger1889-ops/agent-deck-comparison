@@ -159,6 +159,18 @@
     "os": {
       "value": "macOS, Linux, Windows (native)",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Restores layout and resumes agents after a reboot",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "Your agent CLIs; one binary, nothing else to install",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
     }
   },
   "github_stars": 44623

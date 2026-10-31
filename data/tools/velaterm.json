@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "v0.2.14 (2026-10-23); public since July 2026, near-daily releases; account sharing experimental",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Built-in code audits via Codex or Claude; an arcade game",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "Your agent CLIs; it offers to install a missing one",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Context use in the Info panel; no files-read view",
+      "mark": "partial"
     }
   },
   "github_stars": 241

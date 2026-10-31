@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "Launched Feb 2026; Linux in preview",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Uses your computer's apps; opens docs and spreadsheets",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "A ChatGPT account; Git needed for the review panel",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Files read and edited show only as lines in the chat",
+      "mark": "no"
     }
   },
   "github_stars": null

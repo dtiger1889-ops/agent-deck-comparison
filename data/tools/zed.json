@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "v1.26.2; 1.0 since April 2026; ~91,800 stars",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Sandbox for agent commands; AI completions as you type",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "Nothing extra; AI needs a Zed sign-in, API key or agent CLI",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Follow mode opens files the agent reads; token count",
+      "mark": "partial"
     }
   },
   "github_stars": 91756

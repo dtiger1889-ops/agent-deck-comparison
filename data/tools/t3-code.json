@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "v0.1.4 (2026-10-29); first stable release 2026-10-15; since Feb 2026",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Agents can reply with a chart or page shown in the thread",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "A signed-in agent CLI (Claude Code, Codex or others)",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Context-window meter per thread; tool calls in the chat",
+      "mark": "partial"
     }
   },
   "github_stars": 23911

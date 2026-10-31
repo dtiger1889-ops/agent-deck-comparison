@@ -435,6 +435,7 @@ function category(key, cell) {
   return v.split(/ \(|;|:|,/)[0].trim() || "Other";
 }
 function filterOptions(f) {
+  if (f.key === "notable_extras") return null;   // free text mixed with N/A: no filter fits
   const cells = DATA.tools.map(t => t.features[f.key]);
   const isFact = cells.every(c => c.mark === "info" || c.mark === "unknown");
   if (!isFact) {
@@ -526,7 +527,7 @@ function toolCellFormatter(cell) {
   b.className = "badge badge-" + (c.mark === "n/a" ? "na" : c.mark);
   b.textContent = MARK_LABEL[c.mark] || c.mark;
   wrap.appendChild(b);
-  if (c.value) {
+  if (c.value && c.value !== b.textContent) {   // a bare "N/A" beside its N/A badge says nothing new
     const v = document.createElement("span");
     v.className = "cell-value";
     v.textContent = c.value;

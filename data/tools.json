@@ -3,6 +3,12 @@
   "snapshot_note": "Cells come from each tool's own docs/posts at the dates shown; not re-verified beyond that pass.",
   "features": [
     {
+      "key": "notable_extras",
+      "label": "Notable extras",
+      "description": "Standout features no other row covers.",
+      "group": "Notable extras"
+    },
+    {
       "key": "multi_provider_supervision",
       "label": "Runs more than one kind of agent",
       "description": "Can drive more than one coding agent (Claude Code, Codex and so on) side by side.",
@@ -42,6 +48,12 @@
       "key": "conversation_gui_view",
       "label": "Chat view of a session",
       "description": "Read a session as a conversation instead of raw terminal text.",
+      "group": "Sessions & views"
+    },
+    {
+      "key": "agent_context_view",
+      "label": "Shows what an agent saw",
+      "description": "See what each agent was given, read and wrote, not just its chat.",
       "group": "Sessions & views"
     },
     {
@@ -171,6 +183,12 @@
       "group": "Under the hood"
     },
     {
+      "key": "requirements",
+      "label": "Requirements",
+      "description": "What must be installed or signed in before it runs.",
+      "group": "Under the hood"
+    },
+    {
       "key": "app_shell",
       "label": "App shell",
       "description": "What the app is built on: Electron, Tauri, a terminal UI, or a hosted service.",
@@ -232,6 +250,7 @@
     }
   ],
   "group_order": [
+    "Notable extras",
     "Agents & supervision",
     "Sessions & views",
     "Usage & limits",
@@ -402,6 +421,18 @@
         "stability_maturity": {
           "value": "v1.4.244 (2026-10-29), daily builds; chat, plugins, mobile still beta",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Design Mode: click a page element to send it to an agent",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "Your agent CLIs, signed in; a local git repo",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Marks which diff lines an agent wrote; no files-read view",
+          "mark": "partial"
         }
       },
       "github_stars": 81580
@@ -567,6 +598,18 @@
         "stability_maturity": {
           "value": "v0.2.14 (2026-10-23); public since July 2026, near-daily releases; account sharing experimental",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Built-in code audits via Codex or Claude; an arcade game",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "Your agent CLIs; it offers to install a missing one",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Context use in the Info panel; no files-read view",
+          "mark": "partial"
         }
       },
       "github_stars": 241
@@ -732,6 +775,18 @@
         "os": {
           "value": "macOS, Linux, Windows (native)",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Restores layout and resumes agents after a reboot",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "Your agent CLIs; one binary, nothing else to install",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Not in its docs (checked 2026-10-31)",
+          "mark": "undocumented"
         }
       },
       "github_stars": 44623
@@ -897,6 +952,18 @@
         "stability_maturity": {
           "value": "v0.14.0 (2026-10-29), frequent releases since Feb 2026; plugin API changed in 0.8",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Agents on a cron schedule; heartbeats wake an agent",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "One agent CLI signed in; desktop app needs nothing else",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Context-window meter per agent; no files-read view",
+          "mark": "partial"
         }
       },
       "github_stars": 19013
@@ -1062,6 +1129,18 @@
         "stability_maturity": {
           "value": "v0.14.7 (2026-10-28), nightly builds; rebuilt in Go, old npm CLI frozen",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "N/A",
+          "mark": "n/a"
+        },
+        "requirements": {
+          "value": "Agent CLIs signed in; Settings can install them for you",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Not in its docs (checked 2026-10-31)",
+          "mark": "undocumented"
         }
       },
       "github_stars": 12530
@@ -1227,6 +1306,18 @@
         "stability_maturity": {
           "value": "v2.4.207, started February 2026, frequent releases",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Hands a task and its session to another PC; own ports per pane",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "Git, plus one agent CLI installed and signed in",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Not in its docs (checked 2026-10-31)",
+          "mark": "undocumented"
         }
       },
       "github_stars": 497
@@ -1392,6 +1483,18 @@
         "os": {
           "value": "Windows only (MSYS2 + tmux); phone over SSH",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Schedule a start for later or the next reset; not tested live",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "MSYS2 with tmux, its Python 3.12, and Claude Code",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Recent tool calls with their files, plus context size",
+          "mark": "partial"
         }
       },
       "github_stars": 0
@@ -1557,6 +1660,18 @@
         "stability_maturity": {
           "value": "Since July 2026, 540 stars, releases most weeks",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Forks a session's conversation into a new named one",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "tmux 3.1+ (psmux on Windows), git, your agent CLIs",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Not in its docs (checked 2026-10-31)",
+          "mark": "undocumented"
         }
       },
       "github_stars": 540
@@ -1722,6 +1837,18 @@
         "stability_maturity": {
           "value": "v1.0.6 (2026-09-16), started February 2026, frequent releases",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Spots merge conflicts and sends the agent to fix them",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "tmux and a git repo; GitHub CLI optional for PRs",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Board shows the specs, plans and diffs each task was handed",
+          "mark": "partial"
         }
       },
       "github_stars": 1692
@@ -1887,6 +2014,18 @@
         "stability_maturity": {
           "value": "v4.4.11, since June 2025, frequent npm releases",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Offers to relaunch your open sessions after a crash",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "Node.js (npm), git, and an agent CLI such as Claude Code",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Terminal view only; nothing on what an agent read",
+          "mark": "no"
         }
       },
       "github_stars": 1256
@@ -2052,6 +2191,18 @@
         "stability_maturity": {
           "value": "Launched Feb 2026; Linux in preview",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Uses your computer's apps; opens docs and spreadsheets",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "A ChatGPT account; Git needed for the review panel",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Files read and edited show only as lines in the chat",
+          "mark": "no"
         }
       },
       "github_stars": null
@@ -2217,6 +2368,18 @@
         "stability_maturity": {
           "value": "v5.41.1, started April 2026, frequent releases",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Hands agents passwords or codes on request; free-model setup",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "Git, Python 3.9+, and an agent CLI to start sessions",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Files panel per session, context % and a lane map of helpers",
+          "mark": "partial"
         }
       },
       "github_stars": 175
@@ -2382,6 +2545,18 @@
         "stability_maturity": {
           "value": "Stable on macOS and Windows; Linux in beta",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Works your other apps (preview); scheduled tasks",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "A paid Claude plan; Git only for worktree sessions",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Context card breaks down window use by category; no read list",
+          "mark": "partial"
         }
       },
       "github_stars": null
@@ -2547,6 +2722,18 @@
         "stability_maturity": {
           "value": "v0.91.0, releases several times a week since July 2025",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Checkpoints: roll the code back to any earlier chat turn",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "GitHub sign-in (gh) plus one agent login or API key",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Warns when Claude's context is nearly full; no read view",
+          "mark": "partial"
         }
       },
       "github_stars": null
@@ -2712,6 +2899,18 @@
         "stability_maturity": {
           "value": "Beta v0.2.0 (2026-10-29), no releases; not tested here",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Each worker starts fresh with a small, known context",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "Node.js 22.18+, git, Claude Code signed in; 3 GB free disk",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "3D Context cloud: what each worker got, read and wrote",
+          "mark": "yes"
         }
       },
       "github_stars": 3
@@ -2877,6 +3076,18 @@
         "stability_maturity": {
           "value": "v0.11.0 public preview, releases every few weeks",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "N/A",
+          "mark": "n/a"
+        },
+        "requirements": {
+          "value": "Free GitKraken account and one installed coding agent",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Agent Graph: each tool call, its input and files touched",
+          "mark": "yes"
         }
       },
       "github_stars": null
@@ -3042,6 +3253,18 @@
         "stability_maturity": {
           "value": "Version 2.25; 2.0 launched May 2026; parts in preview",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Scheduled automations prompt agents while you're away",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "A Google account (free tier works) or Google Cloud sign-in",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Lists files the agent edited; context panel only in its CLI",
+          "mark": "partial"
         }
       },
       "github_stars": null
@@ -3207,6 +3430,18 @@
         "stability_maturity": {
           "value": "v1.6.0 (2026-10-28); one-person hobby project since Aug 2026",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Calendar and reminders from chat; makes charts and diagrams",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "A model: Ollama, your own model server, or a cloud API key",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Pick what history each chat sends; file reads shown as steps",
+          "mark": "partial"
         }
       },
       "github_stars": 47
@@ -3372,6 +3607,18 @@
         "stability_maturity": {
           "value": "v0.2.1 (2026-10-27); first release 2026-10-26",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Board syncs between machines through your own private git repo",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "Nothing to run it; an MCP agent like Claude Code to use it",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Runs no agent sessions; agents comment on cards",
+          "mark": "n/a"
         }
       },
       "github_stars": 206
@@ -3537,6 +3784,18 @@
         "stability_maturity": {
           "value": "v0.4.0 (2026-09-06); since May 2026; parts still stubbed",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Public preview link for the app it builds, revocable",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "Mac app; an OpenAI, Gemini or Anthropic API key",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Chat with file writes shown live; no context view",
+          "mark": "no"
         }
       },
       "github_stars": 289
@@ -3702,6 +3961,18 @@
         "stability_maturity": {
           "value": "v0.7.19 (2026-10-16); live run so far with Codex only, per its README",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Role contracts cap what each agent and subagent may touch",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "Apple silicon Mac, git, a signed-in agent CLI",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Each turn logs what context was included, left out and why",
+          "mark": "yes"
         }
       },
       "github_stars": 7
@@ -3867,6 +4138,18 @@
         "stability_maturity": {
           "value": "v0.81.7 (2026-10-16), weekly releases, many alpha features",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Agents schedule their own wake-ups, up to 7 days out",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "Installer only; Claude or ChatGPT plan login, or an API key",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Edited-files panel and tool calls per session; no read list",
+          "mark": "partial"
         }
       },
       "github_stars": 1803
@@ -4032,6 +4315,18 @@
         "stability_maturity": {
           "value": "v0.1.108, early access, releases since April 2026",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Builds and schedules its own automations; hard spend caps",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "A Claude login or API key; 16 GB RAM recommended",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Item-by-item context breakdown; list of files it wrote",
+          "mark": "yes"
         }
       },
       "github_stars": null
@@ -4197,6 +4492,18 @@
         "stability_maturity": {
           "value": "Alpha; v0.3.3 (2026-09-12) plus nightlies; since Feb 2026",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Snapshot a workspace and reopen its past state later",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "Installer; Claude Code or Codex CLI recommended",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Agents shown as live terminals on a canvas; no context view",
+          "mark": "no"
         }
       },
       "github_stars": 1600
@@ -4362,6 +4669,18 @@
         "stability_maturity": {
           "value": "Live paid service; guides still missing screenshots of a running agent",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "PDF OCR that keeps the math; notes that calculate as you type",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "Oyren account; agent logins or API keys; paid machine hours",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Not in its docs (checked 2026-10-31)",
+          "mark": "undocumented"
         }
       },
       "github_stars": null
@@ -4527,6 +4846,18 @@
         "stability_maturity": {
           "value": "v5.1.0 (2026-10-29); not tested here",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Arena: one prompt to 2-4 agents, compare and merge the best",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "Installer plus at least one agent CLI (Claude Code, Codex...)",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Opt-in reasoning graph of goals, evidence and decisions",
+          "mark": "partial"
         }
       },
       "github_stars": 1026
@@ -4692,6 +5023,18 @@
         "stability_maturity": {
           "value": "v0.21.0 (2026-10-06), started February 2026",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Own ports and local web addresses per workspace",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "macOS 14+; Google Chrome for browser sessions",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Agent's own status brief beside its terminal; no context view",
+          "mark": "no"
         }
       },
       "github_stars": 4
@@ -4857,6 +5200,18 @@
         "stability_maturity": {
           "value": "v2.0.0 (2026-10-26), daily releases since late 2025; Linux experimental",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Click an element in its browser, send the change to an agent",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "Git, plus your own agent CLI and subscription; gh optional",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Not in its docs (checked 2026-10-31)",
+          "mark": "undocumented"
         }
       },
       "github_stars": 14740
@@ -5022,6 +5377,18 @@
         "stability_maturity": {
           "value": "v0.1.4 (2026-10-29); first stable release 2026-10-15; since Feb 2026",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Agents can reply with a chart or page shown in the thread",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "A signed-in agent CLI (Claude Code, Codex or others)",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Context-window meter per thread; tool calls in the chat",
+          "mark": "partial"
         }
       },
       "github_stars": 23911
@@ -5187,6 +5554,18 @@
         "stability_maturity": {
           "value": "v1.0.31 (Windows and macOS); no public reviews found",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Fresh agent session per task; review agent recaps each",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "An account, plus an agent CLI or your own API keys",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Not in its docs (checked 2026-10-31)",
+          "mark": "undocumented"
         }
       },
       "github_stars": null
@@ -5352,6 +5731,18 @@
         "stability_maturity": {
           "value": "v1.8.4 (2026-10-27); not tested here",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Undo any agent turn; click a page element to have it fixed",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "An agent CLI such as Claude Code or Codex; no account",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Map of files each agent read and edited; editor follows",
+          "mark": "yes"
         }
       },
       "github_stars": 131
@@ -5517,6 +5908,18 @@
         "stability_maturity": {
           "value": "Shutdown announced April 2026; community maintained",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Comment on diff lines to send feedback to the agent",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "Node.js for npx and a signed-in agent CLI",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Context gauge per session; actions shown in the chat log",
+          "mark": "partial"
         }
       },
       "github_stars": 28221
@@ -5682,6 +6085,18 @@
         "stability_maturity": {
           "value": "Early: v0.2.0, two releases, ~270 stars",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Diff view sends your note as the agent's next prompt",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "A git repo and any agent CLI; installer only",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Not in its docs (checked 2026-10-31)",
+          "mark": "undocumented"
         }
       },
       "github_stars": 267
@@ -5847,6 +6262,18 @@
         "stability_maturity": {
           "value": "Repo since 2021; ~65,500 stars; stable v0.2026.10.14",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Share an agent session as a link for pull request review",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "Nothing extra; online at first launch, login optional",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Cites the saved notes and rules an agent drew on",
+          "mark": "partial"
         }
       },
       "github_stars": 65468
@@ -6012,6 +6439,18 @@
         "stability_maturity": {
           "value": "Since 2022, ~22,400 stars; no release since April 2026",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Keychain secret store, usable across SSH sessions",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "Nothing extra; installer only, no account",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Not in its docs (checked 2026-10-31)",
+          "mark": "undocumented"
         }
       },
       "github_stars": 22388
@@ -6177,6 +6616,18 @@
         "stability_maturity": {
           "value": "v1.26.2; 1.0 since April 2026; ~91,800 stars",
           "mark": "info"
+        },
+        "notable_extras": {
+          "value": "Sandbox for agent commands; AI completions as you type",
+          "mark": "info"
+        },
+        "requirements": {
+          "value": "Nothing extra; AI needs a Zed sign-in, API key or agent CLI",
+          "mark": "info"
+        },
+        "agent_context_view": {
+          "value": "Follow mode opens files the agent reads; token count",
+          "mark": "partial"
         }
       },
       "github_stars": 91756

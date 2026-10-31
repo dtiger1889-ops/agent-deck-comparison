@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "Beta v0.2.0 (2026-10-29), no releases; not tested here",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Each worker starts fresh with a small, known context",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "Node.js 22.18+, git, Claude Code signed in; 3 GB free disk",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "3D Context cloud: what each worker got, read and wrote",
+      "mark": "yes"
     }
   },
   "github_stars": 3

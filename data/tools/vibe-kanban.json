@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "Shutdown announced April 2026; community maintained",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Comment on diff lines to send feedback to the agent",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "Node.js for npx and a signed-in agent CLI",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Context gauge per session; actions shown in the chat log",
+      "mark": "partial"
     }
   },
   "github_stars": 28221

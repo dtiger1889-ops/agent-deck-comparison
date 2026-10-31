@@ -159,6 +159,18 @@
     "stability_maturity": {
       "value": "Since July 2026, 540 stars, releases most weeks",
       "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Forks a session's conversation into a new named one",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "tmux 3.1+ (psmux on Windows), git, your agent CLIs",
+      "mark": "info"
+    },
+    "agent_context_view": {
+      "value": "Not in its docs (checked 2026-10-31)",
+      "mark": "undocumented"
     }
   },
   "github_stars": 540

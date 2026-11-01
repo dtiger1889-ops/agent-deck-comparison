@@ -1,0 +1,177 @@
+{
+  "name": "Drover",
+  "url": "https://rundrover.com/",
+  "category": "agent manager",
+  "where_agents_run": "Your computer, on your own Claude Code or Codex sign-in",
+  "license": "Closed source; free during the beta",
+  "checked_on": "2026-11-01 (documentation pass)",
+  "source_note": "Checked rundrover.com: homepage, all seven docs pages, download page, changelog, beta terms, its release feed (/api/releases) and the README of its public feedback repo. The app itself has no public repo. Not installed or run here.",
+  "is_authors_own": false,
+  "features": {
+    "multi_provider_supervision": {
+      "value": "Claude Code and Codex, mixable by stage",
+      "mark": "yes"
+    },
+    "harness_count": {
+      "value": "2 (Claude Code, Codex)",
+      "mark": "info"
+    },
+    "needs_you_signal": {
+      "value": "Needs your input list holds every waiting decision",
+      "mark": "yes"
+    },
+    "approve_deny_prompt": {
+      "value": "Approve plans, answer questions, grant retries; no per-command allow",
+      "mark": "partial"
+    },
+    "cross_provider_delegation": {
+      "value": "Plan, build and review can each use a different agent",
+      "mark": "yes"
+    },
+    "always_on_assistant": {
+      "value": "Attendant: Ask answers with sources, acts after you confirm",
+      "mark": "yes"
+    },
+    "conversation_gui_view": {
+      "value": "Live log of reads, edits and agent updates; not a chat",
+      "mark": "partial"
+    },
+    "agent_context_view": {
+      "value": "Live log shows the files each agent reads",
+      "mark": "partial"
+    },
+    "real_terminal": {
+      "value": "Not in its docs; shows tickets and logs, not terminals",
+      "mark": "undocumented"
+    },
+    "session_organization": {
+      "value": "One ticket queue across repos; active tickets by stage",
+      "mark": "yes"
+    },
+    "prompt_scratchpad": {
+      "value": "Not in its docs (checked 2026-11-01)",
+      "mark": "undocumented"
+    },
+    "saved_prompt_library": {
+      "value": "Not in its docs (checked 2026-11-01)",
+      "mark": "undocumented"
+    },
+    "builtin_editors_browser": {
+      "value": "Changes tab shows each task's diffs; no editor or browser",
+      "mark": "partial"
+    },
+    "appearance_control": {
+      "value": "Not in its docs (checked 2026-11-01)",
+      "mark": "undocumented"
+    },
+    "usage_hud": {
+      "value": "Not in its docs (checked 2026-11-01)",
+      "mark": "undocumented"
+    },
+    "burn_rate_forecast": {
+      "value": "Not in its docs (checked 2026-11-01)",
+      "mark": "undocumented"
+    },
+    "limit_governor": {
+      "value": "Not in its docs; caps retries per ticket, not usage",
+      "mark": "undocumented"
+    },
+    "account_hotswap": {
+      "value": "Not in its docs (checked 2026-11-01)",
+      "mark": "undocumented"
+    },
+    "vault_task_source": {
+      "value": "Not in its docs; tickets from trackers or typed in",
+      "mark": "undocumented"
+    },
+    "issue_tracker_pipeline": {
+      "value": "Jira, Linear, GitHub Issues: ticket to merge, result written back",
+      "mark": "yes"
+    },
+    "worktree_management": {
+      "value": "Makes worktrees; rebases, retests, then merges, opens a PR or pushes",
+      "mark": "yes"
+    },
+    "planner_orchestrator": {
+      "value": "Planner splits a ticket into tasks; a second agent reviews the plan",
+      "mark": "yes"
+    },
+    "agent_to_agent_messaging": {
+      "value": "Not in its docs; stages hand work along a fixed line",
+      "mark": "undocumented"
+    },
+    "knowledge_base": {
+      "value": "Not in its docs (checked 2026-11-01)",
+      "mark": "undocumented"
+    },
+    "native_mobile_app": {
+      "value": "Not in its docs (checked 2026-11-01)",
+      "mark": "undocumented"
+    },
+    "phone_no_new_app": {
+      "value": "Not in its docs (checked 2026-11-01)",
+      "mark": "undocumented"
+    },
+    "remote_ssh": {
+      "value": "Not in its docs; works on local repositories",
+      "mark": "undocumented"
+    },
+    "voice_input": {
+      "value": "Not in its docs (checked 2026-11-01)",
+      "mark": "undocumented"
+    },
+    "os": {
+      "value": "Windows 10+ and Linux; macOS planned",
+      "mark": "info"
+    },
+    "requirements": {
+      "value": "GitHub sign-in, Git, Claude Code or Codex signed in; gh for PRs",
+      "mark": "info"
+    },
+    "app_shell": {
+      "value": "Desktop app plus a separate local driver; framework not named",
+      "mark": "info"
+    },
+    "languages": {
+      "value": "Closed source; no public repo",
+      "mark": "info"
+    },
+    "background_process": {
+      "value": "Yes: a background attendant; tray icon",
+      "mark": "info"
+    },
+    "download_size": {
+      "value": "v0.1.35: 11 MB Windows installer, 95 MB Linux AppImage, 18 MB deb",
+      "mark": "info"
+    },
+    "ram_vs_claude_desktop": {
+      "value": "Not measured; no memory figure found",
+      "mark": "info"
+    },
+    "runs_in_terminal": {
+      "value": "Its own desktop app window",
+      "mark": "no"
+    },
+    "license_cost": {
+      "value": "Closed source; free beta; you pay your agent provider",
+      "mark": "info"
+    },
+    "extensibility": {
+      "value": "Command line to start and queue tickets; no plugins found",
+      "mark": "partial"
+    },
+    "teams_multiuser": {
+      "value": "Not in its docs (checked 2026-11-01)",
+      "mark": "undocumented"
+    },
+    "stability_maturity": {
+      "value": "Beta v0.1.35 (2026-11-01); not tested here",
+      "mark": "info"
+    },
+    "notable_extras": {
+      "value": "Stops tickets too big to plan and proposes a split",
+      "mark": "info"
+    }
+  },
+  "github_stars": null
+}

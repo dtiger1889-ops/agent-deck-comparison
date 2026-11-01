@@ -34,13 +34,15 @@ no native mobile app, a terminal-multiplexer stability issue still open as of th
 
 ## How to view it
 
-Open `index.html` directly in a browser, or serve the folder with any static file server, e.g.:
+Use the [published comparison](https://dtiger1889-ops.github.io/agent-deck-comparison/) to browse and filter the table. No agent, skill or account is needed. This is a reference page, not an agent manager you install.
+
+For a local copy, download or clone this repo and serve its root with a static file server. With Python installed:
 
 ```
 python -m http.server 8080
 ```
 
-then visit `http://localhost:8080/`.
+then visit `http://localhost:8080/`. The table loads `data/tools.json`, so opening the HTML directly from disk can fail under browser file-access restrictions. Expect the feature matrix and filters; if the table is empty, check that the server is running from this repo's root.
 
 ## Data file structure
 
@@ -63,6 +65,10 @@ To change a tool, edit its file and run `python tools/build_data.py`; the script
 tools `chart.json` lists and refuses to write a chart that still has Unknown cells.
 `tools/build_linkedin.py` generates
 `assets/share-2.html`, the source for the share image (`assets/share-2-agent-managers.png`), from the same data file.
+
+## Help
+
+For setup questions or errors, [open an issue](https://github.com/dtiger1889-ops/agent-deck-comparison/issues) with the relevant versions and a redacted error description.
 
 ## License
 

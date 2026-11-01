@@ -5,7 +5,7 @@
   "where_agents_run": "Your computer, on your own Claude Code or Codex sign-in",
   "license": "Closed source; free during the beta",
   "checked_on": "2026-11-01 (documentation pass)",
-  "source_note": "Checked rundrover.com: homepage, all seven docs pages, download page, changelog, beta terms, its release feed (/api/releases) and the README of its public feedback repo. The app itself has no public repo. Not installed or run here.",
+  "source_note": "Checked rundrover.com: homepage, all seven docs pages, download page, changelog, beta terms, its release feed (/api/releases) and the README of its public feedback repo; clicked through its sample-data demo (a ticket's tabs and every Settings page). The app itself has no public repo. Not installed or run here.",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
@@ -33,15 +33,15 @@
       "mark": "yes"
     },
     "conversation_gui_view": {
-      "value": "Live log of reads, edits and agent updates; not a chat",
-      "mark": "partial"
+      "value": "Agent log of messages, tool calls and tests per stage",
+      "mark": "yes"
     },
     "agent_context_view": {
       "value": "Live log shows the files each agent reads",
       "mark": "partial"
     },
     "real_terminal": {
-      "value": "Not in its docs; shows tickets and logs, not terminals",
+      "value": "Not in its docs or demo; shows logs, not terminals",
       "mark": "undocumented"
     },
     "session_organization": {
@@ -61,8 +61,8 @@
       "mark": "partial"
     },
     "appearance_control": {
-      "value": "Not in its docs (checked 2026-11-01)",
-      "mark": "undocumented"
+      "value": "Light, dark or follow-device theme; no font setting found",
+      "mark": "partial"
     },
     "usage_hud": {
       "value": "Not in its docs (checked 2026-11-01)",
@@ -161,7 +161,7 @@
       "mark": "partial"
     },
     "teams_multiuser": {
-      "value": "Not in its docs (checked 2026-11-01)",
+      "value": "Not in its docs; one user per account, up to 3 machines",
       "mark": "undocumented"
     },
     "stability_maturity": {

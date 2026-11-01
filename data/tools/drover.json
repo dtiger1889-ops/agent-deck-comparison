@@ -21,7 +21,7 @@
       "mark": "yes"
     },
     "approve_deny_prompt": {
-      "value": "Approve plans, answer questions, grant retries; no per-command allow",
+      "value": "Approve plans, answer questions, grant retries; command prompts not in docs",
       "mark": "partial"
     },
     "cross_provider_delegation": {

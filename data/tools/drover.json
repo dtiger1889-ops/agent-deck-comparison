@@ -5,7 +5,7 @@
   "where_agents_run": "Your computer, on your own Claude Code or Codex sign-in",
   "license": "Closed source; free during the beta",
   "checked_on": "2026-11-01 (documentation pass)",
-  "source_note": "Checked rundrover.com: homepage, all seven docs pages, download page, changelog, beta terms, its release feed (/api/releases) and the README of its public feedback repo; clicked through its sample-data demo (a ticket's tabs and every Settings page). The app itself has no public repo. Not installed or run here.",
+  "source_note": "Checked rundrover.com: homepage, all nine docs pages, download page, changelog, beta terms, its release feed (/api/releases) and the README of its public feedback repo; clicked through its sample-data demo (a ticket's four tabs and all nine Settings pages). Docs rechecked later the same day, when a ninth page (What Drover is and is not) had appeared. The app itself has no public repo. Not installed or run here.",
   "is_authors_own": false,
   "features": {
     "multi_provider_supervision": {
@@ -21,7 +21,7 @@
       "mark": "yes"
     },
     "approve_deny_prompt": {
-      "value": "Approve plans, answer questions, grant retries; command prompts not in docs",
+      "value": "Approve plans and questions; agents run with permission prompts off",
       "mark": "partial"
     },
     "cross_provider_delegation": {
@@ -41,48 +41,48 @@
       "mark": "partial"
     },
     "real_terminal": {
-      "value": "Not in its docs or demo; shows logs, not terminals",
-      "mark": "undocumented"
+      "value": "No built-in terminal; agent log instead",
+      "mark": "no"
     },
     "session_organization": {
       "value": "One ticket queue across repos; active tickets by stage",
       "mark": "yes"
     },
     "prompt_scratchpad": {
-      "value": "Not in its docs (checked 2026-11-01)",
-      "mark": "undocumented"
+      "value": "No scratchpad",
+      "mark": "no"
     },
     "saved_prompt_library": {
-      "value": "Not in its docs (checked 2026-11-01)",
-      "mark": "undocumented"
+      "value": "No prompt library or saved prompts",
+      "mark": "no"
     },
     "builtin_editors_browser": {
       "value": "Changes tab shows each task's diffs; no editor or browser",
       "mark": "partial"
     },
     "appearance_control": {
-      "value": "Light, dark or follow-device theme; no font setting found",
+      "value": "Light, dark or follow-device theme; no font setting",
       "mark": "partial"
     },
     "usage_hud": {
-      "value": "Not in its docs (checked 2026-11-01)",
-      "mark": "undocumented"
+      "value": "Counts sessions and attempts; no token or cost figures",
+      "mark": "no"
     },
     "burn_rate_forecast": {
-      "value": "Not in its docs (checked 2026-11-01)",
-      "mark": "undocumented"
+      "value": "No burn rate or forecast",
+      "mark": "no"
     },
     "limit_governor": {
-      "value": "Not in its docs; caps retries per ticket, not usage",
-      "mark": "undocumented"
+      "value": "No usage governor; caps limit retries, not spend",
+      "mark": "no"
     },
     "account_hotswap": {
-      "value": "Not in its docs (checked 2026-11-01)",
-      "mark": "undocumented"
+      "value": "Uses whichever logins are signed in; no switching",
+      "mark": "no"
     },
     "vault_task_source": {
-      "value": "Not in its docs; tickets from trackers or typed in",
-      "mark": "undocumented"
+      "value": "No document source; tickets from trackers or typed in",
+      "mark": "no"
     },
     "issue_tracker_pipeline": {
       "value": "Jira, Linear, GitHub Issues: ticket to merge, result written back",
@@ -97,28 +97,28 @@
       "mark": "yes"
     },
     "agent_to_agent_messaging": {
-      "value": "Not in its docs; stages hand work along a fixed line",
-      "mark": "undocumented"
+      "value": "No; one stage's output is the next stage's input",
+      "mark": "no"
     },
     "knowledge_base": {
-      "value": "Not in its docs (checked 2026-11-01)",
-      "mark": "undocumented"
+      "value": "No knowledge base or memory store",
+      "mark": "no"
     },
     "native_mobile_app": {
-      "value": "Not in its docs (checked 2026-11-01)",
-      "mark": "undocumented"
+      "value": "No mobile app",
+      "mark": "no"
     },
     "phone_no_new_app": {
-      "value": "Not in its docs (checked 2026-11-01)",
-      "mark": "undocumented"
+      "value": "No web version; no way to drive it from a phone",
+      "mark": "no"
     },
     "remote_ssh": {
-      "value": "Not in its docs; works on local repositories",
-      "mark": "undocumented"
+      "value": "No remote or SSH repositories; local only",
+      "mark": "no"
     },
     "voice_input": {
-      "value": "Not in its docs (checked 2026-11-01)",
-      "mark": "undocumented"
+      "value": "No voice input",
+      "mark": "no"
     },
     "os": {
       "value": "Windows 10+ and Linux; macOS planned",
@@ -129,15 +129,15 @@
       "mark": "info"
     },
     "app_shell": {
-      "value": "Desktop app plus a separate local driver; framework not named",
+      "value": "Tauri desktop app plus a local driver binary",
       "mark": "info"
     },
     "languages": {
-      "value": "Closed source; no public repo",
+      "value": "Closed source; Rust core with a web front end",
       "mark": "info"
     },
     "background_process": {
-      "value": "Yes: a background attendant; tray icon",
+      "value": "Yes: a local driver; keeps attending from the tray",
       "mark": "info"
     },
     "download_size": {
@@ -157,12 +157,12 @@
       "mark": "info"
     },
     "extensibility": {
-      "value": "Command line to start and queue tickets; no plugins found",
+      "value": "drover command line for the queue; no plugins or API",
       "mark": "partial"
     },
     "teams_multiuser": {
-      "value": "Not in its docs; one user per account, up to 3 machines",
-      "mark": "undocumented"
+      "value": "One person per account, up to 3 devices; no sharing",
+      "mark": "no"
     },
     "stability_maturity": {
       "value": "Beta v0.1.35 (2026-11-01); not tested here",
